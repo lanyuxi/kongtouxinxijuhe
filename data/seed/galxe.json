@@ -1,0 +1,31 @@
+{
+  "_comment": "Galxe Quest 快照（人工维护）。视抓取稳定性决定是否作为强依赖。",
+  "source": "Galxe",
+  "url": "https://app.galxe.com/quest/explore/all",
+  "items": [
+    {
+      "title": "Monad",
+      "url": "https://app.galxe.com/quest/Monad",
+      "description": "Monad 官方 Space，包含社交与测试网任务。",
+      "status": "potential",
+      "category": "L2",
+      "chain": "Other"
+    },
+    {
+      "title": "Berachain",
+      "url": "https://app.galxe.com/quest/Berachain",
+      "description": "Berachain 官方 Space，提供测试网与社交任务。",
+      "status": "potential",
+      "category": "DeFi",
+      "chain": "Other"
+    },
+    {
+      "title": "Zora Network",
+      "url": "https://app.galxe.com/quest/Zora",
+      "description": "Zora 官方 Space，创作者与社交任务。",
+      "status": "potential",
+      "category": "NFT",
+      "chain": "Base"
+    }
+  ]
+}
