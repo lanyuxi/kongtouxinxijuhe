@@ -88,6 +88,15 @@ main:
 # 点击仓库页面右上角「云原生开发」按钮，即可直接打开站点预览页面。
 # 对应方案文档「无需服务器、纯静态交付」：预览同样不引入常驻服务，
 # 由本地静态服务器托管构建产物 dist/，仅用于预览，不对外提供服务。
+#
+# 平台约定（docs.cnb.cool/zh/workspaces/only-preview.md）：
+#   - 业务服务必须监听 8686 端口；
+#   - stages 是「启动前准备步骤」，先于 launch 执行；
+#   - daemon: false（推荐）时平台以前台方式执行 launch 并等待其退出，
+#     因此 launch 脚本需自行确认端口就绪，再转入后台并退出。
+#
+# 重要：dist/ 是构建产物且已在 .gitignore 中忽略，不会随仓库下发，
+#      必须由下方 build-preview 现场构建；否则预览服务会因缺页面而返回 404。
 $:
   vscode:
     - docker:
@@ -96,7 +105,8 @@ $:
         - name: vscode
           options:
             onlyPreview: true
-            launch: node .ide/preview-server.mjs
+            # 前台启动 → 自检端口与首页均就绪 → 转入后台并退出，日志全程可见
+            launch: node .ide/preview-server.mjs --background
             keepAliveTimeout: 30m
       stages:
         - name: build-preview
@@ -104,3 +114,6 @@ $:
             - npm ci --no-audit --no-fund
             - npm run pipeline
             - npm run build
+            # 构建后立即校验 dist/ 就绪，失败即中断，避免预览出一个 404 空壳
+            - test -f dist/index.html
+            - test -f dist/data/airdrops.json
