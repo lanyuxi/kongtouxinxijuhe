@@ -1,0 +1,106 @@
+import type { RiskLevel, ScoreItem } from '../lib/types';
+import { AUTH_LEVEL, RISK_LABEL, RISK_REASON } from '../lib/labels';
+import { RiskBadge } from './Badge';
+
+function Bar({ value, max, tone }: { value: number; max: number; tone: string }) {
+  const pct = max > 0 ? Math.round((value / max) * 100) : 0;
+  return (
+    <div className="h-1.5 w-full overflow-hidden rounded-full bg-page">
+      <div className={`h-full rounded-full ${tone}`} style={{ width: `${pct}%` }} />
+    </div>
+  );
+}
+
+/** 评分明细：任何评分都必须能解释「为什么得到这个分数」 */
+export function ScoreBreakdown({ items }: { items: ScoreItem[] }) {
+  return (
+    <ul className="divide-y divide-line">
+      {items.map((i) => (
+        <li key={i.key} className="py-2.5">
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="text-sm text-ink">{i.label}</span>
+            <span className="shrink-0 font-mono text-xs text-ink-soft">
+              {i.value}/{i.max}
+            </span>
+          </div>
+          <div className="mt-1.5">
+            <Bar
+              value={i.value}
+              max={i.max}
+              tone={i.value === 0 ? 'bg-line' : i.value >= i.max * 0.7 ? 'bg-ok' : 'bg-warn'}
+            />
+          </div>
+          <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">
+            {i.reason}
+            {i.evidenceUrl && (
+              <>
+                {' '}
+                <a
+                  className="text-brand underline-offset-2 hover:underline"
+                  href={i.evidenceUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  查看证据 ↗
+                </a>
+              </>
+            )}
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** 三项核心评分并排卡片（不合成总分） */
+export function ScoreTrio({
+  authenticity,
+  value,
+  grade,
+  risk,
+  onExplain,
+}: {
+  authenticity: number;
+  value: number;
+  grade: string;
+  risk: RiskLevel;
+  onExplain?: () => void;
+}) {
+  return (
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="card">
+        <p className="text-xs text-ink-soft">真实性置信度</p>
+        <p className="mt-1 text-2xl font-semibold text-ink">
+          {authenticity}
+          <span className="ml-1 text-sm font-normal text-ink-faint">/ 100</span>
+        </p>
+        <p className="mt-1 text-xs text-ink-soft">{AUTH_LEVEL(authenticity)}</p>
+      </div>
+      <div className="card">
+        <p className="text-xs text-ink-soft">参与价值</p>
+        <p className="mt-1 text-2xl font-semibold text-ink">
+          {value}
+          <span className="ml-1 text-sm font-normal text-ink-faint">/ 100</span>
+        </p>
+        <p className="mt-1 text-xs text-ink-soft">等级 {grade}</p>
+      </div>
+      <div className="card">
+        <p className="text-xs text-ink-soft">风险等级</p>
+        <p className="mt-1.5">
+          <RiskBadge risk={risk} />
+        </p>
+        <p className="mt-1 text-xs leading-relaxed text-ink-soft">{RISK_REASON[risk]}</p>
+      </div>
+      {onExplain && (
+        <button
+          type="button"
+          onClick={onExplain}
+          className="justify-self-start text-xs text-brand underline-offset-2 hover:underline sm:col-span-3"
+        >
+          查看评分明细 ↓
+        </button>
+      )}
+      <span className="hidden">{RISK_LABEL[risk]}</span>
+    </div>
+  );
+}

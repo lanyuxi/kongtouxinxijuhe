@@ -1,0 +1,85 @@
+# DropLens 空投雷达 · CNB 流水线配置
+#
+# 对应方案文档第 21 / 34 / 35 章：
+#   - 每 3 小时自动抓取一次（避开整点，减少任务集中）
+#   - 单来源失败被隔离，不清空已有数据（第 28 章）
+#   - 数据以 JSON 提交回仓库，无需数据库与服务端
+#   - 校验不通过时拒绝提交数据（第 35 章验收标准）
+#
+# 说明：本仓库为纯静态项目，构建产物（dist）通过 Release 制品归档发布，
+# 可直接下载 / 挂载到任意静态托管，不需要服务器。
+
+# ---------- 校验片段（PR 与 push 复用） ----------
+.pr-validate: &pr-validate
+  - name: validate
+    script:
+      - npm ci --no-audit --no-fund
+      - npm run pipeline
+      - npm test
+      - npm run validate
+      - npm run build
+
+main:
+  push:
+    - name: 构建与校验
+      docker:
+        image: node:22
+      stages:
+        - name: install
+          script: npm ci --no-audit --no-fund
+        - name: pipeline-data
+          script: npm run pipeline
+        - name: unit-test
+          script: npm test
+        - name: validate-data
+          script: npm run validate
+        - name: build-web
+          script: npm run build
+        - name: publish-release
+          type: git:release
+          options:
+            tag: web-$CNB_COMMIT_SHORT
+            description: |
+              DropLens 静态站点构建产物
+              提交：$CNB_COMMIT
+              分支：$CNB_BRANCH
+              构建号：$CNB_BUILD_ID
+              （构建目录：dist/）
+
+  pull_request:
+    - name: PR 校验
+      docker:
+        image: node:22
+      stages: *pr-validate
+
+  # ---------- 定时抓取：每 3 小时（非整点，减少任务集中） ----------
+  "crontab: 17 */3 * * *":
+    - name: 定时抓取空投情报
+      docker:
+        image: node:22
+      env:
+        # 由流水线自身以仓库身份提交数据（CNB_TOKEN 为平台注入的构建凭证）
+        GIT_AUTHOR_NAME: cnb-data-bot
+        GIT_AUTHOR_EMAIL: cnb-data-bot@noreply.cnb.cool
+      stages:
+        - name: install
+          script: npm ci --no-audit --no-fund
+        - name: fetch-and-score
+          script: npm run pipeline
+        - name: unit-test
+          script: npm test
+        - name: validate-data
+          script: npm run validate
+        - name: commit-data
+          script:
+            # 只有数据真正变化时才提交，避免无意义提交
+            - |
+              if git diff --quiet -- data/; then
+                echo "数据无变化，跳过提交"
+              else
+                git config user.name "$GIT_AUTHOR_NAME"
+                git config user.email "$GIT_AUTHOR_EMAIL"
+                git add data/
+                git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
+                git push origin "HEAD:$CNB_BRANCH"
+              fi
