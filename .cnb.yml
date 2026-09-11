@@ -83,3 +83,24 @@ main:
                 git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
                 git push origin "HEAD:$CNB_BRANCH"
               fi
+
+# ---------- 云原生开发：仅预览模式 ----------
+# 点击仓库页面右上角「云原生开发」按钮，即可直接打开站点预览页面。
+# 对应方案文档「无需服务器、纯静态交付」：预览同样不引入常驻服务，
+# 由本地静态服务器托管构建产物 dist/，仅用于预览，不对外提供服务。
+$:
+  vscode:
+    - docker:
+        image: node:22
+      services:
+        - name: vscode
+          options:
+            onlyPreview: true
+            launch: node .ide/preview-server.mjs
+            keepAliveTimeout: 30m
+      stages:
+        - name: build-preview
+          script:
+            - npm ci --no-audit --no-fund
+            - npm run pipeline
+            - npm run build
