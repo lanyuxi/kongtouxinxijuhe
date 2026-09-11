@@ -42,13 +42,13 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
-      "fetched_at": "2026-09-11T16:17:09.656Z"
+      "fetched_at": "2026-09-11T19:17:10.096Z"
     },
     {
       "type": "quest_platform",
       "name": "Galxe",
       "url": "https://app.galxe.com/quest/explore/all",
-      "fetched_at": "2026-09-11T16:17:09.658Z"
+      "fetched_at": "2026-09-11T19:17:10.097Z"
     }
   ],
   "evidence": [
@@ -367,6 +367,6 @@
   ],
   "created_at": "2026-09-11T14:29:52.345Z",
   "discovered_at": "2026-09-11T14:29:52.345Z",
-  "last_checked_at": "2026-09-11T16:17:09.658Z",
-  "last_changed_at": "2026-09-11T16:17:09.659Z"
+  "last_checked_at": "2026-09-11T19:17:10.097Z",
+  "last_changed_at": "2026-09-11T19:17:10.099Z"
 }
