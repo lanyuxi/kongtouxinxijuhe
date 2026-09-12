@@ -1,4 +1,4 @@
-# DropLens 空投雷达 · GitHub Actions 部署流水线
+# 空投情报平台 · GitHub Actions 部署流水线
 #
 # 作用：
 #   1) 拉取最新代码 → 安装依赖 → 抓取数据 → 跑单测 → 跑发布前校验 → 构建 dist/

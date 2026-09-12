@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { BrandMark, BrandMarkSmall } from './BrandMark';
 
 export type NavKey = 'latest' | 'hot' | 'potential' | 'claim' | 'watchlist';
 
@@ -13,11 +14,9 @@ const NAV: { key: NavKey; label: string; href: string }[] = [
 export function Logo() {
   return (
     <a href="#/latest" className="group flex items-center gap-3 no-underline">
-      <span className="relative grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-400 via-brand-600 to-accent text-base font-bold tracking-tight text-white shadow-glow">
-        DL
-      </span>
+      <BrandMark />
       <span className="flex flex-col leading-none">
-        <span className="text-lg font-semibold tracking-tight text-ink">DropLens</span>
+        <span className="text-lg font-semibold tracking-tight text-ink">空投情报平台</span>
         <span className="mt-1 hidden text-xs font-normal tracking-wide text-ink-faint sm:block">
           看清每一个空投
         </span>
@@ -57,10 +56,8 @@ export function Footer({ updatedAt }: { updatedAt?: string }) {
       <div className="shell grid gap-8 py-12 text-sm leading-relaxed text-ink-soft lg:grid-cols-[minmax(0,1fr)_auto]">
         <div>
           <p className="flex items-center gap-2.5 text-base font-semibold tracking-tight text-ink">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 text-xs font-bold text-white">
-              DL
-            </span>
-            DropLens · 空投雷达与决策助手
+            <BrandMarkSmall />
+            空投情报平台
           </p>
           <p className="mt-4 max-w-3xl">
             本站仅聚合公开信息并提供证据置信度、风险等级与参与价值参考，
