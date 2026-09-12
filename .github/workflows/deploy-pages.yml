@@ -51,6 +51,11 @@ jobs:
       - name: 抓取并生成数据
         run: npm run pipeline
 
+      # 列表页要求「每个项目都有真实官方图标」，
+      # 这里补齐 public/logos 后再跑覆盖率校验，缺图会直接让部署失败。
+      - name: 抓取项目 Logo
+        run: npm run logos
+
       - name: 单元测试
         run: npm test
 
@@ -66,8 +71,13 @@ jobs:
         run: |
           test -f dist/index.html
           test -f dist/data/airdrops.json
+          test -f dist/data/logo-map.json
           test -d dist/data/details
-          echo "dist/ 就绪，文件数：$(find dist -type f | wc -l)"
+          test -d dist/logos
+          # 图标数量必须与数据条目一致，避免线上出现破图
+          COUNT=$(node -e "process.stdout.write(String(require('./data/logo-map.json').total))")
+          test "$(ls dist/logos | wc -l)" -ge "$COUNT"
+          echo "dist/ 就绪，文件数：$(find dist -type f | wc -l)，图标 $COUNT 个"
 
       - name: 配置 Pages
         uses: actions/configure-pages@v5

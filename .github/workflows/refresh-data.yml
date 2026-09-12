@@ -54,6 +54,10 @@ jobs:
       - name: 抓取并生成数据
         run: npm run pipeline
 
+      # 新增项目要在这里补图标；已抓过的直接复用本地文件，不会重复下载。
+      - name: 抓取项目 Logo
+        run: npm run logos
+
       - name: 单元测试
         run: npm test
 
@@ -84,7 +88,9 @@ jobs:
           fi
 
           echo "changed=true" >> "$GITHUB_OUTPUT"
-          git add data/
+          # 图标要跟数据一起提交：新增项目的 logo 必须进仓库，
+          # 否则线上列表会出现只有数据、没有图标的破图。
+          git add data/ public/logos
           git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
           echo "已提交并推送数据更新：$SUMMARY"

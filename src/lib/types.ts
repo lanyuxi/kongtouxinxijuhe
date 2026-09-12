@@ -186,6 +186,16 @@ export interface AirdropProject {
     galxe?: string;
   };
 
+  /**
+   * 项目官方 logo 的站内地址，例如 "./logos/aave-v3.png"。
+   *
+   * 由 scripts/logo/fetch-logos.mjs 抓取、public/logos/ 随仓库发布，
+   * 前端在 loadDataset 时从 data/logo-map.json 贴到项目上。
+   * 为什么不用外链：外链图标一旦对方限流或被墙，列表页会整排变破图；
+   * 站内文件保证离线、稳定、可缓存，也不产生任何第三方请求。
+   */
+  logo?: string;
+
   /** 项目基础面信息 */
   meta?: {
     funding?: string;
@@ -275,6 +285,18 @@ export interface Dataset {
   /** 今日新增数量 */
   new_today: number;
   projects: AirdropProject[];
+}
+
+/**
+ * 项目 logo 映射文件（data/logo-map.json）。
+ * logos：slug → 站内相对路径（相对站点根），例如 "logos/aave-v3.png"。
+ * sources：slug → 该图标实际下载自哪个地址，便于人工复核图标归属。
+ */
+export interface LogoMap {
+  updated_at: string;
+  total: number;
+  logos: Record<string, string>;
+  sources?: Record<string, string>;
 }
 
 /** 各来源实时抓取快照的索引（供「一键更新」判断数据新鲜度） */

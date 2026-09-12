@@ -11,7 +11,8 @@
     "sync-data": "node scripts/sync-data.mjs",
     "pipeline": "tsx scripts/pipeline.ts",
     "test": "vitest run",
-    "validate": "tsx scripts/validate.ts"
+    "validate": "tsx scripts/validate.ts",
+    "logos": "node scripts/logo/fetch-logos.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

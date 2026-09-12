@@ -11,6 +11,7 @@ import {
 } from '../lib/labels';
 import { StatusBadge, RiskBadge } from '../components/Badge';
 import { ScoreBreakdown } from '../components/ScoreCard';
+import { ProjectLogo } from '../components/ProjectLogo';
 import type { ProgressStatus } from '../lib/store';
 import { PROGRESS_LABEL } from '../lib/store';
 
@@ -156,9 +157,8 @@ export function DetailView({
 
         <div className="relative flex flex-col gap-8 p-7 sm:p-9 lg:flex-row lg:items-start lg:gap-10">
           <div className="flex items-center gap-5 lg:block">
-            <div className="grid h-20 w-20 shrink-0 place-items-center rounded-3xl bg-gradient-to-br from-brand-400 via-brand-600 to-accent text-3xl font-bold text-white shadow-glow">
-              {p.name.slice(0, 2).toUpperCase()}
-            </div>
+            {/* 详情页同样使用项目真实官方 Logo，与列表页保持一致的品牌识别 */}
+            <ProjectLogo project={p} size="lg" className="shadow-glow" />
             <div className="lg:hidden">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">{CATEGORY_LABEL[p.category]}</p>
               <p className="mt-1 text-sm text-ink-soft">

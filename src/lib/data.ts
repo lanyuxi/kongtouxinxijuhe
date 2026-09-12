@@ -6,7 +6,7 @@
  * - 说明：不调用任何外部 API，浏览器端不出现任何 Secret（不变量 5）
  */
 
-import type { AirdropProject, Dataset, SourceHealthFile } from './types';
+import type { AirdropProject, Dataset, LogoMap, SourceHealthFile } from './types';
 
 /**
  * 站点可能部署在子路径下，因此使用相对路径加载。
@@ -19,12 +19,42 @@ async function fetchJson<T>(file: string): Promise<T> {
   return (await res.json()) as T;
 }
 
+/**
+ * 项目 logo 映射（data/logo-map.json）。
+ * 单独一张表而不是塞进每个项目里，原因有两个：
+ *   1. 抓取脚本重跑时只需要改这一份文件，不会污染 airdrops.json 的「实质变化」判定；
+ *   2. 图标是站点资源、不是情报内容，混进数据里会让 diff 变得难以阅读。
+ */
+export async function loadLogoMap(): Promise<LogoMap | null> {
+  try {
+    const map = await fetchJson<LogoMap>('logo-map.json');
+    return map && typeof map.logos === 'object' ? map : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 把 logo 路径贴到项目上。
+ *
+ * 路径处理成「相对站点根」的绝对形式（BASE + logos/xxx）。
+ * 为什么要先转成绝对路径：详情页 / 列表页都在 hash 路由里，
+ * 相对路径在不同层级下解析结果不稳定；统一成绝对路径后
+ * <img src> 在任何页面下都指向同一个文件。
+ */
 export async function loadDataset(): Promise<Dataset> {
-  const dataset = await fetchJson<Dataset>('airdrops.json');
+  const [dataset, logoMap] = await Promise.all([fetchJson<Dataset>('airdrops.json'), loadLogoMap()]);
   if (!dataset || !Array.isArray(dataset.projects)) {
     throw new Error('数据格式不正确');
   }
-  return dataset;
+  if (!logoMap) return dataset;
+
+  const logos = logoMap.logos;
+  const projects = dataset.projects.map((p) => {
+    const file = logos[p.slug];
+    return file ? { ...p, logo: `${BASE}${file}` } : p;
+  });
+  return { ...dataset, projects };
 }
 
 export async function loadSourceHealth(): Promise<SourceHealthFile | null> {

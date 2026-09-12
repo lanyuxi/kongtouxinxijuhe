@@ -23,10 +23,12 @@ await mkdir(dest, { recursive: true });
 //   details/           —— 详情页分片
 //   live/              —— 实时抓取快照，供「一键更新」展示来源侧最新条目
 //   refresh-status.json—— 抓取任务状态，供「一键更新」轮询进度
+//   logo-map.json      —— 项目 logo 映射（图标文件本身在 public/logos/）
 const ENTRIES = [
   'airdrops.json',
   'source-health.json',
   'refresh-status.json',
+  'logo-map.json',
   'details',
   'live',
 ];

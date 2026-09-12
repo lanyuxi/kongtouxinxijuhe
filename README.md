@@ -213,6 +213,10 @@ npm run dev      # http://localhost:5173
 │   ├── refresh.mjs            # 抓取任务外层守卫（保证状态一定落盘）
 │   ├── validate.ts            # 独立校验脚本（可作 CI 门禁）
 │   ├── sync-data.mjs          # 产物数据同步到 public/
+│   ├── logo/                  # 项目官方 logo 抓取
+│   │   ├── fetch-logos.mjs    # 下载图标到 public/logos/ 并生成 data/logo-map.json
+│   │   ├── sources.mjs        # 图标来源 / 域名判定 / 图片格式与占位图识别
+│   │   └── mapping.json       # 人工登记的域名修正与低分辨率例外
 │   ├── fetch/                 # 数据源适配器（每个来源独立、可失败）
 │   │   ├── index.ts
 │   │   ├── airdrops-io.ts     # Airdrops.io 分类页 + 详情页真实解析
@@ -236,14 +240,18 @@ npm run dev      # http://localhost:5173
 │   ├── airdrops.json          # 列表数据
 │   ├── source-health.json     # 数据源健康状态
 │   ├── refresh-status.json    # 抓取任务状态（供前端轮询）
+│   ├── logo-map.json          # 项目 logo 映射（slug → public/logos/ 下的文件）
 │   ├── details/*.json         # 项目详情分片
 │   ├── live/*.json            # 各来源实时快照 + 索引
 │   └── seed/                  # 唯一人工维护的输入
 │       └── official-profiles.json   # 官方链接档案（人工核实）
-├── public/                    # 静态资源（favicon 等）
+├── public/
+│   ├── logos/                 # 项目官方图标（随仓库发布，前端不引用任何外链）
+│   └── favicon.svg
 └── tests/                     # 引擎单测
     ├── engine.test.ts         # 21 项：评分 / 风险 / 校验 / 不变量
     ├── refresh.test.ts        # 17 项：新鲜度 / 清理策略 / 操作摘要 / 类目归一
+    ├── logos.test.ts          # 9 项：logo 覆盖率 / 占位图识别 / 官网域名判定
     └── preview-server.test.ts # 10 项：预览服务器路由与安全
 ```
 
@@ -297,6 +305,7 @@ npm run validate
 | `npm run build` | 同步数据 + TypeScript 编译 + Vite 构建到 `dist/` |
 | `npm run preview` | 用 Vite 预览 `dist/` 构建产物 |
 | `npm run pipeline` | 跑一次完整数据流水线，写出 `data/*.json` |
+| `npm run logos` | 抓取项目官方 logo 到 `public/logos/`，生成 `data/logo-map.json`（已存在的图标自动复用，加 `--force` 全量重抓） |
 | `npm run sync-data` | 把 `data/` 的产物 JSON 复制到 `public/data/` |
 | `npm test` | Vitest 跑全部单测 |
 | `npm run validate` | 发布前校验 + Secret 扫描（可作为 CI 门禁） |
@@ -396,10 +405,12 @@ Write JSON       airdrops.json + details/*.json
 | `data/live/live-index.json` | 产物 | 各来源上次抓取时间与条数，供「一键更新」判断新鲜度 |
 | `data/live/<source>.json` | 产物 | 各来源归一化条目快照（不落原始 HTML，体积小、无敏感信息） |
 | `data/refresh-status.json` | 产物 | 最近一次抓取任务的运行状态，供前端轮询与失败展示 |
+| `data/logo-map.json` | 产物 | 项目 logo 映射（`slug → logos/xxx.png`，附下载来源） |
 | `data/seed/official-profiles.json` | 输入 | **唯一可信的官方链接来源**，人工维护 |
 
 > `data/seed/` 不会被打包进前端产物，只同步 `airdrops.json` / `source-health.json` /
-> `refresh-status.json` / `details/` / `live/`。
+> `refresh-status.json` / `logo-map.json` / `details/` / `live/`。
+> 图标文件在 `public/logos/`，与数据分开存放（图标是站点资源，不是情报内容）。
 
 ---
 
@@ -466,8 +477,10 @@ Write JSON       airdrops.json + details/*.json
 5. 浏览器端永远不能出现 API Secret
 6. 任何页面不得要求用户输入助记词 / 私钥
 7. 系统只能表达证据置信度 / 风险评估 / 参与价值，不得承诺收益或安全性
+8. 列表页每个项目都必须显示**真实的项目官方图标**，不得出现缺省图或字母图
+   （由 `npm run validate` 与 `tests/logos.test.ts` 强制校验，漏图直接让 CI 失败）
 
-这些不变量由 `npm test`（31 个单测）与 `npm run validate` 共同保障。
+这些不变量由 `npm test`（75 个单测）与 `npm run validate` 共同保障。
 
 ---
 
@@ -812,7 +825,7 @@ CNB 抓完会同步到 GitHub；即使同步链路中断，GitHub 侧也会自�
 ```bash
 git checkout -b feat/your-feature
 # 开发…
-npm run pipeline && npm test && npm run validate && npm run build
+npm run pipeline && npm run logos && npm test && npm run validate && npm run build
 git add -A
 git commit -m 'feat: 你的改动'
 git push origin HEAD
@@ -825,6 +838,9 @@ git push origin HEAD
 - 新增数据源必须是**独立适配器**，并具备失败隔离能力
 - 提交前请确保 `npm test` 与 `npm run validate` 全部通过
 - 不要在前端代码中引入任何密钥
+- 新增项目后请执行 `npm run logos` 补图标：
+  缺图标会让 `npm run validate` 失败（这是刻意的，避免上线后出现缺省图）
+- 项目官网被数据源抓错时，在 `scripts/logo/mapping.json` 登记正确域名，不要改抓取逻辑
 
 ---
 

@@ -4,7 +4,7 @@
  * 用法：npm run validate
  */
 
-import { readFile, readdir } from 'node:fs/promises';
+import { access, readFile, readdir, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import type { AirdropProject, Dataset } from '../src/lib/types';
@@ -46,6 +46,12 @@ async function main() {
   const errors = [...result.errors, ...secrets.map((s) => `Secret 泄漏：${s}`)];
   const warnings = [...result.warnings];
 
+  // Logo 覆盖率校验：列表页不允许出现缺省图 / 字母图。
+  // 校验对象是 data/logo-map.json 与实际文件是否一一对应，
+  // 而不是「抓取脚本跑了没」—— 只有文件真的存在，前端才不会破图。
+  const logoErrors = await validateLogoCoverage(dataset.projects, warnings);
+  errors.push(...logoErrors);
+
   console.log(`\n数据集：${dataset.projects.length} 个项目`);
   console.log(`校验通过：${result.ok && errors.length === 0 ? '是' : '否'}`);
   if (warnings.length) {
@@ -62,6 +68,56 @@ async function main() {
   } else {
     console.log('\n✓ 全部检查通过');
   }
+}
+
+/**
+ * 校验每个项目都有真实、可用的 logo 文件。
+ *
+ * 为什么作为发布门禁：一旦某个项目漏抓图标，
+ * 前端会退化成「文字块 / 缺省图」，正是本次需求要消除的情况。
+ * 因此在 CI 里直接拒绝发布，而不是等用户看到破图。
+ */
+async function validateLogoCoverage(projects: AirdropProject[], warnings: string[]): Promise<string[]> {
+  const errors: string[] = [];
+  const mapFile = path.join(ROOT, 'data', 'logo-map.json');
+  let map: { logos?: Record<string, string> } | null = null;
+  try {
+    map = JSON.parse(await readFile(mapFile, 'utf8'));
+  } catch {
+    errors.push('缺少 data/logo-map.json：无法确认 logo 覆盖率，请先执行 npm run logos');
+    return errors;
+  }
+  const logos = map?.logos ?? {};
+  const missing: string[] = [];
+  const broken: string[] = [];
+
+  for (const p of projects) {
+    const rel = logos[p.slug];
+    if (!rel) {
+      missing.push(p.slug);
+      continue;
+    }
+    const file = path.join(ROOT, 'public', rel);
+    try {
+      await access(file);
+      const info = await stat(file);
+      if (info.size < 200) broken.push(`${p.slug}（文件过小 ${info.size}B，疑似占位图）`);
+    } catch {
+      broken.push(`${p.slug}（文件不存在：${rel}）`);
+    }
+  }
+
+  if (missing.length) {
+    errors.push(`以下项目缺少 logo 映射，会导致列表页出现缺省图：${missing.join('、')}`);
+  }
+  if (broken.length) {
+    errors.push(`以下项目的 logo 文件不可用：${broken.join('、')}`);
+  }
+  const extra = Object.keys(logos).filter((slug) => !projects.some((p) => p.slug === slug));
+  if (extra.length) {
+    warnings.push(`logo-map.json 中存在已下架项目的残留条目：${extra.join('、')}`);
+  }
+  return errors;
 }
 
 main().catch((e) => {

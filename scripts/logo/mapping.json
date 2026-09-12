@@ -1,0 +1,44 @@
+{
+  "_comment": "人工维护的 logo 映射。仅在没有可靠自动来源时使用；key 为项目 slug。",
+  "_fields": {
+    "domain": "项目官方域名（favicon 抓取用）",
+    "llama": "DefiLlama 协议 slug（图标库 icons.llamao.fi 用）",
+    "note": "为什么手填这条"
+  },
+  "map": {
+    "beldex": {
+      "domain": "beldex.io",
+      "note": "官网根域是 beldex.io；数据源抓到的是 quest.beldex.io，其 favicon 只有 16px"
+    },
+    "nowa": {
+      "domain": "nowa.finance",
+      "note": "应用页 app.nowa.finance 只提供 18px favicon，根域提供 SVG 官方标"
+    },
+    "voice": {
+      "domain": "voice.fun",
+      "note": "voice.fun 只有 16px favicon；改用 DefiLlama 图标库（如无则回退 favicon）",
+      "llama": "voice"
+    },
+    "vangrid": {
+      "domain": "vangrid.io",
+      "note": "hub.vangrid.io 只有 16px favicon；根域提供 1500px 官方标"
+    },
+    "rockawayx": {
+      "domain": "rockawayx.com",
+      "note": "数据源抓到的是 DefiLlama 页面，官网域名为 rockawayx.com"
+    },
+    "noise": {
+      "domain": "noise.xyz",
+      "note": "数据源抓到的是 Airdrops.io 聚合页；项目官方域名为 noise.xyz"
+    },
+    "reels": {
+      "domain": "reels.gg",
+      "note": "数据源抓到的是营销短链 click.trkreels.com，无稳定官网；使用项目实际域名 reels.gg"
+    }
+  },
+  "_lowres_policy": "低分辨率兜底：当所有来源都不足 24px 时（这些是数据源误抓的营销页 / 任务页，官网本身就不存在可靠 favicon），允许使用官网最小的官方 favicon，并在此登记，保证列表页永远不出现缺省图或字母图。",
+  "_lowres": {
+    "voice": "voice.fun 仅提供 16px favicon；DefiLlama 无该协议图标",
+    "reels": "数据源抓到的是营销短链 click.trkreels.com，无稳定官网；reels.gg 的 32px 官方 favicon"
+  }
+}
