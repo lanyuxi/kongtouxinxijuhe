@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/voice/",
-      "fetched_at": "2026-09-12T19:12:09.717Z"
+      "fetched_at": "2026-09-12T20:12:10.554Z"
     }
   ],
   "evidence": [
@@ -366,7 +366,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-12T19:12:09.717Z",
+  "last_checked_at": "2026-09-12T20:12:10.554Z",
   "last_changed_at": "2026-09-12T06:08:39.056Z",
   "sourcedSteps": [
     {
