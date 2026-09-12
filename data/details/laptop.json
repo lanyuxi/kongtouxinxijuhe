@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/laptop/",
-      "fetched_at": "2026-09-12T10:42:11.404Z"
+      "fetched_at": "2026-09-12T11:12:09.345Z"
     }
   ],
   "evidence": [
@@ -337,7 +337,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-12T10:42:11.404Z",
+  "last_checked_at": "2026-09-12T11:12:09.345Z",
   "last_changed_at": "2026-09-12T06:08:39.056Z",
   "sourcedSteps": [
     {
