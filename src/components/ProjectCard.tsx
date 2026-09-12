@@ -4,29 +4,39 @@ import { operationSummary } from '../lib/tasks';
 import { ProjectLogo } from './ProjectLogo';
 
 /**
- * 项目卡片。
+ * 项目卡片（紧凑竖排版）。
  *
- * 视觉规范来自用户提供的设计稿（Group 4）：
+ * 用户要求列表从「一行 2 个」改为「一行 4 个」：
+ *   1440 视口下每列只有约 325px，1920 下也只有 365px（外壳有 1600px 上限）。
+ *   旧版卡片是按 590–750px 宽设计的（56px 图标、右上角两个按钮、
+ *   独立的操作行、单行底栏），直接塞进 325px 必然溢出或截断。
+ *   因此改为「竖排紧凑卡片」：
  *
- *   ┌──────────────────────────────────────────────────────────┐
- *   │  ┌──────┐  Aave Horizon RWA                    ☆   ↗    │
- *   │  │ logo │  🖿 操作：存入资产、借出资产、保持健康度          │
- *   │  └──────┘                                                │
- *   │  ────────────────────────────────────────────────────    │
- *   │  潜在空投   以太坊 Ethereum   风险：低   价值：C   4 分钟前验证 › │
- *   └──────────────────────────────────────────────────────────┘
+ *   ┌──────────────────────────────┐
+ *   │ ┌────┐  Aave V3          ☆ ↗ │  ← 40px 图标 + 名称（最多两行）+ 右上角按钮
+ *   │ │logo│  潜在空投             │  ← 状态彩色文字，无底色
+ *   │ └────┘                       │
+ *   │ 操作：存入资产、借出资产       │  ← 单行省略，title 保留完整文案
+ *   │ ──────────────────────────── │
+ *   │ 以太坊 Ethereum 风险：低 价值：C │  ← 底栏第一行：吃满宽度，不省略
+ *   │ 3 分钟前验证               › │  ← 底栏第二行：时间 + 进入提示
+ *   └──────────────────────────────┘
  *
- * 与设计稿一致的关键约束：
- *   1. 图标是**大号圆角方块**（56px），项目名的水平中线与图标中线对齐；
- *   2. 收藏 / 前往官网是**右上角两个圆形轻按钮**，不带文字；
- *   3. 「操作：…」只有一行，前缀是一个小图标，不是文字标签；
- *   4. 底栏是**一条分隔线上的单行元信息**，左到右依次为
- *      状态（彩色文字，无底色）→ 公链 → 风险 → 价值 → 相对验证时间 + ›；
- *   5. 整卡可点进入详情（原生 <a>），卡片本身是白底细边框、
- *      圆角约 12px、几乎无阴影，只有 hover 才轻微抬起。
+ * 为什么底栏拆两行：
+ *   卡片内宽只有约 291px，而「公链 + 风险 + 价值 + 时间」实测需要约 360px。
+ *   实测踩过的坑：挤在一行时 flex 会把公链压到 53px（`以太坊 Ethereum`
+ *   实际需要 115px），公链只剩「以太...」，而时间却仍占满 92px —— 信息全丢。
+ *   因此把信息密度最高的三项放第一行吃满宽度，时间单独放第二行。
+ *
+ * 沿用的既有约束：
+ *   1. 图标一律是项目真实官方 Logo，不做字母兜底（缺图就露出空位，便于发现）；
+ *   2. 卡片整体是原生 <a>，支持中键 / 新标签页 / Tab 聚焦；
+ *   3. 收藏与「前往官网」是主链接之外的独立控件，点击不触发卡片跳转
+ *      （<a> 里嵌 <button> 是非法 HTML，浏览器会把按钮拆出去导致布局错乱）；
+ *   4. 卡片用 flex + h-full 拉齐高度，同排不会一高一矮。
  */
 
-/** 状态 → 底栏文字色（设计稿里状态是彩色文字，不是色块） */
+/** 状态 → 文字色（设计稿里状态是彩色文字，不是色块） */
 const STATUS_TONE: Record<AirdropProject['status'], string> = {
   new: 'text-brand',
   potential: 'text-warn',
@@ -35,7 +45,7 @@ const STATUS_TONE: Record<AirdropProject['status'], string> = {
   ended: 'text-ink-faint',
 };
 
-/** 风险 → 底栏文字色 */
+/** 风险 → 文字色 */
 const RISK_TONE: Record<AirdropProject['scores']['risk'], string> = {
   low: 'text-ok',
   medium: 'text-warn',
@@ -55,20 +65,21 @@ export function ProjectCard({
   const p = project;
   const chain = p.chains[0] ? CHAIN_LABEL[p.chains[0]] : '';
   const href = `#/project/${p.slug}`;
-  // 设计稿里「操作：」后面是一行逗号分隔的动作短语
   const actions = operationSummary(p).join('、');
+  const actionText = actions ? `操作：${actions}` : '操作：查看项目详情';
 
   return (
-    <article className="group relative rounded-card border border-line bg-card transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card">
-      {/* 右上角圆形轻按钮：收藏 + 前往官网 */}
-      <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
+    <article className="group relative flex h-full flex-col rounded-card border border-line bg-card p-4 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card">
+      {/* 右上角控件：必须位于主链接之外，否则点击会连带触发卡片跳转
+          （<a> 里嵌 <button> 属于非法 HTML，浏览器会把它拆出来，布局会错乱） */}
+      <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5">
         <button
           type="button"
           onClick={() => onToggleFavorite(p.slug)}
           aria-pressed={favorited}
           aria-label={favorited ? '取消收藏' : '收藏项目'}
           title={favorited ? '取消收藏' : '收藏项目'}
-          className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border text-sm transition duration-200 ${
+          className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border text-xs transition duration-200 ${
             favorited
               ? 'border-brand/40 bg-brand-50 text-brand-600'
               : 'border-line bg-white text-ink-faint hover:border-brand/40 hover:text-brand-600'
@@ -83,80 +94,67 @@ export function ProjectCard({
             rel="noopener noreferrer"
             title="前往官方页面"
             aria-label={`前往 ${p.name} 官方页面`}
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-white text-sm text-ink-faint no-underline transition duration-200 hover:border-brand/40 hover:text-brand-600"
+            className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line bg-white text-xs text-ink-faint no-underline transition duration-200 hover:border-brand/40 hover:text-brand-600"
           >
             ↗
           </a>
         )}
       </div>
 
-      {/* 整卡可点：<a> 包住全部正文，原生支持中键 / 新标签页 / Tab 聚焦 */}
+      {/* 整卡可点：<a> 包住全部正文 */}
       <a
         href={href}
         aria-label={`查看 ${p.name} 详情`}
-        className="block p-5 text-inherit no-underline"
+        className="flex min-w-0 flex-1 flex-col text-inherit no-underline"
       >
-        {/* 头部：大号圆角图标 + 项目名 + 一行操作说明 */}
-        {/* 头部右侧留出两个圆形按钮的位置（约 2×32 + 间距），
-            底栏不受影响，可以吃满整卡宽度 */}
-        <div className="flex items-center gap-4 pr-20">
-          <ProjectLogo project={p} size="card" />
+        {/* 头部右侧留出两个圆形按钮的位置（2×28 + 间距 + 内边距 ≈ 76px） */}
+        <div className="flex min-w-0 items-center gap-3 pr-[4.75rem]">
+          <ProjectLogo project={p} size="sm" />
           <div className="min-w-0 flex-1">
-            <h3 className="text-lg font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-brand-600">
+            {/* 名称最多两行：4 列下长名称（如 Figure Markets Democratized Prime）
+                必须允许折行，否则只能截成一行，可读性反而更差 */}
+            <h3 className="line-clamp-2 text-base font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-brand-600">
               {p.name}
             </h3>
-            <p className="mt-1.5 flex min-w-0 items-start gap-1.5 text-sm text-ink-soft">
-              {/* 小图标 + 「操作：…」，与设计稿一致，不额外加底色 */}
-              <svg
-                aria-hidden
-                viewBox="0 0 16 16"
-                className="mt-[0.3rem] h-4 w-4 shrink-0 text-ink-faint"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M2 12.5h10.5M3.5 9.5 12 4l1.5 1.5L5 14l-2.5.5.5-2.5Z" />
-              </svg>
-              <span className="line-clamp-2">{actions ? `操作：${actions}` : '操作：查看项目详情'}</span>
-            </p>
           </div>
         </div>
 
-        {/* 底栏：一条分隔线 + 单行元信息 */}
-        {/*
-          底栏：分隔线下的单行元信息，顺序与设计稿一致 ——
-            状态 → 公链 → 风险 → 价值 →（右对齐）相对验证时间 + ›
+        {/* 状态：彩色文字，紧跟名称下方（不占右侧按钮区域，可吃满整行） */}
+        <p className={`mt-2 truncate text-xs font-medium ${STATUS_TONE[p.status]}`}>
+          {STATUS_LABEL[p.status]}
+        </p>
 
-          布局要点（实测踩过的坑）：
-            卡片在 1440 宽下是 440px，四项元信息 + 时间在部分语言下会超出。
-            若只给容器加 min-w-0，flex 会把「公链」压成 0 宽，但容器自身
-            已经被压到小于内容宽度，子元素就会**溢出卡片**并压到时间上。
-            因此这里不用「压缩单项」，而是：
-              · 左侧信息组可换行（flex-wrap），放不下时整体折到第二行；
-              · 时间永远 shrink-0 + 贴右，绝不会被左侧文字压住。
-            这样既不会溢出，也不会出现「宽度归零的隐身文字」。
-        */}
-        <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-t border-line-soft pt-3 text-sm">
-          <span className={`whitespace-nowrap font-medium ${STATUS_TONE[p.status]}`}>
-            {STATUS_LABEL[p.status]}
-          </span>
-          {chain && <span className="whitespace-nowrap text-ink-soft">{chain}</span>}
-          <span className="whitespace-nowrap text-ink-soft">
-            风险：<span className={`font-medium ${RISK_TONE[p.scores.risk]}`}>
-              {RISK_LABEL[p.scores.risk]}
+        {/* 操作：单行省略，完整文案放在 title 里，悬停可看全 */}
+        <p title={actionText} className="mt-1.5 truncate text-xs leading-relaxed text-ink-soft">
+          {actionText}
+        </p>
+
+        {/* 底栏：分隔线 + 元信息。
+            4 列下列宽只有 ~290px（卡片内宽），而「公链 + 风险 + 价值 + 时间」
+            四项实测需要 ~360px。实测踩过的坑：若把四项挤在一行，
+            flex 会把公链压成 53px（内容需 115px），于是「以太坊 Ethereum」
+            只剩「以太...」，而右侧时间仍占满 92px —— 信息全丢。
+            因此这里分成两行，且把最不关键的「相对验证时间」移到第二行，
+            让公链 / 风险 / 价值吃满整行宽度，四项信息一个都不省略。 */}
+        <div className="mt-auto border-t border-line-soft pt-2.5 text-xs">
+          <div className="flex items-center gap-2.5 text-ink-soft">
+            {chain && <span className="truncate">{chain}</span>}
+            <span className="shrink-0 whitespace-nowrap">
+              风险：
+              <span className={`font-medium ${RISK_TONE[p.scores.risk]}`}>
+                {RISK_LABEL[p.scores.risk]}
+              </span>
             </span>
-          </span>
-          <span className="whitespace-nowrap text-ink-soft">
-            价值：<span className="font-medium text-ink">{p.scores.grade}</span>
-          </span>
-          <span className="ml-auto flex shrink-0 items-center gap-1 whitespace-nowrap text-xs text-ink-faint">
-            <span className="hidden sm:inline">{relativeTime(p.last_checked_at)}验证</span>
-            <span aria-hidden className="text-line transition-colors group-hover:text-brand-600">
+            <span className="shrink-0 whitespace-nowrap">
+              价值：<span className="font-medium text-ink">{p.scores.grade}</span>
+            </span>
+          </div>
+          <div className="mt-1 flex items-center justify-between gap-2 text-ink-faint">
+            <span className="truncate">{relativeTime(p.last_checked_at)}验证</span>
+            <span aria-hidden className="shrink-0 text-line transition-colors group-hover:text-brand-600">
               ›
             </span>
-          </span>
+          </div>
         </div>
       </a>
     </article>
