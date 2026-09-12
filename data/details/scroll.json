@@ -40,7 +40,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
-      "fetched_at": "2026-09-11T22:17:09.660Z"
+      "fetched_at": "2026-09-12T01:17:09.962Z"
     }
   ],
   "evidence": [
@@ -373,6 +373,6 @@
   ],
   "created_at": "2026-09-11T14:29:52.345Z",
   "discovered_at": "2026-09-11T14:29:52.345Z",
-  "last_checked_at": "2026-09-11T22:17:09.660Z",
-  "last_changed_at": "2026-09-11T22:17:09.663Z"
+  "last_checked_at": "2026-09-12T01:17:09.962Z",
+  "last_changed_at": "2026-09-12T01:17:09.966Z"
 }
