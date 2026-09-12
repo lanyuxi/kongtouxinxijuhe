@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/mint-io/",
-      "fetched_at": "2026-09-12T10:12:10.327Z"
+      "fetched_at": "2026-09-12T10:42:11.404Z"
     }
   ],
   "evidence": [
@@ -323,7 +323,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-12T10:12:10.327Z",
+  "last_checked_at": "2026-09-12T10:42:11.404Z",
   "last_changed_at": "2026-09-12T06:08:39.056Z",
   "sourcedSteps": [
     {
