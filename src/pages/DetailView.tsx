@@ -236,19 +236,9 @@ export function DetailView({
             </p>
           </div>
 
-          {/* 宽屏：结论 + 进度放在头部右侧，打开即可见 */}
+          {/* 宽屏：进度 + 结论放在头部右侧，打开即可见
+              （顺序为「我的参与进度」在上、「系统结论」在下，按使用频率排列） */}
           <div className="flex w-full shrink-0 flex-col gap-4 lg:w-[24rem]">
-            <div className={`rounded-2xl border p-6 ${ACTION_STYLE[p.recommendation.action]}`}>
-              <p className="text-xs font-semibold tracking-wide text-ink-soft">系统结论</p>
-              <p className="mt-2.5 flex flex-wrap items-baseline gap-2">
-                <span className={`text-3xl font-bold tracking-tight ${ACTION_TONE[p.recommendation.action]}`}>
-                  {ACTION_LABEL[p.recommendation.action]}
-                </span>
-                <span className="text-base text-ink-soft">等级 {p.scores.grade}</span>
-              </p>
-              <p className="mt-3 text-base leading-relaxed text-ink">{p.recommendation.summary}</p>
-            </div>
-
             <div className="rounded-2xl border border-line bg-page/70 p-5">
               <label className="label" htmlFor="detail-progress">
                 我的参与进度
@@ -270,6 +260,17 @@ export function DetailView({
               <p className="mt-2.5 text-sm text-ink-faint">
                 {favorited ? '进度仅保存在你的浏览器本地。' : '点击「☆ 收藏」后可记录进度。'}
               </p>
+            </div>
+
+            <div className={`rounded-2xl border p-6 ${ACTION_STYLE[p.recommendation.action]}`}>
+              <p className="text-xs font-semibold tracking-wide text-ink-soft">系统结论</p>
+              <p className="mt-2.5 flex flex-wrap items-baseline gap-2">
+                <span className={`text-3xl font-bold tracking-tight ${ACTION_TONE[p.recommendation.action]}`}>
+                  {ACTION_LABEL[p.recommendation.action]}
+                </span>
+                <span className="text-base text-ink-soft">等级 {p.scores.grade}</span>
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-ink">{p.recommendation.summary}</p>
             </div>
           </div>
         </div>
