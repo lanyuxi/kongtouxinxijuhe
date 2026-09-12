@@ -123,3 +123,12 @@ $:
             # 构建后立即校验 dist/ 就绪，失败即中断，避免预览出一个 404 空壳
             - test -f dist/index.html
             - test -f dist/data/airdrops.json
+main:
+  push:
+    - imports:
+        - https://cnb.cool/xixi2060/secrets/-/blob/main/github.yml
+      stages:
+        - name: 同步到 GitHub
+          script: |
+            git remote add gh https://x-access-token:$GITHUB_TOKEN@github.com/lanyuxi/kongtouxinxijuhe.git
+            git push gh HEAD:main
