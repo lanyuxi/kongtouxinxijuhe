@@ -21,6 +21,25 @@
 
 main:
   push:
+    # ---------- 同步到 GitHub（触发 GitHub Pages 自动部署） ----------
+    # GITHUB_TOKEN 来自密钥仓库 xixi2060/mimacangku 的 github.yml，
+    # 不落库、不写死在配置里；GitHub 令牌缺失时本流水线失败不影响其它流水线。
+    - name: 同步到 GitHub
+      docker:
+        image: node:22
+      imports:
+        - https://cnb.cool/xixi2060/mimacangku/-/blob/main/github.yml
+      stages:
+        - name: push-to-github
+          script:
+            - |
+              if [ -z "$GITHUB_TOKEN" ]; then
+                echo "未读取到 GITHUB_TOKEN，请检查密钥仓库 xixi2060/mimacangku/github.yml"
+                exit 1
+              fi
+              git remote add gh "https://x-access-token:$GITHUB_TOKEN@github.com/lanyuxi/kongtouxinxijuhe.git"
+              git push gh "HEAD:$CNB_BRANCH"
+
     - name: 构建与校验
       docker:
         image: node:22
@@ -123,12 +142,3 @@ $:
             # 构建后立即校验 dist/ 就绪，失败即中断，避免预览出一个 404 空壳
             - test -f dist/index.html
             - test -f dist/data/airdrops.json
-main:
-  push:
-    - imports:
-        - https://cnb.cool/xixi2060/secrets/-/blob/main/github.yml
-      stages:
-        - name: 同步到 GitHub
-          script: |
-            git remote add gh https://x-access-token:$GITHUB_TOKEN@github.com/lanyuxi/kongtouxinxijuhe.git
-            git push gh HEAD:main
