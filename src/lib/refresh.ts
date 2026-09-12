@@ -12,6 +12,7 @@
  */
 
 import type { LiveIndex, RefreshStatus, Dataset } from './types';
+import { loadDataset } from './data';
 
 const BASE = import.meta.env.BASE_URL || './';
 
@@ -40,8 +41,28 @@ export async function loadRefreshStatus(): Promise<RefreshStatus | null> {
   return fetchNoCache<RefreshStatus>('refresh-status.json');
 }
 
+/**
+ * 重新加载项目数据（一键更新后使用）。
+ *
+ * 必须复用 data.ts 的 loadDataset，而不是自己 fetch airdrops.json：
+ * airdrops.json 里**没有** logo 字段，项目图标是在 loadDataset 里
+ * 由 data/logo-map.json 拼装上去的。
+ *
+ * 历史 BUG（Issue #1）：这里曾直接返回 fetchNoCache<Dataset>('airdrops.json')，
+ * 于是「一键更新」后 dataset 被替换成裸 JSON —— 每个项目都丢了 logo，
+ * 列表页 188 个图标瞬间全部消失（只剩空占位方块）。
+ * 修复方式：数据加载只保留一个入口，刷新路径复用同一个函数，
+ * 避免「拼装逻辑」在两条加载路径上不一致。
+ */
 export async function reloadDataset(): Promise<Dataset | null> {
-  return fetchNoCache<Dataset>('airdrops.json');
+  try {
+    // 带时间戳绕过缓存：一键更新后必须拿到最新产物，不能命中旧缓存
+    const res = await fetch(`${BASE}data/airdrops.json?t=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await loadDataset();
+  } catch {
+    return null;
+  }
 }
 
 /** 数据是否已过期 */

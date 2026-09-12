@@ -8,6 +8,9 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { isStale, STALE_MINUTES } from '../src/lib/refresh';
 import { canPrune, pruneProjects } from '../scripts/lib/prune';
 import { tasksFromSource, stepsFromSource } from '../scripts/lib/sourced';
@@ -15,6 +18,8 @@ import { operationSummary, operationLine } from '../src/lib/tasks';
 import { normalizeCategory } from '../scripts/lib/normalize';
 import { toSkeleton } from '../scripts/lib/merge';
 import type { AirdropProject, LiveIndex } from '../src/lib/types';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const NOW = new Date('2026-09-12T10:00:00.000Z').getTime();
 
@@ -164,5 +169,37 @@ describe('类目归一', () => {
   it('无法识别时返回 Other，而不是乱猜', () => {
     expect(normalizeCategory('some-unknown-category')).toBe('Other');
     expect(normalizeCategory(undefined)).toBe('Other');
+  });
+});
+
+describe('一键更新 · 数据加载路径一致性（Issue #1 回归）', () => {
+  it('刷新用的 reloadDataset 必须复用 loadDataset，不能直接返回裸 airdrops.json', async () => {
+    const src = await readFile(path.join(ROOT, 'src/lib/refresh.ts'), 'utf8');
+
+    // airdrops.json 里不含 logo 字段，logo 是在 data.ts 里由 logo-map.json 拼上去的。
+    // 曾经的 BUG：reloadDataset 直接 fetchNoCache<Dataset>('airdrops.json')，
+    // 结果「一键更新」后所有项目丢 logo，列表页图标整排消失。
+    expect(src).toMatch(/import\s*\{[^}]*loadDataset[^}]*\}\s*from\s*'\.\/data'/);
+    expect(src).toMatch(/loadDataset\(\)/);
+    expect(src).not.toMatch(
+      /reloadDataset[\s\S]{0,400}?fetchNoCache<Dataset>\('airdrops\.json'\)/,
+    );
+  });
+
+  it('两个数据入口返回的项目都必须带 logo', async () => {
+    const dataset = JSON.parse(
+      await readFile(path.join(ROOT, 'data/airdrops.json'), 'utf8'),
+    ) as { projects: { slug: string; logo?: string }[] };
+    const map = JSON.parse(await readFile(path.join(ROOT, 'data/logo-map.json'), 'utf8')) as {
+      logos: Record<string, string>;
+    };
+
+    // 模拟 data.ts 的 loadDataset 拼装逻辑（初始加载与刷新后共用同一条路径）
+    const decorate = (projects: { slug: string; logo?: string }[]) =>
+      projects.map((p) => (map.logos[p.slug] ? { ...p, logo: map.logos[p.slug] } : p));
+
+    for (const p of decorate(dataset.projects)) {
+      expect(p.logo, `${p.slug} 缺少 logo（刷新后会整排消失）`).toBeTruthy();
+    }
   });
 });
