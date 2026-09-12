@@ -7,6 +7,7 @@
  */
 
 import type { AirdropProject, Dataset, LogoMap, SourceHealthFile } from './types';
+import { attachLogos } from './refresh';
 
 /**
  * 站点可能部署在子路径下，因此使用相对路径加载。
@@ -41,20 +42,17 @@ export async function loadLogoMap(): Promise<LogoMap | null> {
  * 为什么要先转成绝对路径：详情页 / 列表页都在 hash 路由里，
  * 相对路径在不同层级下解析结果不稳定；统一成绝对路径后
  * <img src> 在任何页面下都指向同一个文件。
+ *
+ * ⚠️ 这段逻辑必须与「一键更新」路径共用（见 lib/refresh.ts 的 attachLogos）。
+ *    历史事故：更新时只重新拉了 airdrops.json、没重新贴映射，
+ *    结果更新后整站图标全部变成空白方块。
  */
 export async function loadDataset(): Promise<Dataset> {
   const [dataset, logoMap] = await Promise.all([fetchJson<Dataset>('airdrops.json'), loadLogoMap()]);
   if (!dataset || !Array.isArray(dataset.projects)) {
     throw new Error('数据格式不正确');
   }
-  if (!logoMap) return dataset;
-
-  const logos = logoMap.logos;
-  const projects = dataset.projects.map((p) => {
-    const file = logos[p.slug];
-    return file ? { ...p, logo: `${BASE}${file}` } : p;
-  });
-  return { ...dataset, projects };
+  return attachLogos(dataset, logoMap);
 }
 
 export async function loadSourceHealth(): Promise<SourceHealthFile | null> {

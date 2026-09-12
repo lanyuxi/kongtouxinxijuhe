@@ -6,6 +6,16 @@
  *   1. public/logos/<slug>.<ext>      随仓库发布的图标文件
  *   2. data/logo-map.json             slug → 图标相对路径 的映射（供前端读取）
  *
+ * 头号铁律（这条规则来自一次真实事故）：
+ *   **已经成功抓到过的图标，绝不允许因为「本轮抓取失败」而被删除或从映射里摘掉。**
+ *   事故经过：图标抓取发生在数据落盘之后，而本轮抓取用的数据里含有旧项目
+ *   （Last Known Good），旧项目在旧数据上可能压根没有官网 / 可用域名，
+ *   于是候选 URL 全部失败 → 旧实现把它当成「孤儿图标」直接 rm 掉，
+ *   并把 slug 从 logo-map.json 里删掉。用户点一次「一键更新」，刷新两轮之后
+ *   整站图标就全没了（映射表不会撒谎：新项目不可能在几秒内冒出来）。
+ *   现在改为：本轮失败时**保留已有文件与映射**，只有确认项目真的从数据集里
+ *   消失、且该文件不是任何项目的图标时才清理。
+ *
  * 为什么把图标放进仓库而不是运行时直接引用外链：
  *   方案文档第 20 章要求「零服务器、纯静态、离线可用」。
  *   若前端直接引用 icons.llamao.fi / favicon 服务，
@@ -185,32 +195,41 @@ async function main() {
     return { slug: p.slug, name: p.name, host, llama: manual[p.slug]?.llama ?? null };
   });
 
-  const report = { generated_at: new Date().toISOString(), ok: [], fallback: [], failed: [] };
+  const report = { generated_at: new Date().toISOString(), ok: [], kept: [], failed: [] };
   const logos = {};
+  // 沿用旧图标时，来源记录也要一起沿用 —— 否则 logo-map.json 的 sources 会一轮轮被掏空，
+  // 事后想复核「这张图是从哪儿来的」就查不到了。
+  const carriedSources = {};
 
   await mapLimit(projects, 6, async (project) => {
     const { slug } = project;
 
-    // 增量模式：已有图标且文件还在，直接复用
-    if (!force && existing[slug]) {
-      const rel = existing[slug];
-      const file = path.join(OUT_DIR, path.basename(rel));
-      if (await exists(file)) {
-        logos[slug] = rel;
-        report.ok.push({ slug, url: existingMap.sources?.[slug] ?? '(cached)', cached: true });
-        return;
-      }
+    // 第一步：旧文件如果还在，无论如何先认定为「已拥有」。
+    // 注意顺序 —— 必须在抓取之前绑定，这样即使本轮抓取失败，
+    // 后面的清理逻辑也会因为它已被引用而放过它。
+    const cachedRel = existing[slug];
+    const cachedFile = cachedRel
+      ? path.join(OUT_DIR, path.basename(cachedRel))
+      : null;
+    const hasCached = cachedFile ? await exists(cachedFile) : false;
+    if (hasCached) logos[slug] = cachedRel;
+
+    // 增量模式：已有图标且文件还在，直接复用，不重新下载
+    if (!force && hasCached) {
+      const src = existingMap.sources?.[slug];
+      if (src) carriedSources[slug] = src;
+      report.ok.push({ slug, url: src ?? '(cached)', cached: true });
+      return;
     }
 
     const attempts = [];
     const candidates = [];
     if (project.llama) candidates.push(llamaIconUrl(project.llama));
     if (project.host) {
-      // Lama 图标是 DefiLlama 维护的官方 logo 镜像，优先于 favicon
       candidates.push(llamaIconUrl(slug));
       if (project.llama) candidates.pop();
+      candidates.push(...faviconUrls(project.host));
     }
-    if (project.host) candidates.push(...faviconUrls(project.host));
 
     for (const url of candidates) {
       const r = await tryCandidate(url, slug, !!manual[slug]);
@@ -224,18 +243,59 @@ async function main() {
       attempts.push(`${url} → ${r.reason}`);
     }
 
+    // 本轮没抓到：如果手上有旧图标，就保留旧的（可用性优先于「必须是最新图标」）。
+    if (hasCached) {
+      const src = existingMap.sources?.[slug];
+      if (src) carriedSources[slug] = src;
+      report.kept.push({ slug, name: project.name, url: cachedRel, source: src ?? null });
+      return;
+    }
+
     report.failed.push({ slug, name: project.name, host: project.host, attempts });
   });
 
-  // 清理孤立文件（改名 / 被 prune 掉的项目）
-  const keep = new Set(Object.values(logos).map((v) => path.basename(v)));
+  // 清理孤立文件（项目改名 / 已被 prune 掉 / 换了扩展名）。
+  // 只删「当前数据集里已不存在的 slug」的旧文件，且只删映射表里登记的旧路径，
+  // 其余情况一律保留 —— 宁可留下少量孤儿文件，也不能让正在展示的图标消失。
+  const projectSlugs = new Set(projects.map((p) => p.slug));
+  const referenced = new Set(
+    Object.values(logos).map((v) => path.basename(v)),
+  );
+  const retired = new Set(
+    Object.entries(existing)
+      .filter(([slug]) => !projectSlugs.has(slug))
+      .map(([, rel]) => path.basename(rel)),
+  );
+  const removed = [];
   for (const f of await readdir(OUT_DIR)) {
-    if (f.startsWith('.tmp-')) { await rm(path.join(OUT_DIR, f), { force: true }); continue; }
-    if (!keep.has(f)) await rm(path.join(OUT_DIR, f), { force: true });
+    if (f.startsWith('.tmp-')) {
+      await rm(path.join(OUT_DIR, f), { force: true });
+      continue;
+    }
+    if (referenced.has(f)) continue;
+    if (!retired.has(f)) continue;
+    await rm(path.join(OUT_DIR, f), { force: true });
+    removed.push(f);
   }
+  if (removed.length) console.log(`[logo] 清理已下线项目的旧图标 ${removed.length} 个`);
 
   const sortedLogos = Object.fromEntries(Object.keys(logos).sort().map((k) => [k, logos[k]]));
-  const sources = Object.fromEntries(report.ok.map((r) => [r.slug, r.url]));
+  // sources 与 logos 一样按 slug 排序输出：
+  // 并发抓取的完成顺序是不确定的，不排序会让 logo-map.json 每轮都产生
+  // 「只换了行序」的噪音 diff（连带触发一次无意义的 GitHub 推送）。
+  const mergedSources = {
+    ...carriedSources,
+    ...Object.fromEntries(report.ok.map((r) => [r.slug, r.url])),
+  };
+  // 排序基准优先跟随已有映射表的键顺序：既保证稳定（不会因为并发完成顺序抖动），
+  // 又不会因为「换了个排序方式」而在 logo-map.json 里制造整段无意义的行序 diff。
+  const sourceOrder = [
+    ...Object.keys(existingMap.sources ?? {}).filter((k) => mergedSources[k]),
+    ...Object.keys(mergedSources)
+      .filter((k) => !(k in (existingMap.sources ?? {})))
+      .sort(),
+  ];
+  const sources = Object.fromEntries(sourceOrder.map((k) => [k, mergedSources[k]]));
   const out = {
     _comment:
       '项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。',
@@ -247,7 +307,11 @@ async function main() {
   await writeFile(MAP_FILE, JSON.stringify(out, null, 2) + '\n', 'utf8');
   await writeFile(REPORT_FILE, JSON.stringify(report, null, 2) + '\n', 'utf8');
 
-  console.log(`[logo] 成功 ${report.ok.length} / ${projects.length}，失败 ${report.failed.length}`);
+  console.log(
+    `[logo] 成功 ${report.ok.length} / ${projects.length}` +
+      `${report.kept.length ? `，沿用已有 ${report.kept.length}` : ''}` +
+      `${report.failed.length ? `，失败 ${report.failed.length}` : ''}`,
+  );
   if (report.failed.length) {
     console.log('[logo] 未拿到图标的项目：');
     for (const f of report.failed) {
@@ -255,10 +319,34 @@ async function main() {
       f.attempts.slice(0, 3).forEach((a) => console.log(`      ${a}`));
     }
   }
-  if (report.failed.length) process.exitCode = 1;
+  // 覆盖率守卫：图标缺失是「列表页不得出现缺省图」这条硬需求的红线，
+  // 因此这里做最后一道兜底 —— 只要旧映射里登记过、文件也还在，就继续沿用，
+  // 避免因为一次网络抖动让整站图标集体消失。
+  if (report.failed.length) {
+    const stillMissing = report.failed.filter((f) => !logos[f.slug]);
+    if (stillMissing.length) {
+      console.error(
+        `[logo] ✗ ${stillMissing.length} 个项目既没有旧图标也没抓到新图标：` +
+          stillMissing.map((f) => f.slug).join('、'),
+      );
+      console.error('[logo] 提示：这会导致列表页出现空白图标位，请检查网络或补充 mapping.json。');
+      process.exitCode = 1;
+    }
+  }
 }
 
 main().catch((e) => {
   console.error('[logo] 失败：', e);
   process.exitCode = 1;
 });
+
+/**
+ * 说明（供后续维护者）：
+ *
+ * 本脚本与「一键更新」是两段独立链路，两者都可能让图标消失，
+ * 因此各自都做了防护，改动时请勿只改一半：
+ *   1) 抓取侧（本文件）—— 本轮抓取失败时保留已有文件与映射；
+ *   2) 前端侧（src/lib/refresh.ts）—— 更新数据时必须同时重拉 logo-map.json；
+ *   3) 构建侧（scripts/lib/ensure-logos.mjs）—— 构建前补齐缺失图标，缺图直接中断。
+ * 对应的回归测试分别在 tests/logos.test.ts 与 tests/refresh.test.ts。
+ */

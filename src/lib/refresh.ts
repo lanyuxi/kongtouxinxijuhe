@@ -11,7 +11,7 @@
  *   3. 抓取逻辑会分裂成两份（前端一份、流水线一份），长期必然不一致。
  */
 
-import type { LiveIndex, RefreshStatus, Dataset } from './types';
+import type { LiveIndex, RefreshStatus, Dataset, LogoMap } from './types';
 
 const BASE = import.meta.env.BASE_URL || './';
 
@@ -42,6 +42,39 @@ export async function loadRefreshStatus(): Promise<RefreshStatus | null> {
 
 export async function reloadDataset(): Promise<Dataset | null> {
   return fetchNoCache<Dataset>('airdrops.json');
+}
+
+/**
+ * 重新加载图标映射（data/logo-map.json）。
+ *
+ * 为什么「一键更新」必须把这张表也重新拉一遍（这是一个真实踩过的坑）：
+ *   logo 路径是在加载数据集时由 logo-map.json 贴到项目上的（见 lib/data.ts）。
+ *   而更新后新拉到的 airdrops.json 里的项目**本身不带 logo 字段**，
+ *   如果只换数据集、不重新贴映射，前端就会认为「所有项目都没有图标」，
+ *   整站 188 个图标一起变成空白方块。
+ *   用户看到的正是「点一下一键更新，所有图标都没了」。
+ *
+ *   顺带把路径规则与 lib/data.ts 保持一致（绝对路径 + BASE），
+ *   否则从 hash 路由进入详情页时相对路径会解析到错误的层级。
+ */
+export async function reloadLogoMap(): Promise<LogoMap | null> {
+  return fetchNoCache<LogoMap>('logo-map.json');
+}
+
+/**
+ * 把图标映射贴到数据集上。
+ * 与 lib/data.ts 的 loadDataset 使用同一套规则，避免两处实现漂移。
+ */
+export function attachLogos(dataset: Dataset, logoMap: LogoMap | null): Dataset {
+  if (!logoMap || typeof logoMap.logos !== 'object') return dataset;
+  const logos = logoMap.logos;
+  return {
+    ...dataset,
+    projects: dataset.projects.map((p) => {
+      const file = logos[p.slug];
+      return file ? { ...p, logo: `${BASE}${file}` } : p;
+    }),
+  };
 }
 
 /** 数据是否已过期 */
@@ -125,7 +158,9 @@ export async function runRefresh(
   }
 
   onProgress?.('正在加载最新数据…');
-  const dataset = await reloadDataset();
+  // 数据集与图标映射必须一起换新，否则更新完会把所有图标「贴丢」
+  const [rawDataset, logoMap] = await Promise.all([reloadDataset(), reloadLogoMap()]);
+  const dataset = rawDataset ? attachLogos(rawDataset, logoMap) : null;
   const changed = !!index?.updated_at && index.updated_at !== baseline;
 
   // 用「实质变化」而非「跑过一轮」来措辞：
