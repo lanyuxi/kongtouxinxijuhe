@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-09-12T01:17:09.955Z",
+  "updated_at": "2026-09-12T04:17:09.382Z",
   "sources": [
     {
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "ok": true,
       "fetched": 10,
-      "last_success_at": "2026-09-12T01:17:09.955Z",
-      "checked_at": "2026-09-12T01:17:09.955Z"
+      "last_success_at": "2026-09-12T04:17:09.382Z",
+      "checked_at": "2026-09-12T04:17:09.382Z"
     },
     {
       "name": "DefiLlama Rewards",
       "url": "https://defillama.com/rewards",
       "ok": true,
       "fetched": 5,
-      "last_success_at": "2026-09-12T01:17:09.955Z",
-      "checked_at": "2026-09-12T01:17:09.955Z"
+      "last_success_at": "2026-09-12T04:17:09.382Z",
+      "checked_at": "2026-09-12T04:17:09.382Z"
     },
     {
       "name": "Galxe",
       "url": "https://app.galxe.com/quest/explore/all",
       "ok": true,
       "fetched": 3,
-      "last_success_at": "2026-09-12T01:17:09.955Z",
-      "checked_at": "2026-09-12T01:17:09.955Z"
+      "last_success_at": "2026-09-12T04:17:09.382Z",
+      "checked_at": "2026-09-12T04:17:09.382Z"
     }
   ]
 }

@@ -39,7 +39,7 @@
       "type": "rewards_tracker",
       "name": "DefiLlama Rewards",
       "url": "https://defillama.com/rewards",
-      "fetched_at": "2026-09-12T01:17:09.963Z"
+      "fetched_at": "2026-09-12T04:17:09.390Z"
     }
   ],
   "evidence": [
@@ -358,6 +358,6 @@
   ],
   "created_at": "2026-09-11T14:29:52.346Z",
   "discovered_at": "2026-09-11T14:29:52.346Z",
-  "last_checked_at": "2026-09-12T01:17:09.963Z",
-  "last_changed_at": "2026-09-12T01:17:09.966Z"
+  "last_checked_at": "2026-09-12T04:17:09.390Z",
+  "last_changed_at": "2026-09-12T04:17:09.393Z"
 }
