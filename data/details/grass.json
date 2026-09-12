@@ -2,8 +2,8 @@
   "id": "grass",
   "name": "Grass",
   "slug": "grass",
-  "tagline": "去中心化网络带宽共享 DePIN 项目，已进入领取阶段。",
-  "category": "DePIN",
+  "tagline": "Building on the success of Stage 1, Grass has launched Stage 2 with enhanced rewards and new features.",
+  "category": "AI",
   "chains": [
     "Solana"
   ],
@@ -39,6 +39,12 @@
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "fetched_at": "2026-09-12T04:17:09.389Z"
+    },
+    {
+      "type": "airdrop_aggregator",
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io/grass/",
+      "fetched_at": "2026-09-12T06:27:14.515Z"
     }
   ],
   "evidence": [
@@ -83,6 +89,13 @@
       "note": "第三方来源仅作交叉参考，不代表官方背书"
     },
     {
+      "type": "third_party",
+      "label": "第三方来源：Airdrops.io",
+      "url": "https://airdrops.io/grass/",
+      "verified": true,
+      "note": "第三方来源仅作交叉参考，不代表官方背书"
+    },
+    {
       "type": "funding",
       "label": "融资信息可核实",
       "url": "https://grass.io",
@@ -91,10 +104,10 @@
     }
   ],
   "scores": {
-    "authenticity": 77,
-    "value": 83,
+    "authenticity": 85,
+    "value": 86,
     "risk": "high",
-    "grade": "A",
+    "grade": "S",
     "authenticityItems": [
       {
         "key": "authenticity.website",
@@ -122,9 +135,9 @@
       {
         "key": "authenticity.thirdparty",
         "label": "至少两个独立第三方来源",
-        "value": 7,
+        "value": 15,
         "max": 15,
-        "reason": "仅有 1 个第三方来源，交叉验证不足"
+        "reason": "已有 2 个独立第三方来源"
       },
       {
         "key": "authenticity.quest",
@@ -175,9 +188,9 @@
       {
         "key": "value.activity",
         "label": "真实产品 / 用户 / 活跃度",
-        "value": 12,
+        "value": 15,
         "max": 15,
-        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）"
       },
       {
         "key": "value.signal",
@@ -350,6 +363,20 @@
   ],
   "created_at": "2026-09-11T14:29:52.345Z",
   "discovered_at": "2026-09-11T14:29:52.345Z",
-  "last_checked_at": "2026-09-12T04:17:09.389Z",
-  "last_changed_at": "2026-09-12T04:17:09.393Z"
+  "last_checked_at": "2026-09-12T06:27:14.515Z",
+  "last_changed_at": "2026-09-12T06:21:44.516Z",
+  "sourcedSteps": [
+    {
+      "title": "Check Your Eligibility",
+      "body": "Open the Grass Dashboard Go to the Allocation tab Review your estimated rewards in the Rewards Checker",
+      "url": "/visit/wda3/"
+    },
+    {
+      "title": "Claim Your Rewards",
+      "body": "After 1:00 PM EST on July 22, open the Grass Dashboard Confirm your claim Rewards are deposited into your in-app, self-custodial wallet, which can be exported at any time A small network fee is deducted from claimed rewards to cover on-chain delivery; Grass does not keep this fee. Full eligibility terms are outlined in the Grass Rewards Program Terms and Conditions . Only check and claim through the official dashboard: Grass will never DM first or ask for a seed phrase or private keys.",
+      "url": "/visit/wda3/"
+    }
+  ],
+  "profile_digest": "{\"official\":{\"website\":\"https://grass.io\",\"x\":\"https://x.com/getgrass_io\",\"docs\":\"https://docs.grass.io\",\"github\":\"https://github.com/grass-fi\",\"discord\":\"https://discord.gg/grass\"},\"meta\":{\"funding\":\"累计融资约 450 万美元\",\"investors\":[\"Polychain\",\"Tribe Capital\"],\"token_status\":\"GRASS 已发行\",\"airdrop_status\":\"空投领取已开放\"},\"tasks\":[\"下载客户端\",\"连接钱包\",\"领取 GRASS\"],\"requirements\":[\"钱包\",\"浏览器扩展\"],\"evidence\":[{\"type\":\"contract\",\"label\":\"GRASS 代币合约\",\"url\":\"https://solscan.io/token/0x0\",\"verified\":true}]}",
+  "digest": "{\"category\":\"AI\",\"chains\":[\"Solana\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":32},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://grass.io\",\"verified\":true},{\"label\":\"官方文档存在\",\"type\":\"official_docs\",\"url\":\"https://docs.grass.io\",\"verified\":true},{\"label\":\"官方 GitHub 仓库\",\"type\":\"official_github\",\"url\":\"https://github.com/grass-fi\",\"verified\":true},{\"label\":\"官方 X 账号\",\"note\":\"需人工确认账号认证状态\",\"type\":\"official_x\",\"url\":\"https://x.com/getgrass_io\",\"verified\":false},{\"label\":\"官网与 Docs 链接可互相印证\",\"note\":\"仅证明官方渠道一致，不代表官方已公告空投\",\"type\":\"official_announcement\",\"url\":\"https://grass.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/latest/\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/grass/\",\"verified\":true},{\"label\":\"融资信息可核实\",\"note\":\"累计融资约 450 万美元\",\"type\":\"funding\",\"url\":\"https://grass.io\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：已开放领取。官方渠道已有明确信号。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"空投领取已开放\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"已进入领取阶段，请以官方页面为准。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"cost_usd\":0,\"description\":\"准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。\",\"done_when\":\"已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。\",\"minutes\":5,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grass.io\",\"risk\":\"low\",\"source_url\":\"https://docs.grass.io\",\"source_verified\":true,\"step\":1,\"title\":\"参与前准备\"},{\"cost_usd\":0,\"description\":\"点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。\",\"done_when\":\"页面成功打开，且域名与官方一致。\",\"minutes\":2,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grass.io\",\"risk\":\"low\",\"source_url\":\"https://grass.io\",\"source_verified\":true,\"step\":2,\"title\":\"进入官方活动页面\"},{\"cost_usd\":0,\"description\":\"在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。\",\"done_when\":\"页面右上角显示钱包地址。\",\"minutes\":2,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://grass.io\",\"risk\":\"low\",\"source_url\":\"https://grass.io\",\"source_verified\":true,\"step\":3,\"title\":\"连接钱包\"},{\"cost_usd\":0,\"description\":\"按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。\",\"done_when\":\"任务状态在官方页面显示为已完成。\",\"minutes\":20,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://grass.io\",\"risk\":\"medium\",\"source_url\":\"https://docs.grass.io\",\"source_verified\":true,\"step\":4,\"title\":\"完成核心链上任务\"},{\"cost_usd\":0,\"description\":\"返回官方活动页面，确认所有任务与积分都已正确记录。\",\"done_when\":\"所有任务均显示已完成，且积分已计入。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://grass.io\",\"risk\":\"low\",\"source_url\":\"https://grass.io\",\"source_verified\":true,\"step\":5,\"title\":\"检查任务状态\"}],\"id\":\"grass\",\"last_checked_at\":\"<time>\",\"meta\":{\"airdrop_status\":\"空投领取已开放\",\"funding\":\"累计融资约 450 万美元\",\"investors\":[\"Polychain\",\"Tribe Capital\"],\"token_status\":\"GRASS 已发行\"},\"name\":\"Grass\",\"official\":{\"discord\":\"https://discord.gg/grass\",\"docs\":\"https://docs.grass.io\",\"github\":\"https://github.com/grass-fi\",\"website\":\"https://grass.io\",\"x\":\"https://x.com/getgrass_io\"},\"profile_digest\":\"{\\\"official\\\":{\\\"website\\\":\\\"https://grass.io\\\",\\\"x\\\":\\\"https://x.com/getgrass_io\\\",\\\"docs\\\":\\\"https://docs.grass.io\\\",\\\"github\\\":\\\"https://github.com/grass-fi\\\",\\\"discord\\\":\\\"https://discord.gg/grass\\\"},\\\"meta\\\":{\\\"funding\\\":\\\"累计融资约 450 万美元\\\",\\\"investors\\\":[\\\"Polychain\\\",\\\"Tribe Capital\\\"],\\\"token_status\\\":\\\"GRASS 已发行\\\",\\\"airdrop_status\\\":\\\"空投领取已开放\\\"},\\\"tasks\\\":[\\\"下载客户端\\\",\\\"连接钱包\\\",\\\"领取 GRASS\\\"],\\\"requirements\\\":[\\\"钱包\\\",\\\"浏览器扩展\\\"],\\\"evidence\\\":[{\\\"type\\\":\\\"contract\\\",\\\"label\\\":\\\"GRASS 代币合约\\\",\\\"url\\\":\\\"https://solscan.io/token/0x0\\\",\\\"verified\\\":true}]}\",\"recommendation\":{\"action\":\"observe\",\"grade\":\"B\",\"summary\":\"存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。\"},\"requirements\":[\"钱包\",\"浏览器扩展\"],\"risks\":[\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":85,\"authenticityItems\":[{\"evidenceUrl\":\"https://grass.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"evidenceUrl\":\"https://grass.io\",\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目状态已确认，且官网与官方渠道链接一致\",\"value\":20},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"Docs 与官网链接一致\",\"value\":15},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"已有 2 个独立第三方来源\",\"value\":15},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"evidenceUrl\":\"https://github.com/grass-fi\",\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"存在官方代码仓库\",\"value\":10},{\"evidenceUrl\":\"https://grass.io\",\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"已核实融资信息：累计融资约 450 万美元\",\"value\":10},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"grade\":\"S\",\"risk\":\"high\",\"riskItems\":[{\"key\":\"risk._\",\"label\":\"需要连接钱包\",\"max\":3,\"reason\":\"检测到「需要连接钱包」行为，风险等级 LOW\",\"value\":0},{\"key\":\"risk._\",\"label\":\"需要下载客户端\",\"max\":3,\"reason\":\"检测到「需要下载客户端」行为，风险等级 HIGH\",\"value\":2}],\"value\":86,\"valueItems\":[{\"key\":\"value.fundamentals\",\"label\":\"项目基本面\",\"max\":20,\"reason\":\"具备官网与基础资料，基本面较完整\",\"value\":20},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":15,\"reason\":\"融资信息：累计融资约 450 万美元\",\"value\":15},{\"key\":\"value.activity\",\"label\":\"真实产品 / 用户 / 活跃度\",\"max\":15,\"reason\":\"依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）\",\"value\":15},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"已进入领取阶段，信号最强\",\"value\":20},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 32 分钟，共 5 个步骤\",\"value\":11},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":10,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"项目风险较高，参与者结构可能不健康\",\"value\":1}]},\"slug\":\"grass\",\"sourcedSteps\":[{\"body\":\"Open the Grass Dashboard Go to the Allocation tab Review your estimated rewards in the Rewards Checker\",\"title\":\"Check Your Eligibility\",\"url\":\"/visit/wda3/\"},{\"body\":\"After 1:00 PM EST on July 22, open the Grass Dashboard Confirm your claim Rewards are deposited into your in-app, self-custodial wallet, which can be exported at any time A small network fee is deducted from claimed rewards to cover on-chain delivery; Grass does not keep this fee. Full eligibility terms are outlined in the Grass Rewards Program Terms and Conditions . Only check and claim through the official dashboard: Grass will never DM first or ask for a seed phrase or private keys.\",\"title\":\"Claim Your Rewards\",\"url\":\"/visit/wda3/\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/latest/\"},{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/grass/\"}],\"status\":\"claim_live\",\"tagline\":\"Building on the success of Stage 1, Grass has launched Stage 2 with enhanced rewards and new features.\",\"tasks\":[\"下载客户端\",\"连接钱包\",\"领取 GRASS\"]}"
 }

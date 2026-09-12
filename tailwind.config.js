@@ -96,9 +96,15 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        // 数据过期时按钮轻微呼吸，提示「可以点我刷新」，但不刺眼
+        'pulse-soft': {
+          '0%, 100%': { boxShadow: '0 12px 32px -12px rgba(37,99,235,0.55)' },
+          '50%': { boxShadow: '0 12px 40px -8px rgba(37,99,235,0.85)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.45s cubic-bezier(0.22,1,0.36,1) both',
+        'pulse-soft': 'pulse-soft 2.4s ease-in-out infinite',
       },
     },
   },

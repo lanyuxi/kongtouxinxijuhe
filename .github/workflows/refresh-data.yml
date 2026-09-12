@@ -1,0 +1,96 @@
+# DropLens · GitHub 侧定时抓取（每 10 分钟）
+#
+# 为什么 GitHub 侧也要跑一份：
+#   CNB 侧流水线负责「抓取 + 提交回 CNB」，但 GitHub Pages 上看到的数据
+#   取决于 GitHub 仓库里的内容。如果只靠 CNB 同步，两者时间差取决于
+#   同步流水线的触发时机。
+#   在 GitHub 侧再跑一份，可以保证：
+#     - 线上站点数据每 10 分钟必然刷新一次，不依赖外部平台的推送
+#     - 即使 CNB 到 GitHub 的同步链路断了，站点也能自更新
+#
+# 写入策略：数据变化才提交，避免无意义提交刷屏。
+
+name: Refresh Airdrop Data
+
+on:
+  schedule:
+    # 每 10 分钟一次（避开整点，减少与其他任务撞车）
+    - cron: '3,13,23,33,43,53 * * * *'
+  # 允许被前端「一键更新」通过 repository_dispatch 触发
+  repository_dispatch:
+    types: [refresh-data]
+  workflow_dispatch:
+
+# 需要写权限才能把新数据提交回仓库
+permissions:
+  contents: write
+
+# 抓取任务串行执行；排队中的旧任务直接取消，正在跑的跑完
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: 抓取并提交数据
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+        with:
+          # 用内置 token 推回仓库，无需额外配置任何密钥
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 准备 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci --no-audit --no-fund
+
+      - name: 抓取并生成数据
+        run: npm run pipeline
+
+      - name: 单元测试
+        run: npm test
+
+      - name: 发布前校验
+        run: npm run validate
+
+      - name: 数据变化检查与提交
+        id: commit
+        run: |
+          git config user.name "dropscope-data-bot"
+          git config user.email "dropscope-data-bot@users.noreply.github.com"
+
+          # 只关心数据的「实质内容」是否变化。
+          #
+          # 为什么不能直接 `git diff --quiet -- data/`：
+          #   data/ 里的 last_checked_at / sources[].fetched_at / updated_at
+          #   每轮必变，直接比对会让每 10 分钟都产生一次无意义提交与部署，
+          #   并把前端「数据变化时间」永远推成「刚刚」。
+          #   pipeline 已用剔除时间戳后的指纹判定过实质变化，结果在 refresh-status.json。
+          CHANGED=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(String(s.data_changed===true))}catch(e){process.stdout.write('false')}")
+          SUMMARY=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(s.change_summary||'-')}catch(e){process.stdout.write('-')}")
+          echo "变化摘要：$SUMMARY"
+
+          if [ "$CHANGED" != "true" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "本轮无实质内容变化，跳过提交"
+            exit 0
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          git add data/
+          git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+          echo "已提交并推送数据更新：$SUMMARY"
+
+      # 数据有变化时重新部署 Pages，让线上内容与数据保持一致
+      # （timing：push 本身也会触发 deploy-pages.yml，这里只做兜底提示）
+      - name: 汇总
+        run: |
+          echo "本次抓取：${{ steps.commit.outputs.changed == 'true' && '数据已更新并推送' || '数据无变化' }}"

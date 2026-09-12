@@ -186,8 +186,14 @@ export function DetailView({
                 </dd>
               </div>
               <div className="flex items-center gap-2">
-                <dt className="text-ink-faint">最近验证</dt>
+                <dt className="text-ink-faint">最近抓取</dt>
                 <dd className="font-medium text-ink">{relativeTime(p.last_checked_at)}</dd>
+              </div>
+              <div className="flex items-center gap-2">
+                {/* 与「最近抓取」区分开：抓取每 10 分钟一次，但内容往往并没有变化，
+                    只有这里的时间才是「信息真的更新过」的时间 */}
+                <dt className="text-ink-faint">内容更新</dt>
+                <dd className="font-medium text-ink">{relativeTime(p.last_changed_at)}</dd>
               </div>
               <div className="flex items-center gap-2">
                 <dt className="text-ink-faint">已验证证据</dt>

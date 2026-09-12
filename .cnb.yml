@@ -1,29 +1,55 @@
 # DropLens 空投雷达 · CNB 流水线配置
 #
 # 对应方案文档第 21 / 34 / 35 章：
-#   - 每 3 小时自动抓取一次（避开整点，减少任务集中）
+#   - 每 10 分钟自动抓取一次（避开整点，减少任务集中）
 #   - 单来源失败被隔离，不清空已有数据（第 28 章）
 #   - 数据以 JSON 提交回仓库，无需数据库与服务端
 #   - 校验不通过时拒绝提交数据（第 35 章验收标准）
 #
-# 说明：本仓库为纯静态项目，构建产物（dist）通过 Release 制品归档发布，
-# 可直接下载 / 挂载到任意静态托管，不需要服务器。
+# 交付形态：纯静态站点。
+#   构建产物 dist/ 通过 Release 归档；
+#   线上可访问版本由 GitHub Pages 提供，本流水线负责把代码与数据同步过去。
+#
+# 重要：本仓库有三条会写 GitHub 的路径，全部使用同一个令牌（来自密钥仓库），
+#       无需任何人手动配置或点按钮：
+#         1) main 分支推送        → 同步代码与数据到 GitHub
+#         2) 每 10 分钟定时抓取   → 抓完自动同步到 GitHub
+#         3) 构建产物归档为 Release，便于排查
 
-# ---------- 校验片段（PR 与 push 复用） ----------
+# ---------- 同步到 GitHub 的复用脚本 ----------
+# 说明：不使用 --force，先把远端历史合并进来再推，避免覆盖他人的提交。
+.sync-to-github: &sync-to-github
+  - |
+    if [ -z "$GITHUB_TOKEN" ]; then
+      echo "未读取到 GITHUB_TOKEN，请检查密钥仓库 xixi2060/mimacangku/github.yml"
+      exit 1
+    fi
+    git config user.name "dropscope-data-bot"
+    git config user.email "dropscope-data-bot@users.noreply.github.com"
+    git remote remove gh 2>/dev/null || true
+    git remote add gh "https://x-access-token:$GITHUB_TOKEN@github.com/lanyuxi/kongtouxinxijuhe.git"
+    # 先合并远端历史，避免 push 被拒（不强行覆盖他人提交）
+    git fetch gh main --depth=50 2>/dev/null || true
+    git merge --no-edit -X ours gh/main 2>/dev/null || true
+    git push gh "HEAD:$CNB_BRANCH"
+    echo "已同步到 GitHub：$CNB_BRANCH @ $(git rev-parse --short HEAD)"
+
+# ---------- 校验片段（PR 复用） ----------
 .pr-validate: &pr-validate
-  - name: validate
-    script:
-      - npm ci --no-audit --no-fund
-      - npm run pipeline
-      - npm test
-      - npm run validate
-      - npm run build
+  - name: install
+    script: npm ci --no-audit --no-fund
+  - name: pipeline-data
+    script: npm run pipeline
+  - name: unit-test
+    script: npm test
+  - name: validate-data
+    script: npm run validate
+  - name: build-web
+    script: npm run build
 
 main:
   push:
-    # ---------- 同步到 GitHub（触发 GitHub Pages 自动部署） ----------
-    # GITHUB_TOKEN 来自密钥仓库 xixi2060/mimacangku 的 github.yml，
-    # 不落库、不写死在配置里；GitHub 令牌缺失时本流水线失败不影响其它流水线。
+    # ---------- 同步到 GitHub（GitHub Actions 会自动重建 Pages） ----------
     - name: 同步到 GitHub
       docker:
         image: node:22
@@ -31,14 +57,7 @@ main:
         - https://cnb.cool/xixi2060/mimacangku/-/blob/main/github.yml
       stages:
         - name: push-to-github
-          script:
-            - |
-              if [ -z "$GITHUB_TOKEN" ]; then
-                echo "未读取到 GITHUB_TOKEN，请检查密钥仓库 xixi2060/mimacangku/github.yml"
-                exit 1
-              fi
-              git remote add gh "https://x-access-token:$GITHUB_TOKEN@github.com/lanyuxi/kongtouxinxijuhe.git"
-              git push gh "HEAD:$CNB_BRANCH"
+          script: *sync-to-github
 
     - name: 构建与校验
       docker:
@@ -71,15 +90,18 @@ main:
         image: node:22
       stages: *pr-validate
 
-  # ---------- 定时抓取：每 3 小时（非整点，减少任务集中） ----------
-  "crontab: 17 */3 * * *":
-    - name: 定时抓取空投情报
+  # ---------- 定时抓取：每 10 分钟（非整点，减少任务集中） ----------
+  # 与 GitHub Actions 的 refresh-data.yml 形成双通道：
+  # 两者都跑，数据变化才提交，因此不会互相冲突。
+  "crontab: 2,12,22,32,42,52 * * * *":
+    - name: 定时抓取空投情报并同步 GitHub
       docker:
         image: node:22
+      imports:
+        - https://cnb.cool/xixi2060/mimacangku/-/blob/main/github.yml
       env:
-        # 由流水线自身以仓库身份提交数据（CNB_TOKEN 为平台注入的构建凭证）
-        GIT_AUTHOR_NAME: cnb-data-bot
-        GIT_AUTHOR_EMAIL: cnb-data-bot@noreply.cnb.cool
+        GIT_AUTHOR_NAME: dropscope-data-bot
+        GIT_AUTHOR_EMAIL: dropscope-data-bot@users.noreply.github.com
       stages:
         - name: install
           script: npm ci --no-audit --no-fund
@@ -91,17 +113,33 @@ main:
           script: npm run validate
         - name: commit-data
           script:
-            # 只有数据真正变化时才提交，避免无意义提交
+            # 只有「实质内容」变化时才提交。
+            #
+            # 为什么不能直接 `git diff --quiet -- data/`：
+            #   data/ 里天然带有 last_checked_at / sources[].fetched_at / updated_at
+            #   这类「什么时候跑的」字段，它们每轮必变。
+            #   直接比对会导致每 10 分钟产生一次无意义提交 + 一次 GitHub 推送，
+            #   前端「数据变化时间」也会被推成永远「刚刚」。
+            #   scripts/pipeline.ts 已经用剔除时间戳后的指纹判定过实质变化，
+            #   结果写在 refresh-status.json 的 data_changed 字段里，这里直接复用。
             - |
-              if git diff --quiet -- data/; then
-                echo "数据无变化，跳过提交"
+              CHANGED=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(String(s.data_changed===true))}catch(e){process.stdout.write('false')}")
+              if [ "$CHANGED" != "true" ]; then
+                echo "本轮无实质内容变化，跳过提交（避免每 10 分钟一次的无意义提交）"
+                # 把「无变化」也作为可读摘要写进日志，便于事后排查
+                node -e "try{const s=require('./data/refresh-status.json');console.log('变化摘要：'+(s.change_summary||'-'))}catch(e){}"
               else
                 git config user.name "$GIT_AUTHOR_NAME"
                 git config user.email "$GIT_AUTHOR_EMAIL"
                 git add data/
                 git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
                 git push origin "HEAD:$CNB_BRANCH"
+                echo "CNB 侧数据已提交"
               fi
+        # 关键：抓取完成后自动同步到 GitHub，
+        # 不再需要任何人手动执行推送或点按钮。
+        - name: sync-to-github
+          script: *sync-to-github
 
 # ---------- 云原生开发：仅预览模式 ----------
 # 点击仓库页面右上角「云原生开发」按钮，即可直接打开站点预览页面。
@@ -113,11 +151,6 @@ main:
 #   - stages 是「启动前准备步骤」，先于 launch 执行；
 #   - daemon: true 时平台以后台方式执行 launch，不等待其退出，
 #     由平台自己每 10s 探测 8686 端口，就绪后再打开预览页。
-#
-# 为什么用 daemon: true：
-#   早先用 daemon: false + 自制「转后台」脚本，依赖脚本自身退出时机，
-#   多一层自旋就多一层不确定性。改用 daemon: true 后，前台常驻即可，
-#   端口就绪交给平台探测，链路更短、更可靠。
 #
 # 重要：dist/ 是构建产物且已在 .gitignore 中忽略，不会随仓库下发，
 #      必须由下方 build-preview 现场构建；否则预览服务会因缺页面而返回 404。
