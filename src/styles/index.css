@@ -11,21 +11,31 @@
     @apply bg-page text-ink font-sans antialiased;
     margin: 0;
     min-height: 100vh;
+    /* 放大后的基准字号：16px → 18px，宽屏阅读更舒适 */
+    font-size: 18px;
+    line-height: 1.6;
   }
   a {
     @apply text-brand;
   }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.35;
+  }
 }
 
 @layer components {
+  /* 页面外壳：加宽容器、加大左右留白 */
   .shell {
-    @apply mx-auto w-full max-w-shell px-4 sm:px-6;
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-10;
   }
+  /* 卡片：内边距与圆角同步放大 */
   .card {
-    @apply rounded-xl border border-line bg-card p-4 shadow-sm sm:p-5;
+    @apply rounded-2xl border border-line bg-card p-5 shadow-sm sm:p-7;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium
            transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/40;
   }
   .btn-primary {
@@ -35,18 +45,25 @@
     @apply btn border border-line bg-white text-ink hover:bg-brand-wash;
   }
   .chip {
-    @apply inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium;
   }
   .select {
-    @apply rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink outline-none
+    @apply rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink outline-none
            focus:border-brand focus:ring-2 focus:ring-brand/20;
   }
   .label {
-    @apply mb-1 block text-xs font-medium text-ink-soft;
+    @apply mb-1.5 block text-xs font-medium text-ink-soft;
   }
 }
 
 /* 平滑滚动锚点 */
 html {
   scroll-behavior: smooth;
+}
+
+/* 宽屏下进一步释放内容宽度，避免两侧大片空白 */
+@media (min-width: 1536px) {
+  .shell {
+    max-width: 1600px;
+  }
 }

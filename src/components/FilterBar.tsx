@@ -50,7 +50,7 @@ export function FilterBar({
 
   return (
     <section className="card">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <input
           type="search"
           value={filters.keyword}
@@ -60,7 +60,7 @@ export function FilterBar({
           className="select w-full"
         />
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           <div>
             <label className="label" htmlFor="f-status">状态</label>
             <select
@@ -142,7 +142,7 @@ export function FilterBar({
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 text-sm">
+        <div className="flex flex-wrap items-center gap-4 text-sm">
           <span className="text-ink-soft">
             排序
             <select

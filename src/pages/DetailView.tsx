@@ -68,7 +68,7 @@ export function DetailView({
   const verifiedCount = p.evidence.filter((e) => e.verified).length;
 
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-4">
+    <div className="mx-auto flex max-w-prose flex-col gap-5">
       <button type="button" onClick={onBack} className="btn-ghost self-start">
         ← 返回列表
       </button>
@@ -76,12 +76,12 @@ export function DetailView({
       {/* 1. 项目头部 */}
       <header className="card">
         <div className="flex items-start gap-4">
-          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-line bg-brand-wash text-lg font-semibold text-brand">
+          <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl border border-line bg-brand-wash text-2xl font-semibold text-brand">
             {p.name.slice(0, 2).toUpperCase()}
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-lg font-semibold text-ink sm:text-xl">{p.name}</h1>
+              <h1 className="text-xl font-semibold text-ink sm:text-2xl">{p.name}</h1>
               <StatusBadge status={p.status} />
               <RiskBadge risk={p.scores.risk} />
             </div>
@@ -96,7 +96,7 @@ export function DetailView({
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap gap-2.5">
           {p.official.website && (
             <a
               className="btn-primary"
@@ -138,7 +138,7 @@ export function DetailView({
       {/* 2. 系统结论 */}
       <section className={`card border ${ACTION_STYLE[p.recommendation.action]}`}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-semibold text-ink">系统结论</span>
+          <span className="text-lg font-semibold text-ink">系统结论</span>
           <span className="chip border-line bg-white text-ink">
             {ACTION_LABEL[p.recommendation.action]}
           </span>
@@ -158,7 +158,7 @@ export function DetailView({
           aria-expanded={showAuth}
         >
           <p className="text-xs text-ink-soft">真实性置信度</p>
-          <p className="mt-1 text-2xl font-semibold text-ink">
+          <p className="mt-1.5 text-3xl font-semibold text-ink">
             {p.scores.authenticity}
             <span className="ml-1 text-sm font-normal text-ink-faint">/ 100</span>
           </p>
@@ -171,7 +171,7 @@ export function DetailView({
           aria-expanded={showValue}
         >
           <p className="text-xs text-ink-soft">参与价值</p>
-          <p className="mt-1 text-2xl font-semibold text-ink">
+          <p className="mt-1.5 text-3xl font-semibold text-ink">
             {p.scores.value}
             <span className="ml-1 text-sm font-normal text-ink-faint">/ 100</span>
           </p>
@@ -193,7 +193,7 @@ export function DetailView({
 
       {showAuth && (
         <section className="card">
-          <h2 className="mb-1 text-sm font-semibold text-ink">真实性置信度明细</h2>
+          <h2 className="mb-1 text-lg font-semibold text-ink">真实性置信度明细</h2>
           <p className="mb-2 text-xs text-ink-soft">
             基于当前公开证据判断可信程度，不代表官方保证。
           </p>
@@ -202,14 +202,14 @@ export function DetailView({
       )}
       {showValue && (
         <section className="card">
-          <h2 className="mb-1 text-sm font-semibold text-ink">参与价值明细</h2>
+          <h2 className="mb-1 text-lg font-semibold text-ink">参与价值明细</h2>
           <p className="mb-2 text-xs text-ink-soft">不代表未来收益预测，仅表达当前是否值得投入时间与成本。</p>
           <ScoreBreakdown items={p.scores.valueItems} />
         </section>
       )}
       {showRisk && (
         <section className="card">
-          <h2 className="mb-1 text-sm font-semibold text-ink">风险等级明细</h2>
+          <h2 className="mb-1 text-lg font-semibold text-ink">风险等级明细</h2>
           <p className="mb-2 text-xs text-ink-soft">
             当前判定：{RISK_LABEL[p.scores.risk]}
           </p>
@@ -219,7 +219,7 @@ export function DetailView({
 
       {/* 4. 成本与难度 */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">预计成本与操作难度</h2>
+        <h2 className="text-lg font-semibold text-ink">预计成本与操作难度</h2>
         <dl className="mt-3 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
           <div>
             <dt className="text-xs text-ink-faint">预计资金</dt>
@@ -255,7 +255,7 @@ export function DetailView({
 
       {/* 5. Evidence 来源验证 */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">证据与来源验证</h2>
+        <h2 className="text-lg font-semibold text-ink">证据与来源验证</h2>
         <p className="mt-1 text-xs text-ink-soft">
           已验证证据 {verifiedCount} 条 · 独立来源 {new Set(p.evidence.filter((e) => e.url).map((e) => {
             try {
@@ -301,7 +301,7 @@ export function DetailView({
 
       {/* 6. 项目与空投详情 */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">项目与空投详情</h2>
+        <h2 className="text-lg font-semibold text-ink">项目与空投详情</h2>
         <dl className="mt-3 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
           <Row label="项目类型" value={CATEGORY_LABEL[p.category]} />
           <Row label="公链" value={p.chains.map((c) => CHAIN_LABEL[c]).join(' / ')} />
@@ -315,7 +315,7 @@ export function DetailView({
 
       {/* 7. 新手参与教程 */}
       <section className="card" id="guide">
-        <h2 className="text-sm font-semibold text-ink">新手参与教程</h2>
+        <h2 className="text-lg font-semibold text-ink">新手参与教程</h2>
         <p className="mt-1 text-xs text-ink-soft">
           已勾选 {done.length} / {p.guide.length} 步。所有步骤均附来源，未验证步骤会明确标注。
         </p>
@@ -326,8 +326,8 @@ export function DetailView({
               <li key={g.step} className="rounded-xl border border-line bg-page p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <p className="text-xs font-medium text-brand">Step {g.step}</p>
-                    <h3 className="mt-0.5 text-sm font-semibold text-ink">{g.title}</h3>
+                    <p className="text-sm font-semibold text-brand">Step {g.step}</p>
+                    <h3 className="mt-1 text-base font-semibold text-ink">{g.title}</h3>
                   </div>
                   <label className="flex shrink-0 items-center gap-1.5 text-xs text-ink-soft">
                     <input
@@ -381,7 +381,7 @@ export function DetailView({
 
       {/* 8. 注意事项 */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">注意事项与优化建议</h2>
+        <h2 className="text-lg font-semibold text-ink">注意事项与优化建议</h2>
         <ul className="mt-3 flex list-disc flex-col gap-1.5 pl-5 text-sm text-ink-soft">
           {p.risks.map((r, i) => (
             <li key={i}>{r}</li>
@@ -391,7 +391,7 @@ export function DetailView({
 
       {/* 9. FAQ */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">常见问题</h2>
+        <h2 className="text-lg font-semibold text-ink">常见问题</h2>
         <ul className="mt-3 divide-y divide-line">
           {p.faq.map((f, i) => (
             <li key={i}>
@@ -414,7 +414,7 @@ export function DetailView({
 
       {/* 10. 官方资料 */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">官方资料</h2>
+        <h2 className="text-lg font-semibold text-ink">官方资料</h2>
         {officialEntries.length === 0 ? (
           <p className="mt-2 text-sm text-ink-soft">尚未核实到官方链接。</p>
         ) : (
@@ -437,7 +437,7 @@ export function DetailView({
 
       {/* 11. 问题反馈 */}
       <section className="card">
-        <h2 className="text-sm font-semibold text-ink">问题反馈</h2>
+        <h2 className="text-lg font-semibold text-ink">问题反馈</h2>
         <p className="mt-1 text-sm text-ink-soft">
           发现链接失效、活动已结束或信息疑似错误？请前往仓库提交 Issue，我们会尽快核实。
         </p>

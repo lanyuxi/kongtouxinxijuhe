@@ -21,7 +21,7 @@ export function StatBar({
   const stale = isStale(updatedAt);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-line bg-white px-4 py-3 text-sm">
+    <div className="flex flex-wrap items-center gap-x-7 gap-y-2.5 rounded-2xl border border-line bg-white px-5 py-4 text-sm">
       <span className="text-ink-soft">
         最后更新 <strong className="text-ink">{relativeTime(updatedAt)}</strong>
       </span>

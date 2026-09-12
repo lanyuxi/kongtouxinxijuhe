@@ -18,8 +18,8 @@ export function ScoreBreakdown({ items }: { items: ScoreItem[] }) {
       {items.map((i) => (
         <li key={i.key} className="py-2.5">
           <div className="flex items-baseline justify-between gap-3">
-            <span className="text-sm text-ink">{i.label}</span>
-            <span className="shrink-0 font-mono text-xs text-ink-soft">
+            <span className="text-base text-ink">{i.label}</span>
+            <span className="shrink-0 font-mono text-sm text-ink-soft">
               {i.value}/{i.max}
             </span>
           </div>
@@ -30,7 +30,7 @@ export function ScoreBreakdown({ items }: { items: ScoreItem[] }) {
               tone={i.value === 0 ? 'bg-line' : i.value >= i.max * 0.7 ? 'bg-ok' : 'bg-warn'}
             />
           </div>
-          <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">
+          <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             {i.reason}
             {i.evidenceUrl && (
               <>
@@ -69,23 +69,23 @@ export function ScoreTrio({
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
       <div className="card">
-        <p className="text-xs text-ink-soft">真实性置信度</p>
-        <p className="mt-1 text-2xl font-semibold text-ink">
+        <p className="text-sm text-ink-soft">真实性置信度</p>
+        <p className="mt-1.5 text-3xl font-semibold text-ink">
           {authenticity}
           <span className="ml-1 text-sm font-normal text-ink-faint">/ 100</span>
         </p>
         <p className="mt-1 text-xs text-ink-soft">{AUTH_LEVEL(authenticity)}</p>
       </div>
       <div className="card">
-        <p className="text-xs text-ink-soft">参与价值</p>
-        <p className="mt-1 text-2xl font-semibold text-ink">
+        <p className="text-sm text-ink-soft">参与价值</p>
+        <p className="mt-1.5 text-3xl font-semibold text-ink">
           {value}
           <span className="ml-1 text-sm font-normal text-ink-faint">/ 100</span>
         </p>
         <p className="mt-1 text-xs text-ink-soft">等级 {grade}</p>
       </div>
       <div className="card">
-        <p className="text-xs text-ink-soft">风险等级</p>
+        <p className="text-sm text-ink-soft">风险等级</p>
         <p className="mt-1.5">
           <RiskBadge risk={risk} />
         </p>

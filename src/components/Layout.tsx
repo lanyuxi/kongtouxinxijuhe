@@ -13,12 +13,12 @@ const NAV: { key: NavKey; label: string; href: string }[] = [
 export function Logo() {
   return (
     <a href="#/latest" className="flex items-center gap-2 no-underline">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand text-sm font-bold text-white">
+      <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand text-base font-bold text-white">
         DL
       </span>
-      <span className="text-base font-semibold text-ink">
+      <span className="text-lg font-semibold text-ink">
         DropLens
-        <span className="ml-2 hidden text-xs font-normal text-ink-soft sm:inline">
+        <span className="ml-2.5 hidden text-sm font-normal text-ink-soft sm:inline">
           看清每一个空投
         </span>
       </span>
@@ -29,14 +29,14 @@ export function Logo() {
 export function Header({ current }: { current: NavKey }) {
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-white/90 backdrop-blur">
-      <div className="shell flex h-14 items-center gap-4">
+      <div className="shell flex h-[4.5rem] items-center gap-5">
         <Logo />
         <nav className="ml-auto flex items-center gap-1 overflow-x-auto">
           {NAV.map((n) => (
             <a
               key={n.key}
               href={n.href}
-              className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-sm no-underline transition-colors ${
+              className={`whitespace-nowrap rounded-xl px-4 py-2 text-sm no-underline transition-colors ${
                 current === n.key
                   ? 'bg-brand-wash font-medium text-brand'
                   : 'text-ink-soft hover:bg-brand-wash hover:text-brand'
@@ -54,7 +54,7 @@ export function Header({ current }: { current: NavKey }) {
 export function Footer({ updatedAt }: { updatedAt?: string }) {
   return (
     <footer className="mt-12 border-t border-line bg-white">
-      <div className="shell py-8 text-xs leading-relaxed text-ink-soft">
+      <div className="shell py-10 text-sm leading-relaxed text-ink-soft">
         <p className="font-medium text-ink">DropLens · 空投雷达与决策助手</p>
         <p className="mt-2 max-w-2xl">
           本站仅聚合公开信息并提供证据置信度、风险等级与参与价值参考，
@@ -71,5 +71,5 @@ export function Footer({ updatedAt }: { updatedAt?: string }) {
 }
 
 export function Page({ children }: { children: ReactNode }) {
-  return <div className="shell py-6">{children}</div>;
+  return <div className="shell py-8 sm:py-10">{children}</div>;
 }

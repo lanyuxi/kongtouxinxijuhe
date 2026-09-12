@@ -92,7 +92,7 @@ export function ListView({
   if (view === 'watchlist') {
     const saved = projects.filter((p) => favorites.includes(p.slug));
     return (
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         <PageHead cfg={cfg} />
         {saved.length === 0 ? (
           <EmptyState text="你还没有收藏任何项目。在列表页或详情页点击「收藏」即可加入我的关注。" />
@@ -112,7 +112,7 @@ export function ListView({
                 清空本地数据
               </button>
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               {saved.map((p) => (
                 <ProjectCard
                   key={p.slug}
@@ -129,7 +129,7 @@ export function ListView({
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5">
       <PageHead cfg={cfg} />
       <StatBar
         projects={projects}
@@ -146,7 +146,7 @@ export function ListView({
       {visible.length === 0 ? (
         <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
       ) : (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           {visible.map((p) => (
             <ProjectCard
               key={p.slug}
@@ -165,8 +165,8 @@ export function ListView({
 function PageHead({ cfg }: { cfg: ViewConfig }) {
   return (
     <div>
-      <h1 className="text-xl font-semibold text-ink sm:text-2xl">{cfg.title}</h1>
-      <p className="mt-1 text-sm text-ink-soft">{cfg.desc}</p>
+      <h1 className="text-2xl font-semibold text-ink sm:text-3xl">{cfg.title}</h1>
+      <p className="mt-2 text-base text-ink-soft">{cfg.desc}</p>
     </div>
   );
 }

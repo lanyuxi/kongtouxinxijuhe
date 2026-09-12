@@ -37,8 +37,8 @@ export function ProjectCard({
 
   return (
     <article className="card transition-shadow hover:shadow-md">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-brand-wash text-base font-semibold text-brand">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-line bg-brand-wash text-xl font-semibold text-brand">
           {p.name.slice(0, 2).toUpperCase()}
         </div>
 
@@ -47,7 +47,7 @@ export function ProjectCard({
           <div className="flex flex-wrap items-center gap-2">
             <a
               href={`#/project/${p.slug}`}
-              className="text-base font-semibold text-ink no-underline hover:text-brand"
+              className="text-lg font-semibold text-ink no-underline hover:text-brand"
             >
               {p.name}
             </a>
@@ -57,13 +57,13 @@ export function ProjectCard({
             </span>
           </div>
 
-          <p className="mt-1 line-clamp-2 text-sm text-ink-soft">{p.tagline || '暂无项目简介'}</p>
+          <p className="mt-1.5 line-clamp-2 text-base text-ink-soft">{p.tagline || '暂无项目简介'}</p>
           <p className="mt-1 text-xs text-ink-faint">
             {p.chains.map((c) => CHAIN_LABEL[c]).join(' · ')}
           </p>
 
           {/* 决策信息 */}
-          <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm sm:grid-cols-3">
+          <dl className="mt-4 grid grid-cols-2 gap-x-5 gap-y-3 text-sm sm:grid-cols-3">
             <div>
               <dt className="text-xs text-ink-faint">真实性</dt>
               <dd className="font-semibold text-ink">
@@ -105,7 +105,7 @@ export function ProjectCard({
           </dl>
 
           {p.tasks.length > 0 && (
-            <p className="mt-3 text-xs text-ink-soft">
+            <p className="mt-4 text-sm text-ink-soft">
               <span className="text-ink-faint">主要任务：</span>
               {p.tasks.join(' · ')}
             </p>
@@ -113,15 +113,15 @@ export function ProjectCard({
         </div>
 
         {/* CTA */}
-        <div className="flex shrink-0 items-center gap-2 sm:flex-col sm:items-end">
-          <a href={`#/project/${p.slug}`} className="btn-primary whitespace-nowrap">
+        <div className="flex shrink-0 items-center gap-2.5 sm:flex-col sm:items-end">
+          <a href={`#/project/${p.slug}`} className="btn-primary whitespace-nowrap sm:min-w-[10.5rem]">
             {cta} →
           </a>
           <button
             type="button"
             onClick={() => onToggleFavorite(p.slug)}
             aria-pressed={favorited}
-            className="btn-ghost whitespace-nowrap"
+            className="btn-ghost whitespace-nowrap sm:min-w-[10.5rem]"
             title={favorited ? '取消收藏' : '收藏项目'}
           >
             {favorited ? '★ 已收藏' : '☆ 收藏'}
