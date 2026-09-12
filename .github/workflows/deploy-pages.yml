@@ -71,6 +71,9 @@ jobs:
 
       - name: 配置 Pages
         uses: actions/configure-pages@v5
+        with:
+          # 仓库若尚未开启 Pages，允许该步骤直接创建 Pages 站点（Source = GitHub Actions）
+          enablement: true
 
       - name: 上传 Pages 制品
         uses: actions/upload-pages-artifact@v3
