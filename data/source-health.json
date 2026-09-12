@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-09-12T21:12:09.859Z",
+  "updated_at": "2026-09-12T22:12:09.945Z",
   "sources": [
     {
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "ok": true,
       "fetched": 57,
-      "last_success_at": "2026-09-12T21:12:09.859Z",
-      "checked_at": "2026-09-12T21:12:09.859Z"
+      "last_success_at": "2026-09-12T22:12:09.945Z",
+      "checked_at": "2026-09-12T22:12:09.945Z"
     },
     {
       "name": "DefiLlama",
       "url": "https://api.llama.fi/protocols",
       "ok": true,
       "fetched": 120,
-      "last_success_at": "2026-09-12T21:12:09.859Z",
-      "checked_at": "2026-09-12T21:12:09.859Z"
+      "last_success_at": "2026-09-12T22:12:09.945Z",
+      "checked_at": "2026-09-12T22:12:09.945Z"
     },
     {
       "name": "Galxe",
@@ -24,7 +24,7 @@
       "fetched": 0,
       "error": "页面为纯客户端渲染，服务端 HTML 未包含任务数据（3147 字节），需官方 API 才能接入",
       "last_success_at": "2026-09-12T04:17:09.382Z",
-      "checked_at": "2026-09-12T21:12:09.859Z"
+      "checked_at": "2026-09-12T22:12:09.945Z"
     }
   ]
 }
