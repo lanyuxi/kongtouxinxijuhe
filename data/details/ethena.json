@@ -46,7 +46,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/ethena/",
-      "fetched_at": "2026-09-12T12:12:10.187Z"
+      "fetched_at": "2026-09-12T12:42:09.531Z"
     }
   ],
   "evidence": [
@@ -428,7 +428,7 @@
   ],
   "created_at": "2026-09-11T14:29:52.346Z",
   "discovered_at": "2026-09-11T14:29:52.346Z",
-  "last_checked_at": "2026-09-12T12:12:10.187Z",
+  "last_checked_at": "2026-09-12T12:42:09.531Z",
   "last_changed_at": "2026-09-12T06:21:44.517Z",
   "sourcedSteps": [
     {
