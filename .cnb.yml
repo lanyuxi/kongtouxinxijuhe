@@ -21,6 +21,25 @@
 
 main:
   push:
+    # ---------- 同步到 GitHub（触发 GitHub Pages 自动部署） ----------
+    # GITHUB_TOKEN 来自密钥仓库 xixi2060/mimacangku 的 github.yml，
+    # 不落库、不写死在配置里；GitHub 令牌缺失时本流水线失败不影响其它流水线。
+    - name: 同步到 GitHub
+      docker:
+        image: node:22
+      imports:
+        - https://cnb.cool/xixi2060/mimacangku/-/blob/main/github.yml
+      stages:
+        - name: push-to-github
+          script:
+            - |
+              if [ -z "$GITHUB_TOKEN" ]; then
+                echo "未读取到 GITHUB_TOKEN，请检查密钥仓库 xixi2060/mimacangku/github.yml"
+                exit 1
+              fi
+              git remote add gh "https://x-access-token:$GITHUB_TOKEN@github.com/lanyuxi/kongtouxinxijuhe.git"
+              git push gh "HEAD:$CNB_BRANCH"
+
     - name: 构建与校验
       docker:
         image: node:22
@@ -88,6 +107,20 @@ main:
 # 点击仓库页面右上角「云原生开发」按钮，即可直接打开站点预览页面。
 # 对应方案文档「无需服务器、纯静态交付」：预览同样不引入常驻服务，
 # 由本地静态服务器托管构建产物 dist/，仅用于预览，不对外提供服务。
+#
+# 平台约定（docs.cnb.cool/zh/workspaces/only-preview.md）：
+#   - 业务服务必须监听 8686 端口；
+#   - stages 是「启动前准备步骤」，先于 launch 执行；
+#   - daemon: true 时平台以后台方式执行 launch，不等待其退出，
+#     由平台自己每 10s 探测 8686 端口，就绪后再打开预览页。
+#
+# 为什么用 daemon: true：
+#   早先用 daemon: false + 自制「转后台」脚本，依赖脚本自身退出时机，
+#   多一层自旋就多一层不确定性。改用 daemon: true 后，前台常驻即可，
+#   端口就绪交给平台探测，链路更短、更可靠。
+#
+# 重要：dist/ 是构建产物且已在 .gitignore 中忽略，不会随仓库下发，
+#      必须由下方 build-preview 现场构建；否则预览服务会因缺页面而返回 404。
 $:
   vscode:
     - docker:
@@ -96,6 +129,8 @@ $:
         - name: vscode
           options:
             onlyPreview: true
+            # 守护进程模式：前台常驻托管 dist/，启动失败即非 0 退出
+            daemon: true
             launch: node .ide/preview-server.mjs
             keepAliveTimeout: 30m
       stages:
@@ -104,3 +139,6 @@ $:
             - npm ci --no-audit --no-fund
             - npm run pipeline
             - npm run build
+            # 构建后立即校验 dist/ 就绪，失败即中断，避免预览出一个 404 空壳
+            - test -f dist/index.html
+            - test -f dist/data/airdrops.json

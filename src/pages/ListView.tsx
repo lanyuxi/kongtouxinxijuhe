@@ -8,28 +8,35 @@ import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
 
 interface ViewConfig {
+  /** 眉标：开篇定调的小字 */
+  eyebrow: string;
   title: string;
   desc: string;
 }
 
 const VIEW_CONFIG: Record<NavKey, ViewConfig> = {
   latest: {
+    eyebrow: 'Airdrop Radar',
     title: '最新空投',
     desc: '发现最近更新的 Web3 空投机会，并快速判断是否值得参与。',
   },
   hot: {
+    eyebrow: 'Top Picks',
     title: '热门空投',
     desc: '按参与价值、信息完整度综合排序，优先查看更值得研究的项目。',
   },
   potential: {
+    eyebrow: 'Early Signals',
     title: '潜在空投',
     desc: '尚未正式确认空投，但存在积分、测试网或 Token 计划等明确线索。',
   },
   claim: {
+    eyebrow: 'Claim Now',
     title: '可领取',
     desc: '已经进入 Claim 阶段的项目，请先核对官方域名再操作。',
   },
   watchlist: {
+    eyebrow: 'My Watchlist',
     title: '我的关注',
     desc: '你收藏的项目与自己的参与进度，数据仅保存在当前浏览器。',
   },
@@ -92,27 +99,32 @@ export function ListView({
   if (view === 'watchlist') {
     const saved = projects.filter((p) => favorites.includes(p.slug));
     return (
-      <div className="flex flex-col gap-4">
-        <PageHead cfg={cfg} />
+      <div className="flex flex-col gap-8">
+        <PageHead cfg={cfg} count={saved.length} countLabel="个收藏项目" />
         {saved.length === 0 ? (
           <EmptyState text="你还没有收藏任何项目。在列表页或详情页点击「收藏」即可加入我的关注。" />
         ) : (
           <>
-            <div className="flex flex-wrap gap-3 text-sm">
-              {(['saved', 'preparing', 'doing', 'done'] as const).map((s) => {
+            <dl className="grid grid-cols-2 divide-line overflow-hidden rounded-3xl border border-line bg-white shadow-card sm:grid-cols-4 sm:divide-x">
+              {(['saved', 'preparing', 'doing', 'done'] as const).map((s, i) => {
                 const count = saved.filter((p) => (progress[p.slug]?.status ?? 'saved') === s).length;
                 const label = { saved: '已收藏', preparing: '准备参与', doing: '进行中', done: '已完成' }[s];
                 return (
-                  <span key={s} className="chip border-line bg-white text-ink-soft">
-                    {label} <strong className="text-ink">{count}</strong>
-                  </span>
+                  <div key={s} className={`px-6 py-5 ${i < 2 ? 'border-b border-line sm:border-b-0' : ''} ${i % 2 === 0 ? 'border-r border-line sm:border-r-0' : ''}`}>
+                    <dt className="text-xs font-medium uppercase tracking-[0.14em] text-ink-faint">
+                      {label}
+                    </dt>
+                    <dd className="metric mt-2 text-3xl">{count}</dd>
+                  </div>
                 );
               })}
-              <button type="button" onClick={onClearAll} className="btn-ghost ml-auto">
+            </dl>
+            <div className="flex flex-wrap gap-4">
+              <button type="button" onClick={onClearAll} className="btn-ghost">
                 清空本地数据
               </button>
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-5">
               {saved.map((p) => (
                 <ProjectCard
                   key={p.slug}
@@ -129,8 +141,8 @@ export function ListView({
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <PageHead cfg={cfg} />
+    <div className="flex flex-col gap-8">
+      <PageHead cfg={cfg} count={visible.length} countLabel="个项目符合条件" />
       <StatBar
         projects={projects}
         newToday={newToday}
@@ -146,7 +158,7 @@ export function ListView({
       {visible.length === 0 ? (
         <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
       ) : (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           {visible.map((p) => (
             <ProjectCard
               key={p.slug}
@@ -162,26 +174,52 @@ export function ListView({
   );
 }
 
-function PageHead({ cfg }: { cfg: ViewConfig }) {
+/** 页面头部：眉标 → 大标题 → 描述 → 结果计数 */
+function PageHead({
+  cfg,
+  count,
+  countLabel,
+}: {
+  cfg: ViewConfig;
+  count: number;
+  countLabel: string;
+}) {
   return (
-    <div>
-      <h1 className="text-xl font-semibold text-ink sm:text-2xl">{cfg.title}</h1>
-      <p className="mt-1 text-sm text-ink-soft">{cfg.desc}</p>
-    </div>
+    <header className="relative overflow-hidden rounded-3xl border border-line bg-white px-7 py-9 shadow-card sm:px-10 sm:py-11">
+      {/* 右上角装饰光斑：给纯白头部增加层次 */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-r from-brand-50/90 via-accent-wash/60 to-transparent"
+      />
+      <div className="relative">
+        <p className="eyebrow">{cfg.eyebrow}</p>
+        <h1 className="hero-title mt-3">{cfg.title}</h1>
+        <p className="mt-3 max-w-3xl text-base text-ink-soft sm:text-lg">{cfg.desc}</p>
+        <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-line-soft bg-page px-4 py-1.5 text-sm text-ink-soft">
+          当前 <strong className="metric text-ink">{count}</strong> {countLabel}
+        </p>
+      </div>
+    </header>
   );
 }
 
 function EmptyState({ text }: { text: string }) {
   return (
-    <div className="card grid place-items-center py-14 text-center">
-      <p className="text-sm text-ink-soft">{text}</p>
+    <div className="card grid place-items-center gap-3 py-16 text-center">
+      <span
+        aria-hidden
+        className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-50 to-accent-wash text-2xl text-brand"
+      >
+        ◌
+      </span>
+      <p className="text-base text-ink-soft">{text}</p>
     </div>
   );
 }
 
 function CostHint() {
   return (
-    <p className="px-1 text-xs text-ink-faint">
+    <p className="rounded-2xl border border-line-soft bg-white/60 px-5 py-4 text-sm text-ink-faint">
       提示：参与价值与真实性为两套独立评分，不存在「总分」。高收益不等于真实，低风险也不等于值得投入。
     </p>
   );

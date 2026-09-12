@@ -1,0 +1,93 @@
+# DropLens 空投雷达 · GitHub Actions 部署流水线
+#
+# 作用：
+#   1) 拉取最新代码 → 安装依赖 → 抓取数据 → 跑单测 → 跑发布前校验 → 构建 dist/
+#   2) 把 dist/ 发布到 GitHub Pages，得到固定、可对外分享的在线预览地址
+#
+# 触发方式：
+#   - push 到 main / master：自动构建并部署
+#   - 手动触发（Actions 页面点击 Run workflow）
+#
+# 重要：GitHub Pages 项目站点运行在子路径 https://<用户>.github.io/<仓库名>/，
+#      因此构建时把 BASE_PATH 设为 /<仓库名>/，保证 JS / CSS / data 资源路径正确。
+#      vite.config.ts 的 base 默认 './'（相对路径），仅在本文件显式覆盖为绝对子路径。
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+# GITHUB_TOKEN 需要写权限才能发布 Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只保留一个部署任务；排队中的旧任务取消，但正在发布的任务不打断
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: 构建静态站点
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 准备 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci --no-audit --no-fund
+
+      - name: 抓取并生成数据
+        run: npm run pipeline
+
+      - name: 单元测试
+        run: npm test
+
+      - name: 发布前校验
+        run: npm run validate
+
+      - name: 构建站点
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build
+
+      - name: 构建产物自检
+        run: |
+          test -f dist/index.html
+          test -f dist/data/airdrops.json
+          test -d dist/data/details
+          echo "dist/ 就绪，文件数：$(find dist -type f | wc -l)"
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+        with:
+          # 仓库若尚未开启 Pages，允许该步骤直接创建 Pages 站点（Source = GitHub Actions）
+          enablement: true
+
+      - name: 上传 Pages 制品
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: 发布到 GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署
+        id: deployment
+        uses: actions/deploy-pages@v4

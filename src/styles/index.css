@@ -6,47 +6,191 @@
   html {
     color-scheme: light;
     -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-page text-ink font-sans antialiased;
     margin: 0;
     min-height: 100vh;
+    font-size: 18px;
+    line-height: 1.65;
+    /* 极淡的双径向光晕，让大面积留白不再「空」，但不干扰阅读 */
+    background-image:
+      radial-gradient(60rem 32rem at 12% -6%, rgba(37, 99, 235, 0.07), transparent 62%),
+      radial-gradient(48rem 28rem at 92% 0%, rgba(124, 92, 252, 0.06), transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   a {
     @apply text-brand;
   }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+  /* 统一细滚动条，避免默认灰条破坏整体质感 */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
 }
 
 @layer components {
+  /* ---------- 布局外壳 ---------- */
   .shell {
-    @apply mx-auto w-full max-w-shell px-4 sm:px-6;
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-10;
   }
+  .detail-shell {
+    @apply mx-auto w-full max-w-wide px-4 sm:px-8 lg:px-12;
+  }
+
+  /* ---------- 表面（Surface）三阶 ---------- */
+  /* 基础卡片 */
   .card {
-    @apply rounded-xl border border-line bg-card p-4 shadow-sm sm:p-5;
+    @apply rounded-2xl border border-line bg-card p-5 shadow-card sm:p-7;
   }
+  /* 区块面板：详情页正文块，比卡片大一号 */
+  .panel {
+    @apply rounded-3xl border border-line bg-card p-6 shadow-card sm:p-8;
+  }
+  /* 玻璃面板：用于置顶栏、悬浮工具条 */
+  .glass {
+    @apply border border-white/70 bg-white/80 backdrop-blur-xl;
+  }
+  /* 内嵌浅底块：面板内部的次级信息容器 */
+  .inset {
+    @apply rounded-2xl border border-line-soft bg-page/70;
+  }
+  /* 悬浮卡片：可点击，带抬升反馈 */
+  .lift {
+    @apply transition duration-300 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card-hover;
+  }
+
+  /* ---------- 标题体系 ---------- */
+  .panel-title {
+    @apply flex items-center gap-3 text-xl font-semibold tracking-tight text-ink;
+  }
+  /* 小节标题上方的小色条 */
+  .panel-title::before {
+    content: '';
+    @apply h-5 w-1.5 shrink-0 rounded-full bg-gradient-to-b from-brand-light to-brand;
+  }
+  /* 页面主标题（首页 Hero / 详情页项目名） */
+  .hero-title {
+    @apply text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl;
+  }
+  /* 眉标：全大写小字，用来开篇定调 */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+
+  /* ---------- 按钮 ---------- */
   .btn {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium
-           transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/40;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium
+           transition duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/40
+           focus-visible:ring-offset-2;
   }
   .btn-primary {
-    @apply btn bg-brand text-white hover:bg-brand-light;
+    @apply btn bg-gradient-to-b from-brand-500 to-brand-600 text-white
+           shadow-glow hover:from-brand-600 hover:to-brand-700 active:translate-y-px;
   }
   .btn-ghost {
-    @apply btn border border-line bg-white text-ink hover:bg-brand-wash;
+    @apply btn border border-line bg-white text-ink hover:border-brand/30 hover:bg-brand-50 hover:text-brand-700;
   }
+  .btn-quiet {
+    @apply btn text-ink-soft hover:bg-brand-50 hover:text-brand-700;
+  }
+  .btn-lg {
+    @apply rounded-xl px-7 py-3.5 text-base;
+  }
+
+  /* ---------- 标签 / 徽章 ---------- */
   .chip {
-    @apply inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium;
   }
+
+  /* ---------- 表单 ---------- */
   .select {
-    @apply rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink outline-none
-           focus:border-brand focus:ring-2 focus:ring-brand/20;
+    @apply rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink outline-none
+           transition hover:border-brand/40 focus:border-brand focus:ring-4 focus:ring-brand/10;
   }
   .label {
-    @apply mb-1 block text-xs font-medium text-ink-soft;
+    @apply mb-1.5 block text-xs font-medium tracking-wide text-ink-soft;
+  }
+
+  /* ---------- 详情页 ---------- */
+  .detail-link {
+    @apply text-sm font-medium text-brand underline-offset-4 hover:underline;
+  }
+  .detail-grid {
+    @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_24rem];
+  }
+  .detail-aside {
+    @apply flex flex-col gap-5 xl:sticky xl:top-28;
+  }
+  .kv {
+    @apply flex flex-col gap-0.5;
+  }
+  .kv dt {
+    @apply text-sm text-ink-faint;
+  }
+  .kv dd {
+    @apply text-base text-ink;
+  }
+
+  /* ---------- 数据指标 ---------- */
+  /* 大号数字：等宽字形，避免数字跳动 */
+  .metric {
+    @apply font-semibold tabular-nums tracking-tight text-ink;
+  }
+  /* 指标下方的极小说明 */
+  .metric-note {
+    @apply text-sm text-ink-soft;
   }
 }
 
-/* 平滑滚动锚点 */
-html {
-  scroll-behavior: smooth;
+/* 宽屏下进一步释放内容宽度 */
+@media (min-width: 1536px) {
+  .shell {
+    max-width: 1600px;
+  }
+}
+
+/* 详情页锚点跳转时给 sticky 顶栏留出空间 */
+#decision,
+#cost,
+#evidence,
+#meta,
+#guide,
+#risks,
+#faq,
+#official {
+  scroll-margin-top: 7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
