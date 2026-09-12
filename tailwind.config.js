@@ -1,63 +1,85 @@
 /** @type {import('tailwindcss').Config} */
 
 /**
- * 字体字号整体上浮一档（第二轮：二级页面再放大）：
- * 原设计在 1920 宽屏下正文只有 14–16px、标题 20–24px，页面显得过小、
- * 文字难辨认（见 Issue #1 反馈）。此处直接放大语义化字号标尺，
- * 这样所有使用 text-xs/sm/base/lg/xl/2xl 的组件都会同步变大，
- * 无需逐个类名改写，保证全站（含二级详情页）缩放一致。
+ * 设计标尺（第三轮：视觉升级版）
+ *
+ * 目标：从「信息齐全的工具页」升级为「有设计感的产品页」。
+ * 做法是建立一套可复用的设计令牌，而不是逐个页面堆样式：
+ *  - 中性色改用带冷调的 slate 阶，替代原先的纯灰，整体更「高级」
+ *  - 主色由单一蓝扩展为 50→700 完整色阶，支撑渐变与层次
+ *  - 统一圆角 / 阴影 / 动效曲线三套令牌，保证全站观感一致
+ *  - 字号标尺保持上一轮放大后的结果，仅补齐标题行高
  */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       fontSize: {
-        // 原 12px → 14px：次要说明文字（标签、时间、提示）
         xs: ['0.875rem', { lineHeight: '1.45rem' }],
-        // 原 14px → 16px：正文与描述
         sm: ['1rem', { lineHeight: '1.7rem' }],
-        // 原 16px → 19px：卡片主标题、要点正文
         base: ['1.1875rem', { lineHeight: '1.85rem' }],
-        // 原 18px → 22px：小节标题
         lg: ['1.375rem', { lineHeight: '2rem' }],
-        // 原 20px → 26px：区块标题
         xl: ['1.625rem', { lineHeight: '2.25rem' }],
-        // 原 24px → 32px：列表页主标题
         '2xl': ['2rem', { lineHeight: '2.6rem' }],
-        // 原 30px → 38px：大号评分数字
         '3xl': ['2.375rem', { lineHeight: '2.8rem' }],
-        // 新增：二级页面项目名 / 页面主标题
-        '4xl': ['2.75rem', { lineHeight: '3.2rem' }],
-        // 新增：二级页面评分大数字
-        '5xl': ['3.25rem', { lineHeight: '3.4rem' }],
+        '4xl': ['2.75rem', { lineHeight: '3.2rem', letterSpacing: '-0.02em' }],
+        '5xl': ['3.25rem', { lineHeight: '3.4rem', letterSpacing: '-0.03em' }],
+        '6xl': ['4rem', { lineHeight: '4.1rem', letterSpacing: '-0.035em' }],
       },
       colors: {
-        page: '#F7F9FC',
+        // 页面底：极浅冷灰，让白色卡片「浮」起来
+        page: '#F5F7FB',
         card: '#FFFFFF',
         ink: {
-          DEFAULT: '#172033',
-          soft: '#667085',
+          DEFAULT: '#0F172A',
+          soft: '#5A6478',
           faint: '#98A2B3',
         },
-        line: '#E6EAF0',
+        line: '#E4E8F0',
+        line: {
+          DEFAULT: '#E4E8F0',
+          soft: '#EEF1F6',
+        },
         brand: {
+          50: '#EEF4FF',
+          100: '#E0EAFF',
+          200: '#C7D8FF',
+          300: '#A4BFFF',
+          400: '#6D93FF',
+          500: '#3B6DF6',
+          600: '#2563EB',
+          700: '#1D4FD7',
           DEFAULT: '#2563EB',
           light: '#3B82F6',
           wash: '#EFF6FF',
+          ink: '#14213D',
         },
-        ok: { DEFAULT: '#16A34A', wash: '#F0FDF4' },
-        warn: { DEFAULT: '#D97706', wash: '#FFFBEB' },
-        danger: { DEFAULT: '#DC2626', wash: '#FEF2F2' },
+        accent: {
+          DEFAULT: '#7C5CFC',
+          wash: '#F3F0FF',
+        },
+        ok: { DEFAULT: '#12A150', wash: '#ECFDF3', line: '#A6E7C0' },
+        warn: { DEFAULT: '#C77700', wash: '#FFF8EB', line: '#FBD9A2' },
+        danger: { DEFAULT: '#DC2626', wash: '#FEF2F2', line: '#F7C6C6' },
       },
       maxWidth: {
-        // 原 1240px → 1440px：宽屏下减少两侧空白，内容更饱满
         shell: '1440px',
-        // 详情页正文列：原 max-w-3xl(768px) → 1024px（旧值，保留兼容）
+        wide: '1680px',
         prose: '1024px',
-        // 二级页面主列：右侧目录栏以外的正文宽度
         article: '1120px',
-        // 二级页面右侧栏（试算 / 目录 / 官方资料）
         aside: '400px',
+      },
+      borderRadius: {
+        xl: '0.9rem',
+        '2xl': '1.15rem',
+        '3xl': '1.6rem',
+      },
+      boxShadow: {
+        // 三层阴影：越往下越「贴地」，避免廉价的大黑边
+        card: '0 1px 2px rgba(16,24,40,0.04), 0 8px 24px -12px rgba(16,24,40,0.10)',
+        'card-hover': '0 2px 4px rgba(16,24,40,0.05), 0 18px 40px -16px rgba(37,99,235,0.22)',
+        lift: '0 24px 60px -28px rgba(15,23,42,0.35)',
+        glow: '0 12px 32px -12px rgba(37,99,235,0.55)',
       },
       fontFamily: {
         sans: [
@@ -68,6 +90,15 @@ export default {
           '"Microsoft YaHei"',
           'sans-serif',
         ],
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'fade-up': 'fade-up 0.45s cubic-bezier(0.22,1,0.36,1) both',
       },
     },
   },

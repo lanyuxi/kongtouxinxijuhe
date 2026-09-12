@@ -50,17 +50,34 @@ export function FilterBar({
 
   return (
     <section className="card">
-      <div className="flex flex-col gap-4">
-        <input
-          type="search"
-          value={filters.keyword}
-          onChange={(e) => set('keyword', e.target.value)}
-          placeholder="搜索项目名称、任务或公链…"
-          aria-label="搜索项目"
-          className="select w-full"
-        />
+      {/* 头部：标题 + 结果计数，明确「这是筛选区」 */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-lg font-semibold tracking-tight text-ink">筛选与排序</h2>
+        <p className="text-sm text-ink-soft">
+          共 <strong className="metric text-base text-ink">{resultCount}</strong> 个项目
+        </p>
+      </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mt-5 flex flex-col gap-5">
+        {/* 搜索框：独立一行并加大，作为主操作 */}
+        <div className="relative">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-faint"
+          >
+            ⌕
+          </span>
+          <input
+            type="search"
+            value={filters.keyword}
+            onChange={(e) => set('keyword', e.target.value)}
+            placeholder="搜索项目名称、任务或公链…"
+            aria-label="搜索项目"
+            className="select w-full py-3.5 pl-11 text-base shadow-sm"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
           <div>
             <label className="label" htmlFor="f-status">状态</label>
             <select
@@ -99,7 +116,7 @@ export function FilterBar({
               id="f-cat"
               className="select w-full"
               value={filters.category}
-              onChange={(e) => set('category', e.target.value)}
+              onChange={(e) => set('category', e.target.value as Filters['category'])}
             >
               {CATEGORIES.map((c) => (
                 <option key={c} value={c}>
@@ -125,7 +142,7 @@ export function FilterBar({
             </select>
           </div>
 
-          <div>
+          <div className="col-span-2 sm:col-span-1">
             <label className="label" htmlFor="f-cost">成本</label>
             <select
               id="f-cost"
@@ -142,12 +159,12 @@ export function FilterBar({
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm">
-          <span className="text-ink-soft">
+        <div className="flex flex-wrap items-center gap-4 border-t border-line-soft pt-5 text-sm">
+          <span className="flex items-center gap-2 text-ink-soft">
             排序
             <select
               aria-label="排序方式"
-              className="select ml-2"
+              className="select"
               value={filters.sort}
               onChange={(e) => set('sort', e.target.value as SortKey)}
             >
@@ -158,11 +175,8 @@ export function FilterBar({
               ))}
             </select>
           </span>
-          <span className="text-ink-soft">
-            共 <strong className="text-ink">{resultCount}</strong> 个项目
-          </span>
-          <button type="button" onClick={onReset} className="btn-ghost ml-auto">
-            重置筛选
+          <button type="button" onClick={onReset} className="btn-quiet ml-auto">
+            重置筛选 ↺
           </button>
         </div>
       </div>
