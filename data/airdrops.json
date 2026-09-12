@@ -1,1795 +1,7 @@
 {
-  "updated_at": "2026-09-11T14:34:12.732Z",
-  "new_today": 13,
+  "updated_at": "2026-09-12T01:17:09.955Z",
+  "new_today": 0,
   "projects": [
-    {
-      "id": "hyperliquid",
-      "name": "Hyperliquid",
-      "slug": "hyperliquid",
-      "tagline": "去中心化永续合约交易平台，已通过积分活动完成大规模空投分发。",
-      "category": "DeFi",
-      "chains": [
-        "Ethereum"
-      ],
-      "status": "claim_live",
-      "official": {
-        "website": "https://defillama.com/protocol/hyperliquid",
-        "x": "https://x.com/HyperliquidX",
-        "docs": "https://hyperliquid.gitbook.io/hyperliquid-docs",
-        "github": "https://github.com/hyperliquid-dex",
-        "discord": "https://discord.gg/hyperliquid"
-      },
-      "meta": {
-        "funding": "未公开披露机构融资",
-        "investors": [],
-        "token_status": "HYPE 已发行",
-        "airdrop_status": "空投已开放领取，第一阶段快照已完成"
-      },
-      "tasks": [
-        "连接钱包",
-        "检查领取资格",
-        "领取空投"
-      ],
-      "requirements": [
-        "钱包",
-        "主网资金"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
-        },
-        {
-          "type": "rewards_tracker",
-          "name": "DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "official_docs",
-          "label": "官方文档存在",
-          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs",
-          "verified": true
-        },
-        {
-          "type": "official_github",
-          "label": "官方 GitHub 仓库",
-          "url": "https://github.com/hyperliquid-dex",
-          "verified": true
-        },
-        {
-          "type": "official_x",
-          "label": "官方 X 账号",
-          "url": "https://x.com/HyperliquidX",
-          "verified": false,
-          "note": "需人工确认账号认证状态"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：Airdrops.io",
-          "url": "https://airdrops.io/latest/",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "funding",
-          "label": "融资信息可核实",
-          "url": "https://defillama.com/protocol/hyperliquid",
-          "verified": false,
-          "note": "未公开披露机构融资"
-        }
-      ],
-      "scores": {
-        "authenticity": 60,
-        "value": 83,
-        "risk": "medium",
-        "grade": "A",
-        "authenticityItems": [
-          {
-            "key": "authenticity.website",
-            "label": "官方网站可验证",
-            "value": 0,
-            "max": 15,
-            "reason": "未找到可验证的官方网站"
-          },
-          {
-            "key": "authenticity.announcement",
-            "label": "官方公告明确提到活动",
-            "value": 10,
-            "max": 20,
-            "reason": "项目状态已确认，但未找到可直接引用的官方公告"
-          },
-          {
-            "key": "authenticity.crosslink",
-            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
-            "value": 15,
-            "max": 15,
-            "reason": "Docs 与官网链接一致"
-          },
-          {
-            "key": "authenticity.thirdparty",
-            "label": "至少两个独立第三方来源",
-            "value": 15,
-            "max": 15,
-            "reason": "已有 2 个独立第三方来源"
-          },
-          {
-            "key": "authenticity.quest",
-            "label": "Galxe / Layer3 等官方 Space 可确认",
-            "value": 0,
-            "max": 10,
-            "reason": "未发现官方 Quest Space"
-          },
-          {
-            "key": "authenticity.github",
-            "label": "官方 GitHub / Docs 有持续活动",
-            "value": 10,
-            "max": 10,
-            "reason": "存在官方代码仓库",
-            "evidenceUrl": "https://github.com/hyperliquid-dex"
-          },
-          {
-            "key": "authenticity.funding",
-            "label": "团队 / 投资信息可核实",
-            "value": 10,
-            "max": 10,
-            "reason": "已核实融资信息：未公开披露机构融资",
-            "evidenceUrl": "https://defillama.com/protocol/hyperliquid"
-          },
-          {
-            "key": "authenticity.contract",
-            "label": "合约地址在区块浏览器可验证",
-            "value": 0,
-            "max": 5,
-            "reason": "暂无公开可验证合约地址"
-          }
-        ],
-        "valueItems": [
-          {
-            "key": "value.fundamentals",
-            "label": "项目基本面",
-            "value": 20,
-            "max": 20,
-            "reason": "具备官网与基础资料，基本面较完整"
-          },
-          {
-            "key": "value.funding",
-            "label": "融资 / 投资机构",
-            "value": 9,
-            "max": 15,
-            "reason": "融资信息：未公开披露机构融资"
-          },
-          {
-            "key": "value.activity",
-            "label": "真实产品 / 用户 / 活跃度",
-            "value": 15,
-            "max": 15,
-            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）"
-          },
-          {
-            "key": "value.signal",
-            "label": "Token / Airdrop 信号强度",
-            "value": 20,
-            "max": 20,
-            "reason": "已进入领取阶段，信号最强"
-          },
-          {
-            "key": "value.roi",
-            "label": "任务投入产出比",
-            "value": 11,
-            "max": 15,
-            "reason": "预计投入约 32 分钟，共 5 个步骤"
-          },
-          {
-            "key": "value.timing",
-            "label": "当前参与时机",
-            "value": 4,
-            "max": 10,
-            "reason": "已进入后期阶段，参与窗口收窄"
-          },
-          {
-            "key": "value.dilution",
-            "label": "用户稀释风险",
-            "value": 4,
-            "max": 5,
-            "reason": "暂未发现明显的用户过度稀释迹象"
-          }
-        ],
-        "riskItems": [
-          {
-            "key": "risk._",
-            "label": "需要连接钱包",
-            "value": 0,
-            "max": 3,
-            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
-          },
-          {
-            "key": "risk._swap_",
-            "label": "涉及 Swap / 交易",
-            "value": 1,
-            "max": 3,
-            "reason": "检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM"
-          }
-        ]
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 32,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "A",
-        "action": "participate",
-        "summary": "值得参与，建议先完成低成本任务，再决定是否追加投入。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://defillama.com/protocol/hyperliquid",
-          "minutes": 5,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
-          "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs",
-          "source_verified": true
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
-          "official_url": "https://defillama.com/protocol/hyperliquid",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面成功打开，且域名与官方一致。",
-          "source_url": "https://defillama.com/protocol/hyperliquid",
-          "source_verified": true
-        },
-        {
-          "step": 3,
-          "title": "连接钱包",
-          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://defillama.com/protocol/hyperliquid",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面右上角显示钱包地址。",
-          "source_url": "https://defillama.com/protocol/hyperliquid",
-          "source_verified": true
-        },
-        {
-          "step": 4,
-          "title": "完成核心链上任务",
-          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
-          "official_url": "https://defillama.com/protocol/hyperliquid",
-          "minutes": 20,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium",
-          "done_when": "任务状态在官方页面显示为已完成。",
-          "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs",
-          "source_verified": true
-        },
-        {
-          "step": 5,
-          "title": "检查任务状态",
-          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
-          "official_url": "https://defillama.com/protocol/hyperliquid",
-          "minutes": 3,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "所有任务均显示已完成，且积分已计入。",
-          "source_url": "https://defillama.com/protocol/hyperliquid",
-          "source_verified": true
-        }
-      ],
-      "faq": [
-        {
-          "q": "这个空投确认了吗？",
-          "a": "当前状态：已开放领取。官方渠道已有明确信号。"
-        },
-        {
-          "q": "什么时候结束？",
-          "a": "空投已开放领取，第一阶段快照已完成"
-        },
-        {
-          "q": "参与需要花钱吗？",
-          "a": "预计无需资金成本，仅需时间。"
-        },
-        {
-          "q": "需要连接钱包吗？",
-          "a": "需要。请务必使用独立的空投钱包。"
-        },
-        {
-          "q": "需要主网资产吗？",
-          "a": "暂不需要主网资产。"
-        },
-        {
-          "q": "积分一定会兑换 Token 吗？",
-          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
-        },
-        {
-          "q": "适合新手参与吗？",
-          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
-        },
-        {
-          "q": "领取时间确定了吗？",
-          "a": "已进入领取阶段，请以官方页面为准。"
-        }
-      ],
-      "risks": [
-        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
-        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
-      ],
-      "created_at": "2026-09-11T14:29:52.345Z",
-      "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
-    },
-    {
-      "id": "eigenlayer",
-      "name": "EigenLayer",
-      "slug": "eigenlayer",
-      "tagline": "以太坊再质押协议，EIGEN 代币已进入领取阶段。",
-      "category": "DeFi",
-      "chains": [
-        "Ethereum"
-      ],
-      "status": "claim_live",
-      "official": {
-        "website": "https://defillama.com/protocol/eigenlayer",
-        "x": "https://x.com/eigenlayer",
-        "docs": "https://docs.eigenlayer.xyz",
-        "github": "https://github.com/Layr-Labs",
-        "discord": "https://discord.gg/eigenlayer"
-      },
-      "meta": {
-        "funding": "累计融资约 1.64 亿美元",
-        "investors": [
-          "a16z",
-          "Blockchain Capital",
-          "Coinbase Ventures"
-        ],
-        "token_status": "EIGEN 已发行",
-        "airdrop_status": "EIGEN 领取已开放"
-      },
-      "tasks": [
-        "再质押",
-        "连接钱包",
-        "领取 EIGEN"
-      ],
-      "requirements": [
-        "钱包",
-        "主网资金"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
-        },
-        {
-          "type": "rewards_tracker",
-          "name": "DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "official_docs",
-          "label": "官方文档存在",
-          "url": "https://docs.eigenlayer.xyz",
-          "verified": true
-        },
-        {
-          "type": "official_github",
-          "label": "官方 GitHub 仓库",
-          "url": "https://github.com/Layr-Labs",
-          "verified": true
-        },
-        {
-          "type": "official_x",
-          "label": "官方 X 账号",
-          "url": "https://x.com/eigenlayer",
-          "verified": false,
-          "note": "需人工确认账号认证状态"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：Airdrops.io",
-          "url": "https://airdrops.io/latest/",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "funding",
-          "label": "融资信息可核实",
-          "url": "https://defillama.com/protocol/eigenlayer",
-          "verified": false,
-          "note": "累计融资约 1.64 亿美元"
-        }
-      ],
-      "scores": {
-        "authenticity": 60,
-        "value": 86,
-        "risk": "high",
-        "grade": "S",
-        "authenticityItems": [
-          {
-            "key": "authenticity.website",
-            "label": "官方网站可验证",
-            "value": 0,
-            "max": 15,
-            "reason": "未找到可验证的官方网站"
-          },
-          {
-            "key": "authenticity.announcement",
-            "label": "官方公告明确提到活动",
-            "value": 10,
-            "max": 20,
-            "reason": "项目状态已确认，但未找到可直接引用的官方公告"
-          },
-          {
-            "key": "authenticity.crosslink",
-            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
-            "value": 15,
-            "max": 15,
-            "reason": "Docs 与官网链接一致"
-          },
-          {
-            "key": "authenticity.thirdparty",
-            "label": "至少两个独立第三方来源",
-            "value": 15,
-            "max": 15,
-            "reason": "已有 2 个独立第三方来源"
-          },
-          {
-            "key": "authenticity.quest",
-            "label": "Galxe / Layer3 等官方 Space 可确认",
-            "value": 0,
-            "max": 10,
-            "reason": "未发现官方 Quest Space"
-          },
-          {
-            "key": "authenticity.github",
-            "label": "官方 GitHub / Docs 有持续活动",
-            "value": 10,
-            "max": 10,
-            "reason": "存在官方代码仓库",
-            "evidenceUrl": "https://github.com/Layr-Labs"
-          },
-          {
-            "key": "authenticity.funding",
-            "label": "团队 / 投资信息可核实",
-            "value": 10,
-            "max": 10,
-            "reason": "已核实融资信息：累计融资约 1.64 亿美元",
-            "evidenceUrl": "https://defillama.com/protocol/eigenlayer"
-          },
-          {
-            "key": "authenticity.contract",
-            "label": "合约地址在区块浏览器可验证",
-            "value": 0,
-            "max": 5,
-            "reason": "暂无公开可验证合约地址"
-          }
-        ],
-        "valueItems": [
-          {
-            "key": "value.fundamentals",
-            "label": "项目基本面",
-            "value": 20,
-            "max": 20,
-            "reason": "具备官网与基础资料，基本面较完整"
-          },
-          {
-            "key": "value.funding",
-            "label": "融资 / 投资机构",
-            "value": 15,
-            "max": 15,
-            "reason": "融资信息：累计融资约 1.64 亿美元"
-          },
-          {
-            "key": "value.activity",
-            "label": "真实产品 / 用户 / 活跃度",
-            "value": 15,
-            "max": 15,
-            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）"
-          },
-          {
-            "key": "value.signal",
-            "label": "Token / Airdrop 信号强度",
-            "value": 20,
-            "max": 20,
-            "reason": "已进入领取阶段，信号最强"
-          },
-          {
-            "key": "value.roi",
-            "label": "任务投入产出比",
-            "value": 11,
-            "max": 15,
-            "reason": "预计投入约 32 分钟，共 5 个步骤"
-          },
-          {
-            "key": "value.timing",
-            "label": "当前参与时机",
-            "value": 4,
-            "max": 10,
-            "reason": "已进入后期阶段，参与窗口收窄"
-          },
-          {
-            "key": "value.dilution",
-            "label": "用户稀释风险",
-            "value": 1,
-            "max": 5,
-            "reason": "项目风险较高，参与者结构可能不健康"
-          }
-        ],
-        "riskItems": [
-          {
-            "key": "risk._",
-            "label": "需要连接钱包",
-            "value": 0,
-            "max": 3,
-            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
-          },
-          {
-            "key": "risk._lp_farming_",
-            "label": "涉及 LP / Farming / 质押",
-            "value": 2,
-            "max": 3,
-            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
-          },
-          {
-            "key": "risk.unverified_contract",
-            "label": "需要与合约交互，但合约未经验证",
-            "value": 1,
-            "max": 3,
-            "reason": "存在合约交互行为，却未找到已验证的合约地址，风险上调"
-          }
-        ]
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 32,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "B",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://defillama.com/protocol/eigenlayer",
-          "minutes": 5,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
-          "source_url": "https://docs.eigenlayer.xyz",
-          "source_verified": true
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
-          "official_url": "https://defillama.com/protocol/eigenlayer",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面成功打开，且域名与官方一致。",
-          "source_url": "https://defillama.com/protocol/eigenlayer",
-          "source_verified": true
-        },
-        {
-          "step": 3,
-          "title": "连接钱包",
-          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://defillama.com/protocol/eigenlayer",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面右上角显示钱包地址。",
-          "source_url": "https://defillama.com/protocol/eigenlayer",
-          "source_verified": true
-        },
-        {
-          "step": 4,
-          "title": "完成核心链上任务",
-          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
-          "official_url": "https://defillama.com/protocol/eigenlayer",
-          "minutes": 20,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium",
-          "done_when": "任务状态在官方页面显示为已完成。",
-          "source_url": "https://docs.eigenlayer.xyz",
-          "source_verified": true
-        },
-        {
-          "step": 5,
-          "title": "检查任务状态",
-          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
-          "official_url": "https://defillama.com/protocol/eigenlayer",
-          "minutes": 3,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "所有任务均显示已完成，且积分已计入。",
-          "source_url": "https://defillama.com/protocol/eigenlayer",
-          "source_verified": true
-        }
-      ],
-      "faq": [
-        {
-          "q": "这个空投确认了吗？",
-          "a": "当前状态：已开放领取。官方渠道已有明确信号。"
-        },
-        {
-          "q": "什么时候结束？",
-          "a": "EIGEN 领取已开放"
-        },
-        {
-          "q": "参与需要花钱吗？",
-          "a": "预计无需资金成本，仅需时间。"
-        },
-        {
-          "q": "需要连接钱包吗？",
-          "a": "需要。请务必使用独立的空投钱包。"
-        },
-        {
-          "q": "需要主网资产吗？",
-          "a": "暂不需要主网资产。"
-        },
-        {
-          "q": "积分一定会兑换 Token 吗？",
-          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
-        },
-        {
-          "q": "适合新手参与吗？",
-          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
-        },
-        {
-          "q": "领取时间确定了吗？",
-          "a": "已进入领取阶段，请以官方页面为准。"
-        }
-      ],
-      "risks": [
-        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
-        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
-      ],
-      "created_at": "2026-09-11T14:29:52.345Z",
-      "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
-    },
-    {
-      "id": "ethena",
-      "name": "Ethena",
-      "slug": "ethena",
-      "tagline": "合成美元协议，通过 USDe 与积分活动持续分发奖励。",
-      "category": "DeFi",
-      "chains": [
-        "Ethereum"
-      ],
-      "status": "confirmed",
-      "official": {
-        "website": "https://ethena.fi",
-        "x": "https://x.com/ethena_labs",
-        "docs": "https://docs.ethena.fi",
-        "github": "https://github.com/ethena-labs",
-        "discord": "https://discord.gg/ethena"
-      },
-      "meta": {
-        "funding": "累计融资约 2050 万美元",
-        "investors": [
-          "Dragonfly",
-          "Maelstrom",
-          "Binance Labs"
-        ],
-        "token_status": "ENA 已发行",
-        "airdrop_status": "积分计划持续进行"
-      },
-      "tasks": [
-        "连接钱包",
-        "质押 USDe",
-        "持有积分"
-      ],
-      "requirements": [
-        "钱包",
-        "主网资金"
-      ],
-      "sources": [
-        {
-          "type": "rewards_tracker",
-          "name": "DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "official_website",
-          "label": "官方网站可访问",
-          "url": "https://ethena.fi",
-          "verified": true,
-          "note": "官方域名已验证"
-        },
-        {
-          "type": "official_docs",
-          "label": "官方文档存在",
-          "url": "https://docs.ethena.fi",
-          "verified": true
-        },
-        {
-          "type": "official_github",
-          "label": "官方 GitHub 仓库",
-          "url": "https://github.com/ethena-labs",
-          "verified": true
-        },
-        {
-          "type": "official_x",
-          "label": "官方 X 账号",
-          "url": "https://x.com/ethena_labs",
-          "verified": false,
-          "note": "需人工确认账号认证状态"
-        },
-        {
-          "type": "official_announcement",
-          "label": "官网与 Docs 链接可互相印证",
-          "url": "https://ethena.fi",
-          "verified": true,
-          "note": "仅证明官方渠道一致，不代表官方已公告空投"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "funding",
-          "label": "融资信息可核实",
-          "url": "https://ethena.fi",
-          "verified": true,
-          "note": "累计融资约 2050 万美元"
-        }
-      ],
-      "scores": {
-        "authenticity": 77,
-        "value": 82,
-        "risk": "high",
-        "grade": "A",
-        "authenticityItems": [
-          {
-            "key": "authenticity.website",
-            "label": "官方网站可验证",
-            "value": 15,
-            "max": 15,
-            "reason": "官方域名可直接访问",
-            "evidenceUrl": "https://ethena.fi"
-          },
-          {
-            "key": "authenticity.announcement",
-            "label": "官方公告明确提到活动",
-            "value": 20,
-            "max": 20,
-            "reason": "项目状态已确认，且官网与官方渠道链接一致",
-            "evidenceUrl": "https://ethena.fi"
-          },
-          {
-            "key": "authenticity.crosslink",
-            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
-            "value": 15,
-            "max": 15,
-            "reason": "Docs 与官网链接一致"
-          },
-          {
-            "key": "authenticity.thirdparty",
-            "label": "至少两个独立第三方来源",
-            "value": 7,
-            "max": 15,
-            "reason": "仅有 1 个第三方来源，交叉验证不足"
-          },
-          {
-            "key": "authenticity.quest",
-            "label": "Galxe / Layer3 等官方 Space 可确认",
-            "value": 0,
-            "max": 10,
-            "reason": "未发现官方 Quest Space"
-          },
-          {
-            "key": "authenticity.github",
-            "label": "官方 GitHub / Docs 有持续活动",
-            "value": 10,
-            "max": 10,
-            "reason": "存在官方代码仓库",
-            "evidenceUrl": "https://github.com/ethena-labs"
-          },
-          {
-            "key": "authenticity.funding",
-            "label": "团队 / 投资信息可核实",
-            "value": 10,
-            "max": 10,
-            "reason": "已核实融资信息：累计融资约 2050 万美元",
-            "evidenceUrl": "https://ethena.fi"
-          },
-          {
-            "key": "authenticity.contract",
-            "label": "合约地址在区块浏览器可验证",
-            "value": 0,
-            "max": 5,
-            "reason": "暂无公开可验证合约地址"
-          }
-        ],
-        "valueItems": [
-          {
-            "key": "value.fundamentals",
-            "label": "项目基本面",
-            "value": 20,
-            "max": 20,
-            "reason": "具备官网与基础资料，基本面较完整"
-          },
-          {
-            "key": "value.funding",
-            "label": "融资 / 投资机构",
-            "value": 15,
-            "max": 15,
-            "reason": "融资信息：累计融资约 2050 万美元"
-          },
-          {
-            "key": "value.activity",
-            "label": "真实产品 / 用户 / 活跃度",
-            "value": 12,
-            "max": 15,
-            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
-          },
-          {
-            "key": "value.signal",
-            "label": "Token / Airdrop 信号强度",
-            "value": 16,
-            "max": 20,
-            "reason": "空投已确认，信号较强"
-          },
-          {
-            "key": "value.roi",
-            "label": "任务投入产出比",
-            "value": 11,
-            "max": 15,
-            "reason": "预计投入约 32 分钟，共 5 个步骤"
-          },
-          {
-            "key": "value.timing",
-            "label": "当前参与时机",
-            "value": 7,
-            "max": 10,
-            "reason": "已进入后期阶段，参与窗口收窄"
-          },
-          {
-            "key": "value.dilution",
-            "label": "用户稀释风险",
-            "value": 1,
-            "max": 5,
-            "reason": "项目风险较高，参与者结构可能不健康"
-          }
-        ],
-        "riskItems": [
-          {
-            "key": "risk._",
-            "label": "需要连接钱包",
-            "value": 0,
-            "max": 3,
-            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
-          },
-          {
-            "key": "risk._lp_farming_",
-            "label": "涉及 LP / Farming / 质押",
-            "value": 2,
-            "max": 3,
-            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
-          },
-          {
-            "key": "risk.unverified_contract",
-            "label": "需要与合约交互，但合约未经验证",
-            "value": 1,
-            "max": 3,
-            "reason": "存在合约交互行为，却未找到已验证的合约地址，风险上调"
-          }
-        ]
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 32,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "B",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://ethena.fi",
-          "minutes": 5,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
-          "source_url": "https://docs.ethena.fi",
-          "source_verified": true
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
-          "official_url": "https://ethena.fi",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面成功打开，且域名与官方一致。",
-          "source_url": "https://ethena.fi",
-          "source_verified": true
-        },
-        {
-          "step": 3,
-          "title": "连接钱包",
-          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://ethena.fi",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面右上角显示钱包地址。",
-          "source_url": "https://ethena.fi",
-          "source_verified": true
-        },
-        {
-          "step": 4,
-          "title": "完成核心链上任务",
-          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
-          "official_url": "https://ethena.fi",
-          "minutes": 20,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium",
-          "done_when": "任务状态在官方页面显示为已完成。",
-          "source_url": "https://docs.ethena.fi",
-          "source_verified": true
-        },
-        {
-          "step": 5,
-          "title": "检查任务状态",
-          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
-          "official_url": "https://ethena.fi",
-          "minutes": 3,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "所有任务均显示已完成，且积分已计入。",
-          "source_url": "https://ethena.fi",
-          "source_verified": true
-        }
-      ],
-      "faq": [
-        {
-          "q": "这个空投确认了吗？",
-          "a": "当前状态：已确认空投。官方渠道已有明确信号。"
-        },
-        {
-          "q": "什么时候结束？",
-          "a": "积分计划持续进行"
-        },
-        {
-          "q": "参与需要花钱吗？",
-          "a": "预计无需资金成本，仅需时间。"
-        },
-        {
-          "q": "需要连接钱包吗？",
-          "a": "需要。请务必使用独立的空投钱包。"
-        },
-        {
-          "q": "需要主网资产吗？",
-          "a": "暂不需要主网资产。"
-        },
-        {
-          "q": "积分一定会兑换 Token 吗？",
-          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
-        },
-        {
-          "q": "适合新手参与吗？",
-          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
-        },
-        {
-          "q": "领取时间确定了吗？",
-          "a": "官方暂未公布。"
-        }
-      ],
-      "risks": [
-        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
-        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
-      ],
-      "created_at": "2026-09-11T14:29:52.346Z",
-      "discovered_at": "2026-09-11T14:29:52.346Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
-    },
-    {
-      "id": "pendle",
-      "name": "Pendle",
-      "slug": "pendle",
-      "tagline": "收益代币化协议，持续开展积分与激励计划。",
-      "category": "DeFi",
-      "chains": [
-        "Ethereum"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://pendle.finance",
-        "x": "https://x.com/pendle_fi",
-        "docs": "https://docs.pendle.finance",
-        "github": "https://github.com/pendle-finance",
-        "discord": "https://discord.gg/pendle"
-      },
-      "meta": {
-        "funding": "累计融资约 2400 万美元",
-        "investors": [
-          "Binance Labs",
-          "Spartan Group",
-          "CMS Holdings"
-        ],
-        "token_status": "PENDLE 已发行",
-        "airdrop_status": "官方暂未公布新一轮空投"
-      },
-      "tasks": [
-        "连接钱包",
-        "提供流动性",
-        "获取积分"
-      ],
-      "requirements": [
-        "钱包",
-        "主网资金"
-      ],
-      "sources": [
-        {
-          "type": "rewards_tracker",
-          "name": "DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "official_website",
-          "label": "官方网站可访问",
-          "url": "https://pendle.finance",
-          "verified": true,
-          "note": "官方域名已验证"
-        },
-        {
-          "type": "official_docs",
-          "label": "官方文档存在",
-          "url": "https://docs.pendle.finance",
-          "verified": true
-        },
-        {
-          "type": "official_github",
-          "label": "官方 GitHub 仓库",
-          "url": "https://github.com/pendle-finance",
-          "verified": true
-        },
-        {
-          "type": "official_x",
-          "label": "官方 X 账号",
-          "url": "https://x.com/pendle_fi",
-          "verified": false,
-          "note": "需人工确认账号认证状态"
-        },
-        {
-          "type": "official_announcement",
-          "label": "官网与 Docs 链接可互相印证",
-          "url": "https://pendle.finance",
-          "verified": true,
-          "note": "仅证明官方渠道一致，不代表官方已公告空投"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "funding",
-          "label": "融资信息可核实",
-          "url": "https://pendle.finance",
-          "verified": true,
-          "note": "累计融资约 2400 万美元"
-        }
-      ],
-      "scores": {
-        "authenticity": 57,
-        "value": 78,
-        "risk": "high",
-        "grade": "A",
-        "authenticityItems": [
-          {
-            "key": "authenticity.website",
-            "label": "官方网站可验证",
-            "value": 15,
-            "max": 15,
-            "reason": "官方域名可直接访问",
-            "evidenceUrl": "https://pendle.finance"
-          },
-          {
-            "key": "authenticity.announcement",
-            "label": "官方公告明确提到活动",
-            "value": 0,
-            "max": 20,
-            "reason": "项目尚未正式确认空投，不存在官方活动公告",
-            "evidenceUrl": "https://pendle.finance"
-          },
-          {
-            "key": "authenticity.crosslink",
-            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
-            "value": 15,
-            "max": 15,
-            "reason": "Docs 与官网链接一致"
-          },
-          {
-            "key": "authenticity.thirdparty",
-            "label": "至少两个独立第三方来源",
-            "value": 7,
-            "max": 15,
-            "reason": "仅有 1 个第三方来源，交叉验证不足"
-          },
-          {
-            "key": "authenticity.quest",
-            "label": "Galxe / Layer3 等官方 Space 可确认",
-            "value": 0,
-            "max": 10,
-            "reason": "未发现官方 Quest Space"
-          },
-          {
-            "key": "authenticity.github",
-            "label": "官方 GitHub / Docs 有持续活动",
-            "value": 10,
-            "max": 10,
-            "reason": "存在官方代码仓库",
-            "evidenceUrl": "https://github.com/pendle-finance"
-          },
-          {
-            "key": "authenticity.funding",
-            "label": "团队 / 投资信息可核实",
-            "value": 10,
-            "max": 10,
-            "reason": "已核实融资信息：累计融资约 2400 万美元",
-            "evidenceUrl": "https://pendle.finance"
-          },
-          {
-            "key": "authenticity.contract",
-            "label": "合约地址在区块浏览器可验证",
-            "value": 0,
-            "max": 5,
-            "reason": "暂无公开可验证合约地址"
-          }
-        ],
-        "valueItems": [
-          {
-            "key": "value.fundamentals",
-            "label": "项目基本面",
-            "value": 20,
-            "max": 20,
-            "reason": "具备官网与基础资料，基本面较完整"
-          },
-          {
-            "key": "value.funding",
-            "label": "融资 / 投资机构",
-            "value": 15,
-            "max": 15,
-            "reason": "融资信息：累计融资约 2400 万美元"
-          },
-          {
-            "key": "value.activity",
-            "label": "真实产品 / 用户 / 活跃度",
-            "value": 12,
-            "max": 15,
-            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
-          },
-          {
-            "key": "value.signal",
-            "label": "Token / Airdrop 信号强度",
-            "value": 9,
-            "max": 20,
-            "reason": "存在积分/测试网等潜在线索，但尚未确认"
-          },
-          {
-            "key": "value.roi",
-            "label": "任务投入产出比",
-            "value": 11,
-            "max": 15,
-            "reason": "预计投入约 32 分钟，共 5 个步骤"
-          },
-          {
-            "key": "value.timing",
-            "label": "当前参与时机",
-            "value": 10,
-            "max": 10,
-            "reason": "仍处于早期阶段，参与时机较好"
-          },
-          {
-            "key": "value.dilution",
-            "label": "用户稀释风险",
-            "value": 1,
-            "max": 5,
-            "reason": "项目风险较高，参与者结构可能不健康"
-          }
-        ],
-        "riskItems": [
-          {
-            "key": "risk._",
-            "label": "需要连接钱包",
-            "value": 0,
-            "max": 3,
-            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
-          },
-          {
-            "key": "risk._lp_farming_",
-            "label": "涉及 LP / Farming / 质押",
-            "value": 2,
-            "max": 3,
-            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
-          }
-        ]
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 32,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "B",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://pendle.finance",
-          "minutes": 5,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
-          "source_url": "https://docs.pendle.finance",
-          "source_verified": true
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
-          "official_url": "https://pendle.finance",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面成功打开，且域名与官方一致。",
-          "source_url": "https://pendle.finance",
-          "source_verified": true
-        },
-        {
-          "step": 3,
-          "title": "连接钱包",
-          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://pendle.finance",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面右上角显示钱包地址。",
-          "source_url": "https://pendle.finance",
-          "source_verified": true
-        },
-        {
-          "step": 4,
-          "title": "完成核心链上任务",
-          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
-          "official_url": "https://pendle.finance",
-          "minutes": 20,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium",
-          "done_when": "任务状态在官方页面显示为已完成。",
-          "source_url": "https://docs.pendle.finance",
-          "source_verified": true
-        },
-        {
-          "step": 5,
-          "title": "检查任务状态",
-          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
-          "official_url": "https://pendle.finance",
-          "minutes": 3,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "所有任务均显示已完成，且积分已计入。",
-          "source_url": "https://pendle.finance",
-          "source_verified": true
-        }
-      ],
-      "faq": [
-        {
-          "q": "这个空投确认了吗？",
-          "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
-        },
-        {
-          "q": "什么时候结束？",
-          "a": "官方暂未公布新一轮空投"
-        },
-        {
-          "q": "参与需要花钱吗？",
-          "a": "预计无需资金成本，仅需时间。"
-        },
-        {
-          "q": "需要连接钱包吗？",
-          "a": "需要。请务必使用独立的空投钱包。"
-        },
-        {
-          "q": "需要主网资产吗？",
-          "a": "暂不需要主网资产。"
-        },
-        {
-          "q": "积分一定会兑换 Token 吗？",
-          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
-        },
-        {
-          "q": "适合新手参与吗？",
-          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
-        },
-        {
-          "q": "领取时间确定了吗？",
-          "a": "官方暂未公布。"
-        }
-      ],
-      "risks": [
-        "项目尚未确认空投，存在投入后无回报的可能。",
-        "真实性置信度偏低，证据不足，建议先观察。",
-        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
-        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
-      ],
-      "created_at": "2026-09-11T14:29:52.346Z",
-      "discovered_at": "2026-09-11T14:29:52.346Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
-    },
-    {
-      "id": "kamino",
-      "name": "Kamino",
-      "slug": "kamino",
-      "tagline": "Solana 借贷与流动性协议，存在持续积分激励。",
-      "category": "DeFi",
-      "chains": [
-        "Solana"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://kamino.finance",
-        "x": "https://x.com/KaminoHQ",
-        "docs": "https://docs.kamino.finance",
-        "github": "https://github.com/Kamino-Finance",
-        "discord": "https://discord.gg/kamino"
-      },
-      "meta": {
-        "funding": "累计融资约 700 万美元",
-        "investors": [
-          "Pivot Global",
-          "Jump Crypto"
-        ],
-        "token_status": "KMNO 已发行",
-        "airdrop_status": "积分激励计划持续进行"
-      },
-      "tasks": [
-        "连接钱包",
-        "借贷",
-        "提供流动性"
-      ],
-      "requirements": [
-        "钱包",
-        "Solana 钱包",
-        "主网资金"
-      ],
-      "sources": [
-        {
-          "type": "rewards_tracker",
-          "name": "DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "official_website",
-          "label": "官方网站可访问",
-          "url": "https://kamino.finance",
-          "verified": true,
-          "note": "官方域名已验证"
-        },
-        {
-          "type": "official_docs",
-          "label": "官方文档存在",
-          "url": "https://docs.kamino.finance",
-          "verified": true
-        },
-        {
-          "type": "official_github",
-          "label": "官方 GitHub 仓库",
-          "url": "https://github.com/Kamino-Finance",
-          "verified": true
-        },
-        {
-          "type": "official_x",
-          "label": "官方 X 账号",
-          "url": "https://x.com/KaminoHQ",
-          "verified": false,
-          "note": "需人工确认账号认证状态"
-        },
-        {
-          "type": "official_announcement",
-          "label": "官网与 Docs 链接可互相印证",
-          "url": "https://kamino.finance",
-          "verified": true,
-          "note": "仅证明官方渠道一致，不代表官方已公告空投"
-        },
-        {
-          "type": "third_party",
-          "label": "第三方来源：DefiLlama Rewards",
-          "url": "https://defillama.com/rewards",
-          "verified": true,
-          "note": "第三方来源仅作交叉参考，不代表官方背书"
-        },
-        {
-          "type": "funding",
-          "label": "融资信息可核实",
-          "url": "https://kamino.finance",
-          "verified": true,
-          "note": "累计融资约 700 万美元"
-        }
-      ],
-      "scores": {
-        "authenticity": 57,
-        "value": 78,
-        "risk": "high",
-        "grade": "A",
-        "authenticityItems": [
-          {
-            "key": "authenticity.website",
-            "label": "官方网站可验证",
-            "value": 15,
-            "max": 15,
-            "reason": "官方域名可直接访问",
-            "evidenceUrl": "https://kamino.finance"
-          },
-          {
-            "key": "authenticity.announcement",
-            "label": "官方公告明确提到活动",
-            "value": 0,
-            "max": 20,
-            "reason": "项目尚未正式确认空投，不存在官方活动公告",
-            "evidenceUrl": "https://kamino.finance"
-          },
-          {
-            "key": "authenticity.crosslink",
-            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
-            "value": 15,
-            "max": 15,
-            "reason": "Docs 与官网链接一致"
-          },
-          {
-            "key": "authenticity.thirdparty",
-            "label": "至少两个独立第三方来源",
-            "value": 7,
-            "max": 15,
-            "reason": "仅有 1 个第三方来源，交叉验证不足"
-          },
-          {
-            "key": "authenticity.quest",
-            "label": "Galxe / Layer3 等官方 Space 可确认",
-            "value": 0,
-            "max": 10,
-            "reason": "未发现官方 Quest Space"
-          },
-          {
-            "key": "authenticity.github",
-            "label": "官方 GitHub / Docs 有持续活动",
-            "value": 10,
-            "max": 10,
-            "reason": "存在官方代码仓库",
-            "evidenceUrl": "https://github.com/Kamino-Finance"
-          },
-          {
-            "key": "authenticity.funding",
-            "label": "团队 / 投资信息可核实",
-            "value": 10,
-            "max": 10,
-            "reason": "已核实融资信息：累计融资约 700 万美元",
-            "evidenceUrl": "https://kamino.finance"
-          },
-          {
-            "key": "authenticity.contract",
-            "label": "合约地址在区块浏览器可验证",
-            "value": 0,
-            "max": 5,
-            "reason": "暂无公开可验证合约地址"
-          }
-        ],
-        "valueItems": [
-          {
-            "key": "value.fundamentals",
-            "label": "项目基本面",
-            "value": 20,
-            "max": 20,
-            "reason": "具备官网与基础资料，基本面较完整"
-          },
-          {
-            "key": "value.funding",
-            "label": "融资 / 投资机构",
-            "value": 15,
-            "max": 15,
-            "reason": "融资信息：累计融资约 700 万美元"
-          },
-          {
-            "key": "value.activity",
-            "label": "真实产品 / 用户 / 活跃度",
-            "value": 12,
-            "max": 15,
-            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
-          },
-          {
-            "key": "value.signal",
-            "label": "Token / Airdrop 信号强度",
-            "value": 9,
-            "max": 20,
-            "reason": "存在积分/测试网等潜在线索，但尚未确认"
-          },
-          {
-            "key": "value.roi",
-            "label": "任务投入产出比",
-            "value": 11,
-            "max": 15,
-            "reason": "预计投入约 32 分钟，共 5 个步骤"
-          },
-          {
-            "key": "value.timing",
-            "label": "当前参与时机",
-            "value": 10,
-            "max": 10,
-            "reason": "仍处于早期阶段，参与时机较好"
-          },
-          {
-            "key": "value.dilution",
-            "label": "用户稀释风险",
-            "value": 1,
-            "max": 5,
-            "reason": "项目风险较高，参与者结构可能不健康"
-          }
-        ],
-        "riskItems": [
-          {
-            "key": "risk._",
-            "label": "需要连接钱包",
-            "value": 0,
-            "max": 3,
-            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
-          },
-          {
-            "key": "risk._lp_farming_",
-            "label": "涉及 LP / Farming / 质押",
-            "value": 2,
-            "max": 3,
-            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
-          }
-        ]
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 32,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "B",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://kamino.finance",
-          "minutes": 5,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
-          "source_url": "https://docs.kamino.finance",
-          "source_verified": true
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
-          "official_url": "https://kamino.finance",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面成功打开，且域名与官方一致。",
-          "source_url": "https://kamino.finance",
-          "source_verified": true
-        },
-        {
-          "step": 3,
-          "title": "连接钱包",
-          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
-          "official_url": "https://kamino.finance",
-          "minutes": 2,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "页面右上角显示钱包地址。",
-          "source_url": "https://kamino.finance",
-          "source_verified": true
-        },
-        {
-          "step": 4,
-          "title": "完成核心链上任务",
-          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
-          "official_url": "https://kamino.finance",
-          "minutes": 20,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium",
-          "done_when": "任务状态在官方页面显示为已完成。",
-          "source_url": "https://docs.kamino.finance",
-          "source_verified": true
-        },
-        {
-          "step": 5,
-          "title": "检查任务状态",
-          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
-          "official_url": "https://kamino.finance",
-          "minutes": 3,
-          "cost_usd": 0,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low",
-          "done_when": "所有任务均显示已完成，且积分已计入。",
-          "source_url": "https://kamino.finance",
-          "source_verified": true
-        }
-      ],
-      "faq": [
-        {
-          "q": "这个空投确认了吗？",
-          "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
-        },
-        {
-          "q": "什么时候结束？",
-          "a": "积分激励计划持续进行"
-        },
-        {
-          "q": "参与需要花钱吗？",
-          "a": "预计无需资金成本，仅需时间。"
-        },
-        {
-          "q": "需要连接钱包吗？",
-          "a": "需要。请务必使用独立的空投钱包。"
-        },
-        {
-          "q": "需要主网资产吗？",
-          "a": "暂不需要主网资产。"
-        },
-        {
-          "q": "积分一定会兑换 Token 吗？",
-          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
-        },
-        {
-          "q": "适合新手参与吗？",
-          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
-        },
-        {
-          "q": "领取时间确定了吗？",
-          "a": "官方暂未公布。"
-        }
-      ],
-      "risks": [
-        "项目尚未确认空投，存在投入后无回报的可能。",
-        "真实性置信度偏低，证据不足，建议先观察。",
-        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
-        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
-      ],
-      "created_at": "2026-09-11T14:29:52.346Z",
-      "discovered_at": "2026-09-11T14:29:52.346Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
-    },
     {
       "id": "monad",
       "name": "Monad",
@@ -1834,13 +46,13 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         },
         {
           "type": "quest_platform",
           "name": "Galxe",
           "url": "https://app.galxe.com/quest/explore/all",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
+          "fetched_at": "2026-09-12T01:17:09.964Z"
         }
       ],
       "evidence": [
@@ -2159,8 +371,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.964Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "berachain",
@@ -2206,13 +418,13 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         },
         {
           "type": "quest_platform",
           "name": "Galxe",
           "url": "https://app.galxe.com/quest/explore/all",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
+          "fetched_at": "2026-09-12T01:17:09.964Z"
         }
       ],
       "evidence": [
@@ -2531,8 +743,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.964Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "zora-network",
@@ -2577,13 +789,13 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         },
         {
           "type": "quest_platform",
           "name": "Galxe",
           "url": "https://app.galxe.com/quest/explore/all",
-          "fetched_at": "2026-09-11T14:34:12.737Z"
+          "fetched_at": "2026-09-12T01:17:09.964Z"
         }
       ],
       "evidence": [
@@ -2902,8 +1114,1796 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.737Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.964Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
+    },
+    {
+      "id": "hyperliquid",
+      "name": "Hyperliquid",
+      "slug": "hyperliquid",
+      "tagline": "去中心化永续合约交易平台，已通过积分活动完成大规模空投分发。",
+      "category": "DeFi",
+      "chains": [
+        "Ethereum"
+      ],
+      "status": "claim_live",
+      "official": {
+        "website": "https://defillama.com/protocol/hyperliquid",
+        "x": "https://x.com/HyperliquidX",
+        "docs": "https://hyperliquid.gitbook.io/hyperliquid-docs",
+        "github": "https://github.com/hyperliquid-dex",
+        "discord": "https://discord.gg/hyperliquid"
+      },
+      "meta": {
+        "funding": "未公开披露机构融资",
+        "investors": [],
+        "token_status": "HYPE 已发行",
+        "airdrop_status": "空投已开放领取，第一阶段快照已完成"
+      },
+      "tasks": [
+        "连接钱包",
+        "检查领取资格",
+        "领取空投"
+      ],
+      "requirements": [
+        "钱包",
+        "主网资金"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/latest/",
+          "fetched_at": "2026-09-12T01:17:09.962Z"
+        },
+        {
+          "type": "rewards_tracker",
+          "name": "DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "fetched_at": "2026-09-12T01:17:09.963Z"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "official_docs",
+          "label": "官方文档存在",
+          "url": "https://hyperliquid.gitbook.io/hyperliquid-docs",
+          "verified": true
+        },
+        {
+          "type": "official_github",
+          "label": "官方 GitHub 仓库",
+          "url": "https://github.com/hyperliquid-dex",
+          "verified": true
+        },
+        {
+          "type": "official_x",
+          "label": "官方 X 账号",
+          "url": "https://x.com/HyperliquidX",
+          "verified": false,
+          "note": "需人工确认账号认证状态"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：Airdrops.io",
+          "url": "https://airdrops.io/latest/",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "funding",
+          "label": "融资信息可核实",
+          "url": "https://defillama.com/protocol/hyperliquid",
+          "verified": false,
+          "note": "未公开披露机构融资"
+        }
+      ],
+      "scores": {
+        "authenticity": 60,
+        "value": 83,
+        "risk": "medium",
+        "grade": "A",
+        "authenticityItems": [
+          {
+            "key": "authenticity.website",
+            "label": "官方网站可验证",
+            "value": 0,
+            "max": 15,
+            "reason": "未找到可验证的官方网站"
+          },
+          {
+            "key": "authenticity.announcement",
+            "label": "官方公告明确提到活动",
+            "value": 10,
+            "max": 20,
+            "reason": "项目状态已确认，但未找到可直接引用的官方公告"
+          },
+          {
+            "key": "authenticity.crosslink",
+            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+            "value": 15,
+            "max": 15,
+            "reason": "Docs 与官网链接一致"
+          },
+          {
+            "key": "authenticity.thirdparty",
+            "label": "至少两个独立第三方来源",
+            "value": 15,
+            "max": 15,
+            "reason": "已有 2 个独立第三方来源"
+          },
+          {
+            "key": "authenticity.quest",
+            "label": "Galxe / Layer3 等官方 Space 可确认",
+            "value": 0,
+            "max": 10,
+            "reason": "未发现官方 Quest Space"
+          },
+          {
+            "key": "authenticity.github",
+            "label": "官方 GitHub / Docs 有持续活动",
+            "value": 10,
+            "max": 10,
+            "reason": "存在官方代码仓库",
+            "evidenceUrl": "https://github.com/hyperliquid-dex"
+          },
+          {
+            "key": "authenticity.funding",
+            "label": "团队 / 投资信息可核实",
+            "value": 10,
+            "max": 10,
+            "reason": "已核实融资信息：未公开披露机构融资",
+            "evidenceUrl": "https://defillama.com/protocol/hyperliquid"
+          },
+          {
+            "key": "authenticity.contract",
+            "label": "合约地址在区块浏览器可验证",
+            "value": 0,
+            "max": 5,
+            "reason": "暂无公开可验证合约地址"
+          }
+        ],
+        "valueItems": [
+          {
+            "key": "value.fundamentals",
+            "label": "项目基本面",
+            "value": 20,
+            "max": 20,
+            "reason": "具备官网与基础资料，基本面较完整"
+          },
+          {
+            "key": "value.funding",
+            "label": "融资 / 投资机构",
+            "value": 9,
+            "max": 15,
+            "reason": "融资信息：未公开披露机构融资"
+          },
+          {
+            "key": "value.activity",
+            "label": "真实产品 / 用户 / 活跃度",
+            "value": 15,
+            "max": 15,
+            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）"
+          },
+          {
+            "key": "value.signal",
+            "label": "Token / Airdrop 信号强度",
+            "value": 20,
+            "max": 20,
+            "reason": "已进入领取阶段，信号最强"
+          },
+          {
+            "key": "value.roi",
+            "label": "任务投入产出比",
+            "value": 11,
+            "max": 15,
+            "reason": "预计投入约 32 分钟，共 5 个步骤"
+          },
+          {
+            "key": "value.timing",
+            "label": "当前参与时机",
+            "value": 4,
+            "max": 10,
+            "reason": "已进入后期阶段，参与窗口收窄"
+          },
+          {
+            "key": "value.dilution",
+            "label": "用户稀释风险",
+            "value": 4,
+            "max": 5,
+            "reason": "暂未发现明显的用户过度稀释迹象"
+          }
+        ],
+        "riskItems": [
+          {
+            "key": "risk._",
+            "label": "需要连接钱包",
+            "value": 0,
+            "max": 3,
+            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
+          },
+          {
+            "key": "risk._swap_",
+            "label": "涉及 Swap / 交易",
+            "value": 1,
+            "max": 3,
+            "reason": "检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM"
+          }
+        ]
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 32,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "A",
+        "action": "participate",
+        "summary": "值得参与，建议先完成低成本任务，再决定是否追加投入。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://defillama.com/protocol/hyperliquid",
+          "minutes": 5,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
+          "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs",
+          "source_verified": true
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
+          "official_url": "https://defillama.com/protocol/hyperliquid",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面成功打开，且域名与官方一致。",
+          "source_url": "https://defillama.com/protocol/hyperliquid",
+          "source_verified": true
+        },
+        {
+          "step": 3,
+          "title": "连接钱包",
+          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://defillama.com/protocol/hyperliquid",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面右上角显示钱包地址。",
+          "source_url": "https://defillama.com/protocol/hyperliquid",
+          "source_verified": true
+        },
+        {
+          "step": 4,
+          "title": "完成核心链上任务",
+          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
+          "official_url": "https://defillama.com/protocol/hyperliquid",
+          "minutes": 20,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium",
+          "done_when": "任务状态在官方页面显示为已完成。",
+          "source_url": "https://hyperliquid.gitbook.io/hyperliquid-docs",
+          "source_verified": true
+        },
+        {
+          "step": 5,
+          "title": "检查任务状态",
+          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
+          "official_url": "https://defillama.com/protocol/hyperliquid",
+          "minutes": 3,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "所有任务均显示已完成，且积分已计入。",
+          "source_url": "https://defillama.com/protocol/hyperliquid",
+          "source_verified": true
+        }
+      ],
+      "faq": [
+        {
+          "q": "这个空投确认了吗？",
+          "a": "当前状态：已开放领取。官方渠道已有明确信号。"
+        },
+        {
+          "q": "什么时候结束？",
+          "a": "空投已开放领取，第一阶段快照已完成"
+        },
+        {
+          "q": "参与需要花钱吗？",
+          "a": "预计无需资金成本，仅需时间。"
+        },
+        {
+          "q": "需要连接钱包吗？",
+          "a": "需要。请务必使用独立的空投钱包。"
+        },
+        {
+          "q": "需要主网资产吗？",
+          "a": "暂不需要主网资产。"
+        },
+        {
+          "q": "积分一定会兑换 Token 吗？",
+          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+        },
+        {
+          "q": "适合新手参与吗？",
+          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+        },
+        {
+          "q": "领取时间确定了吗？",
+          "a": "已进入领取阶段，请以官方页面为准。"
+        }
+      ],
+      "risks": [
+        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+      ],
+      "created_at": "2026-09-11T14:29:52.345Z",
+      "discovered_at": "2026-09-11T14:29:52.345Z",
+      "last_checked_at": "2026-09-12T01:17:09.963Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
+    },
+    {
+      "id": "eigenlayer",
+      "name": "EigenLayer",
+      "slug": "eigenlayer",
+      "tagline": "以太坊再质押协议，EIGEN 代币已进入领取阶段。",
+      "category": "DeFi",
+      "chains": [
+        "Ethereum"
+      ],
+      "status": "claim_live",
+      "official": {
+        "website": "https://defillama.com/protocol/eigenlayer",
+        "x": "https://x.com/eigenlayer",
+        "docs": "https://docs.eigenlayer.xyz",
+        "github": "https://github.com/Layr-Labs",
+        "discord": "https://discord.gg/eigenlayer"
+      },
+      "meta": {
+        "funding": "累计融资约 1.64 亿美元",
+        "investors": [
+          "a16z",
+          "Blockchain Capital",
+          "Coinbase Ventures"
+        ],
+        "token_status": "EIGEN 已发行",
+        "airdrop_status": "EIGEN 领取已开放"
+      },
+      "tasks": [
+        "再质押",
+        "连接钱包",
+        "领取 EIGEN"
+      ],
+      "requirements": [
+        "钱包",
+        "主网资金"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/latest/",
+          "fetched_at": "2026-09-12T01:17:09.962Z"
+        },
+        {
+          "type": "rewards_tracker",
+          "name": "DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "fetched_at": "2026-09-12T01:17:09.963Z"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "official_docs",
+          "label": "官方文档存在",
+          "url": "https://docs.eigenlayer.xyz",
+          "verified": true
+        },
+        {
+          "type": "official_github",
+          "label": "官方 GitHub 仓库",
+          "url": "https://github.com/Layr-Labs",
+          "verified": true
+        },
+        {
+          "type": "official_x",
+          "label": "官方 X 账号",
+          "url": "https://x.com/eigenlayer",
+          "verified": false,
+          "note": "需人工确认账号认证状态"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：Airdrops.io",
+          "url": "https://airdrops.io/latest/",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "funding",
+          "label": "融资信息可核实",
+          "url": "https://defillama.com/protocol/eigenlayer",
+          "verified": false,
+          "note": "累计融资约 1.64 亿美元"
+        }
+      ],
+      "scores": {
+        "authenticity": 60,
+        "value": 86,
+        "risk": "high",
+        "grade": "S",
+        "authenticityItems": [
+          {
+            "key": "authenticity.website",
+            "label": "官方网站可验证",
+            "value": 0,
+            "max": 15,
+            "reason": "未找到可验证的官方网站"
+          },
+          {
+            "key": "authenticity.announcement",
+            "label": "官方公告明确提到活动",
+            "value": 10,
+            "max": 20,
+            "reason": "项目状态已确认，但未找到可直接引用的官方公告"
+          },
+          {
+            "key": "authenticity.crosslink",
+            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+            "value": 15,
+            "max": 15,
+            "reason": "Docs 与官网链接一致"
+          },
+          {
+            "key": "authenticity.thirdparty",
+            "label": "至少两个独立第三方来源",
+            "value": 15,
+            "max": 15,
+            "reason": "已有 2 个独立第三方来源"
+          },
+          {
+            "key": "authenticity.quest",
+            "label": "Galxe / Layer3 等官方 Space 可确认",
+            "value": 0,
+            "max": 10,
+            "reason": "未发现官方 Quest Space"
+          },
+          {
+            "key": "authenticity.github",
+            "label": "官方 GitHub / Docs 有持续活动",
+            "value": 10,
+            "max": 10,
+            "reason": "存在官方代码仓库",
+            "evidenceUrl": "https://github.com/Layr-Labs"
+          },
+          {
+            "key": "authenticity.funding",
+            "label": "团队 / 投资信息可核实",
+            "value": 10,
+            "max": 10,
+            "reason": "已核实融资信息：累计融资约 1.64 亿美元",
+            "evidenceUrl": "https://defillama.com/protocol/eigenlayer"
+          },
+          {
+            "key": "authenticity.contract",
+            "label": "合约地址在区块浏览器可验证",
+            "value": 0,
+            "max": 5,
+            "reason": "暂无公开可验证合约地址"
+          }
+        ],
+        "valueItems": [
+          {
+            "key": "value.fundamentals",
+            "label": "项目基本面",
+            "value": 20,
+            "max": 20,
+            "reason": "具备官网与基础资料，基本面较完整"
+          },
+          {
+            "key": "value.funding",
+            "label": "融资 / 投资机构",
+            "value": 15,
+            "max": 15,
+            "reason": "融资信息：累计融资约 1.64 亿美元"
+          },
+          {
+            "key": "value.activity",
+            "label": "真实产品 / 用户 / 活跃度",
+            "value": 15,
+            "max": 15,
+            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）"
+          },
+          {
+            "key": "value.signal",
+            "label": "Token / Airdrop 信号强度",
+            "value": 20,
+            "max": 20,
+            "reason": "已进入领取阶段，信号最强"
+          },
+          {
+            "key": "value.roi",
+            "label": "任务投入产出比",
+            "value": 11,
+            "max": 15,
+            "reason": "预计投入约 32 分钟，共 5 个步骤"
+          },
+          {
+            "key": "value.timing",
+            "label": "当前参与时机",
+            "value": 4,
+            "max": 10,
+            "reason": "已进入后期阶段，参与窗口收窄"
+          },
+          {
+            "key": "value.dilution",
+            "label": "用户稀释风险",
+            "value": 1,
+            "max": 5,
+            "reason": "项目风险较高，参与者结构可能不健康"
+          }
+        ],
+        "riskItems": [
+          {
+            "key": "risk._",
+            "label": "需要连接钱包",
+            "value": 0,
+            "max": 3,
+            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
+          },
+          {
+            "key": "risk._lp_farming_",
+            "label": "涉及 LP / Farming / 质押",
+            "value": 2,
+            "max": 3,
+            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
+          },
+          {
+            "key": "risk.unverified_contract",
+            "label": "需要与合约交互，但合约未经验证",
+            "value": 1,
+            "max": 3,
+            "reason": "存在合约交互行为，却未找到已验证的合约地址，风险上调"
+          }
+        ]
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 32,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "B",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://defillama.com/protocol/eigenlayer",
+          "minutes": 5,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
+          "source_url": "https://docs.eigenlayer.xyz",
+          "source_verified": true
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
+          "official_url": "https://defillama.com/protocol/eigenlayer",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面成功打开，且域名与官方一致。",
+          "source_url": "https://defillama.com/protocol/eigenlayer",
+          "source_verified": true
+        },
+        {
+          "step": 3,
+          "title": "连接钱包",
+          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://defillama.com/protocol/eigenlayer",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面右上角显示钱包地址。",
+          "source_url": "https://defillama.com/protocol/eigenlayer",
+          "source_verified": true
+        },
+        {
+          "step": 4,
+          "title": "完成核心链上任务",
+          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
+          "official_url": "https://defillama.com/protocol/eigenlayer",
+          "minutes": 20,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium",
+          "done_when": "任务状态在官方页面显示为已完成。",
+          "source_url": "https://docs.eigenlayer.xyz",
+          "source_verified": true
+        },
+        {
+          "step": 5,
+          "title": "检查任务状态",
+          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
+          "official_url": "https://defillama.com/protocol/eigenlayer",
+          "minutes": 3,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "所有任务均显示已完成，且积分已计入。",
+          "source_url": "https://defillama.com/protocol/eigenlayer",
+          "source_verified": true
+        }
+      ],
+      "faq": [
+        {
+          "q": "这个空投确认了吗？",
+          "a": "当前状态：已开放领取。官方渠道已有明确信号。"
+        },
+        {
+          "q": "什么时候结束？",
+          "a": "EIGEN 领取已开放"
+        },
+        {
+          "q": "参与需要花钱吗？",
+          "a": "预计无需资金成本，仅需时间。"
+        },
+        {
+          "q": "需要连接钱包吗？",
+          "a": "需要。请务必使用独立的空投钱包。"
+        },
+        {
+          "q": "需要主网资产吗？",
+          "a": "暂不需要主网资产。"
+        },
+        {
+          "q": "积分一定会兑换 Token 吗？",
+          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+        },
+        {
+          "q": "适合新手参与吗？",
+          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+        },
+        {
+          "q": "领取时间确定了吗？",
+          "a": "已进入领取阶段，请以官方页面为准。"
+        }
+      ],
+      "risks": [
+        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+      ],
+      "created_at": "2026-09-11T14:29:52.345Z",
+      "discovered_at": "2026-09-11T14:29:52.345Z",
+      "last_checked_at": "2026-09-12T01:17:09.963Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
+    },
+    {
+      "id": "ethena",
+      "name": "Ethena",
+      "slug": "ethena",
+      "tagline": "合成美元协议，通过 USDe 与积分活动持续分发奖励。",
+      "category": "DeFi",
+      "chains": [
+        "Ethereum"
+      ],
+      "status": "confirmed",
+      "official": {
+        "website": "https://ethena.fi",
+        "x": "https://x.com/ethena_labs",
+        "docs": "https://docs.ethena.fi",
+        "github": "https://github.com/ethena-labs",
+        "discord": "https://discord.gg/ethena"
+      },
+      "meta": {
+        "funding": "累计融资约 2050 万美元",
+        "investors": [
+          "Dragonfly",
+          "Maelstrom",
+          "Binance Labs"
+        ],
+        "token_status": "ENA 已发行",
+        "airdrop_status": "积分计划持续进行"
+      },
+      "tasks": [
+        "连接钱包",
+        "质押 USDe",
+        "持有积分"
+      ],
+      "requirements": [
+        "钱包",
+        "主网资金"
+      ],
+      "sources": [
+        {
+          "type": "rewards_tracker",
+          "name": "DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "fetched_at": "2026-09-12T01:17:09.963Z"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "official_website",
+          "label": "官方网站可访问",
+          "url": "https://ethena.fi",
+          "verified": true,
+          "note": "官方域名已验证"
+        },
+        {
+          "type": "official_docs",
+          "label": "官方文档存在",
+          "url": "https://docs.ethena.fi",
+          "verified": true
+        },
+        {
+          "type": "official_github",
+          "label": "官方 GitHub 仓库",
+          "url": "https://github.com/ethena-labs",
+          "verified": true
+        },
+        {
+          "type": "official_x",
+          "label": "官方 X 账号",
+          "url": "https://x.com/ethena_labs",
+          "verified": false,
+          "note": "需人工确认账号认证状态"
+        },
+        {
+          "type": "official_announcement",
+          "label": "官网与 Docs 链接可互相印证",
+          "url": "https://ethena.fi",
+          "verified": true,
+          "note": "仅证明官方渠道一致，不代表官方已公告空投"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "funding",
+          "label": "融资信息可核实",
+          "url": "https://ethena.fi",
+          "verified": true,
+          "note": "累计融资约 2050 万美元"
+        }
+      ],
+      "scores": {
+        "authenticity": 77,
+        "value": 82,
+        "risk": "high",
+        "grade": "A",
+        "authenticityItems": [
+          {
+            "key": "authenticity.website",
+            "label": "官方网站可验证",
+            "value": 15,
+            "max": 15,
+            "reason": "官方域名可直接访问",
+            "evidenceUrl": "https://ethena.fi"
+          },
+          {
+            "key": "authenticity.announcement",
+            "label": "官方公告明确提到活动",
+            "value": 20,
+            "max": 20,
+            "reason": "项目状态已确认，且官网与官方渠道链接一致",
+            "evidenceUrl": "https://ethena.fi"
+          },
+          {
+            "key": "authenticity.crosslink",
+            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+            "value": 15,
+            "max": 15,
+            "reason": "Docs 与官网链接一致"
+          },
+          {
+            "key": "authenticity.thirdparty",
+            "label": "至少两个独立第三方来源",
+            "value": 7,
+            "max": 15,
+            "reason": "仅有 1 个第三方来源，交叉验证不足"
+          },
+          {
+            "key": "authenticity.quest",
+            "label": "Galxe / Layer3 等官方 Space 可确认",
+            "value": 0,
+            "max": 10,
+            "reason": "未发现官方 Quest Space"
+          },
+          {
+            "key": "authenticity.github",
+            "label": "官方 GitHub / Docs 有持续活动",
+            "value": 10,
+            "max": 10,
+            "reason": "存在官方代码仓库",
+            "evidenceUrl": "https://github.com/ethena-labs"
+          },
+          {
+            "key": "authenticity.funding",
+            "label": "团队 / 投资信息可核实",
+            "value": 10,
+            "max": 10,
+            "reason": "已核实融资信息：累计融资约 2050 万美元",
+            "evidenceUrl": "https://ethena.fi"
+          },
+          {
+            "key": "authenticity.contract",
+            "label": "合约地址在区块浏览器可验证",
+            "value": 0,
+            "max": 5,
+            "reason": "暂无公开可验证合约地址"
+          }
+        ],
+        "valueItems": [
+          {
+            "key": "value.fundamentals",
+            "label": "项目基本面",
+            "value": 20,
+            "max": 20,
+            "reason": "具备官网与基础资料，基本面较完整"
+          },
+          {
+            "key": "value.funding",
+            "label": "融资 / 投资机构",
+            "value": 15,
+            "max": 15,
+            "reason": "融资信息：累计融资约 2050 万美元"
+          },
+          {
+            "key": "value.activity",
+            "label": "真实产品 / 用户 / 活跃度",
+            "value": 12,
+            "max": 15,
+            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+          },
+          {
+            "key": "value.signal",
+            "label": "Token / Airdrop 信号强度",
+            "value": 16,
+            "max": 20,
+            "reason": "空投已确认，信号较强"
+          },
+          {
+            "key": "value.roi",
+            "label": "任务投入产出比",
+            "value": 11,
+            "max": 15,
+            "reason": "预计投入约 32 分钟，共 5 个步骤"
+          },
+          {
+            "key": "value.timing",
+            "label": "当前参与时机",
+            "value": 7,
+            "max": 10,
+            "reason": "已进入后期阶段，参与窗口收窄"
+          },
+          {
+            "key": "value.dilution",
+            "label": "用户稀释风险",
+            "value": 1,
+            "max": 5,
+            "reason": "项目风险较高，参与者结构可能不健康"
+          }
+        ],
+        "riskItems": [
+          {
+            "key": "risk._",
+            "label": "需要连接钱包",
+            "value": 0,
+            "max": 3,
+            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
+          },
+          {
+            "key": "risk._lp_farming_",
+            "label": "涉及 LP / Farming / 质押",
+            "value": 2,
+            "max": 3,
+            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
+          },
+          {
+            "key": "risk.unverified_contract",
+            "label": "需要与合约交互，但合约未经验证",
+            "value": 1,
+            "max": 3,
+            "reason": "存在合约交互行为，却未找到已验证的合约地址，风险上调"
+          }
+        ]
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 32,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "B",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://ethena.fi",
+          "minutes": 5,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
+          "source_url": "https://docs.ethena.fi",
+          "source_verified": true
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
+          "official_url": "https://ethena.fi",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面成功打开，且域名与官方一致。",
+          "source_url": "https://ethena.fi",
+          "source_verified": true
+        },
+        {
+          "step": 3,
+          "title": "连接钱包",
+          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://ethena.fi",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面右上角显示钱包地址。",
+          "source_url": "https://ethena.fi",
+          "source_verified": true
+        },
+        {
+          "step": 4,
+          "title": "完成核心链上任务",
+          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
+          "official_url": "https://ethena.fi",
+          "minutes": 20,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium",
+          "done_when": "任务状态在官方页面显示为已完成。",
+          "source_url": "https://docs.ethena.fi",
+          "source_verified": true
+        },
+        {
+          "step": 5,
+          "title": "检查任务状态",
+          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
+          "official_url": "https://ethena.fi",
+          "minutes": 3,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "所有任务均显示已完成，且积分已计入。",
+          "source_url": "https://ethena.fi",
+          "source_verified": true
+        }
+      ],
+      "faq": [
+        {
+          "q": "这个空投确认了吗？",
+          "a": "当前状态：已确认空投。官方渠道已有明确信号。"
+        },
+        {
+          "q": "什么时候结束？",
+          "a": "积分计划持续进行"
+        },
+        {
+          "q": "参与需要花钱吗？",
+          "a": "预计无需资金成本，仅需时间。"
+        },
+        {
+          "q": "需要连接钱包吗？",
+          "a": "需要。请务必使用独立的空投钱包。"
+        },
+        {
+          "q": "需要主网资产吗？",
+          "a": "暂不需要主网资产。"
+        },
+        {
+          "q": "积分一定会兑换 Token 吗？",
+          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+        },
+        {
+          "q": "适合新手参与吗？",
+          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+        },
+        {
+          "q": "领取时间确定了吗？",
+          "a": "官方暂未公布。"
+        }
+      ],
+      "risks": [
+        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+      ],
+      "created_at": "2026-09-11T14:29:52.346Z",
+      "discovered_at": "2026-09-11T14:29:52.346Z",
+      "last_checked_at": "2026-09-12T01:17:09.963Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
+    },
+    {
+      "id": "pendle",
+      "name": "Pendle",
+      "slug": "pendle",
+      "tagline": "收益代币化协议，持续开展积分与激励计划。",
+      "category": "DeFi",
+      "chains": [
+        "Ethereum"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://pendle.finance",
+        "x": "https://x.com/pendle_fi",
+        "docs": "https://docs.pendle.finance",
+        "github": "https://github.com/pendle-finance",
+        "discord": "https://discord.gg/pendle"
+      },
+      "meta": {
+        "funding": "累计融资约 2400 万美元",
+        "investors": [
+          "Binance Labs",
+          "Spartan Group",
+          "CMS Holdings"
+        ],
+        "token_status": "PENDLE 已发行",
+        "airdrop_status": "官方暂未公布新一轮空投"
+      },
+      "tasks": [
+        "连接钱包",
+        "提供流动性",
+        "获取积分"
+      ],
+      "requirements": [
+        "钱包",
+        "主网资金"
+      ],
+      "sources": [
+        {
+          "type": "rewards_tracker",
+          "name": "DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "fetched_at": "2026-09-12T01:17:09.963Z"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "official_website",
+          "label": "官方网站可访问",
+          "url": "https://pendle.finance",
+          "verified": true,
+          "note": "官方域名已验证"
+        },
+        {
+          "type": "official_docs",
+          "label": "官方文档存在",
+          "url": "https://docs.pendle.finance",
+          "verified": true
+        },
+        {
+          "type": "official_github",
+          "label": "官方 GitHub 仓库",
+          "url": "https://github.com/pendle-finance",
+          "verified": true
+        },
+        {
+          "type": "official_x",
+          "label": "官方 X 账号",
+          "url": "https://x.com/pendle_fi",
+          "verified": false,
+          "note": "需人工确认账号认证状态"
+        },
+        {
+          "type": "official_announcement",
+          "label": "官网与 Docs 链接可互相印证",
+          "url": "https://pendle.finance",
+          "verified": true,
+          "note": "仅证明官方渠道一致，不代表官方已公告空投"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "funding",
+          "label": "融资信息可核实",
+          "url": "https://pendle.finance",
+          "verified": true,
+          "note": "累计融资约 2400 万美元"
+        }
+      ],
+      "scores": {
+        "authenticity": 57,
+        "value": 78,
+        "risk": "high",
+        "grade": "A",
+        "authenticityItems": [
+          {
+            "key": "authenticity.website",
+            "label": "官方网站可验证",
+            "value": 15,
+            "max": 15,
+            "reason": "官方域名可直接访问",
+            "evidenceUrl": "https://pendle.finance"
+          },
+          {
+            "key": "authenticity.announcement",
+            "label": "官方公告明确提到活动",
+            "value": 0,
+            "max": 20,
+            "reason": "项目尚未正式确认空投，不存在官方活动公告",
+            "evidenceUrl": "https://pendle.finance"
+          },
+          {
+            "key": "authenticity.crosslink",
+            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+            "value": 15,
+            "max": 15,
+            "reason": "Docs 与官网链接一致"
+          },
+          {
+            "key": "authenticity.thirdparty",
+            "label": "至少两个独立第三方来源",
+            "value": 7,
+            "max": 15,
+            "reason": "仅有 1 个第三方来源，交叉验证不足"
+          },
+          {
+            "key": "authenticity.quest",
+            "label": "Galxe / Layer3 等官方 Space 可确认",
+            "value": 0,
+            "max": 10,
+            "reason": "未发现官方 Quest Space"
+          },
+          {
+            "key": "authenticity.github",
+            "label": "官方 GitHub / Docs 有持续活动",
+            "value": 10,
+            "max": 10,
+            "reason": "存在官方代码仓库",
+            "evidenceUrl": "https://github.com/pendle-finance"
+          },
+          {
+            "key": "authenticity.funding",
+            "label": "团队 / 投资信息可核实",
+            "value": 10,
+            "max": 10,
+            "reason": "已核实融资信息：累计融资约 2400 万美元",
+            "evidenceUrl": "https://pendle.finance"
+          },
+          {
+            "key": "authenticity.contract",
+            "label": "合约地址在区块浏览器可验证",
+            "value": 0,
+            "max": 5,
+            "reason": "暂无公开可验证合约地址"
+          }
+        ],
+        "valueItems": [
+          {
+            "key": "value.fundamentals",
+            "label": "项目基本面",
+            "value": 20,
+            "max": 20,
+            "reason": "具备官网与基础资料，基本面较完整"
+          },
+          {
+            "key": "value.funding",
+            "label": "融资 / 投资机构",
+            "value": 15,
+            "max": 15,
+            "reason": "融资信息：累计融资约 2400 万美元"
+          },
+          {
+            "key": "value.activity",
+            "label": "真实产品 / 用户 / 活跃度",
+            "value": 12,
+            "max": 15,
+            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+          },
+          {
+            "key": "value.signal",
+            "label": "Token / Airdrop 信号强度",
+            "value": 9,
+            "max": 20,
+            "reason": "存在积分/测试网等潜在线索，但尚未确认"
+          },
+          {
+            "key": "value.roi",
+            "label": "任务投入产出比",
+            "value": 11,
+            "max": 15,
+            "reason": "预计投入约 32 分钟，共 5 个步骤"
+          },
+          {
+            "key": "value.timing",
+            "label": "当前参与时机",
+            "value": 10,
+            "max": 10,
+            "reason": "仍处于早期阶段，参与时机较好"
+          },
+          {
+            "key": "value.dilution",
+            "label": "用户稀释风险",
+            "value": 1,
+            "max": 5,
+            "reason": "项目风险较高，参与者结构可能不健康"
+          }
+        ],
+        "riskItems": [
+          {
+            "key": "risk._",
+            "label": "需要连接钱包",
+            "value": 0,
+            "max": 3,
+            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
+          },
+          {
+            "key": "risk._lp_farming_",
+            "label": "涉及 LP / Farming / 质押",
+            "value": 2,
+            "max": 3,
+            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
+          }
+        ]
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 32,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "B",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://pendle.finance",
+          "minutes": 5,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
+          "source_url": "https://docs.pendle.finance",
+          "source_verified": true
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
+          "official_url": "https://pendle.finance",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面成功打开，且域名与官方一致。",
+          "source_url": "https://pendle.finance",
+          "source_verified": true
+        },
+        {
+          "step": 3,
+          "title": "连接钱包",
+          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://pendle.finance",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面右上角显示钱包地址。",
+          "source_url": "https://pendle.finance",
+          "source_verified": true
+        },
+        {
+          "step": 4,
+          "title": "完成核心链上任务",
+          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
+          "official_url": "https://pendle.finance",
+          "minutes": 20,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium",
+          "done_when": "任务状态在官方页面显示为已完成。",
+          "source_url": "https://docs.pendle.finance",
+          "source_verified": true
+        },
+        {
+          "step": 5,
+          "title": "检查任务状态",
+          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
+          "official_url": "https://pendle.finance",
+          "minutes": 3,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "所有任务均显示已完成，且积分已计入。",
+          "source_url": "https://pendle.finance",
+          "source_verified": true
+        }
+      ],
+      "faq": [
+        {
+          "q": "这个空投确认了吗？",
+          "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
+        },
+        {
+          "q": "什么时候结束？",
+          "a": "官方暂未公布新一轮空投"
+        },
+        {
+          "q": "参与需要花钱吗？",
+          "a": "预计无需资金成本，仅需时间。"
+        },
+        {
+          "q": "需要连接钱包吗？",
+          "a": "需要。请务必使用独立的空投钱包。"
+        },
+        {
+          "q": "需要主网资产吗？",
+          "a": "暂不需要主网资产。"
+        },
+        {
+          "q": "积分一定会兑换 Token 吗？",
+          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+        },
+        {
+          "q": "适合新手参与吗？",
+          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+        },
+        {
+          "q": "领取时间确定了吗？",
+          "a": "官方暂未公布。"
+        }
+      ],
+      "risks": [
+        "项目尚未确认空投，存在投入后无回报的可能。",
+        "真实性置信度偏低，证据不足，建议先观察。",
+        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+      ],
+      "created_at": "2026-09-11T14:29:52.346Z",
+      "discovered_at": "2026-09-11T14:29:52.346Z",
+      "last_checked_at": "2026-09-12T01:17:09.963Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
+    },
+    {
+      "id": "kamino",
+      "name": "Kamino",
+      "slug": "kamino",
+      "tagline": "Solana 借贷与流动性协议，存在持续积分激励。",
+      "category": "DeFi",
+      "chains": [
+        "Solana"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://kamino.finance",
+        "x": "https://x.com/KaminoHQ",
+        "docs": "https://docs.kamino.finance",
+        "github": "https://github.com/Kamino-Finance",
+        "discord": "https://discord.gg/kamino"
+      },
+      "meta": {
+        "funding": "累计融资约 700 万美元",
+        "investors": [
+          "Pivot Global",
+          "Jump Crypto"
+        ],
+        "token_status": "KMNO 已发行",
+        "airdrop_status": "积分激励计划持续进行"
+      },
+      "tasks": [
+        "连接钱包",
+        "借贷",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包",
+        "Solana 钱包",
+        "主网资金"
+      ],
+      "sources": [
+        {
+          "type": "rewards_tracker",
+          "name": "DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "fetched_at": "2026-09-12T01:17:09.963Z"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "official_website",
+          "label": "官方网站可访问",
+          "url": "https://kamino.finance",
+          "verified": true,
+          "note": "官方域名已验证"
+        },
+        {
+          "type": "official_docs",
+          "label": "官方文档存在",
+          "url": "https://docs.kamino.finance",
+          "verified": true
+        },
+        {
+          "type": "official_github",
+          "label": "官方 GitHub 仓库",
+          "url": "https://github.com/Kamino-Finance",
+          "verified": true
+        },
+        {
+          "type": "official_x",
+          "label": "官方 X 账号",
+          "url": "https://x.com/KaminoHQ",
+          "verified": false,
+          "note": "需人工确认账号认证状态"
+        },
+        {
+          "type": "official_announcement",
+          "label": "官网与 Docs 链接可互相印证",
+          "url": "https://kamino.finance",
+          "verified": true,
+          "note": "仅证明官方渠道一致，不代表官方已公告空投"
+        },
+        {
+          "type": "third_party",
+          "label": "第三方来源：DefiLlama Rewards",
+          "url": "https://defillama.com/rewards",
+          "verified": true,
+          "note": "第三方来源仅作交叉参考，不代表官方背书"
+        },
+        {
+          "type": "funding",
+          "label": "融资信息可核实",
+          "url": "https://kamino.finance",
+          "verified": true,
+          "note": "累计融资约 700 万美元"
+        }
+      ],
+      "scores": {
+        "authenticity": 57,
+        "value": 78,
+        "risk": "high",
+        "grade": "A",
+        "authenticityItems": [
+          {
+            "key": "authenticity.website",
+            "label": "官方网站可验证",
+            "value": 15,
+            "max": 15,
+            "reason": "官方域名可直接访问",
+            "evidenceUrl": "https://kamino.finance"
+          },
+          {
+            "key": "authenticity.announcement",
+            "label": "官方公告明确提到活动",
+            "value": 0,
+            "max": 20,
+            "reason": "项目尚未正式确认空投，不存在官方活动公告",
+            "evidenceUrl": "https://kamino.finance"
+          },
+          {
+            "key": "authenticity.crosslink",
+            "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+            "value": 15,
+            "max": 15,
+            "reason": "Docs 与官网链接一致"
+          },
+          {
+            "key": "authenticity.thirdparty",
+            "label": "至少两个独立第三方来源",
+            "value": 7,
+            "max": 15,
+            "reason": "仅有 1 个第三方来源，交叉验证不足"
+          },
+          {
+            "key": "authenticity.quest",
+            "label": "Galxe / Layer3 等官方 Space 可确认",
+            "value": 0,
+            "max": 10,
+            "reason": "未发现官方 Quest Space"
+          },
+          {
+            "key": "authenticity.github",
+            "label": "官方 GitHub / Docs 有持续活动",
+            "value": 10,
+            "max": 10,
+            "reason": "存在官方代码仓库",
+            "evidenceUrl": "https://github.com/Kamino-Finance"
+          },
+          {
+            "key": "authenticity.funding",
+            "label": "团队 / 投资信息可核实",
+            "value": 10,
+            "max": 10,
+            "reason": "已核实融资信息：累计融资约 700 万美元",
+            "evidenceUrl": "https://kamino.finance"
+          },
+          {
+            "key": "authenticity.contract",
+            "label": "合约地址在区块浏览器可验证",
+            "value": 0,
+            "max": 5,
+            "reason": "暂无公开可验证合约地址"
+          }
+        ],
+        "valueItems": [
+          {
+            "key": "value.fundamentals",
+            "label": "项目基本面",
+            "value": 20,
+            "max": 20,
+            "reason": "具备官网与基础资料，基本面较完整"
+          },
+          {
+            "key": "value.funding",
+            "label": "融资 / 投资机构",
+            "value": 15,
+            "max": 15,
+            "reason": "融资信息：累计融资约 700 万美元"
+          },
+          {
+            "key": "value.activity",
+            "label": "真实产品 / 用户 / 活跃度",
+            "value": 12,
+            "max": 15,
+            "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+          },
+          {
+            "key": "value.signal",
+            "label": "Token / Airdrop 信号强度",
+            "value": 9,
+            "max": 20,
+            "reason": "存在积分/测试网等潜在线索，但尚未确认"
+          },
+          {
+            "key": "value.roi",
+            "label": "任务投入产出比",
+            "value": 11,
+            "max": 15,
+            "reason": "预计投入约 32 分钟，共 5 个步骤"
+          },
+          {
+            "key": "value.timing",
+            "label": "当前参与时机",
+            "value": 10,
+            "max": 10,
+            "reason": "仍处于早期阶段，参与时机较好"
+          },
+          {
+            "key": "value.dilution",
+            "label": "用户稀释风险",
+            "value": 1,
+            "max": 5,
+            "reason": "项目风险较高，参与者结构可能不健康"
+          }
+        ],
+        "riskItems": [
+          {
+            "key": "risk._",
+            "label": "需要连接钱包",
+            "value": 0,
+            "max": 3,
+            "reason": "检测到「需要连接钱包」行为，风险等级 LOW"
+          },
+          {
+            "key": "risk._lp_farming_",
+            "label": "涉及 LP / Farming / 质押",
+            "value": 2,
+            "max": 3,
+            "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
+          }
+        ]
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 32,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "B",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "description": "准备一个专用的独立空投钱包，并确认设备环境安全。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://kamino.finance",
+          "minutes": 5,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。",
+          "source_url": "https://docs.kamino.finance",
+          "source_verified": true
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "description": "点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。",
+          "official_url": "https://kamino.finance",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面成功打开，且域名与官方一致。",
+          "source_url": "https://kamino.finance",
+          "source_verified": true
+        },
+        {
+          "step": 3,
+          "title": "连接钱包",
+          "description": "在官方页面连接上一步准备的独立钱包。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。",
+          "official_url": "https://kamino.finance",
+          "minutes": 2,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "页面右上角显示钱包地址。",
+          "source_url": "https://kamino.finance",
+          "source_verified": true
+        },
+        {
+          "step": 4,
+          "title": "完成核心链上任务",
+          "description": "按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。",
+          "official_url": "https://kamino.finance",
+          "minutes": 20,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium",
+          "done_when": "任务状态在官方页面显示为已完成。",
+          "source_url": "https://docs.kamino.finance",
+          "source_verified": true
+        },
+        {
+          "step": 5,
+          "title": "检查任务状态",
+          "description": "返回官方活动页面，确认所有任务与积分都已正确记录。",
+          "official_url": "https://kamino.finance",
+          "minutes": 3,
+          "cost_usd": 0,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low",
+          "done_when": "所有任务均显示已完成，且积分已计入。",
+          "source_url": "https://kamino.finance",
+          "source_verified": true
+        }
+      ],
+      "faq": [
+        {
+          "q": "这个空投确认了吗？",
+          "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
+        },
+        {
+          "q": "什么时候结束？",
+          "a": "积分激励计划持续进行"
+        },
+        {
+          "q": "参与需要花钱吗？",
+          "a": "预计无需资金成本，仅需时间。"
+        },
+        {
+          "q": "需要连接钱包吗？",
+          "a": "需要。请务必使用独立的空投钱包。"
+        },
+        {
+          "q": "需要主网资产吗？",
+          "a": "暂不需要主网资产。"
+        },
+        {
+          "q": "积分一定会兑换 Token 吗？",
+          "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+        },
+        {
+          "q": "适合新手参与吗？",
+          "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+        },
+        {
+          "q": "领取时间确定了吗？",
+          "a": "官方暂未公布。"
+        }
+      ],
+      "risks": [
+        "项目尚未确认空投，存在投入后无回报的可能。",
+        "真实性置信度偏低，证据不足，建议先观察。",
+        "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+        "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+      ],
+      "created_at": "2026-09-11T14:29:52.346Z",
+      "discovered_at": "2026-09-11T14:29:52.346Z",
+      "last_checked_at": "2026-09-12T01:17:09.963Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "layerzero",
@@ -2946,7 +2946,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         }
       ],
       "evidence": [
@@ -3251,8 +3251,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.736Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.962Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "scroll",
@@ -3296,7 +3296,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         }
       ],
       "evidence": [
@@ -3629,8 +3629,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.736Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.962Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "grass",
@@ -3672,7 +3672,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         }
       ],
       "evidence": [
@@ -3984,8 +3984,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.736Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.962Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "eclipse",
@@ -4029,7 +4029,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         }
       ],
       "evidence": [
@@ -4341,8 +4341,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.736Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.962Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     },
     {
       "id": "sanctum",
@@ -4381,7 +4381,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/latest/",
-          "fetched_at": "2026-09-11T14:34:12.736Z"
+          "fetched_at": "2026-09-12T01:17:09.962Z"
         }
       ],
       "evidence": [
@@ -4701,8 +4701,8 @@
       ],
       "created_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-11T14:34:12.736Z",
-      "last_changed_at": "2026-09-11T14:34:12.739Z"
+      "last_checked_at": "2026-09-12T01:17:09.962Z",
+      "last_changed_at": "2026-09-12T01:17:09.966Z"
     }
   ]
 }
