@@ -65,17 +65,29 @@ jobs:
         run: |
           git config user.name "dropscope-data-bot"
           git config user.email "dropscope-data-bot@users.noreply.github.com"
-          # 只关心数据文件是否变化：代码/文档由人工提交，不由本任务触碰
-          if git diff --quiet -- data/; then
+
+          # 只关心数据的「实质内容」是否变化。
+          #
+          # 为什么不能直接 `git diff --quiet -- data/`：
+          #   data/ 里的 last_checked_at / sources[].fetched_at / updated_at
+          #   每轮必变，直接比对会让每 10 分钟都产生一次无意义提交与部署，
+          #   并把前端「数据变化时间」永远推成「刚刚」。
+          #   pipeline 已用剔除时间戳后的指纹判定过实质变化，结果在 refresh-status.json。
+          CHANGED=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(String(s.data_changed===true))}catch(e){process.stdout.write('false')}")
+          SUMMARY=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(s.change_summary||'-')}catch(e){process.stdout.write('-')}")
+          echo "变化摘要：$SUMMARY"
+
+          if [ "$CHANGED" != "true" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "数据无变化，跳过提交"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            git add data/
-            git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
-            echo "已提交并推送数据更新"
+            echo "本轮无实质内容变化，跳过提交"
+            exit 0
           fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          git add data/
+          git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+          echo "已提交并推送数据更新：$SUMMARY"
 
       # 数据有变化时重新部署 Pages，让线上内容与数据保持一致
       # （timing：push 本身也会触发 deploy-pages.yml，这里只做兜底提示）

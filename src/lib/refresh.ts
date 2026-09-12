@@ -128,11 +128,22 @@ export async function runRefresh(
   const dataset = await reloadDataset();
   const changed = !!index?.updated_at && index.updated_at !== baseline;
 
-  const message = changed
-    ? '已更新到最新数据'
-    : trigger.triggered
-      ? '抓取任务已提交，数据暂未变化'
-      : '已重新拉取最新数据（数据源无变化）';
+  // 用「实质变化」而非「跑过一轮」来措辞：
+  // 定时任务每 10 分钟跑一次，但绝大多数轮次内容并没有变化，
+  // 如果一律说「已更新到最新数据」，用户会以为数据真的变了。
+  const status = await loadRefreshStatus();
+  const summary = status?.change_summary;
+  const dataChanged = status?.data_changed;
+
+  let message: string;
+  if (changed) {
+    message = dataChanged === false ? '已是最新数据（本轮无内容变化）' : '已更新到最新数据';
+  } else if (trigger.triggered) {
+    message = '抓取任务已提交，数据暂未变化';
+  } else {
+    message = '已重新拉取最新数据（数据源无变化）';
+  }
+  if (summary && summary !== '无实质变化') message += `：${summary}`;
 
   return { dataset, index, changed, message };
 }

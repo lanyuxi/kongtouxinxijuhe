@@ -20,8 +20,9 @@ import { applyAllSourced } from './lib/sourced';
 import { verifyAll } from './lib/verify';
 import { enrichAll } from './lib/enrich';
 import { scoreAll } from './lib/score';
-import { generateAll } from './lib/guide';
+import { buildFaqAndRisks, buildGuideAndCost } from './lib/guide';
 import { validateProjects } from './lib/validate';
+import { describeDiff, diffProjects, projectDigest } from './lib/change';
 import { writeLiveSnapshots } from './lib/live';
 import type { LiveSnapshot } from './lib/live';
 import { canPrune, pruneProjects } from './lib/prune';
@@ -99,7 +100,8 @@ async function main() {
     }
   }
 
-  // 3) Merge → Prune → Sourced → Verify → Enrich → Verify → Score → Guide
+  // 3) Merge → Prune → Sourced → Verify → Enrich → Verify
+  //    → Guide/Cost → Score → FAQ/Risks → Digest
   let projects = mergeAll(rawItems, previousProjects);
 
   // 3.1) Prune：清理历史误抓的运营页 / 跳转页（仅在来源健康时执行）
@@ -123,8 +125,18 @@ async function main() {
   projects = await enrichAll(projects);
   // enrich 后证据变了，重新 verify 一次以生成完整 Evidence 清单
   projects = verifyAll(projects);
+
+  // 3.3) Guide / Cost → Score → FAQ / Risks
+  //
+  //      顺序很关键，不能先 Score 后建成本：
+  //        · 参与价值里的「任务投入产出比」依赖 cost.time_minutes
+  //        · cost.time_minutes 由教程步骤推导（guide -> cost）
+  //      先评分后建成本，会导致评分用的是「上一轮遗留的成本」，
+  //      同一份数据连跑两次得到不同的参与价值分数（第二轮才收敛）。
+  //      因此这里把 Guide/Cost 提到 Score 之前，保证一次即收敛、可复现。
+  projects = projects.map((p) => buildGuideAndCost(p));
   projects = scoreAll(projects);
-  projects = projects.map((p) => generateAll(p));
+  projects = projects.map((p) => buildFaqAndRisks(p));
 
   // 4) Validate：不通过则拒绝发布
   const result = validateProjects(projects);
@@ -138,8 +150,39 @@ async function main() {
     return;
   }
 
-  // 5) 按更新时间倒序
-  projects.sort((a, b) => (a.last_checked_at < b.last_checked_at ? 1 : -1));
+  // 4.5) 变化判定：剔除时间戳后逐项对比，得出真正的「实质变化」
+  const diff = diffProjects(previousProjects, projects);
+  console.log(`[pipeline] 变化判定：${describeDiff(diff)}`);
+
+  // 4.6) 维护 last_changed_at / digest
+  //
+  //      规则：只有「实质内容」（即剔除时间戳后的指纹）变化时，才刷新 last_changed_at。
+  //      否则每 10 分钟跑一次会把所有项目的时间都推成「刚刚」，
+  //      前端「数据变化时间」永远显示刚刚，用户无法判断数据是否真的更新过。
+  const previousBySlug = new Map(previousProjects.map((p) => [p.slug, p]));
+  projects = projects.map((p) => {
+    const digest = projectDigest(p);
+    const prev = previousBySlug.get(p.slug);
+    const prevDigest = prev ? projectDigest(prev) : undefined;
+    const changed = prevDigest !== undefined && prevDigest !== digest;
+    // 历史项目若连指纹都没有（首次引入本机制），保留其原有 last_changed_at
+    const lastChanged =
+      prev && !changed ? prev.last_changed_at : changed ? new Date().toISOString() : p.last_changed_at;
+    return { ...p, digest, last_changed_at: lastChanged };
+  });
+
+  // 5) 按更新时间倒序；时间相同时用 slug 兜底比较。
+  //
+  //    为什么必须兜底：同一轮抓取里大量项目的 last_checked_at 完全相同
+  //    （都来自同一个 fetchedAt），此时排序结果取决于入参顺序。
+  //    如果顺序不稳定，落盘的 projects[] 每轮都会被重排，
+  //    既产生无意义 diff，也会让「数据是否变化」的判定失真。
+  projects.sort((a, b) => {
+    if (a.last_checked_at !== b.last_checked_at) {
+      return a.last_checked_at < b.last_checked_at ? 1 : -1;
+    }
+    return a.slug.localeCompare(b.slug, 'en');
+  });
 
   const startOfDay = new Date(now.slice(0, 10) + 'T00:00:00Z').getTime();
   const newToday = projects.filter(
@@ -186,6 +229,11 @@ async function main() {
     sources: health.length,
     ok_sources: okCount,
     updated_at: dataset.updated_at,
+    data_changed: diff.changed,
+    change_summary: describeDiff(diff),
+    added: diff.added.length,
+    modified: diff.modified.length,
+    removed: diff.removed.length,
   });
 
   console.log(

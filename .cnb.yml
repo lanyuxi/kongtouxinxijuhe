@@ -113,10 +113,21 @@ main:
           script: npm run validate
         - name: commit-data
           script:
-            # 只有数据真正变化时才提交，避免无意义提交
+            # 只有「实质内容」变化时才提交。
+            #
+            # 为什么不能直接 `git diff --quiet -- data/`：
+            #   data/ 里天然带有 last_checked_at / sources[].fetched_at / updated_at
+            #   这类「什么时候跑的」字段，它们每轮必变。
+            #   直接比对会导致每 10 分钟产生一次无意义提交 + 一次 GitHub 推送，
+            #   前端「数据变化时间」也会被推成永远「刚刚」。
+            #   scripts/pipeline.ts 已经用剔除时间戳后的指纹判定过实质变化，
+            #   结果写在 refresh-status.json 的 data_changed 字段里，这里直接复用。
             - |
-              if git diff --quiet -- data/; then
-                echo "数据无变化，跳过提交"
+              CHANGED=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(String(s.data_changed===true))}catch(e){process.stdout.write('false')}")
+              if [ "$CHANGED" != "true" ]; then
+                echo "本轮无实质内容变化，跳过提交（避免每 10 分钟一次的无意义提交）"
+                # 把「无变化」也作为可读摘要写进日志，便于事后排查
+                node -e "try{const s=require('./data/refresh-status.json');console.log('变化摘要：'+(s.change_summary||'-'))}catch(e){}"
               else
                 git config user.name "$GIT_AUTHOR_NAME"
                 git config user.email "$GIT_AUTHOR_EMAIL"

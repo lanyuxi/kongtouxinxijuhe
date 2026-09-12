@@ -323,15 +323,42 @@ Verify           证据收集；第三方链接需交叉验证才可信
    ↓
 Enrich           用人工核实的官方档案补全官方链接
    ↓
-Score            真实性置信度 / 风险 / 参与价值
+Guide / Cost     先出教程步骤，再由步骤推导成本模型（耗时 / Gas / 资金）
    ↓
-Guide            分步骤教程 + FAQ（模板化 + 官方 JSON-LD，来源可追溯）
+Score            真实性置信度 / 风险 / 参与价值（此时成本已就绪）
+   ↓
+FAQ / Risks      读取本轮评分生成问答与风险提示
+   ↓
+Diff             剔除时间戳后与上一版比对，得出「是否真的变了」
    ↓
 Validate         不通过则拒绝写入，避免污染线上数据
    ↓
 Write JSON       airdrops.json + details/*.json
                  + source-health.json + live/*.json + refresh-status.json
 ```
+
+#### 阶段顺序为什么必须是 Guide/Cost → Score → FAQ/Risks
+
+这不是风格问题，而是**正确性问题**：
+
+| 依赖关系 | 说明 |
+|---|---|
+| 参与价值 → 成本 | 「任务投入产出比」这一项直接读取 `cost.time_minutes` |
+| 成本 → 教程 | `cost.time_minutes` 由教程各步骤时长累加得出 |
+| FAQ / Risks → 评分 | 问答与风险文案会引用 `scores.risk`、`scores.authenticity` |
+
+如果按「先评分、后建成本」的顺序执行，评分读到的是**上一轮遗留的成本**，
+结果是同一份数据连跑两次得到不同的参与价值分数（第二次才收敛）。
+
+实测对照（同一份 57 个项目的输入）：
+
+| 顺序 | 第二次运行时参与价值分数发生变化的项目数 |
+|---|---|
+| 先 Score 后 Cost（修复前） | **57 / 57**（全部不一致，完全没有收敛） |
+| 先 Guide/Cost 后 Score（现在） | **0 / 57**（一次即收敛，结果可复现） |
+
+对应回归测试见 `tests/change.test.ts` 的「阶段顺序」用例组。
+
 
 ### 数据源
 
@@ -476,6 +503,46 @@ CNB 与 GitHub 各跑一份每 10 分钟的抓取任务：
 | GitHub 定时抓取 | 即使 CNB → GitHub 同步链路中断，**线上站点数据也能自己刷新** |
 
 两者都遵循「**数据变化才提交**」，因此不会互相刷屏，也不会冲突。
+
+#### 「数据变化」是如何判定的
+
+这里有一个很容易踩的坑：**`data/` 目录里天然带着一批「什么时候跑的」字段** ——
+`last_checked_at`、`sources[].fetched_at`、`updated_at`、`checked_at` 等，它们每轮必变。
+
+如果直接用 `git diff --quiet -- data/` 判断，结果就是：
+
+- 每 10 分钟产生一次**无意义的提交与 GitHub 推送**
+- 前端「内容更新」时间被推成永远「刚刚」，用户无法判断数据到底有没有更新
+
+因此流水线把「**实质内容**」与「**运行时刻**」严格分开（实现见 `scripts/lib/change.ts`）：
+
+| 处理 | 说明 |
+|---|---|
+| 剔除时间戳 | 指纹计算前，把上表时间戳字段统一归一为占位符 |
+| 剔除 `undefined` | `JSON.stringify` 会让 `{a: undefined}` 落盘成 `{}`，不剔除会导致内存态与磁盘态被误判为不同 |
+| 剔除指纹自身 | `digest` / `last_changed_at` 由判定结果决定，参与计算会形成自引用，导致每轮都判为「已变化」 |
+| 稳定排序 | 排序在时间相同时用 `slug` 兜底；否则同批次项目顺序每轮都会变，既产生噪音 diff 也使判定失真 |
+
+判定结果落在 `data/refresh-status.json`：
+
+```json
+{
+  "data_changed": false,
+  "change_summary": "无实质变化",
+  "added": 0, "modified": 0, "removed": 0
+}
+```
+
+`commit-data` 阶段与 GitHub Actions 都改为读这个字段，**只有 `data_changed=true` 才提交**。
+
+项目级时间也据此分成了两个，含义不同：
+
+| 字段 | 含义 |
+|---|---|
+| `last_checked_at` | 最近一次**被数据源检查**的时间（每轮抓取都更新） |
+| `last_changed_at` | 最近一次**内容真的变了**的时间（仅状态 / 评分 / 成本 / 教程 / 证据变化时更新） |
+
+详情页头部同时展示「最近抓取」与「内容更新」，不再混为一谈。
 
 ### 自动同步到 GitHub
 

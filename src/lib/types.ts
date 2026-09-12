@@ -213,8 +213,21 @@ export interface AirdropProject {
   created_at: string;
   /** 数据新鲜度三件套 */
   discovered_at: string;
+  /** 最近一次「被数据源检查」的时间，每轮抓取都会更新 */
   last_checked_at: string;
+  /**
+   * 最近一次「实质内容发生变化」的时间。
+   * 注意：只有 name / status / 评分 / 成本 / 教程 / 证据 等实质字段变化时才会更新，
+   * 仅仅重新抓取一次不会改动它，否则前端「数据变化时间」会永远显示「刚刚」。
+   */
   last_changed_at: string;
+
+  /**
+   * 实质内容指纹（由 scripts/lib/change.ts 计算）。
+   * 用于判断「本轮抓取是否真的带来了新信息」：
+   * 指纹不含 last_checked_at / fetched_at 等运行时刻字段。
+   */
+  digest?: string;
 
   /**
    * 数据源侧抓到的原始步骤（例如聚合站页面上的 HowTo）。
@@ -222,6 +235,13 @@ export interface AirdropProject {
    * 不会直接下发到前端（前端只消费 guide[]）。
    */
   sourcedSteps?: { title: string; body?: string; url?: string }[];
+
+  /**
+   * 人工档案（data/seed/official-profiles.json）内容的指纹。
+   * 用于判断档案是否真的被改动过：只有指纹变化才更新 last_changed_at，
+   * 避免静态档案每轮都被误判为「数据发生变化」。
+   */
+  profile_digest?: string;
 
   /**
    * 连续多少轮未被任何数据源提及。
@@ -281,4 +301,15 @@ export interface RefreshStatus {
   ok_sources?: number;
   error?: string;
   updated_at?: string;
+  /**
+   * 本轮抓取是否带来了「实质内容」变化。
+   * 判定时会剔除 last_checked_at / fetched_at 等运行时刻字段，
+   * 因此「跑了一轮但数据没变」会如实返回 false。
+   */
+  data_changed?: boolean;
+  /** 人类可读的差异摘要，例如「新增 3、变更 12」 */
+  change_summary?: string;
+  added?: number;
+  modified?: number;
+  removed?: number;
 }

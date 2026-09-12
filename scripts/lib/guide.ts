@@ -220,15 +220,30 @@ export function generateRisks(p: AirdropProject): string[] {
   return Array.from(new Set(risks));
 }
 
-export function generateAll(p: AirdropProject): AirdropProject {
+/**
+ * 第一阶段：生成教程步骤并推导成本模型。
+ *
+ * 必须在评分之前调用：参与价值里的「任务投入产出比」依赖 cost.time_minutes，
+ * 而成本又由教程步骤推导。顺序颠倒会导致评分滞后一轮。
+ */
+export function buildGuideAndCost(p: AirdropProject): AirdropProject {
   const guide = generateGuide(p);
-  const cost = buildCost(p, guide);
-  const next: AirdropProject = { ...p, guide, cost };
-  return {
-    ...next,
-    faq: generateFaq(next),
-    risks: generateRisks(next),
-  };
+  return { ...p, guide, cost: buildCost(p, guide) };
+}
+
+/**
+ * 第二阶段：生成 FAQ 与风险提示。
+ *
+ * 必须在评分之后调用：FAQ 与风险文案会读取 scores.risk / scores.authenticity，
+ * 提前调用会拿到上一轮的评分。
+ */
+export function buildFaqAndRisks(p: AirdropProject): AirdropProject {
+  return { ...p, faq: generateFaq(p), risks: generateRisks(p) };
+}
+
+/** 兼容入口：等价于 buildGuideAndCost → Score → buildFaqAndRisks 的完整调用方自行编排 */
+export function generateAll(p: AirdropProject): AirdropProject {
+  return buildFaqAndRisks(buildGuideAndCost(p));
 }
 
 function buildCost(p: AirdropProject, guide: GuideStep[]): AirdropProject['cost'] {
