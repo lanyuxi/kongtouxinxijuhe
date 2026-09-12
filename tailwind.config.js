@@ -73,6 +73,9 @@ export default {
         xl: '0.9rem',
         '2xl': '1.15rem',
         '3xl': '1.6rem',
+        // 设计稿专用：列表卡片外壳 12px、卡片内图标 12px
+        card: '0.75rem',
+        logo: '0.75rem',
       },
       boxShadow: {
         // 三层阴影：越往下越「贴地」，避免廉价的大黑边
