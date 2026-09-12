@@ -1,4 +1,4 @@
-# DropLens · GitHub 侧定时抓取（每 10 分钟）
+# 空投情报平台 · GitHub 侧定时抓取（每 10 分钟）
 #
 # 为什么 GitHub 侧也要跑一份：
 #   CNB 侧流水线负责「抓取 + 提交回 CNB」，但 GitHub Pages 上看到的数据

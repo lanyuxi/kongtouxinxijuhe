@@ -1,4 +1,4 @@
-# DropLens 空投雷达 · CNB 流水线配置
+# 空投情报平台 · CNB 流水线配置
 #
 # 对应方案文档第 21 / 34 / 35 章：
 #   - 每 10 分钟自动抓取一次（避开整点，减少任务集中）
@@ -78,7 +78,7 @@ main:
           options:
             tag: web-$CNB_COMMIT_SHORT
             description: |
-              DropLens 静态站点构建产物
+              空投情报平台静态站点构建产物
               提交：$CNB_COMMIT
               分支：$CNB_BRANCH
               构建号：$CNB_BUILD_ID

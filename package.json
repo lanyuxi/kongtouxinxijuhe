@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "DropLens 空投雷达 — Web3 空投情报与决策助手",
+  "description": "空投情报平台 — Web3 空投情报与决策助手",
   "scripts": {
     "dev": "npm run sync-data && vite",
     "build": "npm run sync-data && tsc -b && vite build",

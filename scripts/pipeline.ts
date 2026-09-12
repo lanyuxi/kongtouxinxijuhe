@@ -1,5 +1,5 @@
 /**
- * DropLens 数据流水线主入口。
+ * 空投情报平台数据流水线主入口。
  *
  * 流程（对应方案文档第 19 / 21 章）：
  *   Fetch → Normalize → Merge → Verify → Enrich → Score → Guide → Validate → Write JSON
