@@ -96,7 +96,7 @@ export function ListView({
                 清空本地数据
               </button>
             </div>
-            <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {saved.map((p) => (
                 <ProjectCard
                   key={p.slug}
@@ -135,7 +135,7 @@ export function ListView({
       {visible.length === 0 ? (
         <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
       ) : (
-        <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visible.map((p) => (
             <ProjectCard
               key={p.slug}
