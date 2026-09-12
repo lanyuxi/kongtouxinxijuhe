@@ -111,14 +111,17 @@ npm run dev      # http://localhost:5173
 - **搜索与多维筛选** —— 状态、公链、类型、风险、成本
 - **5 种排序方式** —— 最新 / 价值 / 真实性 / 风险 / 领取截止
 - **详情页 11 个板块** —— 系统结论、评分明细（可展开）、证据清单、成本模型、分步教程（可勾选）、FAQ、官方资料、问题反馈
+- **卡片式列表** —— 三列自适应网格，每张卡片给出「操作：…」一行可执行摘要
+- **一键更新** —— 列表页顶部可直接触发数据源抓取，并实时反馈进度
 - **本地收藏与进度** —— 仅使用浏览器 LocalStorage，不上传任何用户数据
 
 ### 工程与交付
 
 - **零服务器、零数据库** —— 纯静态站点，数据以 JSON 随仓库发布
 - **零运行时密钥** —— 浏览器端不出现任何 API Secret，构建产物会做密钥扫描
-- **确定性与可测试** —— 教程由确定性模板 + 官方 JSON-LD 生成，非运行时 LLM 调用；31 个单测覆盖 7 条核心不变量
-- **双平台自动化** —— CNB 定时抓取数据，GitHub Actions 部署 Pages
+- **确定性与可测试** —— 教程优先取真实 HowTo 步骤，模板兜底；48 个单测覆盖 7 条核心不变量
+- **双通道自动化 + 自动同步** —— CNB 流水线与 GitHub Actions 每 10 分钟各自抓取一次；
+  更新完成后**自动推送 GitHub**，不需要任何人工配置或手动点按钮
 
 ---
 
@@ -140,7 +143,8 @@ npm run dev      # http://localhost:5173
 - 顶部：搜索框 + 数据更新时间 + 数据源健康状态提示
 - 筛选栏：状态 / 公链 / 类型 / 风险 / 成本
 - 排序：最新 · 价值 · 真实性 · 风险 · 领取截止
-- 卡片：项目名、一句话介绍、状态徽章、风险徽章、三套评分、成本星级 → 点击进入详情
+- 数据源工具条：数据新鲜度、来源条数明细、**一键更新**按钮
+- 卡片（三列网格）：项目标识、状态标签、项目名、「操作：…」摘要、公链、风险与价值等级 → 点击进入详情
 
 ### 详情页 · 11 个板块
 
@@ -177,8 +181,8 @@ npm run dev      # http://localhost:5173
 | 数据处理 | Node.js + tsx（纯函数引擎） |
 | 用户状态 | LocalStorage |
 | 测试 | Vitest |
-| 定时抓取 | CNB 流水线（每 3 小时） |
-| 静态部署 | GitHub Actions → GitHub Pages |
+| 定时抓取 | CNB 流水线 + GitHub Actions（均为每 10 分钟，双通道） |
+| 静态部署 | GitHub Actions → GitHub Pages（更新后自动推送，无需人工介入） |
 | 开发预览 | CNB 云原生开发「仅预览模式」 |
 
 ---
@@ -188,7 +192,8 @@ npm run dev      # http://localhost:5173
 ```text
 .
 ├── .github/workflows/
-│   └── deploy-pages.yml       # GitHub Actions：构建 + 部署到 GitHub Pages
+│   ├── deploy-pages.yml       # GitHub Actions：构建 + 部署到 GitHub Pages
+│   └── refresh-data.yml       # GitHub Actions：每 10 分钟抓取并提交数据
 ├── .cnb.yml                   # CNB 流水线：定时抓取 + 构建校验 + 预览
 ├── .ide/
 │   └── preview-server.mjs     # CNB 云原生开发预览用静态服务器（零依赖）
@@ -198,40 +203,47 @@ npm run dev      # http://localhost:5173
 ├── tsconfig.json
 ├── src/                       # 前端
 │   ├── main.tsx               # 挂载入口
-│   ├── App.tsx                # 路由编排与数据加载
-│   ├── components/            # Badge / FilterBar / Layout / ProjectCard / ScoreCard / StatBar
+│   ├── App.tsx                # 路由编排、数据加载与「一键更新」编排
+│   ├── components/            # Layout / ProjectCard / RefreshBar / FilterBar / StatBar / Badge / ScoreCard
 │   ├── pages/                 # ListView / DetailView
-│   ├── lib/                   # data / filter / labels / router / store / types
+│   ├── lib/                   # data / refresh / tasks / filter / labels / router / store / types
 │   └── styles/                # Tailwind 入口与主题变量
 ├── scripts/                   # 数据处理（Node.js）
 │   ├── pipeline.ts            # 流水线主入口
+│   ├── refresh.mjs            # 抓取任务外层守卫（保证状态一定落盘）
 │   ├── validate.ts            # 独立校验脚本（可作 CI 门禁）
 │   ├── sync-data.mjs          # 产物数据同步到 public/
 │   ├── fetch/                 # 数据源适配器（每个来源独立、可失败）
 │   │   ├── index.ts
-│   │   ├── airdrops-io.ts     # Airdrops.io 分类页 + JSON-LD
-│   │   ├── defillama.ts       # DefiLlama Rewards
-│   │   └── galxe.ts           # Galxe 任务平台
+│   │   ├── airdrops-io.ts     # Airdrops.io 分类页 + 详情页真实解析
+│   │   ├── defillama.ts       # DefiLlama 协议 API（交叉验证）
+│   │   ├── galxe.ts           # Galxe 任务平台（如实探测 + 降级）
+│   │   └── lib/               # 抓取公共工具
+│   │       ├── http.ts        # 超时 / 重试 / UA / 并发池
+│   │       └── html.ts        # 零依赖 HTML 解析（含深度平衡匹配）
 │   └── lib/                   # 核心引擎
 │       ├── normalize.ts       # 结构归一
 │       ├── merge.ts           # 去重 / 合并 / Last Known Good
+│       ├── prune.ts           # 清理历史误抓条目（保守策略）
+│       ├── sourced.ts         # 把真实抓取结果落为项目字段
 │       ├── verify.ts          # 证据收集与交叉验证
 │       ├── enrich.ts          # 官方档案补全
 │       ├── score.ts           # 真实性 / 风险 / 价值评分
-│       ├── guide.ts           # 教程 + FAQ 生成
+│       ├── guide.ts           # 教程（优先真实 HowTo）+ FAQ 生成
+│       ├── live.ts            # 实时快照持久化（供「一键更新」）
 │       └── validate.ts        # 发布前校验 + Secret 扫描
-├── data/                      # 数据（产物 + 人工维护输入）
-│   ├── airdrops.json          # 列表数据（产物）
-│   ├── source-health.json     # 数据源健康状态（产物）
-│   ├── details/*.json         # 项目详情分片（产物）
-│   └── seed/                  # 人工维护的输入数据
-│       ├── airdrops-io.json
-│       ├── defillama.json
-│       ├── galxe.json
-│       └── official-profiles.json   # 官方链接档案（唯一可信官方来源）
+├── data/                      # 数据（全部为产物，无需人工维护）
+│   ├── airdrops.json          # 列表数据
+│   ├── source-health.json     # 数据源健康状态
+│   ├── refresh-status.json    # 抓取任务状态（供前端轮询）
+│   ├── details/*.json         # 项目详情分片
+│   ├── live/*.json            # 各来源实时快照 + 索引
+│   └── seed/                  # 唯一人工维护的输入
+│       └── official-profiles.json   # 官方链接档案（人工核实）
 ├── public/                    # 静态资源（favicon 等）
 └── tests/                     # 引擎单测
     ├── engine.test.ts         # 21 项：评分 / 风险 / 校验 / 不变量
+    ├── refresh.test.ts        # 17 项：新鲜度 / 清理策略 / 操作摘要 / 类目归一
     └── preview-server.test.ts # 10 项：预览服务器路由与安全
 ```
 
@@ -317,18 +329,35 @@ Guide            分步骤教程 + FAQ（模板化 + 官方 JSON-LD，来源可�
    ↓
 Validate         不通过则拒绝写入，避免污染线上数据
    ↓
-Write JSON       airdrops.json + details/*.json + source-health.json
+Write JSON       airdrops.json + details/*.json
+                 + source-health.json + live/*.json + refresh-status.json
 ```
 
 ### 数据源
 
+**全部为真实抓取**（非人工快照），每个来源独立运行、错误隔离：
+
 | 来源 | 类型 | 说明 |
 |---|---|---|
-| [Airdrops.io](https://airdrops.io) | 聚合站 | 抓取「最新 / 已确认 / 潜在 / 可领取」分类页与详情页 JSON-LD（含 HowTo 步骤与 FAQ） |
-| [DefiLlama Rewards](https://defillama.com/rewards) | 奖励追踪 | 协议 API，用于第三方交叉验证 |
-| [Galxe](https://galxe.com) | 任务平台 | 页面为客户端渲染，解析失败会自动降级并记入 `source-health.json` |
+| [Airdrops.io](https://airdrops.io) | 聚合站 | 抓取「最新 / 已确认 / 猜测 / 可领取」4 个分类页，再深入详情页解析官方外链、状态与**真实分步教程** |
+| [DefiLlama](https://api.llama.fi/protocols) | 协议事实源 | 公开 API（无需 Key），用于官方域名与 X 账号的第三方交叉验证；已剔除 CEX / 包装资产 / LST 等非空投实体 |
+| [Galxe](https://galxe.com) | 任务平台 | 页面为纯客户端渲染，服务端无法拿到任务数据。**如实报错并降级**，不伪造数据 |
+
+三类信息的具体产出：
+
+| 产出 | 来源 |
+|---|---|
+| 项目条目与状态 | Airdrops.io 分类页 + 详情页 `.status-indicator` |
+| **官方域名** | 详情页 outbound 跳转链接的 `data-outbound-host`（真实域名，非猜测） |
+| **分步教程** | 详情页 `HowTo` 区块的真实步骤（含来源链接），模板仅作兜底 |
+| 官方 X 账号 | DefiLlama 协议字段 |
+| 主要任务 | 真实步骤标题 → 中文动作短语；无步骤时按协议类型推断 |
 
 **故障隔离行为**：任一来源失败时，该来源标记为 `ok: false` 并写入 `source-health.json`，其余来源继续执行；数据集不会因单源失败而被清空。
+
+**历史脏数据清理**：早期版本曾把聚合站的运营页（blog / faq / bybit 跳转页等）误当成项目。
+`Prune` 阶段会在来源健康时清理这类条目，规则保守：
+只在**连续多轮未被提及**且**没有官方证据**且**未登记在人工档案**时才移除。
 
 ### 数据文件说明
 
@@ -337,10 +366,13 @@ Write JSON       airdrops.json + details/*.json + source-health.json
 | `data/airdrops.json` | 产物 | 列表数据（含三套评分与证据） |
 | `data/details/*.json` | 产物 | 每个项目的详情分片 |
 | `data/source-health.json` | 产物 | 各数据源健康状态与最后成功时间 |
+| `data/live/live-index.json` | 产物 | 各来源上次抓取时间与条数，供「一键更新」判断新鲜度 |
+| `data/live/<source>.json` | 产物 | 各来源归一化条目快照（不落原始 HTML，体积小、无敏感信息） |
+| `data/refresh-status.json` | 产物 | 最近一次抓取任务的运行状态，供前端轮询与失败展示 |
 | `data/seed/official-profiles.json` | 输入 | **唯一可信的官方链接来源**，人工维护 |
-| `data/seed/*.json` | 输入 | 各来源的人工快照（抓取失败时兜底） |
 
-> `data/seed/` 不会被打包进前端产物，只同步 `airdrops.json` / `source-health.json` / `details/`。
+> `data/seed/` 不会被打包进前端产物，只同步 `airdrops.json` / `source-health.json` /
+> `refresh-status.json` / `details/` / `live/`。
 
 ---
 
@@ -414,36 +446,77 @@ Write JSON       airdrops.json + details/*.json + source-health.json
 
 ## 自动化
 
+**目标：更新完成后自动推送 GitHub，全程不需要人工配置或点按钮。**
+
 ### CNB 流水线
 
 | 触发 | 行为 |
 |---|---|
-| `crontab: 17 */3 * * *` | 每 3 小时抓取数据 → 测试 → 校验 → 数据有变化则提交回仓库 |
-| `push` (main) | 安装 → 生成数据 → 测试 → 校验 → 构建 → 发布 Release |
+| `crontab: 2,12,22,32,42,52 * * * *` | **每 10 分钟**抓取 → 测试 → 校验 → 数据变化则提交 → **自动同步 GitHub** |
+| `push` (main) | 安装 → 生成数据 → 测试 → 校验 → 构建 → 发布 Release；另一条流水线同步 GitHub |
 | `pull_request` | 安装 → 生成数据 → 测试 → 校验 → 构建 |
 | 云原生开发 | 安装 → 生成数据 → 构建 → 启动预览服务（`onlyPreview: true`） |
-
-定时任务刻意避开整点（每 3 小时的 `:17`），减少任务集中。
 
 ### GitHub Actions
 
 | 触发 | 行为 |
 |---|---|
 | `push` (main / master) | 安装 → 生成数据 → 测试 → 校验 → 构建 → 发布到 GitHub Pages |
+| `schedule`（每 10 分钟） | 抓取 → 测试 → 校验 → 数据变化则提交回仓库（`refresh-data.yml`） |
+| `repository_dispatch: refresh-data` | 由前端「一键更新」触发一次抓取 |
 | `workflow_dispatch` | 手动触发一次完整构建与部署 |
 
-### CNB → GitHub 自动同步
+### 双通道抓取：为什么跑两份
 
-CNB 侧 `main` 分支的 `push` 事件里有一条 **「同步到 GitHub」** 流水线，
-负责把代码推送到 GitHub，从而触发上面的 Pages 部署。
+CNB 与 GitHub 各跑一份每 10 分钟的抓取任务：
 
-- 触发条件：CNB `main` 分支有推送（含 PR 合并产生的推送、定时抓取提交的数据）
-- 令牌来源：**CNB 密钥仓库** [`xixi2060/mimacangku`](https://cnb.cool/xixi2060/mimacangku) 的 `github.yml`
+| 通道 | 解决什么 |
+|---|---|
+| CNB 定时抓取 | 抓完直接提交回 CNB，并**自动同步到 GitHub** |
+| GitHub 定时抓取 | 即使 CNB → GitHub 同步链路中断，**线上站点数据也能自己刷新** |
+
+两者都遵循「**数据变化才提交**」，因此不会互相刷屏，也不会冲突。
+
+### 自动同步到 GitHub
+
+以下三条路径都会自动把内容推到 GitHub，**无需任何人工操作**：
+
+1. **`main` 分支推送** → 同步代码与数据
+2. **每 10 分钟定时抓取** → 抓完立即同步
+3. **GitHub 侧定时抓取** → 自己提交，自己触发 Pages 重建
+
+- 令牌来源：**CNB 密钥仓库** `xixi2060/mimacangku` 的 `github.yml`
   （通过 `.cnb.yml` 的 `imports` 注入为环境变量 `GITHUB_TOKEN`，**不落库、不写死在配置里**）
-- 失败处理：令牌缺失时该流水线会明确报错并中断，不会静默失败
+- 推送策略：**不使用 `--force`**，先 `fetch` + `merge -X ours` 合并远端历史再推，
+  避免覆盖他人在 GitHub 上的提交
+- 失败处理：令牌缺失时流水线**明确报错并中断**，不静默失败
 
 > GitHub 令牌只需 `Contents: Read and write` 权限。
-> 如果不再需要同步，删除 `.cnb.yml` 里的「同步到 GitHub」流水线即可。
+> 若不再需要同步，删除 `.cnb.yml` 里的 `sync-to-github` 阶段即可。
+
+### 「一键更新」是怎么工作的
+
+纯静态站点没有服务端，因此「一键更新」不是让浏览器去爬第三方站，
+而是**触发仓库既有的抓取流水线，然后轮询结果**：
+
+```
+用户点「一键更新」
+  → ① 读 data/live/live-index.json（上次抓取时间 + 各来源条数）
+  → ② 若已配置触发器 → 触发抓取任务；否则退化为重新拉取远端 JSON
+  → ③ 轮询 data/refresh-status.json，直到 updated_at 变化或超时
+  → ④ 重新拉取 airdrops.json / live-index.json 并替换界面数据
+```
+
+这样设计的原因：
+
+- **不让浏览器直连第三方站点** —— 会被 CORS 拦住，且会把用户真实 IP 暴露给每个数据源
+- **不引入常驻服务** —— 保持「零服务器、零数据库」约束
+- **抓取逻辑只有一份** —— 前端与定时任务复用同一套 Node 脚本，长期不会分裂
+- **失败可见** —— 抓取失败会写入 `refresh-status.json`，前端直接展示真实原因，不会一直转圈
+
+超过 `STALE_MINUTES`（15 分钟）未更新时，按钮会呼吸高亮并提示可手动刷新。
+
+详见 [`docs-REFRESH.md`](./docs-REFRESH.md)。
 
 ---
 
@@ -595,8 +668,34 @@ on:
 <details>
 <summary><b>Galxe 数据总是抓不到？</b></summary>
 
-Galxe 页面为纯客户端渲染，服务端抓取无法拿到内容。目前该来源会自动降级并标记为失败，
-不影响其他来源。后续可以接入官方 API 或直接移除该适配器。
+Galxe 页面为纯客户端渲染，服务端抓取无法拿到内容。该来源会**如实报错并降级**
+（而不是伪造数据），不影响其他来源。后续可接入官方 API 或移除该适配器。
+</details>
+
+<details>
+<summary><b>「一键更新」点了之后做了什么？更新到线上要多久？</b></summary>
+
+点击后会触发仓库的抓取流水线，并轮询 `data/refresh-status.json` 直到有新结果。
+抓取本身通常 20–40 秒；抓完的提交要等 Pages 重新构建部署，约 1–2 分钟生效。
+
+若部署环境未配置触发器，则退化为「重新拉取最新数据」——仍能拿到定时任务（每 10 分钟）
+产出的最新结果，只是不会立即重算。
+</details>
+
+<details>
+<summary><b>为什么浏览器不直接去抓第三方数据？</b></summary>
+
+三个原因：① 第三方站点普遍不返回 CORS 头，浏览器直连必然被拦；
+② 会把用户真实 IP 暴露给每一个数据源；③ 抓取逻辑会分裂成前端 / 流水线两份，
+长期必然不一致。因此抓取统一在仓库流水线里完成，前端只消费 JSON。
+</details>
+
+<details>
+<summary><b>数据多久更新一次？</b></summary>
+
+**每 10 分钟**。CNB 流水线与 GitHub Actions 各跑一份，形成双通道：
+CNB 抓完会同步到 GitHub；即使同步链路中断，GitHub 侧也会自己抓、自己提交。
+超过 15 分钟未更新时，列表页顶部会出现「建议手动刷新」提示。
 </details>
 
 <details>

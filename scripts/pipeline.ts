@@ -12,20 +12,26 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import type { Dataset, SourceHealth, SourceHealthFile } from '../src/lib/types';
+import type { Dataset, RefreshStatus, SourceHealth, SourceHealthFile } from '../src/lib/types';
 import { adapters } from './fetch/index';
 import { normalizeAll } from './lib/normalize';
 import { mergeAll } from './lib/merge';
+import { applyAllSourced } from './lib/sourced';
 import { verifyAll } from './lib/verify';
 import { enrichAll } from './lib/enrich';
 import { scoreAll } from './lib/score';
 import { generateAll } from './lib/guide';
 import { validateProjects } from './lib/validate';
+import { writeLiveSnapshots } from './lib/live';
+import type { LiveSnapshot } from './lib/live';
+import { canPrune, pruneProjects } from './lib/prune';
+import { loadProfiles } from './lib/enrich';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
 const DETAILS_DIR = path.join(DATA_DIR, 'details');
+const LIVE_DIR = path.join(DATA_DIR, 'live');
 
 async function readJson<T>(file: string, fallback: T): Promise<T> {
   try {
@@ -38,6 +44,7 @@ async function readJson<T>(file: string, fallback: T): Promise<T> {
 async function main() {
   const now = new Date().toISOString();
   console.log('[pipeline] 开始执行，时间：', now);
+  await writeRefreshStatus({ state: 'running', started_at: now });
 
   // 1) 读取上一版数据（Last Known Good）
   const previousFile = path.join(DATA_DIR, 'airdrops.json');
@@ -52,11 +59,20 @@ async function main() {
   const health: SourceHealth[] = [];
   const rawItems: ReturnType<typeof normalizeAll> = [];
 
+  /** 每轮抓取后持久化的实时快照（供前端「一键更新」读取来源侧最新条目） */
+  const snapshots: LiveSnapshot[] = [];
+
   for (const adapter of adapters) {
     try {
       const items = await adapter.fetch();
       const normalized = normalizeAll(items);
       rawItems.push(...normalized);
+      snapshots.push({
+        fetched_at: now,
+        source: adapter.name,
+        source_url: adapter.url,
+        items: normalized,
+      });
       health.push({
         name: adapter.name,
         url: adapter.url,
@@ -83,8 +99,26 @@ async function main() {
     }
   }
 
-  // 3) Merge → Verify → Enrich → Score → Guide
+  // 3) Merge → Prune → Sourced → Verify → Enrich → Verify → Score → Guide
   let projects = mergeAll(rawItems, previousProjects);
+
+  // 3.1) Prune：清理历史误抓的运营页 / 跳转页（仅在来源健康时执行）
+  const thisRoundSlugs = new Set(rawItems.map((i) => i.slug));
+  const profiles = await loadProfiles();
+  const pruned = pruneProjects(
+    projects,
+    thisRoundSlugs,
+    canPrune(health),
+    new Set(Object.keys(profiles)),
+  );
+  projects = pruned.projects;
+  if (pruned.removed.length) {
+    console.log(`[pipeline] 清理 ${pruned.removed.length} 个失效条目：${pruned.removed.join('、')}`);
+  }
+
+  // 3.2) Sourced：把真实抓取到的官网 / 描述 / 教程步骤落到项目上
+  //      （人工档案在 Enrich 阶段覆盖，优先级更高）
+  projects = applyAllSourced(projects, rawItems);
   projects = verifyAll(projects);
   projects = await enrichAll(projects);
   // enrich 后证据变了，重新 verify 一次以生成完整 Evidence 清单
@@ -137,13 +171,45 @@ async function main() {
     'utf8',
   );
 
+  // 7) Write live 快照：供前端「一键更新」读取来源侧最新条目（无需服务端）
+  const liveIndex = await writeLiveSnapshots(LIVE_DIR, snapshots);
+  console.log(
+    `[pipeline] live 快照：${liveIndex.sources.length} 个来源，共 ${liveIndex.total} 条`,
+  );
+
+  // 8) Write refresh-status：供前端「一键更新」轮询进度
   const okCount = health.filter((h) => h.ok).length;
+  await writeRefreshStatus({
+    state: 'success',
+    started_at: now,
+    finished_at: new Date().toISOString(),
+    sources: health.length,
+    ok_sources: okCount,
+    updated_at: dataset.updated_at,
+  });
+
   console.log(
     `[pipeline] 完成：${projects.length} 个项目，${okCount}/${health.length} 个来源正常，今日新增 ${newToday}`,
   );
 }
 
-main().catch((e) => {
+/** 写入抓取任务状态（失败也要写，前端据此展示真实原因） */
+async function writeRefreshStatus(status: RefreshStatus) {
+  await mkdir(DATA_DIR, { recursive: true });
+  await writeFile(
+    path.join(DATA_DIR, 'refresh-status.json'),
+    JSON.stringify(status, null, 2) + '\n',
+    'utf8',
+  );
+}
+
+main().catch(async (e) => {
   console.error('[pipeline] 未捕获异常：', e);
+  // 真实失败必须落盘：前端「一键更新」需要据此告知用户，而不是一直转圈
+  await writeRefreshStatus({
+    state: 'failed',
+    finished_at: new Date().toISOString(),
+    error: (e as Error).message,
+  }).catch(() => {});
   process.exitCode = 1;
 });

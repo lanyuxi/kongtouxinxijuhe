@@ -2,8 +2,8 @@
   "id": "grass",
   "name": "Grass",
   "slug": "grass",
-  "tagline": "去中心化网络带宽共享 DePIN 项目，已进入领取阶段。",
-  "category": "DePIN",
+  "tagline": "Building on the success of Stage 1, Grass has launched Stage 2 with enhanced rewards and new features.",
+  "category": "AI",
   "chains": [
     "Solana"
   ],
@@ -39,6 +39,12 @@
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "fetched_at": "2026-09-12T04:17:09.389Z"
+    },
+    {
+      "type": "airdrop_aggregator",
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io/grass/",
+      "fetched_at": "2026-09-12T06:12:23.594Z"
     }
   ],
   "evidence": [
@@ -83,6 +89,13 @@
       "note": "第三方来源仅作交叉参考，不代表官方背书"
     },
     {
+      "type": "third_party",
+      "label": "第三方来源：Airdrops.io",
+      "url": "https://airdrops.io/grass/",
+      "verified": true,
+      "note": "第三方来源仅作交叉参考，不代表官方背书"
+    },
+    {
       "type": "funding",
       "label": "融资信息可核实",
       "url": "https://grass.io",
@@ -91,10 +104,10 @@
     }
   ],
   "scores": {
-    "authenticity": 77,
-    "value": 83,
+    "authenticity": 85,
+    "value": 86,
     "risk": "high",
-    "grade": "A",
+    "grade": "S",
     "authenticityItems": [
       {
         "key": "authenticity.website",
@@ -122,9 +135,9 @@
       {
         "key": "authenticity.thirdparty",
         "label": "至少两个独立第三方来源",
-        "value": 7,
+        "value": 15,
         "max": 15,
-        "reason": "仅有 1 个第三方来源，交叉验证不足"
+        "reason": "已有 2 个独立第三方来源"
       },
       {
         "key": "authenticity.quest",
@@ -175,9 +188,9 @@
       {
         "key": "value.activity",
         "label": "真实产品 / 用户 / 活跃度",
-        "value": 12,
+        "value": 15,
         "max": 15,
-        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 2 个）"
       },
       {
         "key": "value.signal",
@@ -350,6 +363,18 @@
   ],
   "created_at": "2026-09-11T14:29:52.345Z",
   "discovered_at": "2026-09-11T14:29:52.345Z",
-  "last_checked_at": "2026-09-12T04:17:09.389Z",
-  "last_changed_at": "2026-09-12T04:17:09.393Z"
+  "last_checked_at": "2026-09-12T06:12:23.594Z",
+  "last_changed_at": "2026-09-12T06:12:40.074Z",
+  "sourcedSteps": [
+    {
+      "title": "Check Your Eligibility",
+      "body": "Open the Grass Dashboard Go to the Allocation tab Review your estimated rewards in the Rewards Checker",
+      "url": "/visit/wda3/"
+    },
+    {
+      "title": "Claim Your Rewards",
+      "body": "After 1:00 PM EST on July 22, open the Grass Dashboard Confirm your claim Rewards are deposited into your in-app, self-custodial wallet, which can be exported at any time A small network fee is deducted from claimed rewards to cover on-chain delivery; Grass does not keep this fee. Full eligibility terms are outlined in the Grass Rewards Program Terms and Conditions . Only check and claim through the official dashboard: Grass will never DM first or ask for a seed phrase or private keys.",
+      "url": "/visit/wda3/"
+    }
+  ]
 }

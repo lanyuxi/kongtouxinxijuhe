@@ -4,6 +4,8 @@ import type { NavKey } from './components/Layout';
 import { ListView } from './pages/ListView';
 import { DetailView } from './pages/DetailView';
 import { loadDataset, loadSourceHealth } from './lib/data';
+import { loadLiveIndex, runRefresh } from './lib/refresh';
+import type { LiveIndex } from './lib/types';
 import { useRoute } from './lib/router';
 import { useLocalState } from './lib/store';
 import type { AirdropProject, Dataset, SourceHealthFile } from './lib/types';
@@ -16,16 +18,46 @@ export function App() {
   const [health, setHealth] = useState<SourceHealthFile | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // 「一键更新」状态：进度文案 + 来源索引（用于展示数据新鲜度）
+  const [liveIndex, setLiveIndex] = useState<LiveIndex | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
+  const [refreshMessage, setRefreshMessage] = useState<string | null>(null);
+
   useEffect(() => {
     let alive = true;
     loadDataset()
       .then((d) => alive && setDataset(d))
       .catch((e) => alive && setError((e as Error).message));
     loadSourceHealth().then((h) => alive && setHealth(h));
+    loadLiveIndex().then((i) => alive && setLiveIndex(i));
     return () => {
       alive = false;
     };
   }, []);
+
+  /**
+   * 一键更新。
+   * 会依次经历：检查数据源 → 触发抓取 → 轮询结果 → 重新加载数据。
+   * 每一步的文案都通过 refreshMessage 实时反馈，避免用户面对一个「没有反应的按钮」。
+   */
+  const handleRefresh = async () => {
+    if (refreshing) return;
+    setRefreshing(true);
+    setRefreshMessage('正在检查数据源…');
+    try {
+      const outcome = await runRefresh(liveIndex?.updated_at ?? null, setRefreshMessage);
+      if (outcome.dataset) setDataset(outcome.dataset);
+      if (outcome.index) setLiveIndex(outcome.index);
+      setRefreshMessage(outcome.message);
+      // 数据源健康状态也一并刷新，保证失败提示是最新的
+      const h = await loadSourceHealth();
+      setHealth(h);
+    } catch (e) {
+      setRefreshMessage(`更新失败：${(e as Error).message}`);
+    } finally {
+      setRefreshing(false);
+    }
+  };
 
   const projects = dataset?.projects ?? [];
 
@@ -96,6 +128,10 @@ export function App() {
                 updatedAt={dataset.updated_at}
                 favorites={state.favorites}
                 progress={state.progress}
+                liveIndex={liveIndex}
+                refreshing={refreshing}
+                refreshMessage={refreshMessage}
+                onRefresh={handleRefresh}
                 onToggleFavorite={toggleFavorite}
                 onClearAll={clearAll}
               />

@@ -215,6 +215,20 @@ export interface AirdropProject {
   discovered_at: string;
   last_checked_at: string;
   last_changed_at: string;
+
+  /**
+   * 数据源侧抓到的原始步骤（例如聚合站页面上的 HowTo）。
+   * 仅作为 Guide 生成阶段的输入，属于中间产物，
+   * 不会直接下发到前端（前端只消费 guide[]）。
+   */
+  sourcedSteps?: { title: string; body?: string; url?: string }[];
+
+  /**
+   * 连续多少轮未被任何数据源提及。
+   * 用于清理「历史误抓的运营页」，属于内部维护字段：
+   * Prune 阶段会清零或累加，前端不展示。
+   */
+  miss_streak?: number;
 }
 
 /** 单个数据源的健康状态 */
@@ -241,4 +255,30 @@ export interface Dataset {
   /** 今日新增数量 */
   new_today: number;
   projects: AirdropProject[];
+}
+
+/** 各来源实时抓取快照的索引（供「一键更新」判断数据新鲜度） */
+export interface LiveIndex {
+  updated_at: string;
+  total: number;
+  sources: {
+    source: string;
+    source_url: string;
+    fetched_at: string;
+    count: number;
+    file: string;
+  }[];
+}
+
+/** 最近一次抓取任务的运行状态（供「一键更新」轮询进度） */
+export interface RefreshStatus {
+  state: 'idle' | 'running' | 'success' | 'failed';
+  started_at?: string;
+  finished_at?: string;
+  /** 本次抓取涉及的来源数 */
+  sources?: number;
+  /** 成功来源数 */
+  ok_sources?: number;
+  error?: string;
+  updated_at?: string;
 }

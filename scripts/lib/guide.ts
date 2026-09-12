@@ -9,6 +9,7 @@
  */
 
 import type { AirdropProject, GuideStep, FaqItem } from '../../src/lib/types';
+import { stepsFromSource } from './sourced';
 
 const MIN = (n: number) => n;
 
@@ -16,6 +17,13 @@ const MIN = (n: number) => n;
 const SAFETY_NOTE = '请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。';
 
 export function generateGuide(p: AirdropProject): GuideStep[] {
+  // 优先使用「数据源侧的真实步骤」。
+  // 对应方案第 16 章：教程步骤必须可追溯到来源。
+  // 官方页面给出的 HowTo 天然带来源链接，可信度与可执行性都高于确定性模板，
+  // 因此只要拿到真实步骤就用它，模板仅作兜底（拿不到时才生成）。
+  const sourced = stepsFromSource(p);
+  if (sourced.length >= 3) return withSafetyFirst(p, sourced);
+
   const steps: GuideStep[] = [];
   const officialUrl = p.official.website ?? '';
   const hasDocs = !!p.official.docs;
@@ -247,4 +255,32 @@ function buildCost(p: AirdropProject, guide: GuideStep[]): AirdropProject['cost'
     long_term: longTerm,
     summary,
   };
+}
+
+
+/**
+ * 在真实步骤前插入一条「安全检查」首步。
+ *
+ * 为什么必须补这一步：
+ *   聚合站给出的 HowTo 只讲「怎么做」，不会讲「怎么保证不被钓鱼」。
+ *   而方案不变量 6 要求任何流程都不能诱导用户暴露助记词 / 私钥，
+ *   所以安全提示必须由我们自己放在最前面。
+ */
+function withSafetyFirst(p: AirdropProject, steps: GuideStep[]): GuideStep[] {
+  const officialUrl = p.official.website ?? '';
+  const safety: GuideStep = {
+    step: 1,
+    title: '参与前安全检查',
+    description: `核对官方域名后再操作。${SAFETY_NOTE}任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。`,
+    official_url: officialUrl,
+    minutes: 3,
+    cost_usd: 0,
+    needs_wallet: false,
+    needs_signature: false,
+    risk: 'low',
+    done_when: '已确认官方域名，并准备好专用的独立空投钱包。',
+    source_url: officialUrl || p.sources[0]?.url,
+    source_verified: !!officialUrl,
+  };
+  return [safety, ...steps.map((s, i) => ({ ...s, step: i + 2 }))];
 }

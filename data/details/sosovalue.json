@@ -1,0 +1,422 @@
+{
+  "id": "sosovalue",
+  "name": "Sosovalue",
+  "slug": "sosovalue",
+  "tagline": "The SoSoValue airdrop is confirmed and running, with SOSO already live and trading.",
+  "category": "DeFi",
+  "chains": [
+    "Other"
+  ],
+  "status": "potential",
+  "official": {
+    "website": "https://sosovalue.com"
+  },
+  "meta": {},
+  "tasks": [],
+  "requirements": [
+    "钱包"
+  ],
+  "sources": [
+    {
+      "type": "airdrop_aggregator",
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io/sosovalue/",
+      "fetched_at": "2026-09-12T06:12:23.594Z"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "official_website",
+      "label": "官方网站可访问",
+      "url": "https://sosovalue.com",
+      "verified": true,
+      "note": "官方域名已验证"
+    },
+    {
+      "type": "third_party",
+      "label": "第三方来源：Airdrops.io",
+      "url": "https://airdrops.io/sosovalue/",
+      "verified": true,
+      "note": "第三方来源仅作交叉参考，不代表官方背书"
+    }
+  ],
+  "scores": {
+    "authenticity": 22,
+    "value": 46,
+    "risk": "high",
+    "grade": "C",
+    "authenticityItems": [
+      {
+        "key": "authenticity.website",
+        "label": "官方网站可验证",
+        "value": 15,
+        "max": 15,
+        "reason": "官方域名可直接访问",
+        "evidenceUrl": "https://sosovalue.com"
+      },
+      {
+        "key": "authenticity.announcement",
+        "label": "官方公告明确提到活动",
+        "value": 0,
+        "max": 20,
+        "reason": "项目尚未正式确认空投，不存在官方活动公告"
+      },
+      {
+        "key": "authenticity.crosslink",
+        "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+        "value": 0,
+        "max": 15,
+        "reason": "缺少 Docs 或链接无法互相印证"
+      },
+      {
+        "key": "authenticity.thirdparty",
+        "label": "至少两个独立第三方来源",
+        "value": 7,
+        "max": 15,
+        "reason": "仅有 1 个第三方来源，交叉验证不足"
+      },
+      {
+        "key": "authenticity.quest",
+        "label": "Galxe / Layer3 等官方 Space 可确认",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方 Quest Space"
+      },
+      {
+        "key": "authenticity.github",
+        "label": "官方 GitHub / Docs 有持续活动",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方开源仓库"
+      },
+      {
+        "key": "authenticity.funding",
+        "label": "团队 / 投资信息可核实",
+        "value": 0,
+        "max": 10,
+        "reason": "未核实团队或融资信息"
+      },
+      {
+        "key": "authenticity.contract",
+        "label": "合约地址在区块浏览器可验证",
+        "value": 0,
+        "max": 5,
+        "reason": "暂无公开可验证合约地址"
+      }
+    ],
+    "valueItems": [
+      {
+        "key": "value.fundamentals",
+        "label": "项目基本面",
+        "value": 7,
+        "max": 20,
+        "reason": "具备官网与基础资料，基本面较完整"
+      },
+      {
+        "key": "value.funding",
+        "label": "融资 / 投资机构",
+        "value": 0,
+        "max": 15,
+        "reason": "未核实融资信息，机构背书不足"
+      },
+      {
+        "key": "value.activity",
+        "label": "真实产品 / 用户 / 活跃度",
+        "value": 4,
+        "max": 15,
+        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+      },
+      {
+        "key": "value.signal",
+        "label": "Token / Airdrop 信号强度",
+        "value": 9,
+        "max": 20,
+        "reason": "存在积分/测试网等潜在线索，但尚未确认"
+      },
+      {
+        "key": "value.roi",
+        "label": "任务投入产出比",
+        "value": 15,
+        "max": 15,
+        "reason": "预计投入约 30 分钟，共 10 个步骤"
+      },
+      {
+        "key": "value.timing",
+        "label": "当前参与时机",
+        "value": 10,
+        "max": 10,
+        "reason": "仍处于早期阶段，参与时机较好"
+      },
+      {
+        "key": "value.dilution",
+        "label": "用户稀释风险",
+        "value": 1,
+        "max": 5,
+        "reason": "项目风险较高，参与者结构可能不健康"
+      }
+    ],
+    "riskItems": [
+      {
+        "key": "risk._swap_",
+        "label": "涉及 Swap / 交易",
+        "value": 1,
+        "max": 3,
+        "reason": "检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM"
+      },
+      {
+        "key": "risk._lp_farming_",
+        "label": "涉及 LP / Farming / 质押",
+        "value": 2,
+        "max": 3,
+        "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
+      },
+      {
+        "key": "risk._",
+        "label": "需要向新合约转入资产",
+        "value": 2,
+        "max": 3,
+        "reason": "检测到「需要向新合约转入资产」行为，风险等级 HIGH"
+      }
+    ]
+  },
+  "cost": {
+    "capital_min_usd": 0,
+    "capital_max_usd": 0,
+    "gas_estimate_usd": 0,
+    "time_minutes": 30,
+    "long_term": false,
+    "summary": "低成本、纯时间投入型项目，适合新手练手。"
+  },
+  "recommendation": {
+    "grade": "C",
+    "action": "observe",
+    "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+  },
+  "guide": [
+    {
+      "step": 1,
+      "title": "参与前安全检查",
+      "description": "核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
+      "source_url": "https://sosovalue.com",
+      "source_verified": true
+    },
+    {
+      "step": 2,
+      "title": "Create Your SoSoValue Account",
+      "description": "Visit SoSoValue and sign up with email or a wallet. The same account works across the web platform and the iOS and Android apps.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": true,
+      "needs_signature": true,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "/visit/sox2/",
+      "source_verified": true
+    },
+    {
+      "step": 3,
+      "title": "Earn EXP Through Platform Tasks",
+      "description": "Open the EXP page from the badge in the top-right of the SoSoValue interface and complete Starter Pack and daily tasks. These include exploring dashboards, learning about SSI indexes, the daily check-in, and inviting friends with your referral link. This Season 3 path is free and does not require any capital.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "/visit/sox2/",
+      "source_verified": true
+    },
+    {
+      "step": 4,
+      "title": "Connect a Wallet and Add ValueChain",
+      "description": "Connect MetaMask or another Web3 wallet, then add the ValueChain network so you can hold SSI tokens and trade on SoDEX. Fund the wallet with USDC, which you can buy on Binance if you need it, or bridge directly using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a n",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": true,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/goto/binance/",
+      "source_verified": true
+    },
+    {
+      "step": 5,
+      "title": "Buy SSI Index Tokens",
+      "description": "Open the SSI page and buy one of the index products based on the sector exposure you want: MAG7.ssi: a large-cap basket index DEFI.ssi: a DeFi sector index MEME.ssi: a meme sector index USSI: a USD-denominated index",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sosovalue/",
+      "source_verified": true
+    },
+    {
+      "step": 6,
+      "title": "Stake Your SSI Tokens",
+      "description": "Go to the Stake to Earn tab and stake your index tokens. Holding earns a 3x point multiplier, but staking raises it to 15x, so staked positions earn far more Loyalty Points. There is a 14-day cooldown before you can withdraw staked tokens.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sosovalue/",
+      "source_verified": true
+    },
+    {
+      "step": 7,
+      "title": "Deposit into the SoDEX Vault",
+      "description": "Deposit sMAG7.ssi or MAG7.ssi into the SoDEX Vault to earn passive SoPoints on top of your staking rewards, adding the extra APR layer with no extra trading.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sosovalue/",
+      "source_verified": true
+    },
+    {
+      "step": 8,
+      "title": "Trade on SoDEX to Earn SoPoints",
+      "description": "Head to SoDEX and trade spot or perpetual pairs. Trading volume is the most effective way to earn SoPoints, and the dynamic weighting model rewards steady, organic activity over one-time spikes.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sosovalue/",
+      "source_verified": true
+    },
+    {
+      "step": 9,
+      "title": "Stake SOSO and Invite Friends",
+      "description": "Stake SOSO in the Reward tab to boost your Loyalty Points. Once you pass 1,000 USDC in SoDEX volume, you can unlock a referral code that pays 10% fee rebates and 25% of your invitees’ points with no cap.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sosovalue/",
+      "source_verified": true
+    },
+    {
+      "step": 10,
+      "title": "Claim Your SOSO Rewards",
+      "description": "Rewards are distributed by smart contract after each epoch ends. Return to the Reward page when the claim window opens, connect your wallet, and claim your SOSO within the 90-day window.",
+      "official_url": "https://sosovalue.com",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": true,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sosovalue/",
+      "source_verified": true
+    }
+  ],
+  "faq": [
+    {
+      "q": "这个空投确认了吗？",
+      "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
+    },
+    {
+      "q": "什么时候结束？",
+      "a": "官方暂未公布。"
+    },
+    {
+      "q": "参与需要花钱吗？",
+      "a": "预计无需资金成本，仅需时间。"
+    },
+    {
+      "q": "需要连接钱包吗？",
+      "a": "需要。请务必使用独立的空投钱包。"
+    },
+    {
+      "q": "需要主网资产吗？",
+      "a": "暂不需要主网资产。"
+    },
+    {
+      "q": "积分一定会兑换 Token 吗？",
+      "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+    },
+    {
+      "q": "适合新手参与吗？",
+      "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+    },
+    {
+      "q": "领取时间确定了吗？",
+      "a": "官方暂未公布。"
+    }
+  ],
+  "risks": [
+    "项目尚未确认空投，存在投入后无回报的可能。",
+    "真实性置信度偏低，证据不足，建议先观察。",
+    "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+    "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+  ],
+  "created_at": "2026-09-12T06:08:39.056Z",
+  "discovered_at": "2026-09-12T06:08:39.056Z",
+  "last_checked_at": "2026-09-12T06:12:23.594Z",
+  "last_changed_at": "2026-09-12T06:08:39.056Z",
+  "sourcedSteps": [
+    {
+      "title": "Create Your SoSoValue Account",
+      "body": "Visit SoSoValue and sign up with email or a wallet. The same account works across the web platform and the iOS and Android apps.",
+      "url": "/visit/sox2/"
+    },
+    {
+      "title": "Earn EXP Through Platform Tasks",
+      "body": "Open the EXP page from the badge in the top-right of the SoSoValue interface and complete Starter Pack and daily tasks. These include exploring dashboards, learning about SSI indexes, the daily check-in, and inviting friends with your referral link. This Season 3 path is free and does not require any capital.",
+      "url": "/visit/sox2/"
+    },
+    {
+      "title": "Connect a Wallet and Add ValueChain",
+      "body": "Connect MetaMask or another Web3 wallet, then add the ValueChain network so you can hold SSI tokens and trade on SoDEX. Fund the wallet with USDC, which you can buy on Binance if you need it, or bridge directly using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
+      "url": "https://airdrops.io/goto/binance/"
+    },
+    {
+      "title": "Buy SSI Index Tokens",
+      "body": "Open the SSI page and buy one of the index products based on the sector exposure you want: MAG7.ssi: a large-cap basket index DEFI.ssi: a DeFi sector index MEME.ssi: a meme sector index USSI: a USD-denominated index"
+    },
+    {
+      "title": "Stake Your SSI Tokens",
+      "body": "Go to the Stake to Earn tab and stake your index tokens. Holding earns a 3x point multiplier, but staking raises it to 15x, so staked positions earn far more Loyalty Points. There is a 14-day cooldown before you can withdraw staked tokens."
+    },
+    {
+      "title": "Deposit into the SoDEX Vault",
+      "body": "Deposit sMAG7.ssi or MAG7.ssi into the SoDEX Vault to earn passive SoPoints on top of your staking rewards, adding the extra APR layer with no extra trading."
+    },
+    {
+      "title": "Trade on SoDEX to Earn SoPoints",
+      "body": "Head to SoDEX and trade spot or perpetual pairs. Trading volume is the most effective way to earn SoPoints, and the dynamic weighting model rewards steady, organic activity over one-time spikes."
+    },
+    {
+      "title": "Stake SOSO and Invite Friends",
+      "body": "Stake SOSO in the Reward tab to boost your Loyalty Points. Once you pass 1,000 USDC in SoDEX volume, you can unlock a referral code that pays 10% fee rebates and 25% of your invitees’ points with no cap."
+    },
+    {
+      "title": "Claim Your SOSO Rewards",
+      "body": "Rewards are distributed by smart contract after each epoch ends. Return to the Reward page when the claim window opens, connect your wallet, and claim your SOSO within the 90-day window."
+    }
+  ]
+}

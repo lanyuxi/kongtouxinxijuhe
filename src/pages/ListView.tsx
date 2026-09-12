@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react';
-import type { AirdropProject } from '../lib/types';
+import type { AirdropProject, LiveIndex } from '../lib/types';
 import { applyCostBucket, DEFAULT_FILTERS, filterProjects, sortProjects } from '../lib/filter';
 import type { Filters } from '../lib/filter';
 import { FilterBar } from '../components/FilterBar';
 import { ProjectCard } from '../components/ProjectCard';
 import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
+import { RefreshBar } from '../components/RefreshBar';
 
 interface ViewConfig {
   /** 眉标：开篇定调的小字 */
@@ -48,6 +49,10 @@ export function ListView({
   updatedAt,
   favorites,
   progress,
+  liveIndex,
+  refreshing,
+  refreshMessage,
+  onRefresh,
   onToggleFavorite,
   onClearAll,
 }: {
@@ -56,6 +61,10 @@ export function ListView({
   updatedAt: string;
   favorites: string[];
   progress: Record<string, { status: string; completed_steps: number[] }>;
+  liveIndex: LiveIndex | null;
+  refreshing: boolean;
+  refreshMessage: string | null;
+  onRefresh: () => void;
   onToggleFavorite: (slug: string) => void;
   onClearAll: () => void;
 }) {
@@ -124,7 +133,7 @@ export function ListView({
                 清空本地数据
               </button>
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
               {saved.map((p) => (
                 <ProjectCard
                   key={p.slug}
@@ -149,6 +158,12 @@ export function ListView({
         updatedAt={updatedAt}
         lastDiscovery={lastDiscovery}
       />
+      <RefreshBar
+        index={liveIndex}
+        onRefresh={onRefresh}
+        refreshing={refreshing}
+        message={refreshMessage}
+      />
       <FilterBar
         filters={filters}
         onChange={setFilters}
@@ -158,7 +173,7 @@ export function ListView({
       {visible.length === 0 ? (
         <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
       ) : (
-        <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((p) => (
             <ProjectCard
               key={p.slug}

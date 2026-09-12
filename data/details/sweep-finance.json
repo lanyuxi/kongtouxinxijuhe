@@ -1,0 +1,370 @@
+{
+  "id": "sweep-finance",
+  "name": "Sweep Finance",
+  "slug": "sweep-finance",
+  "tagline": "The Sweep airdrop is a confirmed campaign with 27% of the total supply, roughly 270 million SWEEP, reserved for participants.",
+  "category": "Other",
+  "chains": [
+    "BNB Chain"
+  ],
+  "status": "potential",
+  "official": {
+    "website": "https://sweep.finance"
+  },
+  "meta": {},
+  "tasks": [],
+  "requirements": [
+    "钱包"
+  ],
+  "sources": [
+    {
+      "type": "airdrop_aggregator",
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io/sweep-finance/",
+      "fetched_at": "2026-09-12T06:12:23.594Z"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "official_website",
+      "label": "官方网站可访问",
+      "url": "https://sweep.finance",
+      "verified": true,
+      "note": "官方域名已验证"
+    },
+    {
+      "type": "third_party",
+      "label": "第三方来源：Airdrops.io",
+      "url": "https://airdrops.io/sweep-finance/",
+      "verified": true,
+      "note": "第三方来源仅作交叉参考，不代表官方背书"
+    }
+  ],
+  "scores": {
+    "authenticity": 22,
+    "value": 49,
+    "risk": "low",
+    "grade": "C",
+    "authenticityItems": [
+      {
+        "key": "authenticity.website",
+        "label": "官方网站可验证",
+        "value": 15,
+        "max": 15,
+        "reason": "官方域名可直接访问",
+        "evidenceUrl": "https://sweep.finance"
+      },
+      {
+        "key": "authenticity.announcement",
+        "label": "官方公告明确提到活动",
+        "value": 0,
+        "max": 20,
+        "reason": "项目尚未正式确认空投，不存在官方活动公告"
+      },
+      {
+        "key": "authenticity.crosslink",
+        "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+        "value": 0,
+        "max": 15,
+        "reason": "缺少 Docs 或链接无法互相印证"
+      },
+      {
+        "key": "authenticity.thirdparty",
+        "label": "至少两个独立第三方来源",
+        "value": 7,
+        "max": 15,
+        "reason": "仅有 1 个第三方来源，交叉验证不足"
+      },
+      {
+        "key": "authenticity.quest",
+        "label": "Galxe / Layer3 等官方 Space 可确认",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方 Quest Space"
+      },
+      {
+        "key": "authenticity.github",
+        "label": "官方 GitHub / Docs 有持续活动",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方开源仓库"
+      },
+      {
+        "key": "authenticity.funding",
+        "label": "团队 / 投资信息可核实",
+        "value": 0,
+        "max": 10,
+        "reason": "未核实团队或融资信息"
+      },
+      {
+        "key": "authenticity.contract",
+        "label": "合约地址在区块浏览器可验证",
+        "value": 0,
+        "max": 5,
+        "reason": "暂无公开可验证合约地址"
+      }
+    ],
+    "valueItems": [
+      {
+        "key": "value.fundamentals",
+        "label": "项目基本面",
+        "value": 7,
+        "max": 20,
+        "reason": "具备官网与基础资料，基本面较完整"
+      },
+      {
+        "key": "value.funding",
+        "label": "融资 / 投资机构",
+        "value": 0,
+        "max": 15,
+        "reason": "未核实融资信息，机构背书不足"
+      },
+      {
+        "key": "value.activity",
+        "label": "真实产品 / 用户 / 活跃度",
+        "value": 4,
+        "max": 15,
+        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
+      },
+      {
+        "key": "value.signal",
+        "label": "Token / Airdrop 信号强度",
+        "value": 9,
+        "max": 20,
+        "reason": "存在积分/测试网等潜在线索，但尚未确认"
+      },
+      {
+        "key": "value.roi",
+        "label": "任务投入产出比",
+        "value": 15,
+        "max": 15,
+        "reason": "预计投入约 24 分钟，共 8 个步骤"
+      },
+      {
+        "key": "value.timing",
+        "label": "当前参与时机",
+        "value": 10,
+        "max": 10,
+        "reason": "仍处于早期阶段，参与时机较好"
+      },
+      {
+        "key": "value.dilution",
+        "label": "用户稀释风险",
+        "value": 4,
+        "max": 5,
+        "reason": "暂未发现明显的用户过度稀释迹象"
+      }
+    ],
+    "riskItems": [
+      {
+        "key": "risk.none",
+        "label": "未检测到高风险行为",
+        "value": 0,
+        "max": 3,
+        "reason": "当前公开信息未发现明显的资金或合约风险"
+      }
+    ]
+  },
+  "cost": {
+    "capital_min_usd": 0,
+    "capital_max_usd": 0,
+    "gas_estimate_usd": 0,
+    "time_minutes": 24,
+    "long_term": false,
+    "summary": "低成本、纯时间投入型项目，适合新手练手。"
+  },
+  "recommendation": {
+    "grade": "C",
+    "action": "observe",
+    "summary": "优先级较低，可先收藏关注后续变化。"
+  },
+  "guide": [
+    {
+      "step": 1,
+      "title": "参与前安全检查",
+      "description": "核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
+      "source_url": "https://sweep.finance",
+      "source_verified": true
+    },
+    {
+      "step": 2,
+      "title": "Sign Up on the Sweep Airdrop Page",
+      "description": "Visit the Sweep airdrop page and create an account using Google, X, email, or a connected wallet. Registration is free and takes under a minute.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": true,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "/visit/r0b3/",
+      "source_verified": true
+    },
+    {
+      "step": 3,
+      "title": "Verify Your Account",
+      "description": "Complete email, and KYC verification from your dashboard. Each verification level awards XP on its own, and a verified account keeps you eligible for the final distribution.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sweep-finance/",
+      "source_verified": true
+    },
+    {
+      "step": 4,
+      "title": "Complete the Social Media Tasks",
+      "description": "Work through the social tasks in the campaign dashboard, such as following Sweep’s official channels. Finished tasks credit XP automatically, though some rewards take a short while to appear.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sweep-finance/",
+      "source_verified": true
+    },
+    {
+      "step": 5,
+      "title": "Play Sweepbird Every Day",
+      "description": "Open Sweepbird and play at least one round daily. A single game keeps your streak alive, and streak milestones unlock Bird Tier badges that add XP to your account permanently. You can also earn additional XP by finishing in the Top 100 of the Sweepbird leaderboard, which refreshes daily.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sweep-finance/",
+      "source_verified": true
+    },
+    {
+      "step": 6,
+      "title": "Invite Friends With Your Referral Link",
+      "description": "Grab the referral link from your dashboard and share it. Invites are repeatable, so each friend who signs up and participates keeps adding to your total.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": true,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sweep-finance/",
+      "source_verified": true
+    },
+    {
+      "step": 7,
+      "title": "Make Eligible Purchases (Optional)",
+      "description": "Qualifying purchases can also award XP. Purchase-related tasks will become available once Phase 3 of the fairlaunch is active. Check the campaign dashboard for updates and eligibility details.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sweep-finance/",
+      "source_verified": true
+    },
+    {
+      "step": 8,
+      "title": "Check Back for New Tasks and Events",
+      "description": "Sweep adds campaign tasks and special events while the airdrop runs. A quick daily look at the dashboard catches new XP sources early.",
+      "official_url": "https://sweep.finance",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_url": "https://airdrops.io/sweep-finance/",
+      "source_verified": true
+    }
+  ],
+  "faq": [
+    {
+      "q": "这个空投确认了吗？",
+      "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
+    },
+    {
+      "q": "什么时候结束？",
+      "a": "官方暂未公布。"
+    },
+    {
+      "q": "参与需要花钱吗？",
+      "a": "预计无需资金成本，仅需时间。"
+    },
+    {
+      "q": "需要连接钱包吗？",
+      "a": "需要。请务必使用独立的空投钱包。"
+    },
+    {
+      "q": "需要主网资产吗？",
+      "a": "暂不需要主网资产。"
+    },
+    {
+      "q": "积分一定会兑换 Token 吗？",
+      "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+    },
+    {
+      "q": "适合新手参与吗？",
+      "a": "适合。操作难度较低，建议按教程逐步完成。"
+    },
+    {
+      "q": "领取时间确定了吗？",
+      "a": "官方暂未公布。"
+    }
+  ],
+  "risks": [
+    "项目尚未确认空投，存在投入后无回报的可能。",
+    "真实性置信度偏低，证据不足，建议先观察。",
+    "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+    "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+  ],
+  "created_at": "2026-09-12T06:08:39.056Z",
+  "discovered_at": "2026-09-12T06:08:39.056Z",
+  "last_checked_at": "2026-09-12T06:12:23.594Z",
+  "last_changed_at": "2026-09-12T06:08:39.056Z",
+  "sourcedSteps": [
+    {
+      "title": "Sign Up on the Sweep Airdrop Page",
+      "body": "Visit the Sweep airdrop page and create an account using Google, X, email, or a connected wallet. Registration is free and takes under a minute.",
+      "url": "/visit/r0b3/"
+    },
+    {
+      "title": "Verify Your Account",
+      "body": "Complete email, and KYC verification from your dashboard. Each verification level awards XP on its own, and a verified account keeps you eligible for the final distribution."
+    },
+    {
+      "title": "Complete the Social Media Tasks",
+      "body": "Work through the social tasks in the campaign dashboard, such as following Sweep’s official channels. Finished tasks credit XP automatically, though some rewards take a short while to appear."
+    },
+    {
+      "title": "Play Sweepbird Every Day",
+      "body": "Open Sweepbird and play at least one round daily. A single game keeps your streak alive, and streak milestones unlock Bird Tier badges that add XP to your account permanently. You can also earn additional XP by finishing in the Top 100 of the Sweepbird leaderboard, which refreshes daily."
+    },
+    {
+      "title": "Invite Friends With Your Referral Link",
+      "body": "Grab the referral link from your dashboard and share it. Invites are repeatable, so each friend who signs up and participates keeps adding to your total."
+    },
+    {
+      "title": "Make Eligible Purchases (Optional)",
+      "body": "Qualifying purchases can also award XP. Purchase-related tasks will become available once Phase 3 of the fairlaunch is active. Check the campaign dashboard for updates and eligibility details."
+    },
+    {
+      "title": "Check Back for New Tasks and Events",
+      "body": "Sweep adds campaign tasks and special events while the airdrop runs. A quick daily look at the dashboard catches new XP sources early."
+    }
+  ]
+}
