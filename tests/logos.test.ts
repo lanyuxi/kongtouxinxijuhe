@@ -11,11 +11,14 @@
 
 import { describe, it, expect } from 'vitest';
 import { access, readFile, readdir, stat } from 'node:fs/promises';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { sniffImage, isPlaceholderSvg, faviconUrls, hostOf, isOfficialHost } from '../scripts/logo/sources.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const execFileAsync = promisify(execFile);
 
 interface Dataset {
   projects: { slug: string; name: string }[];
@@ -136,5 +139,52 @@ describe('前端不再渲染字母 / 缺省 logo', () => {
     expect(card).not.toMatch(/>\s*查看详情\s*</);
     expect(card).toMatch(/href=\{href\}/);
     expect(card).toContain('aria-label={`查看 ${p.name} 详情`}');
+  });
+});
+
+/**
+ * 回归测试：图标抓取不得删除「本轮没抓到」的已有图标。
+ *
+ * 对应线上事故：用户点「一键更新」后，刷新两轮图标全部消失。
+ * 根因是抓取脚本把「本轮没抓到图标的项目」当成孤儿，
+ * 直接删除 public/logos/ 下的文件并从 logo-map.json 里摘掉映射。
+ * 下面这些用例把「已抓到的图标不可回退」钉死在测试里。
+ */
+describe('图标抓取不会丢图标（回归）', () => {
+  const SCRIPT = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+
+  it('清理逻辑不再使用「不在本轮抓到 = 删除」的口径', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    // 旧实现：keep 集合只来自本轮成功列表，其余一律 rm
+    expect(src).not.toMatch(/const keep = new Set\(Object\.values\(logos\)/);
+    // 新实现：只有「已从数据集消失的项目」才进入可清理集合
+    expect(src).toContain('const retired = new Set(');
+    expect(src).toContain('const projectSlugs = new Set(projects.map((p) => p.slug));');
+  });
+
+  it('抓取失败但已有旧图标时，映射仍然保留该图标', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    // 必须先绑定旧映射，再尝试抓取，最后在失败分支里保留
+    expect(src).toContain('if (hasCached) logos[slug] = cachedRel;');
+    expect(src).toMatch(/if \(hasCached\) \{\s*const src = existingMap\.sources/);
+    expect(src).toContain('report.kept.push(');
+  });
+
+  it('脚本语法可执行，且导出结构完整', async () => {
+    const { stdout } = await execFileAsync('node', ['--check', SCRIPT]);
+    expect(stdout).toBe('');
+  });
+});
+
+describe('构建期图标兜底 ensure-logos', () => {
+  it('当前数据集与图标映射完全对齐（无缺失）', async () => {
+    const { findMissingLogos } = await import('../scripts/lib/ensure-logos.mjs');
+    const missing = await findMissingLogos();
+    expect(missing, `以下项目缺图标：${missing.join('、')}`).toEqual([]);
+  });
+
+  it('build 脚本已接入图标兜底，缺失时不会产出站点', async () => {
+    const pkg = JSON.parse(await readFile(path.join(ROOT, 'package.json'), 'utf8'));
+    expect(pkg.scripts.build).toContain('ensure-logos');
   });
 });

@@ -9,17 +9,13 @@
 
 import { describe, it, expect } from 'vitest';
 import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { isStale, STALE_MINUTES } from '../src/lib/refresh';
+import { isStale, STALE_MINUTES, attachLogos } from '../src/lib/refresh';
 import { canPrune, pruneProjects } from '../scripts/lib/prune';
 import { tasksFromSource, stepsFromSource } from '../scripts/lib/sourced';
 import { operationSummary, operationLine } from '../src/lib/tasks';
 import { normalizeCategory } from '../scripts/lib/normalize';
 import { toSkeleton } from '../scripts/lib/merge';
-import type { AirdropProject, LiveIndex } from '../src/lib/types';
-
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+import type { AirdropProject, Dataset, LiveIndex } from '../src/lib/types';
 
 const NOW = new Date('2026-09-12T10:00:00.000Z').getTime();
 
@@ -172,34 +168,76 @@ describe('类目归一', () => {
   });
 });
 
-describe('一键更新 · 数据加载路径一致性（Issue #1 回归）', () => {
-  it('刷新用的 reloadDataset 必须复用 loadDataset，不能直接返回裸 airdrops.json', async () => {
-    const src = await readFile(path.join(ROOT, 'src/lib/refresh.ts'), 'utf8');
+/**
+ * 回归测试：一键更新不得让图标消失。
+ *
+ * 对应线上事故：用户点「一键更新」，页面刷新后 188 个图标全部变成空白方块。
+ * 根因是更新路径只重新拉取了 airdrops.json（其中的项目对象**本身不带 logo 字段**），
+ * 却没有重新拉取 logo-map.json 把图标路径贴回去 ——
+ * 于是新数据集里所有项目的 logo 都是 undefined。
+ *
+ * 下面把「数据集与图标映射必须成对更新」这条约束钉死。
+ */
+describe('一键更新与图标的绑定（回归）', () => {
+  const dataset: Dataset = {
+    updated_at: '2026-09-12T10:00:00.000Z',
+    new_today: 0,
+    projects: [
+      { slug: 'aave-v3', name: 'Aave V3' } as AirdropProject,
+      { slug: 'sunswap-v3', name: 'SUNSwap V3' } as AirdropProject,
+    ],
+  };
 
-    // airdrops.json 里不含 logo 字段，logo 是在 data.ts 里由 logo-map.json 拼上去的。
-    // 曾经的 BUG：reloadDataset 直接 fetchNoCache<Dataset>('airdrops.json')，
-    // 结果「一键更新」后所有项目丢 logo，列表页图标整排消失。
-    expect(src).toMatch(/import\s*\{[^}]*loadDataset[^}]*\}\s*from\s*'\.\/data'/);
-    expect(src).toMatch(/loadDataset\(\)/);
-    expect(src).not.toMatch(
-      /reloadDataset[\s\S]{0,400}?fetchNoCache<Dataset>\('airdrops\.json'\)/,
-    );
+  it('attachLogos 会把映射里的图标路径贴到项目上', () => {
+    const map = {
+      updated_at: '2026-09-12T10:00:00.000Z',
+      total: 2,
+      logos: { 'aave-v3': 'logos/aave-v3.png', 'sunswap-v3': 'logos/sunswap-v3.png' },
+    };
+    const out = attachLogos(dataset, map);
+    // 前缀取决于构建期的 BASE_URL（测试环境与线上取值不同），
+    // 这里只断言「图标文件名被正确贴上了」，前缀由 loadDataset 的既有行为保证
+    expect(out.projects.map((p) => p.logo?.replace(/^.*?(?=logos\/)/, ''))).toEqual([
+      'logos/aave-v3.png',
+      'logos/sunswap-v3.png',
+    ]);
+    out.projects.forEach((p) => expect(p.logo).toMatch(/logos\//));
   });
 
-  it('两个数据入口返回的项目都必须带 logo', async () => {
-    const dataset = JSON.parse(
-      await readFile(path.join(ROOT, 'data/airdrops.json'), 'utf8'),
-    ) as { projects: { slug: string; logo?: string }[] };
-    const map = JSON.parse(await readFile(path.join(ROOT, 'data/logo-map.json'), 'utf8')) as {
-      logos: Record<string, string>;
+  it('映射缺失时不会把项目上的已有 logo 抹掉（数据集自带 logo 的情况）', () => {
+    const withLogo: Dataset = {
+      ...dataset,
+      projects: [{ slug: 'aave-v3', name: 'Aave V3', logo: './logos/aave-v3.png' } as AirdropProject],
     };
+    const out = attachLogos(withLogo, null);
+    expect(out.projects[0].logo).toBe('./logos/aave-v3.png');
+  });
 
-    // 模拟 data.ts 的 loadDataset 拼装逻辑（初始加载与刷新后共用同一条路径）
-    const decorate = (projects: { slug: string; logo?: string }[]) =>
-      projects.map((p) => (map.logos[p.slug] ? { ...p, logo: map.logos[p.slug] } : p));
+  it('未映射的项目保持原样，而不是被写成 undefined', () => {
+    const map = {
+      updated_at: '2026-09-12T10:00:00.000Z',
+      total: 1,
+      logos: { 'aave-v3': 'logos/aave-v3.png' },
+    };
+    const out = attachLogos(dataset, map);
+    expect(out.projects[1].logo).toBeUndefined();
+    expect('logo' in out.projects[1]).toBe(false);
+  });
 
-    for (const p of decorate(dataset.projects)) {
-      expect(p.logo, `${p.slug} 缺少 logo（刷新后会整排消失）`).toBeTruthy();
-    }
+  it('runRefresh 会同时拉取数据集与图标映射（源码级约束）', async () => {
+    const src = await readFile(
+      new URL('../src/lib/refresh.ts', import.meta.url),
+      'utf8',
+    );
+    // 必须成对出现，否则「更新后图标全没」的 bug 会立刻回归
+    expect(src).toContain('reloadLogoMap()');
+    expect(src).toMatch(/Promise\.all\(\[reloadDataset\(\), reloadLogoMap\(\)\]\)/);
+    expect(src).toContain('attachLogos(rawDataset, logoMap)');
+  });
+
+  it('loadDataset 与更新路径共用同一套贴图逻辑，避免两处实现漂移', async () => {
+    const src = await readFile(new URL('../src/lib/data.ts', import.meta.url), 'utf8');
+    expect(src).toContain("import { attachLogos } from './refresh'");
+    expect(src).toContain('return attachLogos(dataset, logoMap)');
   });
 });
