@@ -19,9 +19,14 @@ import type { AirdropProject } from '../lib/types';
  */
 const SIZES = {
   sm: 'h-10 w-10 rounded-xl',
+  /** 列表卡片专用：与设计稿一致的 56px 圆角方块 */
+  card: 'h-14 w-14 rounded-logo',
   md: 'h-16 w-16 rounded-2xl',
   lg: 'h-20 w-20 rounded-3xl',
 } as const;
+
+/** 尺寸 → 图片固有像素（仅用于 width/height 属性，避免布局抖动） */
+const LOGO_PX = { sm: 40, card: 56, md: 64, lg: 80 } as const;
 
 export function ProjectLogo({
   project,
@@ -51,8 +56,8 @@ export function ProjectLogo({
         alt={`${project.name} Logo`}
         loading="lazy"
         decoding="async"
-        width={size === 'sm' ? 40 : size === 'md' ? 64 : 80}
-        height={size === 'sm' ? 40 : size === 'md' ? 64 : 80}
+        width={LOGO_PX[size]}
+        height={LOGO_PX[size]}
         className="h-full w-full object-contain p-1.5"
         onError={() => setFailed(true)}
       />
