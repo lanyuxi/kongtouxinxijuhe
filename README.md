@@ -432,6 +432,19 @@ Write JSON       airdrops.json + details/*.json + source-health.json
 | `push` (main / master) | 安装 → 生成数据 → 测试 → 校验 → 构建 → 发布到 GitHub Pages |
 | `workflow_dispatch` | 手动触发一次完整构建与部署 |
 
+### CNB → GitHub 自动同步
+
+CNB 侧 `main` 分支的 `push` 事件里有一条 **「同步到 GitHub」** 流水线，
+负责把代码推送到 GitHub，从而触发上面的 Pages 部署。
+
+- 触发条件：CNB `main` 分支有推送（含 PR 合并产生的推送、定时抓取提交的数据）
+- 令牌来源：**CNB 密钥仓库** [`xixi2060/mimacangku`](https://cnb.cool/xixi2060/mimacangku) 的 `github.yml`
+  （通过 `.cnb.yml` 的 `imports` 注入为环境变量 `GITHUB_TOKEN`，**不落库、不写死在配置里**）
+- 失败处理：令牌缺失时该流水线会明确报错并中断，不会静默失败
+
+> GitHub 令牌只需 `Contents: Read and write` 权限。
+> 如果不再需要同步，删除 `.cnb.yml` 里的「同步到 GitHub」流水线即可。
+
 ---
 
 ## 部署
@@ -550,8 +563,11 @@ export const adapters: SourceAdapter[] = [
 - **CNB 侧**：每 3 小时（`17 */3 * * *`）自动抓取，数据变化才提交
 - **GitHub Pages 侧**：每次 `main` 有推送时重新构建部署
 
-GitHub Pages 上看到的数据，取决于最近一次 `main` 分支的代码。
-如果需要更频繁的更新，可以给 GitHub Actions 也加一条定时（见下方补充）。
+GitHub Pages 上看到的数据，取决于最近一次同步到 GitHub 的代码。
+
+CNB 侧每 3 小时的定时抓取若产生数据变更，会提交到 CNB `main`；
+该提交会触发 **CNB → GitHub 自动同步**流水线，把最新代码与数据一起推到 GitHub，
+再由 GitHub Actions 重新构建部署。**两端数据自动保持一致，无需人工干预。**
 </details>
 
 <details>
