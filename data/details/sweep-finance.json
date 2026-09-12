@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/sweep-finance/",
-      "fetched_at": "2026-09-12T11:12:09.345Z"
+      "fetched_at": "2026-09-12T11:42:10.604Z"
     }
   ],
   "evidence": [
@@ -334,7 +334,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-12T11:12:09.345Z",
+  "last_checked_at": "2026-09-12T11:42:10.604Z",
   "last_changed_at": "2026-09-12T06:08:39.056Z",
   "sourcedSteps": [
     {
