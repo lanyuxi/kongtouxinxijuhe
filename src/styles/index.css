@@ -133,8 +133,10 @@
   .detail-link {
     @apply text-sm font-medium text-brand underline-offset-4 hover:underline;
   }
+  /* 宽屏下左侧为常驻侧栏（本页目录 / 官方资料 / 再次确认结论），
+     右侧为正文内容；小屏时侧栏回到正文之前，因此窄屏阅读顺序不变 */
   .detail-grid {
-    @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_24rem];
+    @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[24rem_minmax(0,1fr)];
   }
   .detail-aside {
     @apply flex flex-col gap-5 xl:sticky xl:top-28;

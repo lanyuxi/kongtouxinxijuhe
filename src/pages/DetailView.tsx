@@ -277,8 +277,94 @@ export function DetailView({
       </header>
 
       <div className="detail-grid mt-7">
-        {/* ---------- 主列 ---------- */}
-        <div className="flex min-w-0 flex-col gap-7">
+        {/* ---------- 左栏：本页目录 / 官方资料 / 再次确认结论（宽屏下位于左侧常驻） ---------- */}
+        <aside className="detail-aside">
+          <nav className="panel hidden !p-6 xl:block" aria-label="页面目录">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
+              本页目录
+            </h2>
+            <ul className="mt-4 flex flex-col gap-0.5">
+              {TOC.map((t) => (
+                <li key={t.id}>
+                  <a
+                    href={`#${t.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(t.id)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-base no-underline transition-all duration-200 ${
+                      activeId === t.id
+                        ? 'bg-brand-50 font-medium text-brand-700'
+                        : 'text-ink-soft hover:bg-page'
+                    }`}
+                  >
+                    <span
+                      aria-hidden
+                      className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${
+                        activeId === t.id ? 'bg-brand' : 'bg-line'
+                      }`}
+                    />
+                    {t.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="panel !p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
+              官方资料
+            </h2>
+            {officialEntries.length === 0 ? (
+              <p className="mt-3 text-sm text-ink-soft">尚未核实到官方链接。</p>
+            ) : (
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {officialEntries.map(([label, url]) => (
+                  <li key={label}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="flex items-center justify-between gap-3 rounded-xl border border-line-soft bg-white px-4 py-3 text-base no-underline text-ink transition-all duration-200 hover:-translate-y-px hover:border-brand/30 hover:bg-brand-50 hover:text-brand-700"
+                    >
+                      {label}
+                      <span className="text-ink-faint">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p className="mt-4 text-sm text-ink-faint">请核对域名后再操作，谨防钓鱼站点。</p>
+          </div>
+
+          <div className="panel !p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
+              再次确认结论
+            </h2>
+            <p
+              className={`mt-4 rounded-xl border px-5 py-4 text-xl font-semibold tracking-tight ${ACTION_STYLE[p.recommendation.action]} ${ACTION_TONE[p.recommendation.action]}`}
+            >
+              {ACTION_LABEL[p.recommendation.action]}
+            </p>
+            <dl className="mt-4 flex flex-col gap-2 text-sm">
+              <div className="flex items-center justify-between">
+                <dt className="text-ink-soft">真实性</dt>
+                <dd className="metric">{p.scores.authenticity} / 100</dd>
+              </div>
+              <div className="flex items-center justify-between">
+                <dt className="text-ink-soft">参与价值</dt>
+                <dd className="metric">{p.scores.value} / 100</dd>
+              </div>
+              <div className="flex items-center justify-between">
+                <dt className="text-ink-soft">风险</dt>
+                <dd className="metric">{RISK_LABEL[p.scores.risk]}</dd>
+              </div>
+            </dl>
+            <p className="mt-4 text-sm text-ink-faint">三项评分相互独立，不存在「总分」。</p>
+          </div>
+        </aside>
+        {/* ---------- 右栏：正文内容（宽屏下位于右侧，空间更宽） ---------- */}
+        <div className="detail-main flex min-w-0 flex-col gap-7">
           {/* 2. 三项核心评分 */}
           <section id="decision" className="scroll-mt-28">
             <h2 className="panel-title mb-4">三项独立评分</h2>
@@ -675,93 +761,6 @@ export function DetailView({
             </p>
           </section>
         </div>
-
-        {/* ---------- 右侧常驻栏（宽屏） ---------- */}
-        <aside className="detail-aside">
-          <nav className="panel hidden !p-6 xl:block" aria-label="页面目录">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
-              本页目录
-            </h2>
-            <ul className="mt-4 flex flex-col gap-0.5">
-              {TOC.map((t) => (
-                <li key={t.id}>
-                  <a
-                    href={`#${t.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById(t.id)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-base no-underline transition-all duration-200 ${
-                      activeId === t.id
-                        ? 'bg-brand-50 font-medium text-brand-700'
-                        : 'text-ink-soft hover:bg-page'
-                    }`}
-                  >
-                    <span
-                      aria-hidden
-                      className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${
-                        activeId === t.id ? 'bg-brand' : 'bg-line'
-                      }`}
-                    />
-                    {t.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="panel !p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
-              官方资料
-            </h2>
-            {officialEntries.length === 0 ? (
-              <p className="mt-3 text-sm text-ink-soft">尚未核实到官方链接。</p>
-            ) : (
-              <ul className="mt-4 flex flex-col gap-2.5">
-                {officialEntries.map(([label, url]) => (
-                  <li key={label}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="flex items-center justify-between gap-3 rounded-xl border border-line-soft bg-white px-4 py-3 text-base no-underline text-ink transition-all duration-200 hover:-translate-y-px hover:border-brand/30 hover:bg-brand-50 hover:text-brand-700"
-                    >
-                      {label}
-                      <span className="text-ink-faint">↗</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <p className="mt-4 text-sm text-ink-faint">请核对域名后再操作，谨防钓鱼站点。</p>
-          </div>
-
-          <div className="panel !p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
-              再次确认结论
-            </h2>
-            <p
-              className={`mt-4 rounded-xl border px-5 py-4 text-xl font-semibold tracking-tight ${ACTION_STYLE[p.recommendation.action]} ${ACTION_TONE[p.recommendation.action]}`}
-            >
-              {ACTION_LABEL[p.recommendation.action]}
-            </p>
-            <dl className="mt-4 flex flex-col gap-2 text-sm">
-              <div className="flex items-center justify-between">
-                <dt className="text-ink-soft">真实性</dt>
-                <dd className="metric">{p.scores.authenticity} / 100</dd>
-              </div>
-              <div className="flex items-center justify-between">
-                <dt className="text-ink-soft">参与价值</dt>
-                <dd className="metric">{p.scores.value} / 100</dd>
-              </div>
-              <div className="flex items-center justify-between">
-                <dt className="text-ink-soft">风险</dt>
-                <dd className="metric">{RISK_LABEL[p.scores.risk]}</dd>
-              </div>
-            </dl>
-            <p className="mt-4 text-sm text-ink-faint">三项评分相互独立，不存在「总分」。</p>
-          </div>
-        </aside>
       </div>
 
       {showTop && (
