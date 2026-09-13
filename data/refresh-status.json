@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T21:12:09.416Z",
-  "finished_at": "2026-09-13T21:12:17.570Z",
+  "started_at": "2026-09-13T22:12:09.654Z",
+  "finished_at": "2026-09-13T22:12:17.720Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T21:12:09.416Z",
+  "updated_at": "2026-09-13T22:12:09.654Z",
   "data_changed": true,
-  "change_summary": "变更 9 个：Aave V3 内容有更新；B2 Buzz 内容有更新；EigenCloud 内容有更新",
+  "change_summary": "变更 22 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
     "B2 Buzz 内容有更新",
-    "EigenCloud 内容有更新",
-    "Gauntlet 内容有更新",
-    "Kinetiq kHYPE 内容有更新"
+    "Babylon Protocol 内容有更新",
+    "Concrete 内容有更新",
+    "Fluid Lite 内容有更新"
   ],
   "added": 0,
-  "modified": 9,
+  "modified": 22,
   "removed": 0
 }
