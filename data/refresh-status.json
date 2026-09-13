@@ -1,10 +1,10 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T13:47:18.059Z",
-  "finished_at": "2026-09-13T13:47:38.896Z",
+  "started_at": "2026-09-13T13:48:49.547Z",
+  "finished_at": "2026-09-13T13:49:14.040Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T13:47:18.059Z",
+  "updated_at": "2026-09-13T13:48:49.547Z",
   "data_changed": true,
   "change_summary": "变更 188 个：Aave Horizon RWA 教程：转为流程示意；Aave V3 教程：转为流程示意；Aave V4 教程：转为流程示意",
   "change_details": [
