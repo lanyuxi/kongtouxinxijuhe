@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T16:42:10.164Z",
-  "finished_at": "2026-09-13T16:42:24.910Z",
+  "started_at": "2026-09-13T17:42:09.511Z",
+  "finished_at": "2026-09-13T17:42:22.677Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T16:42:10.164Z",
+  "updated_at": "2026-09-13T17:42:09.511Z",
   "data_changed": true,
-  "change_summary": "变更 13 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Clearstar 内容有更新",
+  "change_summary": "变更 16 个：Babylon Protocol 内容有更新；Defi Saver Asset Management 内容有更新；EigenCloud 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "B2 Buzz 内容有更新",
-    "Clearstar 内容有更新",
-    "Concrete 内容有更新",
-    "Defi Saver Asset Management 内容有更新"
+    "Babylon Protocol 内容有更新",
+    "Defi Saver Asset Management 内容有更新",
+    "EigenCloud 内容有更新",
+    "Jupiter Perpetual Exchange 内容有更新",
+    "K3 Capital 内容有更新"
   ],
   "added": 0,
-  "modified": 13,
+  "modified": 16,
   "removed": 0
 }
