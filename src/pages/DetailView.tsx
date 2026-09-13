@@ -10,6 +10,7 @@ import {
   relativeTime,
 } from '../lib/labels';
 import { StatusBadge, RiskBadge } from '../components/Badge';
+import { ExitChecklist } from '../components/ExitChecklist';
 import { ScoreBreakdown } from '../components/ScoreCard';
 import { ProjectLogo } from '../components/ProjectLogo';
 import type { ProgressStatus } from '../lib/store';
@@ -47,6 +48,7 @@ const TOC = [
   { id: 'evidence', label: '证据与来源' },
   { id: 'meta', label: '项目详情' },
   { id: 'guide', label: '参与教程' },
+  { id: 'exit', label: '做完收尾' },
   { id: 'risks', label: '注意事项' },
   { id: 'faq', label: '常见问题' },
   { id: 'official', label: '官方资料' },
@@ -715,6 +717,13 @@ export function DetailView({
                 );
               })}
             </ol>
+          </section>
+
+          {/* 6.5 收尾动作：授权撤回与钱包归零。
+              放在教程之后、注意事项之前 —— 用户刚读完步骤，正是需要收尾提醒的时刻。 */}
+          <section id="exit" className="scroll-mt-28">
+            <h2 className="panel-title mb-4">参与完成后：撤离与授权撤回</h2>
+            <ExitChecklist />
           </section>
 
           {/* 7. 注意事项 */}

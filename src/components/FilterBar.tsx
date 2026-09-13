@@ -41,11 +41,20 @@ export function FilterBar({
   onChange,
   onReset,
   resultCount,
+  mergedVariants = 0,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
   onReset: () => void;
   resultCount: number;
+  /**
+   * 被折叠为「同协议产品线」的条目数。
+   *
+   * 为什么必须显示：筛选结果里有 188 个项目，但同协议归组后只渲染 167 张卡片。
+   * 若计数仍写 188，用户会以为少了 21 个项目（或以为页面坏了）。
+   * 因此这里如实拆开：「共 X 张卡片（含 Y 条同协议产品线已折叠）」。
+   */
+  mergedVariants?: number;
 }) {
   const set = <K extends keyof Filters>(k: K, v: Filters[K]) => onChange({ ...filters, [k]: v });
 
@@ -55,7 +64,12 @@ export function FilterBar({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-lg font-semibold tracking-tight text-ink">筛选与排序</h2>
         <p className="text-sm text-ink-soft">
-          共 <strong className="metric text-base text-ink">{resultCount}</strong> 个项目
+          共 <strong className="metric text-base text-ink">{resultCount}</strong> 张卡片
+          {mergedVariants > 0 && (
+            <span className="text-ink-faint">
+              （另有 <strong className="metric text-ink-faint">{mergedVariants}</strong> 条同协议产品线已合并展示）
+            </span>
+          )}
         </p>
       </div>
 

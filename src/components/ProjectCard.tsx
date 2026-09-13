@@ -2,6 +2,7 @@ import type { AirdropProject } from '../lib/types';
 import { CHAIN_LABEL, RISK_LABEL, STATUS_LABEL, relativeTime } from '../lib/labels';
 import { operationSummary } from '../lib/tasks';
 import { beginnerVerdict } from '../lib/beginner';
+import { chineseBlurb } from '../lib/describe';
 import { ProjectLogo } from './ProjectLogo';
 
 /**
@@ -58,12 +59,20 @@ export function ProjectCard({
   project,
   favorited,
   onToggleFavorite,
+  variants = [],
+  variantOf,
 }: {
   project: AirdropProject;
   favorited: boolean;
+  /** 同一协议下的其他产品线（仅主条目传入），折叠展示，避免用户以为是多个空投 */
+  variants?: AirdropProject[];
+  /** 本条目归属的主条目（产品线时由父级传入） */
+  variantOf?: string;
   onToggleFavorite: (slug: string) => void;
 }) {
   const p = project;
+  /** 一句话中文简介：回答小白「这项目是干什么的」 */
+  const blurb = chineseBlurb(p);
   const chain = p.chains[0] ? CHAIN_LABEL[p.chains[0]] : '';
   const href = `#/project/${p.slug}`;
   const actions = operationSummary(p).join('、');
@@ -134,10 +143,33 @@ export function ProjectCard({
           )}
         </p>
 
+        {/* 一句话中文简介：先回答「这是干什么的」，再回答「要做什么」。
+            实测 188 个项目的 tagline 有 125 个是英文模板句（`Lending 协议，TVL 约 …`），
+            对新手几乎无意义，因此这里展示确定性映射生成的中文说明。 */}
+        <p
+          title={blurb}
+          className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-ink-soft"
+        >
+          {blurb}
+        </p>
+
         {/* 操作：单行省略，完整文案放在 title 里，悬停可看全 */}
-        <p title={actionText} className="mt-1.5 truncate text-xs leading-relaxed text-ink-soft">
+        <p title={actionText} className="mt-1 truncate text-xs leading-relaxed text-ink-faint">
           {actionText}
         </p>
+
+        {/* 同协议产品线：折叠成一行文字，避免「Aave V3 / V4 / Horizon」被当成 3 个空投 */}
+        {variants.length > 0 && (
+          <p className="mt-1 truncate text-[11px] text-ink-faint" title={variants.map((v) => v.name).join('、')}>
+            同协议还有 {variants.length} 条产品线：
+            {variants.map((v) => v.name).join('、')}
+          </p>
+        )}
+        {variantOf && (
+          <p className="mt-1 truncate text-[11px] text-ink-faint">
+            属于同一协议 <a href={`#/project/${variantOf}`} className="text-brand no-underline hover:underline">{variantOf}</a>
+          </p>
+        )}
 
         {/* 底栏：分隔线 + 元信息。
             4 列下列宽只有 ~290px（卡片内宽），而「公链 + 风险 + 价值 + 时间」

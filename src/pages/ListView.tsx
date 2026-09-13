@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { AirdropProject, LiveIndex } from '../lib/types';
 import { applyCostBucket, DEFAULT_FILTERS, filterProjects, sortProjects } from '../lib/filter';
+import { flattenGroups, groupByProtocol } from '../lib/describe';
 import type { Filters } from '../lib/filter';
 import { FilterBar } from '../components/FilterBar';
 import { ProjectCard } from '../components/ProjectCard';
@@ -55,6 +56,23 @@ export function ListView({
     const f = view === 'hot' ? { ...filters, sort: 'value' as const } : filters;
     return sortProjects(filterProjects(viewProjects, f), f.sort);
   }, [viewProjects, filters, view]);
+
+  /**
+   * 同协议归组：aave-v3 / aave-v4 / aave-horizon-rwa 共用 aave.com，
+   * 直接并列展示会被新手当成 3 个独立空投，重复投入时间。
+   * 归组只影响「列表怎么展示」，不删数据：变体各自仍有详情页与 URL。
+   *
+   * ⚠️ 为什么在筛选/排序之后才归组：
+   *    若先归组再筛选，主条目可能被筛掉、留下一个「没有主条目的产品线」，
+   *    用户点进去会看到残缺信息。先筛选保证主条目一定在当前结果集内。
+   */
+  const entries = useMemo(() => flattenGroups(groupByProtocol(visible)), [visible]);
+
+  /** 被折叠为产品线的条目数：让「卡片数 < 项目数」这件事对用户是透明的，而不是看起来像丢数据 */
+  const mergedVariants = useMemo(
+    () => entries.reduce((n, e) => n + e.variants.length, 0),
+    [entries],
+  );
 
   const lastDiscovery = useMemo(
     () =>
@@ -133,17 +151,20 @@ export function ListView({
         filters={filters}
         onChange={setFilters}
         onReset={() => setFilters(DEFAULT_FILTERS)}
-        resultCount={visible.length}
+        resultCount={entries.length}
+        mergedVariants={mergedVariants}
       />
       {visible.length === 0 ? (
         <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
       ) : (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {visible.map((p) => (
+          {entries.map((e) => (
             <ProjectCard
-              key={p.slug}
-              project={p}
-              favorited={favorites.includes(p.slug)}
+              key={e.project.slug}
+              project={e.project}
+              variants={e.variants}
+              variantOf={e.variantOf}
+              favorited={favorites.includes(e.project.slug)}
               onToggleFavorite={onToggleFavorite}
             />
           ))}

@@ -4,6 +4,7 @@ import { Onboarding } from './components/Onboarding';
 import type { NavKey } from './components/Layout';
 import { ListView } from './pages/ListView';
 import { DetailView } from './pages/DetailView';
+import { SafetyView } from './pages/SafetyView';
 import { loadDataset, loadSourceHealth } from './lib/data';
 import { loadLiveIndex, runRefresh } from './lib/refresh';
 import type { LiveIndex } from './lib/types';
@@ -98,10 +99,12 @@ export function App() {
     <>
       {/* 首访引导：只在第一次访问（或引导版本更新后）出现，可跳过 */}
       <Onboarding />
-      <Header current={route.kind === 'list' ? route.view : 'latest'} />
+      <Header current={route.kind === 'list' ? route.view : route.kind === 'safety' ? 'safety' : 'latest'} />
       <main>
         <Page>
-          {route.kind === 'detail' ? (
+          {route.kind === 'safety' ? (
+            <SafetyView projects={projects} />
+          ) : route.kind === 'detail' ? (
             detailProject ? (
               <DetailView
                 project={detailProject}
