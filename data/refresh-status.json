@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T19:12:10.017Z",
-  "finished_at": "2026-09-13T19:12:18.020Z",
+  "started_at": "2026-09-13T19:42:10.199Z",
+  "finished_at": "2026-09-13T19:42:18.576Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T19:12:10.017Z",
+  "updated_at": "2026-09-13T19:42:10.199Z",
   "data_changed": true,
-  "change_summary": "变更 17 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 11 个：Aave V3 内容有更新；Concrete 内容有更新；EigenCloud 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
-    "B2 Buzz 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "CIAN Yield Layer 内容有更新"
+    "Concrete 内容有更新",
+    "EigenCloud 内容有更新",
+    "Kelp 内容有更新",
+    "Marinade Native 内容有更新"
   ],
   "added": 0,
-  "modified": 17,
+  "modified": 11,
   "removed": 0
 }
