@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/sosovalue/",
-      "fetched_at": "2026-09-13T20:42:11.534Z"
+      "fetched_at": "2026-09-13T21:12:08.438Z"
     }
   ],
   "evidence": [
@@ -376,7 +376,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-13T20:42:11.534Z",
+  "last_checked_at": "2026-09-13T21:12:08.438Z",
   "last_changed_at": "2026-09-13T13:49:13.742Z",
   "sourcedSteps": [
     {
