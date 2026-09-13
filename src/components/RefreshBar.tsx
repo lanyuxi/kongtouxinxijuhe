@@ -16,11 +16,14 @@ export function RefreshBar({
   onRefresh,
   refreshing,
   message,
+  changeDetails,
 }: {
   index: LiveIndex | null;
   onRefresh: () => void;
   refreshing: boolean;
   message: string | null;
+  /** 最近一次抓取的项目级变更明细，例如「Monad 状态：潜在空投 → 开放领取」 */
+  changeDetails?: string[];
 }) {
   // 让相对时间自己走起来，否则页面停留久了会显示过期信息
   const [, tick] = useState(0);
@@ -75,6 +78,19 @@ export function RefreshBar({
             {refreshing ? '⏳ ' : '✓ '}
             {message}
           </p>
+        )}
+
+        {/* 项目级变更明细：只给「变更 12」这种计数，用户无法判断哪个项目变了、变成了什么。
+            这里逐条列出具体变化，回访用户一眼就能看到有没有动静。 */}
+        {changeDetails && changeDetails.length > 0 && (
+          <ul className="mt-2 flex flex-col gap-1 text-xs text-ink-soft">
+            {changeDetails.map((d) => (
+              <li key={d} className="flex gap-2">
+                <span aria-hidden className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-400" />
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
         )}
       </div>
 

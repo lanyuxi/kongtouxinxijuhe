@@ -117,6 +117,8 @@ export interface RefreshOutcome {
   index: LiveIndex | null;
   changed: boolean;
   message: string;
+  /** 项目级变更明细（人类可读），供界面展示「哪个项目变成了什么」 */
+  details: string[];
 }
 
 /**
@@ -168,6 +170,7 @@ export async function runRefresh(
   // 如果一律说「已更新到最新数据」，用户会以为数据真的变了。
   const status = await loadRefreshStatus();
   const summary = status?.change_summary;
+  const details = status?.change_details ?? [];
   const dataChanged = status?.data_changed;
 
   let message: string;
@@ -180,5 +183,5 @@ export async function runRefresh(
   }
   if (summary && summary !== '无实质变化') message += `：${summary}`;
 
-  return { dataset, index, changed, message };
+  return { dataset, index, changed, message, details };
 }

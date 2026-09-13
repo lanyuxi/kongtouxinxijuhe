@@ -343,8 +343,16 @@ export interface RefreshStatus {
    * 因此「跑了一轮但数据没变」会如实返回 false。
    */
   data_changed?: boolean;
-  /** 人类可读的差异摘要，例如「新增 3、变更 12」 */
+  /** 人类可读的差异摘要，例如「变更 2 个：Monad 状态：潜在空投 → 开放领取」 */
   change_summary?: string;
+  /**
+   * 项目级变更明细，例如 ['Monad 状态：潜在空投 → 开放领取']。
+   *
+   * 为什么单独存一份：只给「变更 12」这种计数，回访用户无法判断
+   * 到底哪个项目变了、变成了什么。详细列表由前端直接展示。
+   * 最多保留若干条，避免 refresh-status.json（前端每 5 秒轮询读取）体积失控。
+   */
+  change_details?: string[];
   added?: number;
   modified?: number;
   removed?: number;

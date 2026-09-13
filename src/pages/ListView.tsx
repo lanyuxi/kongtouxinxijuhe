@@ -19,6 +19,7 @@ export function ListView({
   liveIndex,
   refreshing,
   refreshMessage,
+  changeDetails,
   onRefresh,
   onToggleFavorite,
   onClearAll,
@@ -31,6 +32,7 @@ export function ListView({
   liveIndex: LiveIndex | null;
   refreshing: boolean;
   refreshMessage: string | null;
+  changeDetails?: string[];
   onRefresh: () => void;
   onToggleFavorite: (slug: string) => void;
   onClearAll: () => void;
@@ -146,6 +148,7 @@ export function ListView({
         onRefresh={onRefresh}
         refreshing={refreshing}
         message={refreshMessage}
+        changeDetails={changeDetails}
       />
       <FilterBar
         filters={filters}

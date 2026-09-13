@@ -24,6 +24,8 @@ export function App() {
   const [liveIndex, setLiveIndex] = useState<LiveIndex | null>(null);
   const [refreshing, setRefreshing] = useState(false);
   const [refreshMessage, setRefreshMessage] = useState<string | null>(null);
+  // 最近一次抓取的项目级变更明细（人类可读），展示在数据源工具条上
+  const [changeDetails, setChangeDetails] = useState<string[]>([]);
 
   useEffect(() => {
     let alive = true;
@@ -51,6 +53,7 @@ export function App() {
       if (outcome.dataset) setDataset(outcome.dataset);
       if (outcome.index) setLiveIndex(outcome.index);
       setRefreshMessage(outcome.message);
+      setChangeDetails(outcome.details);
       // 数据源健康状态也一并刷新，保证失败提示是最新的
       const h = await loadSourceHealth();
       setHealth(h);
@@ -137,6 +140,7 @@ export function App() {
                 liveIndex={liveIndex}
                 refreshing={refreshing}
                 refreshMessage={refreshMessage}
+                changeDetails={changeDetails}
                 onRefresh={handleRefresh}
                 onToggleFavorite={toggleFavorite}
                 onClearAll={clearAll}

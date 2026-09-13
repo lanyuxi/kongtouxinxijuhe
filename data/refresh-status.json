@@ -1,13 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T13:12:11.075Z",
-  "finished_at": "2026-09-13T13:12:28.527Z",
+  "started_at": "2026-09-13T13:47:18.059Z",
+  "finished_at": "2026-09-13T13:47:38.896Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T13:12:11.075Z",
+  "updated_at": "2026-09-13T13:47:18.059Z",
   "data_changed": true,
-  "change_summary": "变更 19",
+  "change_summary": "变更 188 个：Aave Horizon RWA 教程：转为流程示意；Aave V3 教程：转为流程示意；Aave V4 教程：转为流程示意",
+  "change_details": [
+    "Aave Horizon RWA 教程：转为流程示意",
+    "Aave V3 教程：转为流程示意",
+    "Aave V4 教程：转为流程示意",
+    "Aerodrome Slipstream 教程：转为流程示意",
+    "Aiw3 教程：升级为真实教程"
+  ],
   "added": 0,
-  "modified": 19,
+  "modified": 188,
   "removed": 0
 }
