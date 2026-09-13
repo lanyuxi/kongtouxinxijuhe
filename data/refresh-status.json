@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T19:42:10.199Z",
-  "finished_at": "2026-09-13T19:42:18.576Z",
+  "started_at": "2026-09-13T20:12:10.227Z",
+  "finished_at": "2026-09-13T20:12:18.081Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T19:42:10.199Z",
+  "updated_at": "2026-09-13T20:12:10.227Z",
   "data_changed": true,
-  "change_summary": "变更 11 个：Aave V3 内容有更新；Concrete 内容有更新；EigenCloud 内容有更新",
+  "change_summary": "变更 1 个：Lombard LBTC 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Concrete 内容有更新",
-    "EigenCloud 内容有更新",
-    "Kelp 内容有更新",
-    "Marinade Native 内容有更新"
+    "Lombard LBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 11,
+  "modified": 1,
   "removed": 0
 }
