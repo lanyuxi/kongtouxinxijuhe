@@ -572,11 +572,43 @@ export function DetailView({
           {/* 6. 新手参与教程（时间线布局） */}
           <section id="guide" className="panel">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <h2 className="panel-title">新手参与教程</h2>
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="panel-title">新手参与教程</h2>
+                {p.guide_source === 'sourced' ? (
+                  <span
+                    className="chip border-ok/30 bg-ok-wash text-ok"
+                    title="步骤来自数据源侧抓取到的官方 HowTo，可追溯到原始页面"
+                  >
+                    ✓ 真实教程（可追溯来源）
+                  </span>
+                ) : (
+                  <span
+                    className="chip border-warn/30 bg-warn-wash text-warn"
+                    title="数据源未提供该项目的官方步骤，以下为通用流程示意"
+                  >
+                    ⚠ 流程示意（非官方步骤）
+                  </span>
+                )}
+              </div>
               <span className="chip border-line bg-page text-ink-soft">
                 已完成 <strong className="metric text-ink">{done.length}</strong> / {p.guide.length} 步
               </span>
             </div>
+
+            {/* 模板教程必须显式声明「这不是官方要求的具体步骤」，
+                否则用户会把通用流程误当成项目方规定的操作，产生错误预期。 */}
+            {p.guide_source === 'template' ? (
+              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
+                该项目的数据来源暂未提供官方分步教程，以下步骤是
+                <strong className="font-semibold">通用参与流程示意</strong>，用于帮助你理解大致顺序，
+                不代表项目方的具体要求。请务必以
+                <strong className="font-semibold">官方页面 / 官方公告</strong>的实际说明为准。
+              </p>
+            ) : (
+              <p className="mt-4 rounded-xl border border-ok/30 bg-ok-wash px-5 py-4 text-sm text-ok">
+                以下步骤来自数据源抓取到的官方 HowTo，每一步都可追溯到原始页面。
+              </p>
+            )}
 
             {/* 进度条 */}
             <div className="mt-5 flex items-center gap-4">
@@ -589,7 +621,7 @@ export function DetailView({
               <span className="metric shrink-0 text-sm text-ink-soft">{progressPct}%</span>
             </div>
             <p className="mt-3 text-base text-ink-soft">
-              所有步骤均附来源，未验证步骤会明确标注。勾选状态保存在你的浏览器本地。
+              未验证步骤会明确标注。勾选状态保存在你的浏览器本地，不上传任何服务器。
             </p>
 
             <ol className="mt-7 flex flex-col">

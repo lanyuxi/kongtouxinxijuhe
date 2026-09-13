@@ -1,6 +1,7 @@
 import type { AirdropProject } from '../lib/types';
 import { CHAIN_LABEL, RISK_LABEL, STATUS_LABEL, relativeTime } from '../lib/labels';
 import { operationSummary } from '../lib/tasks';
+import { beginnerVerdict } from '../lib/beginner';
 import { ProjectLogo } from './ProjectLogo';
 
 /**
@@ -67,6 +68,7 @@ export function ProjectCard({
   const href = `#/project/${p.slug}`;
   const actions = operationSummary(p).join('、');
   const actionText = actions ? `操作：${actions}` : '操作：查看项目详情';
+  const beginner = beginnerVerdict(p);
 
   return (
     <article className="group relative flex h-full flex-col rounded-card border border-line bg-card p-4 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card">
@@ -119,9 +121,17 @@ export function ProjectCard({
           </div>
         </div>
 
-        {/* 状态：彩色文字，紧跟名称下方（不占右侧按钮区域，可吃满整行） */}
-        <p className={`mt-2 truncate text-xs font-medium ${STATUS_TONE[p.status]}`}>
-          {STATUS_LABEL[p.status]}
+        {/* 状态 + 新手友好角标：彩色文字，紧跟名称下方（不占右侧按钮区域，可吃满整行） */}
+        <p className="mt-2 flex items-center gap-2 truncate text-xs font-medium">
+          <span className={STATUS_TONE[p.status]}>{STATUS_LABEL[p.status]}</span>
+          {beginner.friendly && (
+            <span
+              title={beginner.reason}
+              className="shrink-0 rounded-full border border-ok/30 bg-ok-wash px-2 py-0.5 text-[11px] font-medium text-ok"
+            >
+              🌱 新手友好
+            </span>
+          )}
         </p>
 
         {/* 操作：单行省略，完整文案放在 title 里，悬停可看全 */}

@@ -1,6 +1,7 @@
 import type { Filters, SortKey } from '../lib/filter';
 import { SORT_LABEL } from '../lib/filter';
 import { STATUS_LABEL, CATEGORY_LABEL, CHAIN_LABEL, RISK_LABEL } from '../lib/labels';
+import { BEGINNER_RULES } from '../lib/beginner';
 
 const STATUSES = ['all', 'new', 'potential', 'confirmed', 'claim_live', 'ended'] as const;
 const CHAINS = [
@@ -75,6 +76,27 @@ export function FilterBar({
             aria-label="搜索项目"
             className="select w-full py-3.5 pl-11 text-base shadow-sm"
           />
+        </div>
+
+        {/* 新手友好：单独一条醒目开关。
+            小白的第一诉求是「有没有我现在就能做的」，而不是逐个调筛选器。
+            因此把它做成一眼可见、一键切换的入口，而非藏在某个下拉框里。 */}
+        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-line-soft bg-page/60 px-4 py-3">
+          <button
+            type="button"
+            onClick={() => set('beginner', filters.beginner === 'friendly' ? 'all' : 'friendly')}
+            aria-pressed={filters.beginner === 'friendly'}
+            className={`chip transition duration-200 ${
+              filters.beginner === 'friendly'
+                ? 'border-brand bg-brand text-white'
+                : 'border-line bg-white text-ink-soft hover:border-brand/40 hover:text-brand-600'
+            }`}
+          >
+            🌱 只看新手友好
+          </button>
+          <span className="text-xs text-ink-faint">
+            筛选条件：无需本金 · Gas ≤ ${BEGINNER_RULES.maxGasUsd} · 风险可控 · 无需签名授权
+          </span>
         </div>
 
         <div className="grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">

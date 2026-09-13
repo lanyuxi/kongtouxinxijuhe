@@ -7,6 +7,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
 import { RefreshBar } from '../components/RefreshBar';
+import { SafetyBar } from '../components/Onboarding';
 
 export function ListView({
   view,
@@ -120,6 +121,8 @@ export function ListView({
         updatedAt={updatedAt}
         lastDiscovery={lastDiscovery}
       />
+      {/* 防骗提示常驻：即使看过引导也要长期可见，这是新手最大的损失来源 */}
+      <SafetyBar />
       <RefreshBar
         index={liveIndex}
         onRefresh={onRefresh}

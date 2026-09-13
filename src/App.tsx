@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Header, Footer, Page } from './components/Layout';
+import { Onboarding } from './components/Onboarding';
 import type { NavKey } from './components/Layout';
 import { ListView } from './pages/ListView';
 import { DetailView } from './pages/DetailView';
@@ -95,6 +96,8 @@ export function App() {
 
   return (
     <>
+      {/* 首访引导：只在第一次访问（或引导版本更新后）出现，可跳过 */}
+      <Onboarding />
       <Header current={route.kind === 'list' ? route.view : 'latest'} />
       <main>
         <Page>

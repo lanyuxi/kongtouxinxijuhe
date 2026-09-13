@@ -216,6 +216,20 @@ export interface AirdropProject {
   cost: CostModel;
   recommendation: Recommendation;
   guide: GuideStep[];
+  /**
+   * 教程步骤的来源类型，用于前端如实标注，避免把「示意模板」当成真实教程。
+   *
+   * - `sourced`：步骤来自数据源侧抓到的真实 HowTo（可追溯到原始页面），
+   *   此时 guide[].source_url 指向该原始页面。
+   * - `template`：数据源未提供 HowTo，步骤由确定性模板生成，
+   *   只能作为「大致流程示意」，不代表官方要求的实际步骤。
+   *
+   * 为什么必须显式区分：
+   *   模板教程看起来与真实教程完全一样（同样有步骤号、耗时、完成标准），
+   *   用户无法自行分辨。若不标注，就会把通用流程误当成官方要求，
+   *   既误导用户，也违背「教程必须可追溯」这条不变量。
+   */
+  guide_source: 'sourced' | 'template';
   faq: FaqItem[];
   risks: string[];
 
