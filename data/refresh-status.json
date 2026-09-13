@@ -1,13 +1,13 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T07:42:12.122Z",
-  "finished_at": "2026-09-13T07:42:26.434Z",
+  "started_at": "2026-09-13T08:42:10.207Z",
+  "finished_at": "2026-09-13T08:42:29.919Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T07:42:12.122Z",
+  "updated_at": "2026-09-13T08:42:10.207Z",
   "data_changed": true,
-  "change_summary": "变更 1",
+  "change_summary": "变更 21",
   "added": 0,
-  "modified": 1,
+  "modified": 21,
   "removed": 0
 }
