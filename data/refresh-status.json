@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T22:42:09.593Z",
-  "finished_at": "2026-09-13T22:42:17.649Z",
+  "started_at": "2026-09-13T23:42:09.652Z",
+  "finished_at": "2026-09-13T23:42:17.486Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T22:42:09.593Z",
+  "updated_at": "2026-09-13T23:42:09.652Z",
   "data_changed": true,
-  "change_summary": "变更 10 个：Bedrock uniBTC 内容有更新；CIAN Yield Layer 内容有更新；Defi Saver Asset Management 内容有更新",
+  "change_summary": "变更 12 个：b14g 内容有更新；Bedrock uniBTC 内容有更新；Concrete 内容有更新",
   "change_details": [
+    "b14g 内容有更新",
     "Bedrock uniBTC 内容有更新",
-    "CIAN Yield Layer 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
+    "Concrete 内容有更新",
     "EigenCloud 内容有更新",
-    "Sentora Curator 内容有更新"
+    "Ethena USDe 内容有更新"
   ],
   "added": 0,
-  "modified": 10,
+  "modified": 12,
   "removed": 0
 }
