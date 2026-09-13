@@ -65,6 +65,8 @@ jobs:
       - name: 构建站点
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
+          # feed 里必须是可点的绝对地址，因此显式传入站点根地址
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: npm run build
 
       - name: 构建产物自检
@@ -74,6 +76,9 @@ jobs:
           test -f dist/data/logo-map.json
           test -d dist/data/details
           test -d dist/logos
+          # feed 是构建期生成物：缺失时订阅者只会看到 404，而站点本身完全正常，
+          # 属于「静默失败」，因此必须在部署前断言
+          test -f dist/feed.xml
           # 图标数量必须与数据条目一致，避免线上出现破图
           COUNT=$(node -e "process.stdout.write(String(require('./data/logo-map.json').total))")
           test "$(ls dist/logos | wc -l)" -ge "$COUNT"

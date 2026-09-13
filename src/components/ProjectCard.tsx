@@ -3,6 +3,8 @@ import { CHAIN_LABEL, RISK_LABEL, STATUS_LABEL, relativeTime } from '../lib/labe
 import { operationSummary } from '../lib/tasks';
 import { beginnerVerdict } from '../lib/beginner';
 import { chineseBlurb } from '../lib/describe';
+import { percentilePhrase } from '../lib/percentile';
+import type { Percentiles } from '../lib/percentile';
 import { ProjectLogo } from './ProjectLogo';
 
 /**
@@ -61,9 +63,18 @@ export function ProjectCard({
   onToggleFavorite,
   variants = [],
   variantOf,
+  percentiles,
 }: {
   project: AirdropProject;
   favorited: boolean;
+  /**
+   * 相对分位（相对本批全部项目）。
+   *
+   * 为什么卡片上也要给：实测 174/188 个项目的价值等级都是 C，
+   * 一屏「C」无法比较。卡片上的分位让用户扫一眼就知道该优先点开哪个，
+   * 而不必逐个进详情页看绝对分。
+   */
+  percentiles?: Percentiles;
   /** 同一协议下的其他产品线（仅主条目传入），折叠展示，避免用户以为是多个空投 */
   variants?: AirdropProject[];
   /** 本条目归属的主条目（产品线时由父级传入） */
@@ -78,6 +89,7 @@ export function ProjectCard({
   const actions = operationSummary(p).join('、');
   const actionText = actions ? `操作：${actions}` : '操作：查看项目详情';
   const beginner = beginnerVerdict(p);
+  const valuePct = percentiles?.value.get(p.slug);
 
   return (
     <article className="group relative flex h-full flex-col rounded-card border border-line bg-card p-4 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card">
@@ -190,6 +202,15 @@ export function ProjectCard({
             <span className="shrink-0 whitespace-nowrap">
               价值：<span className="font-medium text-ink">{p.scores.grade}</span>
             </span>
+            {/* 相对分位：让「价值 C」有一个参照系，而不是孤零零一个字母 */}
+            {valuePct !== undefined && (
+              <span
+                className="shrink-0 whitespace-nowrap text-ink-faint"
+                title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
+              >
+                · {percentilePhrase(valuePct)}
+              </span>
+            )}
           </div>
           <div className="mt-1 flex items-center justify-between gap-2 text-ink-faint">
             <span className="truncate">{relativeTime(p.last_checked_at)}验证</span>

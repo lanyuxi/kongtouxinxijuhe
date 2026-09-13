@@ -73,8 +73,15 @@ export function RefreshBar({
           )}
         </p>
 
+        {/* aria-live 让「更新中 → 已更新」的异步结果被读屏播报，
+            否则读屏用户点完按钮没有任何反馈，只能怀疑自己点错了 */}
         {message && (
-          <p className="mt-2 text-sm font-medium text-brand" role="status" aria-live="polite">
+          <p
+            id="refresh-status-text"
+            className="mt-2 text-sm font-medium text-brand"
+            role="status"
+            aria-live="polite"
+          >
             {refreshing ? '⏳ ' : '✓ '}
             {message}
           </p>
@@ -98,6 +105,8 @@ export function RefreshBar({
         type="button"
         onClick={onRefresh}
         disabled={refreshing}
+        aria-busy={refreshing}
+        aria-describedby="refresh-status-text"
         className={`btn-primary shrink-0 !px-6 !py-3 disabled:cursor-not-allowed disabled:opacity-60 ${
           stale ? 'animate-pulse-soft' : ''
         }`}

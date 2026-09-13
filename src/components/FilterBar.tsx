@@ -58,12 +58,26 @@ export function FilterBar({
 }) {
   const set = <K extends keyof Filters>(k: K, v: Filters[K]) => onChange({ ...filters, [k]: v });
 
+  /**
+   * 新手友好开关的键盘支持。
+   *
+   * 这里刻意用原生 <button>：它天然支持 Tab 聚焦与 Enter / Space 触发。
+   * 早期版本用自定义 div 按钮组，结果是没有 role、不能聚焦、
+   * 读屏用户完全感知不到这个开关存在 —— 而它恰恰是新手最主要的入口。
+   * 现在只有这一个组合开关需要方向键组语义，用 aria-pressed 表达开关状态即可，
+   * 不额外引入 roving tabindex（那是单选组才需要的复杂语义）。
+   */
   return (
-    <section className="card">
+    <section className="card" aria-labelledby="filter-title">
       {/* 头部：标题 + 结果计数，明确「这是筛选区」 */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-lg font-semibold tracking-tight text-ink">筛选与排序</h2>
-        <p className="text-sm text-ink-soft">
+        <h2 id="filter-title" className="text-lg font-semibold tracking-tight text-ink">
+          筛选与排序
+        </h2>
+        {/* 结果计数对读屏用户同样重要：筛选后「结果从 188 变成 7」必须能被感知，
+            否则读屏用户点完筛选没有任何反馈，只能怀疑自己点错了。
+            用 role=status + aria-live=polite：不打断当前朗读，但会播报新结果数。 */}
+        <p className="text-sm text-ink-soft" role="status" aria-live="polite">
           共 <strong className="metric text-base text-ink">{resultCount}</strong> 张卡片
           {mergedVariants > 0 && (
             <span className="text-ink-faint">
@@ -100,7 +114,9 @@ export function FilterBar({
             type="button"
             onClick={() => set('beginner', filters.beginner === 'friendly' ? 'all' : 'friendly')}
             aria-pressed={filters.beginner === 'friendly'}
-            className={`chip transition duration-200 ${
+            aria-label={`只看新手友好，当前${filters.beginner === 'friendly' ? '已开启' : '未开启'}`}
+            title="只看无需本金、Gas 低、风险可控、无需签名授权的项目"
+            className={`chip transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 ${
               filters.beginner === 'friendly'
                 ? 'border-brand bg-brand text-white'
                 : 'border-line bg-white text-ink-soft hover:border-brand/40 hover:text-brand-600'
@@ -108,7 +124,7 @@ export function FilterBar({
           >
             🌱 只看新手友好
           </button>
-          <span className="text-xs text-ink-faint">
+          <span className="text-xs text-ink-faint" id="beginner-hint">
             筛选条件：无需本金 · Gas ≤ ${BEGINNER_RULES.maxGasUsd} · 风险可控 · 无需签名授权
           </span>
         </div>

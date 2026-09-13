@@ -187,3 +187,6 @@ $:
             # 构建后立即校验 dist/ 就绪，失败即中断，避免预览出一个 404 空壳
             - test -f dist/index.html
             - test -f dist/data/airdrops.json
+            # feed 是构建期生成的订阅源，缺失时用户在阅读器里会看到 404，
+            # 但这种失败在浏览器里「看起来正常」，因此必须在构建环节断言
+            - test -f dist/feed.xml

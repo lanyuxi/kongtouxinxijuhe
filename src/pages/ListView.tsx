@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { AirdropProject, LiveIndex } from '../lib/types';
 import { applyCostBucket, DEFAULT_FILTERS, filterProjects, sortProjects } from '../lib/filter';
 import { flattenGroups, groupByProtocol } from '../lib/describe';
@@ -9,6 +9,10 @@ import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
 import { RefreshBar } from '../components/RefreshBar';
 import { SafetyBar } from '../components/Onboarding';
+import { TodayTodos } from '../components/TodayTodos';
+import { CardSkeletonGrid } from '../components/Skeleton';
+import type { Percentiles } from '../lib/percentile';
+import type { ProjectProgress } from '../lib/store';
 
 export function ListView({
   view,
@@ -20,6 +24,7 @@ export function ListView({
   refreshing,
   refreshMessage,
   changeDetails,
+  percentiles,
   onRefresh,
   onToggleFavorite,
   onClearAll,
@@ -28,11 +33,13 @@ export function ListView({
   projects: AirdropProject[];
   updatedAt: string;
   favorites: string[];
-  progress: Record<string, { status: string; completed_steps: number[] }>;
+  progress: Record<string, ProjectProgress>;
   liveIndex: LiveIndex | null;
   refreshing: boolean;
   refreshMessage: string | null;
   changeDetails?: string[];
+  /** 相对分位与参照样本量，用于给卡片补「在本批数据中的相对位置」 */
+  percentiles?: Percentiles;
   onRefresh: () => void;
   onToggleFavorite: (slug: string) => void;
   onClearAll: () => void;
@@ -58,6 +65,25 @@ export function ListView({
     const f = view === 'hot' ? { ...filters, sort: 'value' as const } : filters;
     return sortProjects(filterProjects(viewProjects, f), f.sort);
   }, [viewProjects, filters, view]);
+
+  /**
+   * 骨架屏开关。
+   *
+   * 触发条件：筛选项变了、数据变了，但这一帧还没算出结果。
+   * 为什么需要它：真实数据集首屏要下载 3.8 MB 的 airdrops.json（188 个项目），
+   * 在此期间页面只有一行「正在加载空投数据…」，用户会以为站点坏了。
+   * 骨架屏给出「结构已就位、内容马上来」的预期，感知等待时间显著更短。
+   *
+   * 刻意不做的事：不在「筛选结果为空」时显示骨架屏 ——
+   * 那是真实的空结果，用空态文案说明「放宽筛选条件」才有指导意义。
+   */
+  const [computing, setComputing] = useState(false);
+  useEffect(() => {
+    if (projects.length === 0) return;
+    setComputing(true);
+    const t = setTimeout(() => setComputing(false), 180);
+    return () => clearTimeout(t);
+  }, [projects, filters, view]);
 
   /**
    * 同协议归组：aave-v3 / aave-v4 / aave-horizon-rwa 共用 aave.com，
@@ -98,6 +124,12 @@ export function ListView({
           <EmptyState text="你还没有收藏任何项目。在列表页或详情页点击「收藏」即可加入我的关注。" />
         ) : (
           <>
+            {/* 今日待办放在最前面：收藏完就没有下文，是留存最大的断点 */}
+            <TodayTodos
+              projects={projects}
+              favorites={favorites}
+              progress={progress}
+            />
             <dl className="grid grid-cols-2 divide-line overflow-hidden rounded-3xl border border-line bg-white shadow-card sm:grid-cols-4 sm:divide-x">
               {(['saved', 'preparing', 'doing', 'done'] as const).map((s, i) => {
                 const count = saved.filter((p) => (progress[p.slug]?.status ?? 'saved') === s).length;
@@ -135,6 +167,7 @@ export function ListView({
 
   return (
     <div className="flex flex-col gap-8">
+      {computing && projects.length > 0 && <CardSkeletonGrid rows={1} />}
       <StatBar
         projects={projects}
         newToday={newToday}
@@ -168,6 +201,7 @@ export function ListView({
               variants={e.variants}
               variantOf={e.variantOf}
               favorited={favorites.includes(e.project.slug)}
+              percentiles={percentiles}
               onToggleFavorite={onToggleFavorite}
             />
           ))}
