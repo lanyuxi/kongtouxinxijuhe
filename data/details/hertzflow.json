@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/hertzflow/",
-      "fetched_at": "2026-09-13T00:12:09.130Z"
+      "fetched_at": "2026-09-13T00:42:09.770Z"
     }
   ],
   "evidence": [
@@ -352,7 +352,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-13T00:12:09.130Z",
+  "last_checked_at": "2026-09-13T00:42:09.770Z",
   "last_changed_at": "2026-09-12T06:08:39.056Z",
   "sourcedSteps": [
     {
