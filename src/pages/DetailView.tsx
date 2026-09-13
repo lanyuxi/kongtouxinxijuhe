@@ -10,6 +10,9 @@ import {
   relativeTime,
 } from '../lib/labels';
 import { StatusBadge, RiskBadge } from '../components/Badge';
+import { percentileNote, percentilePhrase } from '../lib/percentile';
+import { explainRiskItem, riskExplain } from '../lib/risk';
+import { ExitChecklist } from '../components/ExitChecklist';
 import { ScoreBreakdown } from '../components/ScoreCard';
 import { ProjectLogo } from '../components/ProjectLogo';
 import type { ProgressStatus } from '../lib/store';
@@ -47,6 +50,7 @@ const TOC = [
   { id: 'evidence', label: '证据与来源' },
   { id: 'meta', label: '项目详情' },
   { id: 'guide', label: '参与教程' },
+  { id: 'exit', label: '做完收尾' },
   { id: 'risks', label: '注意事项' },
   { id: 'faq', label: '常见问题' },
   { id: 'official', label: '官方资料' },
@@ -56,6 +60,7 @@ export function DetailView({
   project: p,
   favorited,
   progress,
+  percentiles,
   onToggleFavorite,
   onSetProgress,
   onToggleStep,
@@ -63,6 +68,8 @@ export function DetailView({
 }: {
   project: AirdropProject;
   favorited: boolean;
+  /** 全站样本量：用于把「相对分位」说明成「本批 N 个项目中的位置」 */
+  percentiles?: { authenticity?: number; value?: number; total: number };
   progress?: { status: ProgressStatus; completed_steps: number[] };
   onToggleFavorite: (slug: string) => void;
   onSetProgress: (slug: string, s: ProgressStatus) => void;
@@ -381,6 +388,7 @@ export function DetailView({
                   <span className="ml-1.5 text-base font-normal text-ink-faint">/ 100</span>
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">{AUTH_LEVEL(p.scores.authenticity)}</p>
+                <RelativePercentile pct={percentiles?.authenticity} total={percentiles?.total ?? 0} />
                 <p className="detail-link mt-4">查看评分明细 {showAuth ? '↑' : '↓'}</p>
               </button>
               <button
@@ -397,6 +405,7 @@ export function DetailView({
                 <p className="mt-2 text-sm text-ink-soft">
                   等级 {p.scores.grade} · {GRADE_DESC[p.scores.grade]}
                 </p>
+                <RelativePercentile pct={percentiles?.value} total={percentiles?.total ?? 0} />
                 <p className="detail-link mt-4">查看评分明细 {showValue ? '↑' : '↓'}</p>
               </button>
               <button
@@ -412,7 +421,7 @@ export function DetailView({
                 <p className="mt-2 text-sm text-ink-soft">
                   <RiskBadge risk={p.scores.risk} />
                 </p>
-                <p className="detail-link mt-4">为什么是这个等级 {showRisk ? '↑' : '↓'}</p>
+                <p className="detail-link mt-4">这意味着什么 {showRisk ? '↑' : '↓'}</p>
               </button>
             </div>
           </section>
@@ -442,7 +451,11 @@ export function DetailView({
           {showRisk && (
             <section className="panel animate-fade-up">
               <h2 className="panel-title">风险等级明细</h2>
-              <p className="mt-2 text-sm text-ink-soft">当前判定：{RISK_LABEL[p.scores.risk]}</p>
+              <p className="mt-2 text-sm text-ink-soft">
+                当前判定：{RISK_LABEL[p.scores.risk]}。下面每一条都给出「这意味着什么」与「你应该怎么做」——
+                只给等级不给动作，等于把判断成本又丢回给你。
+              </p>
+              <RiskPlainLanguage level={p.scores.risk} />
               <div className="mt-4">
                 <ScoreBreakdown items={p.scores.riskItems} />
               </div>
@@ -572,11 +585,43 @@ export function DetailView({
           {/* 6. 新手参与教程（时间线布局） */}
           <section id="guide" className="panel">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <h2 className="panel-title">新手参与教程</h2>
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="panel-title">新手参与教程</h2>
+                {p.guide_source === 'sourced' ? (
+                  <span
+                    className="chip border-ok/30 bg-ok-wash text-ok"
+                    title="步骤来自数据源侧抓取到的官方 HowTo，可追溯到原始页面"
+                  >
+                    ✓ 真实教程（可追溯来源）
+                  </span>
+                ) : (
+                  <span
+                    className="chip border-warn/30 bg-warn-wash text-warn"
+                    title="数据源未提供该项目的官方步骤，以下为通用流程示意"
+                  >
+                    ⚠ 流程示意（非官方步骤）
+                  </span>
+                )}
+              </div>
               <span className="chip border-line bg-page text-ink-soft">
                 已完成 <strong className="metric text-ink">{done.length}</strong> / {p.guide.length} 步
               </span>
             </div>
+
+            {/* 模板教程必须显式声明「这不是官方要求的具体步骤」，
+                否则用户会把通用流程误当成项目方规定的操作，产生错误预期。 */}
+            {p.guide_source === 'template' ? (
+              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
+                该项目的数据来源暂未提供官方分步教程，以下步骤是
+                <strong className="font-semibold">通用参与流程示意</strong>，用于帮助你理解大致顺序，
+                不代表项目方的具体要求。请务必以
+                <strong className="font-semibold">官方页面 / 官方公告</strong>的实际说明为准。
+              </p>
+            ) : (
+              <p className="mt-4 rounded-xl border border-ok/30 bg-ok-wash px-5 py-4 text-sm text-ok">
+                以下步骤来自数据源抓取到的官方 HowTo，每一步都可追溯到原始页面。
+              </p>
+            )}
 
             {/* 进度条 */}
             <div className="mt-5 flex items-center gap-4">
@@ -589,7 +634,7 @@ export function DetailView({
               <span className="metric shrink-0 text-sm text-ink-soft">{progressPct}%</span>
             </div>
             <p className="mt-3 text-base text-ink-soft">
-              所有步骤均附来源，未验证步骤会明确标注。勾选状态保存在你的浏览器本地。
+              未验证步骤会明确标注。勾选状态保存在你的浏览器本地，不上传任何服务器。
             </p>
 
             <ol className="mt-7 flex flex-col">
@@ -685,19 +730,43 @@ export function DetailView({
             </ol>
           </section>
 
-          {/* 7. 注意事项 */}
+          {/* 6.5 收尾动作：授权撤回与钱包归零。
+              放在教程之后、注意事项之前 —— 用户刚读完步骤，正是需要收尾提醒的时刻。 */}
+          <section id="exit" className="scroll-mt-28">
+            <h2 className="panel-title mb-4">参与完成后：撤离与授权撤回</h2>
+            <ExitChecklist />
+          </section>
+
+          {/* 7. 注意事项：每条都翻译成「这意味着什么 / 你应该怎么做」，
+              新手看到「高风险」三个字并不知道高在哪、下一步做什么。 */}
           <section id="risks" className="panel">
             <h2 className="panel-title">注意事项与优化建议</h2>
-            <ul className="mt-5 flex flex-col gap-3">
-              {p.risks.map((r, i) => (
-                <li key={i} className="flex gap-4 text-base text-ink-soft">
-                  <span
-                    aria-hidden
-                    className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-warn"
-                  />
-                  <span>{r}</span>
-                </li>
-              ))}
+            <p className="mt-3 text-sm text-ink-soft">
+              每条都补充「这意味着什么」与「怎么办」，可以直接照着做。
+            </p>
+            <ul className="mt-5 flex flex-col gap-4">
+              {p.risks.map((r, i) => {
+                const ex = explainRiskItem(r, p.scores.risk);
+                return (
+                  <li
+                    key={i}
+                    className="rounded-2xl border border-line-soft bg-page/50 px-5 py-4"
+                  >
+                    <p className="flex gap-3 text-base font-medium text-ink">
+                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
+                      <span>{r}</span>
+                    </p>
+                    <p className="mt-2.5 pl-[1.1rem] text-sm text-ink-soft">
+                      <strong className="font-medium text-ink">这意味着：</strong>
+                      {ex.means}
+                    </p>
+                    <p className="mt-1.5 pl-[1.1rem] text-sm leading-relaxed text-ink-soft">
+                      <strong className="font-medium text-ink">怎么办：</strong>
+                      {ex.action}
+                    </p>
+                  </li>
+                );
+              })}
             </ul>
           </section>
 
@@ -773,6 +842,51 @@ export function DetailView({
           ↑ 回到顶部
         </button>
       )}
+    </div>
+  );
+}
+
+/**
+ * 相对分位展示。
+ *
+ * 为什么必须放在绝对分旁边：实测 174/188 个项目的价值等级都是 C，
+ * 用户看到一屏 C 无法判断「C 到底算好还是差」。分位给出参照系：
+ * 「本批 188 个项目中相对位置前 27%」。
+ *
+ * ⚠️ 文案固定写「本批 N 个项目中的相对位置」——
+ *   不能写成「排名」或「优于」，否则会被读成对项目本身的绝对评价，
+ *   而分位只反映「在这批数据里排在哪」。
+ *   样本不足（total < 2）或没有分位数据时整块不渲染，绝不编一个数字出来。
+ */
+function RelativePercentile({ pct, total }: { pct?: number; total: number }) {
+  if (pct === undefined || total < 2) return null;
+  return (
+    <p className="mt-2 flex flex-wrap items-baseline gap-2 text-sm text-ink-soft">
+      <span className="chip border-brand/25 bg-brand-wash font-medium text-brand">
+        相对位置 {percentilePhrase(pct)}
+      </span>
+      <span className="text-xs text-ink-faint">{percentileNote(pct, total)}</span>
+    </p>
+  );
+}
+
+/** 风险等级的人话翻译（这意味着什么 / 怎么办） */
+function RiskPlainLanguage({ level }: { level: AirdropProject['scores']['risk'] }) {
+  const ex = riskExplain(level);
+  return (
+    <div
+      className={`mt-4 rounded-2xl border px-5 py-4 ${
+        ex.urgent ? 'border-danger/40 bg-danger-wash' : 'border-line-soft bg-page/60'
+      }`}
+    >
+      <p className="text-base text-ink">
+        <strong className="font-semibold">这意味着：</strong>
+        {ex.means}
+      </p>
+      <p className="mt-2 text-base leading-relaxed text-ink">
+        <strong className="font-semibold">怎么办：</strong>
+        {ex.action}
+      </p>
     </div>
   );
 }

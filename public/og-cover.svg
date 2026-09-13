@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="空投情报平台">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7F9FC"/>
+      <stop offset="1" stop-color="#EEF3FF"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6D93FF"/>
+      <stop offset="0.55" stop-color="#3B6DF6"/>
+      <stop offset="1" stop-color="#7C5CFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(96,150)">
+    <rect width="88" height="88" rx="22" fill="url(#brand)"/>
+    <g fill="none" stroke="#fff" stroke-linecap="round">
+      <path d="M20 24a34 34 0 0 1 48 0" stroke-width="5" opacity="0.55"/>
+      <path d="M29 34a21 21 0 0 1 30 0" stroke-width="5" opacity="0.8"/>
+    </g>
+    <path d="M44 39c7 8.5 11 14.8 11 19.5a11 11 0 0 1-22 0c0-4.7 4-11 11-19.5Z" fill="#fff"/>
+    <text x="0" y="176" font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif" font-size="72" font-weight="700" fill="#0F172A">空投情报平台</text>
+    <text x="0" y="246" font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif" font-size="34" fill="#475569">看清每一个空投，而不是盲目参与</text>
+    <text x="0" y="316" font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif" font-size="26" fill="#64748B">真实性 · 风险 · 参与价值 —— 三套独立评分，每一项都能看到理由与来源</text>
+    <text x="0" y="368" font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif" font-size="26" fill="#64748B">防骗自查 · 分步教程 · 做完收尾清单</text>
+  </g>
+  <rect x="0" y="600" width="1200" height="30" fill="url(#brand)" opacity="0.85"/>
+</svg>

@@ -16,13 +16,33 @@ const MIN = (n: number) => n;
 /** 通用安全提示，始终附加在第一步 */
 const SAFETY_NOTE = '请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。';
 
-export function generateGuide(p: AirdropProject): GuideStep[] {
+/**
+ * 说明：返回步骤的同时给出来源类型。
+ * 前端会据此标注「真实教程」或「流程示意（模板）」，
+ * 不允许把模板生成的步骤伪装成官方要求。
+ */
+export function buildGuide(p: AirdropProject): {
+  steps: GuideStep[];
+  source: 'sourced' | 'template';
+} {
   // 优先使用「数据源侧的真实步骤」。
   // 对应方案第 16 章：教程步骤必须可追溯到来源。
   // 官方页面给出的 HowTo 天然带来源链接，可信度与可执行性都高于确定性模板，
   // 因此只要拿到真实步骤就用它，模板仅作兜底（拿不到时才生成）。
   const sourced = stepsFromSource(p);
-  if (sourced.length >= 3) return withSafetyFirst(p, sourced);
+  if (sourced.length >= 3) {
+    return { steps: withSafetyFirst(p, sourced), source: 'sourced' };
+  }
+  return { steps: generateTemplateGuide(p), source: 'template' };
+}
+
+/** 兼容入口：只取步骤（不关心来源类型时使用） */
+export function generateGuide(p: AirdropProject): GuideStep[] {
+  return buildGuide(p).steps;
+}
+
+/** 确定性模板教程：数据源未提供 HowTo 时的兜底「流程示意」 */
+function generateTemplateGuide(p: AirdropProject): GuideStep[] {
 
   const steps: GuideStep[] = [];
   const officialUrl = p.official.website ?? '';
@@ -227,8 +247,8 @@ export function generateRisks(p: AirdropProject): string[] {
  * 而成本又由教程步骤推导。顺序颠倒会导致评分滞后一轮。
  */
 export function buildGuideAndCost(p: AirdropProject): AirdropProject {
-  const guide = generateGuide(p);
-  return { ...p, guide, cost: buildCost(p, guide) };
+  const { steps: guide, source } = buildGuide(p);
+  return { ...p, guide, guide_source: source, cost: buildCost(p, guide) };
 }
 
 /**

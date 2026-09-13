@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { BrandMark, BrandMarkSmall } from './BrandMark';
 
-export type NavKey = 'latest' | 'hot' | 'potential' | 'claim' | 'watchlist';
+export type NavKey = 'latest' | 'hot' | 'potential' | 'claim' | 'watchlist' | 'safety';
 
 const NAV: { key: NavKey; label: string; href: string }[] = [
   { key: 'latest', label: '最新空投', href: '#/latest' },
@@ -9,6 +9,7 @@ const NAV: { key: NavKey; label: string; href: string }[] = [
   { key: 'potential', label: '潜在空投', href: '#/potential' },
   { key: 'claim', label: '可领取', href: '#/claim' },
   { key: 'watchlist', label: '我的关注', href: '#/watchlist' },
+  { key: 'safety', label: '防骗自查', href: '#/safety' },
 ];
 
 export function Logo() {

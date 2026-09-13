@@ -151,6 +151,13 @@
     @apply text-base text-ink;
   }
 
+  /* ---------- 加载骨架 ---------- */
+  /* 骨架块：中性底色 + 轻微脉冲，表达「内容马上来」而不是「这里坏了」。
+     用 bg-page 而不是随机灰，保证与卡片底色层级一致、不显得脏。 */
+  .skeleton {
+    @apply block animate-shimmer rounded-md bg-gradient-to-r from-page via-line-soft to-page bg-[length:200%_100%];
+  }
+
   /* ---------- 数据指标 ---------- */
   /* 大号数字：等宽字形，避免数字跳动 */
   .metric {

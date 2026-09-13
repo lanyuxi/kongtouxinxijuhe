@@ -104,10 +104,17 @@ export default {
           '0%, 100%': { boxShadow: '0 12px 32px -12px rgba(37,99,235,0.55)' },
           '50%': { boxShadow: '0 12px 40px -8px rgba(37,99,235,0.85)' },
         },
+        // 骨架屏：横向微光扫过，表达「内容在路上」而非「这块坏了」。
+        // 幅度刻意很小（背景位移），避免首屏出现大面积闪烁刺激眼睛。
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.45s cubic-bezier(0.22,1,0.36,1) both',
         'pulse-soft': 'pulse-soft 2.4s ease-in-out infinite',
+        shimmer: 'shimmer 1.6s linear infinite',
       },
     },
   },

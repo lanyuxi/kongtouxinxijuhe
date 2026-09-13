@@ -8,12 +8,14 @@ import type { NavKey } from '../components/Layout';
 
 export type Route =
   | { kind: 'list'; view: NavKey }
-  | { kind: 'detail'; slug: string };
+  | { kind: 'detail'; slug: string }
+  | { kind: 'safety' };
 
-const NAV_SET = new Set<NavKey>(['latest', 'hot', 'potential', 'claim', 'watchlist']);
+const NAV_SET = new Set<NavKey>(['latest', 'hot', 'potential', 'claim', 'watchlist', 'safety']);
 
 export function parseHash(hash: string): Route {
   const clean = hash.replace(/^#\/?/, '').replace(/\/$/, '');
+  if (clean === 'safety') return { kind: 'safety' };
   if (clean.startsWith('project/')) {
     const slug = clean.slice('project/'.length);
     if (slug) return { kind: 'detail', slug };

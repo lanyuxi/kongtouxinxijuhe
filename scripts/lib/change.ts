@@ -119,6 +119,18 @@ export function projectsDigest(projects: AirdropProject[]): string {
   );
 }
 
+/**
+ * 单个项目的「变更明细」。
+ * 只记录人类能看懂的字段级差异，例如「状态：潜在空投 → 开放领取」。
+ */
+export interface ProjectChange {
+  slug: string;
+  /** 项目名（找不到时退化为 slug） */
+  name: string;
+  /** 人类可读的变更点，例如 ['状态：潜在空投 → 开放领取'] */
+  changes: string[];
+}
+
 export interface DiffResult {
   /** 是否发生实质变化 */
   changed: boolean;
@@ -128,6 +140,8 @@ export interface DiffResult {
   removed: string[];
   /** 内容发生变化的项目 slug */
   modified: string[];
+  /** 内容变化的项目明细（比 modified 更有信息量，供前端与状态文件展示） */
+  modifiedDetails: ProjectChange[];
   /** 数据源健康状态是否有实质变化（不计时间戳） */
   healthChanged: boolean;
 }
@@ -137,17 +151,27 @@ export function diffProjects(
   before: AirdropProject[],
   after: AirdropProject[],
 ): DiffResult {
-  const beforeMap = new Map(before.map((p) => [p.slug, projectDigest(p)]));
-  const afterMap = new Map(after.map((p) => [p.slug, projectDigest(p)]));
+  const beforeMap = new Map(before.map((p) => [p.slug, p]));
+  const afterMap = new Map(after.map((p) => [p.slug, p]));
 
   const added: string[] = [];
   const removed: string[] = [];
   const modified: string[] = [];
+  const modifiedDetails: ProjectChange[] = [];
 
-  for (const [slug, digest] of afterMap) {
+  for (const [slug, next] of afterMap) {
     const prev = beforeMap.get(slug);
-    if (prev === undefined) added.push(slug);
-    else if (prev !== digest) modified.push(slug);
+    if (prev === undefined) {
+      added.push(slug);
+      continue;
+    }
+    if (projectDigest(prev) === projectDigest(next)) continue;
+    modified.push(slug);
+    modifiedDetails.push({
+      slug,
+      name: next.name || slug,
+      changes: describeProjectChanges(prev, next),
+    });
   }
   for (const slug of beforeMap.keys()) {
     if (!afterMap.has(slug)) removed.push(slug);
@@ -156,15 +180,79 @@ export function diffProjects(
   added.sort();
   removed.sort();
   modified.sort();
+  modifiedDetails.sort((a, b) => a.slug.localeCompare(b.slug, 'en'));
 
   return {
     changed: added.length > 0 || removed.length > 0 || modified.length > 0,
     added,
     removed,
     modified,
+    modifiedDetails,
     healthChanged: false,
   };
 }
+
+/**
+ * 逐字段对比两个项目，产出「人话」变更点。
+ *
+ * 为什么不用 diff 的原始输出：
+ *   项目对象有 20+ 字段、嵌套三层，原始 diff 既长又难懂。
+ *   用户真正关心的是「状态变了吗、评分变了吗、成本变了吗」，
+ *   因此这里只挑出可读性最高的几类字段做中文描述。
+ *
+ * 返回值最多 3 条，避免摘要过长；没有命中已知字段时回退为「内容有更新」。
+ */
+export function describeProjectChanges(
+  before: AirdropProject,
+  after: AirdropProject,
+): string[] {
+  const out: string[] = [];
+
+  if (before.status !== after.status) {
+    out.push(`状态：${STATUS_TEXT[before.status] ?? before.status} → ${STATUS_TEXT[after.status] ?? after.status}`);
+  }
+  if (before.scores.grade !== after.scores.grade) {
+    out.push(`价值等级：${before.scores.grade} → ${after.scores.grade}`);
+  }
+  if (before.scores.risk !== after.scores.risk) {
+    out.push(`风险：${RISK_TEXT[before.scores.risk] ?? before.scores.risk} → ${RISK_TEXT[after.scores.risk] ?? after.scores.risk}`);
+  }
+  if (out.length < 3 && before.scores.authenticity !== after.scores.authenticity) {
+    out.push(`真实性：${before.scores.authenticity} → ${after.scores.authenticity}`);
+  }
+  if (out.length < 3 && before.scores.value !== after.scores.value) {
+    out.push(`参与价值：${before.scores.value} → ${after.scores.value}`);
+  }
+  if (out.length < 3 && before.guide_source !== after.guide_source) {
+    out.push(after.guide_source === 'sourced' ? '教程：升级为真实教程' : '教程：转为流程示意');
+  }
+  if (out.length < 3 && before.cost.capital_max_usd !== after.cost.capital_max_usd) {
+    out.push(`资金门槛：$${before.cost.capital_max_usd} → $${after.cost.capital_max_usd}`);
+  }
+  if (out.length < 3 && before.evidence.length !== after.evidence.length) {
+    out.push(`证据：${before.evidence.length} → ${after.evidence.length} 条`);
+  }
+
+  // 去重后截断
+  const uniq = Array.from(new Set(out)).slice(0, 3);
+  return uniq.length ? uniq : ['内容有更新'];
+}
+
+/** 状态 → 中文（与前端 labels 保持一致，避免前端依赖脚本层） */
+const STATUS_TEXT: Record<string, string> = {
+  new: '新发现',
+  potential: '潜在空投',
+  confirmed: '已确认',
+  claim_live: '开放领取',
+  ended: '已结束',
+};
+
+const RISK_TEXT: Record<string, string> = {
+  low: '低',
+  medium: '中',
+  high: '高',
+  critical: '极高',
+};
 
 /** 对比两份数据集（含来源健康状态） */
 export function diffDatasets(
@@ -184,12 +272,38 @@ export function diffDatasets(
   };
 }
 
-/** 生成一行人类可读的差异摘要，便于日志与 Issue 归档 */
+/**
+ * 生成一行人类可读的差异摘要。
+ *
+ * 旧实现只输出「变更 188」这种纯计数，对回访用户毫无信息量：
+ * 用户想知道的是「A 从潜在→已确认」这种具体变化。
+ * 新实现优先列出项目级明细（最多 3 条），计数作为兜底与补充。
+ */
 export function describeDiff(d: DiffResult): string {
   const parts: string[] = [];
-  if (d.added.length) parts.push(`新增 ${d.added.length}`);
-  if (d.removed.length) parts.push(`移除 ${d.removed.length}`);
-  if (d.modified.length) parts.push(`变更 ${d.modified.length}`);
+  if (d.added.length) parts.push(`新增 ${d.added.length} 个`);
+  if (d.removed.length) parts.push(`移除 ${d.removed.length} 个`);
+  if (d.modified.length) parts.push(`变更 ${d.modified.length} 个`);
   if (d.healthChanged) parts.push('来源状态变化');
-  return parts.length ? parts.join('、') : '无实质变化';
+
+  const head = parts.length ? parts.join('、') : '无实质变化';
+
+  const details = describeDiffDetails(d, 3);
+  return details.length ? `${head}：${details.join('；')}` : head;
+}
+
+/**
+ * 生成项目级变更明细文案，例如
+ *   ['Aave V3 状态：潜在空投 → 开放领取', 'Monad 真实性：24 → 61']
+ *
+ * 单条最多列出项目名 + 一个变更点，避免状态文件被撑爆（refresh-status.json
+ * 会被前端轮询读取，体积必须可控）。
+ */
+export function describeDiffDetails(d: DiffResult, limit = 3): string[] {
+  const lines: string[] = [];
+  for (const item of d.modifiedDetails.slice(0, limit)) {
+    const change = item.changes[0] ?? '内容有更新';
+    lines.push(`${item.name} ${change}`);
+  }
+  return lines;
 }

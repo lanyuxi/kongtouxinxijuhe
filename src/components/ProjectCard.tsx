@@ -1,6 +1,10 @@
 import type { AirdropProject } from '../lib/types';
 import { CHAIN_LABEL, RISK_LABEL, STATUS_LABEL, relativeTime } from '../lib/labels';
 import { operationSummary } from '../lib/tasks';
+import { beginnerVerdict } from '../lib/beginner';
+import { chineseBlurb } from '../lib/describe';
+import { percentilePhrase } from '../lib/percentile';
+import type { Percentiles } from '../lib/percentile';
 import { ProjectLogo } from './ProjectLogo';
 
 /**
@@ -57,16 +61,35 @@ export function ProjectCard({
   project,
   favorited,
   onToggleFavorite,
+  variants = [],
+  variantOf,
+  percentiles,
 }: {
   project: AirdropProject;
   favorited: boolean;
+  /**
+   * 相对分位（相对本批全部项目）。
+   *
+   * 为什么卡片上也要给：实测 174/188 个项目的价值等级都是 C，
+   * 一屏「C」无法比较。卡片上的分位让用户扫一眼就知道该优先点开哪个，
+   * 而不必逐个进详情页看绝对分。
+   */
+  percentiles?: Percentiles;
+  /** 同一协议下的其他产品线（仅主条目传入），折叠展示，避免用户以为是多个空投 */
+  variants?: AirdropProject[];
+  /** 本条目归属的主条目（产品线时由父级传入） */
+  variantOf?: string;
   onToggleFavorite: (slug: string) => void;
 }) {
   const p = project;
+  /** 一句话中文简介：回答小白「这项目是干什么的」 */
+  const blurb = chineseBlurb(p);
   const chain = p.chains[0] ? CHAIN_LABEL[p.chains[0]] : '';
   const href = `#/project/${p.slug}`;
   const actions = operationSummary(p).join('、');
   const actionText = actions ? `操作：${actions}` : '操作：查看项目详情';
+  const beginner = beginnerVerdict(p);
+  const valuePct = percentiles?.value.get(p.slug);
 
   return (
     <article className="group relative flex h-full flex-col rounded-card border border-line bg-card p-4 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card">
@@ -119,15 +142,46 @@ export function ProjectCard({
           </div>
         </div>
 
-        {/* 状态：彩色文字，紧跟名称下方（不占右侧按钮区域，可吃满整行） */}
-        <p className={`mt-2 truncate text-xs font-medium ${STATUS_TONE[p.status]}`}>
-          {STATUS_LABEL[p.status]}
+        {/* 状态 + 新手友好角标：彩色文字，紧跟名称下方（不占右侧按钮区域，可吃满整行） */}
+        <p className="mt-2 flex items-center gap-2 truncate text-xs font-medium">
+          <span className={STATUS_TONE[p.status]}>{STATUS_LABEL[p.status]}</span>
+          {beginner.friendly && (
+            <span
+              title={beginner.reason}
+              className="shrink-0 rounded-full border border-ok/30 bg-ok-wash px-2 py-0.5 text-[11px] font-medium text-ok"
+            >
+              🌱 新手友好
+            </span>
+          )}
+        </p>
+
+        {/* 一句话中文简介：先回答「这是干什么的」，再回答「要做什么」。
+            实测 188 个项目的 tagline 有 125 个是英文模板句（`Lending 协议，TVL 约 …`），
+            对新手几乎无意义，因此这里展示确定性映射生成的中文说明。 */}
+        <p
+          title={blurb}
+          className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-ink-soft"
+        >
+          {blurb}
         </p>
 
         {/* 操作：单行省略，完整文案放在 title 里，悬停可看全 */}
-        <p title={actionText} className="mt-1.5 truncate text-xs leading-relaxed text-ink-soft">
+        <p title={actionText} className="mt-1 truncate text-xs leading-relaxed text-ink-faint">
           {actionText}
         </p>
+
+        {/* 同协议产品线：折叠成一行文字，避免「Aave V3 / V4 / Horizon」被当成 3 个空投 */}
+        {variants.length > 0 && (
+          <p className="mt-1 truncate text-[11px] text-ink-faint" title={variants.map((v) => v.name).join('、')}>
+            同协议还有 {variants.length} 条产品线：
+            {variants.map((v) => v.name).join('、')}
+          </p>
+        )}
+        {variantOf && (
+          <p className="mt-1 truncate text-[11px] text-ink-faint">
+            属于同一协议 <a href={`#/project/${variantOf}`} className="text-brand no-underline hover:underline">{variantOf}</a>
+          </p>
+        )}
 
         {/* 底栏：分隔线 + 元信息。
             4 列下列宽只有 ~290px（卡片内宽），而「公链 + 风险 + 价值 + 时间」
@@ -148,6 +202,15 @@ export function ProjectCard({
             <span className="shrink-0 whitespace-nowrap">
               价值：<span className="font-medium text-ink">{p.scores.grade}</span>
             </span>
+            {/* 相对分位：让「价值 C」有一个参照系，而不是孤零零一个字母 */}
+            {valuePct !== undefined && (
+              <span
+                className="shrink-0 whitespace-nowrap text-ink-faint"
+                title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
+              >
+                · {percentilePhrase(valuePct)}
+              </span>
+            )}
           </div>
           <div className="mt-1 flex items-center justify-between gap-2 text-ink-faint">
             <span className="truncate">{relativeTime(p.last_checked_at)}验证</span>

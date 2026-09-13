@@ -22,7 +22,7 @@ import { enrichAll } from './lib/enrich';
 import { scoreAll } from './lib/score';
 import { buildFaqAndRisks, buildGuideAndCost } from './lib/guide';
 import { validateProjects } from './lib/validate';
-import { describeDiff, diffProjects, projectDigest } from './lib/change';
+import { describeDiff, describeDiffDetails, diffProjects, projectDigest } from './lib/change';
 import { writeLiveSnapshots } from './lib/live';
 import type { LiveSnapshot } from './lib/live';
 import { canPrune, pruneProjects } from './lib/prune';
@@ -231,6 +231,7 @@ async function main() {
     updated_at: dataset.updated_at,
     data_changed: diff.changed,
     change_summary: describeDiff(diff),
+    change_details: describeDiffDetails(diff, 5),
     added: diff.added.length,
     modified: diff.modified.length,
     removed: diff.removed.length,

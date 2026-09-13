@@ -90,6 +90,8 @@ export function toSkeleton(item: NormalizedItem): AirdropProject {
     },
     recommendation: { grade: 'C', summary: '待评估', action: 'observe' },
     guide: [],
+    // 骨架阶段还没有教程；Guide 阶段会按是否抓到真实 HowTo 覆盖为 sourced / template
+    guide_source: 'template',
     faq: [],
     risks: [],
     created_at: now,

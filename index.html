@@ -9,10 +9,50 @@
       name="description"
       content="空投情报平台帮助新手看清每一个空投：聚合情报、交叉验证、风险识别与分步骤教程。"
     />
+
+    <!--
+      社交分享卡片（Open Graph / Twitter Card）。
+      为什么值得加：站点的传播几乎全部发生在聊天软件与 X 里，
+      没有这两个 meta 时链接会显示成一条光秃秃的文字，点击率极低。
+      这里刻意**不复用项目 logo**（那是各项目方的商标），
+      只用自己的站点图形，避免产生「本站与某项目有关联」的误导。
+      og:url 与 og:image 使用绝对地址：部分平台不解析相对路径。
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="空投情报平台" />
+    <meta property="og:title" content="空投情报平台 · 看清每一个空投" />
+    <meta
+      property="og:description"
+      content="聚合公开空投线索，给出真实性、风险与参与价值三套独立评分，并附防骗自查与分步教程。不构成投资建议。"
+    />
+    <meta property="og:url" content="https://lanyuxi.github.io/kongtouxinxijuhe/" />
+    <meta property="og:image" content="https://lanyuxi.github.io/kongtouxinxijuhe/og-cover.svg" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="空投情报平台 · 看清每一个空投" />
+    <meta
+      name="twitter:description"
+      content="聚合公开空投线索，给出真实性、风险与参与价值三套独立评分，并附防骗自查与分步教程。"
+    />
+    <meta name="twitter:image" content="https://lanyuxi.github.io/kongtouxinxijuhe/og-cover.svg" />
+
+    <!--
+      新空投提醒（Atom feed）。
+      零服务端实现「订阅」：构建期生成 public/feed.xml，
+      读者用任意 RSS 阅读器订阅即可，不需要邮箱、不需要账号。
+      rel="alternate" 让浏览器与阅读器能自动发现该订阅源。
+    -->
+    <link rel="alternate" type="application/atom+xml" title="空投情报平台 · 新空投提醒" href="./feed.xml" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <p style="max-width: 40rem; margin: 4rem auto; font-family: system-ui, sans-serif; line-height: 1.7">
+        本站是一个纯静态站点，需要开启 JavaScript 才能浏览交互式列表与详情页。
+        如果你只是想订阅新空投提醒，可以直接访问 <a href="./feed.xml">feed.xml</a>。
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

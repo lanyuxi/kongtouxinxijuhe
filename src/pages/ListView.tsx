@@ -1,12 +1,18 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { AirdropProject, LiveIndex } from '../lib/types';
 import { applyCostBucket, DEFAULT_FILTERS, filterProjects, sortProjects } from '../lib/filter';
+import { flattenGroups, groupByProtocol } from '../lib/describe';
 import type { Filters } from '../lib/filter';
 import { FilterBar } from '../components/FilterBar';
 import { ProjectCard } from '../components/ProjectCard';
 import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
 import { RefreshBar } from '../components/RefreshBar';
+import { SafetyBar } from '../components/Onboarding';
+import { TodayTodos } from '../components/TodayTodos';
+import { CardSkeletonGrid } from '../components/Skeleton';
+import type { Percentiles } from '../lib/percentile';
+import type { ProjectProgress } from '../lib/store';
 
 export function ListView({
   view,
@@ -17,6 +23,8 @@ export function ListView({
   liveIndex,
   refreshing,
   refreshMessage,
+  changeDetails,
+  percentiles,
   onRefresh,
   onToggleFavorite,
   onClearAll,
@@ -25,10 +33,13 @@ export function ListView({
   projects: AirdropProject[];
   updatedAt: string;
   favorites: string[];
-  progress: Record<string, { status: string; completed_steps: number[] }>;
+  progress: Record<string, ProjectProgress>;
   liveIndex: LiveIndex | null;
   refreshing: boolean;
   refreshMessage: string | null;
+  changeDetails?: string[];
+  /** 相对分位与参照样本量，用于给卡片补「在本批数据中的相对位置」 */
+  percentiles?: Percentiles;
   onRefresh: () => void;
   onToggleFavorite: (slug: string) => void;
   onClearAll: () => void;
@@ -55,6 +66,42 @@ export function ListView({
     return sortProjects(filterProjects(viewProjects, f), f.sort);
   }, [viewProjects, filters, view]);
 
+  /**
+   * 骨架屏开关。
+   *
+   * 触发条件：筛选项变了、数据变了，但这一帧还没算出结果。
+   * 为什么需要它：真实数据集首屏要下载 3.8 MB 的 airdrops.json（188 个项目），
+   * 在此期间页面只有一行「正在加载空投数据…」，用户会以为站点坏了。
+   * 骨架屏给出「结构已就位、内容马上来」的预期，感知等待时间显著更短。
+   *
+   * 刻意不做的事：不在「筛选结果为空」时显示骨架屏 ——
+   * 那是真实的空结果，用空态文案说明「放宽筛选条件」才有指导意义。
+   */
+  const [computing, setComputing] = useState(false);
+  useEffect(() => {
+    if (projects.length === 0) return;
+    setComputing(true);
+    const t = setTimeout(() => setComputing(false), 180);
+    return () => clearTimeout(t);
+  }, [projects, filters, view]);
+
+  /**
+   * 同协议归组：aave-v3 / aave-v4 / aave-horizon-rwa 共用 aave.com，
+   * 直接并列展示会被新手当成 3 个独立空投，重复投入时间。
+   * 归组只影响「列表怎么展示」，不删数据：变体各自仍有详情页与 URL。
+   *
+   * ⚠️ 为什么在筛选/排序之后才归组：
+   *    若先归组再筛选，主条目可能被筛掉、留下一个「没有主条目的产品线」，
+   *    用户点进去会看到残缺信息。先筛选保证主条目一定在当前结果集内。
+   */
+  const entries = useMemo(() => flattenGroups(groupByProtocol(visible)), [visible]);
+
+  /** 被折叠为产品线的条目数：让「卡片数 < 项目数」这件事对用户是透明的，而不是看起来像丢数据 */
+  const mergedVariants = useMemo(
+    () => entries.reduce((n, e) => n + e.variants.length, 0),
+    [entries],
+  );
+
   const lastDiscovery = useMemo(
     () =>
       projects.reduce(
@@ -77,6 +124,12 @@ export function ListView({
           <EmptyState text="你还没有收藏任何项目。在列表页或详情页点击「收藏」即可加入我的关注。" />
         ) : (
           <>
+            {/* 今日待办放在最前面：收藏完就没有下文，是留存最大的断点 */}
+            <TodayTodos
+              projects={projects}
+              favorites={favorites}
+              progress={progress}
+            />
             <dl className="grid grid-cols-2 divide-line overflow-hidden rounded-3xl border border-line bg-white shadow-card sm:grid-cols-4 sm:divide-x">
               {(['saved', 'preparing', 'doing', 'done'] as const).map((s, i) => {
                 const count = saved.filter((p) => (progress[p.slug]?.status ?? 'saved') === s).length;
@@ -114,33 +167,41 @@ export function ListView({
 
   return (
     <div className="flex flex-col gap-8">
+      {computing && projects.length > 0 && <CardSkeletonGrid rows={1} />}
       <StatBar
         projects={projects}
         newToday={newToday}
         updatedAt={updatedAt}
         lastDiscovery={lastDiscovery}
       />
+      {/* 防骗提示常驻：即使看过引导也要长期可见，这是新手最大的损失来源 */}
+      <SafetyBar />
       <RefreshBar
         index={liveIndex}
         onRefresh={onRefresh}
         refreshing={refreshing}
         message={refreshMessage}
+        changeDetails={changeDetails}
       />
       <FilterBar
         filters={filters}
         onChange={setFilters}
         onReset={() => setFilters(DEFAULT_FILTERS)}
-        resultCount={visible.length}
+        resultCount={entries.length}
+        mergedVariants={mergedVariants}
       />
       {visible.length === 0 ? (
         <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
       ) : (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {visible.map((p) => (
+          {entries.map((e) => (
             <ProjectCard
-              key={p.slug}
-              project={p}
-              favorited={favorites.includes(p.slug)}
+              key={e.project.slug}
+              project={e.project}
+              variants={e.variants}
+              variantOf={e.variantOf}
+              favorited={favorites.includes(e.project.slug)}
+              percentiles={percentiles}
               onToggleFavorite={onToggleFavorite}
             />
           ))}

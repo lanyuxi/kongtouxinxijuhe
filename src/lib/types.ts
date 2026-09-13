@@ -216,6 +216,20 @@ export interface AirdropProject {
   cost: CostModel;
   recommendation: Recommendation;
   guide: GuideStep[];
+  /**
+   * 教程步骤的来源类型，用于前端如实标注，避免把「示意模板」当成真实教程。
+   *
+   * - `sourced`：步骤来自数据源侧抓到的真实 HowTo（可追溯到原始页面），
+   *   此时 guide[].source_url 指向该原始页面。
+   * - `template`：数据源未提供 HowTo，步骤由确定性模板生成，
+   *   只能作为「大致流程示意」，不代表官方要求的实际步骤。
+   *
+   * 为什么必须显式区分：
+   *   模板教程看起来与真实教程完全一样（同样有步骤号、耗时、完成标准），
+   *   用户无法自行分辨。若不标注，就会把通用流程误当成官方要求，
+   *   既误导用户，也违背「教程必须可追溯」这条不变量。
+   */
+  guide_source: 'sourced' | 'template';
   faq: FaqItem[];
   risks: string[];
 
@@ -329,8 +343,16 @@ export interface RefreshStatus {
    * 因此「跑了一轮但数据没变」会如实返回 false。
    */
   data_changed?: boolean;
-  /** 人类可读的差异摘要，例如「新增 3、变更 12」 */
+  /** 人类可读的差异摘要，例如「变更 2 个：Monad 状态：潜在空投 → 开放领取」 */
   change_summary?: string;
+  /**
+   * 项目级变更明细，例如 ['Monad 状态：潜在空投 → 开放领取']。
+   *
+   * 为什么单独存一份：只给「变更 12」这种计数，回访用户无法判断
+   * 到底哪个项目变了、变成了什么。详细列表由前端直接展示。
+   * 最多保留若干条，避免 refresh-status.json（前端每 5 秒轮询读取）体积失控。
+   */
+  change_details?: string[];
   added?: number;
   modified?: number;
   removed?: number;
