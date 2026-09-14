@@ -1,15 +1,15 @@
 {
   "state": "success",
-  "started_at": "2026-09-14T06:12:10.337Z",
-  "finished_at": "2026-09-14T06:12:27.998Z",
+  "started_at": "2026-09-14T07:12:12.503Z",
+  "finished_at": "2026-09-14T07:12:26.592Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-14T06:12:10.337Z",
+  "updated_at": "2026-09-14T07:12:12.503Z",
   "data_changed": true,
-  "change_summary": "变更 16 个：Babylon Protocol 内容有更新；CIAN Yield Layer 内容有更新；Ethena USDe 内容有更新",
+  "change_summary": "变更 16 个：Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新；Ethena USDe 内容有更新",
   "change_details": [
     "Babylon Protocol 内容有更新",
-    "CIAN Yield Layer 内容有更新",
+    "Bedrock uniBTC 内容有更新",
     "Ethena USDe 内容有更新",
     "Gauntlet 内容有更新",
     "Kelp 内容有更新"
