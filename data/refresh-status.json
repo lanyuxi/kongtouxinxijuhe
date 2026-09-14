@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-14T07:42:12.409Z",
-  "finished_at": "2026-09-14T07:42:34.173Z",
+  "started_at": "2026-09-14T08:12:09.833Z",
+  "finished_at": "2026-09-14T08:12:26.966Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-14T07:42:12.409Z",
+  "updated_at": "2026-09-14T08:12:09.833Z",
   "data_changed": true,
-  "change_summary": "变更 14 个：Aave V3 内容有更新；b14g 内容有更新；Clearstar 内容有更新",
+  "change_summary": "变更 2 个：Gauntlet 内容有更新；Sanctum Validator LSTs 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "Clearstar 内容有更新",
-    "EigenCloud 内容有更新",
-    "Fluid Lite 内容有更新"
+    "Gauntlet 内容有更新",
+    "Sanctum Validator LSTs 内容有更新"
   ],
   "added": 0,
-  "modified": 14,
+  "modified": 2,
   "removed": 0
 }
