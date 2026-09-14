@@ -1,20 +1,18 @@
 {
   "state": "success",
-  "started_at": "2026-09-14T09:12:10.876Z",
-  "finished_at": "2026-09-14T09:12:22.228Z",
+  "started_at": "2026-09-14T09:42:12.446Z",
+  "finished_at": "2026-09-14T09:42:23.006Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-14T09:12:10.876Z",
+  "updated_at": "2026-09-14T09:42:12.446Z",
   "data_changed": true,
-  "change_summary": "变更 13 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；Defi Saver Asset Management 内容有更新",
+  "change_summary": "变更 3 个：Gauntlet 内容有更新；Obol 内容有更新；Steakhouse Financial 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Ethena USDe 内容有更新",
-    "Kinetiq kHYPE 内容有更新"
+    "Gauntlet 内容有更新",
+    "Obol 内容有更新",
+    "Steakhouse Financial 内容有更新"
   ],
   "added": 0,
-  "modified": 13,
+  "modified": 3,
   "removed": 0
 }
