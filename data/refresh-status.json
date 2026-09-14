@@ -1,16 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-14T11:12:09.585Z",
-  "finished_at": "2026-09-14T11:12:18.846Z",
+  "started_at": "2026-09-14T11:42:13.026Z",
+  "finished_at": "2026-09-14T11:42:27.827Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-14T11:12:09.585Z",
+  "updated_at": "2026-09-14T11:42:13.026Z",
   "data_changed": true,
-  "change_summary": "变更 1 个：Veda 内容有更新",
+  "change_summary": "变更 16 个：Aave V3 内容有更新；b14g 内容有更新；CIAN Yield Layer 内容有更新",
   "change_details": [
-    "Veda 内容有更新"
+    "Aave V3 内容有更新",
+    "b14g 内容有更新",
+    "CIAN Yield Layer 内容有更新",
+    "Concrete 内容有更新",
+    "EigenCloud 内容有更新"
   ],
   "added": 0,
-  "modified": 1,
+  "modified": 16,
   "removed": 0
 }
