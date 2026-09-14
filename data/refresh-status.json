@@ -1,17 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-14T08:12:09.833Z",
-  "finished_at": "2026-09-14T08:12:26.966Z",
+  "started_at": "2026-09-14T08:42:10.725Z",
+  "finished_at": "2026-09-14T08:42:21.900Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-14T08:12:09.833Z",
+  "updated_at": "2026-09-14T08:42:10.725Z",
   "data_changed": true,
-  "change_summary": "变更 2 个：Gauntlet 内容有更新；Sanctum Validator LSTs 内容有更新",
+  "change_summary": "变更 15 个：Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新；BitFi Basis 内容有更新",
   "change_details": [
-    "Gauntlet 内容有更新",
-    "Sanctum Validator LSTs 内容有更新"
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
+    "Concrete 内容有更新",
+    "EigenCloud 内容有更新"
   ],
   "added": 0,
-  "modified": 2,
+  "modified": 15,
   "removed": 0
 }
