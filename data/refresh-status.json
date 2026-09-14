@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-14T02:42:10.023Z",
-  "finished_at": "2026-09-14T02:42:19.586Z",
+  "started_at": "2026-09-14T03:12:25.639Z",
+  "finished_at": "2026-09-14T03:12:43.249Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-14T02:42:10.023Z",
+  "updated_at": "2026-09-14T03:12:25.639Z",
   "data_changed": true,
-  "change_summary": "变更 12 个：EigenCloud 内容有更新；GMX V2 Perps 内容有更新；Hyperithm 内容有更新",
+  "change_summary": "变更 15 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
   "change_details": [
-    "EigenCloud 内容有更新",
-    "GMX V2 Perps 内容有更新",
-    "Hyperithm 内容有更新",
-    "Lido 内容有更新",
-    "mETH Protocol 内容有更新"
+    "Aave V3 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
+    "Concrete 内容有更新"
   ],
   "added": 0,
-  "modified": 12,
+  "modified": 15,
   "removed": 0
 }
