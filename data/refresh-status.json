@@ -1,20 +1,18 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T04:42:09.191Z",
-  "finished_at": "2026-09-15T04:42:30.058Z",
+  "started_at": "2026-09-15T05:12:18.292Z",
+  "finished_at": "2026-09-15T05:12:34.978Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T04:42:09.191Z",
+  "updated_at": "2026-09-15T05:12:18.292Z",
   "data_changed": true,
-  "change_summary": "变更 22 个：Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新；Defi Saver Asset Management 内容有更新",
+  "change_summary": "变更 3 个：Aave V3 内容有更新；EigenCloud 内容有更新；Hyperithm 内容有更新",
   "change_details": [
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Fluid Lite 内容有更新",
-    "Jupiter Perpetual Exchange 内容有更新"
+    "Aave V3 内容有更新",
+    "EigenCloud 内容有更新",
+    "Hyperithm 内容有更新"
   ],
   "added": 0,
-  "modified": 22,
+  "modified": 3,
   "removed": 0
 }

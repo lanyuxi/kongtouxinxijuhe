@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/brownian/",
-      "fetched_at": "2026-09-15T04:42:09.215Z"
+      "fetched_at": "2026-09-15T05:12:18.327Z"
     }
   ],
   "evidence": [
@@ -352,7 +352,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-15T04:42:09.215Z",
+  "last_checked_at": "2026-09-15T05:12:18.327Z",
   "last_changed_at": "2026-09-13T13:49:13.738Z",
   "sourcedSteps": [
     {
