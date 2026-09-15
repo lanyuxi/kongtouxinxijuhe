@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/wheelx/",
-      "fetched_at": "2026-09-15T03:12:11.204Z"
+      "fetched_at": "2026-09-15T03:42:15.646Z"
     }
   ],
   "evidence": [
@@ -344,7 +344,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-15T03:12:11.204Z",
+  "last_checked_at": "2026-09-15T03:42:15.646Z",
   "last_changed_at": "2026-09-13T13:49:13.743Z",
   "sourcedSteps": [
     {

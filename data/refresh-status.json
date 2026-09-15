@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T03:12:11.170Z",
-  "finished_at": "2026-09-15T03:12:21.261Z",
+  "started_at": "2026-09-15T03:42:15.612Z",
+  "finished_at": "2026-09-15T03:42:31.101Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T03:12:11.170Z",
+  "updated_at": "2026-09-15T03:42:15.612Z",
   "data_changed": true,
-  "change_summary": "变更 22 个：Babylon Protocol 内容有更新；CIAN Yield Layer 内容有更新；EigenCloud 内容有更新",
+  "change_summary": "变更 2 个：Kinetiq kHYPE 内容有更新；Lido 内容有更新",
   "change_details": [
-    "Babylon Protocol 内容有更新",
-    "CIAN Yield Layer 内容有更新",
-    "EigenCloud 内容有更新",
-    "Ethena USDe 内容有更新",
-    "Gauntlet 内容有更新"
+    "Kinetiq kHYPE 内容有更新",
+    "Lido 内容有更新"
   ],
   "added": 0,
-  "modified": 22,
+  "modified": 2,
   "removed": 0
 }
