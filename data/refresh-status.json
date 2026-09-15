@@ -1,19 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T05:42:11.155Z",
-  "finished_at": "2026-09-15T05:42:42.845Z",
+  "started_at": "2026-09-15T06:12:10.439Z",
+  "finished_at": "2026-09-15T06:12:31.078Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T05:42:11.155Z",
+  "updated_at": "2026-09-15T06:12:10.439Z",
   "data_changed": true,
-  "change_summary": "变更 4 个：b14g 内容有更新；Concrete 内容有更新；Spark Liquidity Layer 内容有更新",
+  "change_summary": "变更 27 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
-    "b14g 内容有更新",
-    "Concrete 内容有更新",
-    "Spark Liquidity Layer 内容有更新",
-    "Steakhouse Financial 内容有更新"
+    "Aave V3 内容有更新",
+    "B2 Buzz 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "BitFi Basis 内容有更新",
+    "Clearstar 内容有更新"
   ],
   "added": 0,
-  "modified": 4,
+  "modified": 27,
   "removed": 0
 }
