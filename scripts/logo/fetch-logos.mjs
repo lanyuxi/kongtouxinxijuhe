@@ -64,14 +64,45 @@ async function mapLimit(items, limit, fn) {
   return out;
 }
 
-async function httpGet(url, { timeout = 15000 } = {}) {
-  const res = await fetch(url, {
-    redirect: 'follow',
-    signal: AbortSignal.timeout(timeout),
-    headers: { 'user-agent': UA, accept: 'image/*,*/*;q=0.8' },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return Buffer.from(await res.arrayBuffer());
+/**
+ * 带重试的下载。
+ *
+ * 为什么需要重试（2026-09-15 的一次线上部署失败）：
+ *   GitHub Actions 上的 `npm run logos` 在没有本地缓存的新环境里必须真实联网。
+ *   图标来源（third-party 图床）偶发 5xx / 连接重置时，单次失败就会让
+ *   整个部署 step 以非 0 退出 —— 后面的单测、校验、构建、发布全部被跳过，
+ *   站点因此停留在旧版本，而日志里只会显示「抓取项目 Logo 失败」。
+ *
+ *   抓取失败本不该阻断「发布一个已经正确的构建」。所以这里对**网络类错误**
+ *   做有限次退避重试；仍然失败时按原逻辑留给覆盖率守卫处理
+ *   （有旧图标则沿用，确实缺图才让流程失败）。
+ */
+async function httpGet(url, { timeout = 15000, retries = 2 } = {}) {
+  let lastErr;
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    try {
+      const res = await fetch(url, {
+        redirect: 'follow',
+        signal: AbortSignal.timeout(timeout),
+        headers: { 'user-agent': UA, accept: 'image/*,*/*;q=0.8' },
+      });
+      // 4xx 是「这个 URL 本身不行」，重试没有意义，直接换下一个候选源；
+      // 5xx / 429 属于对方临时故障，值得退避后再试一次。
+      if (!res.ok) {
+        const retriable = res.status >= 500 || res.status === 429;
+        if (!retriable) throw new Error(`HTTP ${res.status}`);
+        lastErr = new Error(`HTTP ${res.status}`);
+      } else {
+        return Buffer.from(await res.arrayBuffer());
+      }
+    } catch (e) {
+      lastErr = e;
+    }
+    if (attempt < retries) {
+      await new Promise((r) => setTimeout(r, 300 * (attempt + 1)));
+    }
+  }
+  throw lastErr ?? new Error('下载失败');
 }
 
 /*
