@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T10:42:14.089Z",
-  "finished_at": "2026-09-15T10:42:28.439Z",
+  "started_at": "2026-09-15T11:12:09.725Z",
+  "finished_at": "2026-09-15T11:12:24.432Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T10:42:14.089Z",
+  "updated_at": "2026-09-15T11:12:09.725Z",
   "data_changed": true,
-  "change_summary": "变更 16 个：Aave V3 内容有更新；EigenCloud 内容有更新；Gauntlet 内容有更新",
+  "change_summary": "变更 2 个：Concrete 内容有更新；tBTC 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "EigenCloud 内容有更新",
-    "Gauntlet 内容有更新",
-    "Hyperithm 内容有更新",
-    "K3 Capital 内容有更新"
+    "Concrete 内容有更新",
+    "tBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 16,
+  "modified": 2,
   "removed": 0
 }

@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/beezie/",
-      "fetched_at": "2026-09-15T10:42:14.124Z"
+      "fetched_at": "2026-09-15T11:12:09.749Z"
     }
   ],
   "evidence": [
@@ -282,7 +282,7 @@
   ],
   "created_at": "2026-09-15T02:52:10.448Z",
   "discovered_at": "2026-09-15T02:52:10.448Z",
-  "last_checked_at": "2026-09-15T10:42:14.124Z",
+  "last_checked_at": "2026-09-15T11:12:09.749Z",
   "last_changed_at": "2026-09-15T03:02:20.959Z",
   "sourcedSteps": [
     {
