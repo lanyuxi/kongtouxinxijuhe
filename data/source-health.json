@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-09-15T12:11:42.725Z",
+  "updated_at": "2026-09-15T12:42:10.280Z",
   "sources": [
     {
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "ok": true,
       "fetched": 58,
-      "last_success_at": "2026-09-15T12:11:42.725Z",
-      "checked_at": "2026-09-15T12:11:42.725Z"
+      "last_success_at": "2026-09-15T12:42:10.280Z",
+      "checked_at": "2026-09-15T12:42:10.280Z"
     },
     {
       "name": "DefiLlama",
       "url": "https://api.llama.fi/protocols",
       "ok": true,
       "fetched": 120,
-      "last_success_at": "2026-09-15T12:11:42.725Z",
-      "checked_at": "2026-09-15T12:11:42.725Z"
+      "last_success_at": "2026-09-15T12:42:10.280Z",
+      "checked_at": "2026-09-15T12:42:10.280Z"
     }
   ]
 }
