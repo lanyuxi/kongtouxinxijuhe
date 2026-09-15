@@ -156,7 +156,7 @@ export function ProjectCard({
           {beginner.friendly && (
             <span
               title={beginner.reason}
-              className="shrink-0 rounded-full border border-ok/30 bg-ok-wash px-2 py-0.5 text-[11px] font-medium text-ok"
+              className="shrink-0 rounded-full border border-ok/30 bg-ok-wash px-2 py-0.5 text-[10px] font-medium text-ok"
             >
               🌱 新手友好
             </span>
@@ -180,13 +180,13 @@ export function ProjectCard({
 
         {/* 同协议产品线：折叠成一行文字，避免「Aave V3 / V4 / Horizon」被当成 3 个空投 */}
         {variants.length > 0 && (
-          <p className="mt-1 truncate text-[11px] text-ink-faint" title={variants.map((v) => v.name).join('、')}>
+          <p className="mt-1 truncate text-[10px] text-ink-faint" title={variants.map((v) => v.name).join('、')}>
             同协议还有 {variants.length} 条产品线：
             {variants.map((v) => v.name).join('、')}
           </p>
         )}
         {variantOf && (
-          <p className="mt-1 truncate text-[11px] text-ink-faint">
+          <p className="mt-1 truncate text-[10px] text-ink-faint">
             属于同一协议 <a href={`#/project/${variantOf}`} className="text-brand no-underline hover:underline">{variantOf}</a>
           </p>
         )}
@@ -219,7 +219,7 @@ export function ProjectCard({
               className="mt-2"
               title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
             >
-              <div className="flex items-center justify-between gap-2 text-[11px] text-ink-faint">
+              <div className="flex items-center justify-between gap-2 text-[10px] text-ink-faint">
                 <span>本批相对位置</span>
                 <span className="tabular-nums text-ink-soft">{percentilePhrase(valuePct)}</span>
               </div>

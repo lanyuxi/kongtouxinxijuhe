@@ -8,23 +8,35 @@
  *  - 中性色改用带冷调的 slate 阶，替代原先的纯灰，整体更「高级」
  *  - 主色由单一蓝扩展为 50→700 完整色阶，支撑渐变与层次
  *  - 统一圆角 / 阴影 / 动效曲线三套令牌，保证全站观感一致
- *  - 字号标尺保持上一轮放大后的结果，仅补齐标题行高
+ *  - 字号标尺在上一轮放大结果的基础上整体回落一档（见下方 fontSize 注释）
  */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      /*
+       * 字号标尺（第四轮：整体回落一档）
+       * -----------------------------------------------------------------
+       * 上一轮为了让信息「读得清」把每一档都放大了约 1/8，实测在 1440 视口下
+       * 一级页面（列表）与二级页面（详情）都偏大：
+       *   - 正文 19px 配上 1.85rem 行高，单屏能看到的卡片数量明显减少；
+       *   - 详情页长文段落（教程 / 注意事项 / FAQ）一屏只有几行，滚动成本高；
+       *   - 卡片内的小字（公链 / 风险 / 时间）与正文差距被压缩，层级反而变糊。
+       * 因此这里统一把每一档下调约 1/8，回到「正文 17px / 行高 1.7」的阅读档位，
+       * 并同步收紧行高（行高按同比例回落，否则文字变小而留白不变，观感会更松垮）。
+       * 只动尺寸令牌，不动任何布局栅格与间距，避免牵动已对齐的卡片排布。
+       */
       fontSize: {
-        xs: ['0.875rem', { lineHeight: '1.45rem' }],
-        sm: ['1rem', { lineHeight: '1.7rem' }],
-        base: ['1.1875rem', { lineHeight: '1.85rem' }],
-        lg: ['1.375rem', { lineHeight: '2rem' }],
-        xl: ['1.625rem', { lineHeight: '2.25rem' }],
-        '2xl': ['2rem', { lineHeight: '2.6rem' }],
-        '3xl': ['2.375rem', { lineHeight: '2.8rem' }],
-        '4xl': ['2.75rem', { lineHeight: '3.2rem', letterSpacing: '-0.02em' }],
-        '5xl': ['3.25rem', { lineHeight: '3.4rem', letterSpacing: '-0.03em' }],
-        '6xl': ['4rem', { lineHeight: '4.1rem', letterSpacing: '-0.035em' }],
+        xs: ['0.78rem', { lineHeight: '1.3rem' }],
+        sm: ['0.9rem', { lineHeight: '1.5rem' }],
+        base: ['1.0625rem', { lineHeight: '1.7rem' }],
+        lg: ['1.2rem', { lineHeight: '1.8rem' }],
+        xl: ['1.4rem', { lineHeight: '2rem' }],
+        '2xl': ['1.7rem', { lineHeight: '2.25rem' }],
+        '3xl': ['2rem', { lineHeight: '2.45rem' }],
+        '4xl': ['2.4rem', { lineHeight: '2.85rem', letterSpacing: '-0.02em' }],
+        '5xl': ['2.85rem', { lineHeight: '3.1rem', letterSpacing: '-0.03em' }],
+        '6xl': ['3.5rem', { lineHeight: '3.7rem', letterSpacing: '-0.035em' }],
       },
       colors: {
         // 页面底：极浅冷灰，让白色卡片「浮」起来
