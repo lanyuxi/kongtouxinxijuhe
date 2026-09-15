@@ -35,14 +35,35 @@ async function readJson(file, fallback) {
   }
 }
 
-/** 返回「映射里有、但文件不存在」以及「映射里没有」的 slug 列表 */
-export async function findMissingLogos() {
+const MAPPING = path.join(ROOT, 'scripts/logo/mapping.json');
+
+/**
+ * 已在 mapping.json 的 _blocked 中登记为「无法自动抓取」的 slug。
+ *
+ * 为什么构建期也要认这份登记（2026-09-15 的真实事故）：
+ *   项目 beezie 的官网被 Cloudflare 托管，对数据中心 IP（CI runner）返回 403，
+ *   但住宅网络放行。若这里只按「有没有图标文件」判断，构建期会判定缺图并中断
+ *   —— 等于把同一个第三方反爬问题从抓取步骤又带进了构建步骤。
+ *   既然抓取环节已经如实登记了「这是已知且已记录的限制」，构建环节就应当一致对待。
+ */
+async function blockedSlugs() {
+  const mapping = await readJson(MAPPING, { _blocked: {} });
+  return new Set(Object.keys(mapping._blocked ?? {}));
+}
+
+/**
+ * 返回「映射里有、但文件不存在」以及「映射里没有」的 slug 列表。
+ * 已登记为不可抓取（_blocked）的项目不计入 —— 它们的缺失是已知且已记录的限制。
+ */
+export async function findMissingLogos({ includeBlocked = false } = {}) {
   const dataset = await readJson(DATASET, { projects: [] });
   const map = await readJson(MAP, { logos: {} });
   const logos = map.logos ?? {};
+  const blocked = await blockedSlugs();
 
   const missing = [];
   for (const p of dataset.projects ?? []) {
+    if (!includeBlocked && blocked.has(p.slug)) continue;
     const rel = logos[p.slug];
     if (!rel) {
       missing.push(p.slug);
@@ -57,8 +78,23 @@ export async function findMissingLogos() {
   return missing;
 }
 
+/** 仅供人工排查：列出被 _blocked 登记跳过、因此不会有图标的项目 */
+export async function listBlockedProjects() {
+  const dataset = await readJson(DATASET, { projects: [] });
+  const blocked = await blockedSlugs();
+  return (dataset.projects ?? []).filter((p) => blocked.has(p.slug)).map((p) => p.slug);
+}
+
 // 被 import 时只导出函数，不做副作用；直接执行时才跑检查
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+  const blockedProjects = await listBlockedProjects();
+  if (blockedProjects.length) {
+    console.log(
+      `[ensure-logos] ⚠ ${blockedProjects.length} 个项目已登记为「无法自动抓取」，` +
+        `列表页不会有图标：${blockedProjects.join('、')}`,
+    );
+  }
+
   const missing = await findMissingLogos();
   if (missing.length === 0) {
     console.log('[ensure-logos] ✓ 图标齐全，无需补齐');
@@ -75,6 +111,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
       );
       console.error('[ensure-logos] 继续构建会产出带有空白图标位的站点，已中断。');
       console.error('[ensure-logos] 处理方式：检查网络后重跑，或在 scripts/logo/mapping.json 补登记官方域名。');
+      console.error('[ensure-logos] 若确认是对方站点反爬（如 Cloudflare 对数据中心 IP 返回 403），');
+      console.error('              可在 mapping.json 的 _blocked 中如实登记，登记后不再中断构建。');
       process.exit(run.status || 1);
     }
     console.log(`[ensure-logos] ✓ 已补齐 ${missing.length} 个图标`);

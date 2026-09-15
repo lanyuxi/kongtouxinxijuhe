@@ -91,7 +91,34 @@ async function validateLogoCoverage(projects: AirdropProject[], warnings: string
   const missing: string[] = [];
   const broken: string[] = [];
 
+  /**
+   * 已在 scripts/logo/mapping.json 的 _blocked 中登记为「无法自动抓取」的项目。
+   *
+   * 为什么发布门禁也要认这份登记（2026-09-15 的真实事故）：
+   *   beezie 的官网由 Cloudflare 托管，对数据中心 IP（CI runner）返回 403，
+   *   住宅网络放行。于是「本地能抓、CI 抓不到」。
+   *   若门禁仍按「有图标才放行」，就会把一个第三方站点的反爬策略升级成
+   *   整站发布失败 —— 从 2026-09-14T11:42 起 Deploy 与 Refresh Data 连续 100% 失败。
+   *
+   *   门禁的本意是「防止漏抓图标导致页面出现空白位」。对于已如实登记、
+   *   且核实过原因（对方主动拒绝，非本方脚本故障）的项目，应当告警而非拦发布。
+   *   未登记的项目一旦缺图，下面仍然直接报错 —— 门禁没有被削弱。
+   */
+  let blocked = new Set<string>();
+  try {
+    const mapping = JSON.parse(
+      await readFile(path.join(ROOT, 'scripts', 'logo', 'mapping.json'), 'utf8'),
+    ) as { _blocked?: Record<string, unknown> };
+    blocked = new Set(Object.keys(mapping._blocked ?? {}));
+  } catch {
+    // mapping.json 缺失时按「没有任何豁免」处理，宁严勿松
+  }
+
   for (const p of projects) {
+    if (blocked.has(p.slug)) {
+      warnings.push(`${p.slug}：已登记为「无法自动抓取」，列表页不会有图标（见 scripts/logo/mapping.json 的 _blocked）`);
+      continue;
+    }
     const rel = logos[p.slug];
     if (!rel) {
       missing.push(p.slug);
