@@ -56,18 +56,24 @@ jobs:
       - name: 抓取项目 Logo
         run: npm run logos
 
-      - name: 单元测试
-        run: npm test
-
-      - name: 发布前校验
-        run: npm run validate
-
+      # 顺序说明（2026-09-15 修）：构建必须排在单元测试之前。
+      #   tests/galaxy-ui.test.ts 断言的是 `dist/assets/*.css` 里的关键类是否产出 ——
+      #   也就是「用户真正拿到的那份 CSS」。它需要 dist/ 存在才能运行。
+      #   原先的顺序是 测试 → 校验 → 构建，该测试必然因缺 dist/ 而失败。
+      #   这个顺序问题此前一直被「抓取项目 Logo」更早的失败掩盖着（四个后续步骤全被跳过），
+      #   直到那一处修好才暴露出来。
       - name: 构建站点
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
           # feed 里必须是可点的绝对地址，因此显式传入站点根地址
           SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: npm run build
+
+      - name: 单元测试
+        run: npm test
+
+      - name: 发布前校验
+        run: npm run validate
 
       - name: 构建产物自检
         run: |
