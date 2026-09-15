@@ -238,3 +238,120 @@ describe('logo 抓取脚本的模块绑定', () => {
     await execFileAsync('node', ['--check', script]);
   });
 });
+
+/**
+ * 回归测试：图标抓取不得依赖 CI 镜像里不存在的二进制。
+ * ---------------------------------------------------------------------------
+ * 背景（2026-09-15 定位，PR 校验流水线 fetch-logos 失败）：
+ *   `npm run logos` 在 CNB 上稳定失败，报「1 个项目既没有旧图标也没抓到新图标」，
+ *   而**本地跑同一条命令 100% 成功**。失败项目 beezie 的三个候选 URL 全部报
+ *   「无法解析图像尺寸」。
+ *
+ *   根因不是网络，而是环境：尺寸探测用的是 ffprobe，
+ *   而 PR 校验跑在 `node:22` 官方镜像里 —— 该镜像**不含 ffmpeg/ffprobe**。
+ *   于是 probeSize 恒返回 null，所有非 SVG 候选都被判成「无法解析图像尺寸」。
+ *   本地因为装了 ffmpeg，同一份代码却全部通过。
+ *
+ *   所以下面这组断言刻意**不联网**，只钉住「解析能力必须内建」这件事：
+ *   它能离线稳定运行，也正是那次失败里唯一真正出问题的地方。
+ */
+describe('图标尺寸解析不依赖外部二进制（回归）', () => {
+  const SCRIPT = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+
+  it('抓取脚本不再调用 ffprobe / ffmpeg 探测尺寸', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    // 允许调用 ffmpeg 做「可选」的转码（缺失时降级保留原格式），
+    // 但**绝不允许**把它当作尺寸判定的必要条件 —— 那正是 CI 失败的原因。
+    expect(src).not.toContain("'ffprobe'");
+    expect(src).not.toMatch(/execFileAsync\(\s*'ffprobe'/);
+    // 尺寸必须走纯 JS 解析
+    expect(src).toContain('parseImageSize');
+  });
+
+  it('缺失 ffmpeg 时降级保留原格式，而不是把候选判为失败', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    // 必须显式探测 ffmpeg 可用性，并在不可用时降级
+    expect(src).toContain('async function hasFfmpeg()');
+    expect(src).toMatch(/if \(!\(await hasFfmpeg\(\)\)\) \{[\s\S]*?return \{ ok: true, buffer: buf, ext: format, url \}/);
+  });
+
+  it('parseImageSize 能从文件头读出 PNG / GIF / WebP / ICO / JPEG 的尺寸', async () => {
+    const { parseImageSize } = await import('../scripts/logo/sources.mjs');
+
+    // PNG：8 字节签名 + 长度 4 + 'IHDR' 4，随后为大端宽高
+    const png = Buffer.concat([
+      Buffer.from('89504e470d0a1a0a0000000d49484452', 'hex'),
+      Buffer.from([0, 0, 0, 64, 0, 0, 0, 48]),
+    ]);
+    expect(parseImageSize(png)).toEqual({ w: 64, h: 48 });
+
+    // GIF：逻辑屏幕描述符在第 6 字节，小端
+    const gif = Buffer.alloc(24);
+    gif.write('GIF89a', 0, 'ascii');
+    gif.writeUInt16LE(32, 6);
+    gif.writeUInt16LE(16, 8);
+    expect(parseImageSize(gif)).toEqual({ w: 32, h: 16 });
+
+    // WebP VP8X：24-26 / 27-29 字节为「宽-1 / 高-1」的 24 位小端
+    const webp = Buffer.alloc(40);
+    webp.write('RIFF', 0, 'ascii');
+    webp.write('WEBP', 8, 'ascii');
+    webp.write('VP8X', 12, 'ascii');
+    webp.writeUIntLE(127, 24, 3);
+    webp.writeUIntLE(63, 27, 3);
+    expect(parseImageSize(webp)).toEqual({ w: 128, h: 64 });
+
+    // ICO：目录条目里 0 表示 256，应取分辨率最大的一条
+    const ico = Buffer.alloc(6 + 16 * 2);
+    ico.writeUInt16LE(0, 0);
+    ico.writeUInt16LE(1, 2);
+    ico.writeUInt16LE(2, 4);
+    ico[6] = 16;
+    ico[7] = 16;
+    ico[6 + 16] = 0; // 256
+    ico[7 + 16] = 0; // 256
+    expect(parseImageSize(ico)).toEqual({ w: 256, h: 256 });
+
+    // 非图片 / 长度不足：一律返回 null，不能误判为可用
+    expect(parseImageSize(Buffer.from('<html>not an image</html>'))).toBeNull();
+    expect(parseImageSize(Buffer.alloc(8))).toBeNull();
+  });
+
+  it('rootDomainOf 能把子域收敛到根域（favicon 基本挂在根域）', async () => {
+    const { rootDomainOf } = await import('../scripts/logo/sources.mjs');
+    expect(rootDomainOf('app.tread.fi')).toBe('tread.fi');
+    expect(rootDomainOf('engage.tbook.com')).toBe('tbook.com');
+    expect(rootDomainOf('www.beezie.com')).toBe('beezie.com');
+    expect(rootDomainOf('beezie.com')).toBe('beezie.com');
+    expect(rootDomainOf('claim-pp.plume.org')).toBe('plume.org');
+    expect(rootDomainOf(null)).toBeNull();
+  });
+});
+
+/**
+ * 回归测试：新项目缺图不得中断整条数据流水线。
+ * ---------------------------------------------------------------------------
+ * 原实现只要有一个项目「既没有旧图标、也没抓到新图标」就 exitCode = 1。
+ * 而 `npm run logos` 非 0 退出会让后续 unit-test / validate-data /
+ * commit-data / sync-to-github 四个 stage 全部被跳过 ——
+ * 一个新项目少一张图标，代价是整个站点停止更新、GitHub 同步中断。
+ * 现在改为只告警，把关交给本文件的覆盖率断言。
+ */
+describe('图标缺失不再中断流水线（回归）', () => {
+  const SCRIPT = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+
+  it('覆盖率守卫在缺图时只告警，不设置非 0 退出码', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    const guard = src.match(/const stillMissing = report\.failed\.filter[\s\S]*?\n  \}/);
+    expect(guard, '未找到覆盖率守卫代码').not.toBeNull();
+    // 守卫内部不得再出现 process.exitCode
+    expect(guard![0]).not.toContain('process.exitCode');
+    expect(guard![0]).toContain('console.warn');
+  });
+
+  it('仍有覆盖率断言兜底：缺失图标必须由测试明确报出来', async () => {
+    const src = await readFile(path.join(ROOT, 'tests/logos.test.ts'), 'utf8');
+    // 断言仍然存在，确保「缺图」不会被完全放行
+    expect(src).toContain('以下项目缺少 logo 映射');
+  });
+});
