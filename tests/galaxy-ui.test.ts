@@ -134,3 +134,72 @@ describe('样式源文件的层级约束（防止回归再次发生）', () => {
     expect(offenders).toEqual([]);
   });
 });
+
+/**
+ * 流水线步骤顺序的回归测试。
+ * ---------------------------------------------------------------------------
+ * 背景（2026-09-15 定位的两处真实 CI 故障）：
+ *   本文件断言的是 `dist/assets/*.css` 里的关键类是否产出 —— 也就是用户
+ *   真正拿到的那份 CSS。因此它**必须**在 `npm run build` 之后运行。
+ *
+ *   但三个流水线原先的顺序都是 单元测试 → 校验 → 构建，
+ *   于是本文件必然因「缺少 dist/ 产物」而失败：
+ *     - GitHub `deploy-pages.yml`：部署连续失败，站点停在旧版本；
+ *     - GitHub `refresh-data.yml`：失败导致「数据变化检查与提交」被跳过，
+ *       数据一直无法提交回仓库；
+ *     - CNB `.cnb.yml`：PR 校验与定时抓取同样受影响。
+ *
+ *   这个顺序问题此前一直被「抓取项目 Logo」更早的失败掩盖着 ——
+ *   后续步骤全部被跳过，根本没机会跑到。修好那一处才暴露出来。
+ *   所以这里把顺序固化成断言，避免它再次被同一类问题掩盖。
+ */
+describe('流水线步骤顺序：构建必须在单元测试之前', () => {
+  const read = (rel: string) => readFileSync(join(ROOT, rel), 'utf8');
+
+  /** 返回文中 build 与 test 步骤出现的先后（-1 表示找不到） */
+  const orderOf = (src: string, buildPat: RegExp, testPat: RegExp) => ({
+    build: src.search(buildPat),
+    test: src.search(testPat),
+  });
+
+  it('CNB .cnb.yml：每个 build-web 都排在 unit-test 之前', () => {
+    const src = read('.cnb.yml');
+    const lines = src.split('\n');
+    let pendingBuild = false;
+    const violations: string[] = [];
+
+    lines.forEach((line, i) => {
+      const t = line.trim();
+      if (/^-?\s*name:\s*build-web/.test(t)) pendingBuild = true;
+      else if (/^-?\s*name:\s*unit-test/.test(t)) {
+        if (!pendingBuild) violations.push(`第 ${i + 1} 行：unit-test 出现在 build-web 之前`);
+        pendingBuild = false;
+      }
+    });
+
+    expect(violations, `以下位置的步骤顺序错误：\n${violations.join('\n')}`).toEqual([]);
+  });
+
+  it('GitHub deploy-pages.yml：构建步骤在单元测试之前', () => {
+    const src = read('.github/workflows/deploy-pages.yml');
+    const { build, test } = orderOf(src, /name:\s*构建站点/, /name:\s*单元测试/);
+    expect(build).toBeGreaterThan(-1);
+    expect(test).toBeGreaterThan(-1);
+    expect(build, '构建站点必须排在单元测试之前，否则 galaxy-ui.test.ts 找不到 dist/').toBeLessThan(test);
+  });
+
+  it('GitHub refresh-data.yml：构建步骤在单元测试之前', () => {
+    const src = read('.github/workflows/refresh-data.yml');
+    const { build, test } = orderOf(src, /name:\s*构建站点/, /name:\s*单元测试/);
+    expect(build).toBeGreaterThan(-1);
+    expect(test).toBeGreaterThan(-1);
+    expect(build).toBeLessThan(test);
+  });
+
+  it('本文件确实依赖 dist/（这是上述顺序约束的正当性来源）', () => {
+    // 若哪天这个依赖被去掉，上面的顺序断言就该一并删除 —— 用它提醒后来者。
+    const src = read('tests/galaxy-ui.test.ts');
+    expect(src).toMatch(/dist\/assets/);
+    expect(src).toMatch(/缺少 dist\/ 产物/);
+  });
+});

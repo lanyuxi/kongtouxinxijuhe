@@ -44,12 +44,15 @@
   # 因此在测试与构建之前先把 public/logos 补齐，覆盖率校验才能通过。
   - name: fetch-logos
     script: npm run logos
+  # 顺序说明（2026-09-15 修）：build 必须排在 unit-test 之前。
+  #   tests/galaxy-ui.test.ts 断言 dist/assets/*.css 里的关键类是否产出，
+  #   需要 dist/ 存在才能运行；原先的顺序会让它必然失败。
+  - name: build-web
+    script: npm run build
   - name: unit-test
     script: npm test
   - name: validate-data
     script: npm run validate
-  - name: build-web
-    script: npm run build
 
 main:
   push:
@@ -73,12 +76,13 @@ main:
           script: npm run pipeline
         - name: fetch-logos
           script: npm run logos
+        # 顺序说明（2026-09-15 修）：build 必须排在 unit-test 之前（同 PR 校验片段）。
+        - name: build-web
+          script: npm run build
         - name: unit-test
           script: npm test
         - name: validate-data
           script: npm run validate
-        - name: build-web
-          script: npm run build
         - name: publish-release
           type: git:release
           options:
@@ -116,6 +120,11 @@ main:
         # 增量抓取：新出现的项目在这里补图标；已抓过的直接复用，不重复下载
         - name: fetch-logos
           script: npm run logos
+        # 顺序说明（2026-09-15 修）：build 必须排在 unit-test 之前。
+        #   tests/galaxy-ui.test.ts 断言 dist/assets/*.css 里的关键类是否产出，
+        #   需要 dist/ 存在；缺了就会让定时抓取整条任务失败。
+        - name: build-web
+          script: npm run build
         - name: unit-test
           script: npm test
         - name: validate-data
