@@ -22,11 +22,15 @@ const SIZES = {
   /** 列表卡片专用：与设计稿一致的 56px 圆角方块 */
   card: 'h-14 w-14 rounded-logo',
   md: 'h-16 w-16 rounded-2xl',
-  lg: 'h-20 w-20 rounded-3xl',
+  /**
+   * 详情页头图：桌面端 96px。之前是 80px，在 text-5xl 的项目名旁边显得过小，
+   * 头部重心会被标题完全带走。移动端回落到 80px，避免挤掉标题宽度。
+   */
+  lg: 'h-20 w-20 rounded-3xl sm:h-24 sm:w-24',
 } as const;
 
 /** 尺寸 → 图片固有像素（仅用于 width/height 属性，避免布局抖动） */
-const LOGO_PX = { sm: 40, card: 56, md: 64, lg: 80 } as const;
+const LOGO_PX = { sm: 40, card: 56, md: 64, lg: 96 } as const;
 
 export function ProjectLogo({
   project,

@@ -39,7 +39,8 @@ export function RefreshBar({
     <section className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-card lg:flex-row lg:items-center lg:justify-between">
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-3">
-          <h2 className="text-base font-semibold tracking-tight text-ink">空投数据源</h2>
+          <h2 className="panel-title !text-base">空投数据源</h2>
+
           <span
             className={`chip ${
               stale ? 'border-warn/40 bg-warn-wash text-warn' : 'border-ok/40 bg-ok-wash text-ok'

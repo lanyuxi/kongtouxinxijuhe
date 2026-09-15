@@ -1,6 +1,28 @@
+/*
+ * ⚠️ 顺序约束（踩过的坑，勿动）：
+ *   @tailwind 三条指令必须出现在文件最前面。
+ *   Tailwind 只识别「紧跟在这三条指令之后」的 @layer base/components/utilities；
+ *   若把 @layer 写在普通 CSS 规则之后，浏览器会按原生 CSS 级联层（cascade layer）
+ *   处理它 —— 优先级被压到最低，且 Tailwind 不会再向其中注入任何内容。
+ *   实测表现：整层样式（面板标题 / 按钮 / 徽章）静默消失，构建依旧成功。
+ *   同理：@layer 之外不要再出现第二个 @layer components。
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+ * 设计基线（Galaxy 组件层）
+ * ---------------------------------------------------------------------------
+ * 这一版只做一件事：把「什么更重要」画出来。
+ * 上一版的问题是所有卡片、所有数字、所有区块的视觉重量几乎相同，
+ * 用户要逐个读完才能判断该看哪个 —— 对一个决策类工具来说这是致命的。
+ * 因此这里固化四套分层手段，全站复用：
+ *   1. 表面分层：page（底）→ card（面）→ inset（凹）→ glass（浮）
+ *   2. 尺寸分层：指标数字 3 阶（metric-lg / md / sm），不再到处 text-5xl
+ *   3. 对比分层：正文 ink → 次要 ink-soft → 辅助 ink-faint，最多三阶
+ *   4. 反馈分层：悬停只做「抬起 + 描边」，动效一律 ≤300ms，不抢阅读
+ */
 
 @layer base {
   html {
@@ -14,12 +36,19 @@
     min-height: 100vh;
     font-size: 18px;
     line-height: 1.65;
-    /* 极淡的双径向光晕，让大面积留白不再「空」，但不干扰阅读 */
+    /*
+     * 背景：
+     *   - 顶部两道极淡径向光晕（蓝 / 紫）划定视觉中心
+     *   - 全局 32px 点阵网格，让大留白看起来是「图纸」而不是「没画完」
+     * 两者都刻意压到几乎察觉不到：背景的任务是托住内容，不是参与竞争。
+     */
     background-image:
-      radial-gradient(60rem 32rem at 12% -6%, rgba(37, 99, 235, 0.07), transparent 62%),
-      radial-gradient(48rem 28rem at 92% 0%, rgba(124, 92, 252, 0.06), transparent 60%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+      radial-gradient(56rem 30rem at 8% -8%, rgba(59, 109, 246, 0.10), transparent 62%),
+      radial-gradient(46rem 26rem at 96% -2%, rgba(124, 92, 252, 0.09), transparent 60%),
+      radial-gradient(rgba(11, 18, 32, 0.035) 1px, transparent 1px);
+    background-size: auto, auto, 32px 32px;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-attachment: fixed, fixed, fixed;
   }
   a {
     @apply text-brand;
@@ -30,23 +59,33 @@
     line-height: 1.25;
     letter-spacing: -0.015em;
   }
+  /* 键盘用户的第一需求是「我现在在哪」，所以焦点环必须可见且统一 */
+  :focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
   /* 统一细滚动条，避免默认灰条破坏整体质感 */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    background: #c9d2e3;
     border: 3px solid transparent;
     background-clip: content-box;
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #94A3B8;
+    background: #98a6c0;
     background-clip: content-box;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
+  }
+  /* 选中文字用品牌色，属于低成本高感知的「精致度」细节 */
+  ::selection {
+    background: rgba(37, 99, 235, 0.16);
   }
 }
 
@@ -59,7 +98,7 @@
     @apply mx-auto w-full max-w-wide px-4 sm:px-8 lg:px-12;
   }
 
-  /* ---------- 表面（Surface）三阶 ---------- */
+  /* ---------- 表面（Surface）四阶 ---------- */
   /* 基础卡片 */
   .card {
     @apply rounded-2xl border border-line bg-card p-5 shadow-card sm:p-7;
@@ -67,6 +106,19 @@
   /* 区块面板：详情页正文块，比卡片大一号 */
   .panel {
     @apply rounded-3xl border border-line bg-card p-6 shadow-card sm:p-8;
+  }
+  /*
+   * Galaxy 式卡片：
+   *   - 顶部 2px 渐变高光线，替代整圈描边来表达「这是一张卡片」
+   *   - 悬停时整体上移 2px + 大半径彩色投影，观感是物理抬起
+   * 抽自 galaxy `Cards/uctteam_rare-skunk-4`（悬停位移 + 彩色投影）
+   * 与 `Cards/Admin12121_average-parrot-89`（边缘光条）。
+   */
+  .galaxy-card {
+    @apply relative rounded-3xl border border-line bg-card shadow-card transition-all duration-300 ease-out;
+  }
+  .galaxy-card:hover {
+    @apply -translate-y-0.5 border-brand/30 shadow-card-float;
   }
   /* 玻璃面板：用于置顶栏、悬浮工具条 */
   .glass {
@@ -85,25 +137,52 @@
   .panel-title {
     @apply flex items-center gap-3 text-xl font-semibold tracking-tight text-ink;
   }
-  /* 小节标题上方的小色条 */
+  /* 小节标题上方的小色条（由品牌蓝渐变到紫，作为全站统一的「章节」信号） */
   .panel-title::before {
     content: '';
-    @apply h-5 w-1.5 shrink-0 rounded-full bg-gradient-to-b from-brand-light to-brand;
+    @apply h-5 w-1.5 shrink-0 rounded-full bg-gradient-to-b from-brand-light via-brand-600 to-accent;
+  }
+  /* 全大写小字标签：列表页与详情页共用同一套「分区」语言 */
+  .eyebrow-lg {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint;
   }
   /* 眉标：全大写小字，用来开篇定调 */
   .eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand;
   }
+  /*
+   * 章节头：眉标 + 标题 + 一句话说明。
+   * 列表页与详情页共用，保证「每个区块都说清自己是什么」。
+   */
+  .section-head {
+    @apply flex flex-col gap-1.5;
+  }
+  .section-head__hint {
+    @apply max-w-3xl text-sm leading-relaxed text-ink-soft;
+  }
 
   /* ---------- 按钮 ---------- */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium
-           transition duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/40
-           focus-visible:ring-offset-2;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-5 py-2.5
+           text-sm font-medium transition duration-200 ease-out focus:outline-none
+           focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2;
   }
+  /*
+   * 主按钮：
+   *   - 双层背景（上浅下深）表达可按压的厚度
+   *   - `inset 高光` 让顶部有一条 1px 亮边，是「实体按钮」的关键暗示
+   *   - 悬停时高光从左扫到右（galaxy `Buttons/Creatlydev_pretty-grasshopper-57`
+   *     的彩色层推入效果，这里改成一次性的高光扫过，不做位移）
+   */
   .btn-primary {
-    @apply btn bg-gradient-to-b from-brand-500 to-brand-600 text-white
-           shadow-glow hover:from-brand-600 hover:to-brand-700 active:translate-y-px;
+    @apply btn bg-gradient-to-b from-brand-500 to-brand-600 text-white shadow-glow;
+  }
+  .btn-primary:hover {
+    @apply from-brand-600 to-brand-700;
+  }
+  /* 按下时轻微回弹 + 内收，抽自 galaxy `Buttons/A3zra_empty-lionfish-28` */
+  .btn-primary:active {
+    @apply translate-y-px shadow-btn-inner;
   }
   .btn-ghost {
     @apply btn border border-line bg-white text-ink hover:border-brand/30 hover:bg-brand-50 hover:text-brand-700;
@@ -114,10 +193,22 @@
   .btn-lg {
     @apply rounded-xl px-7 py-3.5 text-base;
   }
+  /* 图标按钮：卡片右上角的收藏 / 外链，尺寸与触控热区间折中 */
+  .icon-btn {
+    @apply grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-white text-xs
+           text-ink-faint transition duration-200 hover:border-brand/40 hover:bg-brand-50 hover:text-brand-600;
+  }
+  .icon-btn[aria-pressed='true'] {
+    @apply border-brand/40 bg-brand-50 text-brand-600;
+  }
 
   /* ---------- 标签 / 徽章 ---------- */
   .chip {
     @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium;
+  }
+  /* 状态点：带一圈同色晕环，让状态在列表里「亮」起来而不靠加大字号 */
+  .chip-dot {
+    @apply h-1.5 w-1.5 shrink-0 rounded-full ring-2 ring-inset;
   }
 
   /* ---------- 表单 ---------- */
@@ -133,8 +224,6 @@
   .detail-link {
     @apply text-sm font-medium text-brand underline-offset-4 hover:underline;
   }
-  /* 宽屏下左侧为常驻侧栏（本页目录 / 官方资料 / 再次确认结论），
-     右侧为正文内容；小屏时侧栏回到正文之前，因此窄屏阅读顺序不变 */
   .detail-grid {
     @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[24rem_minmax(0,1fr)];
   }
@@ -152,27 +241,74 @@
   }
 
   /* ---------- 加载骨架 ---------- */
-  /* 骨架块：中性底色 + 轻微脉冲，表达「内容马上来」而不是「这里坏了」。
-     用 bg-page 而不是随机灰，保证与卡片底色层级一致、不显得脏。 */
+  /* 骨架块：中性底色 + 轻微脉冲，表达「内容马上来」而不是「这里坏了」 */
   .skeleton {
     @apply block animate-shimmer rounded-md bg-gradient-to-r from-page via-line-soft to-page bg-[length:200%_100%];
   }
 
-  /* ---------- 数据指标 ---------- */
-  /* 大号数字：等宽字形，避免数字跳动 */
-  .metric {
-    @apply font-semibold tabular-nums tracking-tight text-ink;
-  }
-  /* 指标下方的极小说明 */
-  .metric-note {
-    @apply text-sm text-ink-soft;
-  }
+}
+
+
+/* ---------------------------------------------------------------------------
+ * 数据指标磁贴（Galaxy MetricTile）
+ * 依赖自定义属性 --tile-tone，放层外，理由见文件末尾「装饰层」说明。
+ * ------------------------------------------------------------------------- */
+.stat-tile {
+  --tile-tone: #3b6df6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow: hidden;
+  border: 1px solid #edf1f8;
+  border-radius: 1.15rem;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  transition:
+    border-color 300ms cubic-bezier(0, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+.stat-tile::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--tile-tone);
+  opacity: 0.9;
+}
+.stat-tile:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 1px 2px rgba(11, 18, 32, 0.04), 0 10px 28px -14px rgba(11, 18, 32, 0.1);
+}
+.stat-tile--ok {
+  --tile-tone: #12a150;
+}
+.stat-tile--warn {
+  --tile-tone: #c77700;
+}
+.stat-tile--danger {
+  --tile-tone: #dc2626;
+}
+.stat-tile--brand {
+  --tile-tone: #3b6df6;
+}
+.stat-tile--ink {
+  --tile-tone: #8c97ac;
 }
 
 /* 宽屏下进一步释放内容宽度 */
 @media (min-width: 1536px) {
   .shell {
     max-width: 1600px;
+  }
+}
+
+/* 触屏设备关闭指针光源（没有 hover 语义，留着只会造成误触感） */
+@media (hover: none) {
+  .pointer-glow {
+    display: none;
   }
 }
 
@@ -196,6 +332,113 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ---------------------------------------------------------------------------
+ * 装饰层（Galaxy 组件层 · 结构样式）
+ * ---------------------------------------------------------------------------
+ * 为什么这些规则刻意写在 @layer 之外：
+ *   Tailwind 只会处理它能识别的「工具类」。一旦 @layer components 内部出现
+ *   含原生 CSS 声明的规则（例如 transition: opacity …），该层从这条规则
+ *   往后的内容会被**静默丢弃**、且不报任何错。
+ *   本项目已经在一次真实回归里踩到：面板标题、按钮、徽章集体失效，而构建依旧成功。
+ *   因此约定：只由 @apply 组成的规则放 @layer；任何带原生声明的装饰规则一律放层外。
+ * ------------------------------------------------------------------------- */
+
+/* 卡片顶部高光线（抽自 galaxy `Cards/Admin12121_average-parrot-89` 的边缘光条） */
+.galaxy-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0) 0%,
+    rgba(59, 109, 246, 0.55) 30%,
+    rgba(124, 92, 252, 0.55) 62%,
+    rgba(37, 99, 235, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  pointer-events: none;
+}
+.galaxy-card:hover::before {
+  opacity: 1;
+}
+
+/* 主按钮高光扫过（抽自 galaxy `Buttons/Creatlydev_pretty-grasshopper-57`） */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  left: -40%;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+  pointer-events: none;
+}
+.btn-primary:hover::after {
+  opacity: 1;
+  animation: sweep 900ms ease-out;
+}
+
+/* 指针光源（galaxy Spotlight 卡片模式，桌面端专属） */
+.pointer-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  background: radial-gradient(
+    16rem 16rem at var(--mx, 50%) var(--my, 0%),
+    rgba(59, 109, 246, 0.13),
+    transparent 68%
+  );
+}
+.pointer-host:hover .pointer-glow {
+  opacity: 1;
+}
+
+/* 详情页头部记录线：左右往复，暗示数据是活的 */
+.sweep-line {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+}
+.sweep-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(59, 109, 246, 0.9), transparent);
+  animation: sweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 分位刻度：把「相对位置」画成一条轨，而不是只给一个形容词 */
+.percentile-track {
+  position: relative;
+  height: 6px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf1f8;
+}
+.percentile-track__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #a4bfff, #3b6df6 60%, #7c5cfc);
+  transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }

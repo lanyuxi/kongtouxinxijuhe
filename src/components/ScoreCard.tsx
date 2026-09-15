@@ -2,14 +2,18 @@ import type { RiskLevel, ScoreItem } from '../lib/types';
 import { AUTH_LEVEL, RISK_LABEL, RISK_REASON } from '../lib/labels';
 import { RiskBadge } from './Badge';
 
-/** 评分条：按达成比例着色（达标绿 / 未满橙 / 零分灰） */
+/**
+ * 评分条：按达成比例着色（达标绿 / 未满橙 / 零分灰）。
+ * 高度从 6px 收到 4px、圆角收满 —— 明细列表里会有十几条，
+ * 条太粗时视觉噪音会盖过分数本身。
+ */
 function Bar({ value, max, tone }: { value: number; max: number; tone: string }) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
   return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full bg-page">
+    <div className="h-1 w-full overflow-hidden rounded-full bg-line-soft">
       <div
         className={`h-full rounded-full transition-all duration-500 ease-out ${tone}`}
-        style={{ width: `${pct}%` }}
+        style={{ width: `${Math.max(pct, value > 0 ? 3 : 0)}%` }}
       />
     </div>
   );

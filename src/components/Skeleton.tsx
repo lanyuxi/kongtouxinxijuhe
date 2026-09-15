@@ -15,10 +15,14 @@
  * 动效遵守 prefers-reduced-motion（在 index.css 里统一关闭动画）。
  */
 
-/** 单张卡片骨架：尺寸与真实卡片一致，避免内容出现时发生布局跳动 */
+/**
+ * 单张卡片骨架：尺寸与真实卡片一致，避免内容出现时发生布局跳动。
+ * 结构对齐 ProjectCard 的最终形态（图标 / 标题 / 简介 / 分位轨 / 底栏），
+ * 这样内容填充时不会出现「换了一版布局」的突兀感。
+ */
 function CardSkeleton() {
   return (
-    <div className="flex h-full flex-col rounded-card border border-line bg-card p-4">
+    <div className="galaxy-card flex h-full flex-col p-4" aria-hidden>
       <div className="flex items-center gap-3 pr-[4.75rem]">
         <span className="skeleton h-10 w-10 shrink-0 rounded-xl" aria-hidden />
         <span className="skeleton h-4 w-2/3 rounded-md" aria-hidden />
@@ -26,6 +30,7 @@ function CardSkeleton() {
       <span className="skeleton mt-3 h-3 w-1/3 rounded-md" aria-hidden />
       <span className="skeleton mt-2 h-3 w-full rounded-md" aria-hidden />
       <span className="skeleton mt-1.5 h-3 w-4/5 rounded-md" aria-hidden />
+      <div className="mt-3 h-1 w-full rounded-full bg-line-soft" aria-hidden />
       <div className="mt-auto flex items-center gap-2 border-t border-line-soft pt-2.5">
         <span className="skeleton h-3 w-24 rounded-md" aria-hidden />
         <span className="skeleton h-3 w-14 rounded-md" aria-hidden />

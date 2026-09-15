@@ -1,5 +1,6 @@
 import type { AirdropProject } from '../lib/types';
 import { relativeTime, isStale } from '../lib/labels';
+import { MetricTile } from './galaxy';
 
 /**
  * 首页数据摘要。
@@ -23,33 +24,53 @@ export function StatBar({
   ).length;
   const stale = isStale(updatedAt);
 
-  const stats = [
-    { label: '项目总数', value: projects.length, note: `最近发现 ${relativeTime(lastDiscovery)}` },
-    { label: '今日新增', value: newToday, note: `数据更新 ${relativeTime(updatedAt)}` },
-    { label: '值得关注', value: highValue, note: '价值等级 S / A', tone: 'text-ok' },
-    { label: '高风险', value: highRisk, note: '需要谨慎核实', tone: 'text-danger' },
+  /**
+   * 四个指标的口径必须与颜色一致：
+   *   蓝 = 规模（有多少）
+   *   绿 = 机会（值得投入）
+   *   红 = 风险（需要回避）
+   * 颜色一旦只做装饰，用户就必须读文字才能判断语义，指标条也就白做了。
+   */
+  const stats: {
+    label: string;
+    value: number;
+    note: string;
+    tone: 'brand' | 'ok' | 'danger' | 'ink';
+  }[] = [
+    {
+      label: '项目总数',
+      value: projects.length,
+      note: `最近发现 ${relativeTime(lastDiscovery)}`,
+      tone: 'brand',
+    },
+    { label: '今日新增', value: newToday, note: `数据更新 ${relativeTime(updatedAt)}`, tone: 'ink' },
+    { label: '值得关注', value: highValue, note: '价值等级 S / A', tone: 'ok' },
+    { label: '高风险', value: highRisk, note: '需要谨慎核实', tone: 'danger' },
   ];
 
   return (
-    <section className="overflow-hidden rounded-3xl border border-line bg-white shadow-card">
-      <dl className="grid grid-cols-2 divide-line lg:grid-cols-4 lg:divide-x">
-        {stats.map((s, i) => (
-          <div
+    <section className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="eyebrow">数据总览</h2>
+        <p className="text-xs text-ink-faint">
+          四项指标口径独立 · 数据 {relativeTime(updatedAt)}更新
+        </p>
+      </div>
+      {/* 指标磁贴：每个数字左侧一道极短色条表明口径，比给整块上色更克制，
+          也更适合 4 列并排时的扫描节奏。 */}
+      <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {stats.map((s) => (
+          <MetricTile
             key={s.label}
-            className={`px-6 py-5 ${i < 2 ? 'border-b border-line lg:border-b-0' : ''} ${
-              i % 2 === 0 ? 'border-r border-line lg:border-r-0' : ''
-            }`}
-          >
-            <dt className="text-xs font-medium uppercase tracking-[0.14em] text-ink-faint">
-              {s.label}
-            </dt>
-            <dd className={`metric mt-2 text-3xl ${s.tone ?? ''}`}>{s.value}</dd>
-            <dd className="metric-note mt-1 text-xs">{s.note}</dd>
-          </div>
+            label={s.label}
+            value={s.value}
+            hint={s.note}
+            tone={s.tone}
+          />
         ))}
       </dl>
       {stale && (
-        <p className="border-t border-warn/30 bg-warn-wash px-6 py-3 text-xs font-medium text-warn">
+        <p className="rounded-xl border border-warn/30 bg-warn-wash px-5 py-3 text-xs font-medium text-warn">
           ⚠ 数据超过 24 小时未更新，信息可能已经变化
         </p>
       )}

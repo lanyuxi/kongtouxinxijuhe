@@ -71,7 +71,9 @@ export function FilterBar({
     <section className="card" aria-labelledby="filter-title">
       {/* 头部：标题 + 结果计数，明确「这是筛选区」 */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 id="filter-title" className="text-lg font-semibold tracking-tight text-ink">
+        {/* 与 StatBar / 详情页统一：分区标题都用 .panel-title 的色条语言，
+            这样用户在长页面里滚动时能靠「有没有色条」判断自己在哪个层级 */}
+        <h2 id="filter-title" className="panel-title">
           筛选与排序
         </h2>
         {/* 结果计数对读屏用户同样重要：筛选后「结果从 188 变成 7」必须能被感知，

@@ -381,6 +381,7 @@ npm run dev      # http://localhost:5173
 | 前端框架 | React 18 + TypeScript 5.6 |
 | 构建工具 | Vite 5 |
 | 样式 | Tailwind CSS 3（浅色主题） |
+| 视觉组件层 | [uiverse-io/galaxy](https://github.com/uiverse-io/galaxy) 的组件模式（MIT，本地适配，零运行时依赖） |
 | 路由 | 自研 hash 路由（零依赖，纯静态友好） |
 | 数据 | 静态 JSON（随仓库发布） |
 | 数据处理 | Node.js + tsx（纯函数引擎） |
@@ -389,6 +390,24 @@ npm run dev      # http://localhost:5173
 | 定时抓取 | CNB 流水线 + GitHub Actions（均为每 10 分钟，双通道） |
 | 静态部署 | GitHub Actions → GitHub Pages（更新后自动推送，无需人工介入） |
 | 开发预览 | CNB 云原生开发「仅预览模式」 |
+
+### 关于视觉组件层（Galaxy）
+
+界面视觉建立在开源项目 **[uiverse-io/galaxy](https://github.com/uiverse-io/galaxy)**
+（MIT，12.8k stars）的组件模式之上。
+
+需要说明的是：**它不是一个 npm 包**，仓库里是约 3800 个纯 HTML + CSS 片段
+（`Buttons/`、`Cards/`、`loaders/`、`Patterns/` …），因此不存在
+`npm i galaxy` 这种用法。本项目的接入方式是
+「挑出与信息密度匹配的组件模式 → 统一收敛到本站的设计令牌」，
+落点只有两个文件：
+
+- `src/styles/index.css` —— 令牌化的组件类（卡片 / 按钮 / 指标磁贴 / 骨架屏）
+- `src/components/galaxy.tsx` —— 组件基元（`MetricTile` / `SpotlightHost` / `Shimmer`）
+
+**没有引入任何运行时依赖**，仍然保持「零服务器、零数据库」的静态交付形态。
+具体抽用了哪些组件、为什么这么抽，见 [`docs-DESIGN.md`](./docs-DESIGN.md)
+的「视觉层」与「踩坑记录」两节。
 
 ---
 

@@ -6,6 +6,7 @@ import { chineseBlurb } from '../lib/describe';
 import { percentilePhrase } from '../lib/percentile';
 import type { Percentiles } from '../lib/percentile';
 import { ProjectLogo } from './ProjectLogo';
+import { SpotlightHost } from './Glow';
 
 /**
  * 项目卡片（紧凑竖排版）。
@@ -47,6 +48,15 @@ const STATUS_TONE: Record<AirdropProject['status'], string> = {
   confirmed: 'text-ok',
   claim_live: 'text-warn',
   ended: 'text-ink-faint',
+};
+
+/** 状态 → 圆点色（与文字色同源，但用一个实心点把状态从「一行字」变成「一个信号」） */
+const STATUS_DOT: Record<AirdropProject['status'], string> = {
+  new: 'bg-brand',
+  potential: 'bg-warn',
+  confirmed: 'bg-ok',
+  claim_live: 'bg-warn',
+  ended: 'bg-ink-faint',
 };
 
 /** 风险 → 文字色 */
@@ -92,7 +102,8 @@ export function ProjectCard({
   const valuePct = percentiles?.value.get(p.slug);
 
   return (
-    <article className="group relative flex h-full flex-col rounded-card border border-line bg-card p-4 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-card">
+    <SpotlightHost className="h-full">
+      <article className="galaxy-card group flex h-full flex-col p-4">
       {/* 右上角控件：必须位于主链接之外，否则点击会连带触发卡片跳转
           （<a> 里嵌 <button> 属于非法 HTML，浏览器会把它拆出来，布局会错乱） */}
       <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5">
@@ -102,11 +113,7 @@ export function ProjectCard({
           aria-pressed={favorited}
           aria-label={favorited ? '取消收藏' : '收藏项目'}
           title={favorited ? '取消收藏' : '收藏项目'}
-          className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border text-xs transition duration-200 ${
-            favorited
-              ? 'border-brand/40 bg-brand-50 text-brand-600'
-              : 'border-line bg-white text-ink-faint hover:border-brand/40 hover:text-brand-600'
-          }`}
+          className="icon-btn h-7 w-7"
         >
           {favorited ? '★' : '☆'}
         </button>
@@ -117,7 +124,7 @@ export function ProjectCard({
             rel="noopener noreferrer"
             title="前往官方页面"
             aria-label={`前往 ${p.name} 官方页面`}
-            className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line bg-white text-xs text-ink-faint no-underline transition duration-200 hover:border-brand/40 hover:text-brand-600"
+            className="icon-btn h-7 w-7 no-underline"
           >
             ↗
           </a>
@@ -144,6 +151,7 @@ export function ProjectCard({
 
         {/* 状态 + 新手友好角标：彩色文字，紧跟名称下方（不占右侧按钮区域，可吃满整行） */}
         <p className="mt-2 flex items-center gap-2 truncate text-xs font-medium">
+          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${STATUS_DOT[p.status]}`} aria-hidden />
           <span className={STATUS_TONE[p.status]}>{STATUS_LABEL[p.status]}</span>
           {beginner.friendly && (
             <span
@@ -202,17 +210,28 @@ export function ProjectCard({
             <span className="shrink-0 whitespace-nowrap">
               价值：<span className="font-medium text-ink">{p.scores.grade}</span>
             </span>
-            {/* 相对分位：让「价值 C」有一个参照系，而不是孤零零一个字母 */}
-            {valuePct !== undefined && (
-              <span
-                className="shrink-0 whitespace-nowrap text-ink-faint"
-                title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
-              >
-                · {percentilePhrase(valuePct)}
-              </span>
-            )}
           </div>
-          <div className="mt-1 flex items-center justify-between gap-2 text-ink-faint">
+          {/* 相对分位：让「价值 C」有一个参照系。
+              这一版把它画成一条刻度轨而不是一句形容词 ——
+              「前 18%」比「相对靠前」可比较、可跨卡片扫读。 */}
+          {valuePct !== undefined && (
+            <div
+              className="mt-2"
+              title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
+            >
+              <div className="flex items-center justify-between gap-2 text-[11px] text-ink-faint">
+                <span>本批相对位置</span>
+                <span className="tabular-nums text-ink-soft">{percentilePhrase(valuePct)}</span>
+              </div>
+              <span className="percentile-track mt-1 block h-1">
+                <span
+                  className="percentile-track__fill block"
+                  style={{ width: `${Math.max(6, Math.round(valuePct * 100))}%` }}
+                />
+              </span>
+            </div>
+          )}
+          <div className="mt-2 flex items-center justify-between gap-2 text-ink-faint">
             <span className="truncate">{relativeTime(p.last_checked_at)}验证</span>
             <span aria-hidden className="shrink-0 text-line transition-colors group-hover:text-brand-600">
               ›
@@ -220,6 +239,7 @@ export function ProjectCard({
           </div>
         </div>
       </a>
-    </article>
+      </article>
+    </SpotlightHost>
   );
 }
