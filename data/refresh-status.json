@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T10:12:10.148Z",
-  "finished_at": "2026-09-15T10:12:27.154Z",
+  "started_at": "2026-09-15T10:42:14.089Z",
+  "finished_at": "2026-09-15T10:42:28.439Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T10:12:10.148Z",
+  "updated_at": "2026-09-15T10:42:14.089Z",
   "data_changed": true,
-  "change_summary": "变更 9 个：Bedrock uniBTC 内容有更新；Concrete 内容有更新；Defi Saver Asset Management 内容有更新",
+  "change_summary": "变更 16 个：Aave V3 内容有更新；EigenCloud 内容有更新；Gauntlet 内容有更新",
   "change_details": [
-    "Bedrock uniBTC 内容有更新",
-    "Concrete 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Ethena USDe 内容有更新",
-    "Kinetiq kHYPE 内容有更新"
+    "Aave V3 内容有更新",
+    "EigenCloud 内容有更新",
+    "Gauntlet 内容有更新",
+    "Hyperithm 内容有更新",
+    "K3 Capital 内容有更新"
   ],
   "added": 0,
-  "modified": 9,
+  "modified": 16,
   "removed": 0
 }

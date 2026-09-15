@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/aiw3/",
-      "fetched_at": "2026-09-15T10:12:10.171Z"
+      "fetched_at": "2026-09-15T10:42:14.124Z"
     }
   ],
   "evidence": [
@@ -376,7 +376,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-15T10:12:10.171Z",
+  "last_checked_at": "2026-09-15T10:42:14.124Z",
   "last_changed_at": "2026-09-13T13:49:13.733Z",
   "sourcedSteps": [
     {
