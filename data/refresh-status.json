@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T09:12:10.690Z",
-  "finished_at": "2026-09-15T09:12:25.412Z",
+  "started_at": "2026-09-15T09:42:12.126Z",
+  "finished_at": "2026-09-15T09:42:27.243Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T09:12:10.690Z",
+  "updated_at": "2026-09-15T09:42:12.126Z",
   "data_changed": true,
-  "change_summary": "变更 32 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 2 个：Gauntlet 内容有更新；Steakhouse Financial 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新"
+    "Gauntlet 内容有更新",
+    "Steakhouse Financial 内容有更新"
   ],
   "added": 0,
-  "modified": 32,
+  "modified": 2,
   "removed": 0
 }
