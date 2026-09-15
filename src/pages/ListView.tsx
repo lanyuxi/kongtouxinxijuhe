@@ -1,6 +1,14 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { AirdropProject, LiveIndex } from '../lib/types';
-import { applyCostBucket, DEFAULT_FILTERS, filterProjects, sortProjects } from '../lib/filter';
+import {
+  applyCostBucket,
+  DEFAULT_FILTERS,
+  filterByOverview,
+  filterProjects,
+  sortProjects,
+} from '../lib/filter';
+import { OVERVIEW_LABEL } from '../lib/filter';
+import type { OverviewKey } from '../lib/filter';
 import { flattenGroups, groupByProtocol } from '../lib/describe';
 import type { Filters } from '../lib/filter';
 import { FilterBar } from '../components/FilterBar';
@@ -46,6 +54,28 @@ export function ListView({
   onClearAll: () => void;
 }) {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  /**
+   * 数据总览口径（点磁贴选中）。
+   *
+   * 为什么不复用 filters：
+   *   总览磁贴是「平台的四个既定口径」，不是用户自由拼条件；
+   *   若把它翻译成 status / risk 等字段写进 filters，
+   *   既表达不了「今日新增」「S/A 价值」这类组合口径，
+   *   又会污染用户在筛选区里的选择（重置筛选时该不该清掉？）。
+   *   因此独立成一层，只影响列表展示范围，不写入筛选器。
+   */
+  const [overview, setOverview] = useState<OverviewKey | null>(null);
+
+  /**
+   * 点击磁贴后把列表滚进视野。
+   * 磁贴通常已在首屏内，但窄屏下点了「高风险」而结果在屏幕下方时，
+   * 用户会以为「点了没反应」。滚动用 smooth + 只滚一次，不劫持用户位置。
+   */
+  const listRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!overview) return;
+    listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [overview]);
 
   const viewProjects = useMemo(() => {
     switch (view) {
@@ -62,10 +92,23 @@ export function ListView({
     }
   }, [view, projects, favorites]);
 
+  /**
+   * 先按总览口径收敛，再交给筛选区与排序。
+   * 顺序很关键：总览是「看哪一批」，筛选区是「在这一批里再挑」，
+   * 反过来做会让用户以为筛选条件被磁贴重置了。
+   */
+  const overviewProjects = useMemo(
+    () => filterByOverview(viewProjects, overview),
+    [viewProjects, overview],
+  );
+
   const visible = useMemo(() => {
     const f = view === 'hot' ? { ...filters, sort: 'value' as const } : filters;
-    return sortProjects(filterProjects(viewProjects, f), f.sort);
-  }, [viewProjects, filters, view]);
+    return sortProjects(filterProjects(overviewProjects, f), f.sort);
+  }, [overviewProjects, filters, view]);
+
+  /** 当前生效的总览口径，用于在筛选区里给出一条可移除的条件说明 */
+  const overviewLabel = overview ? OVERVIEW_LABEL[overview] : null;
 
   /**
    * 骨架屏开关。
@@ -84,7 +127,7 @@ export function ListView({
     setComputing(true);
     const t = setTimeout(() => setComputing(false), 180);
     return () => clearTimeout(t);
-  }, [projects, filters, view]);
+  }, [projects, filters, view, overview]);
 
   /**
    * 同协议归组：aave-v3 / aave-v4 / aave-horizon-rwa 共用 aave.com，
@@ -111,11 +154,6 @@ export function ListView({
       ),
     [projects, updatedAt],
   );
-
-  const newToday = useMemo(() => {
-    const start = new Date(new Date().toISOString().slice(0, 10) + 'T00:00:00Z').getTime();
-    return projects.filter((p) => new Date(p.discovered_at).getTime() >= start).length;
-  }, [projects]);
 
   if (view === 'watchlist') {
     const saved = projects.filter((p) => favorites.includes(p.slug));
@@ -179,9 +217,10 @@ export function ListView({
       {computing && projects.length > 0 && <CardSkeletonGrid rows={1} />}
       <StatBar
         projects={projects}
-        newToday={newToday}
         updatedAt={updatedAt}
         lastDiscovery={lastDiscovery}
+        active={overview}
+        onSelect={setOverview}
       />
       {/* 防骗提示常驻：即使看过引导也要长期可见，这是新手最大的损失来源 */}
       <SafetyBar />
@@ -198,11 +237,22 @@ export function ListView({
         onReset={() => setFilters(DEFAULT_FILTERS)}
         resultCount={entries.length}
         mergedVariants={mergedVariants}
+        activeOverview={overviewLabel}
+        onClearOverview={() => setOverview(null)}
       />
       {visible.length === 0 ? (
-        <EmptyState text="没有符合当前筛选条件的项目，试试放宽筛选条件。" />
+        <EmptyState
+          text={
+            overviewLabel
+              ? `「${overviewLabel}」在当前筛选条件下没有项目，试试放宽筛选条件，或取消总览口径。`
+              : '没有符合当前筛选条件的项目，试试放宽筛选条件。'
+          }
+        />
       ) : (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div
+          ref={listRef}
+          className="grid scroll-mt-28 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
           {entries.map((e) => (
             <ProjectCard
               key={e.project.slug}

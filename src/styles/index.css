@@ -442,3 +442,63 @@
   background: linear-gradient(90deg, #a4bfff, #3b6df6 60%, #7c5cfc);
   transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* ---------------------------------------------------------------------------
+ * 指标磁贴的「可点击」状态
+ * ---------------------------------------------------------------------------
+ * 数据总览的四个数字同时是筛选入口，因此必须同时表达三件事：
+ *   1. 它是可以点的（光标 + 悬停抬起）—— 否则与只读统计无从区分；
+ *   2. 点击后当前生效的是哪一项（描边 + 底色 + 右上角标记）；
+ *   3. 它是按钮而不是卡片（focus-visible 必须有可见焦点环）。
+ * 选中态刻意不复用 --tile-tone 的色条：色条表达的是「这是哪一类指标」，
+ * 两个语义共用一个视觉通道会让用户分不清「高风险的红」和「选中的红」。
+ * ------------------------------------------------------------------------- */
+.stat-tile--interactive {
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  width: 100%;
+}
+
+.stat-tile--interactive:hover {
+  border-color: var(--tile-tone);
+  transform: translateY(-1px);
+}
+
+.stat-tile--interactive:active {
+  transform: translateY(0);
+}
+
+.stat-tile--interactive:focus-visible {
+  outline: 2px solid var(--tile-tone);
+  outline-offset: 2px;
+}
+
+/* 选中：加粗描边 + 极浅同色底，与 hover 区分开（hover 只改描边色） */
+.stat-tile--selected,
+.stat-tile--interactive.stat-tile--selected:hover {
+  border-color: var(--tile-tone);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--tile-tone) 28%, transparent);
+  background: color-mix(in srgb, var(--tile-tone) 5%, #ffffff);
+}
+
+.stat-tile__flag {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--tile-tone);
+  opacity: 0;
+}
+
+.stat-tile--selected .stat-tile__flag {
+  opacity: 1;
+}
+
+/* 触屏设备没有 hover 语义，位移只会造成误触感 */
+@media (hover: none) {
+  .stat-tile--interactive:hover {
+    transform: none;
+  }
+}

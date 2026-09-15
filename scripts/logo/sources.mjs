@@ -105,3 +105,118 @@ export function isPlaceholderSvg(text) {
   if (textNodes.length === 1 && textNodes[0].length === 1) return true;
   return false;
 }
+
+/**
+ * 取「根域」：a.b.example.com → example.com；同时剥掉 www。
+ *
+ * 为什么需要它：
+ *   数据源抓到的官网常常是子域（app. / claim. / engage. / portal. …），
+ *   而 favicon 绝大多数挂在根域上。原实现只拿抓到的那个主机名去请求 favicon，
+ *   子域一旦没有独立图标就整条候选链失败 —— beezie 走的正是这条路径。
+ *   补一个根域候选，成本是一次额外请求，换来的是整个子域场景的覆盖率。
+ *
+ * 注意：不处理 `.co.uk` 这类多段公共后缀（本项目涉及的项目几乎没有），
+ *      保守返回「最后两段」，比引入完整 PSL 依赖更可控。
+ */
+export function rootDomainOf(host) {
+  if (!host) return null;
+  const h = host.replace(/^www\./, '');
+  const parts = h.split('.');
+  if (parts.length <= 2) return h;
+  return parts.slice(-2).join('.');
+}
+
+/**
+ * 从图片文件头解析真实像素尺寸（纯 JS，不依赖任何外部二进制）。
+ *
+ * 为什么必须自带解析器，而不是调 ffprobe：
+ *   CI 跑在 `node:22` 官方镜像里，**不含 ffmpeg/ffprobe**。
+ *   原实现用 ffprobe 探测尺寸，探测失败即被判为「无法解析图像尺寸」，
+ *   于是所有非 SVG 候选全部落空 —— 而本地（装了 ffmpeg）却一切正常。
+ *   这是一类最难查的「环境差异型失败」：同一条命令本地过、CI 挂。
+ *   尺寸本就写在文件头里，自己解析既准确又零依赖。
+ *
+ * 覆盖 PNG / JPEG / GIF / WebP(VP8/VP8L/VP8X) / BMP / ICO。
+ * 解析不出来返回 null（按「无法解析」处理，不会误判为可用）。
+ */
+export function parseImageSize(buf) {
+  if (!buf || buf.length < 24) return null;
+  const hex = buf.subarray(0, 12).toString('hex');
+
+  // PNG：签名 8 字节 + 长度 4 + 类型 4，随后即 IHDR 的宽高（大端）
+  if (hex.startsWith('89504e470d0a1a0a')) {
+    if (buf.length < 24) return null;
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  }
+
+  // JPEG：逐段跳过，找 SOFn（0xC0-0xCF，排除 DHT/JPG/DAC）
+  if (hex.startsWith('ffd8ff')) {
+    let off = 2;
+    while (off + 9 < buf.length) {
+      if (buf[off] !== 0xff) {
+        off += 1;
+        continue;
+      }
+      const marker = buf[off + 1];
+      // 无长度字段的标记：直接跳过
+      if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+        off += 2;
+        continue;
+      }
+      const len = buf.readUInt16BE(off + 2);
+      if (marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc) {
+        return { h: buf.readUInt16BE(off + 5), w: buf.readUInt16BE(off + 7) };
+      }
+      off += 2 + len;
+    }
+    return null;
+  }
+
+  // GIF：逻辑屏幕描述符固定在第 6 字节，小端
+  if (buf.subarray(0, 3).toString('ascii') === 'GIF') {
+    return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
+  }
+
+  // WebP：三种子格式的宽高位置各不相同
+  if (
+    buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
+    buf.subarray(8, 12).toString('ascii') === 'WEBP'
+  ) {
+    const fourcc = buf.subarray(12, 16).toString('ascii');
+    if (fourcc === 'VP8 ') {
+      return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff };
+    }
+    if (fourcc === 'VP8L') {
+      const b = buf.readUInt32LE(21);
+      return { w: (b & 0x3fff) + 1, h: ((b >> 14) & 0x3fff) + 1 };
+    }
+    if (fourcc === 'VP8X') {
+      return {
+        w: (buf[24] | (buf[25] << 8) | (buf[26] << 16)) + 1,
+        h: (buf[27] | (buf[28] << 8) | (buf[29] << 16)) + 1,
+      };
+    }
+    return null;
+  }
+
+  // BMP
+  if (buf[0] === 0x42 && buf[1] === 0x4d) {
+    return { w: Math.abs(buf.readInt32LE(18)), h: Math.abs(buf.readInt32LE(22)) };
+  }
+
+  // ICO / CUR：取目录里分辨率最大的一条（0 表示 256）
+  if (hex.startsWith('00000100') || hex.startsWith('00000200')) {
+    const count = buf.readUInt16LE(4);
+    if (count < 1 || buf.length < 6 + count * 16) return null;
+    let best = null;
+    for (let i = 0; i < count; i++) {
+      const off = 6 + i * 16;
+      const w = buf[off] === 0 ? 256 : buf[off];
+      const h = buf[off + 1] === 0 ? 256 : buf[off + 1];
+      if (!best || w * h > best.w * best.h) best = { w, h };
+    }
+    return best;
+  }
+
+  return null;
+}

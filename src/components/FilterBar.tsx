@@ -42,6 +42,8 @@ export function FilterBar({
   onReset,
   resultCount,
   mergedVariants = 0,
+  activeOverview = null,
+  onClearOverview,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
@@ -55,6 +57,15 @@ export function FilterBar({
    * 因此这里如实拆开：「共 X 张卡片（含 Y 条同协议产品线已折叠）」。
    */
   mergedVariants?: number;
+  /**
+   * 当前生效的「数据总览」口径名称（点击上方磁贴产生）。
+   *
+   * 为什么筛选区必须显示它：口径是加在筛选条件**之上**的一层收敛，
+   * 一旦用户忘了自己点过磁贴，就会把「筛出来怎么变少了」当成 Bug。
+   * 因此这里如实回显，并给一个就地移除的入口，不必再滚回顶部找磁贴。
+   */
+  activeOverview?: string | null;
+  onClearOverview?: () => void;
 }) {
   const set = <K extends keyof Filters>(k: K, v: Filters[K]) => onChange({ ...filters, [k]: v });
 
@@ -90,6 +101,24 @@ export function FilterBar({
       </div>
 
       <div className="mt-5 flex flex-col gap-5">
+        {/* 总览口径回显：只在生效时出现，避免长期占位变成噪音 */}
+        {activeOverview && (
+          <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-brand/25 bg-brand-50 px-4 py-3">
+            <span className="text-xs text-ink-soft" role="status" aria-live="polite">
+              已按数据总览口径筛选：
+              <strong className="ml-1 font-medium text-brand-700">{activeOverview}</strong>
+            </span>
+            <button
+              type="button"
+              onClick={() => onClearOverview?.()}
+              className="chip border-brand/30 bg-white text-brand-700 transition hover:border-brand hover:bg-brand-50"
+              aria-label={`取消「${activeOverview}」筛选`}
+            >
+              ✕ 取消该口径
+            </button>
+          </div>
+        )}
+
         {/* 搜索框：独立一行并加大，作为主操作 */}
         <div className="relative">
           <span
