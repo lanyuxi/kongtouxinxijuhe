@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T12:42:10.280Z",
-  "finished_at": "2026-09-15T12:42:33.094Z",
+  "started_at": "2026-09-15T13:12:11.947Z",
+  "finished_at": "2026-09-15T13:12:33.461Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T12:42:10.280Z",
+  "updated_at": "2026-09-15T13:12:11.947Z",
   "data_changed": true,
-  "change_summary": "变更 8 个：Ethena USDe 内容有更新；GTBTC 内容有更新；Mellow Core 内容有更新",
+  "change_summary": "变更 9 个：Bedrock uniBTC 内容有更新；Mellow Core 内容有更新；RockawayX 内容有更新",
   "change_details": [
-    "Ethena USDe 内容有更新",
-    "GTBTC 内容有更新",
+    "Bedrock uniBTC 内容有更新",
     "Mellow Core 内容有更新",
-    "mETH Protocol 内容有更新",
-    "Polymarket International 内容有更新"
+    "RockawayX 内容有更新",
+    "Sentora Curator 内容有更新",
+    "SSV Network 内容有更新"
   ],
   "added": 0,
-  "modified": 8,
+  "modified": 9,
   "removed": 0
 }
