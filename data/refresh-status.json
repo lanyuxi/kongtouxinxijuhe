@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T08:42:10.546Z",
-  "finished_at": "2026-09-15T08:42:31.025Z",
+  "started_at": "2026-09-15T09:12:10.690Z",
+  "finished_at": "2026-09-15T09:12:25.412Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T08:42:10.546Z",
+  "updated_at": "2026-09-15T09:12:10.690Z",
   "data_changed": true,
-  "change_summary": "变更 7 个：B2 Buzz 内容有更新；GMX V2 Perps 内容有更新；Hyperithm 内容有更新",
+  "change_summary": "变更 32 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
-    "B2 Buzz 内容有更新",
-    "GMX V2 Perps 内容有更新",
-    "Hyperithm 内容有更新",
-    "Kelp 内容有更新",
-    "Polymarket International 内容有更新"
+    "Aave V3 内容有更新",
+    "b14g 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新"
   ],
   "added": 0,
-  "modified": 7,
+  "modified": 32,
   "removed": 0
 }
