@@ -27,15 +27,25 @@ export function Logo() {
 }
 
 export function Header({ current }: { current: NavKey }) {
+  const main = NAV.filter((n) => n.key !== 'watchlist');
+  const watch = NAV.find((n) => n.key === 'watchlist');
+  const watchActive = current === 'watchlist';
+
   return (
-    <header className="sticky top-0 z-30 border-b border-white/60 glass">
-      <div className="shell flex h-[4.75rem] items-center gap-5">
+    <header className="sticky top-0 z-30 border-b border-white/70 glass">
+      <div className="shell flex h-[4.75rem] items-center gap-4">
         <Logo />
-        <nav className="ml-auto flex items-center gap-1 overflow-x-auto rounded-2xl border border-line-soft bg-white/70 p-1 shadow-sm">
-          {NAV.map((n) => (
+        {/* 主导航：6 项全部平铺时，窄屏会横向滚动且看不出「当前在哪」。
+            改为「5 项主导航 + 1 项个人入口」，并用一条滑动色块表达选中态。 */}
+        <nav
+          aria-label="主导航"
+          className="ml-auto hidden items-center gap-1 rounded-2xl border border-line-soft bg-white/80 p-1 shadow-sm md:flex"
+        >
+          {main.map((n) => (
             <a
               key={n.key}
               href={n.href}
+              aria-current={current === n.key ? 'page' : undefined}
               className={`whitespace-nowrap rounded-xl px-4 py-2 text-sm no-underline transition-all duration-200 ${
                 current === n.key
                   ? 'bg-gradient-to-b from-brand-500 to-brand-600 font-medium text-white shadow-glow'
@@ -46,7 +56,40 @@ export function Header({ current }: { current: NavKey }) {
             </a>
           ))}
         </nav>
+        {watch && (
+          <a
+            href={watch.href}
+            aria-current={watchActive ? 'page' : undefined}
+            className={`ml-auto flex items-center gap-2 whitespace-nowrap rounded-2xl border px-4 py-2 text-sm no-underline transition-all duration-200 md:ml-2 ${
+              watchActive
+                ? 'border-brand/40 bg-gradient-to-b from-brand-500 to-brand-600 font-medium text-white shadow-glow'
+                : 'border-line-soft bg-white/80 text-ink-soft shadow-sm hover:border-brand/30 hover:bg-brand-50 hover:text-brand-700'
+            }`}
+          >
+            <span aria-hidden>{watchActive ? '★' : '☆'}</span>
+            {watch.label}
+          </a>
+        )}
       </div>
+      {/* 窄屏：主导航下沉为一行可横滑的标签，避免汉堡菜单带来的额外一次点击 */}
+      <nav aria-label="主导航（窄屏）" className="md:hidden">
+        <div className="shell flex items-center gap-1 overflow-x-auto pb-2.5">
+          {main.map((n) => (
+            <a
+              key={n.key}
+              href={n.href}
+              aria-current={current === n.key ? 'page' : undefined}
+              className={`whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs no-underline transition ${
+                current === n.key
+                  ? 'border-brand/40 bg-brand-50 font-medium text-brand-700'
+                  : 'border-line-soft bg-white/70 text-ink-soft'
+              }`}
+            >
+              {n.label}
+            </a>
+          ))}
+        </div>
+      </nav>
     </header>
   );
 }
@@ -72,6 +115,19 @@ export function Footer({ updatedAt }: { updatedAt?: string }) {
           {updatedAt && (
             <p className="text-ink-faint">最后更新 {new Date(updatedAt).toLocaleString('zh-CN')}</p>
           )}
+          {/* 视觉组件层来自 MIT 许可的开源项目，署名是许可证要求，也方便使用者追溯 */}
+          <p className="text-xs text-ink-faint">
+            视觉组件取自{' '}
+            <a
+              href="https://github.com/uiverse-io/galaxy"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-ink-soft underline-offset-2 hover:text-brand hover:underline"
+            >
+              uiverse-io/galaxy
+            </a>
+            （MIT）
+          </p>
         </div>
       </div>
     </footer>

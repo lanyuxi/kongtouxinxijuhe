@@ -35,7 +35,7 @@ import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import path from 'node:path';
-import { faviconUrls, hostOf, isOfficialHost, llamaIconUrl } from './sources.mjs';
+import { faviconUrls, hostOf, isOfficialHost, isPlaceholderSvg, llamaIconUrl, sniffImage } from './sources.mjs';
 
 const execFileAsync = promisify(execFile);
 

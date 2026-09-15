@@ -161,6 +161,8 @@ export function DetailView({
           aria-hidden
           className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-400 via-brand-600 to-accent opacity-80"
         />
+        {/* 记录线：从右往左缓慢扫过，表达「这份结论是持续复核中的」，而不是一张静态海报 */}
+        <span aria-hidden className="sweep-line" />
 
         <div className="relative flex flex-col gap-8 p-7 sm:p-9 lg:flex-row lg:items-start lg:gap-10">
           <div className="flex items-center gap-5 lg:block">
@@ -376,46 +378,48 @@ export function DetailView({
           <section id="decision" className="scroll-mt-28">
             <h2 className="panel-title mb-4">三项独立评分</h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {/* 三张评分卡：刻意保持「同样的结构、不同的语义色」——
+                  三项评分互不合成总分，任何视觉上的主次都会暗示存在总分。 */}
               <button
                 type="button"
                 onClick={() => setShowAuth((v) => !v)}
-                className="panel lift text-left"
+                className={`panel lift text-left ${showAuth ? 'ring-2 ring-brand/20' : ''}`}
                 aria-expanded={showAuth}
               >
-                <p className="text-sm font-medium text-ink-soft">真实性置信度</p>
-                <p className="metric mt-3 text-5xl">
+                <p className="eyebrow-lg">真实性置信度</p>
+                <p className="metric-lg mt-3">
                   {p.scores.authenticity}
                   <span className="ml-1.5 text-base font-normal text-ink-faint">/ 100</span>
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">{AUTH_LEVEL(p.scores.authenticity)}</p>
-                <RelativePercentile pct={percentiles?.authenticity} total={percentiles?.total ?? 0} />
+                <PercentileTrack pct={percentiles?.authenticity} total={percentiles?.total ?? 0} />
                 <p className="detail-link mt-4">查看评分明细 {showAuth ? '↑' : '↓'}</p>
               </button>
               <button
                 type="button"
                 onClick={() => setShowValue((v) => !v)}
-                className="panel lift text-left"
+                className={`panel lift text-left ${showValue ? 'ring-2 ring-brand/20' : ''}`}
                 aria-expanded={showValue}
               >
-                <p className="text-sm font-medium text-ink-soft">参与价值</p>
-                <p className="metric mt-3 text-5xl">
+                <p className="eyebrow-lg">参与价值</p>
+                <p className="metric-lg mt-3">
                   {p.scores.value}
                   <span className="ml-1.5 text-base font-normal text-ink-faint">/ 100</span>
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">
                   等级 {p.scores.grade} · {GRADE_DESC[p.scores.grade]}
                 </p>
-                <RelativePercentile pct={percentiles?.value} total={percentiles?.total ?? 0} />
+                <PercentileTrack pct={percentiles?.value} total={percentiles?.total ?? 0} />
                 <p className="detail-link mt-4">查看评分明细 {showValue ? '↑' : '↓'}</p>
               </button>
               <button
                 type="button"
                 onClick={() => setShowRisk((v) => !v)}
-                className="panel lift text-left"
+                className={`panel lift text-left ${showRisk ? 'ring-2 ring-danger/15' : ''}`}
                 aria-expanded={showRisk}
               >
-                <p className="text-sm font-medium text-ink-soft">风险等级</p>
-                <p className={`metric mt-3 text-5xl ${RISK_TONE[p.scores.risk]}`}>
+                <p className="eyebrow-lg">风险等级</p>
+                <p className={`metric-lg mt-3 ${RISK_TONE[p.scores.risk]}`}>
                   {RISK_LABEL[p.scores.risk]}
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">
@@ -465,8 +469,10 @@ export function DetailView({
           {/* 3. 成本与难度 */}
           <section id="cost" className="panel">
             <h2 className="panel-title">预计成本与操作难度</h2>
-            <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
-              <div className="kv">
+            {/* 成本四要素：横排 4 格，用细竖线分隔。
+                这里刻意不用卡片：成本是一个整体判断，拆成四张卡片会让人以为是四个独立结论。 */}
+            <dl className="mt-6 grid grid-cols-2 gap-y-5 sm:grid-cols-4 sm:divide-x sm:divide-line-soft">
+              <div className="kv sm:px-4 sm:first:pl-0">
                 <dt>预计资金</dt>
                 <dd className="metric !text-lg">
                   {p.cost.capital_max_usd === 0
@@ -474,15 +480,15 @@ export function DetailView({
                     : `$${p.cost.capital_min_usd}–${p.cost.capital_max_usd}`}
                 </dd>
               </div>
-              <div className="kv">
+              <div className="kv sm:px-4">
                 <dt>预计 Gas</dt>
                 <dd className="metric !text-lg">${p.cost.gas_estimate_usd}</dd>
               </div>
-              <div className="kv">
+              <div className="kv sm:px-4">
                 <dt>预计时间</dt>
                 <dd className="metric !text-lg">{p.cost.time_minutes} 分钟</dd>
               </div>
-              <div className="kv">
+              <div className="kv sm:px-4">
                 <dt>是否需要长期交互</dt>
                 <dd className="metric !text-lg">{p.cost.long_term ? '是，约 4–8 周' : '否'}</dd>
               </div>
@@ -513,12 +519,12 @@ export function DetailView({
             <dl className="mt-5 flex flex-wrap gap-3">
               <div className="inset flex items-baseline gap-2 px-5 py-3">
                 <dt className="text-sm text-ink-soft">已验证证据</dt>
-                <dd className="metric text-xl text-ok">{verifiedCount}</dd>
+                <dd className="metric-sm text-xl text-ok">{verifiedCount}</dd>
                 <dd className="text-sm text-ink-faint">条</dd>
               </div>
               <div className="inset flex items-baseline gap-2 px-5 py-3">
                 <dt className="text-sm text-ink-soft">独立来源</dt>
-                <dd className="metric text-xl">{sourceCount}</dd>
+                <dd className="metric-sm text-xl">{sourceCount}</dd>
                 <dd className="text-sm text-ink-faint">个</dd>
               </div>
             </dl>
@@ -858,15 +864,25 @@ export function DetailView({
  *   而分位只反映「在这批数据里排在哪」。
  *   样本不足（total < 2）或没有分位数据时整块不渲染，绝不编一个数字出来。
  */
-function RelativePercentile({ pct, total }: { pct?: number; total: number }) {
+function PercentileTrack({ pct, total }: { pct?: number; total: number }) {
   if (pct === undefined || total < 2) return null;
   return (
-    <p className="mt-2 flex flex-wrap items-baseline gap-2 text-sm text-ink-soft">
-      <span className="chip border-brand/25 bg-brand-wash font-medium text-brand">
-        相对位置 {percentilePhrase(pct)}
+    <div className="mt-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <span className="chip border-brand/25 bg-brand-wash font-medium text-brand">
+          相对位置 {percentilePhrase(pct)}
+        </span>
+        <span className="text-xs text-ink-faint">{percentileNote(pct, total)}</span>
+      </div>
+      {/* 刻度轨：「前 59%」这种说法本身有歧义（59% 是好还是差？），
+          一条从 0 到 100 的轨能让用户在 0.3 秒内判断方向，无需读文字。 */}
+      <span className="percentile-track mt-2 block">
+        <span
+          className="percentile-track__fill block"
+          style={{ width: `${Math.max(4, Math.round(pct * 100))}%` }}
+        />
       </span>
-      <span className="text-xs text-ink-faint">{percentileNote(pct, total)}</span>
-    </p>
+    </div>
   );
 }
 

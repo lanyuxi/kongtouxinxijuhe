@@ -28,17 +28,17 @@ export default {
       },
       colors: {
         // 页面底：极浅冷灰，让白色卡片「浮」起来
-        page: '#F5F7FB',
+        page: '#F4F6FC',
         card: '#FFFFFF',
         ink: {
-          DEFAULT: '#0F172A',
-          soft: '#5A6478',
-          faint: '#98A2B3',
+          DEFAULT: '#0B1220',
+          soft: '#54607A',
+          faint: '#8C97AC',
         },
-        line: '#E4E8F0',
+        line: '#E2E7F2',
         line: {
-          DEFAULT: '#E4E8F0',
-          soft: '#EEF1F6',
+          DEFAULT: '#E2E7F2',
+          soft: '#EDF1F8',
         },
         brand: {
           50: '#EEF4FF',
@@ -57,6 +57,7 @@ export default {
         accent: {
           DEFAULT: '#7C5CFC',
           wash: '#F3F0FF',
+          line: '#DED6FF',
         },
         ok: { DEFAULT: '#12A150', wash: '#ECFDF3', line: '#A6E7C0' },
         warn: { DEFAULT: '#C77700', wash: '#FFF8EB', line: '#FBD9A2' },
@@ -78,21 +79,31 @@ export default {
         logo: '0.75rem',
       },
       boxShadow: {
-        // 三层阴影：越往下越「贴地」，避免廉价的大黑边
-        card: '0 1px 2px rgba(16,24,40,0.04), 0 8px 24px -12px rgba(16,24,40,0.10)',
-        'card-hover': '0 2px 4px rgba(16,24,40,0.05), 0 18px 40px -16px rgba(37,99,235,0.22)',
-        lift: '0 24px 60px -28px rgba(15,23,42,0.35)',
+        // 阴影分三层：越往下越「贴地」，避免廉价的大黑边。
+        // 参考 galaxy 卡片：投影负责「浮起」，不负责「描边」——描边交给 border。
+        card: '0 1px 2px rgba(11,18,32,0.04), 0 10px 28px -14px rgba(11,18,32,0.10)',
+        'card-hover':
+          '0 2px 6px rgba(11,18,32,0.05), 0 22px 48px -20px rgba(37,99,235,0.26)',
+        // 悬停时卡片「抬起来」的那一层：位移 1px + 彩色投影，观感是物理抬起
+        'card-float': '0 3px 8px rgba(11,18,32,0.05), 0 30px 60px -28px rgba(37,99,235,0.30)',
+        lift: '0 24px 60px -28px rgba(11,18,32,0.35)',
         glow: '0 12px 32px -12px rgba(37,99,235,0.55)',
+        // 主按钮的内高光：让渐变面看起来有厚度，而不是一张贴纸
+        'btn-inner': 'inset 0 1px 0 rgba(255,255,255,0.28)',
       },
       fontFamily: {
         sans: [
           '"Inter"',
-          'system-ui',
           '-apple-system',
+          'BlinkMacSystemFont',
+          'system-ui',
           '"PingFang SC"',
+          '"Hiragino Sans GB"',
           '"Microsoft YaHei"',
           'sans-serif',
         ],
+        // 数字一律走等宽表格数字，避免刷新时分位跳动引发误读
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       keyframes: {
         'fade-up': {
@@ -110,11 +121,23 @@ export default {
           '0%': { backgroundPosition: '200% 0' },
           '100%': { backgroundPosition: '-200% 0' },
         },
+        // 详情页头部的记录线：左右来回，暗示「数据是活的」而不是一张静态海报
+        sweep: {
+          '0%': { transform: 'translateX(-60%)', opacity: '0' },
+          '50%': { opacity: '0.9' },
+          '100%': { transform: 'translateX(60%)', opacity: '0' },
+        },
+        // 骨架屏渐变描边环的旋转
+        'spin-slow': {
+          to: { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.45s cubic-bezier(0.22,1,0.36,1) both',
         'pulse-soft': 'pulse-soft 2.4s ease-in-out infinite',
         shimmer: 'shimmer 1.6s linear infinite',
+        sweep: 'sweep 6s cubic-bezier(0.4,0,0.2,1) infinite',
+        'spin-slow': 'spin-slow 9s linear infinite',
       },
     },
   },

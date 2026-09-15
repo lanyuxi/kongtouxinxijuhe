@@ -11,6 +11,7 @@ import { RefreshBar } from '../components/RefreshBar';
 import { SafetyBar } from '../components/Onboarding';
 import { TodayTodos } from '../components/TodayTodos';
 import { CardSkeletonGrid } from '../components/Skeleton';
+import { MetricTile } from '../components/galaxy';
 import type { Percentiles } from '../lib/percentile';
 import type { ProjectProgress } from '../lib/store';
 
@@ -130,17 +131,25 @@ export function ListView({
               favorites={favorites}
               progress={progress}
             />
-            <dl className="grid grid-cols-2 divide-line overflow-hidden rounded-3xl border border-line bg-white shadow-card sm:grid-cols-4 sm:divide-x">
-              {(['saved', 'preparing', 'doing', 'done'] as const).map((s, i) => {
+            {/* 参与漏斗：从「已收藏」到「已完成」是一条推进链路，
+                用同一套磁贴表达，用户扫一眼就知道自己卡在哪一步 */}
+            <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {(['saved', 'preparing', 'doing', 'done'] as const).map((s) => {
                 const count = saved.filter((p) => (progress[p.slug]?.status ?? 'saved') === s).length;
-                const label = { saved: '已收藏', preparing: '准备参与', doing: '进行中', done: '已完成' }[s];
+                const meta = {
+                  saved: { label: '已收藏', tone: 'brand' as const },
+                  preparing: { label: '准备参与', tone: 'warn' as const },
+                  doing: { label: '进行中', tone: 'warn' as const },
+                  done: { label: '已完成', tone: 'ok' as const },
+                }[s];
                 return (
-                  <div key={s} className={`px-6 py-5 ${i < 2 ? 'border-b border-line sm:border-b-0' : ''} ${i % 2 === 0 ? 'border-r border-line sm:border-r-0' : ''}`}>
-                    <dt className="text-xs font-medium uppercase tracking-[0.14em] text-ink-faint">
-                      {label}
-                    </dt>
-                    <dd className="metric mt-2 text-3xl">{count}</dd>
-                  </div>
+                  <MetricTile
+                    key={s}
+                    label={meta.label}
+                    value={count}
+                    hint={`占收藏总数 ${saved.length ? Math.round((count / saved.length) * 100) : 0}%`}
+                    tone={meta.tone}
+                  />
                 );
               })}
             </dl>
@@ -214,21 +223,23 @@ export function ListView({
 
 function EmptyState({ text }: { text: string }) {
   return (
-    <div className="card grid place-items-center gap-3 py-16 text-center">
+    <div className="galaxy-card grid place-items-center gap-4 px-6 py-16 text-center">
+      {/* 空态不是错误，但必须比「有内容」更明确地告诉用户下一步做什么。
+          因此给一个柔和的环形标记 + 一句可执行的指引，而不是一句「暂无数据」。 */}
       <span
         aria-hidden
-        className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-50 to-accent-wash text-2xl text-brand"
+        className="grid h-14 w-14 place-items-center rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 to-accent-wash text-2xl text-brand"
       >
         ◌
       </span>
-      <p className="text-base text-ink-soft">{text}</p>
+      <p className="max-w-xl text-base leading-relaxed text-ink-soft">{text}</p>
     </div>
   );
 }
 
 function CostHint() {
   return (
-    <p className="rounded-2xl border border-line-soft bg-white/60 px-5 py-4 text-sm text-ink-faint">
+    <p className="rounded-2xl border border-line-soft bg-white/60 px-5 py-4 text-sm leading-relaxed text-ink-faint">
       提示：参与价值与真实性为两套独立评分，不存在「总分」。高收益不等于真实，低风险也不等于值得投入。
     </p>
   );

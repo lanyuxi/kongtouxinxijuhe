@@ -188,3 +188,53 @@ describe('构建期图标兜底 ensure-logos', () => {
     expect(pkg.scripts.build).toContain('ensure-logos');
   });
 });
+
+/**
+ * 抓取脚本的「模块绑定」回归测试。
+ * ---------------------------------------------------------------------------
+ * 背景（这是一次真实事故，2026-09-15 定位）：
+ *   `scripts/logo/fetch-logos.mjs` 里调用了 `sniffImage` / `isPlaceholderSvg`，
+ *   但 import 语句里只带了 `faviconUrls, hostOf, isOfficialHost, llamaIconUrl`。
+ *
+ *   这条路径**本地跑不出来**，只有脏数据才会触发：
+ *     正常网络下 189 个项目里 188 个命中缓存或直接抓取成功，
+ *     最后一个（beezie）在候选 URL 全部失败时才会走到 `sniffImage(buf)`
+ *     —— 而这恰好是它第一次真正执行到那一行。
+ *
+ *   后果不是「抓不到一张图」，而是**整条数据流水线静默中断**：
+ *   `npm run logos` 以非 0 退出 → 后续的 unit-test / validate-data /
+ *   commit-data / sync-to-github 四个 stage 全部被跳过
+ *   → 数据不再提交，**GitHub 也停止同步**。
+ *   而 CNB 上看到的只是「定时任务失败」，没人会把它和一行漏掉的 import 联系起来。
+ *
+ *   所以这里不测「能不能抓到图」（依赖外网，天生不稳定），
+ *   只测「脚本引用的每个外部符号都真的被 import 进来了」——
+ *   这正是那次事故里唯一真正出错的地方，且与网络无关、可离线稳定运行。
+ */
+describe('logo 抓取脚本的模块绑定', () => {
+  const script = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+
+  it('引用了 sources.mjs 的导出，就必须真的 import 它们', async () => {
+    const src = await readFile(script, 'utf8');
+    const sources = await readFile(path.join(ROOT, 'scripts/logo/sources.mjs'), 'utf8');
+
+    const exported = [...sources.matchAll(/export\s+function\s+([A-Za-z_$][\w$]*)/g)].map((m) => m[1]);
+
+    // 取 import 语句里来自 './sources.mjs' 的那一条，解析出实际导入的名字
+    const importLine = src.match(/import\s*\{([^}]*)\}\s*from\s*'\.\/sources\.mjs'/);
+    expect(importLine, 'fetch-logos.mjs 必须从 ./sources.mjs 导入共享实现').not.toBeNull();
+    const imported = importLine![1].split(',').map((s) => s.trim()).filter(Boolean);
+
+    // 逐个检查：源码里出现了这个函数调用，但没 import → 运行时 ReferenceError
+    const dangling = exported.filter(
+      (name) => !imported.includes(name) && new RegExp(`\\b${name}\\s*\\(`).test(src),
+    );
+
+    expect(dangling, `以下函数被调用但没有 import，运行到即崩溃：${dangling.join(', ')}`).toEqual([]);
+  });
+
+  it('脚本顶层可被解析为合法 ESM（漏 import 不会在这一步报错，故需上一条断言兜底）', async () => {
+    // 用 --check 只验证语法。这里保留它是为了区分「语法错误」与「绑定错误」两类问题。
+    await execFileAsync('node', ['--check', script]);
+  });
+});
