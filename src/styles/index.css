@@ -34,7 +34,13 @@
     @apply bg-page text-ink font-sans antialiased;
     margin: 0;
     min-height: 100vh;
-    font-size: 18px;
+    /*
+     * 基准字号：17px（上一轮为 18px）。
+     * 与 tailwind.config.js 的 fontSize 标尺同比例回落 —— 这里是「没有显式
+     * 字号类」的兜底值，标尺变小而基准不变会让少数遗漏标注的节点显得突兀。
+     * 行高保持 1.65，但 17 × 1.65 ≈ 28px 恰好是中文正文的舒适行距。
+     */
+    font-size: 17px;
     line-height: 1.65;
     /*
      * 背景：
@@ -486,7 +492,7 @@
   position: absolute;
   top: 0.6rem;
   right: 0.75rem;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   line-height: 1;
   color: var(--tile-tone);
   opacity: 0;
