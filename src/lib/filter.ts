@@ -108,3 +108,73 @@ export const SORT_LABEL: Record<SortKey, string> = {
   risk: '风险最低',
   cost: '成本最低',
 };
+
+/**
+ * 数据总览磁贴 → 列表筛选。
+ * ---------------------------------------------------------------------------
+ * 用户看到的四个数字（项目总数 / 今日新增 / 值得关注 / 高风险）原本只是「统计」，
+ * 读完仍然要自己去下面的筛选区里手动还原条件——统计与筛选之间断开了。
+ * 这里把四个数字变成可点击的口径入口：点哪个，下面的列表就按哪个口径筛。
+ *
+ * 为什么单独抽成模块：
+ *   1. 口径要与 StatBar 里算数字的口径**完全一致**，否则会出现
+ *      「磁贴写着 21，点进去只有 19 条」，用户会认为数据错了；
+ *      唯一可靠的做法是两处调用同一份定义。
+ *   2. 它是纯函数，可被单元测试直接覆盖，不依赖 DOM。
+ */
+export type OverviewKey = 'total' | 'newToday' | 'highValue' | 'highRisk';
+
+/** 价值等级 S / A —— 与 StatBar「值得关注」口径一致 */
+export function isHighValue(p: AirdropProject): boolean {
+  return p.scores.grade === 'S' || p.scores.grade === 'A';
+}
+
+/** 高风险 —— 与 StatBar「高风险」口径一致 */
+export function isHighRisk(p: AirdropProject): boolean {
+  return p.scores.risk === 'high' || p.scores.risk === 'critical';
+}
+
+/**
+ * 「今日新增」的今日。
+ * 用 UTC 零点而不是本地零点：数据由流水线以 UTC 生成（discovered_at 也是 UTC），
+ * 若按本地时区切分，跨时区用户看到的数字会与 StatBar 的统计错开。
+ */
+export function utcTodayStart(now: Date = new Date()): number {
+  return new Date(`${now.toISOString().slice(0, 10)}T00:00:00Z`).getTime();
+}
+
+export function isNewToday(p: AirdropProject, now: Date = new Date()): boolean {
+  return new Date(p.discovered_at).getTime() >= utcTodayStart(now);
+}
+
+export const OVERVIEW_LABEL: Record<OverviewKey, string> = {
+  total: '项目总数',
+  newToday: '今日新增',
+  highValue: '值得关注',
+  highRisk: '高风险',
+};
+
+/**
+ * 按总览口径筛选。
+ * 注意：只做「是不是这一类」的判断，不叠加排序；
+ * 排序仍由列表自己的 sort 决定，避免点一下磁贴顺带改掉用户的排序设置。
+ */
+export function filterByOverview(
+  projects: AirdropProject[],
+  key: OverviewKey | null,
+  now: Date = new Date(),
+): AirdropProject[] {
+  if (!key) return projects;
+  switch (key) {
+    case 'total':
+      return projects;
+    case 'newToday':
+      return projects.filter((p) => isNewToday(p, now));
+    case 'highValue':
+      return projects.filter(isHighValue);
+    case 'highRisk':
+      return projects.filter(isHighRisk);
+    default:
+      return projects;
+  }
+}

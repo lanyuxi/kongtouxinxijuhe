@@ -48,6 +48,11 @@ export function Shimmer({ className = '' }: { className?: string }) {
  * 指标磁贴：数字（等宽）+ 标签 + 说明。
  * 直接把「最大值 / 目标值」画成一条细轨，让用户在读到数字的同时看到它离上限多远——
  * 这是本站「可解释评分」的最小视觉单元。
+ *
+ * `as="button"`：磁贴同时是「统计结果」和「筛选项」。
+ * 用语义化 <button> 而不是给 div 绑 onClick ——
+ *   键盘可 Tab 聚焦、Enter/Space 可触发，读屏会朗读 aria-pressed 的开合状态；
+ *   用 div 则这一整条入口对键盘与读屏用户完全不存在。
  */
 export function MetricTile({
   label,
@@ -55,22 +60,44 @@ export function MetricTile({
   max,
   hint,
   tone = 'brand',
+  as = 'div',
+  className = '',
+  onClick,
+  ...rest
 }: {
   label: string;
   value: ReactNode;
   max?: number;
   hint?: ReactNode;
   tone?: 'brand' | 'ok' | 'warn' | 'danger' | 'ink';
+  as?: 'div' | 'button';
+  className?: string;
+  onClick?: () => void;
+  'aria-pressed'?: boolean;
+  title?: string;
 }) {
+  const Tag = as;
+  const interactive = as === 'button';
   return (
-    <div className={`stat-tile stat-tile--${tone}`}>
+    <Tag
+      {...(interactive ? { type: 'button' as const, onClick } : {})}
+      {...rest}
+      className={`stat-tile stat-tile--${tone} ${interactive ? 'stat-tile--interactive' : ''} ${className}`}
+    >
       <p className="stat-tile__label">{label}</p>
       <p className="stat-tile__value">
         {value}
         {max !== undefined && <span className="stat-tile__unit">/ {max}</span>}
       </p>
       {hint && <p className="stat-tile__hint">{hint}</p>}
-    </div>
+      {interactive && (
+        /* 选中态不能只靠颜色：加一个明确的「筛选中」标记，
+           色觉障碍用户与读屏用户同样能确认当前口径。 */
+        <span className="stat-tile__flag" aria-hidden>
+          ⏷
+        </span>
+      )}
+    </Tag>
   );
 }
 
