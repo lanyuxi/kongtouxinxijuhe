@@ -1,18 +1,19 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T05:12:18.292Z",
-  "finished_at": "2026-09-15T05:12:34.978Z",
+  "started_at": "2026-09-15T05:42:11.155Z",
+  "finished_at": "2026-09-15T05:42:42.845Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T05:12:18.292Z",
+  "updated_at": "2026-09-15T05:42:11.155Z",
   "data_changed": true,
-  "change_summary": "变更 3 个：Aave V3 内容有更新；EigenCloud 内容有更新；Hyperithm 内容有更新",
+  "change_summary": "变更 4 个：b14g 内容有更新；Concrete 内容有更新；Spark Liquidity Layer 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "EigenCloud 内容有更新",
-    "Hyperithm 内容有更新"
+    "b14g 内容有更新",
+    "Concrete 内容有更新",
+    "Spark Liquidity Layer 内容有更新",
+    "Steakhouse Financial 内容有更新"
   ],
   "added": 0,
-  "modified": 3,
+  "modified": 4,
   "removed": 0
 }
