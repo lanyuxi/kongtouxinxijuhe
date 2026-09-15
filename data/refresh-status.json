@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T07:42:10.093Z",
-  "finished_at": "2026-09-15T07:42:26.080Z",
+  "started_at": "2026-09-15T08:12:11.525Z",
+  "finished_at": "2026-09-15T08:12:31.348Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T07:42:10.093Z",
+  "updated_at": "2026-09-15T08:12:11.525Z",
   "data_changed": true,
-  "change_summary": "变更 11 个：Gauntlet 内容有更新；GTBTC 内容有更新；Jupiter Perpetual Exchange 内容有更新",
+  "change_summary": "变更 5 个：Aave V3 内容有更新；b14g 内容有更新；Bedrock uniBTC 内容有更新",
   "change_details": [
-    "Gauntlet 内容有更新",
-    "GTBTC 内容有更新",
-    "Jupiter Perpetual Exchange 内容有更新",
-    "Lido 内容有更新",
-    "Obol 内容有更新"
+    "Aave V3 内容有更新",
+    "b14g 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "Sanctum Validator LSTs 内容有更新",
+    "tBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 11,
+  "modified": 5,
   "removed": 0
 }
