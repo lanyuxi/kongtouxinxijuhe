@@ -350,20 +350,60 @@ async function main() {
       f.attempts.slice(0, 3).forEach((a) => console.log(`      ${a}`));
     }
   }
-  // 覆盖率守卫：图标缺失是「列表页不得出现缺省图」这条硬需求的红线，
-  // 因此这里做最后一道兜底 —— 只要旧映射里登记过、文件也还在，就继续沿用，
-  // 避免因为一次网络抖动让整站图标集体消失。
-  if (report.failed.length) {
-    const stillMissing = report.failed.filter((f) => !logos[f.slug]);
-    if (stillMissing.length) {
-      console.error(
-        `[logo] ✗ ${stillMissing.length} 个项目既没有旧图标也没抓到新图标：` +
-          stillMissing.map((f) => f.slug).join('、'),
-      );
-      console.error('[logo] 提示：这会导致列表页出现空白图标位，请检查网络或补充 mapping.json。');
-      process.exitCode = 1;
-    }
+  /**
+   * 覆盖率守卫的分工（这里区分「阻断发布」与「仅告警」两种情况）。
+   *
+   * 为什么必须这样区分（2026-09-15 的一次真实发布事故）：
+   *   项目 beezie 的官网由 Cloudflare 托管，对**数据中心出口 IP**（GitHub Actions
+   *   的 runner 就是）返回 403 + `cf-mitigated: challenge`，但对住宅/办公网络放行。
+   *   于是同一个提交：本地 188/188 全通过，CI 上却稳定失败。
+   *
+   *   而这一步失败会让后面 单测 / 校验 / 构建 / 发布 四个步骤全部被跳过 ——
+   *   **一个第三方站点的反爬策略，把整个站点的发布链路锁死了**。
+   *   从 2026-09-14T11:42 起，Deploy 与 Refresh Data 连续 100% 失败，
+   *   而日志里只写「抓取项目 Logo 失败」，很难定位到是某个项目的官网在拦爬虫。
+   *
+   * 判定原则：
+   *   - 若缺图的项目**已在 mapping.json 登记为不可自动抓取**（见 _blocked），
+   *     说明这是「已确认、有记录」的客观限制，只告警、不阻断发布；
+   *   - 否则视为「未知的抓取失败」，仍然阻断 —— 因为它可能是脚本自身或
+   *     某次真实故障导致的，此时静默放过会让列表页出现空白图标位。
+   *   - 阻断时给出可直接复制的修复指引（登记到 _blocked，或在 mapping.json 指定替代源）。
+   */
+  const blocked = new Set(Object.keys(mapping._blocked ?? {}));
+  const hardFailures = [];
+  const knownBlocked = [];
+  for (const f of report.failed) {
+    if (logos[f.slug]) continue; // 已沿用旧图标，不算缺失
+    if (blocked.has(f.slug)) knownBlocked.push(f);
+    else hardFailures.push(f);
   }
+
+  if (knownBlocked.length) {
+    console.warn(
+      `[logo] ⚠ ${knownBlocked.length} 个项目已登记为「无法自动抓取」，按约定跳过：` +
+        knownBlocked.map((f) => f.slug).join('、'),
+    );
+    for (const f of knownBlocked) {
+      console.warn(`      ${f.slug}：${mapping._blocked[f.slug]?.reason ?? '未填写原因'}`);
+    }
+    console.warn('[logo] 这些项目在列表页不会有图标，属于已知且已记录的限制，不阻断发布。');
+  }
+
+  if (hardFailures.length) {
+    console.error(
+      `[logo] ✗ ${hardFailures.length} 个项目既没有旧图标也没抓到新图标：` +
+        hardFailures.map((f) => f.slug).join('、'),
+    );
+    console.error('[logo] 提示：这会导致列表页出现空白图标位，请检查网络或补充 mapping.json。');
+    console.error('[logo] 若确认是对方站点反爬（例如 Cloudflare 对数据中心 IP 返回 403），');
+    console.error('       请在 scripts/logo/mapping.json 的 _blocked 中登记该 slug 及原因，');
+    console.error('       登记后即按「已知限制」处理，不再阻断发布 —— 但请如实记录，不要用它掩盖真实故障。');
+    process.exitCode = 1;
+  }
+
+  // 把本轮缺图情况写入报告，便于事后复核「哪些项目长期无图标」。
+  report.blocked = knownBlocked.map((f) => ({ slug: f.slug, host: f.host, attempts: f.attempts }));
 }
 
 main().catch((e) => {

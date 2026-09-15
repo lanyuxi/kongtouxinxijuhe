@@ -5,6 +5,20 @@
     "llama": "DefiLlama 协议 slug（图标库 icons.llamao.fi 用）",
     "note": "为什么手填这条"
   },
+  "_blocked_policy": "已知无法自动抓取的项目：其官网对数据中心出口 IP（例如 CI runner）返回 403 / Cloudflare challenge，因此本地能抓到、CI 抓不到。登记后该项目的抓取失败按「已知限制」处理，只告警、不阻断发布 —— 否则一个第三方站点的反爬策略会让整条发布链路（单测/校验/构建/发布）全部跳过。注意：这里只登记已核实过原因的项目，不得用来掩盖脚本自身的真实故障。",
+  "_blocked": {
+    "beezie": {
+      "reason": "beezie.com 由 Cloudflare 托管，对数据中心出口 IP 返回 403 + cf-mitigated: challenge",
+      "evidence": "curl -D- https://beezie.com/favicon.ico → HTTP 403, cf-mitigated: challenge",
+      "verified_at": "2026-09-15",
+      "source": "live 数据源（Airdrops.io）动态引入，会随来源轮换进出数据集"
+    }
+  },
+  "_lowres_policy": "低分辨率兜底：当所有来源都不足 24px 时（这些是数据源误抓的营销页 / 任务页，官网本身就不存在可靠 favicon），允许使用官网最小的官方 favicon，并在此登记，保证列表页永远不出现缺省图或字母图。",
+  "_lowres": {
+    "voice": "voice.fun 仅提供 16px favicon；DefiLlama 无该协议图标",
+    "reels": "数据源抓到的是营销短链 click.trkreels.com，无稳定官网；reels.gg 的 32px 官方 favicon"
+  },
   "map": {
     "beldex": {
       "domain": "beldex.io",
@@ -35,10 +49,5 @@
       "domain": "reels.gg",
       "note": "数据源抓到的是营销短链 click.trkreels.com，无稳定官网；使用项目实际域名 reels.gg"
     }
-  },
-  "_lowres_policy": "低分辨率兜底：当所有来源都不足 24px 时（这些是数据源误抓的营销页 / 任务页，官网本身就不存在可靠 favicon），允许使用官网最小的官方 favicon，并在此登记，保证列表页永远不出现缺省图或字母图。",
-  "_lowres": {
-    "voice": "voice.fun 仅提供 16px favicon；DefiLlama 无该协议图标",
-    "reels": "数据源抓到的是营销短链 click.trkreels.com，无稳定官网；reels.gg 的 32px 官方 favicon"
   }
 }

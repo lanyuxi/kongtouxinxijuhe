@@ -37,11 +37,21 @@ describe('logo 覆盖率', () => {
     const dataset = await readJson<Dataset>('data/airdrops.json');
     const map = await readJson<LogoMap>('data/logo-map.json');
 
-    const missing = dataset.projects.filter((p) => !map.logos[p.slug]).map((p) => p.slug);
+    // 已在 mapping.json 的 _blocked 登记为「无法自动抓取」的项目不会有图标。
+    // 它们的缺失是已知且已记录的限制（例如官网用 Cloudflare 拦数据中心 IP），
+    // 因此这里的覆盖率断言按「除已登记项外全覆盖」来判定。
+    // 注意：这不等于放宽要求 —— 未登记的项目一旦缺图，下面两条断言依然会失败。
+    const mapping = await readJson<{ _blocked?: Record<string, unknown> }>('scripts/logo/mapping.json');
+    const blocked = new Set(Object.keys(mapping._blocked ?? {}));
+
+    const missing = dataset.projects
+      .filter((p) => !blocked.has(p.slug) && !map.logos[p.slug])
+      .map((p) => p.slug);
     expect(missing, `以下项目缺少 logo 映射：${missing.join('、')}`).toEqual([]);
 
     const broken: string[] = [];
     for (const p of dataset.projects) {
+      if (blocked.has(p.slug)) continue;
       const file = path.join(ROOT, 'public', map.logos[p.slug]);
       try {
         await access(file);
@@ -272,5 +282,101 @@ describe('logo 下载的重试策略', () => {
     const retries = Number(m![1]);
     expect(retries).toBeGreaterThanOrEqual(1);
     expect(retries).toBeLessThanOrEqual(5);
+  });
+});
+
+/**
+ * 「已登记不可抓取」与「未知失败」必须区别对待。
+ * ---------------------------------------------------------------------------
+ * 背景（2026-09-15 的一次真实发布事故，根因已核实）：
+ *   项目 beezie 的官网 beezie.com 由 Cloudflare 托管，对**数据中心出口 IP**
+ *   返回 403 + `cf-mitigated: challenge`，对住宅/办公网络放行。
+ *   而 GitHub Actions 的 runner 正是数据中心 IP。
+ *
+ *   于是同一个提交：本地全新克隆 188/188 全通过，CI 上稳定失败 —— 实测
+ *   `curl -D- https://beezie.com/favicon.ico` 返回 `HTTP 403` 且带
+ *   `cf-mitigated: challenge`。
+ *
+ *   代价被放得极大：该步骤失败会让后面的 单测 / 校验 / 构建 / 发布 全部跳过。
+ *   从 2026-09-14T11:42 起，Deploy 与 Refresh Data 连续 100% 失败，站点停在
+ *   旧版本，而日志里只写「抓取项目 Logo 失败」。
+ *
+ * 设计取舍（这条最容易改错，所以固化成测试）：
+ *   不能简单地「抓不到就放过」—— 那会让脚本自身的故障静默逃逸，
+ *   列表页出现空白图标位（这是需求明确禁止的）。
+ *   正确做法是区分：
+ *     - 已在 mapping.json 的 _blocked 中登记的项目 → 只告警，不阻断发布；
+ *     - 未登记的失败 → 仍然阻断，并给出可复制的修复指引。
+ */
+describe('logo 覆盖率守卫：已登记限制 vs 未知失败', () => {
+  const srcPath = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+  const mappingPath = path.join(ROOT, 'scripts/logo/mapping.json');
+
+  it('mapping.json 必须声明 _blocked 与 _blocked_policy，避免变成「随手放过」的开关', async () => {
+    const mapping = JSON.parse(await readFile(mappingPath, 'utf8'));
+    expect(mapping).toHaveProperty('_blocked');
+    expect(typeof mapping._blocked_policy).toBe('string');
+    // 策略里必须写清「不得用来掩盖真实故障」，否则后人会滥用这个口子
+    expect(mapping._blocked_policy).toMatch(/不得|不能|不要/);
+  });
+
+  it('_blocked 的每一项都必须能自证：有原因、有证据、有核实日期', async () => {
+    const mapping = JSON.parse(await readFile(mappingPath, 'utf8'));
+    for (const [slug, meta] of Object.entries(mapping._blocked ?? {})) {
+      expect(meta, `${slug} 缺少 reason`).toHaveProperty('reason');
+      expect(String(meta.reason).length, `${slug} 的 reason 太短，等于没写`).toBeGreaterThan(10);
+      expect(meta, `${slug} 缺少 verified_at（无法判断是否仍然成立）`).toHaveProperty('verified_at');
+      expect(String(meta.verified_at)).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+  });
+
+  it('脚本必须区分两种情况，且未登记时仍然阻断（exitCode = 1）', async () => {
+    const src = await readFile(srcPath, 'utf8');
+    // 未登记的失败路径必须设置非 0 退出码
+    expect(src).toMatch(/hardFailures/);
+    expect(src).toMatch(/process\.exitCode\s*=\s*1/);
+    // 已登记的项目必须被单独归类，且不参与阻断
+    expect(src).toMatch(/knownBlocked/);
+    expect(src).toMatch(/mapping\._blocked/);
+  });
+
+  it('已抓到图标的登记项属于冗余，应当删除（防止口子越开越大）', async () => {
+    const mapping = JSON.parse(await readFile(mappingPath, 'utf8'));
+    const map = await readJson<LogoMap>('data/logo-map.json');
+
+    // 如果一个项目其实已经抓到图标了，那 _blocked 里就不该还留着它 ——
+    // 否则这个字段会慢慢变成一个「永远不用清理」的垃圾桶。
+    const needless = Object.keys(mapping._blocked ?? {}).filter((s) => map.logos[s]);
+    expect(needless, `以下 _blocked 登记已无必要（已有图标）：${needless.join(', ')}`).toEqual([]);
+  });
+
+  it('登记项必须与数据集有交集，否则说明数据源已变、登记需要复核', async () => {
+    /**
+     * 注意这里的断言方向：不要求「每个登记项都还在数据集中」。
+     *
+     * 因为被登记的项目（如 beezie）来自 live 数据源，会随来源轮换而进进出出。
+     * 若强制要求「登记项必须存在」，数据源一轮换测试就会红，逼着人删掉登记 ——
+     * 等它下次再出现时又会在 CI 上炸一次，问题只是被推迟。
+     *
+     * 所以这里只做「一致性」检查：登记项要么在数据集中，要么明确标注了
+     * retired_at（已下线）。既不误报，也不放过一个凭空挂着的假口子。
+     */
+    const mapping = JSON.parse(await readFile(mappingPath, 'utf8')) as {
+      _blocked?: Record<string, { retired_at?: string; source?: string; reason?: string }>;
+    };
+    const dataset = await readJson<Dataset>('data/airdrops.json');
+    const slugs = new Set(dataset.projects.map((p) => p.slug));
+
+    // 若项目当前不在数据集里，登记项必须说明「它为什么可能不在」
+    // （例如来自会轮换的 live 数据源），或标注已下线。
+    // 二者都没有，才是需要人工复核的悬空登记。
+    const dangling = Object.entries(mapping._blocked ?? {})
+      .filter(([slug, meta]) => !slugs.has(slug) && !meta.retired_at && !meta.source)
+      .map(([slug]) => slug);
+
+    expect(
+      dangling,
+      `以下 _blocked 登记已悬空（项目不在数据集中，也无 retired_at / source 说明）：${dangling.join(', ')}`,
+    ).toEqual([]);
   });
 });
