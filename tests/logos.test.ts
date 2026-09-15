@@ -238,3 +238,39 @@ describe('logo 抓取脚本的模块绑定', () => {
     await execFileAsync('node', ['--check', script]);
   });
 });
+
+/**
+ * 下载重试逻辑的回归测试。
+ * ---------------------------------------------------------------------------
+ * 背景（2026-09-15 的一次真实部署失败）：
+ *   GitHub Actions 的 `npm run logos` 步骤本身没有问题（同提交在本地全新克隆
+ *   下 188/188 全通过），失败来自图标图床的偶发 5xx / 连接重置。
+ *   但这一步一旦非 0 退出，后续的 单测 / 校验 / 构建 / 发布 四个步骤全部被跳过，
+ *   线上站点会停在旧版本，而 Actions 日志里只写「抓取项目 Logo 失败」。
+ *
+ *   即：**一次对方站点的网络抖动，会阻断一次已经正确的构建发布。**
+ *
+ *   修复方式是对网络类错误做有限次退避重试。这里把「哪些错误该重试、
+ *   哪些不该重试」固化下来 —— 这部分逻辑不依赖外网，可以稳定测试。
+ */
+describe('logo 下载的重试策略', () => {
+  const script = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+
+  it('对 5xx / 429 做重试，对 4xx 直接放弃（重试没有意义）', async () => {
+    const src = await readFile(script, 'utf8');
+    // 语义断言：源码里必须出现「可重试状态码」的判定
+    expect(src).toMatch(/res\.status\s*>=\s*500/);
+    expect(src).toMatch(/res\.status\s*===\s*429/);
+    // 且必须存在退避等待，否则会在毫秒内把重试用完，等同于没重试
+    expect(src).toMatch(/setTimeout/);
+  });
+
+  it('重试次数有限，不会无限重试把流水线挂死', async () => {
+    const src = await readFile(script, 'utf8');
+    const m = src.match(/retries\s*=\s*(\d+)/);
+    expect(m, 'httpGet 必须声明有限的 retries 默认值').not.toBeNull();
+    const retries = Number(m![1]);
+    expect(retries).toBeGreaterThanOrEqual(1);
+    expect(retries).toBeLessThanOrEqual(5);
+  });
+});
