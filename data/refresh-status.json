@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-13T13:48:49.547Z",
-  "finished_at": "2026-09-13T13:49:14.040Z",
-  "sources": 3,
+  "started_at": "2026-09-15T04:12:10.023Z",
+  "finished_at": "2026-09-15T04:12:23.009Z",
+  "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-13T13:48:49.547Z",
+  "updated_at": "2026-09-15T04:12:10.023Z",
   "data_changed": true,
-  "change_summary": "变更 188 个：Aave Horizon RWA 教程：转为流程示意；Aave V3 教程：转为流程示意；Aave V4 教程：转为流程示意",
+  "change_summary": "变更 13 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Clearstar 内容有更新",
   "change_details": [
-    "Aave Horizon RWA 教程：转为流程示意",
-    "Aave V3 教程：转为流程示意",
-    "Aave V4 教程：转为流程示意",
-    "Aerodrome Slipstream 教程：转为流程示意",
-    "Aiw3 教程：升级为真实教程"
+    "Aave V3 内容有更新",
+    "B2 Buzz 内容有更新",
+    "Clearstar 内容有更新",
+    "Concrete 内容有更新",
+    "EigenCloud 内容有更新"
   ],
   "added": 0,
-  "modified": 188,
+  "modified": 13,
   "removed": 0
 }

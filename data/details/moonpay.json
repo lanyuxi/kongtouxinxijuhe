@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/moonpay/",
-      "fetched_at": "2026-09-13T13:48:49.581Z"
+      "fetched_at": "2026-09-15T04:12:10.060Z"
     }
   ],
   "evidence": [
@@ -320,7 +320,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-13T13:48:49.581Z",
+  "last_checked_at": "2026-09-15T04:12:10.060Z",
   "last_changed_at": "2026-09-13T13:49:13.741Z",
   "sourcedSteps": [
     {

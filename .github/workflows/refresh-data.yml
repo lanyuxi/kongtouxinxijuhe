@@ -58,6 +58,13 @@ jobs:
       - name: 抓取项目 Logo
         run: npm run logos
 
+      # 顺序说明（2026-09-15 修）：构建必须排在单元测试之前。
+      #   tests/galaxy-ui.test.ts 断言 dist/assets/*.css 里的关键类是否产出，
+      #   需要 dist/ 存在才能运行。原先的顺序会让它必然失败，
+      #   进而让「数据变化检查与提交」被跳过 —— 数据因此一直无法提交回仓库。
+      - name: 构建站点
+        run: npm run build
+
       - name: 单元测试
         run: npm test
 

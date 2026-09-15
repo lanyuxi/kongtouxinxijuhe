@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-13T13:48:49.547Z",
+  "fetched_at": "2026-09-15T04:12:10.023Z",
   "source": "DefiLlama",
   "source_url": "https://api.llama.fi/protocols",
   "items": [
     {
       "slug": "lido",
       "name": "Lido",
-      "tagline": "Liquid Staking 协议，TVL 约 $24000M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $24409M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -16,7 +16,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Lido",
       "officialUrl": "https://lido.fi/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Lido",
       "officialHost": "lido.fi",
       "officialProfiles": {
@@ -24,12 +24,12 @@
         "x": "https://x.com/LidoFinance"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $24000M。"
+      "description": "Liquid Staking 协议，TVL 约 $24409M。"
     },
     {
       "slug": "aave-v3",
       "name": "Aave V3",
-      "tagline": "Lending 协议，TVL 约 $17358M。",
+      "tagline": "Lending 协议，TVL 约 $17382M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -39,7 +39,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Aave%20V3",
       "officialUrl": "https://aave.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Aave V3",
       "officialHost": "aave.com",
       "officialProfiles": {
@@ -47,12 +47,12 @@
         "x": "https://x.com/aave"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $17358M。"
+      "description": "Lending 协议，TVL 约 $17382M。"
     },
     {
       "slug": "ssv-network",
       "name": "SSV Network",
-      "tagline": "Staking Pool 协议，TVL 约 $13020M。",
+      "tagline": "Staking Pool 协议，TVL 约 $13223M。",
       "status": "potential",
       "categoryText": "Staking Pool",
       "chains": [
@@ -62,7 +62,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/SSV%20Network",
       "officialUrl": "https://ssv.network/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "SSV Network",
       "officialHost": "ssv.network",
       "officialProfiles": {
@@ -70,12 +70,12 @@
         "x": "https://x.com/ssv_network"
       },
       "clueCapital": false,
-      "description": "Staking Pool 协议，TVL 约 $13020M。"
+      "description": "Staking Pool 协议，TVL 约 $13223M。"
     },
     {
       "slug": "morpho-blue",
       "name": "Morpho Blue",
-      "tagline": "Lending 协议，TVL 约 $9663M。",
+      "tagline": "Lending 协议，TVL 约 $9960M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -85,7 +85,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Morpho%20Blue",
       "officialUrl": "https://app.morpho.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Morpho Blue",
       "officialHost": "app.morpho.org",
       "officialProfiles": {
@@ -93,12 +93,12 @@
         "x": "https://x.com/Morpho"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $9663M。"
+      "description": "Lending 协议，TVL 约 $9960M。"
     },
     {
       "slug": "wbtc",
       "name": "WBTC",
-      "tagline": "Bridge 协议，TVL 约 $8941M。",
+      "tagline": "Bridge 协议，TVL 约 $9063M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -108,7 +108,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/WBTC",
       "officialUrl": "https://wbtc.network/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "WBTC",
       "officialHost": "wbtc.network",
       "officialProfiles": {
@@ -116,12 +116,12 @@
         "x": "https://x.com/WrappedBTC"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $8941M。"
+      "description": "Bridge 协议，TVL 约 $9063M。"
     },
     {
       "slug": "layerzero-v2",
       "name": "LayerZero V2",
-      "tagline": "Bridge 协议，TVL 约 $7142M。",
+      "tagline": "Bridge 协议，TVL 约 $7084M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -131,7 +131,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/LayerZero%20V2",
       "officialUrl": "https://layerzero.network/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "LayerZero V2",
       "officialHost": "layerzero.network",
       "officialProfiles": {
@@ -139,12 +139,12 @@
         "x": "https://x.com/LayerZero_Core"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $7142M。"
+      "description": "Bridge 协议，TVL 约 $7084M。"
     },
     {
       "slug": "eigencloud",
       "name": "EigenCloud",
-      "tagline": "Restaking 协议，TVL 约 $6509M。",
+      "tagline": "Restaking 协议，TVL 约 $6562M。",
       "status": "potential",
       "categoryText": "Restaking",
       "chains": [
@@ -154,7 +154,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/EigenCloud",
       "officialUrl": "https://www.eigencloud.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "EigenCloud",
       "officialHost": "www.eigencloud.xyz",
       "officialProfiles": {
@@ -162,12 +162,12 @@
         "x": "https://x.com/eigencloud"
       },
       "clueCapital": false,
-      "description": "Restaking 协议，TVL 约 $6509M。"
+      "description": "Restaking 协议，TVL 约 $6562M。"
     },
     {
       "slug": "sky-lending",
       "name": "Sky Lending",
-      "tagline": "CDP 协议，TVL 约 $5444M。",
+      "tagline": "CDP 协议，TVL 约 $5472M。",
       "status": "potential",
       "categoryText": "CDP",
       "chains": [
@@ -177,7 +177,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Sky%20Lending",
       "officialUrl": "https://app.sky.money/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Sky Lending",
       "officialHost": "app.sky.money",
       "officialProfiles": {
@@ -185,12 +185,12 @@
         "x": "https://x.com/SkyEcosystem"
       },
       "clueCapital": false,
-      "description": "CDP 协议，TVL 约 $5444M。"
+      "description": "CDP 协议，TVL 约 $5472M。"
     },
     {
       "slug": "sparklend",
       "name": "SparkLend",
-      "tagline": "Lending 协议，TVL 约 $4768M。",
+      "tagline": "Lending 协议，TVL 约 $4938M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -200,7 +200,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/SparkLend",
       "officialUrl": "https://spark.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "SparkLend",
       "officialHost": "spark.finance",
       "officialProfiles": {
@@ -208,12 +208,12 @@
         "x": "https://x.com/sparkfinance"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $4768M。"
+      "description": "Lending 协议，TVL 约 $4938M。"
     },
     {
       "slug": "ethena-usde",
       "name": "Ethena USDe",
-      "tagline": "Basis Trading 协议，TVL 约 $4601M。",
+      "tagline": "Basis Trading 协议，TVL 约 $4677M。",
       "status": "potential",
       "categoryText": "Basis Trading",
       "chains": [
@@ -223,7 +223,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Ethena%20USDe",
       "officialUrl": "https://www.app.ethena.fi/join/3y20d",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Ethena USDe",
       "officialHost": "www.app.ethena.fi",
       "officialProfiles": {
@@ -231,12 +231,12 @@
         "x": "https://x.com/ethena"
       },
       "clueCapital": false,
-      "description": "Basis Trading 协议，TVL 约 $4601M。"
+      "description": "Basis Trading 协议，TVL 约 $4677M。"
     },
     {
       "slug": "justlend-v1",
       "name": "JustLend V1",
-      "tagline": "Lending 协议，TVL 约 $3704M。",
+      "tagline": "Lending 协议，TVL 约 $3709M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -246,7 +246,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/JustLend%20V1",
       "officialUrl": "https://justlend.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "JustLend V1",
       "officialHost": "justlend.org",
       "officialProfiles": {
@@ -254,12 +254,12 @@
         "x": "https://x.com/DeFi_JUST"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $3704M。"
+      "description": "Lending 协议，TVL 约 $3709M。"
     },
     {
       "slug": "blackrock-buidl",
       "name": "BlackRock BUIDL",
-      "tagline": "RWA 协议，TVL 约 $3540M。",
+      "tagline": "RWA 协议，TVL 约 $3515M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -269,7 +269,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/BlackRock%20BUIDL",
       "officialUrl": "https://securitize.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "BlackRock BUIDL",
       "officialHost": "securitize.io",
       "officialProfiles": {
@@ -277,35 +277,12 @@
         "x": "https://x.com/BlackRock"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $3540M。"
-    },
-    {
-      "slug": "usdt0",
-      "name": "USDT0",
-      "tagline": "Bridge 协议，TVL 约 $3157M。",
-      "status": "potential",
-      "categoryText": "Bridge",
-      "chains": [
-        "Ethereum"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/USDT0",
-      "officialUrl": "https://usdt0.to/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "USDT0",
-      "officialHost": "usdt0.to",
-      "officialProfiles": {
-        "website": "https://usdt0.to/",
-        "x": "https://x.com/USDT0_to"
-      },
-      "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $3157M。"
+      "description": "RWA 协议，TVL 约 $3515M。"
     },
     {
       "slug": "babylon-protocol",
       "name": "Babylon Protocol",
-      "tagline": "Restaking 协议，TVL 约 $3155M。",
+      "tagline": "Restaking 协议，TVL 约 $3205M。",
       "status": "potential",
       "categoryText": "Restaking",
       "chains": [
@@ -315,7 +292,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Babylon%20Protocol",
       "officialUrl": "https://babylonlabs.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Babylon Protocol",
       "officialHost": "babylonlabs.io",
       "officialProfiles": {
@@ -323,12 +300,35 @@
         "x": "https://x.com/babylonlabs_io"
       },
       "clueCapital": false,
-      "description": "Restaking 协议，TVL 约 $3155M。"
+      "description": "Restaking 协议，TVL 约 $3205M。"
+    },
+    {
+      "slug": "usdt0",
+      "name": "USDT0",
+      "tagline": "Bridge 协议，TVL 约 $3078M。",
+      "status": "potential",
+      "categoryText": "Bridge",
+      "chains": [
+        "Ethereum"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/USDT0",
+      "officialUrl": "https://usdt0.to/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "USDT0",
+      "officialHost": "usdt0.to",
+      "officialProfiles": {
+        "website": "https://usdt0.to/",
+        "x": "https://x.com/USDT0_to"
+      },
+      "clueCapital": false,
+      "description": "Bridge 协议，TVL 约 $3078M。"
     },
     {
       "slug": "tether-gold",
       "name": "Tether Gold",
-      "tagline": "RWA 协议，TVL 约 $3077M。",
+      "tagline": "RWA 协议，TVL 约 $3051M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -338,7 +338,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Tether%20Gold",
       "officialUrl": "https://gold.tether.to/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Tether Gold",
       "officialHost": "gold.tether.to",
       "officialProfiles": {
@@ -346,12 +346,12 @@
         "x": "https://x.com/tethergold"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $3077M。"
+      "description": "RWA 协议，TVL 约 $3051M。"
     },
     {
       "slug": "steakhouse-financial",
       "name": "Steakhouse Financial",
-      "tagline": "Risk Curators 协议，TVL 约 $3054M。",
+      "tagline": "Risk Curators 协议，TVL 约 $3049M。",
       "status": "potential",
       "categoryText": "Risk Curators",
       "chains": [
@@ -361,7 +361,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Steakhouse%20Financial",
       "officialUrl": "https://www.steakhouse.financial/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Steakhouse Financial",
       "officialHost": "www.steakhouse.financial",
       "officialProfiles": {
@@ -369,12 +369,12 @@
         "x": "https://x.com/SteakhouseFi"
       },
       "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $3054M。"
+      "description": "Risk Curators 协议，TVL 约 $3049M。"
     },
     {
       "slug": "maple",
       "name": "Maple",
-      "tagline": "Lending 协议，TVL 约 $2889M。",
+      "tagline": "Lending 协议，TVL 约 $2856M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -384,7 +384,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Maple",
       "officialUrl": "https://www.maple.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Maple",
       "officialHost": "www.maple.finance",
       "officialProfiles": {
@@ -392,12 +392,12 @@
         "x": "https://x.com/maplefinance"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $2889M。"
+      "description": "Lending 协议，TVL 约 $2856M。"
     },
     {
       "slug": "spiko",
       "name": "Spiko",
-      "tagline": "RWA 协议，TVL 约 $2635M。",
+      "tagline": "RWA 协议，TVL 约 $2624M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -407,7 +407,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Spiko",
       "officialUrl": "https://www.spiko.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Spiko",
       "officialHost": "www.spiko.io",
       "officialProfiles": {
@@ -415,12 +415,12 @@
         "x": "https://x.com/Spiko_finance"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $2635M。"
+      "description": "RWA 协议，TVL 约 $2624M。"
     },
     {
       "slug": "circle-usyc",
       "name": "Circle USYC",
-      "tagline": "RWA 协议，TVL 约 $2603M。",
+      "tagline": "RWA 协议，TVL 约 $2604M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -430,7 +430,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Circle%20USYC",
       "officialUrl": "https://www.circle.com/usyc",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Circle USYC",
       "officialHost": "www.circle.com",
       "officialProfiles": {
@@ -438,7 +438,30 @@
         "x": "https://x.com/circle"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $2603M。"
+      "description": "RWA 协议，TVL 约 $2604M。"
+    },
+    {
+      "slug": "justcryptos",
+      "name": "JustCryptos",
+      "tagline": "Bridge 协议，TVL 约 $2588M。",
+      "status": "potential",
+      "categoryText": "Bridge",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/JustCryptos",
+      "officialUrl": "https://just.network/token",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "JustCryptos",
+      "officialHost": "just.network",
+      "officialProfiles": {
+        "website": "https://just.network/token",
+        "x": "https://x.com/DeFi_JUST"
+      },
+      "clueCapital": false,
+      "description": "Bridge 协议，TVL 约 $2588M。"
     },
     {
       "slug": "ondo-yield-assets",
@@ -453,7 +476,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Ondo%20Yield%20Assets",
       "officialUrl": "https://ondo.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Ondo Yield Assets",
       "officialHost": "ondo.finance",
       "officialProfiles": {
@@ -464,32 +487,9 @@
       "description": "RWA 协议，TVL 约 $2565M。"
     },
     {
-      "slug": "justcryptos",
-      "name": "JustCryptos",
-      "tagline": "Bridge 协议，TVL 约 $2553M。",
-      "status": "potential",
-      "categoryText": "Bridge",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/JustCryptos",
-      "officialUrl": "https://just.network/token",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "JustCryptos",
-      "officialHost": "just.network",
-      "officialProfiles": {
-        "website": "https://just.network/token",
-        "x": "https://x.com/DeFi_JUST"
-      },
-      "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $2553M。"
-    },
-    {
       "slug": "spark-liquidity-layer",
       "name": "Spark Liquidity Layer",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $2512M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $2553M。",
       "status": "potential",
       "categoryText": "Onchain Capital Allocator",
       "chains": [
@@ -499,7 +499,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Spark%20Liquidity%20Layer",
       "officialUrl": "https://spark.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Spark Liquidity Layer",
       "officialHost": "spark.finance",
       "officialProfiles": {
@@ -507,12 +507,12 @@
         "x": "https://x.com/sparkfinance"
       },
       "clueCapital": false,
-      "description": "Onchain Capital Allocator 协议，TVL 约 $2512M。"
+      "description": "Onchain Capital Allocator 协议，TVL 约 $2553M。"
     },
     {
       "slug": "sentora-curator",
       "name": "Sentora Curator",
-      "tagline": "Risk Curators 协议，TVL 约 $2368M。",
+      "tagline": "Risk Curators 协议，TVL 约 $2414M。",
       "status": "potential",
       "categoryText": "Risk Curators",
       "chains": [
@@ -522,7 +522,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Sentora%20Curator",
       "officialUrl": "https://sentora.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Sentora Curator",
       "officialHost": "sentora.com",
       "officialProfiles": {
@@ -530,12 +530,12 @@
         "x": "https://x.com/SentoraHQ"
       },
       "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $2368M。"
+      "description": "Risk Curators 协议，TVL 约 $2414M。"
     },
     {
       "slug": "grove-finance",
       "name": "Grove Finance",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1971M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1917M。",
       "status": "potential",
       "categoryText": "Onchain Capital Allocator",
       "chains": [
@@ -545,7 +545,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Grove%20Finance",
       "officialUrl": "https://data.grove.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Grove Finance",
       "officialHost": "data.grove.finance",
       "officialProfiles": {
@@ -553,12 +553,12 @@
         "x": "https://x.com/grovedotfinance"
       },
       "clueCapital": false,
-      "description": "Onchain Capital Allocator 协议，TVL 约 $1971M。"
+      "description": "Onchain Capital Allocator 协议，TVL 约 $1917M。"
     },
     {
       "slug": "pancakeswap-amm",
       "name": "PancakeSwap AMM",
-      "tagline": "Dexs 协议，TVL 约 $1878M。",
+      "tagline": "Dexs 协议，TVL 约 $1874M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -568,7 +568,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/PancakeSwap%20AMM",
       "officialUrl": "https://pancakeswap.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "PancakeSwap AMM",
       "officialHost": "pancakeswap.finance",
       "officialProfiles": {
@@ -576,12 +576,12 @@
         "x": "https://x.com/PancakeSwap"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $1878M。"
+      "description": "Dexs 协议，TVL 约 $1874M。"
     },
     {
       "slug": "paxos-gold",
       "name": "Paxos Gold",
-      "tagline": "RWA 协议，TVL 约 $1873M。",
+      "tagline": "RWA 协议，TVL 约 $1857M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -591,7 +591,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Paxos%20Gold",
       "officialUrl": "https://paxos.com/paxgold/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Paxos Gold",
       "officialHost": "paxos.com",
       "officialProfiles": {
@@ -599,12 +599,12 @@
         "x": "https://x.com/Paxos"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $1873M。"
+      "description": "RWA 协议，TVL 约 $1857M。"
     },
     {
       "slug": "veda",
       "name": "Veda",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1754M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1782M。",
       "status": "potential",
       "categoryText": "Onchain Capital Allocator",
       "chains": [
@@ -614,7 +614,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Veda",
       "officialUrl": "https://veda.tech/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Veda",
       "officialHost": "veda.tech",
       "officialProfiles": {
@@ -622,7 +622,7 @@
         "x": "https://x.com/veda_labs"
       },
       "clueCapital": false,
-      "description": "Onchain Capital Allocator 协议，TVL 约 $1754M。"
+      "description": "Onchain Capital Allocator 协议，TVL 约 $1782M。"
     },
     {
       "slug": "ccip",
@@ -637,7 +637,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/CCIP",
       "officialUrl": "https://chain.link/cross-chain",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "CCIP",
       "officialHost": "chain.link",
       "officialProfiles": {
@@ -650,7 +650,7 @@
     {
       "slug": "gauntlet",
       "name": "Gauntlet",
-      "tagline": "Risk Curators 协议，TVL 约 $1592M。",
+      "tagline": "Risk Curators 协议，TVL 约 $1596M。",
       "status": "potential",
       "categoryText": "Risk Curators",
       "chains": [
@@ -660,7 +660,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Gauntlet",
       "officialUrl": "https://www.gauntlet.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Gauntlet",
       "officialHost": "www.gauntlet.xyz",
       "officialProfiles": {
@@ -668,12 +668,12 @@
         "x": "https://x.com/gauntlet_xyz"
       },
       "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $1592M。"
+      "description": "Risk Curators 协议，TVL 约 $1596M。"
     },
     {
       "slug": "uniswap-v3",
       "name": "Uniswap V3",
-      "tagline": "Dexs 协议，TVL 约 $1580M。",
+      "tagline": "Dexs 协议，TVL 约 $1572M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -683,7 +683,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Uniswap%20V3",
       "officialUrl": "https://app.uniswap.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Uniswap V3",
       "officialHost": "app.uniswap.org",
       "officialProfiles": {
@@ -691,12 +691,12 @@
         "x": "https://x.com/Uniswap"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $1580M。"
+      "description": "Dexs 协议，TVL 约 $1572M。"
     },
     {
       "slug": "sanctum-validator-lsts",
       "name": "Sanctum Validator LSTs",
-      "tagline": "Liquid Staking 协议，TVL 约 $1527M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1567M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -706,7 +706,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Sanctum%20Validator%20LSTs",
       "officialUrl": "https://www.sanctum.so/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Sanctum Validator LSTs",
       "officialHost": "www.sanctum.so",
       "officialProfiles": {
@@ -714,12 +714,12 @@
         "x": "https://x.com/sanctumso"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $1527M。"
+      "description": "Liquid Staking 协议，TVL 约 $1567M。"
     },
     {
       "slug": "centrifuge-protocol",
       "name": "Centrifuge Protocol",
-      "tagline": "RWA 协议，TVL 约 $1505M。",
+      "tagline": "RWA 协议，TVL 约 $1482M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -729,7 +729,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Centrifuge%20Protocol",
       "officialUrl": "https://centrifuge.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Centrifuge Protocol",
       "officialHost": "centrifuge.io",
       "officialProfiles": {
@@ -737,7 +737,7 @@
         "x": "https://x.com/centrifuge"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $1505M。"
+      "description": "RWA 协议，TVL 约 $1482M。"
     },
     {
       "slug": "portal",
@@ -752,7 +752,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Portal",
       "officialUrl": "https://portalbridge.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Portal",
       "officialHost": "portalbridge.com",
       "officialProfiles": {
@@ -765,7 +765,7 @@
     {
       "slug": "compound-v3",
       "name": "Compound V3",
-      "tagline": "Lending 协议，TVL 约 $1427M。",
+      "tagline": "Lending 协议，TVL 约 $1454M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -775,7 +775,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Compound%20V3",
       "officialUrl": "https://www.compound.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Compound V3",
       "officialHost": "www.compound.xyz",
       "officialProfiles": {
@@ -783,12 +783,12 @@
         "x": "https://x.com/Compound_xyz"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $1427M。"
+      "description": "Lending 协议，TVL 约 $1454M。"
     },
     {
       "slug": "kamino-lend",
       "name": "Kamino Lend",
-      "tagline": "Lending 协议，TVL 约 $1341M。",
+      "tagline": "Lending 协议，TVL 约 $1354M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -798,7 +798,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Kamino%20Lend",
       "officialUrl": "https://kamino.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Kamino Lend",
       "officialHost": "kamino.com",
       "officialProfiles": {
@@ -806,12 +806,12 @@
         "x": "https://x.com/Kamino"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $1341M。"
+      "description": "Lending 协议，TVL 约 $1354M。"
     },
     {
       "slug": "spark-savings",
       "name": "Spark Savings",
-      "tagline": "Yield 协议，TVL 约 $1322M。",
+      "tagline": "Yield 协议，TVL 约 $1323M。",
       "status": "potential",
       "categoryText": "Yield",
       "chains": [
@@ -821,7 +821,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Spark%20Savings",
       "officialUrl": "https://spark.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Spark Savings",
       "officialHost": "spark.finance",
       "officialProfiles": {
@@ -829,12 +829,12 @@
         "x": "https://x.com/sparkfinance"
       },
       "clueCapital": false,
-      "description": "Yield 协议，TVL 约 $1322M。"
+      "description": "Yield 协议，TVL 约 $1323M。"
     },
     {
       "slug": "rocket-pool",
       "name": "Rocket Pool",
-      "tagline": "Liquid Staking 协议，TVL 约 $1295M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1305M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -844,7 +844,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Rocket%20Pool",
       "officialUrl": "https://rocketpool.net/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Rocket Pool",
       "officialHost": "rocketpool.net",
       "officialProfiles": {
@@ -852,12 +852,12 @@
         "x": "https://x.com/Rocket_Pool"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $1295M。"
+      "description": "Liquid Staking 协议，TVL 约 $1305M。"
     },
     {
       "slug": "curve-dex",
       "name": "Curve DEX",
-      "tagline": "Dexs 协议，TVL 约 $1277M。",
+      "tagline": "Dexs 协议，TVL 约 $1282M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -867,7 +867,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Curve%20DEX",
       "officialUrl": "https://curve.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Curve DEX",
       "officialHost": "curve.finance",
       "officialProfiles": {
@@ -875,35 +875,12 @@
         "x": "https://x.com/CurveFinance"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $1277M。"
-    },
-    {
-      "slug": "usdd",
-      "name": "USDD",
-      "tagline": "CDP 协议，TVL 约 $1265M。",
-      "status": "potential",
-      "categoryText": "CDP",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/USDD",
-      "officialUrl": "https://usdd.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "USDD",
-      "officialHost": "usdd.io",
-      "officialProfiles": {
-        "website": "https://usdd.io/",
-        "x": "https://x.com/usddio"
-      },
-      "clueCapital": false,
-      "description": "CDP 协议，TVL 约 $1265M。"
+      "description": "Dexs 协议，TVL 约 $1282M。"
     },
     {
       "slug": "venus-core-pool",
       "name": "Venus Core Pool",
-      "tagline": "Lending 协议，TVL 约 $1251M。",
+      "tagline": "Lending 协议，TVL 约 $1266M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -913,7 +890,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Venus%20Core%20Pool",
       "officialUrl": "https://app.venus.io/#/core-pool",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Venus Core Pool",
       "officialHost": "app.venus.io",
       "officialProfiles": {
@@ -921,12 +898,35 @@
         "x": "https://x.com/VenusProtocol"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $1251M。"
+      "description": "Lending 协议，TVL 约 $1266M。"
+    },
+    {
+      "slug": "usdd",
+      "name": "USDD",
+      "tagline": "CDP 协议，TVL 约 $1252M。",
+      "status": "potential",
+      "categoryText": "CDP",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/USDD",
+      "officialUrl": "https://usdd.io/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "USDD",
+      "officialHost": "usdd.io",
+      "officialProfiles": {
+        "website": "https://usdd.io/",
+        "x": "https://x.com/usddio"
+      },
+      "clueCapital": false,
+      "description": "CDP 协议，TVL 约 $1252M。"
     },
     {
       "slug": "pendle-v2",
       "name": "Pendle V2",
-      "tagline": "Yield 协议，TVL 约 $1240M。",
+      "tagline": "Yield 协议，TVL 约 $1246M。",
       "status": "potential",
       "categoryText": "Yield",
       "chains": [
@@ -936,7 +936,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Pendle%20V2",
       "officialUrl": "https://pendle.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Pendle V2",
       "officialHost": "pendle.finance",
       "officialProfiles": {
@@ -944,12 +944,12 @@
         "x": "https://x.com/pendle_fi"
       },
       "clueCapital": false,
-      "description": "Yield 协议，TVL 约 $1240M。"
+      "description": "Yield 协议，TVL 约 $1246M。"
     },
     {
       "slug": "wisdomtree",
       "name": "WisdomTree",
-      "tagline": "RWA 协议，TVL 约 $1230M。",
+      "tagline": "RWA 协议，TVL 约 $1240M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -959,7 +959,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/WisdomTree",
       "officialUrl": "https://www.wisdomtreeprime.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "WisdomTree",
       "officialHost": "www.wisdomtreeprime.com",
       "officialProfiles": {
@@ -967,7 +967,30 @@
         "x": "https://x.com/WisdomTreePrime"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $1230M。"
+      "description": "RWA 协议，TVL 约 $1240M。"
+    },
+    {
+      "slug": "concrete",
+      "name": "Concrete",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1187M。",
+      "status": "potential",
+      "categoryText": "Onchain Capital Allocator",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Concrete",
+      "officialUrl": "https://app.concrete.xyz/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Concrete",
+      "officialHost": "app.concrete.xyz",
+      "officialProfiles": {
+        "website": "https://app.concrete.xyz/",
+        "x": "https://x.com/ConcreteXYZ"
+      },
+      "clueCapital": false,
+      "description": "Onchain Capital Allocator 协议，TVL 约 $1187M。"
     },
     {
       "slug": "falcon-finance",
@@ -982,7 +1005,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Falcon%20Finance",
       "officialUrl": "https://app.falcon.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Falcon Finance",
       "officialHost": "app.falcon.finance",
       "officialProfiles": {
@@ -993,32 +1016,9 @@
       "description": "Basis Trading 协议，TVL 约 $1176M。"
     },
     {
-      "slug": "concrete",
-      "name": "Concrete",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1175M。",
-      "status": "potential",
-      "categoryText": "Onchain Capital Allocator",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Concrete",
-      "officialUrl": "https://app.concrete.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Concrete",
-      "officialHost": "app.concrete.xyz",
-      "officialProfiles": {
-        "website": "https://app.concrete.xyz/",
-        "x": "https://x.com/ConcreteXYZ"
-      },
-      "clueCapital": false,
-      "description": "Onchain Capital Allocator 协议，TVL 约 $1175M。"
-    },
-    {
       "slug": "raydium-amm",
       "name": "Raydium AMM",
-      "tagline": "Dexs 协议，TVL 约 $1124M。",
+      "tagline": "Dexs 协议，TVL 约 $1143M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -1028,7 +1028,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Raydium%20AMM",
       "officialUrl": "https://raydium.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Raydium AMM",
       "officialHost": "raydium.io",
       "officialProfiles": {
@@ -1036,58 +1036,12 @@
         "x": "https://x.com/RaydiumProtocol"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $1124M。"
-    },
-    {
-      "slug": "uniswap-v4",
-      "name": "Uniswap V4",
-      "tagline": "Dexs 协议，TVL 约 $1098M。",
-      "status": "potential",
-      "categoryText": "Dexs",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Uniswap%20V4",
-      "officialUrl": "https://app.uniswap.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Uniswap V4",
-      "officialHost": "app.uniswap.org",
-      "officialProfiles": {
-        "website": "https://app.uniswap.org/",
-        "x": "https://x.com/Uniswap"
-      },
-      "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $1098M。"
-    },
-    {
-      "slug": "kelp",
-      "name": "Kelp",
-      "tagline": "Liquid Restaking 协议，TVL 约 $1091M。",
-      "status": "potential",
-      "categoryText": "Liquid Restaking",
-      "chains": [
-        "Ethereum"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Kelp",
-      "officialUrl": "https://kelpdao.xyz/restake/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Kelp",
-      "officialHost": "kelpdao.xyz",
-      "officialProfiles": {
-        "website": "https://kelpdao.xyz/restake/",
-        "x": "https://x.com/KelpDAO"
-      },
-      "clueCapital": false,
-      "description": "Liquid Restaking 协议，TVL 约 $1091M。"
+      "description": "Dexs 协议，TVL 约 $1143M。"
     },
     {
       "slug": "jupiter-lend",
       "name": "Jupiter Lend",
-      "tagline": "Lending 协议，TVL 约 $1087M。",
+      "tagline": "Lending 协议，TVL 约 $1096M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -1097,7 +1051,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Jupiter%20Lend",
       "officialUrl": "https://jup.ag/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Jupiter Lend",
       "officialHost": "jup.ag",
       "officialProfiles": {
@@ -1105,12 +1059,35 @@
         "x": "https://x.com/JupiterExchange"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $1087M。"
+      "description": "Lending 协议，TVL 约 $1096M。"
+    },
+    {
+      "slug": "kelp",
+      "name": "Kelp",
+      "tagline": "Liquid Restaking 协议，TVL 约 $1072M。",
+      "status": "potential",
+      "categoryText": "Liquid Restaking",
+      "chains": [
+        "Ethereum"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Kelp",
+      "officialUrl": "https://kelpdao.xyz/restake/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Kelp",
+      "officialHost": "kelpdao.xyz",
+      "officialProfiles": {
+        "website": "https://kelpdao.xyz/restake/",
+        "x": "https://x.com/KelpDAO"
+      },
+      "clueCapital": false,
+      "description": "Liquid Restaking 协议，TVL 约 $1072M。"
     },
     {
       "slug": "kinetiq-khype",
       "name": "Kinetiq kHYPE",
-      "tagline": "Liquid Staking 协议，TVL 约 $1023M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1057M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -1120,7 +1097,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Kinetiq%20kHYPE",
       "officialUrl": "https://kinetiq.xyz/stake",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Kinetiq kHYPE",
       "officialHost": "kinetiq.xyz",
       "officialProfiles": {
@@ -1128,12 +1105,35 @@
         "x": "https://x.com/kinetiq_xyz"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $1023M。"
+      "description": "Liquid Staking 协议，TVL 约 $1057M。"
+    },
+    {
+      "slug": "uniswap-v4",
+      "name": "Uniswap V4",
+      "tagline": "Dexs 协议，TVL 约 $1053M。",
+      "status": "potential",
+      "categoryText": "Dexs",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Uniswap%20V4",
+      "officialUrl": "https://app.uniswap.org/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Uniswap V4",
+      "officialHost": "app.uniswap.org",
+      "officialProfiles": {
+        "website": "https://app.uniswap.org/",
+        "x": "https://x.com/Uniswap"
+      },
+      "clueCapital": false,
+      "description": "Dexs 协议，TVL 约 $1053M。"
     },
     {
       "slug": "uniswap-v2",
       "name": "Uniswap V2",
-      "tagline": "Dexs 协议，TVL 约 $975M。",
+      "tagline": "Dexs 协议，TVL 约 $964M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -1143,7 +1143,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Uniswap%20V2",
       "officialUrl": "https://app.uniswap.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Uniswap V2",
       "officialHost": "app.uniswap.org",
       "officialProfiles": {
@@ -1151,7 +1151,7 @@
         "x": "https://x.com/Uniswap"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $975M。"
+      "description": "Dexs 协议，TVL 约 $964M。"
     },
     {
       "slug": "blockchain-capital",
@@ -1166,7 +1166,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Blockchain%20Capital",
       "officialUrl": "https://www.blockchaincapital.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Blockchain Capital",
       "officialHost": "www.blockchaincapital.com",
       "officialProfiles": {
@@ -1179,7 +1179,7 @@
     {
       "slug": "stakewise-v3",
       "name": "StakeWise V3",
-      "tagline": "Liquid Staking 协议，TVL 约 $939M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $953M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -1189,7 +1189,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/StakeWise%20V3",
       "officialUrl": "https://stakewise.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "StakeWise V3",
       "officialHost": "stakewise.io",
       "officialProfiles": {
@@ -1197,12 +1197,12 @@
         "x": "https://x.com/stakewise_io"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $939M。"
+      "description": "Liquid Staking 协议，TVL 约 $953M。"
     },
     {
       "slug": "ondo-global-markets",
       "name": "Ondo Global Markets",
-      "tagline": "RWA 协议，TVL 约 $933M。",
+      "tagline": "RWA 协议，TVL 约 $939M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -1212,7 +1212,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Ondo%20Global%20Markets",
       "officialUrl": "https://ondo.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Ondo Global Markets",
       "officialHost": "ondo.finance",
       "officialProfiles": {
@@ -1220,12 +1220,12 @@
         "x": "https://x.com/OndoFinance"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $933M。"
+      "description": "RWA 协议，TVL 约 $939M。"
     },
     {
       "slug": "lista-lending",
       "name": "Lista Lending",
-      "tagline": "Lending 协议，TVL 约 $848M。",
+      "tagline": "Lending 协议，TVL 约 $853M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -1235,7 +1235,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Lista%20Lending",
       "officialUrl": "https://lista.org/lending",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Lista Lending",
       "officialHost": "lista.org",
       "officialProfiles": {
@@ -1243,12 +1243,12 @@
         "x": "https://x.com/LISTA_DAO"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $848M。"
+      "description": "Lending 协议，TVL 约 $853M。"
     },
     {
       "slug": "fluid-lending",
       "name": "Fluid Lending",
-      "tagline": "Lending 协议，TVL 约 $757M。",
+      "tagline": "Lending 协议，TVL 约 $765M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -1258,7 +1258,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Fluid%20Lending",
       "officialUrl": "https://www.fluid.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Fluid Lending",
       "officialHost": "www.fluid.io",
       "officialProfiles": {
@@ -1266,12 +1266,12 @@
         "x": "https://x.com/0xfluid"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $757M。"
+      "description": "Lending 协议，TVL 约 $765M。"
     },
     {
       "slug": "jupiter-perpetual-exchange",
       "name": "Jupiter Perpetual Exchange",
-      "tagline": "Derivatives 协议，TVL 约 $742M。",
+      "tagline": "Derivatives 协议，TVL 约 $754M。",
       "status": "potential",
       "categoryText": "Derivatives",
       "chains": [
@@ -1281,7 +1281,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Jupiter%20Perpetual%20Exchange",
       "officialUrl": "https://jup.ag/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Jupiter Perpetual Exchange",
       "officialHost": "jup.ag",
       "officialProfiles": {
@@ -1289,35 +1289,12 @@
         "x": "https://x.com/JupiterExchange"
       },
       "clueCapital": false,
-      "description": "Derivatives 协议，TVL 约 $742M。"
-    },
-    {
-      "slug": "anemoy-capital",
-      "name": "Anemoy Capital",
-      "tagline": "RWA 协议，TVL 约 $725M。",
-      "status": "potential",
-      "categoryText": "RWA",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Anemoy%20Capital",
-      "officialUrl": "https://www.anemoy.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Anemoy Capital",
-      "officialHost": "www.anemoy.io",
-      "officialProfiles": {
-        "website": "https://www.anemoy.io/",
-        "x": "https://x.com/anemoycapital"
-      },
-      "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $725M。"
+      "description": "Derivatives 协议，TVL 约 $754M。"
     },
     {
       "slug": "unit",
       "name": "Unit",
-      "tagline": "Bridge 协议，TVL 约 $696M。",
+      "tagline": "Bridge 协议，TVL 约 $721M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -1327,7 +1304,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Unit",
       "officialUrl": "https://hyperunit.xyz/deposit",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Unit",
       "officialHost": "hyperunit.xyz",
       "officialProfiles": {
@@ -1335,12 +1312,35 @@
         "x": "https://x.com/unitxyz"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $696M。"
+      "description": "Bridge 协议，TVL 约 $721M。"
+    },
+    {
+      "slug": "anemoy-capital",
+      "name": "Anemoy Capital",
+      "tagline": "RWA 协议，TVL 约 $700M。",
+      "status": "potential",
+      "categoryText": "RWA",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Anemoy%20Capital",
+      "officialUrl": "https://www.anemoy.io/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Anemoy Capital",
+      "officialHost": "www.anemoy.io",
+      "officialProfiles": {
+        "website": "https://www.anemoy.io/",
+        "x": "https://x.com/anemoycapital"
+      },
+      "clueCapital": false,
+      "description": "RWA 协议，TVL 约 $700M。"
     },
     {
       "slug": "lombard-lbtc",
       "name": "Lombard LBTC",
-      "tagline": "Restaked BTC 协议，TVL 约 $678M。",
+      "tagline": "Restaked BTC 协议，TVL 约 $684M。",
       "status": "potential",
       "categoryText": "Restaked BTC",
       "chains": [
@@ -1350,7 +1350,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Lombard%20LBTC",
       "officialUrl": "https://www.lombard.finance/app/stake/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Lombard LBTC",
       "officialHost": "www.lombard.finance",
       "officialProfiles": {
@@ -1358,12 +1358,12 @@
         "x": "https://x.com/Lombard_Finance"
       },
       "clueCapital": false,
-      "description": "Restaked BTC 协议，TVL 约 $678M。"
+      "description": "Restaked BTC 协议，TVL 约 $684M。"
     },
     {
       "slug": "function-fbtc",
       "name": "Function FBTC",
-      "tagline": "Bridge 协议，TVL 约 $659M。",
+      "tagline": "Bridge 协议，TVL 约 $670M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -1373,7 +1373,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Function%20FBTC",
       "officialUrl": "https://www.fxn.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Function FBTC",
       "officialHost": "www.fxn.xyz",
       "officialProfiles": {
@@ -1381,12 +1381,12 @@
         "x": "https://x.com/FunctionBTC"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $659M。"
+      "description": "Bridge 协议，TVL 约 $670M。"
     },
     {
       "slug": "obol",
       "name": "Obol",
-      "tagline": "Staking Pool 协议，TVL 约 $636M。",
+      "tagline": "Staking Pool 协议，TVL 约 $646M。",
       "status": "potential",
       "categoryText": "Staking Pool",
       "chains": [
@@ -1396,7 +1396,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Obol",
       "officialUrl": "https://obol.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Obol",
       "officialHost": "obol.org",
       "officialProfiles": {
@@ -1404,12 +1404,12 @@
         "x": "https://x.com/Obol_Collective"
       },
       "clueCapital": false,
-      "description": "Staking Pool 协议，TVL 约 $636M。"
+      "description": "Staking Pool 协议，TVL 约 $646M。"
     },
     {
       "slug": "meth-protocol",
       "name": "mETH Protocol",
-      "tagline": "Liquid Staking 协议，TVL 约 $603M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $612M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -1419,7 +1419,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/mETH%20Protocol",
       "officialUrl": "https://www.methprotocol.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "mETH Protocol",
       "officialHost": "www.methprotocol.xyz",
       "officialProfiles": {
@@ -1427,35 +1427,12 @@
         "x": "https://x.com/mETHProtocol"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $603M。"
-    },
-    {
-      "slug": "invesco-ustb",
-      "name": "Invesco USTB",
-      "tagline": "RWA 协议，TVL 约 $599M。",
-      "status": "potential",
-      "categoryText": "RWA",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Invesco%20USTB",
-      "officialUrl": "https://superstate.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Invesco USTB",
-      "officialHost": "superstate.com",
-      "officialProfiles": {
-        "website": "https://superstate.com/",
-        "x": "https://x.com/superstatefunds"
-      },
-      "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $599M。"
+      "description": "Liquid Staking 协议，TVL 约 $612M。"
     },
     {
       "slug": "hastra",
       "name": "Hastra",
-      "tagline": "RWA 协议，TVL 约 $597M。",
+      "tagline": "RWA 协议，TVL 约 $593M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -1465,7 +1442,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Hastra",
       "officialUrl": "https://hastra.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Hastra",
       "officialHost": "hastra.io",
       "officialProfiles": {
@@ -1473,7 +1450,7 @@
         "x": "https://x.com/HastraFi"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $597M。"
+      "description": "RWA 协议，TVL 约 $593M。"
     },
     {
       "slug": "convex-finance",
@@ -1488,7 +1465,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Convex%20Finance",
       "officialUrl": "https://www.convexfinance.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Convex Finance",
       "officialHost": "www.convexfinance.com",
       "officialProfiles": {
@@ -1499,9 +1476,32 @@
       "description": "Yield 协议，TVL 约 $586M。"
     },
     {
+      "slug": "invesco-ustb",
+      "name": "Invesco USTB",
+      "tagline": "RWA 协议，TVL 约 $549M。",
+      "status": "potential",
+      "categoryText": "RWA",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Invesco%20USTB",
+      "officialUrl": "https://superstate.com/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Invesco USTB",
+      "officialHost": "superstate.com",
+      "officialProfiles": {
+        "website": "https://superstate.com/",
+        "x": "https://x.com/superstatefunds"
+      },
+      "clueCapital": false,
+      "description": "RWA 协议，TVL 约 $549M。"
+    },
+    {
       "slug": "k3-capital",
       "name": "K3 Capital",
-      "tagline": "Risk Curators 协议，TVL 约 $499M。",
+      "tagline": "Risk Curators 协议，TVL 约 $528M。",
       "status": "potential",
       "categoryText": "Risk Curators",
       "chains": [
@@ -1511,7 +1511,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/K3%20Capital",
       "officialUrl": "https://k3.capital/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "K3 Capital",
       "officialHost": "k3.capital",
       "officialProfiles": {
@@ -1519,12 +1519,12 @@
         "x": "https://x.com/k3_capital"
       },
       "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $499M。"
+      "description": "Risk Curators 协议，TVL 约 $528M。"
     },
     {
       "slug": "solvbtc",
       "name": "SolvBTC",
-      "tagline": "Bridge 协议，TVL 约 $493M。",
+      "tagline": "Bridge 协议，TVL 约 $500M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -1534,7 +1534,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/SolvBTC",
       "officialUrl": "https://app.solv.finance/solvbtc",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "SolvBTC",
       "officialHost": "app.solv.finance",
       "officialProfiles": {
@@ -1542,12 +1542,12 @@
         "x": "https://x.com/SolvProtocol"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $493M。"
+      "description": "Bridge 协议，TVL 约 $500M。"
     },
     {
       "slug": "ethena-usdtb",
       "name": "Ethena USDtb",
-      "tagline": "RWA 协议，TVL 约 $484M。",
+      "tagline": "RWA 协议，TVL 约 $483M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -1557,7 +1557,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Ethena%20USDtb",
       "officialUrl": "https://usdtb.money/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Ethena USDtb",
       "officialHost": "usdtb.money",
       "officialProfiles": {
@@ -1565,12 +1565,12 @@
         "x": "https://x.com/ethena"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $484M。"
+      "description": "RWA 协议，TVL 约 $483M。"
     },
     {
       "slug": "lorenzo-enzobtc",
       "name": "Lorenzo enzoBTC",
-      "tagline": "Bridge 协议，TVL 约 $462M。",
+      "tagline": "Bridge 协议，TVL 约 $470M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -1580,7 +1580,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Lorenzo%20enzoBTC",
       "officialUrl": "https://www.lorenzo-protocol.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Lorenzo enzoBTC",
       "officialHost": "www.lorenzo-protocol.xyz",
       "officialProfiles": {
@@ -1588,12 +1588,12 @@
         "x": "https://x.com/LorenzoProtocol"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $462M。"
+      "description": "Bridge 协议，TVL 约 $470M。"
     },
     {
       "slug": "symbiotic",
       "name": "Symbiotic",
-      "tagline": "Collateral Markets 协议，TVL 约 $436M。",
+      "tagline": "Collateral Markets 协议，TVL 约 $443M。",
       "status": "potential",
       "categoryText": "Collateral Markets",
       "chains": [
@@ -1603,7 +1603,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Symbiotic",
       "officialUrl": "https://symbiotic.fi/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Symbiotic",
       "officialHost": "symbiotic.fi",
       "officialProfiles": {
@@ -1611,35 +1611,12 @@
         "x": "https://x.com/symbioticfi"
       },
       "clueCapital": false,
-      "description": "Collateral Markets 协议，TVL 约 $436M。"
-    },
-    {
-      "slug": "upshift",
-      "name": "Upshift",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $419M。",
-      "status": "potential",
-      "categoryText": "Onchain Capital Allocator",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Upshift",
-      "officialUrl": "https://app.upshift.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Upshift",
-      "officialHost": "app.upshift.finance",
-      "officialProfiles": {
-        "website": "https://app.upshift.finance/",
-        "x": "https://x.com/upshift_fi"
-      },
-      "clueCapital": false,
-      "description": "Onchain Capital Allocator 协议，TVL 约 $419M。"
+      "description": "Collateral Markets 协议，TVL 约 $443M。"
     },
     {
       "slug": "merlins-seal",
       "name": "Merlins Seal",
-      "tagline": "Bridge 协议，TVL 约 $410M。",
+      "tagline": "Bridge 协议，TVL 约 $417M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -1649,7 +1626,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Merlins%20Seal",
       "officialUrl": "https://merlinchain.io/bridge/staking",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Merlins Seal",
       "officialHost": "merlinchain.io",
       "officialProfiles": {
@@ -1657,12 +1634,35 @@
         "x": "https://x.com/MerlinLayer2"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $410M。"
+      "description": "Bridge 协议，TVL 约 $417M。"
+    },
+    {
+      "slug": "upshift",
+      "name": "Upshift",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $417M。",
+      "status": "potential",
+      "categoryText": "Onchain Capital Allocator",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Upshift",
+      "officialUrl": "https://app.upshift.finance/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Upshift",
+      "officialHost": "app.upshift.finance",
+      "officialProfiles": {
+        "website": "https://app.upshift.finance/",
+        "x": "https://x.com/upshift_fi"
+      },
+      "clueCapital": false,
+      "description": "Onchain Capital Allocator 协议，TVL 约 $417M。"
     },
     {
       "slug": "aave-v4",
       "name": "Aave V4",
-      "tagline": "Lending 协议，TVL 约 $396M。",
+      "tagline": "Lending 协议，TVL 约 $403M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -1672,7 +1672,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Aave%20V4",
       "officialUrl": "https://aave.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Aave V4",
       "officialHost": "aave.com",
       "officialProfiles": {
@@ -1680,12 +1680,12 @@
         "x": "https://x.com/aave"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $396M。"
+      "description": "Lending 协议，TVL 约 $403M。"
     },
     {
       "slug": "marinade-native",
       "name": "Marinade Native",
-      "tagline": "Staking Pool 协议，TVL 约 $380M。",
+      "tagline": "Staking Pool 协议，TVL 约 $391M。",
       "status": "potential",
       "categoryText": "Staking Pool",
       "chains": [
@@ -1695,7 +1695,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Marinade%20Native",
       "officialUrl": "https://app.marinade.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Marinade Native",
       "officialHost": "app.marinade.finance",
       "officialProfiles": {
@@ -1703,12 +1703,12 @@
         "x": "https://x.com/MarinadeFinance"
       },
       "clueCapital": false,
-      "description": "Staking Pool 协议，TVL 约 $380M。"
+      "description": "Staking Pool 协议，TVL 约 $391M。"
     },
     {
       "slug": "polymarket-international",
       "name": "Polymarket International",
-      "tagline": "Prediction Market 协议，TVL 约 $374M。",
+      "tagline": "Prediction Market 协议，TVL 约 $369M。",
       "status": "potential",
       "categoryText": "Prediction Market",
       "chains": [
@@ -1718,7 +1718,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Polymarket%20International",
       "officialUrl": "https://polymarket.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Polymarket International",
       "officialHost": "polymarket.com",
       "officialProfiles": {
@@ -1726,219 +1726,12 @@
         "x": "https://x.com/Polymarket"
       },
       "clueCapital": false,
-      "description": "Prediction Market 协议，TVL 约 $374M。"
-    },
-    {
-      "slug": "world-chain",
-      "name": "World Chain",
-      "tagline": "Canonical Bridge 协议，TVL 约 $358M。",
-      "status": "potential",
-      "categoryText": "Canonical Bridge",
-      "chains": [
-        "Ethereum"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/World%20Chain",
-      "officialUrl": "https://world.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "World Chain",
-      "officialHost": "world.org",
-      "officialProfiles": {
-        "website": "https://world.org/",
-        "x": "https://x.com/worldcoin"
-      },
-      "clueCapital": false,
-      "description": "Canonical Bridge 协议，TVL 约 $358M。"
-    },
-    {
-      "slug": "re",
-      "name": "Re",
-      "tagline": "RWA 协议，TVL 约 $353M。",
-      "status": "potential",
-      "categoryText": "RWA",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Re",
-      "officialUrl": "https://app.re.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Re",
-      "officialHost": "app.re.xyz",
-      "officialProfiles": {
-        "website": "https://app.re.xyz/",
-        "x": "https://x.com/re"
-      },
-      "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $353M。"
-    },
-    {
-      "slug": "euler-v2",
-      "name": "Euler V2",
-      "tagline": "Lending 协议，TVL 约 $342M。",
-      "status": "potential",
-      "categoryText": "Lending",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Euler%20V2",
-      "officialUrl": "https://www.euler.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Euler V2",
-      "officialHost": "www.euler.finance",
-      "officialProfiles": {
-        "website": "https://www.euler.finance/",
-        "x": "https://x.com/eulerfinance"
-      },
-      "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $342M。"
-    },
-    {
-      "slug": "tbtc",
-      "name": "tBTC",
-      "tagline": "Decentralized BTC 协议，TVL 约 $337M。",
-      "status": "potential",
-      "categoryText": "Decentralized BTC",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/tBTC",
-      "officialUrl": "https://threshold.network/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "tBTC",
-      "officialHost": "threshold.network",
-      "officialProfiles": {
-        "website": "https://threshold.network/",
-        "x": "https://x.com/TheTNetwork"
-      },
-      "clueCapital": false,
-      "description": "Decentralized BTC 协议，TVL 约 $337M。"
-    },
-    {
-      "slug": "defi-saver-asset-management",
-      "name": "Defi Saver Asset Management",
-      "tagline": "CDP Manager 协议，TVL 约 $334M。",
-      "status": "potential",
-      "categoryText": "CDP Manager",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Defi%20Saver%20Asset%20Management",
-      "officialUrl": "https://defisaver.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Defi Saver Asset Management",
-      "officialHost": "defisaver.com",
-      "officialProfiles": {
-        "website": "https://defisaver.com/",
-        "x": "https://x.com/DefiSaver"
-      },
-      "clueCapital": false,
-      "description": "CDP Manager 协议，TVL 约 $334M。"
-    },
-    {
-      "slug": "cap",
-      "name": "cap",
-      "tagline": "Lending 协议，TVL 约 $331M。",
-      "status": "potential",
-      "categoryText": "Lending",
-      "chains": [
-        "Ethereum"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/cap",
-      "officialUrl": "https://cap.app/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "cap",
-      "officialHost": "cap.app",
-      "officialProfiles": {
-        "website": "https://cap.app/",
-        "x": "https://x.com/CapApp"
-      },
-      "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $331M。"
-    },
-    {
-      "slug": "pumpswap",
-      "name": "PumpSwap",
-      "tagline": "Dexs 协议，TVL 约 $328M。",
-      "status": "potential",
-      "categoryText": "Dexs",
-      "chains": [
-        "Solana"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/PumpSwap",
-      "officialUrl": "https://swap.pump.fun/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "PumpSwap",
-      "officialHost": "swap.pump.fun",
-      "officialProfiles": {
-        "website": "https://swap.pump.fun/",
-        "x": "https://x.com/Pumpfun"
-      },
-      "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $328M。"
-    },
-    {
-      "slug": "dolomite",
-      "name": "Dolomite",
-      "tagline": "Lending 协议，TVL 约 $321M。",
-      "status": "potential",
-      "categoryText": "Lending",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Dolomite",
-      "officialUrl": "https://dolomite.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Dolomite",
-      "officialHost": "dolomite.io",
-      "officialProfiles": {
-        "website": "https://dolomite.io/",
-        "x": "https://x.com/Dolomite_io"
-      },
-      "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $321M。"
-    },
-    {
-      "slug": "pancakeswap-amm-v3",
-      "name": "PancakeSwap AMM V3",
-      "tagline": "Dexs 协议，TVL 约 $319M。",
-      "status": "potential",
-      "categoryText": "Dexs",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/PancakeSwap%20AMM%20V3",
-      "officialUrl": "https://pancakeswap.finance/swap",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "PancakeSwap AMM V3",
-      "officialHost": "pancakeswap.finance",
-      "officialProfiles": {
-        "website": "https://pancakeswap.finance/swap",
-        "x": "https://x.com/PancakeSwap"
-      },
-      "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $319M。"
+      "description": "Prediction Market 协议，TVL 约 $369M。"
     },
     {
       "slug": "bedrock-unibtc",
       "name": "Bedrock uniBTC",
-      "tagline": "Anchor BTC 协议，TVL 约 $318M。",
+      "tagline": "Anchor BTC 协议，TVL 约 $360M。",
       "status": "potential",
       "categoryText": "Anchor BTC",
       "chains": [
@@ -1948,7 +1741,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Bedrock%20uniBTC",
       "officialUrl": "https://app.bedrock.technology/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Bedrock uniBTC",
       "officialHost": "app.bedrock.technology",
       "officialProfiles": {
@@ -1956,12 +1749,12 @@
         "x": "https://x.com/Bedrock_DeFi"
       },
       "clueCapital": false,
-      "description": "Anchor BTC 协议，TVL 约 $318M。"
+      "description": "Anchor BTC 协议，TVL 约 $360M。"
     },
     {
-      "slug": "huma-finance-v2",
-      "name": "Huma Finance V2",
-      "tagline": "RWA 协议，TVL 约 $315M。",
+      "slug": "re",
+      "name": "Re",
+      "tagline": "RWA 协议，TVL 约 $356M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -1969,17 +1762,201 @@
       ],
       "sourceType": "third_party",
       "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Huma%20Finance%20V2",
-      "officialUrl": "https://app.huma.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Huma Finance V2",
-      "officialHost": "app.huma.finance",
+      "sourceUrl": "https://defillama.com/protocol/Re",
+      "officialUrl": "https://app.re.xyz/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Re",
+      "officialHost": "app.re.xyz",
       "officialProfiles": {
-        "website": "https://app.huma.finance/",
-        "x": "https://x.com/humafinance"
+        "website": "https://app.re.xyz/",
+        "x": "https://x.com/re"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $315M。"
+      "description": "RWA 协议，TVL 约 $356M。"
+    },
+    {
+      "slug": "world-chain",
+      "name": "World Chain",
+      "tagline": "Canonical Bridge 协议，TVL 约 $348M。",
+      "status": "potential",
+      "categoryText": "Canonical Bridge",
+      "chains": [
+        "Ethereum"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/World%20Chain",
+      "officialUrl": "https://world.org/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "World Chain",
+      "officialHost": "world.org",
+      "officialProfiles": {
+        "website": "https://world.org/",
+        "x": "https://x.com/worldcoin"
+      },
+      "clueCapital": false,
+      "description": "Canonical Bridge 协议，TVL 约 $348M。"
+    },
+    {
+      "slug": "euler-v2",
+      "name": "Euler V2",
+      "tagline": "Lending 协议，TVL 约 $347M。",
+      "status": "potential",
+      "categoryText": "Lending",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Euler%20V2",
+      "officialUrl": "https://www.euler.finance/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Euler V2",
+      "officialHost": "www.euler.finance",
+      "officialProfiles": {
+        "website": "https://www.euler.finance/",
+        "x": "https://x.com/eulerfinance"
+      },
+      "clueCapital": false,
+      "description": "Lending 协议，TVL 约 $347M。"
+    },
+    {
+      "slug": "tbtc",
+      "name": "tBTC",
+      "tagline": "Decentralized BTC 协议，TVL 约 $343M。",
+      "status": "potential",
+      "categoryText": "Decentralized BTC",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/tBTC",
+      "officialUrl": "https://threshold.network/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "tBTC",
+      "officialHost": "threshold.network",
+      "officialProfiles": {
+        "website": "https://threshold.network/",
+        "x": "https://x.com/TheTNetwork"
+      },
+      "clueCapital": false,
+      "description": "Decentralized BTC 协议，TVL 约 $343M。"
+    },
+    {
+      "slug": "defi-saver-asset-management",
+      "name": "Defi Saver Asset Management",
+      "tagline": "CDP Manager 协议，TVL 约 $340M。",
+      "status": "potential",
+      "categoryText": "CDP Manager",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Defi%20Saver%20Asset%20Management",
+      "officialUrl": "https://defisaver.com/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Defi Saver Asset Management",
+      "officialHost": "defisaver.com",
+      "officialProfiles": {
+        "website": "https://defisaver.com/",
+        "x": "https://x.com/DefiSaver"
+      },
+      "clueCapital": false,
+      "description": "CDP Manager 协议，TVL 约 $340M。"
+    },
+    {
+      "slug": "cap",
+      "name": "cap",
+      "tagline": "Lending 协议，TVL 约 $335M。",
+      "status": "potential",
+      "categoryText": "Lending",
+      "chains": [
+        "Ethereum"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/cap",
+      "officialUrl": "https://cap.app/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "cap",
+      "officialHost": "cap.app",
+      "officialProfiles": {
+        "website": "https://cap.app/",
+        "x": "https://x.com/CapApp"
+      },
+      "clueCapital": false,
+      "description": "Lending 协议，TVL 约 $335M。"
+    },
+    {
+      "slug": "pumpswap",
+      "name": "PumpSwap",
+      "tagline": "Dexs 协议，TVL 约 $332M。",
+      "status": "potential",
+      "categoryText": "Dexs",
+      "chains": [
+        "Solana"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/PumpSwap",
+      "officialUrl": "https://swap.pump.fun/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "PumpSwap",
+      "officialHost": "swap.pump.fun",
+      "officialProfiles": {
+        "website": "https://swap.pump.fun/",
+        "x": "https://x.com/Pumpfun"
+      },
+      "clueCapital": false,
+      "description": "Dexs 协议，TVL 约 $332M。"
+    },
+    {
+      "slug": "dolomite",
+      "name": "Dolomite",
+      "tagline": "Lending 协议，TVL 约 $323M。",
+      "status": "potential",
+      "categoryText": "Lending",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Dolomite",
+      "officialUrl": "https://dolomite.io/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Dolomite",
+      "officialHost": "dolomite.io",
+      "officialProfiles": {
+        "website": "https://dolomite.io/",
+        "x": "https://x.com/Dolomite_io"
+      },
+      "clueCapital": false,
+      "description": "Lending 协议，TVL 约 $323M。"
+    },
+    {
+      "slug": "pancakeswap-amm-v3",
+      "name": "PancakeSwap AMM V3",
+      "tagline": "Dexs 协议，TVL 约 $323M。",
+      "status": "potential",
+      "categoryText": "Dexs",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/PancakeSwap%20AMM%20V3",
+      "officialUrl": "https://pancakeswap.finance/swap",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "PancakeSwap AMM V3",
+      "officialHost": "pancakeswap.finance",
+      "officialProfiles": {
+        "website": "https://pancakeswap.finance/swap",
+        "x": "https://x.com/PancakeSwap"
+      },
+      "clueCapital": false,
+      "description": "Dexs 协议，TVL 约 $323M。"
     },
     {
       "slug": "fluid-dex",
@@ -1994,7 +1971,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Fluid%20DEX",
       "officialUrl": "https://www.fluid.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Fluid DEX",
       "officialHost": "www.fluid.io",
       "officialProfiles": {
@@ -2003,6 +1980,75 @@
       },
       "clueCapital": false,
       "description": "Dexs 协议，TVL 约 $314M。"
+    },
+    {
+      "slug": "usd-ai",
+      "name": "USD AI",
+      "tagline": "RWA 协议，TVL 约 $313M。",
+      "status": "potential",
+      "categoryText": "RWA",
+      "chains": [
+        "Arbitrum"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/USD%20AI",
+      "officialUrl": "https://usd.ai/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "USD AI",
+      "officialHost": "usd.ai",
+      "officialProfiles": {
+        "website": "https://usd.ai/",
+        "x": "https://x.com/USDai_Official"
+      },
+      "clueCapital": false,
+      "description": "RWA 协议，TVL 约 $313M。"
+    },
+    {
+      "slug": "nexus-btc",
+      "name": "Nexus BTC",
+      "tagline": "Bridge 协议，TVL 约 $307M。",
+      "status": "potential",
+      "categoryText": "Bridge",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Nexus%20BTC",
+      "officialUrl": "https://www.bit.com/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Nexus BTC",
+      "officialHost": "www.bit.com",
+      "officialProfiles": {
+        "website": "https://www.bit.com/",
+        "x": "https://x.com/Matrixport_EN"
+      },
+      "clueCapital": false,
+      "description": "Bridge 协议，TVL 约 $307M。"
+    },
+    {
+      "slug": "huma-finance-v2",
+      "name": "Huma Finance V2",
+      "tagline": "RWA 协议，TVL 约 $305M。",
+      "status": "potential",
+      "categoryText": "RWA",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Huma%20Finance%20V2",
+      "officialUrl": "https://app.huma.finance/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Huma Finance V2",
+      "officialHost": "app.huma.finance",
+      "officialProfiles": {
+        "website": "https://app.huma.finance/",
+        "x": "https://x.com/humafinance"
+      },
+      "clueCapital": false,
+      "description": "RWA 协议，TVL 约 $305M。"
     },
     {
       "slug": "rockawayx",
@@ -2017,7 +2063,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/RockawayX",
       "officialUrl": "https://rockawayx.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "RockawayX",
       "officialHost": "rockawayx.com",
       "officialProfiles": {
@@ -2030,7 +2076,7 @@
     {
       "slug": "onre",
       "name": "OnRe",
-      "tagline": "RWA 协议，TVL 约 $297M。",
+      "tagline": "RWA 协议，TVL 约 $300M。",
       "status": "potential",
       "categoryText": "RWA",
       "chains": [
@@ -2040,7 +2086,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/OnRe",
       "officialUrl": "https://app.onre.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "OnRe",
       "officialHost": "app.onre.finance",
       "officialProfiles": {
@@ -2048,35 +2094,12 @@
         "x": "https://x.com/onrefinance"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $297M。"
-    },
-    {
-      "slug": "usd-ai",
-      "name": "USD AI",
-      "tagline": "RWA 协议，TVL 约 $296M。",
-      "status": "potential",
-      "categoryText": "RWA",
-      "chains": [
-        "Arbitrum"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/USD%20AI",
-      "officialUrl": "https://usd.ai/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "USD AI",
-      "officialHost": "usd.ai",
-      "officialProfiles": {
-        "website": "https://usd.ai/",
-        "x": "https://x.com/USDai_Official"
-      },
-      "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $296M。"
+      "description": "RWA 协议，TVL 约 $300M。"
     },
     {
       "slug": "lightning-network",
       "name": "Lightning Network",
-      "tagline": "Payments 协议，TVL 约 $285M。",
+      "tagline": "Payments 协议，TVL 约 $292M。",
       "status": "potential",
       "categoryText": "Payments",
       "chains": [
@@ -2086,19 +2109,19 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Lightning%20Network",
       "officialUrl": "https://lightning.network/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Lightning Network",
       "officialHost": "lightning.network",
       "officialProfiles": {
         "website": "https://lightning.network/"
       },
       "clueCapital": false,
-      "description": "Payments 协议，TVL 约 $285M。"
+      "description": "Payments 协议，TVL 约 $292M。"
     },
     {
       "slug": "cian-yield-layer",
       "name": "CIAN Yield Layer",
-      "tagline": "Yield Aggregator 协议，TVL 约 $279M。",
+      "tagline": "Yield Aggregator 协议，TVL 约 $284M。",
       "status": "potential",
       "categoryText": "Yield Aggregator",
       "chains": [
@@ -2108,7 +2131,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/CIAN%20Yield%20Layer",
       "officialUrl": "https://yieldlayer.cian.app/vaults/0xB13aa2d0345b0439b064f26B82D8dCf3f508775d?chainId=1",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "CIAN Yield Layer",
       "officialHost": "yieldlayer.cian.app",
       "officialProfiles": {
@@ -2116,35 +2139,12 @@
         "x": "https://x.com/CIAN_protocol"
       },
       "clueCapital": false,
-      "description": "Yield Aggregator 协议，TVL 约 $279M。"
-    },
-    {
-      "slug": "nexus-btc",
-      "name": "Nexus BTC",
-      "tagline": "Bridge 协议，TVL 约 $277M。",
-      "status": "potential",
-      "categoryText": "Bridge",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Nexus%20BTC",
-      "officialUrl": "https://www.bit.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Nexus BTC",
-      "officialHost": "www.bit.com",
-      "officialProfiles": {
-        "website": "https://www.bit.com/",
-        "x": "https://x.com/Matrixport_EN"
-      },
-      "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $277M。"
+      "description": "Yield Aggregator 协议，TVL 约 $284M。"
     },
     {
       "slug": "etherfi-borrowing-market",
       "name": "EtherFi Borrowing Market",
-      "tagline": "Lending 协议，TVL 约 $268M。",
+      "tagline": "Lending 协议，TVL 约 $272M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -2154,7 +2154,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/EtherFi%20Borrowing%20Market",
       "officialUrl": "https://www.ether.fi/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "EtherFi Borrowing Market",
       "officialHost": "www.ether.fi",
       "officialProfiles": {
@@ -2162,12 +2162,12 @@
         "x": "https://x.com/ether_fi"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $268M。"
+      "description": "Lending 协议，TVL 约 $272M。"
     },
     {
       "slug": "gtbtc",
       "name": "GTBTC",
-      "tagline": "Restaked BTC 协议，TVL 约 $266M。",
+      "tagline": "Restaked BTC 协议，TVL 约 $269M。",
       "status": "potential",
       "categoryText": "Restaked BTC",
       "chains": [
@@ -2177,7 +2177,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/GTBTC",
       "officialUrl": "https://www.gate.com/staking/BTC",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "GTBTC",
       "officialHost": "www.gate.com",
       "officialProfiles": {
@@ -2185,30 +2185,7 @@
         "x": "https://x.com/Gate"
       },
       "clueCapital": false,
-      "description": "Restaked BTC 协议，TVL 约 $266M。"
-    },
-    {
-      "slug": "sunswap-v2",
-      "name": "SUNSwap V2",
-      "tagline": "Dexs 协议，TVL 约 $263M。",
-      "status": "potential",
-      "categoryText": "Dexs",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/SUNSwap%20V2",
-      "officialUrl": "https://sunswap.com/#/home",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "SUNSwap V2",
-      "officialHost": "sunswap.com",
-      "officialProfiles": {
-        "website": "https://sunswap.com/#/home",
-        "x": "https://x.com/OfficialSUNio"
-      },
-      "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $263M。"
+      "description": "Restaked BTC 协议，TVL 约 $269M。"
     },
     {
       "slug": "opentrade",
@@ -2223,7 +2200,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/OpenTrade",
       "officialUrl": "https://www.opentrade.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "OpenTrade",
       "officialHost": "www.opentrade.io",
       "officialProfiles": {
@@ -2234,9 +2211,32 @@
       "description": "RWA 协议，TVL 约 $263M。"
     },
     {
+      "slug": "sunswap-v2",
+      "name": "SUNSwap V2",
+      "tagline": "Dexs 协议，TVL 约 $263M。",
+      "status": "potential",
+      "categoryText": "Dexs",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/SUNSwap%20V2",
+      "officialUrl": "https://sunswap.com/#/home",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "SUNSwap V2",
+      "officialHost": "sunswap.com",
+      "officialProfiles": {
+        "website": "https://sunswap.com/#/home",
+        "x": "https://x.com/OfficialSUNio"
+      },
+      "clueCapital": false,
+      "description": "Dexs 协议，TVL 约 $263M。"
+    },
+    {
       "slug": "aave-horizon-rwa",
       "name": "Aave Horizon RWA",
-      "tagline": "Lending 协议，TVL 约 $261M。",
+      "tagline": "Lending 协议，TVL 约 $262M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -2246,7 +2246,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Aave%20Horizon%20RWA",
       "officialUrl": "https://app.aave.com/markets/?marketName=proto_horizon_v3",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Aave Horizon RWA",
       "officialHost": "app.aave.com",
       "officialProfiles": {
@@ -2254,12 +2254,12 @@
         "x": "https://x.com/aave"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $261M。"
+      "description": "Lending 协议，TVL 约 $262M。"
     },
     {
       "slug": "hyperithm",
       "name": "Hyperithm",
-      "tagline": "Risk Curators 协议，TVL 约 $258M。",
+      "tagline": "Risk Curators 协议，TVL 约 $260M。",
       "status": "potential",
       "categoryText": "Risk Curators",
       "chains": [
@@ -2269,7 +2269,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Hyperithm",
       "officialUrl": "https://www.hyperithm.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Hyperithm",
       "officialHost": "www.hyperithm.com",
       "officialProfiles": {
@@ -2277,12 +2277,12 @@
         "x": "https://x.com/hyperithm"
       },
       "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $258M。"
+      "description": "Risk Curators 协议，TVL 约 $260M。"
     },
     {
       "slug": "orca-dex",
       "name": "Orca DEX",
-      "tagline": "Dexs 协议，TVL 约 $254M。",
+      "tagline": "Dexs 协议，TVL 约 $258M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -2292,7 +2292,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Orca%20DEX",
       "officialUrl": "https://www.orca.so/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Orca DEX",
       "officialHost": "www.orca.so",
       "officialProfiles": {
@@ -2300,12 +2300,12 @@
         "x": "https://x.com/orca_so"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $254M。"
+      "description": "Dexs 协议，TVL 约 $258M。"
     },
     {
       "slug": "mellow-core",
       "name": "Mellow Core",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $252M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $254M。",
       "status": "potential",
       "categoryText": "Onchain Capital Allocator",
       "chains": [
@@ -2315,7 +2315,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Mellow%20Core",
       "officialUrl": "https://app.mellow.finance/vaults",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Mellow Core",
       "officialHost": "app.mellow.finance",
       "officialProfiles": {
@@ -2323,12 +2323,12 @@
         "x": "https://x.com/mellowprotocol"
       },
       "clueCapital": false,
-      "description": "Onchain Capital Allocator 协议，TVL 约 $252M。"
+      "description": "Onchain Capital Allocator 协议，TVL 约 $254M。"
     },
     {
       "slug": "stader",
       "name": "Stader",
-      "tagline": "Liquid Staking 协议，TVL 约 $250M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $253M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -2338,7 +2338,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Stader",
       "officialUrl": "https://staderlabs.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Stader",
       "officialHost": "staderlabs.com",
       "officialProfiles": {
@@ -2346,12 +2346,12 @@
         "x": "https://x.com/staderlabs"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $250M。"
+      "description": "Liquid Staking 协议，TVL 约 $253M。"
     },
     {
       "slug": "b14g",
       "name": "b14g",
-      "tagline": "Restaking 协议，TVL 约 $247M。",
+      "tagline": "Restaking 协议，TVL 约 $251M。",
       "status": "potential",
       "categoryText": "Restaking",
       "chains": [
@@ -2361,7 +2361,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/b14g",
       "officialUrl": "https://www.b14g.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "b14g",
       "officialHost": "www.b14g.xyz",
       "officialProfiles": {
@@ -2369,12 +2369,12 @@
         "x": "https://x.com/b14g_network"
       },
       "clueCapital": false,
-      "description": "Restaking 协议，TVL 约 $247M。"
+      "description": "Restaking 协议，TVL 约 $251M。"
     },
     {
       "slug": "buzz-farming",
       "name": "Buzz Farming",
-      "tagline": "Farm 协议，TVL 约 $247M。",
+      "tagline": "Farm 协议，TVL 约 $250M。",
       "status": "potential",
       "categoryText": "Farm",
       "chains": [
@@ -2384,7 +2384,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Buzz%20Farming",
       "officialUrl": "https://buzz.bsquared.network/farming",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Buzz Farming",
       "officialHost": "buzz.bsquared.network",
       "officialProfiles": {
@@ -2392,7 +2392,7 @@
         "x": "https://x.com/BSquaredNetwork"
       },
       "clueCapital": false,
-      "description": "Farm 协议，TVL 约 $247M。"
+      "description": "Farm 协议，TVL 约 $250M。"
     },
     {
       "slug": "openeden-tbill",
@@ -2407,7 +2407,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/OpenEden%20TBILL",
       "officialUrl": "https://portal.openeden.com/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "OpenEden TBILL",
       "officialHost": "portal.openeden.com",
       "officialProfiles": {
@@ -2418,9 +2418,32 @@
       "description": "RWA 协议，TVL 约 $246M。"
     },
     {
+      "slug": "fluid-lite",
+      "name": "Fluid Lite",
+      "tagline": "Yield Aggregator 协议，TVL 约 $237M。",
+      "status": "potential",
+      "categoryText": "Yield Aggregator",
+      "chains": [
+        "Ethereum"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Fluid%20Lite",
+      "officialUrl": "https://www.fluid.io/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Fluid Lite",
+      "officialHost": "www.fluid.io",
+      "officialProfiles": {
+        "website": "https://www.fluid.io/",
+        "x": "https://x.com/0xfluid"
+      },
+      "clueCapital": false,
+      "description": "Yield Aggregator 协议，TVL 约 $237M。"
+    },
+    {
       "slug": "cooler-loans",
       "name": "Cooler Loans",
-      "tagline": "Lending 协议，TVL 约 $235M。",
+      "tagline": "Lending 协议，TVL 约 $236M。",
       "status": "potential",
       "categoryText": "Lending",
       "chains": [
@@ -2430,7 +2453,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Cooler%20Loans",
       "officialUrl": "https://app.olympusdao.finance/#/lending/cooler",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Cooler Loans",
       "officialHost": "app.olympusdao.finance",
       "officialProfiles": {
@@ -2438,7 +2461,7 @@
         "x": "https://x.com/OlympusDAO"
       },
       "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $235M。"
+      "description": "Lending 协议，TVL 约 $236M。"
     },
     {
       "slug": "solstice",
@@ -2453,7 +2476,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Solstice",
       "officialUrl": "https://solstice.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Solstice",
       "officialHost": "solstice.finance",
       "officialProfiles": {
@@ -2464,32 +2487,9 @@
       "description": "Basis Trading 协议，TVL 约 $235M。"
     },
     {
-      "slug": "fluid-lite",
-      "name": "Fluid Lite",
-      "tagline": "Yield Aggregator 协议，TVL 约 $234M。",
-      "status": "potential",
-      "categoryText": "Yield Aggregator",
-      "chains": [
-        "Ethereum"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Fluid%20Lite",
-      "officialUrl": "https://www.fluid.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Fluid Lite",
-      "officialHost": "www.fluid.io",
-      "officialProfiles": {
-        "website": "https://www.fluid.io/",
-        "x": "https://x.com/0xfluid"
-      },
-      "clueCapital": false,
-      "description": "Yield Aggregator 协议，TVL 约 $234M。"
-    },
-    {
       "slug": "bitfi-basis",
       "name": "BitFi Basis",
-      "tagline": "Basis Trading 协议，TVL 约 $230M。",
+      "tagline": "Basis Trading 协议，TVL 约 $233M。",
       "status": "potential",
       "categoryText": "Basis Trading",
       "chains": [
@@ -2499,7 +2499,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/BitFi%20Basis",
       "officialUrl": "https://www.bitfi.one/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "BitFi Basis",
       "officialHost": "www.bitfi.one",
       "officialProfiles": {
@@ -2507,30 +2507,7 @@
         "x": "https://x.com/Bitfi_Org"
       },
       "clueCapital": false,
-      "description": "Basis Trading 协议，TVL 约 $230M。"
-    },
-    {
-      "slug": "figure-markets-democratized-prime",
-      "name": "Figure Markets Democratized Prime",
-      "tagline": "Lending 协议，TVL 约 $225M。",
-      "status": "potential",
-      "categoryText": "Lending",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Figure%20Markets%20Democratized%20Prime",
-      "officialUrl": "https://www.figure.com/crypto-backed-loan/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Figure Markets Democratized Prime",
-      "officialHost": "www.figure.com",
-      "officialProfiles": {
-        "website": "https://www.figure.com/crypto-backed-loan/",
-        "x": "https://x.com/figuremarkets"
-      },
-      "clueCapital": false,
-      "description": "Lending 协议，TVL 约 $225M。"
+      "description": "Basis Trading 协议，TVL 约 $233M。"
     },
     {
       "slug": "lista-cdp",
@@ -2545,7 +2522,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Lista%20CDP",
       "officialUrl": "https://lista.org/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Lista CDP",
       "officialHost": "lista.org",
       "officialProfiles": {
@@ -2558,7 +2535,7 @@
     {
       "slug": "b2-buzz",
       "name": "B2 Buzz",
-      "tagline": "Canonical Bridge 协议，TVL 约 $220M。",
+      "tagline": "Canonical Bridge 协议，TVL 约 $223M。",
       "status": "potential",
       "categoryText": "Canonical Bridge",
       "chains": [
@@ -2568,7 +2545,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/B2%20Buzz",
       "officialUrl": "https://www.bsquared.network/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "B2 Buzz",
       "officialHost": "www.bsquared.network",
       "officialProfiles": {
@@ -2576,12 +2553,35 @@
         "x": "https://x.com/BSquaredNetwork"
       },
       "clueCapital": false,
-      "description": "Canonical Bridge 协议，TVL 约 $220M。"
+      "description": "Canonical Bridge 协议，TVL 约 $223M。"
+    },
+    {
+      "slug": "figure-markets-democratized-prime",
+      "name": "Figure Markets Democratized Prime",
+      "tagline": "Lending 协议，TVL 约 $221M。",
+      "status": "potential",
+      "categoryText": "Lending",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Figure%20Markets%20Democratized%20Prime",
+      "officialUrl": "https://www.figure.com/crypto-backed-loan/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Figure Markets Democratized Prime",
+      "officialHost": "www.figure.com",
+      "officialProfiles": {
+        "website": "https://www.figure.com/crypto-backed-loan/",
+        "x": "https://x.com/figuremarkets"
+      },
+      "clueCapital": false,
+      "description": "Lending 协议，TVL 约 $221M。"
     },
     {
       "slug": "sunswap-v3",
       "name": "SUNSwap V3",
-      "tagline": "Dexs 协议，TVL 约 $218M。",
+      "tagline": "Dexs 协议，TVL 约 $217M。",
       "status": "potential",
       "categoryText": "Dexs",
       "chains": [
@@ -2591,7 +2591,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/SUNSwap%20V3",
       "officialUrl": "https://sunswap.com/#/home",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "SUNSwap V3",
       "officialHost": "sunswap.com",
       "officialProfiles": {
@@ -2599,12 +2599,12 @@
         "x": "https://x.com/OfficialSUNio"
       },
       "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $218M。"
+      "description": "Dexs 协议，TVL 约 $217M。"
     },
     {
       "slug": "fassets",
       "name": "FAssets",
-      "tagline": "Bridge 协议，TVL 约 $206M。",
+      "tagline": "Bridge 协议，TVL 约 $217M。",
       "status": "potential",
       "categoryText": "Bridge",
       "chains": [
@@ -2614,7 +2614,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/FAssets",
       "officialUrl": "https://fassets.au.cc/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "FAssets",
       "officialHost": "fassets.au.cc",
       "officialProfiles": {
@@ -2622,35 +2622,12 @@
         "x": "https://x.com/FlareNetworks"
       },
       "clueCapital": false,
-      "description": "Bridge 协议，TVL 约 $206M。"
-    },
-    {
-      "slug": "gmx-v2-perps",
-      "name": "GMX V2 Perps",
-      "tagline": "Derivatives 协议，TVL 约 $203M。",
-      "status": "potential",
-      "categoryText": "Derivatives",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/GMX%20V2%20Perps",
-      "officialUrl": "https://gmx.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "GMX V2 Perps",
-      "officialHost": "gmx.io",
-      "officialProfiles": {
-        "website": "https://gmx.io/",
-        "x": "https://x.com/GMX_IO"
-      },
-      "clueCapital": false,
-      "description": "Derivatives 协议，TVL 约 $203M。"
+      "description": "Bridge 协议，TVL 约 $217M。"
     },
     {
       "slug": "clearstar",
       "name": "Clearstar",
-      "tagline": "Risk Curators 协议，TVL 约 $201M。",
+      "tagline": "Risk Curators 协议，TVL 约 $212M。",
       "status": "potential",
       "categoryText": "Risk Curators",
       "chains": [
@@ -2660,7 +2637,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/Clearstar",
       "officialUrl": "https://clearstar.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "Clearstar",
       "officialHost": "clearstar.xyz",
       "officialProfiles": {
@@ -2668,58 +2645,12 @@
         "x": "https://x.com/ClearstarLabs"
       },
       "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $201M。"
-    },
-    {
-      "slug": "aerodrome-slipstream",
-      "name": "Aerodrome Slipstream",
-      "tagline": "Dexs 协议，TVL 约 $199M。",
-      "status": "potential",
-      "categoryText": "Dexs",
-      "chains": [
-        "Base"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/Aerodrome%20Slipstream",
-      "officialUrl": "https://aerodrome.finance/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "Aerodrome Slipstream",
-      "officialHost": "aerodrome.finance",
-      "officialProfiles": {
-        "website": "https://aerodrome.finance/",
-        "x": "https://x.com/aerodromefi"
-      },
-      "clueCapital": false,
-      "description": "Dexs 协议，TVL 约 $199M。"
-    },
-    {
-      "slug": "kpk",
-      "name": "KPK",
-      "tagline": "Risk Curators 协议，TVL 约 $199M。",
-      "status": "potential",
-      "categoryText": "Risk Curators",
-      "chains": [
-        "Other"
-      ],
-      "sourceType": "third_party",
-      "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/KPK",
-      "officialUrl": "https://kpk.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "KPK",
-      "officialHost": "kpk.io",
-      "officialProfiles": {
-        "website": "https://kpk.io/",
-        "x": "https://x.com/kpk_io"
-      },
-      "clueCapital": false,
-      "description": "Risk Curators 协议，TVL 约 $199M。"
+      "description": "Risk Curators 协议，TVL 约 $212M。"
     },
     {
       "slug": "sthype",
       "name": "stHYPE",
-      "tagline": "Liquid Staking 协议，TVL 约 $198M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $205M。",
       "status": "potential",
       "categoryText": "Liquid Staking",
       "chains": [
@@ -2729,7 +2660,7 @@
       "sourceName": "DefiLlama",
       "sourceUrl": "https://defillama.com/protocol/stHYPE",
       "officialUrl": "https://app.valantis.xyz/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
       "rawTitle": "stHYPE",
       "officialHost": "app.valantis.xyz",
       "officialProfiles": {
@@ -2737,30 +2668,99 @@
         "x": "https://x.com/stakedhype"
       },
       "clueCapital": false,
-      "description": "Liquid Staking 协议，TVL 约 $198M。"
+      "description": "Liquid Staking 协议，TVL 约 $205M。"
     },
     {
-      "slug": "digift",
-      "name": "DigiFT",
-      "tagline": "RWA 协议，TVL 约 $194M。",
+      "slug": "gmx-v2-perps",
+      "name": "GMX V2 Perps",
+      "tagline": "Derivatives 协议，TVL 约 $205M。",
       "status": "potential",
-      "categoryText": "RWA",
+      "categoryText": "Derivatives",
       "chains": [
         "Other"
       ],
       "sourceType": "third_party",
       "sourceName": "DefiLlama",
-      "sourceUrl": "https://defillama.com/protocol/DigiFT",
-      "officialUrl": "https://www.digift.io/",
-      "fetchedAt": "2026-09-13T13:49:09.375Z",
-      "rawTitle": "DigiFT",
-      "officialHost": "www.digift.io",
+      "sourceUrl": "https://defillama.com/protocol/GMX%20V2%20Perps",
+      "officialUrl": "https://gmx.io/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "GMX V2 Perps",
+      "officialHost": "gmx.io",
       "officialProfiles": {
-        "website": "https://www.digift.io/",
-        "x": "https://x.com/DigiFTTech"
+        "website": "https://gmx.io/",
+        "x": "https://x.com/GMX_IO"
       },
       "clueCapital": false,
-      "description": "RWA 协议，TVL 约 $194M。"
+      "description": "Derivatives 协议，TVL 约 $205M。"
+    },
+    {
+      "slug": "kpk",
+      "name": "KPK",
+      "tagline": "Risk Curators 协议，TVL 约 $200M。",
+      "status": "potential",
+      "categoryText": "Risk Curators",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/KPK",
+      "officialUrl": "https://kpk.io/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "KPK",
+      "officialHost": "kpk.io",
+      "officialProfiles": {
+        "website": "https://kpk.io/",
+        "x": "https://x.com/kpk_io"
+      },
+      "clueCapital": false,
+      "description": "Risk Curators 协议，TVL 约 $200M。"
+    },
+    {
+      "slug": "aerodrome-slipstream",
+      "name": "Aerodrome Slipstream",
+      "tagline": "Dexs 协议，TVL 约 $198M。",
+      "status": "potential",
+      "categoryText": "Dexs",
+      "chains": [
+        "Base"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Aerodrome%20Slipstream",
+      "officialUrl": "https://aerodrome.finance/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Aerodrome Slipstream",
+      "officialHost": "aerodrome.finance",
+      "officialProfiles": {
+        "website": "https://aerodrome.finance/",
+        "x": "https://x.com/aerodromefi"
+      },
+      "clueCapital": false,
+      "description": "Dexs 协议，TVL 约 $198M。"
+    },
+    {
+      "slug": "sanctum-infinity",
+      "name": "Sanctum Infinity",
+      "tagline": "Dexs 协议，TVL 约 $196M。",
+      "status": "potential",
+      "categoryText": "Dexs",
+      "chains": [
+        "Solana"
+      ],
+      "sourceType": "third_party",
+      "sourceName": "DefiLlama",
+      "sourceUrl": "https://defillama.com/protocol/Sanctum%20Infinity",
+      "officialUrl": "https://www.sanctum.so/",
+      "fetchedAt": "2026-09-15T04:12:22.636Z",
+      "rawTitle": "Sanctum Infinity",
+      "officialHost": "www.sanctum.so",
+      "officialProfiles": {
+        "website": "https://www.sanctum.so/",
+        "x": "https://x.com/sanctumso"
+      },
+      "clueCapital": false,
+      "description": "Dexs 协议，TVL 约 $196M。"
     }
   ]
 }

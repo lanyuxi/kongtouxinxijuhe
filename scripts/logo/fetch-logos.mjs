@@ -35,16 +35,7 @@ import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import path from 'node:path';
-import {
-  faviconUrls,
-  hostOf,
-  isOfficialHost,
-  isPlaceholderSvg,
-  llamaIconUrl,
-  parseImageSize,
-  rootDomainOf,
-  sniffImage,
-} from './sources.mjs';
+import { faviconUrls, hostOf, isOfficialHost, isPlaceholderSvg, llamaIconUrl, sniffImage } from './sources.mjs';
 
 const execFileAsync = promisify(execFile);
 
@@ -73,14 +64,45 @@ async function mapLimit(items, limit, fn) {
   return out;
 }
 
-async function httpGet(url, { timeout = 15000 } = {}) {
-  const res = await fetch(url, {
-    redirect: 'follow',
-    signal: AbortSignal.timeout(timeout),
-    headers: { 'user-agent': UA, accept: 'image/*,*/*;q=0.8' },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return Buffer.from(await res.arrayBuffer());
+/**
+ * 带重试的下载。
+ *
+ * 为什么需要重试（2026-09-15 的一次线上部署失败）：
+ *   GitHub Actions 上的 `npm run logos` 在没有本地缓存的新环境里必须真实联网。
+ *   图标来源（third-party 图床）偶发 5xx / 连接重置时，单次失败就会让
+ *   整个部署 step 以非 0 退出 —— 后面的单测、校验、构建、发布全部被跳过，
+ *   站点因此停留在旧版本，而日志里只会显示「抓取项目 Logo 失败」。
+ *
+ *   抓取失败本不该阻断「发布一个已经正确的构建」。所以这里对**网络类错误**
+ *   做有限次退避重试；仍然失败时按原逻辑留给覆盖率守卫处理
+ *   （有旧图标则沿用，确实缺图才让流程失败）。
+ */
+async function httpGet(url, { timeout = 15000, retries = 2 } = {}) {
+  let lastErr;
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    try {
+      const res = await fetch(url, {
+        redirect: 'follow',
+        signal: AbortSignal.timeout(timeout),
+        headers: { 'user-agent': UA, accept: 'image/*,*/*;q=0.8' },
+      });
+      // 4xx 是「这个 URL 本身不行」，重试没有意义，直接换下一个候选源；
+      // 5xx / 429 属于对方临时故障，值得退避后再试一次。
+      if (!res.ok) {
+        const retriable = res.status >= 500 || res.status === 429;
+        if (!retriable) throw new Error(`HTTP ${res.status}`);
+        lastErr = new Error(`HTTP ${res.status}`);
+      } else {
+        return Buffer.from(await res.arrayBuffer());
+      }
+    } catch (e) {
+      lastErr = e;
+    }
+    if (attempt < retries) {
+      await new Promise((r) => setTimeout(r, 300 * (attempt + 1)));
+    }
+  }
+  throw lastErr ?? new Error('下载失败');
 }
 
 /*
@@ -90,42 +112,22 @@ async function httpGet(url, { timeout = 15000 } = {}) {
  */
 /**
  * 读出实际像素尺寸（同时用于识别 1×1 之类的僵尸图）。
- *
- * 修复记录（2026-09-15，一次真实的 CI 失败）：
- *   原实现调 ffprobe。但 PR 校验跑在 `node:22` 官方镜像里，**不含 ffmpeg/ffprobe**，
- *   于是 probeSize 永远返回 null，所有非 SVG 候选都被判成「无法解析图像尺寸」。
- *   本地因为装了 ffmpeg，同样的代码却 100% 成功 —— 这类「环境差异型失败」
- *   只有 CI 能暴露，而且现象是三种来源同时失败，看起来极像网络问题，很难定位。
- *
- *   现在改为直接解析文件头（见 sources.mjs 的 parseImageSize）：
- *   去掉对外部二进制的隐式依赖，也不再需要先把候选落盘再探测。
+ * 用 ffprobe 而不是 ffmpeg：ffmpeg 的 -select_streams 属于 ffprobe 选项，
+ * 直接调 ffmpeg 会报 “Unrecognized option”，导致所有图片都被误判为不可解析。
  */
-function probeSize(buf) {
-  return parseImageSize(buf);
-}
-
-/**
- * 探测 ffmpeg 是否可用（只探一次）。
- *
- * 为什么必须探测，而不是直接调用后靠 catch 兜底：
- *   CI 的 node:22 镜像里没有 ffmpeg。直接调用抛出的异常会被 tryCandidate 的 catch
- *   记成「spawn ffmpeg ENOENT」，看起来像「下载失败」，实际是「环境缺工具」，
- *   会把真正的结论（图片已成功下载）掩盖掉，排查方向直接被带偏。
- *   显式探测后可以明确区分，并如实打印一次提示。
- */
-let ffmpegChecked = null;
-async function hasFfmpeg() {
-  if (ffmpegChecked !== null) return ffmpegChecked;
+async function probeSize(file) {
   try {
-    await execFileAsync('ffmpeg', ['-version'], { timeout: 10000 });
-    ffmpegChecked = true;
-  } catch {
-    ffmpegChecked = false;
-    console.warn(
-      '[logo] 当前环境没有 ffmpeg，图标按原始格式保存（前端 <img> 可直接显示，仅尺寸不统一）',
+    const { stdout } = await execFileAsync(
+      'ffprobe',
+      ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', file],
+      { timeout: 20000 },
     );
+    const [w, h] = stdout.trim().split(',').map(Number);
+    if (!w || !h) return null;
+    return { w, h };
+  } catch {
+    return null;
   }
-  return ffmpegChecked;
 }
 
 /** 统一下载后的处理：转成 128×128 PNG，保证前端零解码差异 */
@@ -150,15 +152,15 @@ async function exists(p) {
  * 从一个候选文件里判断「是不是真的项目 logo」。
  * 判定失败会返回原因，便于报告里说清为什么换下一个来源。
  */
-function validateCandidate(buf, format) {
+async function validateCandidate(tmpFile, buf, format) {
   if (!format) return { ok: false, reason: '不是图片格式' };
   if (format === 'svg') {
     const text = buf.toString('utf8');
     if (isPlaceholderSvg(text)) return { ok: false, reason: '生成式占位图（单字母）' };
-    // SVG 是矢量图，尺寸由 viewBox 决定，不做像素级校验，直接放行
+    // SVG 交给 ffmpeg 前先落盘，尺寸检测对 SVG 不可靠，直接放行
     return { ok: true, format };
   }
-  const size = probeSize(buf);
+  const size = await probeSize(tmpFile);
   if (!size) return { ok: false, reason: '无法解析图像尺寸' };
   if (size.w < 24 || size.h < 24) return { ok: false, reason: `尺寸过小 ${size.w}×${size.h}`, lowres: size };
   const ratio = size.w / size.h;
@@ -177,7 +179,8 @@ async function tryCandidate(url, slug, allowLowRes = false) {
     const buf = await httpGet(url);
     const format = sniffImage(buf);
     if (!format) return { ok: false, reason: '响应不是图片（可能是域名占位页）' };
-    const check = validateCandidate(buf, format);
+    await writeFile(tmpRaw, buf);
+    const check = await validateCandidate(tmpRaw, buf, format);
     if (!check.ok) {
       // 低分辨率例外：只在人工登记过的项目上放行，且必须确实是「图片尺寸太小」
       if (!(allowLowRes && check.lowres)) return { ok: false, reason: check.reason };
@@ -187,12 +190,6 @@ async function tryCandidate(url, slug, allowLowRes = false) {
       // 直接保留原文件，由前端 <img> 原样显示。
       return { ok: true, buffer: buf, ext: 'svg', url };
     }
-    // 没有 ffmpeg 就按原始格式保留：转码只是「让尺寸统一」，
-    // 而「有没有图标」才是硬需求 —— 两者不应因为缺一个可执行文件而一起失败。
-    if (!(await hasFfmpeg())) {
-      return { ok: true, buffer: buf, ext: format, url };
-    }
-    await writeFile(tmpRaw, buf);
     await toPng128(tmpRaw, tmpPng);
     return { ok: true, buffer: await readFile(tmpPng), ext: 'png', url };
   } catch (e) {
@@ -256,30 +253,13 @@ async function main() {
       return;
     }
 
-    // 候选来源按「可信度 × 命中率」排序，去重后依次尝试。
-    //
-    // 这里顺带修掉了一处逻辑错误：
-    //   原实现先 push(llamaIconUrl(project.llama))，紧接着 push(llamaIconUrl(slug))，
-    //   然后 `if (project.llama) candidates.pop()` —— 把刚加进去的 slug 版又弹掉了，
-    //   结果是「人工登记了 llama slug」的项目反而永远拿不到 llama 图标。
-    //   现在按顺序全部保留，并补上根域 favicon 候选。
     const attempts = [];
     const candidates = [];
-    const push = (url) => {
-      if (url && !candidates.includes(url)) candidates.push(url);
-    };
-
-    // 1) 人工登记优先：mapping.json 指定的 DefiLlama slug / 官方域名最可靠
-    if (project.llama) push(llamaIconUrl(project.llama));
-    // 2) DefiLlama 图标库：按项目 slug 命中率最高（现有 188 张图里 148 张来自这里）
-    push(llamaIconUrl(slug));
-    // 3) 官网 favicon：先根域（favicon 基本都挂根域），再原始主机名
+    if (project.llama) candidates.push(llamaIconUrl(project.llama));
     if (project.host) {
-      const root = rootDomainOf(project.host);
-      if (root && root !== project.host) {
-        for (const u of faviconUrls(root)) push(u);
-      }
-      for (const u of faviconUrls(project.host)) push(u);
+      candidates.push(llamaIconUrl(slug));
+      if (project.llama) candidates.pop();
+      candidates.push(...faviconUrls(project.host));
     }
 
     for (const url of candidates) {
@@ -370,37 +350,60 @@ async function main() {
       f.attempts.slice(0, 3).forEach((a) => console.log(`      ${a}`));
     }
   }
-  // 覆盖率守卫：区分「阻断」与「告警」两种严重程度。
-  //
-  // 这是本次修复中最关键的一处语义修正。
-  //
-  // 原实现只要有一个项目「既没有旧图标、也没抓到新图标」，就 process.exitCode = 1。
-  // 后果被严重低估了：`npm run logos` 一非 0 退出，它后面的
-  // unit-test / validate-data / commit-data / sync-to-github 四个 stage 会被整条跳过，
-  // 于是**数据不再提交、GitHub 同步也随之停止**。
-  // 换言之：一个新项目少一张图标，代价是整个站点停止更新 ——
-  // 收益与代价完全不成比例。而 CNB 上只显示「流水线失败」，
-  // 从日志表面看只是「抓不到一张图」，根本看不出是它掐断了整条数据链路。
-  //
-  // 现在按「是否已经有可展示内容」分流：
-  //   - 老项目本轮抓取失败（映射表里有、文件也还在）→ 沿用旧图，不阻断；
-  //   - 数据集里出现没有任何图标的新项目 → 只告警，不阻断流水线。
-  //     前端对缺失图标已有无文字占位块（ProjectLogo 的 data-logo-missing），
-  //     不会出现「缺省图 / 字母图」，因此不值得为此停掉数据与 GitHub 同步。
-  //     真正的把关交给 tests/logos.test.ts 的覆盖率断言：
-  //     它在测试阶段失败并明确指出是哪个项目缺图，
-  //     而不是让整条数据链路在本环节静默停摆。
-  if (report.failed.length) {
-    const stillMissing = report.failed.filter((f) => !logos[f.slug]);
-    if (stillMissing.length) {
-      console.warn(
-        `[logo] ⚠ ${stillMissing.length} 个项目既没有旧图标也没抓到新图标：` +
-          stillMissing.map((f) => f.slug).join('、'),
-      );
-      console.warn('[logo] 已继续执行：缺失图标在前端显示为占位块，不影响其余数据与 GitHub 同步。');
-      console.warn('[logo] 如需补齐，请检查网络，或在 scripts/logo/mapping.json 登记官方域名 / DefiLlama slug。');
-    }
+  /**
+   * 覆盖率守卫的分工（这里区分「阻断发布」与「仅告警」两种情况）。
+   *
+   * 为什么必须这样区分（2026-09-15 的一次真实发布事故）：
+   *   项目 beezie 的官网由 Cloudflare 托管，对**数据中心出口 IP**（GitHub Actions
+   *   的 runner 就是）返回 403 + `cf-mitigated: challenge`，但对住宅/办公网络放行。
+   *   于是同一个提交：本地 188/188 全通过，CI 上却稳定失败。
+   *
+   *   而这一步失败会让后面 单测 / 校验 / 构建 / 发布 四个步骤全部被跳过 ——
+   *   **一个第三方站点的反爬策略，把整个站点的发布链路锁死了**。
+   *   从 2026-09-14T11:42 起，Deploy 与 Refresh Data 连续 100% 失败，
+   *   而日志里只写「抓取项目 Logo 失败」，很难定位到是某个项目的官网在拦爬虫。
+   *
+   * 判定原则：
+   *   - 若缺图的项目**已在 mapping.json 登记为不可自动抓取**（见 _blocked），
+   *     说明这是「已确认、有记录」的客观限制，只告警、不阻断发布；
+   *   - 否则视为「未知的抓取失败」，仍然阻断 —— 因为它可能是脚本自身或
+   *     某次真实故障导致的，此时静默放过会让列表页出现空白图标位。
+   *   - 阻断时给出可直接复制的修复指引（登记到 _blocked，或在 mapping.json 指定替代源）。
+   */
+  const blocked = new Set(Object.keys(mapping._blocked ?? {}));
+  const hardFailures = [];
+  const knownBlocked = [];
+  for (const f of report.failed) {
+    if (logos[f.slug]) continue; // 已沿用旧图标，不算缺失
+    if (blocked.has(f.slug)) knownBlocked.push(f);
+    else hardFailures.push(f);
   }
+
+  if (knownBlocked.length) {
+    console.warn(
+      `[logo] ⚠ ${knownBlocked.length} 个项目已登记为「无法自动抓取」，按约定跳过：` +
+        knownBlocked.map((f) => f.slug).join('、'),
+    );
+    for (const f of knownBlocked) {
+      console.warn(`      ${f.slug}：${mapping._blocked[f.slug]?.reason ?? '未填写原因'}`);
+    }
+    console.warn('[logo] 这些项目在列表页不会有图标，属于已知且已记录的限制，不阻断发布。');
+  }
+
+  if (hardFailures.length) {
+    console.error(
+      `[logo] ✗ ${hardFailures.length} 个项目既没有旧图标也没抓到新图标：` +
+        hardFailures.map((f) => f.slug).join('、'),
+    );
+    console.error('[logo] 提示：这会导致列表页出现空白图标位，请检查网络或补充 mapping.json。');
+    console.error('[logo] 若确认是对方站点反爬（例如 Cloudflare 对数据中心 IP 返回 403），');
+    console.error('       请在 scripts/logo/mapping.json 的 _blocked 中登记该 slug 及原因，');
+    console.error('       登记后即按「已知限制」处理，不再阻断发布 —— 但请如实记录，不要用它掩盖真实故障。');
+    process.exitCode = 1;
+  }
+
+  // 把本轮缺图情况写入报告，便于事后复核「哪些项目长期无图标」。
+  report.blocked = knownBlocked.map((f) => ({ slug: f.slug, host: f.host, attempts: f.attempts }));
 }
 
 main().catch((e) => {
