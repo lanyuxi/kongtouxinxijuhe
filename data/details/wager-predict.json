@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/wager-predict/",
-      "fetched_at": "2026-09-15T11:42:10.493Z"
+      "fetched_at": "2026-09-15T12:05:05.092Z"
     }
   ],
   "evidence": [
@@ -38,9 +38,9 @@
   ],
   "scores": {
     "authenticity": 7,
-    "value": 46,
-    "risk": "high",
-    "grade": "C",
+    "value": 37,
+    "risk": "medium",
+    "grade": "D",
     "authenticityItems": [
       {
         "key": "authenticity.website",
@@ -101,25 +101,32 @@
     ],
     "valueItems": [
       {
-        "key": "value.fundamentals",
-        "label": "项目基本面",
-        "value": 7,
+        "key": "value.scale",
+        "label": "链上规模 / 产品成熟度",
+        "value": 0,
         "max": 20,
-        "reason": "具备官网与基础资料，基本面较完整"
+        "reason": "未获取到资金规模数据（数据源未提供）"
+      },
+      {
+        "key": "value.verification",
+        "label": "信息验证充分度",
+        "value": 11,
+        "max": 20,
+        "reason": "共 1 条证据，其中 1 条已验证（验证率 100%）"
+      },
+      {
+        "key": "value.breadth",
+        "label": "来源广度",
+        "value": 4,
+        "max": 10,
+        "reason": "来自 1 个独立数据源，建议再找官方渠道确认"
       },
       {
         "key": "value.funding",
         "label": "融资 / 投资机构",
         "value": 0,
-        "max": 15,
+        "max": 10,
         "reason": "未核实融资信息，机构背书不足"
-      },
-      {
-        "key": "value.activity",
-        "label": "真实产品 / 用户 / 活跃度",
-        "value": 4,
-        "max": 15,
-        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
       },
       {
         "key": "value.signal",
@@ -131,23 +138,16 @@
       {
         "key": "value.roi",
         "label": "任务投入产出比",
-        "value": 15,
+        "value": 9,
         "max": 15,
         "reason": "预计投入约 24 分钟，共 8 个步骤"
       },
       {
         "key": "value.timing",
         "label": "当前参与时机",
-        "value": 10,
-        "max": 10,
-        "reason": "仍处于早期阶段，参与时机较好"
-      },
-      {
-        "key": "value.dilution",
-        "label": "用户稀释风险",
-        "value": 1,
+        "value": 4,
         "max": 5,
-        "reason": "项目风险较高，参与者结构可能不健康"
+        "reason": "仍处于早期阶段，参与时机较好"
       }
     ],
     "riskItems": [
@@ -161,9 +161,9 @@
       {
         "key": "risk._lp_farming_",
         "label": "涉及 LP / Farming / 质押",
-        "value": 2,
+        "value": 1,
         "max": 3,
-        "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH"
+        "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM"
       }
     ]
   },
@@ -176,9 +176,9 @@
     "summary": "高资金投入，不适合新手大额参与。"
   },
   "recommendation": {
-    "grade": "C",
-    "action": "observe",
-    "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+    "grade": "D",
+    "action": "avoid",
+    "summary": "当前不值得投入时间与资金。"
   },
   "guide": [
     {
@@ -192,8 +192,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
-      "source_url": "https://wagerpredict.com",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 2,
@@ -220,8 +219,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/wager-predict/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 4,
@@ -234,8 +232,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/wager-predict/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 5,
@@ -248,8 +245,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/wager-predict/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 6,
@@ -262,8 +258,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/wager-predict/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 7,
@@ -276,8 +271,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/wager-predict/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 8,
@@ -290,8 +284,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/wager-predict/",
-      "source_verified": true
+      "source_verified": false
     }
   ],
   "faq": [
@@ -336,8 +329,8 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-15T11:42:10.493Z",
-  "last_changed_at": "2026-09-13T13:49:13.743Z",
+  "last_checked_at": "2026-09-15T12:05:05.092Z",
+  "last_changed_at": "2026-09-15T11:56:27.459Z",
   "sourcedSteps": [
     {
       "title": "Connect Your Wallet to the Wager Predict Testnet",
@@ -369,6 +362,6 @@
       "body": "Track your P&L on the leaderboard, work through the onboarding achievements, and collect badges as you trade. Share your referral link from the dashboard to bring in other traders."
     }
   ],
-  "digest": "{\"category\":\"DeFi\",\"chains\":[\"BNB Chain\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":24},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/wager-predict/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://wagerpredict.com\",\"source_verified\":true,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Visit the Wager Predict app and connect MetaMask or any WalletConnect wallet. Grab free tBNB for gas by clicking the faucet button.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"/visit/ata3/\",\"source_verified\":true,\"step\":2,\"title\":\"Connect Your Wallet to the Wager Predict Testnet\"},{\"cost_usd\":0,\"description\":\"Open the in-app faucet and claim. The claim sends 10,000 test USDC straight to your wallet.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/wager-predict/\",\"source_verified\":true,\"step\":3,\"title\":\"Claim 10,000 Testnet USDC\"},{\"cost_usd\":0,\"description\":\"Pick a live market, choose YES or NO, and enter an amount. Your first trade needs a one-time approval transaction before the buy confirms. Fees are 2% per trade, and selling works like buying, so you can exit any position up to one hour before expiry.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/wager-predict/\",\"source_verified\":true,\"step\":4,\"title\":\"Approve USDC and Place Your First Trade\"},{\"cost_usd\":0,\"description\":\"Spread bets across categories rather than parking everything in one market. Then try a leveraged position; 5x and 10x tiers unlock on higher-volume markets. Liquidations use a 30-minute average of the odds rather than spot, so one erratic trade will not instantly close you out.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/wager-predict/\",\"source_verified\":true,\"step\":5,\"title\":\"Trade Across Markets and Test Leverage\"},{\"cost_usd\":0,\"description\":\"Head to the market creation page and write a clearly worded question with an unambiguous resolution source. The protocol seeds the liquidity, so you take no market-making risk, and you collect 0.5% of every trade on your market for life.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/wager-predict/\",\"source_verified\":true,\"step\":6,\"title\":\"Create Your Own Markets\"},{\"cost_usd\":0,\"description\":\"Deposit test USDC into the LP vault, which lends to leveraged traders and pays depositors a cut of their fees. Lock tiers of Flex, 90, 180, and 365 days carry point multipliers of 1x, 2x, 4x, and 8x, and the multiplier only applies while the lock is active. Withdrawals sit through a 7-day cooldown, even on Flex.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/wager-predict/\",\"source_verified\":true,\"step\":7,\"title\":\"Stake in the LP Vault\"},{\"cost_usd\":0,\"description\":\"Track your P&L on the leaderboard, work through the onboarding achievements, and collect badges as you trade. Share your referral link from the dashboard to bring in other traders.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/wager-predict/\",\"source_verified\":true,\"step\":8,\"title\":\"Climb the Season 01 Leaderboard\"}],\"guide_source\":\"sourced\",\"id\":\"wager-predict\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Wager Predict\",\"official\":{\"website\":\"https://wagerpredict.com\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"C\",\"summary\":\"存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":7,\"authenticityItems\":[{\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"未找到可验证的官方网站\",\"value\":0},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"grade\":\"C\",\"risk\":\"high\",\"riskItems\":[{\"key\":\"risk._token_approval\",\"label\":\"需要 Token Approval\",\"max\":3,\"reason\":\"检测到「需要 Token Approval」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 HIGH\",\"value\":2}],\"value\":46,\"valueItems\":[{\"key\":\"value.fundamentals\",\"label\":\"项目基本面\",\"max\":20,\"reason\":\"具备官网与基础资料，基本面较完整\",\"value\":7},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":15,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.activity\",\"label\":\"真实产品 / 用户 / 活跃度\",\"max\":15,\"reason\":\"依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）\",\"value\":4},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 24 分钟，共 8 个步骤\",\"value\":15},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":10,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":10},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"项目风险较高，参与者结构可能不健康\",\"value\":1}]},\"slug\":\"wager-predict\",\"sourcedSteps\":[{\"body\":\"Visit the Wager Predict app and connect MetaMask or any WalletConnect wallet. Grab free tBNB for gas by clicking the faucet button.\",\"title\":\"Connect Your Wallet to the Wager Predict Testnet\",\"url\":\"/visit/ata3/\"},{\"body\":\"Open the in-app faucet and claim. The claim sends 10,000 test USDC straight to your wallet.\",\"title\":\"Claim 10,000 Testnet USDC\"},{\"body\":\"Pick a live market, choose YES or NO, and enter an amount. Your first trade needs a one-time approval transaction before the buy confirms. Fees are 2% per trade, and selling works like buying, so you can exit any position up to one hour before expiry.\",\"title\":\"Approve USDC and Place Your First Trade\"},{\"body\":\"Spread bets across categories rather than parking everything in one market. Then try a leveraged position; 5x and 10x tiers unlock on higher-volume markets. Liquidations use a 30-minute average of the odds rather than spot, so one erratic trade will not instantly close you out.\",\"title\":\"Trade Across Markets and Test Leverage\"},{\"body\":\"Head to the market creation page and write a clearly worded question with an unambiguous resolution source. The protocol seeds the liquidity, so you take no market-making risk, and you collect 0.5% of every trade on your market for life.\",\"title\":\"Create Your Own Markets\"},{\"body\":\"Deposit test USDC into the LP vault, which lends to leveraged traders and pays depositors a cut of their fees. Lock tiers of Flex, 90, 180, and 365 days carry point multipliers of 1x, 2x, 4x, and 8x, and the multiplier only applies while the lock is active. Withdrawals sit through a 7-day cooldown, even on Flex.\",\"title\":\"Stake in the LP Vault\"},{\"body\":\"Track your P&L on the leaderboard, work through the onboarding achievements, and collect badges as you trade. Share your referral link from the dashboard to bring in other traders.\",\"title\":\"Climb the Season 01 Leaderboard\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/wager-predict/\"}],\"status\":\"potential\",\"tagline\":\"The airdrop is written directly into the official tokenomics: 10% of the 30 billion $WP supply, with no cliff, so recipients start liquid...\",\"tasks\":[\"参与预测\",\"提供流动性\"]}",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"BNB Chain\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":24},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/wager-predict/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Visit the Wager Predict app and connect MetaMask or any WalletConnect wallet. Grab free tBNB for gas by clicking the faucet button.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_url\":\"/visit/ata3/\",\"source_verified\":true,\"step\":2,\"title\":\"Connect Your Wallet to the Wager Predict Testnet\"},{\"cost_usd\":0,\"description\":\"Open the in-app faucet and claim. The claim sends 10,000 test USDC straight to your wallet.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"Claim 10,000 Testnet USDC\"},{\"cost_usd\":0,\"description\":\"Pick a live market, choose YES or NO, and enter an amount. Your first trade needs a one-time approval transaction before the buy confirms. Fees are 2% per trade, and selling works like buying, so you can exit any position up to one hour before expiry.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"Approve USDC and Place Your First Trade\"},{\"cost_usd\":0,\"description\":\"Spread bets across categories rather than parking everything in one market. Then try a leveraged position; 5x and 10x tiers unlock on higher-volume markets. Liquidations use a 30-minute average of the odds rather than spot, so one erratic trade will not instantly close you out.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"Trade Across Markets and Test Leverage\"},{\"cost_usd\":0,\"description\":\"Head to the market creation page and write a clearly worded question with an unambiguous resolution source. The protocol seeds the liquidity, so you take no market-making risk, and you collect 0.5% of every trade on your market for life.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"Create Your Own Markets\"},{\"cost_usd\":0,\"description\":\"Deposit test USDC into the LP vault, which lends to leveraged traders and pays depositors a cut of their fees. Lock tiers of Flex, 90, 180, and 365 days carry point multipliers of 1x, 2x, 4x, and 8x, and the multiplier only applies while the lock is active. Withdrawals sit through a 7-day cooldown, even on Flex.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"Stake in the LP Vault\"},{\"cost_usd\":0,\"description\":\"Track your P&L on the leaderboard, work through the onboarding achievements, and collect badges as you trade. Share your referral link from the dashboard to bring in other traders.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://wagerpredict.com\",\"risk\":\"low\",\"source_verified\":false,\"step\":8,\"title\":\"Climb the Season 01 Leaderboard\"}],\"guide_source\":\"sourced\",\"id\":\"wager-predict\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Wager Predict\",\"official\":{\"website\":\"https://wagerpredict.com\"},\"recommendation\":{\"action\":\"avoid\",\"grade\":\"D\",\"summary\":\"当前不值得投入时间与资金。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":7,\"authenticityItems\":[{\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"未找到可验证的官方网站\",\"value\":0},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"grade\":\"D\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk._token_approval\",\"label\":\"需要 Token Approval\",\"max\":3,\"reason\":\"检测到「需要 Token Approval」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1}],\"value\":37,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 1 条证据，其中 1 条已验证（验证率 100%）\",\"value\":11},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 24 分钟，共 8 个步骤\",\"value\":9},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4}]},\"slug\":\"wager-predict\",\"sourcedSteps\":[{\"body\":\"Visit the Wager Predict app and connect MetaMask or any WalletConnect wallet. Grab free tBNB for gas by clicking the faucet button.\",\"title\":\"Connect Your Wallet to the Wager Predict Testnet\",\"url\":\"/visit/ata3/\"},{\"body\":\"Open the in-app faucet and claim. The claim sends 10,000 test USDC straight to your wallet.\",\"title\":\"Claim 10,000 Testnet USDC\"},{\"body\":\"Pick a live market, choose YES or NO, and enter an amount. Your first trade needs a one-time approval transaction before the buy confirms. Fees are 2% per trade, and selling works like buying, so you can exit any position up to one hour before expiry.\",\"title\":\"Approve USDC and Place Your First Trade\"},{\"body\":\"Spread bets across categories rather than parking everything in one market. Then try a leveraged position; 5x and 10x tiers unlock on higher-volume markets. Liquidations use a 30-minute average of the odds rather than spot, so one erratic trade will not instantly close you out.\",\"title\":\"Trade Across Markets and Test Leverage\"},{\"body\":\"Head to the market creation page and write a clearly worded question with an unambiguous resolution source. The protocol seeds the liquidity, so you take no market-making risk, and you collect 0.5% of every trade on your market for life.\",\"title\":\"Create Your Own Markets\"},{\"body\":\"Deposit test USDC into the LP vault, which lends to leveraged traders and pays depositors a cut of their fees. Lock tiers of Flex, 90, 180, and 365 days carry point multipliers of 1x, 2x, 4x, and 8x, and the multiplier only applies while the lock is active. Withdrawals sit through a 7-day cooldown, even on Flex.\",\"title\":\"Stake in the LP Vault\"},{\"body\":\"Track your P&L on the leaderboard, work through the onboarding achievements, and collect badges as you trade. Share your referral link from the dashboard to bring in other traders.\",\"title\":\"Climb the Season 01 Leaderboard\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/wager-predict/\"}],\"status\":\"potential\",\"tagline\":\"The airdrop is written directly into the official tokenomics: 10% of the 30 billion $WP supply, with no cliff, so recipients start liquid...\",\"tasks\":[\"参与预测\",\"提供流动性\"]}",
   "guide_source": "sourced"
 }

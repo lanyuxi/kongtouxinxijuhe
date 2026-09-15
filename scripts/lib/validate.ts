@@ -72,10 +72,31 @@ export function validateProjects(projects: AirdropProject[]): ValidationResult {
       if (!traceable) {
         errors.push(`${p.slug}: 教程步骤 ${g.step} 既无来源也未标记未验证`);
       }
+      // 信任不变量：声称「来源已核实」的步骤必须携带可追溯来源链接。
+      // 否则就是「有核实标记、无来源证据」的假核实（历史事故：模板步骤
+      // 只用官网首页就标 source_verified=true）。
+      if (g.source_verified && !g.source_url) {
+        errors.push(`${p.slug}: 教程步骤 ${g.step} 标记为已核实但缺少来源链接`);
+      }
+    }
+
+    // 信任不变量：模板教程（guide_source==='template'）不得自称已核实。
+    // 模板步骤每轮都会重新生成，若这里放行，前端会重新出现绿色「✓ 来源已核实」。
+    if (p.guide_source === 'template') {
+      const fake = p.guide.find((g) => g.source_verified);
+      if (fake) {
+        errors.push(`${p.slug}: 模板教程的步骤 ${fake.step} 谎称「来源已核实」`);
+      }
     }
 
     // 成本模型完整性
     if (p.cost.time_minutes <= 0) warnings.push(`${p.slug}: 时间成本为 0`);
+
+    // 列表瘦身不变量：详情必须比列表「更全」，否则拆分逻辑出错
+    // （例如误把 guide.description 也裁掉，详情页会缺文案但不报错）
+    if (!p.guide.some((step) => !!step.description)) {
+      warnings.push(`${p.slug}: 教程步骤缺少描述文案`);
+    }
   }
 
   return { ok: errors.length === 0, errors, warnings };

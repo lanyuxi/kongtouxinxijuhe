@@ -13,7 +13,7 @@
  */
 
 import { useMemo } from 'react';
-import type { AirdropProject } from '../lib/types';
+import type { ListProject } from '../lib/types';
 import type { ProjectProgress } from '../lib/store';
 import { TODO_LEVEL_LABEL, buildTodos } from '../lib/todos';
 
@@ -29,7 +29,7 @@ export function TodayTodos({
   favorites,
   progress,
 }: {
-  projects: AirdropProject[];
+  projects: ListProject[];
   favorites: string[];
   progress: Record<string, ProjectProgress>;
 }) {

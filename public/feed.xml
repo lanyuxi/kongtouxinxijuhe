@@ -5,22 +5,39 @@
   <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/"/>
   <link rel="self" type="application/atom+xml" href="https://lanyuxi.github.io/kongtouxinxijuhe/feed.xml"/>
   <id>https://lanyuxi.github.io/kongtouxinxijuhe/feed.xml</id>
-  <updated>2026-09-13T13:48:49.547Z</updated>
+  <updated>2026-09-15T12:05:05.060Z</updated>
   <author>
     <name>空投情报平台</name>
     <uri>https://lanyuxi.github.io/kongtouxinxijuhe/</uri>
   </author>
   <rights>公开信息聚合，请以项目方官方公告为准。</rights>
   <entry>
-    <title>SUNSwap V3｜潜在空投｜风险高</title>
+    <title>Beezie｜潜在空投｜风险低</title>
+    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/beezie"/>
+    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/beezie</id>
+    <updated>2026-09-15T11:55:01.841Z</updated>
+    <published>2026-09-15T02:52:10.448Z</published>
+    <summary type="text">Beezie operates an ongoing points and referral campaign rather than a traditional token airdrop.
+
+当前状态：潜在空投｜风险等级：低｜价值等级：C
+真实性置信度 22/100｜参与价值 43/100
+预计成本：资金 免费｜Gas $0｜时间 30 分钟
+
+官方入口：https://beezie.com
+
+提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
+详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/beezie</summary>
+  </entry>
+  <entry>
+    <title>SUNSwap V3｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/sunswap-v3"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/sunswap-v3</id>
-    <updated>2026-09-13T13:49:13.731Z</updated>
+    <updated>2026-09-15T11:55:01.856Z</updated>
     <published>2026-09-12T07:12:26.570Z</published>
     <summary type="text">Dexs 协议，TVL 约 $218M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://sunswap.com/#/home
@@ -32,12 +49,12 @@
     <title>Aave Horizon RWA｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-horizon-rwa"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-horizon-rwa</id>
-    <updated>2026-09-13T13:49:13.717Z</updated>
+    <updated>2026-09-15T11:55:01.839Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $261M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://app.aave.com/markets/?marketName=proto_horizon_v3
@@ -49,12 +66,12 @@
     <title>Aave V3｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-v3"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-v3</id>
-    <updated>2026-09-13T13:49:13.717Z</updated>
+    <updated>2026-09-15T11:55:36.915Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Lending 协议，TVL 约 $17358M。
+    <summary type="text">Lending 协议，TVL 约 $17242M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：S
+真实性置信度 22/100｜参与价值 60/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://aave.com/
@@ -66,12 +83,12 @@
     <title>Aave V4｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-v4"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-v4</id>
-    <updated>2026-09-13T13:49:13.717Z</updated>
+    <updated>2026-09-15T11:55:01.840Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $397M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://aave.com/
@@ -80,15 +97,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-v4</summary>
   </entry>
   <entry>
-    <title>Aerodrome Slipstream｜潜在空投｜风险高</title>
+    <title>Aerodrome Slipstream｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aerodrome-slipstream"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aerodrome-slipstream</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:01.840Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Dexs 协议，TVL 约 $201M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://aerodrome.finance/
@@ -100,12 +117,12 @@
     <title>Anemoy Capital｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/anemoy-capital"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/anemoy-capital</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:36.915Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $725M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.anemoy.io/
@@ -114,15 +131,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/anemoy-capital</summary>
   </entry>
   <entry>
-    <title>b14g｜潜在空投｜风险高</title>
+    <title>b14g｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/b14g"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/b14g</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:57:25.872Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Restaking 协议，TVL 约 $247M。
+    <summary type="text">Restaking 协议，TVL 约 $248M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.b14g.xyz/
@@ -134,12 +151,12 @@
     <title>B2 Buzz｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/b2-buzz"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/b2-buzz</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:01.841Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Canonical Bridge 协议，TVL 约 $220M。
 
 当前状态：潜在空投｜风险等级：中｜价值等级：C
-真实性置信度 22/100｜参与价值 45/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 32 分钟
 
 官方入口：https://www.bsquared.network/
@@ -148,15 +165,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/b2-buzz</summary>
   </entry>
   <entry>
-    <title>Babylon Protocol｜潜在空投｜风险高</title>
+    <title>Babylon Protocol｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/babylon-protocol"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/babylon-protocol</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:36.916Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Restaking 协议，TVL 约 $3155M。
+    <summary type="text">Restaking 协议，TVL 约 $3159M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：A
+真实性置信度 22/100｜参与价值 58/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://babylonlabs.io/
@@ -168,12 +185,12 @@
     <title>Bedrock uniBTC｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/bedrock-unibtc"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/bedrock-unibtc</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:01.841Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Anchor BTC 协议，TVL 约 $318M。
+    <summary type="text">Anchor BTC 协议，TVL 约 $349M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://app.bedrock.technology/
@@ -182,15 +199,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/bedrock-unibtc</summary>
   </entry>
   <entry>
-    <title>BitFi Basis｜潜在空投｜风险高</title>
+    <title>BitFi Basis｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/bitfi-basis"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/bitfi-basis</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:01.842Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Basis Trading 协议，TVL 约 $230M。
+    <summary type="text">Basis Trading 协议，TVL 约 $217M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.bitfi.one/
@@ -202,12 +219,12 @@
     <title>BlackRock BUIDL｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/blackrock-buidl"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/blackrock-buidl</id>
-    <updated>2026-09-13T13:49:13.718Z</updated>
+    <updated>2026-09-15T11:55:36.917Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $3540M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：A
+真实性置信度 22/100｜参与价值 58/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://securitize.io/
@@ -219,12 +236,12 @@
     <title>Blockchain Capital｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/blockchain-capital"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/blockchain-capital</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:36.917Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $962M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.blockchaincapital.com/
@@ -236,12 +253,12 @@
     <title>Buzz Farming｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/buzz-farming"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/buzz-farming</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:57:25.873Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Farm 协议，TVL 约 $249M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://buzz.bsquared.network/farming
@@ -253,12 +270,12 @@
     <title>cap｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cap"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cap</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:01.842Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $334M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://cap.app/
@@ -270,12 +287,12 @@
     <title>CCIP｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/ccip"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/ccip</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:36.917Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Bridge 协议，TVL 约 $1758M。
 
-当前状态：潜在空投｜风险等级：中｜价值等级：C
-真实性置信度 22/100｜参与价值 45/100
+当前状态：潜在空投｜风险等级：中｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 免费｜Gas $0｜时间 32 分钟
 
 官方入口：https://chain.link/cross-chain
@@ -287,12 +304,12 @@
     <title>Centrifuge Protocol｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/centrifuge-protocol"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/centrifuge-protocol</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:36.917Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $1505M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://centrifuge.io/
@@ -301,15 +318,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/centrifuge-protocol</summary>
   </entry>
   <entry>
-    <title>CIAN Yield Layer｜潜在空投｜风险高</title>
+    <title>CIAN Yield Layer｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cian-yield-layer"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cian-yield-layer</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:01.843Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Yield Aggregator 协议，TVL 约 $279M。
+    <summary type="text">Yield Aggregator 协议，TVL 约 $282M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://yieldlayer.cian.app/vaults/0xB13aa2d0345b0439b064f26B82D8dCf3f508775d?chainId=1
@@ -321,12 +338,12 @@
     <title>Circle USYC｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/circle-usyc"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/circle-usyc</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:36.918Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $2603M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：A
+真实性置信度 22/100｜参与价值 58/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.circle.com/usyc
@@ -338,12 +355,12 @@
     <title>Clearstar｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/clearstar"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/clearstar</id>
-    <updated>2026-09-13T13:49:13.719Z</updated>
+    <updated>2026-09-15T11:55:01.843Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Risk Curators 协议，TVL 约 $201M。
+    <summary type="text">Risk Curators 协议，TVL 约 $212M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://clearstar.xyz/
@@ -355,12 +372,12 @@
     <title>Compound V3｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/compound-v3"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/compound-v3</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:36.918Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $1440M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.compound.xyz/
@@ -372,12 +389,12 @@
     <title>Concrete｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/concrete"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/concrete</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:36.918Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Onchain Capital Allocator 协议，TVL 约 $1175M。
+    <summary type="text">Onchain Capital Allocator 协议，TVL 约 $1179M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 免费｜Gas $5｜时间 30 分钟
 
 官方入口：https://app.concrete.xyz/
@@ -389,12 +406,12 @@
     <title>Convex Finance｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/convex-finance"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/convex-finance</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:36.918Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Yield 协议，TVL 约 $580M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.convexfinance.com/
@@ -406,12 +423,12 @@
     <title>Cooler Loans｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cooler-loans"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cooler-loans</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:01.843Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $239M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://app.olympusdao.finance/#/lending/cooler
@@ -420,15 +437,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cooler-loans</summary>
   </entry>
   <entry>
-    <title>Curve DEX｜潜在空投｜风险高</title>
+    <title>Curve DEX｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/curve-dex"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/curve-dex</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:36.918Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Dexs 协议，TVL 约 $1277M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://curve.finance/
@@ -440,12 +457,12 @@
     <title>Defi Saver Asset Management｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/defi-saver-asset-management"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/defi-saver-asset-management</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:01.844Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">CDP Manager 协议，TVL 约 $334M。
+    <summary type="text">CDP Manager 协议，TVL 约 $335M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://defisaver.com/
@@ -457,12 +474,12 @@
     <title>DigiFT｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/digift"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/digift</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:01.844Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $194M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.digift.io/
@@ -474,12 +491,12 @@
     <title>Dolomite｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/dolomite"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/dolomite</id>
-    <updated>2026-09-13T13:49:13.720Z</updated>
+    <updated>2026-09-15T11:55:01.844Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $318M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://dolomite.io/
@@ -488,15 +505,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/dolomite</summary>
   </entry>
   <entry>
-    <title>EigenCloud｜潜在空投｜风险高</title>
+    <title>EigenCloud｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/eigencloud"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/eigencloud</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:36.919Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Restaking 协议，TVL 约 $6509M。
+    <summary type="text">Restaking 协议，TVL 约 $6515M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：S
+真实性置信度 22/100｜参与价值 60/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.eigencloud.xyz/
@@ -505,15 +522,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/eigencloud</summary>
   </entry>
   <entry>
-    <title>Ethena USDe｜潜在空投｜风险高</title>
+    <title>Ethena USDe｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/ethena-usde"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/ethena-usde</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:36.920Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Basis Trading 协议，TVL 约 $4601M。
+    <summary type="text">Basis Trading 协议，TVL 约 $4691M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：A
+真实性置信度 22/100｜参与价值 58/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.app.ethena.fi/join/3y20d
@@ -525,12 +542,12 @@
     <title>Ethena USDtb｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/ethena-usdtb"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/ethena-usdtb</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:01.845Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">RWA 协议，TVL 约 $484M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 30 分钟
 
 官方入口：https://usdtb.money/
@@ -542,12 +559,12 @@
     <title>EtherFi Borrowing Market｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/etherfi-borrowing-market"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/etherfi-borrowing-market</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:01.845Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $264M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.ether.fi/
@@ -559,12 +576,12 @@
     <title>Euler V2｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/euler-v2"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/euler-v2</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:01.845Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $343M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.euler.finance/
@@ -573,15 +590,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/euler-v2</summary>
   </entry>
   <entry>
-    <title>Falcon Finance｜潜在空投｜风险高</title>
+    <title>Falcon Finance｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/falcon-finance"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/falcon-finance</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:36.920Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Basis Trading 协议，TVL 约 $1176M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://app.falcon.finance/
@@ -593,12 +610,12 @@
     <title>FAssets｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fassets"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fassets</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:01.845Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Bridge 协议，TVL 约 $210M。
 
 当前状态：潜在空投｜风险等级：中｜价值等级：C
-真实性置信度 22/100｜参与价值 45/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 免费｜Gas $0｜时间 32 分钟
 
 官方入口：https://fassets.au.cc/
@@ -610,12 +627,12 @@
     <title>Figure Markets Democratized Prime｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/figure-markets-democratized-prime"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/figure-markets-democratized-prime</id>
-    <updated>2026-09-13T13:49:13.721Z</updated>
+    <updated>2026-09-15T11:55:01.845Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $227M。
 
 当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.figure.com/crypto-backed-loan/
@@ -624,15 +641,15 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/figure-markets-democratized-prime</summary>
   </entry>
   <entry>
-    <title>Fluid DEX｜潜在空投｜风险高</title>
+    <title>Fluid DEX｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-dex"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-dex</id>
-    <updated>2026-09-13T13:49:13.722Z</updated>
+    <updated>2026-09-15T11:55:01.846Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Dexs 协议，TVL 约 $316M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.fluid.io/
@@ -644,12 +661,12 @@
     <title>Fluid Lending｜潜在空投｜风险低</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-lending"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-lending</id>
-    <updated>2026-09-13T13:49:13.722Z</updated>
+    <updated>2026-09-15T11:55:36.921Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Lending 协议，TVL 约 $767M。
 
-当前状态：潜在空投｜风险等级：低｜价值等级：C
-真实性置信度 22/100｜参与价值 49/100
+当前状态：潜在空投｜风险等级：低｜价值等级：B
+真实性置信度 22/100｜参与价值 54/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.fluid.io/
@@ -658,37 +675,20 @@
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-lending</summary>
   </entry>
   <entry>
-    <title>Fluid Lite｜潜在空投｜风险高</title>
+    <title>Fluid Lite｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-lite"/>
     <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-lite</id>
-    <updated>2026-09-13T13:49:13.722Z</updated>
+    <updated>2026-09-15T11:55:01.846Z</updated>
     <published>2026-09-12T06:08:55.635Z</published>
     <summary type="text">Yield Aggregator 协议，TVL 约 $234M。
 
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 22/100｜参与价值 46/100
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 22/100｜参与价值 51/100
 预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
 
 官方入口：https://www.fluid.io/
 
 提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/fluid-lite</summary>
-  </entry>
-  <entry>
-    <title>Function FBTC｜潜在空投｜风险中</title>
-    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/function-fbtc"/>
-    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/function-fbtc</id>
-    <updated>2026-09-13T13:49:13.722Z</updated>
-    <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Bridge 协议，TVL 约 $663M。
-
-当前状态：潜在空投｜风险等级：中｜价值等级：C
-真实性置信度 22/100｜参与价值 45/100
-预计成本：资金 免费｜Gas $0｜时间 32 分钟
-
-官方入口：https://www.fxn.xyz/
-
-提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
-详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/function-fbtc</summary>
   </entry>
 </feed>

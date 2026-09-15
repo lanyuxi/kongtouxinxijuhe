@@ -6,7 +6,7 @@
  * - 说明：不调用任何外部 API，浏览器端不出现任何 Secret（不变量 5）
  */
 
-import type { AirdropProject, Dataset, LogoMap, SourceHealthFile } from './types';
+import type { AirdropProject, ListDataset, LogoMap, SourceHealthFile } from './types';
 import { attachLogos } from './refresh';
 
 /**
@@ -47,12 +47,36 @@ export async function loadLogoMap(): Promise<LogoMap | null> {
  *    历史事故：更新时只重新拉了 airdrops.json、没重新贴映射，
  *    结果更新后整站图标全部变成空白方块。
  */
-export async function loadDataset(): Promise<Dataset> {
-  const [dataset, logoMap] = await Promise.all([fetchJson<Dataset>('airdrops.json'), loadLogoMap()]);
+export async function loadDataset(): Promise<ListDataset> {
+  const [dataset, logoMap] = await Promise.all([
+    fetchJson<ListDataset>('airdrops.json'),
+    loadLogoMap(),
+  ]);
   if (!dataset || !Array.isArray(dataset.projects)) {
     throw new Error('数据格式不正确');
   }
   return attachLogos(dataset, logoMap);
+}
+
+/**
+ * 按需加载单个项目的完整详情（data/details/<slug>.json）。
+ *
+ * 为什么不在首屏一次性下发：
+ *   完整项目里 digest / guide.description / scores.*Items / sourcedSteps / faq
+ *   合计占原 3.87 MB 的绝大部分，而列表页一个字节都不用。
+ *   拆开后首屏只拉 ~300 KB 的列表，点进详情再拉单个 ~16 KB 的分片。
+ *
+ * 返回 null 表示该分片不存在（例如项目刚被 prune、或静态托管未同步），
+ * 由调用方决定回退策略；这里不抛错，避免详情页因为一个 404 整体崩掉。
+ */
+export async function loadProjectDetail(slug: string): Promise<AirdropProject | null> {
+  if (!slug || !/^[a-z0-9-]+$/i.test(slug)) return null;
+  try {
+    const p = await fetchJson<AirdropProject>(`details/${slug}.json`);
+    return p && p.slug === slug ? p : null;
+  } catch {
+    return null;
+  }
 }
 
 export async function loadSourceHealth(): Promise<SourceHealthFile | null> {

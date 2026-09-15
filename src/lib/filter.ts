@@ -3,7 +3,7 @@
  * 对应方案文档第 7 章「筛选能力」与第 5 章「空投雷达」。
  */
 
-import type { AirdropProject, AirdropStatus, Chain, RiskLevel } from './types';
+import type { ListProject, AirdropStatus, Chain, RiskLevel } from './types';
 import { isBeginnerFriendly } from './beginner';
 
 export type SortKey = 'latest' | 'value' | 'authenticity' | 'risk' | 'cost';
@@ -40,7 +40,7 @@ export const DEFAULT_FILTERS: Filters = {
 
 const RISK_ORDER: Record<RiskLevel, number> = { low: 0, medium: 1, high: 2, critical: 3 };
 
-export function applyCostBucket(p: AirdropProject, bucket: Filters['cost']): boolean {
+export function applyCostBucket(p: ListProject, bucket: Filters['cost']): boolean {
   const max = p.cost.capital_max_usd;
   const gas = p.cost.gas_estimate_usd;
   switch (bucket) {
@@ -58,9 +58,9 @@ export function applyCostBucket(p: AirdropProject, bucket: Filters['cost']): boo
 }
 
 export function filterProjects(
-  projects: AirdropProject[],
+  projects: ListProject[],
   f: Filters,
-): AirdropProject[] {
+): ListProject[] {
   const kw = f.keyword.trim().toLowerCase();
   return projects.filter((p) => {
     if (f.status !== 'all' && p.status !== f.status) return false;
@@ -79,7 +79,7 @@ export function filterProjects(
   });
 }
 
-export function sortProjects(projects: AirdropProject[], sort: SortKey): AirdropProject[] {
+export function sortProjects(projects: ListProject[], sort: SortKey): ListProject[] {
   const list = [...projects];
   switch (sort) {
     case 'value':
@@ -125,12 +125,12 @@ export const SORT_LABEL: Record<SortKey, string> = {
 export type OverviewKey = 'total' | 'newToday' | 'highValue' | 'highRisk';
 
 /** 价值等级 S / A —— 与 StatBar「值得关注」口径一致 */
-export function isHighValue(p: AirdropProject): boolean {
+export function isHighValue(p: ListProject): boolean {
   return p.scores.grade === 'S' || p.scores.grade === 'A';
 }
 
 /** 高风险 —— 与 StatBar「高风险」口径一致 */
-export function isHighRisk(p: AirdropProject): boolean {
+export function isHighRisk(p: ListProject): boolean {
   return p.scores.risk === 'high' || p.scores.risk === 'critical';
 }
 
@@ -143,7 +143,7 @@ export function utcTodayStart(now: Date = new Date()): number {
   return new Date(`${now.toISOString().slice(0, 10)}T00:00:00Z`).getTime();
 }
 
-export function isNewToday(p: AirdropProject, now: Date = new Date()): boolean {
+export function isNewToday(p: ListProject, now: Date = new Date()): boolean {
   return new Date(p.discovered_at).getTime() >= utcTodayStart(now);
 }
 
@@ -160,10 +160,10 @@ export const OVERVIEW_LABEL: Record<OverviewKey, string> = {
  * 排序仍由列表自己的 sort 决定，避免点一下磁贴顺带改掉用户的排序设置。
  */
 export function filterByOverview(
-  projects: AirdropProject[],
+  projects: ListProject[],
   key: OverviewKey | null,
   now: Date = new Date(),
-): AirdropProject[] {
+): ListProject[] {
   if (!key) return projects;
   switch (key) {
     case 'total':

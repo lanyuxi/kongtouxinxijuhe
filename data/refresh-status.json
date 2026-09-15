@@ -1,20 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-15T11:42:10.459Z",
-  "finished_at": "2026-09-15T11:42:32.028Z",
+  "started_at": "2026-09-15T12:05:05.060Z",
+  "finished_at": "2026-09-15T12:05:23.230Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-15T11:42:10.459Z",
-  "data_changed": true,
-  "change_summary": "变更 12 个：Aave V3 内容有更新；EigenCloud 内容有更新；Ethena USDe 内容有更新",
-  "change_details": [
-    "Aave V3 内容有更新",
-    "EigenCloud 内容有更新",
-    "Ethena USDe 内容有更新",
-    "GTBTC 内容有更新",
-    "Kelp 内容有更新"
-  ],
+  "updated_at": "2026-09-15T12:05:05.060Z",
+  "data_changed": false,
+  "change_summary": "无实质变化",
+  "change_details": [],
   "added": 0,
-  "modified": 12,
+  "modified": 0,
   "removed": 0
 }

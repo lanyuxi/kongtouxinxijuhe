@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T11:42:10.459Z",
+  "fetched_at": "2026-09-15T12:05:05.060Z",
   "source": "Airdrops.io",
   "source_url": "https://airdrops.io/latest/",
   "items": [
@@ -16,7 +16,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solpump/",
       "officialUrl": "https://solpump.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Solpump",
       "officialHost": "solpump.io",
       "steps": [],
@@ -29,13 +29,14 @@
       "status": "potential",
       "categoryText": "liquidity",
       "chains": [
-        "Other"
+        "BNB Chain",
+        "Solana"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/aiw3/",
       "officialUrl": "https://aiw3.ai",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Aiw3",
       "officialHost": "aiw3.ai",
       "steps": [
@@ -92,13 +93,13 @@
       "status": "potential",
       "categoryText": "gaming",
       "chains": [
-        "Other"
+        "Ronin"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/yakkamon/",
       "officialUrl": "https://yakkamon.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Yakkamon",
       "officialHost": "yakkamon.com",
       "steps": [
@@ -141,13 +142,13 @@
       "tagline": "Worldie has not confirmed an airdrop, and the $WORLDIE token has not launched. The early access page invites users to “b",
       "status": "potential",
       "chains": [
-        "Other"
+        "Robinhood Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/worldie/",
       "officialUrl": "https://worldie.world",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Worldie",
       "officialHost": "worldie.world",
       "steps": [
@@ -192,7 +193,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/collector-crypt/",
       "officialUrl": "https://gacha.collectorcrypt.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Collector Crypt",
       "officialHost": "gacha.collectorcrypt.com",
       "steps": [
@@ -243,7 +244,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/beezie/",
       "officialUrl": "https://beezie.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Beezie",
       "officialHost": "beezie.com",
       "steps": [
@@ -262,13 +263,13 @@
       "status": "potential",
       "categoryText": "trading tool",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/blackboard/",
       "officialUrl": "https://blackboard.fi",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Blackboard",
       "officialHost": "blackboard.fi",
       "steps": [
@@ -319,7 +320,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/deepbook/",
       "officialUrl": "https://waitlist.deepbook.tech",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Deepbook",
       "officialHost": "waitlist.deepbook.tech",
       "steps": [
@@ -365,13 +366,13 @@
       "status": "potential",
       "categoryText": "ai agents",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/flop-labs/",
       "officialUrl": "https://flop.finance",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Flop Labs",
       "officialHost": "flop.finance",
       "steps": [
@@ -408,13 +409,13 @@
       "status": "potential",
       "categoryText": "liquidity",
       "chains": [
-        "Other"
+        "Giwa"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ammora/",
       "officialUrl": "https://ammora.org",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Ammora",
       "officialHost": "ammora.org",
       "steps": [
@@ -467,13 +468,13 @@
       "status": "potential",
       "categoryText": "blockchain infrastructure",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/canopy/",
       "officialUrl": "https://app.canopynetwork.org",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Canopy",
       "officialHost": "app.canopynetwork.org",
       "steps": [
@@ -498,7 +499,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/noise/",
       "officialUrl": "https://airdrops.io/noise/",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Noise",
       "steps": [],
       "description": "The Noise beta has ended. The Noise testnet closes on September 11 at 16:00 as the team prepares for the Mainnet launch. Users who purchased Credits during the testnet will receive rewards on Mainnet equal to the amount they spent."
@@ -516,7 +517,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/rep/",
       "officialUrl": "https://app.r3p.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Rep",
       "officialHost": "app.r3p.xyz",
       "steps": [
@@ -560,13 +561,13 @@
       "status": "potential",
       "categoryText": "liquidity",
       "chains": [
-        "Other"
+        "Citrea"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/satsuma/",
       "officialUrl": "https://satsuma.exchange",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Satsuma",
       "officialHost": "satsuma.exchange",
       "steps": [],
@@ -585,7 +586,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/voice/",
       "officialUrl": "https://voice.fun",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Voice",
       "officialHost": "voice.fun",
       "steps": [
@@ -645,7 +646,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/vangrid/",
       "officialUrl": "https://hub.vangrid.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Vangrid",
       "officialHost": "hub.vangrid.io",
       "steps": [
@@ -699,7 +700,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/laptop/",
       "officialUrl": "https://claim.laptoptoken.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Laptop",
       "officialHost": "claim.laptoptoken.com",
       "steps": [
@@ -743,13 +744,13 @@
       "tagline": "Reels runs a welcome offer for new players: a 275% match up to 2,000 USDT plus 50 free spins. The bonus is credited auto",
       "status": "potential",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/reels/",
       "officialUrl": "https://click.trkreels.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Reels",
       "officialHost": "click.trkreels.com",
       "steps": [
@@ -781,13 +782,13 @@
       "status": "potential",
       "categoryText": "trading tool",
       "chains": [
-        "Other"
+        "Hyperliquid"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/entropy/",
       "officialUrl": "https://entropy.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Entropy",
       "officialHost": "entropy.io",
       "steps": [
@@ -827,13 +828,13 @@
       "status": "potential",
       "categoryText": "blockchain infrastructure",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/beldex/",
       "officialUrl": "https://quest.beldex.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Beldex",
       "officialHost": "quest.beldex.io",
       "steps": [
@@ -875,13 +876,14 @@
       "tagline": "DualMint has announced UPTIME, a free points campaign whose dashboard states that claims at the close of Epoch 1 are mad",
       "status": "potential",
       "chains": [
-        "Other"
+        "Arbitrum",
+        "Base"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dualmint/",
       "officialUrl": "https://uptime.dualmint.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Dualmint",
       "officialHost": "uptime.dualmint.com",
       "steps": [
@@ -930,7 +932,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/gyndore/",
       "officialUrl": "https://app.gyndore.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Gyndore",
       "officialHost": "app.gyndore.com",
       "steps": [
@@ -965,13 +967,13 @@
       "status": "potential",
       "categoryText": "interoperability",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/c8ntinuum/",
       "officialUrl": "https://app.c8ntinuum.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "C8ntinuum",
       "officialHost": "app.c8ntinuum.com",
       "steps": [
@@ -1023,13 +1025,13 @@
       "status": "potential",
       "categoryText": "l1",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/amadeus-protocol/",
       "officialUrl": "https://amahub.ama.one",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Amadeus Protocol",
       "officialHost": "amahub.ama.one",
       "steps": [
@@ -1078,7 +1080,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/neosoul/",
       "officialUrl": "https://event.neosoul.ai",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Neosoul",
       "officialHost": "event.neosoul.ai",
       "steps": [
@@ -1119,13 +1121,14 @@
       "status": "potential",
       "categoryText": "rwa",
       "chains": [
-        "Other"
+        "BNB Chain",
+        "Sui"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dow-protocol/",
       "officialUrl": "https://app.dowprotocol.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Dow Protocol",
       "officialHost": "app.dowprotocol.com",
       "steps": [
@@ -1175,7 +1178,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tbook/",
       "officialUrl": "https://engage.tbook.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Tbook",
       "officialHost": "engage.tbook.com",
       "steps": [
@@ -1216,13 +1219,13 @@
       "status": "potential",
       "categoryText": "dex",
       "chains": [
-        "Other"
+        "Aptos"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/omega/",
       "officialUrl": "https://olympus.omeganetwork.co",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Omega",
       "officialHost": "olympus.omeganetwork.co",
       "steps": [
@@ -1268,7 +1271,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/mint-io/",
       "officialUrl": "https://mint.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Mint Io",
       "officialHost": "mint.io",
       "steps": [
@@ -1314,7 +1317,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/hertzflow/",
       "officialUrl": "https://hertzflow.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Hertzflow",
       "officialHost": "hertzflow.xyz",
       "steps": [
@@ -1358,13 +1361,13 @@
       "status": "potential",
       "categoryText": "trading tool",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nowa/",
       "officialUrl": "https://app.nowa.finance",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Nowa",
       "officialHost": "app.nowa.finance",
       "steps": [
@@ -1417,7 +1420,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sweep-finance/",
       "officialUrl": "https://sweep.finance",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Sweep Finance",
       "officialHost": "sweep.finance",
       "steps": [
@@ -1466,7 +1469,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wager-predict/",
       "officialUrl": "https://wagerpredict.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Wager Predict",
       "officialHost": "wagerpredict.com",
       "steps": [
@@ -1509,13 +1512,14 @@
       "status": "potential",
       "categoryText": "ai",
       "chains": [
-        "Other"
+        "Base",
+        "BNB Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/allox/",
       "officialUrl": "https://app.allox.ai",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Allox",
       "officialHost": "app.allox.ai",
       "steps": [
@@ -1559,13 +1563,13 @@
       "status": "potential",
       "categoryText": "l1",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/push-chain/",
       "officialUrl": "https://portal.push.org",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Push Chain",
       "officialHost": "portal.push.org",
       "steps": [
@@ -1617,13 +1621,13 @@
       "status": "potential",
       "categoryText": "perpetual",
       "chains": [
-        "Other"
+        "Orderly"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/brownian/",
       "officialUrl": "https://brownian.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Brownian",
       "officialHost": "brownian.xyz",
       "steps": [
@@ -1667,13 +1671,13 @@
       "status": "potential",
       "categoryText": "perpetual",
       "chains": [
-        "Other"
+        "Monad"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/perpl/",
       "officialUrl": "https://app.perpl.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Perpl",
       "officialHost": "app.perpl.xyz",
       "steps": [
@@ -1717,13 +1721,13 @@
       "status": "potential",
       "categoryText": "trading tool",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/moonpay/",
       "officialUrl": "https://paybox.sh",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Moonpay",
       "officialHost": "paybox.sh",
       "steps": [
@@ -1769,7 +1773,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wheelx/",
       "officialUrl": "https://wheelx.fi",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Wheelx",
       "officialHost": "wheelx.fi",
       "steps": [
@@ -1813,13 +1817,13 @@
       "status": "potential",
       "categoryText": "gaming",
       "chains": [
-        "Other"
+        "Robinhood Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/fortune-foes/",
       "officialUrl": "https://fortunefoes.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Fortune Foes",
       "officialHost": "fortunefoes.com",
       "steps": [
@@ -1864,7 +1868,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/jupiter/",
       "officialUrl": "https://jup.ag",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Jupiter",
       "officialHost": "jup.ag",
       "steps": [
@@ -1913,7 +1917,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tread-fi/",
       "officialUrl": "https://app.tread.fi",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Tread Fi",
       "officialHost": "app.tread.fi",
       "steps": [
@@ -1963,13 +1967,13 @@
       "status": "potential",
       "categoryText": "perpetual",
       "chains": [
-        "Other"
+        "Ink"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nado/",
       "officialUrl": "https://app.nado.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Nado",
       "officialHost": "app.nado.xyz",
       "steps": [
@@ -2020,13 +2024,13 @@
       "status": "ended",
       "categoryText": "rollup",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dymension/",
       "officialUrl": "https://portal.dymension.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Dymension",
       "officialHost": "portal.dymension.xyz",
       "steps": [
@@ -2051,7 +2055,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/limitless-prediction-markets/",
       "officialUrl": "https://limitless.exchange",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Limitless Prediction Markets",
       "officialHost": "limitless.exchange",
       "steps": [
@@ -2108,7 +2112,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grvt/",
       "officialUrl": "https://grvt.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Grvt",
       "officialHost": "grvt.io",
       "steps": [
@@ -2149,7 +2153,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sosovalue/",
       "officialUrl": "https://sosovalue.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Sosovalue",
       "officialHost": "sosovalue.com",
       "steps": [
@@ -2208,7 +2212,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/arcium/",
       "officialUrl": "https://rtg.arcium.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Arcium",
       "officialHost": "rtg.arcium.com",
       "steps": [
@@ -2248,13 +2252,13 @@
       "status": "potential",
       "categoryText": "staking",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/doppler-finance/",
       "officialUrl": "https://app.doppler.finance",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Doppler Finance",
       "officialHost": "app.doppler.finance",
       "steps": [
@@ -2306,7 +2310,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solstice/",
       "officialUrl": "https://claim.solstice.finance",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Solstice",
       "officialHost": "claim.solstice.finance",
       "steps": [],
@@ -2319,13 +2323,15 @@
       "status": "potential",
       "categoryText": "wallet",
       "chains": [
-        "Other"
+        "Arbitrum",
+        "Hyperliquid",
+        "Solana"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/basedapp/",
       "officialUrl": "https://basedfoundation.com",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Basedapp",
       "officialHost": "basedfoundation.com",
       "steps": [],
@@ -2344,7 +2350,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/o1-exchange/",
       "officialUrl": "https://o1.exchange",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "O1 Exchange",
       "officialHost": "o1.exchange",
       "steps": [
@@ -2394,7 +2400,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/infinex/",
       "officialUrl": "https://app.infinex.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Infinex",
       "officialHost": "app.infinex.xyz",
       "steps": [
@@ -2435,13 +2441,14 @@
       "status": "potential",
       "categoryText": "stablecoin",
       "chains": [
-        "Other"
+        "Ethereum",
+        "Solana"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ethena/",
       "officialUrl": "https://app.ethena.fi",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Ethena",
       "officialHost": "app.ethena.fi",
       "steps": [
@@ -2492,13 +2499,14 @@
       "status": "potential",
       "categoryText": "staking",
       "chains": [
-        "Other"
+        "Ethereum",
+        "Solana"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/huma-finance/",
       "officialUrl": "https://claim.huma.finance",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Huma Finance",
       "officialHost": "claim.huma.finance",
       "steps": [
@@ -2549,7 +2557,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grass/",
       "officialUrl": "https://app.getgrass.io",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Grass",
       "officialHost": "app.getgrass.io",
       "steps": [
@@ -2573,13 +2581,13 @@
       "status": "potential",
       "categoryText": "l2",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/plume-network/",
       "officialUrl": "https://claim-pp.plume.org",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Plume Network",
       "officialHost": "claim-pp.plume.org",
       "steps": [
@@ -2598,13 +2606,13 @@
       "status": "potential",
       "categoryText": "blockchain infrastructure",
       "chains": [
-        "Other"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nexus/",
       "officialUrl": "https://explorer.nexus.xyz",
-      "fetchedAt": "2026-09-15T11:42:10.493Z",
+      "fetchedAt": "2026-09-15T12:05:05.092Z",
       "rawTitle": "Nexus",
       "officialHost": "explorer.nexus.xyz",
       "steps": [],

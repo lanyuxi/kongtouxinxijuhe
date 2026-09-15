@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/limitless-prediction-markets/",
-      "fetched_at": "2026-09-15T11:42:10.493Z"
+      "fetched_at": "2026-09-15T12:05:05.092Z"
     }
   ],
   "evidence": [
@@ -46,9 +46,9 @@
   ],
   "scores": {
     "authenticity": 22,
-    "value": 49,
+    "value": 40,
     "risk": "low",
-    "grade": "C",
+    "grade": "D",
     "authenticityItems": [
       {
         "key": "authenticity.website",
@@ -110,25 +110,32 @@
     ],
     "valueItems": [
       {
-        "key": "value.fundamentals",
-        "label": "项目基本面",
-        "value": 7,
+        "key": "value.scale",
+        "label": "链上规模 / 产品成熟度",
+        "value": 0,
         "max": 20,
-        "reason": "具备官网与基础资料，基本面较完整"
+        "reason": "未获取到资金规模数据（数据源未提供）"
+      },
+      {
+        "key": "value.verification",
+        "label": "信息验证充分度",
+        "value": 14,
+        "max": 20,
+        "reason": "共 2 条证据，其中 2 条已验证（验证率 100%）"
+      },
+      {
+        "key": "value.breadth",
+        "label": "来源广度",
+        "value": 4,
+        "max": 10,
+        "reason": "来自 1 个独立数据源，建议再找官方渠道确认"
       },
       {
         "key": "value.funding",
         "label": "融资 / 投资机构",
         "value": 0,
-        "max": 15,
+        "max": 10,
         "reason": "未核实融资信息，机构背书不足"
-      },
-      {
-        "key": "value.activity",
-        "label": "真实产品 / 用户 / 活跃度",
-        "value": 4,
-        "max": 15,
-        "reason": "依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）"
       },
       {
         "key": "value.signal",
@@ -140,32 +147,25 @@
       {
         "key": "value.roi",
         "label": "任务投入产出比",
-        "value": 15,
+        "value": 9,
         "max": 15,
         "reason": "预计投入约 27 分钟，共 9 个步骤"
       },
       {
         "key": "value.timing",
         "label": "当前参与时机",
-        "value": 10,
-        "max": 10,
-        "reason": "仍处于早期阶段，参与时机较好"
-      },
-      {
-        "key": "value.dilution",
-        "label": "用户稀释风险",
         "value": 4,
         "max": 5,
-        "reason": "暂未发现明显的用户过度稀释迹象"
+        "reason": "仍处于早期阶段，参与时机较好"
       }
     ],
     "riskItems": [
       {
-        "key": "risk.none",
-        "label": "未检测到高风险行为",
+        "key": "risk.contract_coverage",
+        "label": "合约地址未覆盖（数据源不提供）",
         "value": 0,
         "max": 3,
-        "reason": "当前公开信息未发现明显的资金或合约风险"
+        "reason": "本平台的数据源不提供合约地址，因此无法替你验证合约。参与前请自行到区块浏览器核对合约地址是否来自官方公告。"
       }
     ]
   },
@@ -178,9 +178,9 @@
     "summary": "高资金投入，不适合新手大额参与。"
   },
   "recommendation": {
-    "grade": "C",
-    "action": "observe",
-    "summary": "优先级较低，可先收藏关注后续变化。"
+    "grade": "D",
+    "action": "avoid",
+    "summary": "当前不值得投入时间与资金。"
   },
   "guide": [
     {
@@ -194,8 +194,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
-      "source_url": "https://limitless.exchange",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 2,
@@ -236,8 +235,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/limitless-prediction-markets/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 5,
@@ -250,8 +248,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/limitless-prediction-markets/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 6,
@@ -264,8 +261,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "https://airdrops.io/limitless-prediction-markets/",
-      "source_verified": true
+      "source_verified": false
     },
     {
       "step": 7,
@@ -352,8 +348,8 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-15T11:42:10.493Z",
-  "last_changed_at": "2026-09-13T13:49:13.740Z",
+  "last_checked_at": "2026-09-15T12:05:05.092Z",
+  "last_changed_at": "2026-09-15T11:56:27.451Z",
   "sourcedSteps": [
     {
       "title": "Visit Limitless and Connect Your Wallet",
@@ -393,6 +389,6 @@
       "url": "https://airdrops.io/visit/9t93/"
     }
   ],
-  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Base\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":27},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://limitless.exchange\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/limitless-prediction-markets/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"适合。操作难度较低，建议按教程逐步完成。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://limitless.exchange\",\"source_verified\":true,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Go to the Limitless platform and connect a Web3 wallet such as MetaMask or Coinbase Wallet. Approve the connection request.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"/visit/9253/\",\"source_verified\":true,\"step\":2,\"title\":\"Visit Limitless and Connect Your Wallet\"},{\"cost_usd\":0,\"description\":\"Set your wallet to the Base network and add USDC to cover trades. You can buy USDC or ETH on Binance , then move funds to Base using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/goto/binance/\",\"source_verified\":true,\"step\":3,\"title\":\"Switch to Base and Fund Your Wallet\"},{\"cost_usd\":0,\"description\":\"Browse the open markets and take positions on the outcomes you want. Markets with deeper liquidity and clear resolution rules tend to score better and carry less slippage.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/limitless-prediction-markets/\",\"source_verified\":true,\"step\":4,\"title\":\"Place Trades on Active Markets\"},{\"cost_usd\":0,\"description\":\"Hit at least $200 in trading volume to qualify for Season 4, then keep trading through the season to accumulate points.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/limitless-prediction-markets/\",\"source_verified\":true,\"step\":5,\"title\":\"Reach the $200 Volume Minimum\"},{\"cost_usd\":0,\"description\":\"Check your volume and points on the dashboard. The leaderboard refreshes every Monday, so use it to see where you stand against other traders.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/limitless-prediction-markets/\",\"source_verified\":true,\"step\":6,\"title\":\"Track Points and the Weekly Leaderboard\"},{\"cost_usd\":0,\"description\":\"Limitless has opened User-Generated Markets, letting anyone create their own prediction market by picking an asset, choosing an outcome, and launching it on the Create a Market page . Every market you launch pays you a share of the fees it generates from trading activity, for as long as people keep trading it.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"/visit/a0a3/\",\"source_verified\":true,\"step\":7,\"title\":\"User Generated Markets are Live\"},{\"cost_usd\":0,\"description\":\"If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"/visit/d073/\",\"source_verified\":true,\"step\":8,\"title\":\"Claim Your Season 3 Allocation\"},{\"cost_usd\":0,\"description\":\"Submit your application through the application form . The team reviews candidates based on their contributions and engagement history.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/visit/9t93/\",\"source_verified\":true,\"step\":9,\"title\":\"Apply to the Program\"}],\"guide_source\":\"sourced\",\"id\":\"limitless-prediction-markets\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Limitless Prediction Markets\",\"official\":{\"website\":\"https://limitless.exchange\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"C\",\"summary\":\"优先级较低，可先收藏关注后续变化。\"},\"requirements\":[\"钱包\",\"资金准备\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":22,\"authenticityItems\":[{\"evidenceUrl\":\"https://limitless.exchange\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"grade\":\"C\",\"risk\":\"low\",\"riskItems\":[{\"key\":\"risk.none\",\"label\":\"未检测到高风险行为\",\"max\":3,\"reason\":\"当前公开信息未发现明显的资金或合约风险\",\"value\":0}],\"value\":49,\"valueItems\":[{\"key\":\"value.fundamentals\",\"label\":\"项目基本面\",\"max\":20,\"reason\":\"具备官网与基础资料，基本面较完整\",\"value\":7},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":15,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.activity\",\"label\":\"真实产品 / 用户 / 活跃度\",\"max\":15,\"reason\":\"依据产品资料完整度与第三方提及次数综合判断（第三方来源 1 个）\",\"value\":4},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 27 分钟，共 9 个步骤\",\"value\":15},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":10,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":10},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4}]},\"slug\":\"limitless-prediction-markets\",\"sourcedSteps\":[{\"body\":\"Go to the Limitless platform and connect a Web3 wallet such as MetaMask or Coinbase Wallet. Approve the connection request.\",\"title\":\"Visit Limitless and Connect Your Wallet\",\"url\":\"/visit/9253/\"},{\"body\":\"Set your wallet to the Base network and add USDC to cover trades. You can buy USDC or ETH on Binance , then move funds to Base using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab\",\"title\":\"Switch to Base and Fund Your Wallet\",\"url\":\"https://airdrops.io/goto/binance/\"},{\"body\":\"Browse the open markets and take positions on the outcomes you want. Markets with deeper liquidity and clear resolution rules tend to score better and carry less slippage.\",\"title\":\"Place Trades on Active Markets\"},{\"body\":\"Hit at least $200 in trading volume to qualify for Season 4, then keep trading through the season to accumulate points.\",\"title\":\"Reach the $200 Volume Minimum\"},{\"body\":\"Check your volume and points on the dashboard. The leaderboard refreshes every Monday, so use it to see where you stand against other traders.\",\"title\":\"Track Points and the Weekly Leaderboard\"},{\"body\":\"Limitless has opened User-Generated Markets, letting anyone create their own prediction market by picking an asset, choosing an outcome, and launching it on the Create a Market page . Every market you launch pays you a share of the fees it generates from trading activity, for as long as people keep trading it.\",\"title\":\"User Generated Markets are Live\",\"url\":\"/visit/a0a3/\"},{\"body\":\"If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.\",\"title\":\"Claim Your Season 3 Allocation\",\"url\":\"/visit/d073/\"},{\"body\":\"Submit your application through the application form . The team reviews candidates based on their contributions and engagement history.\",\"title\":\"Apply to the Program\",\"url\":\"https://airdrops.io/visit/9t93/\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/limitless-prediction-markets/\"}],\"status\":\"potential\",\"tagline\":\"Limitless has opened its Season 3 airdrop claim, with 3% of the total $LMTS supply set aside to reward traders on the platform.\",\"tasks\":[\"存入资产\",\"持有份额\"]}",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Base\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":27},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://limitless.exchange\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/limitless-prediction-markets/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"适合。操作难度较低，建议按教程逐步完成。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Go to the Limitless platform and connect a Web3 wallet such as MetaMask or Coinbase Wallet. Approve the connection request.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"/visit/9253/\",\"source_verified\":true,\"step\":2,\"title\":\"Visit Limitless and Connect Your Wallet\"},{\"cost_usd\":0,\"description\":\"Set your wallet to the Base network and add USDC to cover trades. You can buy USDC or ETH on Binance , then move funds to Base using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/goto/binance/\",\"source_verified\":true,\"step\":3,\"title\":\"Switch to Base and Fund Your Wallet\"},{\"cost_usd\":0,\"description\":\"Browse the open markets and take positions on the outcomes you want. Markets with deeper liquidity and clear resolution rules tend to score better and carry less slippage.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"Place Trades on Active Markets\"},{\"cost_usd\":0,\"description\":\"Hit at least $200 in trading volume to qualify for Season 4, then keep trading through the season to accumulate points.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"Reach the $200 Volume Minimum\"},{\"cost_usd\":0,\"description\":\"Check your volume and points on the dashboard. The leaderboard refreshes every Monday, so use it to see where you stand against other traders.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"Track Points and the Weekly Leaderboard\"},{\"cost_usd\":0,\"description\":\"Limitless has opened User-Generated Markets, letting anyone create their own prediction market by picking an asset, choosing an outcome, and launching it on the Create a Market page . Every market you launch pays you a share of the fees it generates from trading activity, for as long as people keep trading it.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"/visit/a0a3/\",\"source_verified\":true,\"step\":7,\"title\":\"User Generated Markets are Live\"},{\"cost_usd\":0,\"description\":\"If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"/visit/d073/\",\"source_verified\":true,\"step\":8,\"title\":\"Claim Your Season 3 Allocation\"},{\"cost_usd\":0,\"description\":\"Submit your application through the application form . The team reviews candidates based on their contributions and engagement history.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://limitless.exchange\",\"risk\":\"low\",\"source_url\":\"https://airdrops.io/visit/9t93/\",\"source_verified\":true,\"step\":9,\"title\":\"Apply to the Program\"}],\"guide_source\":\"sourced\",\"id\":\"limitless-prediction-markets\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Limitless Prediction Markets\",\"official\":{\"website\":\"https://limitless.exchange\"},\"recommendation\":{\"action\":\"avoid\",\"grade\":\"D\",\"summary\":\"当前不值得投入时间与资金。\"},\"requirements\":[\"钱包\",\"资金准备\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":22,\"authenticityItems\":[{\"evidenceUrl\":\"https://limitless.exchange\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"grade\":\"D\",\"risk\":\"low\",\"riskItems\":[{\"key\":\"risk.contract_coverage\",\"label\":\"合约地址未覆盖（数据源不提供）\",\"max\":3,\"reason\":\"本平台的数据源不提供合约地址，因此无法替你验证合约。参与前请自行到区块浏览器核对合约地址是否来自官方公告。\",\"value\":0}],\"value\":40,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 27 分钟，共 9 个步骤\",\"value\":9},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4}]},\"slug\":\"limitless-prediction-markets\",\"sourcedSteps\":[{\"body\":\"Go to the Limitless platform and connect a Web3 wallet such as MetaMask or Coinbase Wallet. Approve the connection request.\",\"title\":\"Visit Limitless and Connect Your Wallet\",\"url\":\"/visit/9253/\"},{\"body\":\"Set your wallet to the Base network and add USDC to cover trades. You can buy USDC or ETH on Binance , then move funds to Base using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab\",\"title\":\"Switch to Base and Fund Your Wallet\",\"url\":\"https://airdrops.io/goto/binance/\"},{\"body\":\"Browse the open markets and take positions on the outcomes you want. Markets with deeper liquidity and clear resolution rules tend to score better and carry less slippage.\",\"title\":\"Place Trades on Active Markets\"},{\"body\":\"Hit at least $200 in trading volume to qualify for Season 4, then keep trading through the season to accumulate points.\",\"title\":\"Reach the $200 Volume Minimum\"},{\"body\":\"Check your volume and points on the dashboard. The leaderboard refreshes every Monday, so use it to see where you stand against other traders.\",\"title\":\"Track Points and the Weekly Leaderboard\"},{\"body\":\"Limitless has opened User-Generated Markets, letting anyone create their own prediction market by picking an asset, choosing an outcome, and launching it on the Create a Market page . Every market you launch pays you a share of the fees it generates from trading activity, for as long as people keep trading it.\",\"title\":\"User Generated Markets are Live\",\"url\":\"/visit/a0a3/\"},{\"body\":\"If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.\",\"title\":\"Claim Your Season 3 Allocation\",\"url\":\"/visit/d073/\"},{\"body\":\"Submit your application through the application form . The team reviews candidates based on their contributions and engagement history.\",\"title\":\"Apply to the Program\",\"url\":\"https://airdrops.io/visit/9t93/\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/limitless-prediction-markets/\"}],\"status\":\"potential\",\"tagline\":\"Limitless has opened its Season 3 airdrop claim, with 3% of the total $LMTS supply set aside to reward traders on the platform.\",\"tasks\":[\"存入资产\",\"持有份额\"]}",
   "guide_source": "sourced"
 }

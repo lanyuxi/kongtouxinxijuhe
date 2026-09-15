@@ -4,17 +4,22 @@ import { STATUS_LABEL, CATEGORY_LABEL, CHAIN_LABEL, RISK_LABEL } from '../lib/la
 import { BEGINNER_RULES } from '../lib/beginner';
 
 const STATUSES = ['all', 'new', 'potential', 'confirmed', 'claim_live', 'ended'] as const;
-const CHAINS = [
-  'all',
+
+/** 常用公链的**优先展示顺序**（不是白名单）。
+ *  列表里出现但不在这个顺序里的链，会按项目数排在后面 —— 见 chainOptions()。
+ *  这样新链上线后无需改代码就能被筛到，不会退化成「其他公链 124 条」。 */
+const CHAIN_PRIORITY = [
   'Ethereum',
   'Solana',
   'Base',
   'Arbitrum',
   'Optimism',
   'BNB Chain',
+  'Polygon',
+  'Avalanche',
   'Sui',
-  'Other',
-] as const;
+  'TON',
+];
 const CATEGORIES = [
   'all',
   'DeFi',
@@ -28,6 +33,40 @@ const CATEGORIES = [
   'Other',
 ] as const;
 const RISKS = ['all', 'low', 'medium', 'high', 'critical'] as const;
+
+/**
+ * 从实际数据推导公链选项（含计数）。
+ *
+ * 为什么必须动态生成（第一性原理：筛选器的选项要能被筛到）：
+ *   固定写死 9 条链时，实测 124/189 个项目落进「其他公链」——
+ *   点进去一大坨、且看不出差别，筛选器形同虚设。
+ *   改为从项目里统计真实公链并按项目数排序后：
+ *     · 只展示数据里确实存在的链（不会出现选了 0 结果的空选项）；
+ *     · 新链自动出现，无需改代码。
+ *   'Other'（未标注）只在确实存在时展示，且固定排在最后。
+ */
+/**
+ * 公链展示名：已知链用中文标签，未收录的链原样展示。
+ * 兜底绝不能写成「其他公链」—— 那会把「我们没收录」说成「这条链没名字」。
+ */
+export function chainLabel(chain: string): string {
+  return (CHAIN_LABEL as Record<string, string>)[chain] ?? chain;
+}
+
+export function chainOptions(projects: { chains: string[] }[]): { value: string; count: number }[] {
+  const counts = new Map<string, number>();
+  for (const p of projects) {
+    for (const c of p.chains ?? []) counts.set(c, (counts.get(c) ?? 0) + 1);
+  }
+  const rank = (c: string) => {
+    const i = CHAIN_PRIORITY.indexOf(c);
+    return i === -1 ? CHAIN_PRIORITY.length + (c === 'Other' ? 1 : 0) : i;
+  };
+  return Array.from(counts.entries())
+    .filter(([, n]) => n > 0)
+    .sort((a, b) => rank(a[0]) - rank(b[0]) || b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([value, count]) => ({ value, count }));
+}
 const COSTS = [
   { key: 'all', label: '全部成本' },
   { key: 'free', label: '免费' },
@@ -44,6 +83,7 @@ export function FilterBar({
   mergedVariants = 0,
   activeOverview = null,
   onClearOverview,
+  chainOptions,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
@@ -66,6 +106,8 @@ export function FilterBar({
    */
   activeOverview?: string | null;
   onClearOverview?: () => void;
+  /** 公链下拉的选项（由实际数据推导，见 chainOptions） */
+  chainOptions: { value: string; count: number }[];
 }) {
   const set = <K extends keyof Filters>(k: K, v: Filters[K]) => onChange({ ...filters, [k]: v });
 
@@ -185,9 +227,10 @@ export function FilterBar({
               value={filters.chain}
               onChange={(e) => set('chain', e.target.value as Filters['chain'])}
             >
-              {CHAINS.map((c) => (
-                <option key={c} value={c}>
-                  {c === 'all' ? '全部公链' : CHAIN_LABEL[c]}
+              <option value="all">全部公链</option>
+              {chainOptions.map((c) => (
+                <option key={c.value} value={c.value}>
+                  {chainLabel(c.value)}（{c.count}）
                 </option>
               ))}
             </select>

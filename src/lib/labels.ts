@@ -70,8 +70,32 @@ export const CHAIN_LABEL: Record<Chain, string> = {
   Arbitrum: 'Arbitrum',
   Optimism: 'Optimism',
   'BNB Chain': 'BNB Chain',
+  Polygon: 'Polygon',
+  Avalanche: 'Avalanche',
   Sui: 'Sui',
-  Other: '其他公链',
+  Aptos: 'Aptos',
+  TON: 'TON',
+  Tron: 'Tron',
+  Bitcoin: 'Bitcoin',
+  Linea: 'Linea',
+  Scroll: 'Scroll',
+  Blast: 'Blast',
+  zkSync: 'zkSync',
+  Mantle: 'Mantle',
+  Hyperliquid: 'Hyperliquid',
+  Cosmos: 'Cosmos',
+  Polkadot: 'Polkadot',
+  Near: 'Near',
+  Starknet: 'Starknet',
+  Sei: 'Sei',
+  Berachain: 'Berachain',
+  Sonic: 'Sonic',
+  'World Chain': 'World Chain',
+  Unichain: 'Unichain',
+  Ink: 'Ink',
+  // 注意：Other 只在**确实无法判断**时使用。
+  // 不要把「未收录的新链」也塞进来，否则筛选器又会退化成「其他公链 124 条」。
+  Other: '未标注',
 };
 
 export const AUTH_LEVEL = (v: number) =>

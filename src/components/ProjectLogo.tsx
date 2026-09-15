@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { AirdropProject } from '../lib/types';
+import type { ListProject } from '../lib/types';
 
 /**
  * 项目 Logo。
@@ -37,7 +37,7 @@ export function ProjectLogo({
   size = 'md',
   className = '',
 }: {
-  project: AirdropProject;
+  project: ListProject;
   size?: keyof typeof SIZES;
   className?: string;
 }) {

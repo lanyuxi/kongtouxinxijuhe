@@ -12,7 +12,7 @@
  *   2) tasks 字段（人工/来源标注的任务标签）
  */
 
-import type { AirdropProject } from './types';
+import type { ListProject } from './types';
 
 /** 从英文步骤标题里提取「动作动词」，转成中文短语 */
 const ACTION_MAP: [RegExp, string][] = [
@@ -62,7 +62,7 @@ function toAction(title: string): string | null {
  * 生成「操作：xxx、yyy」所需的短语数组。
  * 最多 3 条，去重，保持出现顺序。
  */
-export function operationSummary(p: AirdropProject, max = 3): string[] {
+export function operationSummary(p: ListProject, max = 3): string[] {
   const out: string[] = [];
   const push = (s: string) => {
     if (s && !out.includes(s) && out.length < max) out.push(s);
@@ -96,6 +96,6 @@ export function operationSummary(p: AirdropProject, max = 3): string[] {
 }
 
 /** 用于卡片一行展示的完整文案 */
-export function operationLine(p: AirdropProject): string {
+export function operationLine(p: ListProject): string {
   return `操作：${operationSummary(p).join('、')}`;
 }

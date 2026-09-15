@@ -33,16 +33,59 @@ export type Category =
   | 'NFT'
   | 'Other';
 
-/** 支持筛选的公链 */
-export type Chain =
+/**
+ * 支持筛选的公链。
+ *
+ * ⚠️ 这份清单是「已知公链的规范化目标」，**不是白名单**。
+ *   历史问题：清单只有 9 项且 `normalizeChain` 用它做白名单拦截，
+ *   任何不在这 9 项里的链都被硬塞成 `Other`，
+ *   实测 189 个项目里 124 个（65.6%）公链显示「其他公链」——
+ *   公链筛选器点了「其他公链」出来 124 条，等于没有筛选价值。
+ *   因此这里补齐主流链，且未识别的链走 `Other` 但**保留原始名**（见 Chain 展示逻辑），
+ *   不再把「未收录」等同于「其他」。
+ */
+export type KnownChain =
   | 'Ethereum'
   | 'Solana'
   | 'Base'
   | 'Arbitrum'
   | 'Optimism'
   | 'BNB Chain'
+  | 'Polygon'
+  | 'Avalanche'
   | 'Sui'
+  | 'Aptos'
+  | 'TON'
+  | 'Tron'
+  | 'Bitcoin'
+  | 'Linea'
+  | 'Scroll'
+  | 'Blast'
+  | 'zkSync'
+  | 'Mantle'
+  | 'Hyperliquid'
+  | 'Cosmos'
+  | 'Polkadot'
+  | 'Near'
+  | 'Starknet'
+  | 'Sei'
+  | 'Berachain'
+  | 'Sonic'
+  | 'World Chain'
+  | 'Unichain'
+  | 'Ink'
   | 'Other';
+
+/**
+ * 项目公链。
+ *
+ * 为什么不用 `KnownChain` 直接约束：
+ *   公链是**开放集合**，每周都有新链上线。若用联合类型硬约束，
+ *   类型上就逼着实现把未收录的链折叠成 'Other'（历史 65% 项目遭殃）。
+ *   因此这里放宽为「已知链 + 任意字符串」：
+ *   已知链提供筛选选项与中文标签，未知链原样保留、照常展示与搜索。
+ */
+export type Chain = KnownChain | (string & {});
 
 /**
  * 评分项：必须同时携带分数与理由。
@@ -294,11 +337,72 @@ export interface SourceHealthFile {
   sources: SourceHealth[];
 }
 
+/**
+ * 列表项目：只含卡片 / 筛选 / 排序所需字段。
+ *
+ * 为什么单独定义而不是复用 AirdropProject：
+ *   1. 类型上就断掉对详情字段的引用，避免列表页误读「其实没有下发」的字段；
+ *   2. data/airdrops.json 只下发这一形态，体积从 3.87 MB 降到 ~300 KB 量级，
+ *      详情字段（faq / evidence / guide.description / scores 明细 / digest）
+ *      按需从 data/details/<slug>.json 拉取。
+ * 字段含义与 AirdropProject 完全一致，仅做裁剪，不做任何换算。
+ */
+export interface ListGuideStep {
+  step: number;
+  title: string;
+  minutes: number;
+  needs_wallet: boolean;
+  needs_signature: boolean;
+  risk: RiskLevel;
+}
+
+export interface ListProject {
+  id: string;
+  name: string;
+  slug: string;
+  tagline: string;
+  category: Category;
+  chains: Chain[];
+  status: AirdropStatus;
+  official: AirdropProject['official'];
+  logo?: string;
+  meta?: AirdropProject['meta'];
+  tasks: string[];
+  requirements: string[];
+  sources: SourceRef[];
+  scores: {
+    authenticity: number;
+    value: number;
+    risk: RiskLevel;
+    grade: ValueGrade;
+  };
+  cost: CostModel;
+  recommendation: Recommendation;
+  guide: ListGuideStep[];
+  guide_source: 'sourced' | 'template';
+  created_at: string;
+  discovered_at: string;
+  last_checked_at: string;
+  last_changed_at: string;
+}
+
+/**
+ * 完整数据集：**内部 / 构建期**使用的形态，projects 是完整项目。
+ * 注意：它**不再**是前端下发的 airdrops.json 形态（那是 ListDataset）。
+ * 二者刻意分开，否则「列表瘦身」会被类型系统悄悄绕过。
+ */
 export interface Dataset {
   updated_at: string;
   /** 今日新增数量 */
   new_today: number;
   projects: AirdropProject[];
+}
+
+/** 下发给前端的列表数据集：projects 只含卡片字段（体积从 3.87 MB → ~300 KB） */
+export interface ListDataset {
+  updated_at: string;
+  new_today: number;
+  projects: ListProject[];
 }
 
 /**

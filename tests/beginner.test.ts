@@ -265,15 +265,37 @@ describe('教程来源标注', () => {
     expect(s.guide_source).toBe('sourced');
   });
 
-  it('模板教程不会伪造「来源已核实」的来源链接', () => {
-    const g = buildGuide(makeProject());
-    // 模板步骤的 source_url 只能指向官网或来源页，不能凭空生成
+  it('模板教程不会伪造「来源已核实」（信任不变量）', () => {
+    // 历史事故：模板步骤曾用 `source_verified: !!officialUrl`，
+    // 导致 142 个项目在前端显示绿色「✓ 来源已核实」。
+    const g = buildGuide(makeProject({ official: { website: 'https://demo.xyz' } }));
+    expect(g.source).toBe('template');
     for (const s of g.steps) {
-      if (s.source_url) {
-        expect(s.source_url).toMatch(/^https?:\/\//);
-        expect(s.source_url).not.toBe('');
-      }
+      // 模板步骤永远不携带核实标记，也不携带伪造的步骤来源
+      expect(s.source_verified).toBe(false);
+      expect(s.source_url).toBeUndefined();
     }
+  });
+
+  it('真实步骤（sourced）只有带自身来源链接才标为已核实', () => {
+    const g = buildGuide(
+      makeProject({
+        official: { website: 'https://demo.xyz' },
+        sourcedSteps: [
+          { title: 'A', body: 'a', url: 'https://demo.xyz/a' },
+          { title: 'B', body: 'b', url: 'https://demo.xyz/b' },
+          { title: 'C', body: 'c' }, // 无 url
+        ],
+      }),
+    );
+    expect(g.source).toBe('sourced');
+    // 平台自己插入的安全首步不是官方步骤，同样不得自称已核实
+    expect(g.steps[0].source_verified).toBe(false);
+    const noUrl = g.steps.find((s) => s.title === 'C');
+    expect(noUrl?.source_verified).toBe(false);
+    const withUrl = g.steps.find((s) => s.title === 'A');
+    expect(withUrl?.source_verified).toBe(true);
+    expect(withUrl?.source_url).toBe('https://demo.xyz/a');
   });
 });
 

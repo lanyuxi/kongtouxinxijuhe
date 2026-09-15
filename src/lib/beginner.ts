@@ -28,7 +28,7 @@
  * 这样筛出来的是「今天就能动手、不用担心亏钱」的项目。
  */
 
-import type { AirdropProject } from './types';
+import type { ListProject } from './types';
 
 /** 新手友好的判定阈值（集中在此，便于调整与单测） */
 export const BEGINNER_RULES = {
@@ -56,7 +56,7 @@ export interface BeginnerVerdict {
   totalMinutes: number;
 }
 
-export function beginnerVerdict(p: AirdropProject): BeginnerVerdict {
+export function beginnerVerdict(p: ListProject): BeginnerVerdict {
   const capital = p.cost.capital_max_usd ?? 0;
   const gas = p.cost.gas_estimate_usd ?? 0;
   const totalMinutes =
@@ -87,11 +87,11 @@ export function beginnerVerdict(p: AirdropProject): BeginnerVerdict {
 }
 
 /** 便捷判定：仅布尔值（筛选用） */
-export function isBeginnerFriendly(p: AirdropProject): boolean {
+export function isBeginnerFriendly(p: ListProject): boolean {
   return beginnerVerdict(p).friendly;
 }
 
 /** 统计一批项目里新手友好项数量，用于筛选按钮上的计数提示 */
-export function countBeginnerFriendly(projects: AirdropProject[]): number {
+export function countBeginnerFriendly(projects: ListProject[]): number {
   return projects.reduce((n, p) => (isBeginnerFriendly(p) ? n + 1 : n), 0);
 }

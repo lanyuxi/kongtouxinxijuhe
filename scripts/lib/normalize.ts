@@ -155,27 +155,127 @@ export function normalizeCategory(text?: string): string {
   return 'Other';
 }
 
-/** 公链归一 */
+/**
+ * 公链别名 → 规范名。
+ *
+ * ⚠️ 设计原则（本次修订）：
+ *   1. **别名表只做「规范化」，不做白名单拦截**。
+ *      未命中的链返回 'Other'，但调用方要清楚 'Other' 表示「未识别」，
+ *      而不是「这条链不配拥有名字」；
+ *   2. 必须支持**多链字符串**。DefiLlama 的 `chains` 是数组，
+ *      抓取侧曾经用 `.join(', ')` 拼成 "Avalanche, Polygon, Ethereum"，
+ *      旧实现却把整串当成一个 key 去查表 → 100% 落到 'Other'。
+ *      这是「65% 项目显示其他公链」的直接根因。
+ */
 const CHAIN_ALIASES: Record<string, string> = {
   ethereum: 'Ethereum',
   eth: 'Ethereum',
+  erc20: 'Ethereum',
+  'ethereum mainnet': 'Ethereum',
   solana: 'Solana',
   sol: 'Solana',
   base: 'Base',
   arbitrum: 'Arbitrum',
   arb: 'Arbitrum',
+  'arbitrum one': 'Arbitrum',
+  'arbitrum nova': 'Arbitrum',
   optimism: 'Optimism',
   op: 'Optimism',
+  'op mainnet': 'Optimism',
   bnb: 'BNB Chain',
   bsc: 'BNB Chain',
   'bnb chain': 'BNB Chain',
+  'binance smart chain': 'BNB Chain',
+  polygon: 'Polygon',
+  matic: 'Polygon',
+  'polygon pos': 'Polygon',
+  'polygon zkevm': 'Polygon',
+  avalanche: 'Avalanche',
+  avax: 'Avalanche',
+  'avalanche c-chain': 'Avalanche',
   sui: 'Sui',
+  aptos: 'Aptos',
+  ton: 'TON',
+  'the open network': 'TON',
+  tron: 'Tron',
+  trx: 'Tron',
+  bitcoin: 'Bitcoin',
+  btc: 'Bitcoin',
+  'bitcoin ordinals': 'Bitcoin',
+  linea: 'Linea',
+  scroll: 'Scroll',
+  blast: 'Blast',
+  zksync: 'zkSync',
+  'zksync era': 'zkSync',
+  mantle: 'Mantle',
+  hyperliquid: 'Hyperliquid',
+  'hyperliquid evm': 'Hyperliquid',
+  cosmos: 'Cosmos',
+  cosmoshub: 'Cosmos',
+  osmosis: 'Cosmos',
+  polkadot: 'Polkadot',
+  dot: 'Polkadot',
+  near: 'Near',
+  starknet: 'Starknet',
+  sei: 'Sei',
+  berachain: 'Berachain',
+  sonic: 'Sonic',
+  'world chain': 'World Chain',
+  worldchain: 'World Chain',
+  unichain: 'Unichain',
+  ink: 'Ink',
 };
 
+/**
+ * 公链归一：支持单个链名，也支持多链字符串（逗号 / 顿号 / 斜杠分隔）。
+ *
+ * 返回的是**规范化后的链名数组去重结果**，调用方按需取用。
+ */
+export function normalizeChainList(text?: string): string[] {
+  if (!text) return ['Other'];
+  // 保留原始书写：查表用小写 key，但未识别时用**原始串**展示，
+  // 否则 `SuperNewChain` 会被先 toLowerCase 成 `supernewchain`，再也没法还原。
+  const rawParts = text.split(/[,，、/|]+/).map((p) => p.trim()).filter(Boolean);
+  const out: string[] = [];
+  for (const raw of rawParts.length ? rawParts : [text.trim()]) {
+    const k = raw.toLowerCase();
+    const hit = CHAIN_ALIASES[k];
+    // 未识别时保留原始书写（仅做首字母大写），而不是一律折叠成 'Other'：
+    // 「Astar」比「其他公链」对用户有用得多，即便我们还没为它建别名。
+    const value = hit ?? (k === 'other' ? 'Other' : titleCase(raw));
+    if (value && !out.includes(value)) out.push(value);
+  }
+
+  // 与 Merge 阶段同一套语义：有已知链时，'Other'（= 我们没识别出来）不该保留。
+  // 否则会出现 chains = ['Other','Ethereum'] 这种自相矛盾的结果 ——
+  // 既然已经知道是 Ethereum，就不存在「未知链」。
+  const known = out.filter((c) => c !== 'Other');
+  if (known.length) return known;
+  return out.length ? ['Other'] : ['Other'];
+}
+
+/** 兼容入口：多链时返回首个链（旧调用方语义），单链保持原行为 */
 export function normalizeChain(text?: string): string {
-  if (!text) return 'Other';
-  const key = text.trim().toLowerCase();
-  return CHAIN_ALIASES[key] ?? 'Other';
+  return normalizeChainList(text)[0];
+}
+
+/**
+ * 未识别链的展示名处理。
+ *
+ * 只把每个词的首字母大写，**其余字母保持原样** —— 早期实现先 `toLowerCase()`
+ * 再首字母大写，会把 `SuperNewChain` 变成 `Supernewchain`，
+ * 把用户能认出来的名字改成了认不出来的。这里对已知别名走查表（不受影响），
+ * 只对未识别链做「尽量少改动」的处理。
+ */
+function titleCase(s: string): string {
+  // 已经是「首字母大写 + 含大写字母」的驼峰/混合写法时原样保留
+  if (/[A-Z]/.test(s.slice(1))) {
+    return s[0].toUpperCase() + s.slice(1);
+  }
+  return s
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
+    .join(' ');
 }
 
 /**
@@ -202,7 +302,7 @@ export function normalize(raw: RawItem): NormalizedItem {
     tagline: (raw.description ?? '').trim().slice(0, 120),
     status: normalizeStatus(raw.statusText),
     categoryText: raw.categoryText,
-    chains: [normalizeChain(raw.chainText)],
+    chains: normalizeChainList(raw.chainText),
     sourceType: raw.sourceType,
     sourceName: raw.sourceName,
     sourceUrl: raw.sourceUrl,
