@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-09-15T11:42:36.340Z",
-  "total": 188,
+  "updated_at": "2026-09-15T12:12:01.848Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -18,6 +18,7 @@
     "babylon-protocol": "logos/babylon-protocol.png",
     "basedapp": "logos/basedapp.png",
     "bedrock-unibtc": "logos/bedrock-unibtc.png",
+    "beezie": "logos/beezie.png",
     "beldex": "logos/beldex.png",
     "berachain": "logos/berachain.png",
     "bitfi-basis": "logos/bitfi-basis.png",
@@ -380,6 +381,7 @@
     "eclipse": "https://www.faviconextractor.com/favicon/eclipse.xyz?larger=true",
     "layerzero": "https://icons.llamao.fi/icons/protocols/layerzero",
     "sanctum": "https://icons.llamao.fi/icons/protocols/sanctum",
-    "scroll": "https://favicon.im/scroll.io"
+    "scroll": "https://favicon.im/scroll.io",
+    "beezie": "https://icons.llamao.fi/icons/protocols/beezie"
   }
 }

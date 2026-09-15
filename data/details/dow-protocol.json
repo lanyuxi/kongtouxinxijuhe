@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/dow-protocol/",
-      "fetched_at": "2026-09-15T12:05:05.092Z"
+      "fetched_at": "2026-09-15T12:11:42.750Z"
     }
   ],
   "evidence": [
@@ -332,7 +332,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-15T12:05:05.092Z",
+  "last_checked_at": "2026-09-15T12:11:42.750Z",
   "last_changed_at": "2026-09-15T11:55:36.919Z",
   "sourcedSteps": [
     {

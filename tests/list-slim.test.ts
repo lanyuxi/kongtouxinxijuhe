@@ -149,3 +149,32 @@ describe('P1-2 数据集公链覆盖回归', () => {
     expect(otherOnly / files.length).toBeLessThan(0.1);
   });
 });
+
+describe('P0-2 后续：校验脚本必须读完整分片', () => {
+  it('scripts/validate.ts 不得再从 airdrops.json 读项目', async () => {
+    // 历史事故：列表瘦身后 validate 仍读 airdrops.json，
+    // `p.evidence.filter` 抛错，GitHub Pages 的「发布前校验」整步失败、
+    // 部署被跳过（用户看到的是站点不更新）。
+    const fs = await import('node:fs/promises');
+    const src = await fs.readFile(new URL('../scripts/validate.ts', import.meta.url), 'utf8');
+    expect(src).toMatch(/readFullProjects/);
+    expect(src).not.toMatch(/validateProjects\(dataset\.projects\)/);
+    expect(src).not.toMatch(/validateLogoCoverage\(dataset\.projects/);
+  });
+
+  it('完整分片存在时，校验必需的字段一个都不能少', async () => {
+    const fs = await import('node:fs');
+    const fsp = await import('node:fs/promises');
+    const dir = resolve(__dirname, '../data/details');
+    if (!fs.existsSync(dir)) return;
+    const files = (await fsp.readdir(dir)).filter((f) => f.endsWith('.json'));
+    if (files.length === 0) return;
+    // 抽查前 5 个分片：校验逻辑依赖 evidence / guide / scores 明细
+    for (const f of files.slice(0, 5)) {
+      const p = JSON.parse(await fsp.readFile(join(dir, f), 'utf8'));
+      expect(Array.isArray(p.evidence)).toBe(true);
+      expect(Array.isArray(p.guide)).toBe(true);
+      expect(p.scores.authenticityItems).toBeDefined();
+    }
+  });
+});
