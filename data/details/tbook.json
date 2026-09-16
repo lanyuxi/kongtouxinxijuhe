@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/tbook/",
-      "fetched_at": "2026-09-16T10:42:10.908Z"
+      "fetched_at": "2026-09-16T11:12:11.220Z"
     }
   ],
   "evidence": [
@@ -398,7 +398,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T10:42:10.908Z",
+  "last_checked_at": "2026-09-16T11:12:11.220Z",
   "last_changed_at": "2026-09-16T06:44:34.982Z",
   "sourcedSteps": [
     {

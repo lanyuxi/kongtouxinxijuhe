@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T10:42:10.836Z",
-  "finished_at": "2026-09-16T10:42:21.387Z",
+  "started_at": "2026-09-16T11:12:11.149Z",
+  "finished_at": "2026-09-16T11:12:24.097Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T10:42:10.836Z",
+  "updated_at": "2026-09-16T11:12:11.149Z",
   "data_changed": true,
-  "change_summary": "变更 26 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
+  "change_summary": "变更 8 个：Aave V4 内容有更新；Aerodrome Slipstream 内容有更新；Jupiter Perpetual Exchange 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新",
-    "CIAN Yield Layer 内容有更新"
+    "Aave V4 内容有更新",
+    "Aerodrome Slipstream 内容有更新",
+    "Jupiter Perpetual Exchange 内容有更新",
+    "Morpho Blue 内容有更新",
+    "Polymarket International 内容有更新"
   ],
   "added": 0,
-  "modified": 26,
+  "modified": 8,
   "removed": 0
 }
