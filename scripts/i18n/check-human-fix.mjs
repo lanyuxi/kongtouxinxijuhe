@@ -210,6 +210,30 @@ function main() {
    * 这里只做**确定性**的坏模式检测，不做语义判断。
    */
   const BROKEN_PATTERNS = [/取取/, /确认领取交易交易/, /领取领取/];
+  /**
+   * ⚠️ 通用重复字检测（独立审查建议，比字面量黑名单更抗未来改动）。
+   *
+   * 上面 3 个是字面量黑名单，按当前 TERM_MAP 实测该类缺陷产出的坏字符
+   * **恰好都是「取取」**，所以覆盖是够的。但下一个人若加一条新规则，
+   * 坏字符可能换形态（`代币币`、`积分分`…）—— 黑名单就漏了。
+   *
+   * 判据：把英文原文喂进管线后，**输出出现了「输入没有、输出却有」的
+   * 连续重复汉字**，即视为跨词边界拼坏。干净输入下当前 TERM_MAP
+   * 不产生任何重复字，因此同样零误报。
+   */
+  const dupInOutput = Object.keys(HUMAN_FIX).filter((k) => {
+    let out;
+    try {
+      out = localizeText(k).zh;
+    } catch {
+      return false;
+    }
+    const m = String(out).match(/([\u4e00-\u9fff])\1/);
+    if (!m) return false;
+    // 输入本身就有的重复（如原文含「哈哈」）不算拼坏
+    return !String(k).includes(m[0]);
+  });
+
   const brokenValues = Object.entries(HUMAN_FIX)
     .filter(([, v]) => BROKEN_PATTERNS.some((re) => re.test(String(v))))
     .map(([k]) => k);
@@ -217,10 +241,18 @@ function main() {
     console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${brokenValues.length} \u6761\u4fee\u6b63\u503c\u542b\u62fc\u574f\u7684\u4e2d\u6587\uff1a`);
     for (const k of brokenValues) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
   }
+  if (dupInOutput.length) {
+    console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${dupInOutput.length} \u6761\u7ecf\u7ba1\u7ebf\u540e\u65b0\u589e\u91cd\u590d\u5b57\uff08\u8de8\u8bcd\u8fb9\u754c\u62fc\u574f\uff09\uff1a`);
+    for (const k of dupInOutput) {
+      console.log(`    原文：${JSON.stringify(k.slice(0, 60))}`);
+      console.log(`    输出：${JSON.stringify(localizeText(k).zh.slice(0, 60))}`);
+    }
+  }
 
   const failed =
     missing.length > 0 ||
     brokenValues.length > 0 ||
+    dupInOutput.length > 0 ||
     ineffective.length > 0 ||
     selfRef.length > 0 ||
     noChinese.length > 0 ||
