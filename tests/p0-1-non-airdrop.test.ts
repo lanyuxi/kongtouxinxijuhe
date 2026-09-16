@@ -287,3 +287,48 @@ describe('P0-1 发布门禁：在库条目不得命中非空投规则（审查�
     }
   });
 });
+
+describe('P0-1 豁免名单解析：结构异常时不得宽松放行', () => {
+  /**
+   * ⚠️ 真实缺陷（本轮自检发现）。
+   *
+   * `loadProfileSlugs` 曾写成「优先读 `data.profiles`，否则退回 `Object.keys(data)`」。
+   * 档案文件本身带 `_comment` 说明字段，于是 `profiles` 一旦缺失或为 null，
+   * 它会返回 `['_comment', 'profiles']` —— 把两个**非项目**的键当成豁免项。
+   * 门禁看起来在工作，实际放行了一批不该放行的名字。
+   *
+   * 现在只认 `profiles` 这一层，结构不认识就返回空集合（不豁免任何条目）。
+   */
+  it('profiles 缺失 / 为 null / 结构异常时一律不豁免', async () => {
+    const resolvers: (() => Promise<Set<string>>)[] = [];
+    // 直接验证解析规则（与 scripts/validate.ts 的实现保持同口径）
+    const resolve = (data: unknown): Set<string> => {
+      const d = data as { profiles?: Record<string, unknown> } | null;
+      if (!d || typeof d !== 'object' || typeof d.profiles !== 'object' || !d.profiles) {
+        return new Set();
+      }
+      return new Set(Object.keys(d.profiles));
+    };
+    expect(resolve(null).size).toBe(0);
+    expect(resolve({}).size).toBe(0);
+    expect(resolve({ profiles: null }).size).toBe(0);
+    expect(resolve({ _comment: '说明' }).size).toBe(0);
+    expect(resolve({ _comment: '说明', profiles: {} }).size).toBe(0);
+    expect(resolve({ _comment: '说明', profiles: { gate: {} } }).size).toBe(1);
+    void resolvers;
+  });
+
+  it('真实档案文件解析出的豁免项都是项目 slug', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const pathMod = await import('node:path');
+    const root = pathMod.resolve(__dirname, '..');
+    const data = JSON.parse(
+      await readFile(pathMod.join(root, 'data/seed/official-profiles.json'), 'utf8'),
+    ) as { profiles?: Record<string, unknown> };
+    const slugs = Object.keys(data.profiles ?? {});
+    expect(slugs.length, '档案不应为空').toBeGreaterThan(0);
+    // 说明性字段绝不能被当成项目 slug 参与豁免
+    expect(slugs).not.toContain('_comment');
+    expect(slugs).not.toContain('profiles');
+  });
+});

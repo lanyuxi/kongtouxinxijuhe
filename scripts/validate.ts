@@ -68,12 +68,20 @@ async function readFullProjects(dir: string): Promise<AirdropProject[]> {
 async function loadProfileSlugs(): Promise<Set<string>> {
   try {
     const raw = await readFile(path.join(ROOT, 'data', 'seed', 'official-profiles.json'), 'utf8');
-    const data = JSON.parse(raw) as Record<string, unknown> | { profiles?: Record<string, unknown> };
-    const keys =
-      data && typeof data === 'object' && 'profiles' in data && data.profiles
-        ? Object.keys(data.profiles as Record<string, unknown>)
-        : Object.keys(data ?? {});
-    return new Set(keys);
+    const data = JSON.parse(raw) as { profiles?: Record<string, unknown> } | null;
+    /**
+     * ⚠️ 只认 `profiles` 这一层，**绝不**退回 `Object.keys(data)`。
+     *
+     * 退回顶层键是真实的「宽松放行」路径：档案文件本身带 `_comment` 说明字段，
+     * 一旦 `profiles` 缺失或被写成 null，`Object.keys(data)` 会返回
+     * `['_comment','profiles']`，等于把两个**非项目**的键当成豁免项 ——
+     * 门禁看起来在工作，实际放行了一批不该放行的名字。
+     * 结构不认识时返回空集合（= 不豁免任何条目），门禁照常生效。
+     */
+    if (!data || typeof data !== 'object' || typeof data.profiles !== 'object' || !data.profiles) {
+      return new Set();
+    }
+    return new Set(Object.keys(data.profiles));
   } catch {
     // 没有档案文件时返回空集合：门禁照常生效，不做任何豁免
     return new Set();
