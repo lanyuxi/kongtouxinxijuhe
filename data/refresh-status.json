@@ -1,17 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T05:03:10.957Z",
-  "finished_at": "2026-09-16T05:03:24.931Z",
+  "started_at": "2026-09-16T05:18:24.115Z",
+  "finished_at": "2026-09-16T05:18:36.741Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T05:03:10.957Z",
+  "updated_at": "2026-09-16T05:18:24.115Z",
   "data_changed": true,
-  "change_summary": "变更 2 个：Beezie 内容有更新；Nexus 内容有更新",
+  "change_summary": "变更 1 个：Laptop 状态：已确认 → 已结束",
   "change_details": [
-    "Beezie 内容有更新",
-    "Nexus 内容有更新"
+    "Laptop 状态：已确认 → 已结束"
   ],
   "added": 0,
-  "modified": 2,
+  "modified": 1,
   "removed": 0
 }

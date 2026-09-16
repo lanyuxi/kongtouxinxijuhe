@@ -11,7 +11,7 @@
     "sync-data": "node scripts/sync-data.mjs",
     "pipeline": "tsx scripts/pipeline.ts",
     "test": "vitest run",
-    "validate": "tsx scripts/validate.ts",
+    "validate": "tsx scripts/validate.ts && node scripts/i18n/check-human-fix.mjs --strict",
     "logos": "node scripts/logo/fetch-logos.mjs",
     "ensure-logos": "node scripts/lib/ensure-logos.mjs",
     "feed": "tsx scripts/build-feed.ts"

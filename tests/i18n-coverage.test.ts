@@ -26,6 +26,7 @@ import {
   polishTitle,
   unifyPerson,
 } from '../scripts/i18n/glossary.mjs';
+import { auditHumanFix } from '../scripts/i18n/check-human-fix.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = JSON.parse(readFileSync(path.join(ROOT, 'scripts/i18n/cache.zh.json'), 'utf8'));
@@ -86,10 +87,33 @@ describe('人称与标题规整', () => {
     expect(polishTitle('“查看资格”')).toBe('查看资格');
   });
 
-  it('人工修正表里的标题会被采用', () => {
-    const key = Object.keys(HUMAN_FIX).find((k) => /[\u4e00-\u9fa5]/.test(k));
-    expect(key).toBeTruthy();
-    expect(HUMAN_FIX[key!]).toMatch(/[\u4e00-\u9fa5]/);
+  /**
+   * ⚠️ 这条断言是独立审查 P1-1 的直接产物。
+   *
+   * 原实现只断言「存在一条含汉字的键」，恒真 —— 正是它让
+   * 「32 条修正全部失效」的缺陷一路活到线上。
+   * 现在改为断言：**每一条**键都真实命中缓存，且有效命中数 > 0。
+   * 键与缓存失配时（改术语表、重刷缓存后最容易发生），测试立刻失败。
+   */
+  it('人工修正表每一条都真实命中缓存（禁止退化为死代码）', () => {
+    const { total, effective, missing } = auditHumanFix(CACHE, HUMAN_FIX);
+    expect(total).toBeGreaterThan(0);
+    expect(missing).toEqual([]);
+    expect(effective).toBe(total);
+  });
+
+  it('人工修正确实改变了输出（不是「值等于键」的空转条目）', () => {
+    const noop = Object.entries(HUMAN_FIX)
+      .filter(([k, v]) => v === k)
+      .map(([k]) => k.slice(0, 50));
+    expect(noop).toEqual([]);
+  });
+
+  it('修正后的译文本身也必须含中文', () => {
+    const bad = Object.entries(HUMAN_FIX)
+      .filter(([, v]) => !hasChinese(v))
+      .map(([k]) => k.slice(0, 50));
+    expect(bad).toEqual([]);
   });
 });
 
@@ -124,6 +148,53 @@ describe('缓存完整性', () => {
   it('缓存里没有占位符泄漏（术语保护方案的回归护栏）', () => {
     const leaked = Object.values(CACHE).filter((v) => /_T\d+_/.test(String(v)));
     expect(leaked).toEqual([]);
+  });
+
+  /**
+   * ⚠️ 独立审查 P1-2 的产物。
+   *
+   * 原实现只查占位符残留，查不出「已译成中文但译错」这一类 ——
+   * 实测 `$CARDS` 被译成「$ 张卡片」，符号彻底丢失，
+   * 用户无法在 Raydium 上兑换合约，而所有断言都是绿的。
+   */
+  it('原文里的代币符号必须在译文中原样保留', () => {
+    const lost: string[] = [];
+    for (const [en, zh] of Object.entries(CACHE)) {
+      const symbols = en.match(/\$[A-Za-z][A-Za-z0-9]{1,12}/g) ?? [];
+      for (const symbol of symbols) {
+        if (!String(zh).includes(symbol)) lost.push(`${symbol} :: ${en.slice(0, 50)}`);
+      }
+    }
+    expect(lost).toEqual([]);
+  });
+
+  it('译文里不出现「货币符号 + 空格」的断裂写法', () => {
+    const broken = Object.entries(CACHE)
+      .filter(([, zh]) => /\$\s/.test(String(zh)))
+      .map(([en]) => en.slice(0, 50));
+    expect(broken).toEqual([]);
+  });
+
+  it('译文里不出现专有名词被音译 / 意译的已知错译', () => {
+    const mistranslations = [
+      '多普勒',
+      '坎布里亚',
+      '价值链',
+      '背包',
+      '币安',
+      '航站楼',
+      '燃气的',
+      '带您进入',
+      '铸币美元',
+    ];
+    const hits: string[] = [];
+    for (const [en, zh] of Object.entries(CACHE)) {
+      for (const bad of mistranslations) {
+        if (String(zh).includes(bad)) hits.push(`${bad} :: ${en.slice(0, 40)}`);
+      }
+    }
+    // 术语表里的「铸币 → 铸造」等纠错必须真正生效
+    expect(hits).toEqual([]);
   });
 
   it('缓存里没有空译文', () => {
@@ -168,14 +239,67 @@ describe('全量数据：用户可见文案必须含中文', () => {
     expect(offenders).toEqual([]);
   });
 
-  it('英文原文步骤必须同时保留中英两版（可对照）', () => {
+  /**
+   * ⚠️ 原实现是 `if (!g.original_title) continue` —— 只覆盖「有英文原文的步骤」，
+   * 无原文的步骤（模板生成的、以及平台自写的中文步骤）标题缺中文时会被跳过。
+   * 实测这正是漏检盲区：模板步骤若被误写成英文，测试仍然全绿。
+   * 现在改为**遍历全部步骤**，无原文的也必须自带中文。
+   */
+  it('每个教程步骤都必须有中文标题与中文描述', () => {
+    const offenders: string[] = [];
+    for (const file of files) {
+      const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
+      for (const g of p.guide ?? []) {
+        if (!hasChinese(g.title)) offenders.push(`${p.slug}: 步骤 ${g.step} 标题无中文`);
+        if (!hasChinese(g.description)) offenders.push(`${p.slug}: 步骤 ${g.step} 描述无中文`);
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  it('有英文原文的步骤必须中英两版都在（可对照）', () => {
     const offenders: string[] = [];
     for (const file of files) {
       const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
       for (const g of p.guide ?? []) {
         if (!g.original_title) continue;
-        // 有原文就必须有译文，否则前端会退化成「只显示英文」
         if (!hasChinese(g.title)) offenders.push(`${p.slug}: 步骤 ${g.step} 有原文但标题无中文`);
+        // 原文本身必须是英文，否则说明「原文/译文」字段写反了
+        if (hasChinese(g.original_title)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 的 original_title 不是英文`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  it('英文原文不得含中文（防止原文/译文写反）', () => {
+    const offenders: string[] = [];
+    for (const file of files) {
+      const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
+      if (p.tagline_en && hasChinese(p.tagline_en)) offenders.push(`${p.slug}: tagline_en`);
+      for (const g of p.guide ?? []) {
+        if (g.original_description && hasChinese(g.original_description)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} original_description`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  it('本地化不得改动事实性字段（评分 / 状态 / 来源）', () => {
+    const offenders: string[] = [];
+    for (const file of files) {
+      const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
+      if (!p.scores || typeof p.scores.authenticity !== 'number') offenders.push(`${p.slug}: scores`);
+      if (!p.status) offenders.push(`${p.slug}: status`);
+      if (!Array.isArray(p.evidence)) offenders.push(`${p.slug}: evidence`);
+      for (const g of p.guide ?? []) {
+        // 步骤的可追溯性字段不能被本地化顺手改掉
+        if (g.source_verified && !g.source_url) offenders.push(`${p.slug}: 步骤 ${g.step} 假核实`);
+        if (!['low', 'medium', 'high', 'critical'].includes(g.risk)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 风险等级异常`);
+        }
       }
     }
     expect(offenders).toEqual([]);

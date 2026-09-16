@@ -39,6 +39,17 @@ export const TOKEN_TERMS = [
   'Sui', 'Aptos', 'TON', 'Linea', 'Scroll', 'Blast', 'zkSync', 'Mantle', 'Cosmos',
   'Starknet', 'Sei', 'Berachain', 'Sonic', 'Unichain', 'Ink', 'Ink Sepolia',
   'GIWA Sepolia', 'Sepolia', 'ValueChain', 'HyperEVM', 'BNB Chain', 'Solana',
+  // ---- 2026-09-16 独立审查实测暴露的漏项 ----
+  // 这些词此前不在表里，被机器翻译按日常语义处理：
+  //   $CARDS →「$ 张卡片」、Doppler →「多普勒」、Backpack →「背包」、
+  //   ValueChain →「价值链」、Cambria →「坎布里亚郡」、Questboard →「任务板」、
+  //   Reels →「卷轴」、Binance →「币安」。
+  // 结果就是「用户无法在钱包 / 交易所里对上号」——正是本 PR 要消除的问题。
+  'CARDS', 'Raydium', 'Doppler', 'Backpack', 'ValueChain', 'Cambria',
+  'Questboard', 'Reels', 'Ritual', 'Solflare', 'Phantom', 'Farcaster',
+  'Limitless', 'LMTS', 'MNTD', 'BOOK', 'WP', 'XDP', 'TBook', 'EvoEvo',
+  'SoSoValue', 'SoPoints', 'Bookie', 'Bookies', 'Craterun', 'Magma',
+  'PayBox', 'Remoji', 'Worldie', 'Yakkamon', 'Vangrid', 'NeoSoul',
 ].sort((a, b) => b.length - a.length);
 
 /**
@@ -122,38 +133,47 @@ export const TERM_MAP = [
  * 只登记「会影响用户操作判断」的错译，不做无意义润色。
  */
 export const HUMAN_FIX = {
-  '确认您是否具备资格？': '查看你是否符合资格',
-  '连接您的账户': '绑定你的 X 账号',
-  '您的钱包': '绑定你的钱包',
-  '在X Daily上发布有关Beldex的帖子': '每天在 X 上发布关于 Beldex 的内容',
-  '每天办理登机手续并转动转盘': '每天签到并转动幸运转盘',
-  '每日入住': '每日签到',
-  '完成每日入住': '完成每日签到',
-  '每周入住一次': '每周签到一次',
-  '清除发布周奖金': '完成上线周任务领取奖励',
-  '清除社区任务': '完成社区任务',
-  '验证合作伙伴放弃的NFT所有权': '验证合作方空投的 NFT 持有资格',
-  '引导交易者向上移动队列': '邀请交易者助力排名上升',
-  '连接到熵市场': '连接 Entropy 市场',
-  '交易实时熵市场': '在 Entropy 实时市场交易',
-  '在熵市场上建立销量': '在 Entropy 市场累计交易量',
-  '用于sENA的质押和锁定ENA': '质押并锁定 ENA 以获得 sENA',
-  '质押USDe for sUSDe': '质押 USDe 获得 sUSDe',
-  '使用您的电子邮箱注册以获得正常运行时间': '用邮箱注册 UPTIME',
-  '跟踪机器正常运行时间': '跟踪设备在线时长',
-  '从航站楼内邀请交易员': '在交易终端内邀请交易者',
-  '关联持有积分的钱包': '连接持有积分的钱包',
-  '使用Gas为基地地址充值': '为 Base 地址准备 Gas',
-  '在X上关注@ AmmoraHQ': '在 X 上关注 @AmmoraHQ',
-  '确认您有燃气的SUI': '确认钱包里有 SUI 作为 Gas',
-  '访问DeepBook声明门户': '进入 DeepBook 领取入口',
-  '查看并提交您的索赔申请': '核对并提交领取申请',
-  '创建您的坎布里亚账户': '创建 Cambria 账号',
-  '领取您的旧版p8ints': '领取你的历史 p8ints',
-  '实现资金回收': '开启资金恢复',
-  '转到Brownian应用程序即可开始使用。': '打开 Brownian 应用即可开始。',
-  '确认您的账号资格': '完成账号资格校验',
-  '跟踪任务XP和推荐XP': '跟踪任务 XP 与邀请 XP',
+  /**
+   * ⚠️ 键必须是**缓存里的原始机器译文**。
+   *
+   * 判定依据：applyGlossary 内部第一件事就是 `HUMAN_FIX[传入文本]`，
+   * 而它的入参是 cache.zh.json 的原始值 —— 不是「已过术语表」的版本。
+   * 因此键必须逐字等于缓存原文，否则永远匹配不上。
+   *
+   * 历史事故（独立审查 P1-1 实测）：这张表曾有 32 条，
+   * 键按另一次生成结果登记，与缓存完全对不上 —— 命中 0 条，
+   * 整张表是死代码，错译因此活到了线上，且没有任何报错。
+   *
+   * 现在由两道防线挡住同类退化：
+   *   1. `node scripts/i18n/check-human-fix.mjs --strict`：校验每条键真实命中缓存；
+   *   2. `tests/i18n-coverage.test.ts` 断言键命中率 100% 且有效命中 > 0。
+   *
+   * 维护方式：改完 TERM_MAP 后跑 check-human-fix.mjs，
+   * 它会打印仍待人工修正的条目及其可直接粘贴的键值。
+   */
+  'Access the Rewards Section': '进入奖励页面',
+  'At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels.':
+    'TGE 时在 mint.io 的奖励页面领取你的份额，然后质押 $MNTD 激活 MINT 等级，赚取复利质押奖励并开始升级。',
+  'Build one on-chain portfolio per day and share your portfolio card on X. This earns guaranteed Gem rewards from the $100,000 pool and stacks with the points you already earn per portfolio.':
+    '每天创建一个链上投资组合，并在 X 上分享你的投资组合卡片。这能从 10 万美元奖池中获得保底的 Gems 奖励，并与每个投资组合本身的积分叠加。',
+  'Check In Daily and Spin the Wheel': '每天签到并转动幸运转盘',
+  'Ranks run across seven tiers, from pilgrim at the bottom to the top 0.5% band. Once your badges are claimed, set the rank emoji on your REP profile and on Telegram, where it acts as the signal other users read before connecting with you.':
+    '等级共七层，从最底层的 Pilgrim 到最高的 0.5% 层级。徽章领取后，请在 REP 个人资料和 Telegram 上设置排名表情，其他用户会先看到它再决定是否联系你。',
+  'Claim and stake your $MNTD': '领取并质押你的 $MNTD',
+  'If you have an allocation, confirm the claim transaction in your wallet. Keep a small amount of SOL on hand to cover the Solana network fee. Your ARX will arrive in the connected wallet once the transaction settles.':
+    '如果你有份额，请在钱包中确认领取交易。钱包里保留少量 SOL 用于支付 Solana 网络费用；交易结算后，你的 ARX 会到账到所连接的钱包。',
+  'If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.':
+    '如果你在第 3 赛季有过交易，请打开领取入口、连接当时使用的钱包并确认领取交易。$LMTS 总量的 3% 分配给平台交易者。',
+  'Open the Referrals tab and click “Activate”. Referrals pay dollar rewards on top of points, and your network’s trading counts toward your Gems.':
+    '打开「邀请」标签页并点击「激活」。邀请奖励在积分之外另有现金奖励，你邀请来的用户交易量会计入你的 Gems。',
+  'The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity.':
+    '第 1 季空投已确认，将根据已验证的平台活动，向符合条件的玩家发放价值 12.5 万美元的 $MNTD。',
+  'Enter at least $10 after fees, then approve and confirm. Holding a different token is fine, since the deposit flow swaps into USD1 or U first. Once the phase cap fills, the vault stops taking new money while existing deposits keep running.':
+    '扣除手续费后至少存入 $10，然后授权并确认。持有其他代币也可以，存款会先自动换成 USD1 或 U。一旦该阶段额度满了，金库会停止接受新资金，已有存款继续计息。',
+  'Enter your deposit amount and confirm the transaction. In return you receive $PST, a liquid LP token that represents your position and accrues Feathers automatically. You can swap $PST back to USDC on Solana venues like Jupiter or Meteora to exit, though unwinding early reduces the Feathers you accumulate.':
+    '输入存款金额并确认交易。作为回报你会拿到 $PST —— 代表你份额的流动型 LP 代币，会自动累积 Feathers。想退出时可到 Jupiter、Meteora 等 Solana 平台把 $PST 换回 USDC，但提前取出会减少已累积的 Feathers。',
+  'Open Deposit from the Portfolio screen, choose the asset and network, then send funds to the address shown. Picking the wrong network can lose the deposit permanently. Instant and free: USDC on Arbitrum, Polygon, HyperEVM or Solana Routed for a fee shown before you confirm: USDC on Ethereum, Base or BNB Chain Also accepted: USDT credited as USDC, $10 minimum You can buy USDC on Bybit and withdraw straight to Arbitrum , or shift what you already hold onto a supported network with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab':
+    '在「投资组合」页面点击「存款」，选择资产与网络，然后把资金打到页面显示的地址。选错网络可能永久丢失存款。即时且免费：Arbitrum、Polygon、HyperEVM 或 Solana 上的 USDC；收费路径（确认前会显示费用）：以太坊、Base 或 BNB Chain 上的 USDC；也接受 USDT（按 USDC 计价，最低 $10）。你可以在 Bybit 买入 USDC 后直接提现到 Arbitrum，或用下方组件把已持有的资产转到受支持的网络上。跨链资金：无需离开本页即可在 30 多条链之间兑换与跨链，路径快、费用低。',
 };
 
 /**
