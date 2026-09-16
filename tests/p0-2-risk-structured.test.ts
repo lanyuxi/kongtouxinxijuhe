@@ -135,3 +135,17 @@ describe('P0-2 全量数据校验：low 风险不得与「要本金 / 要签名�
     ).toEqual([]);
   });
 });
+
+describe('P0-2 自查修正：预估金额不得被表述为确定金额', () => {
+  it('capital 风险的 reason 必须标明「预估」而非要求确定的金额', () => {
+    const p = make({
+      cost: { capital_min_usd: 20, capital_max_usd: 200, gas_estimate_usd: 0, time_minutes: 5, long_term: false, summary: '' },
+    });
+    const item = scoreRisk(p).items.find((i) => i.key === 'risk.capital')!;
+    // 实测依据：capital_max_usd 由 costFromSource() 按关键词推断，
+    // 96 个项目的 min/max 全是 20/200 —— 是估值不是实测。
+    expect(item.reason).toContain('预估');
+    expect(item.reason).toContain('20–200');
+    expect(item.reason).not.toMatch(/需要投入约 \$200 本金，/);
+  });
+});

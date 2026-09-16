@@ -705,15 +705,23 @@ export function scoreRisk(p: AirdropProject): {
     level = floor;
   }
   if (capitalMaxUsd > 0) {
+    const capitalMinUsd = p.cost?.capital_min_usd ?? 0;
+    const range = capitalMinUsd > 0 ? `$${capitalMinUsd}–${capitalMaxUsd}` : `约 $${capitalMaxUsd}`;
     items.push({
       key: 'risk.capital',
       label: capitalMaxUsd >= CAPITAL_HIGH_USD ? '需要投入较大本金' : '需要投入本金',
       value: RISK_RANK[capitalMaxUsd >= CAPITAL_HIGH_USD ? 'high' : 'medium'],
       max: 3,
+      // 措辞必须是「预估区间」而不是「确定金额」（P0-2 自查修正）：
+      //   data 里的 capital_max_usd 实测是 `costFromSource()` 按「有没有出现
+      //   deposit / 质押 / swap 这类词」推断出的**统一上限 200**，
+      //   96 个项目的 min/max 全是 20/200 —— 它是估值，不是实测金额。
+      //   把它说成「需要投入约 $200」会制造虚假精确度，
+      //   对用户的实际影响是「以为必须准备 200 美元才能参与」。
       reason:
         capitalMaxUsd >= CAPITAL_HIGH_USD
-          ? `预计需要投入约 $${capitalMaxUsd} 本金，已超出「小额试错」范围，风险等级至少偏高`
-          : `预计需要投入约 $${capitalMaxUsd} 本金，存在真实亏损可能，风险等级至少中等`,
+          ? `信息来源推断预计需投入 ${range}（预估区间，非实测金额），上限已超出「小额试错」范围，风险等级至少偏高`
+          : `信息来源推断预计需投入 ${range}（预估区间，非实测金额），存在真实亏损可能，风险等级至少中等`,
     });
   }
   if (needsSignature && capitalMaxUsd === 0) {

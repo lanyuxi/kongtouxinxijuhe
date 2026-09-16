@@ -954,7 +954,12 @@ function riskBasis(p: AirdropProject): string {
   const signs = p.guide.some((g) => g.needs_signature);
   if (p.scores.risk === 'critical') return '检测到一票否决行为，系统不建议参与。';
   const parts: string[] = [];
-  if (capital > 0) parts.push(`需投入约 $${capital} 本金`);
+  if (capital > 0) {
+    // 必须标明「预估」：capital_max_usd 是流水线按关键词推断的统一上限，
+    // 不是说这个项目一定要求这么多钱。实测 96 个项目的区间全是 $20–200。
+    const min = p.cost?.capital_min_usd ?? 0;
+    parts.push(`来源推断需投入${min > 0 ? ` $${min}–${capital}` : `约 $${capital}`} 本金（预估区间）`);
+  }
   if (signs) parts.push('含需签名的链上步骤');
   if (parts.length === 0) return '未发现资金或签名要求。';
   return `判定依据：${parts.join('、')}。`;
