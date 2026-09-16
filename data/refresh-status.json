@@ -1,20 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T01:42:23.987Z",
-  "finished_at": "2026-09-16T01:42:33.710Z",
+  "started_at": "2026-09-16T01:43:28.346Z",
+  "finished_at": "2026-09-16T01:43:37.443Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T01:42:23.987Z",
-  "data_changed": true,
-  "change_summary": "变更 11 个：Berachain 价值等级：A → B；Eclipse 价值等级：A → B；EigenLayer 价值等级：A → B",
-  "change_details": [
-    "Berachain 价值等级：A → B",
-    "Eclipse 价值等级：A → B",
-    "EigenLayer 价值等级：A → B",
-    "Grass 价值等级：A → B",
-    "Hyperliquid 价值等级：A → B"
-  ],
+  "updated_at": "2026-09-16T01:43:28.346Z",
+  "data_changed": false,
+  "change_summary": "无实质变化",
+  "change_details": [],
   "added": 0,
-  "modified": 11,
+  "modified": 0,
   "removed": 0
 }
