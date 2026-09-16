@@ -207,34 +207,58 @@ describe('流水线步骤顺序：构建必须在单元测试之前', () => {
 /**
  * 详情页左栏宽度回归测试。
  * ---------------------------------------------------------------------------
- * 背景：左栏曾是 24rem（384px）。目录项与官方链接都只放 2~6 个字的短标签，
- * 384px 下每行右侧留出大片空白，用户反馈「左侧有些宽」。
+ * 背景：左栏两轮收窄 —— 24rem（384px）→ 19rem（304px）→ 18rem（288px）。
+ * 目录项与官方链接都只放 2~6 个字的短标签，用户两次反馈「左侧还是有些宽」。
  *
  * 这类回归的麻烦之处在于：改宽改窄都不会报错、不会溢出、测试全绿，
- * 只有人肉看截图才发现「又变宽了」。因此这里把宽度上限固化下来。
+ * 只有人肉看截图才发现「又变宽了」。因此这里把宽度固化下来。
+ *
+ * 18rem 不是拍脑袋定的，它是「栏内固定文案不折行」这一硬约束下的下限：
+ *   左栏内容区 = 18×16 - 2×24(panel padding) = 240px
+ *   最长固定文案「请核对域名后再操作，谨防钓鱼站点。」单行需要 238px
+ *   再收 0.05rem（239.19px）它就会折成两行。
+ * 所以本测试除了断言宽度，还独立复算了这份 238px 的预算 —— 文案一旦变长，
+ * 下面的断言会先于「截图里看着别扭」而报警。
  */
 describe('详情页左栏宽度：收窄后不得回弹', () => {
   const src = readFileSync(join(ROOT, 'src/styles/index.css'), 'utf8');
 
-  it('detail-grid 左栏不得超过 19rem', () => {
-    const m = src.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/);
+  const parseRem = (source: string): number => {
+    const m = source.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/);
     expect(m, '未能从 detail-grid 解析出左栏宽度').not.toBeNull();
-    const rem = Number(m![1]);
-    expect(rem).toBeLessThanOrEqual(19);
+    return Number(m![1]);
+  };
+
+  it('detail-grid 左栏不得超过 18rem', () => {
+    expect(parseRem(src)).toBeLessThanOrEqual(18);
   });
 
-  it('左栏也不能窄到挤坏短标签（保留 ≥ 16rem）', () => {
-    const m = src.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/);
-    const rem = Number(m![1]);
-    expect(rem).toBeGreaterThanOrEqual(16);
+  it('左栏也不能窄到挤坏短标签（保留 ≥ 17rem）', () => {
+    // 17rem 是「短标签仍单行」的底线；低于它目录项会换行，观感立刻变差。
+    expect(parseRem(src)).toBeGreaterThanOrEqual(17);
+  });
+
+  it('18rem 下内容区仍放得下最长固定文案（238px）', () => {
+    // 独立复算：左栏面板左右各 24px 内边距，内容区 = 左栏宽 - 48px。
+    // 这里刻意不引用 CSS 变量，避免「改一处、两处一起错」的假绿。
+    const contentWidth = parseRem(src) * 16 - 48;
+    const LONGEST_FIXED_TEXT = 238; // 浏览器实测值，见文件头注释
+    expect(contentWidth).toBeGreaterThanOrEqual(LONGEST_FIXED_TEXT);
   });
 
   it('构建产物里左栏宽度与源码一致', () => {
     // 这是本测试真正的价值所在：只断言源码，改不动产物等于没改。
     // 实测产物保留 rem（不会换算成 px），直接按 rem 匹配。
-    const rem = src.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/)![1];
+    const rem = parseRem(src);
     const grid = css.slice(css.indexOf('.detail-grid'));
     expect(grid.slice(0, 400)).toContain(`grid-template-columns:${rem}rem minmax(0,1fr)`);
+  });
+
+  it('产物里不得残留上一版的宽值（19rem / 24rem）', () => {
+    // 防止「源码改了、产物还是旧的」这种最难发现的失败。
+    const grid = css.slice(css.indexOf('.detail-grid'), css.indexOf('.detail-grid') + 400);
+    expect(grid).not.toContain('grid-template-columns:19rem');
+    expect(grid).not.toContain('grid-template-columns:24rem');
   });
 
   it('xl 以下仍是单列堆叠（收窄不得影响移动端）', () => {
