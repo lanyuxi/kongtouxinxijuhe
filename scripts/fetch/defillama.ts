@@ -30,19 +30,16 @@ const MIN_TVL = 5_000_000;
  *   「潜在空投项目」展示会严重误导用户，也稀释了真正值得研究的项目。
  *   宁可少、不可滥 —— 与方案「不盲目推荐」的原则一致。
  */
-const EXCLUDE_PATTERNS: RegExp[] = [
-  /\bcex\b/i, // 中心化交易所
-  /\bwrapped\b/i, // 包装资产
-  /\bstaked?\b/i, // 质押衍生品（"Staked ETH"）
-  /\bliquid\b/i, // 流动性质押子池（"ether.fi Liquid"）
-  /\blst\b|\blrt\b/i,
-  /\bpooled\b/i,
-  /\bindex\b/i,
-  /\bvault\b/i,
-  /\bbridge\b/i,
-  /\bderivatives?\b/i,
-  /\bbinance\b|\bcoinbase\b|\bokx\b|\bbybit\b|\bbitfinex\b|\bkraken\b|\bkorbit\b|\bindodax\b|\bgate\b|\bhtx\b|\bhuobi\b|\bkucoin\b/i,
-];
+/**
+ * ⚠️ 这段规则已抽到 `scripts/lib/non-airdrop.ts`，**必须从那里导入**。
+ *
+ * 为什么要抽出去（原本的错误做法）：
+ *   规则只写在抓取侧，而治理侧（Prune / 前端域名库）完全不知道它的存在。
+ *   于是「代码里写了排除规则、库里却留着应该排除的条目」——
+ *   实测 data/details/ 下残留 56 个这样的分片，其中包括 binance-cex。
+ *   规则集中一处，才能保证「抓的时候排除」与「治理的时候清理」是同一条规则。
+ */
+import { EXCLUDE_PATTERNS, EXCLUDE_CATEGORY_PATTERNS } from '../lib/non-airdrop';
 
 /** 去掉联盟 / 追踪参数（DefiLlama 会在 url 后拼 ?ref=，展示出来很难看且不专业） */
 export function cleanUrl(url?: string): string | undefined {
@@ -81,8 +78,11 @@ export const defiLlamaAdapter: SourceAdapter = {
     const picked = protocols
       .filter((p) => typeof p.tvl === 'number' && p.tvl >= MIN_TVL)
       .filter((p) => !EXCLUDE_PATTERNS.some((re) => re.test(p.name)))
-      // 类目为 CEX 的同样剔除：它们是交易所，不存在「项目空投」语义
-      .filter((p) => !/^cex$/i.test((p.category ?? '').trim()))
+      // 类目过滤：CEX / 中心化平台等类目不存在「项目空投」语义。
+      // 注意这里只覆盖**明确非空投**的类目，不覆盖 Lending / Dexs 这类
+      // 真实协议类目 —— 它们里既有真实空投项目，也可能有子池，
+      // 需要靠名字规则与 Prune 治理，不能按类目整体排除。
+      .filter((p) => !EXCLUDE_CATEGORY_PATTERNS.some((re) => re.test((p.category ?? '').trim())))
       .filter((p) => !!p.url && /^https?:\/\//i.test(p.url))
       .sort((a, b) => (b.tvl ?? 0) - (a.tvl ?? 0))
       .slice(0, 120);

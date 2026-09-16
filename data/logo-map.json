@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-09-16T01:17:18.981Z",
-  "total": 202,
+  "updated_at": "2026-09-16T01:37:50.664Z",
+  "total": 204,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -58,6 +58,7 @@
     "ethena-usde": "logos/ethena-usde.png",
     "ethena-usdtb": "logos/ethena-usdtb.png",
     "etherfi-borrowing-market": "logos/etherfi-borrowing-market.png",
+    "etherfi-cash-liquid": "logos/etherfi-cash-liquid.png",
     "euler-v2": "logos/euler-v2.png",
     "exsat-staking-btc": "logos/exsat-staking-btc.png",
     "falcon-finance": "logos/falcon-finance.png",
@@ -103,6 +104,7 @@
     "lido": "logos/lido.png",
     "lightning-network": "logos/lightning-network.png",
     "limitless-prediction-markets": "logos/limitless-prediction-markets.svg",
+    "liquid-collective": "logos/liquid-collective.png",
     "liquity-v1": "logos/liquity-v1.png",
     "lista-cdp": "logos/lista-cdp.png",
     "lista-lending": "logos/lista-lending.png",
@@ -408,6 +410,8 @@
     "stacks-sbtc": "https://icons.llamao.fi/icons/protocols/stacks-sbtc",
     "tonstakers-lsd": "https://icons.llamao.fi/icons/protocols/tonstakers-lsd",
     "yearn-finance": "https://icons.llamao.fi/icons/protocols/yearn-finance",
-    "fraxtal": "https://icons.llamao.fi/icons/protocols/fraxtal"
+    "fraxtal": "https://icons.llamao.fi/icons/protocols/fraxtal",
+    "etherfi-cash-liquid": "https://icons.llamao.fi/icons/protocols/etherfi-cash-liquid",
+    "liquid-collective": "https://icons.llamao.fi/icons/protocols/liquid-collective"
   }
 }

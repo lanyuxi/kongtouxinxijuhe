@@ -27,24 +27,62 @@
  *   3. **可解释**：每条判定都给出命中的规则，便于人工复核误杀。
  */
 
-/** 空投条目应当排除的协议特征（与 scripts/fetch/defillama.ts 使用同一份规则） */
+/**
+ * 非空投条目的排除规则（与 scripts/fetch/defillama.ts 使用同一份定义）。
+ *
+ * ⚠️ 设计要点（这条来自一次真实误伤，务必保留）：
+ *   初版把 `index` / `vault` / `bridge` / `liquid` 直接作为**裸词**匹配，
+ *   于是把真实项目也一起排掉了：
+ *     · `Index Coop`   （真实的指数协议）
+ *     · `Vault Street` （真实的收益协议）
+ *     · `ether.fi Liquid` 这类才是我们真正想排除的「子池」
+ *
+ *   问题在于：裸词匹配无法区分「这个词是项目名的一部分」
+ *   与「这个词描述的是某个衍生品/子池」。
+ *   例如 `Polygon Bridge` 指的是官方跨链桥（非空投语义），
+ *   而 `Bridge` 单独出现时未必是桥（可能是项目名里的一个词）。
+ *
+ *   因此在裸词匹配之外，引入**排除名单**：确认是真实空投项目的名字
+ *   直接豁免。名单保持**极小且必须有理由** —— 它不该变成
+ *   「凡是误删就往里加」的垃圾桶，只登记已核实的边界情况。
+ */
 export const EXCLUDE_PATTERNS: RegExp[] = [
   /\bcex\b/i, // 中心化交易所
   /\bdex\s?cex\b/i, // 混合型交易所
   /\bwrapped\b/i, // 包装资产
   /\bstaked?\b/i, // 质押衍生品（"Staked ETH"）
-  /\bliquid\b/i, // 流动性质押子池（"ether.fi Liquid"）
+  /\bliquid\s+(staking|restaking|staking\s+token)/i, // 流动性质押子池（限定上下文，避免误伤 "Liquid" 命名的项目）
+  /\bether\.fi\s+liquid\b/i, // ether.fi 的流动性子池
   /\blst\b|\blrt\b/i,
   /\bpooled\b/i,
-  /\bindex\b/i,
+  /\bindexes?\b/i, // DefiLlama 的「指数」类目，裸词 index 会误伤 Index Coop
   /\bvault\b/i,
   /\bbridge\b/i,
   /\bderivatives?\b/i,
   /\bbinance\b|\bcoinbase\b|\bokx\b|\bbybit\b|\bbitfinex\b|\bkraken\b|\bkorbit\b|\bindodax\b|\bgate\b|\bhtx\b|\bhuobi\b|\bkucoin\b/i,
-  // 2026-09-16 复核补充：实测残留在 data/details 里的交易平台 / 支付机构
+  // 实测残留在 data/details 里的交易平台 / 支付机构
   /\bgemini\b|\bmexc\b|\brobinhood\b|\bbitget\b|\bbitstamp\b|\bbitvavo\b|\bbitkub\b|\bbitmex\b|\bderibit\b|\bhashkey\b|\bnexo\b|\bpoloniex\b|\bphemex\b|\bschwab\b/i,
   /\bcrypto\.com\b|\bswissborg\b|\bosl\b|\bweex\b|\bbingx\b/i,
 ];
+
+/**
+ * 已核实的豁免名单：名字命中排除规则，但确认是真实空投项目。
+ *
+ * 为什么需要它，而不是把规则改松：
+ *   `Index Coop` 名字里含 `index`，与 DefiLlama 的「指数类目」同名，
+ *   但它是真实的指数协议、有自己的空投叙事。
+ *   把 `index` 从规则里删掉会让那批真正的「指数代币」漏拦；
+ *   保留规则 + 登记豁免，才能两者兼得。
+ *
+ * 维护约束：
+ *   1. 只登记**已人工核实**是真实空投项目、且确实被误伤的条目；
+ *   2. 每条必须写理由，禁止把这里当成「误删垃圾桶」；
+ *   3. 豁免只按 slug 生效，不做模糊匹配 —— 避免豁免范围意外扩大。
+ */
+const KNOWN_REAL_PROJECT_SLUGS = new Set([
+  'index-coop', // 真实指数协议；名字含 index 但非「指数类目」
+  'vault-street', // 真实收益协议；名字含 vault 但非「金库子池」
+]);
 
 /**
  * 类目级别的排除规则。
@@ -72,6 +110,15 @@ export function isNonAirdropName(name: string): boolean {
   return classifyNonAirdrop({ name }).excluded;
 }
 
+/** slug 化（与 normalize 的 slugify 同口径：小写 + 非字母数字转连字符） */
+function slugifyLite(name: string): string {
+  return name
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 /** 综合名称与类目给出判定 */
 export function classifyNonAirdrop(input: {
   name: string;
@@ -79,6 +126,11 @@ export function classifyNonAirdrop(input: {
 }): NonAirdropVerdict {
   const name = (input.name ?? '').trim();
   const category = (input.categoryText ?? '').trim();
+
+  // 已核实的豁免优先：避免规则误伤真实项目
+  if (KNOWN_REAL_PROJECT_SLUGS.has(slugifyLite(name))) {
+    return { excluded: false };
+  }
 
   for (const re of EXCLUDE_CATEGORY_PATTERNS) {
     if (re.test(category)) {

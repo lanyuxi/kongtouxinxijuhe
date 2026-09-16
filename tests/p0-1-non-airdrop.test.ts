@@ -67,6 +67,20 @@ describe('P0-1 非空投条目识别', () => {
     }
   });
 
+  it('裸词规则不得误伤以 index / vault / liquid 命名的真实项目（独立审查发现）', () => {
+    // 独立审查（2026-09-16）实测到的过度匹配：
+    //   `Index Coop`   ← 被 /\bindex\b/ 误删（真实指数协议）
+    //   `Vault Street` ← 被 /\bvault\b/ 误删（真实收益协议）
+    // 修复方式：裸词规则保留 + 已核实豁免名单（而非把规则改松，
+    // 否则真正的「指数类目」条目会漏拦）。
+    expect(isNonAirdropName('Index Coop')).toBe(false);
+    expect(isNonAirdropName('Vault Street')).toBe(false);
+    // 该排除的仍要排除（不能为了不误伤而放弃拦截）
+    expect(isNonAirdropName('ether.fi Liquid')).toBe(true);
+    expect(isNonAirdropName('Polygon Bridge')).toBe(true);
+    expect(isNonAirdropName('Jito Liquid Staking')).toBe(true);
+  });
+
   it('真实空投项目不会被误伤（含 "x.com" 子串类误判点）', () => {
     const good = [
       'Fraxtal',

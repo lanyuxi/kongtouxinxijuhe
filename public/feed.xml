@@ -5,12 +5,46 @@
   <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/"/>
   <link rel="self" type="application/atom+xml" href="https://lanyuxi.github.io/kongtouxinxijuhe/feed.xml"/>
   <id>https://lanyuxi.github.io/kongtouxinxijuhe/feed.xml</id>
-  <updated>2026-09-16T01:35:47.366Z</updated>
+  <updated>2026-09-16T01:37:36.981Z</updated>
   <author>
     <name>空投情报平台</name>
     <uri>https://lanyuxi.github.io/kongtouxinxijuhe/</uri>
   </author>
   <rights>公开信息聚合，请以项目方官方公告为准。</rights>
+  <entry>
+    <title>EtherFi Cash Liquid｜潜在空投｜风险中</title>
+    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/etherfi-cash-liquid"/>
+    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/etherfi-cash-liquid</id>
+    <updated>2026-09-16T01:37:46.776Z</updated>
+    <published>2026-09-16T01:37:46.776Z</published>
+    <summary type="text">Crypto Card Issuer 协议，TVL 约 $214M。
+
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 39/100｜参与价值 49/100
+预计成本：资金 免费｜Gas $0｜时间 30 分钟
+
+官方入口：https://www.ether.fi/
+
+提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
+详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/etherfi-cash-liquid</summary>
+  </entry>
+  <entry>
+    <title>Liquid Collective｜潜在空投｜风险高</title>
+    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/liquid-collective"/>
+    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/liquid-collective</id>
+    <updated>2026-09-16T01:37:46.776Z</updated>
+    <published>2026-09-16T01:37:46.776Z</published>
+    <summary type="text">Liquid Staking 协议，TVL 约 $770M。
+
+当前状态：潜在空投｜风险等级：高｜价值等级：C
+真实性置信度 42/100｜参与价值 46/100
+预计成本：资金 免费｜Gas $0｜时间 30 分钟
+
+官方入口：https://liquidcollective.io/
+
+提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
+详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/liquid-collective</summary>
+  </entry>
   <entry>
     <title>exSat Staking BTC｜潜在空投｜风险中</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/exsat-staking-btc"/>
@@ -656,39 +690,5 @@
 
 提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/cooler-loans</summary>
-  </entry>
-  <entry>
-    <title>Curve DEX｜潜在空投｜风险高</title>
-    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/curve-dex"/>
-    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/curve-dex</id>
-    <updated>2026-09-16T01:31:09.866Z</updated>
-    <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">Dexs 协议，TVL 约 $1277M。
-
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 45/100｜参与价值 46/100
-预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
-
-官方入口：https://curve.finance/
-
-提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
-详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/curve-dex</summary>
-  </entry>
-  <entry>
-    <title>Defi Saver Asset Management｜潜在空投｜风险高</title>
-    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/defi-saver-asset-management"/>
-    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/defi-saver-asset-management</id>
-    <updated>2026-09-16T01:31:09.866Z</updated>
-    <published>2026-09-12T06:08:55.635Z</published>
-    <summary type="text">CDP Manager 协议，TVL 约 $330M。
-
-当前状态：潜在空投｜风险等级：高｜价值等级：C
-真实性置信度 42/100｜参与价值 46/100
-预计成本：资金 $20–200｜Gas $0｜时间 30 分钟
-
-官方入口：https://defisaver.com/
-
-提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
-详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/defi-saver-asset-management</summary>
   </entry>
 </feed>

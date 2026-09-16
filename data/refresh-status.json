@@ -1,20 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T01:35:47.366Z",
-  "finished_at": "2026-09-16T01:35:56.824Z",
+  "started_at": "2026-09-16T01:37:36.981Z",
+  "finished_at": "2026-09-16T01:37:46.993Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T01:35:47.366Z",
+  "updated_at": "2026-09-16T01:37:36.981Z",
   "data_changed": true,
-  "change_summary": "变更 22 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；Concrete 内容有更新",
-  "change_details": [
-    "Aave V3 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "Concrete 内容有更新",
-    "EigenCloud 内容有更新",
-    "Jupiter Perpetual Exchange 内容有更新"
-  ],
-  "added": 0,
-  "modified": 22,
+  "change_summary": "新增 2 个",
+  "change_details": [],
+  "added": 2,
+  "modified": 0,
   "removed": 0
 }
