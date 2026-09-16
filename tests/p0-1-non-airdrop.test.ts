@@ -187,3 +187,103 @@ describe('P0-1 前端官方域名库不得收录非空投条目', () => {
     expect(map['frax.com']).toBe('Fraxtal');
   });
 });
+
+describe('P0-1 发布门禁：在库条目不得命中非空投规则（审查员留的缺口）', () => {
+  /**
+   * 为什么这条断言必须存在（而不是只靠 prune）：
+   *   `prune` 是**运行时单点**，且只在 `canPrune` 为真时才跑。
+   *   抓取一旦抖动导致 canPrune 为 false，脏数据就会原样落盘并留在线上，
+   *   等到下一轮健康抓取才可能被清掉。
+   *   `validate` 里当时**没有**这条断言 —— 审查员明确提过，但一直没补上。
+   */
+  const mk = async (name: string, slug: string, categoryText: string) => {
+    const { toSkeleton } = await import('../scripts/lib/merge');
+    const base = toSkeleton({
+      slug,
+      name,
+      tagline: '测试项目',
+      status: 'potential',
+      categoryText,
+      chains: ['Ethereum'],
+      sourceType: 'airdrop_aggregator',
+      sourceName: 'Airdrops.io',
+      sourceUrl: `https://airdrops.io/${slug}/`,
+      fetchedAt: '2026-09-16T00:00:00.000Z',
+      rawTitle: name,
+    });
+    return {
+      ...base,
+      scores: {
+        ...base.scores,
+        authenticityItems: [{ key: 'a', label: 'a', value: 1, max: 2, reason: 'x' }],
+        valueItems: [{ key: 'v', label: 'v', value: 1, max: 2, reason: 'x' }],
+        riskItems: [{ key: 'r', label: 'r', value: 1, max: 2, reason: 'x' }],
+      },
+      guide: [
+        {
+          step: 1,
+          title: '步骤',
+          description: '说明',
+          official_url: 'https://d.xyz',
+          minutes: 3,
+          cost_usd: 0,
+          needs_wallet: false,
+          needs_signature: false,
+          risk: 'low' as const,
+          done_when: '完成',
+          source_verified: false,
+        },
+      ],
+    };
+  };
+
+  it('命中排除规则的条目会被 validate 拦下（发布门禁）', async () => {
+    const { validateProjects } = await import('../scripts/lib/validate');
+    const r = validateProjects(
+      [await mk('Binance CEX', 'binance-cex', 'CEX'), await mk('Aave V3', 'aave-v3', 'Lending')] as never,
+      new Set(),
+    );
+    expect(
+      r.errors.some((e) => e.includes('binance-cex') && e.includes('非空投')),
+      '交易所必须被发布门禁拦下',
+    ).toBe(true);
+    expect(
+      r.errors.some((e) => e.includes('aave-v3') && e.includes('非空投')),
+      '真实借贷协议不得被误伤',
+    ).toBe(false);
+  });
+
+  it('人工档案登记过的项目豁免门禁（避免误杀 Gate 这类边界情况）', async () => {
+    const { validateProjects } = await import('../scripts/lib/validate');
+    const p = await mk('Gate', 'gate', 'CEX');
+    expect(validateProjects([p] as never, new Set()).errors.some((e) => e.includes('非空投'))).toBe(true);
+    expect(validateProjects([p] as never, new Set(['gate'])).errors.some((e) => e.includes('非空投'))).toBe(false);
+  });
+
+  /**
+   * ⚠️ 审查员实证：旧规则下 73/120 条非空投语义条目全部漏拦，
+   *    `live 命中规则 = 0/120` 不代表数据干净，而是规则没生效。
+   *    根因是只按**名字**判定 —— 换个名字就漏。
+   */
+  it('按类目拦截，不依赖项目名（换名字也不漏）', async () => {
+    const { classifyNonAirdrop } = await import('../scripts/lib/non-airdrop');
+    const cases: [string, string][] = [
+      ['Lido', 'Liquid Staking'],
+      ['WBTC', 'Bridge'],
+      ['LayerZero V2', 'Bridge'],
+      ['EigenCloud', 'Restaking'],
+      ['任意名字', 'Staking Pool'],
+      ['任意名字', 'Risk Curators'],
+    ];
+    for (const [name, categoryText] of cases) {
+      expect(
+        classifyNonAirdrop({ name, categoryText }).excluded,
+        `${categoryText} 类目必须被类目规则拦下（与名字无关）`,
+      ).toBe(true);
+    }
+    // 真实空投叙事保留
+    for (const [name, categoryText] of [['Aave V3', 'Lending'], ['Ethena', 'Basis Trading']] as [string, string][]) {
+      expect(classifyNonAirdrop({ name, categoryText }).excluded).toBe(false);
+    }
+  });
+});

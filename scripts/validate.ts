@@ -58,6 +58,28 @@ async function readFullProjects(dir: string): Promise<AirdropProject[]> {
   return out;
 }
 
+/**
+ * 读取人工档案登记的 slug（data/seed/official-profiles.json）。
+ *
+ * 这份名单是「人工确认过是真实空投项目」的记录，
+ * 非空投条目门禁必须认它 —— 否则像 `Gate`（既是交易所也是项目池）
+ * 这类边界情况会被一刀切掉，属于误杀。
+ */
+async function loadProfileSlugs(): Promise<Set<string>> {
+  try {
+    const raw = await readFile(path.join(ROOT, 'data', 'seed', 'official-profiles.json'), 'utf8');
+    const data = JSON.parse(raw) as Record<string, unknown> | { profiles?: Record<string, unknown> };
+    const keys =
+      data && typeof data === 'object' && 'profiles' in data && data.profiles
+        ? Object.keys(data.profiles as Record<string, unknown>)
+        : Object.keys(data ?? {});
+    return new Set(keys);
+  } catch {
+    // 没有档案文件时返回空集合：门禁照常生效，不做任何豁免
+    return new Set();
+  }
+}
+
 async function main() {
   // 校验对象是完整项目（来自 details/），而不是瘦身后的列表（见 readFullProjects 注释）
   const projects = await readFullProjects(path.join(ROOT, 'data', 'details'));
@@ -67,7 +89,10 @@ async function main() {
     return;
   }
 
-  const result = validateProjects(projects);
+  // 人工档案：命中排除规则但已人工核实为真实空投项目的豁免名单。
+  // 不传则门禁对所有条目一律生效（不豁免任何东西）。
+  const profiles = await loadProfileSlugs();
+  const result = validateProjects(projects, profiles);
 
   // 额外检查：真实性分 >= 70 的项目应至少满足「已验证」门槛
   const suspicious = projects.filter(

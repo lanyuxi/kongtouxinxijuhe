@@ -45,6 +45,11 @@ export function auditHumanFix(cache, fixes, localize) {
    * applyGlossary 拿译文去查英文键，永远落空，
    * 而「键命中」检查全绿。两次被同一类缺陷绕过，因此这里改成端到端验证。
    */
+  // 入参是**英文原文**（修正表的键）。
+  // ⚠️ 曾经改成过 `cache[k]`（机器译文）来「更贴近 applyGlossary 的入参」，
+  //    结果是这个脚本反过来推动缓存被改写成修正值 —— 与「缓存必须存机器译文」
+  //    冲突，触发 75 条自指条目（P2-4 收口时的真实事故）。
+  //    现在统一以英文原文为键、机器译文只存在于缓存里，两边职责互不重叠。
   const ineffective = localize
     ? Object.entries(fixes)
         .filter(([k, v]) => localize(k) !== v)
@@ -84,6 +89,29 @@ const SUSPECT = [
   /朝圣者/,
   // 货币符号后跟空格 = 代币符号被译坏（`$ 卡`、`$ 张卡片`）的头号特征
   /\$\s/,
+  /**
+   * ---- 2026-09-16 P1-5：把「已中文化但译得不准」也纳入监督 ----
+   *
+   * 旧词表只盯「明显坏掉的写法」（您 / 宝石 / 背包…），
+   * 于是「portal → 门户」这类**看起来像正常中文**的错译完全不在监督范围内：
+   * 页面上没有一处英文，校验全绿，但用户按「门户」去项目页面里找不到入口 ——
+   * 实测 36 条教程正文都是这么写的。
+   * 现在把「术语表已明确要求保留英文原样」的词一并列进来，
+   * 任何一条译文里再出现它们，体检脚本立刻提示。
+   */
+  /门户/,
+  /羽毛/,
+  /卡牌/,
+  /朝圣者/,
+  /小部件/,
+  /桥接/,
+  /气体/,
+  /笔记本电脑/,
+  /智能链/,
+  /任务板/,
+  /推荐 XP/,
+  // 「卡牌」= Card 被意译。Card 是项目自有资产名，必须保留英文。
+  /卡牌/,
 ];
 
 function main() {
@@ -92,7 +120,7 @@ function main() {
   const { total, effective, missing, ineffective } = auditHumanFix(
     CACHE,
     HUMAN_FIX,
-    (en) => localizeText(en).zh,
+    (raw) => localizeText(raw).zh,
   );
 
   console.log(`[human-fix] 修正表共 ${total} 条，端到端生效 ${effective} 条`);
@@ -114,9 +142,17 @@ function main() {
    * 会被 `/\u5e01\u5b89/` 误判为交易所名音译。先把该词替换成不含子串的说法再检测。
    */
   const sanitize = (text) => String(text).split('加密货币安全').join('加密资产合规');
-  const suspects = Object.entries(CACHE).filter(
-    ([, zh]) => !pending.has(zh) && SUSPECT.some((re) => re.test(sanitize(zh))),
-  );
+  /**
+   * ⚠️ 检测对象是**管线最终输出**（localizeText 的结果），不是缓存原值。
+   *    只看缓存原值会把「已经登记过修正、运行期完全正常」的条目
+   *    反复提示成待修，噪音反而掩盖真正没修的那些。
+   *    改成看输出后，「已修好的」自动从提示里消失，
+   *    剩下的每一条都是真的还没处理。
+   */
+  const localizeOne = (en) => localizeText(en).zh;
+  const suspects = Object.entries(CACHE)
+    .filter(([en]) => SUSPECT.some((re) => re.test(sanitize(localizeOne(en)))))
+    .map(([en, zh]) => [en, zh]);
   if (suspects.length) {
     console.log(`\n[human-fix] 提示：缓存中仍有 ${suspects.length} 条疑似错译，可考虑登记修正`);
     for (const [en, zh] of suspects.slice(0, 30)) {
@@ -125,7 +161,26 @@ function main() {
     }
   }
 
-  const failed = missing.length > 0 || ineffective.length > 0 || effective === 0;
+  /**
+   * 自指检查（P2-4 收口的关键护栏）。
+   *
+   * 修正表里 `CACHE[key] === HUMAN_FIX[key]` 意味着：
+   * 缓存里存的已经是修正值，applyGlossary 查得到键、但换出来还是同一句话 ——
+   * 整张表在运行期空转。第二轮独立审查正是被这个形态绕过一次，
+   * 而当时所有断言依然全绿。
+   *
+   * 出现原因通常是「批量脚本把修正值误写回了缓存」——
+   * 本轮收口过程中真实发生过（75 条全部自指）。
+   */
+  const selfRef = Object.keys(HUMAN_FIX).filter((k) => CACHE[k] === HUMAN_FIX[k]);
+  if (selfRef.length) {
+    console.log(`\n[human-fix] ✗ 以下 ${selfRef.length} 条在缓存里已经是修正值（自指空转）：`);
+    for (const k of selfRef) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
+    console.log('    修法：把 cache.zh.json 里该键的值改回**机器译文**，修正只登记在本表。');
+  }
+
+  const failed =
+    missing.length > 0 || ineffective.length > 0 || selfRef.length > 0 || effective === 0;
   if (failed) {
     console.log('\n[human-fix] 结论：不通过（修正表已失效，需按上面打印的键重新登记）');
     if (strict) process.exitCode = 1;

@@ -38,6 +38,29 @@ const LIST_PAGES: { url: string; status: string }[] = [
   { url: `${BASE}/claims/`, status: 'claim_live' },
 ];
 
+/**
+ * 从步骤 HTML 里挑出「真正的官方步骤链接」。
+ *
+ * 判定标准只有一条：链接的主机名必须等于该项目的官方域名（officialHost）。
+ * 这样既排除聚合站自己的 `/visit/`、`/goto/bybit/` 跳转，也排除
+ * 同一段里顺带提到的交易所 / 跨链组件等第三方链接。
+ * 取不到官方链接时返回 undefined —— 宁可不标来源，也不冒充可追溯。
+ */
+function officialStepLink(html: string, officialHost?: string): string | undefined {
+  if (!html || !officialHost) return undefined;
+  const host = officialHost.replace(/^www\./, '').toLowerCase();
+  for (const l of extractLinks(html)) {
+    try {
+      const u = new URL(l.href);
+      const h = u.hostname.replace(/^www\./, '').toLowerCase();
+      if (h === host) return l.href;
+    } catch {
+      /* 相对链接（聚合站站内跳转）一律不算官方来源 */
+    }
+  }
+  return undefined;
+}
+
 /** 详情页解析结果 */
 interface Detail {
   /** 聚合站给出的状态判定原文，例如「unconfirmed」 */
@@ -95,7 +118,28 @@ function parseDetail(html: string): Detail {
     const bodyHtml = bodyAt >= 0 ? sliceBalanced(rest, bodyAt, 'div') : '';
     const title = stripTags(h3).replace(/^Step\s*\d+\s*:\s*/i, '');
     const body = stripTags(bodyHtml);
-    const link = extractLinks(bodyHtml)[0]?.href;
+    /**
+     * 步骤来源链接（P1-2）。
+     *
+     * ⚠️ 不能无脑取第一个链接：教程正文里混着聚合站自己的**广告跳转**，
+     *    实测 `https://airdrops.io/goto/bybit/` 这类返佣链接就出现在
+     *    「Step 4: Fund your exchange account」里，而它既不是官方步骤，
+     *    也不带任何操作信息。
+     *
+     *    历史后果（本轮实测）：这些广告步骤会被判成「可追溯到来源」的
+     *    真实教程（`source_verified = true`），于是
+     *      · `guide_source = 'sourced'`，
+     *      · 模板教程的等级上限（最高 B）完全失效，
+     *      · 最终 28 个项目显示「建议参与」，而它们的教程里含有
+     *        「跨链资金 · 无需离开本页即可在 30 多条链之间兑换」这种
+     *        与空投参与毫无关系的推广段落。
+     *
+     *    处理原则：只有指向**该项目自己的域名**的链接才算步骤来源；
+     *    聚合站站内链接（/visit/、/goto/、/go/ 等跳转页）一律忽略。
+     *    忽略后 `url` 为 undefined，`source_verified` 自然为 false ——
+     *    这是「如实标注」，不是「丢失信息」。
+     */
+    const link = officialStepLink(bodyHtml, outbound.host);
     if (title) steps.push({ title, body, url: link });
   }
 

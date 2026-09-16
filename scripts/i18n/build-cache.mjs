@@ -45,11 +45,27 @@ function collectTexts() {
     } catch {
       continue;
     }
+    /**
+     * ⚠️ 必须读 `tagline_en`（英文原文），不能读 `tagline`。
+     *
+     * 历史事故（真实踩过）：`tagline` 在落盘时已经是中文译文，
+     * 于是 `!hasChinese(p.tagline)` 恒为 false，**一句话简介永远不会被补译** ——
+     * 59 个项目因此长期显示英文，且脚本报告「0 条缺失」，毫无线索。
+     * 教程步骤同理：`original_title` / `original_description` 才是英文原文。
+     */
+    // 教程步骤：`sourcedSteps` 落盘时就是英文原文（未本地化），
+    // 而 `guide` 已本地化、英文原文挂在 `original_*` 上。两者都收，
+    // 保证「首次补译」与「重新生成缓存」都能收齐。
     for (const s of p.sourcedSteps ?? []) {
       if (s.title && !hasChinese(s.title)) out.add(s.title);
       if (s.body && !hasChinese(s.body)) out.add(s.body);
     }
-    if (p.tagline && !hasChinese(p.tagline)) out.add(p.tagline);
+    for (const g of p.guide ?? []) {
+      if (g.original_title) out.add(g.original_title);
+      if (g.original_description) out.add(g.original_description);
+    }
+    if (p.tagline_en) out.add(p.tagline_en);
+    else if (p.tagline && !hasChinese(p.tagline)) out.add(p.tagline);
   }
   return [...out];
 }

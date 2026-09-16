@@ -89,8 +89,44 @@ const KNOWN_REAL_PROJECT_SLUGS = new Set([
  *
  * 为什么要单独看类目：`DefiLlama` 的协议名未必带 "CEX" 字样，
  * 但 `category` 一定是 "CEX"。只按 name 过滤会漏掉一部分。
+ *
+ * ⚠️ P0-1 复核补全（审查员实证：73/120 条非空投语义条目当时**全部漏拦**）：
+ *   旧规则只有 `^cex$` / `^centralized`，而 DefiLlama 的实际类目里
+ *   「Bridge / Liquid Staking / Restaking / Staking Pool」这些**根本没有规则** ——
+ *   它们之所以没进库，靠的是「名字恰好含关键词」，不是规则命中。
+ *   换句话说：规则当时是失效的，`live 命中规则 = 0/120`
+ *   不代表数据干净，只代表规则没生效。
+ *
+ *   这里按「该协议类型本身有没有空投叙事」判定：
+ *     · 桥 / 规范桥：基础设施，用户过桥不构成「参与活动」；
+ *     · LST / LRT / Restaking / Staking Pool：**子池凭证**，
+ *       空投属于底层协议（Lido 的激励在 LDO，不在 stETH 池）；
+ *     · 包装资产（WBTC 等）：托管凭证，本身不发空投；
+ *     · 收益聚合器 / 农场 / 风控策展人 / 链上资金配置者：
+ *       资产管理与策略层，是「给别人用」的产品，不是可参与的空投项目。
+ *
+ *   判定只看类目文本，不看项目名 —— 名字是最不可靠的特征，
+ *   这正是旧实现「换个名字就漏」的根因。
+ *   误伤风险由 KNOWN_REAL_PROJECT_SLUGS 兜底，不作大范围豁免。
  */
-export const EXCLUDE_CATEGORY_PATTERNS: RegExp[] = [/^cex$/i, /^centralized/i];
+export const EXCLUDE_CATEGORY_PATTERNS: RegExp[] = [
+  /^cex$/i,
+  /^centralized/i,
+  /^bridge$/i,
+  /^canonical bridge$/i,
+  /^liquid staking$/i,
+  /^liquid restaking$/i,
+  /^restaking$/i,
+  /^restaked btc$/i,
+  /^staking pool$/i,
+  /^wrapped/i,
+  /^yield aggregator$/i,
+  /^farm$/i,
+  /^anchor btc$/i,
+  /^decentralized btc$/i,
+  /^risk curators?$/i,
+  /^onchain capital allocator$/i,
+];
 
 export interface NonAirdropVerdict {
   /** 是否属于「非空投条目」 */

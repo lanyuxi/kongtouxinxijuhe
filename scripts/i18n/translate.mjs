@@ -110,18 +110,26 @@ export function cacheKey(text) {
 /**
  * 术语表与人工修正：统一站内口径。
  *
- * ⚠️ 入参约定（被独立审查连续抓到两次的根因，务必遵守）：
- *   `text` 是**机器翻译的原始译文**（即 cache.zh.json 的值），
- *   而 `HUMAN_FIX` 的键是**英文原文**。因此查表必须用 `origin`（英文原文），
- *   不能拿译文去查 —— 那样永远落空，且不报错。
+ * ⚠️ 入参约定（P2-4 收口，务必遵守）：
+ *   `text` = 机器译文（cache.zh.json 的值），`origin` = 英文原文。
+ *   **人工修正按 `origin`（英文原文）查表**，术语表按 `text`（译文）替换。
  *
- *   调用方（localizeText）手里同时有原文与译文，所以由它把 origin 传进来；
- *   直接调用 applyGlossary 时若不传 origin，则只做纯文本规整（术语表 + 人称 + 空格），
- *   不做人工修正 —— 这也让本函数在无原文场景下依然可安全使用。
+ *   为什么把两者分开（P2-4 收口，三轮事故的最终形态）：
+ *     · 修正表按「英文原文 → 正确译文」登记：键是稳定的、可 review 的，
+ *       不会因为换一次机器翻译就整表失配；
+ *     · 缓存只存机器译文：它是「翻译服务的输出」，可被整批重刷，
+ *       不会被人工修正污染（曾经把修正值反写回缓存，导致自指空转）；
+ *     · 术语表作用在译文上：只做词级替换，不改变句子结构。
+ *   三者的职责边界清晰后，「查不到键」「缓存被改写」「运行期空转」
+ *   这三类历史故障都有了对应的硬断言（见 tests/i18n-coverage.test.ts）。
  */
 export function applyGlossary(text, origin) {
   let out = String(text ?? '').trim();
-  // 人工修正：按英文原文查表（修正表登记的就是「原文 → 正确译文」）
+  /**
+   * 人工修正在这里**直接返回**，跳过术语表 —— 登记值已经是最终文案，
+   * 再跑一遍 TERM_MAP 只会把人工调好的句子改坏（例如把
+   * 「在 portal 中确认最终批准」里的 portal 再被替换一次）。
+   */
   const key = origin === undefined ? undefined : cacheKey(origin);
   if (key !== undefined && HUMAN_FIX[key]) return finalize(HUMAN_FIX[key]);
   for (const [re, to] of TERM_MAP) out = out.replace(re, to);
@@ -143,8 +151,21 @@ export function localizeText(text) {
   const raw = String(text ?? '').trim();
   if (!raw) return { zh: '', en: undefined };
   if (hasChinese(raw)) return { zh: raw, en: undefined };
-  // 顺序固定：先取机器译文，再把「英文原文」交给术语层做人工修正
-  const zh = applyGlossary(translateWithCache(raw), raw);
+  /**
+   * 顺序固定，缺一不可：
+   *   1. `translateWithCache(raw)` —— 查构建期落盘的机器译文；
+   *   2. `applyGlossary(译文, raw)` —— 人工修正 + 术语表 + 人称 + 空格。
+   *
+   * ⚠️ 第 1 步曾被误删（P2-4 收尾时），后果是**全站文案退回英文**：
+   *   缓存里明明有译文，`localizeText` 却直接拿英文原文去查修正表，
+   *   查不到就原样返回 —— 而且 `hasChinese(zh)` 为 false 时走的是
+   *   「回退英文原文」分支，看起来像「这条本来就没有译文」，
+   *   完全不报错（实测 736 条教程步骤全部退化的成因）。
+   *   单测「缓存未命中时回退英文原文」那条断言恰好也覆盖这种情况，
+   *   所以它当时仍然是绿的 —— 这正是它危险的地方。
+   */
+  const translated = translateWithCache(raw);
+  const zh = applyGlossary(translated, raw);
   if (!hasChinese(zh)) return { zh: raw, en: undefined };
   return { zh, en: raw };
 }
@@ -210,10 +231,17 @@ export function reverseLookup(zh) {
   return hit ?? undefined;
 }
 
-/** 标题专用：额外做一次标题化收尾 */
+/**
+ * 标题专用：额外做一次标题化收尾。
+ *
+ * ⚠️ 死分支清理（P2-5）：这里曾经写着 `HUMAN_FIX[zh.trim()] ?? zh`。
+ *  `zh` 是**最终中文**，而 HUMAN_FIX 的键是英文原文 ——
+ *  查表永远落空，`?? zh` 恒等于 `zh`，等于写了但没生效。
+ *  真正的修正已经在 `localizeText → applyGlossary` 里做完了，
+ *  这里只负责标题化。删掉死分支，避免后人误以为「标题有另一套修正表」。
+ */
 export function localizeTitle(text) {
   const { zh, en } = localizeText(text);
   if (!zh) return { zh: '', en };
-  const patched = HUMAN_FIX[zh.trim()] ?? zh;
-  return { zh: polishTitle(patched), en };
+  return { zh: polishTitle(zh), en };
 }

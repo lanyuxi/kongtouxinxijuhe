@@ -150,11 +150,31 @@ export function pruneProjects(
  * 因此这里只要求：至少有一个来源成功，且**至少一个「条目来源」成功**。
  * 条目来源 = 本轮真正产出了条目的来源。若本轮一条都没抓到，
  * 说明抓取整体异常，此时绝不清理（避免误删全库）。
+ *
+ * ⚠️ P0-1 复核：旧实现是「只要**有一个** ok 且 fetched>0 就放行」，
+ *    于是「Airdrops 成功 + DefiLlama 挂掉」这种常见故障下依旧返回 true。
+ *    此时 prune 会按「本轮未出现」把 DefiLlama 独有的大量真项目
+ *    当成失效条目连删两轮 —— 一次来源抖动就能清掉上百条真实数据。
+ *
+ *    收紧后的判定：
+ *      1. 成功产出的来源必须**不少于失败来源**（简单多数），
+ *         避免「一个成功 + 三个失败」仍然照删；
+ *      2. 成功产出的条目数必须达到总抓取量的 **60%**，
+ *         多来源同时半死（各自只返回个位数）时不动库。
+ *    这两条都只针对「要不要删」，不影响正常写入 ——
+ *    拿不准就不删，永远比误删安全。
  */
 export function canPrune(health: { ok: boolean; fetched: number }[]): boolean {
   if (health.length === 0) return false;
   const produced = health.filter((h) => h.ok && h.fetched > 0);
-  return produced.length > 0;
+  if (produced.length === 0) return false;
+  // 1) 成功来源不少于失败来源
+  if (produced.length * 2 < health.length) return false;
+  // 2) 成功来源抓到的条目占比 >= 60%
+  const totalFetched = health.reduce((s, h) => s + Math.max(0, h.fetched), 0);
+  const okFetched = produced.reduce((s, h) => s + h.fetched, 0);
+  if (totalFetched > 0 && okFetched / totalFetched < 0.6) return false;
+  return true;
 }
 
 export type { NormalizedItem };

@@ -277,6 +277,26 @@ describe('教程来源标注', () => {
     }
   });
 
+
+  it('全部步骤都没有官方来源时不算「真实教程」（P1-2 误判修正）', () => {
+    // 实测事故：聚合站自己写的推广流程（夹着 airdrops.io/goto/bybit/ 这类
+    // 返佣跳转）曾被判成官方 HowTo，项目因此拿到 guide_source='sourced'，
+    // 绕开了「模板教程最高只能到 B」的等级上限 —— 28 个项目因此
+    // 显示「建议参与」，而教程里是跨链组件的广告段。
+    const g = buildGuide(
+      makeProject({
+        official: { website: 'https://demo.xyz' },
+        sourcedSteps: [
+          { title: 'A', body: 'a' },
+          { title: 'B', body: 'b' },
+          { title: 'C', body: 'c' },
+          { title: 'D', body: 'd' },
+        ],
+      }),
+    );
+    expect(g.source, '没有任何可追溯的官方步骤时，只能算流程示意').toBe('template');
+  });
+
   it('真实步骤（sourced）只有带自身来源链接才标为已核实', () => {
     const g = buildGuide(
       makeProject({
@@ -288,14 +308,29 @@ describe('教程来源标注', () => {
         ],
       }),
     );
-    expect(g.source).toBe('sourced');
-    // 平台自己插入的安全首步不是官方步骤，同样不得自称已核实
-    expect(g.steps[0].source_verified).toBe(false);
-    const noUrl = g.steps.find((s) => s.title === 'C');
-    expect(noUrl?.source_verified).toBe(false);
-    const withUrl = g.steps.find((s) => s.title === 'A');
-    expect(withUrl?.source_verified).toBe(true);
-    expect(withUrl?.source_url).toBe('https://demo.xyz/a');
+    // ⚠️ P1-2 收紧后：判定「真实教程」看的是**可追溯步骤条数 >= 3**，
+    //    这里 3 条里只有 A / B 两条带官方链接，因此只能算「流程示意」。
+    //    这不是退步 —— 而是把「三条里两条没有来源」如实反映成
+    //    「这份教程的可追溯性不足」，模板教程的等级上限（最高 B）随之生效。
+    expect(g.source).toBe('template');
+    // C 本身无来源链接，即便在 sourced 形态下也不得自称已核实：
+    // 这里改用 4 条（3 条带官方链接）来验证「逐条如实标注」这条不变量。
+    const g2 = buildGuide(
+      makeProject({
+        official: { website: 'https://demo.xyz' },
+        sourcedSteps: [
+          { title: 'A', body: 'a', url: 'https://demo.xyz/a' },
+          { title: 'B', body: 'b', url: 'https://demo.xyz/b' },
+          { title: 'C', body: 'c' },
+          { title: 'D', body: 'd', url: 'https://demo.xyz/d' },
+        ],
+      }),
+    );
+    expect(g2.source).toBe('sourced');
+    expect(g2.steps[0].source_verified).toBe(false);
+    expect(g2.steps.find((s) => s.title === 'C')?.source_verified).toBe(false);
+    expect(g2.steps.find((s) => s.title === 'A')?.source_url).toBe('https://demo.xyz/a');
+    expect(g2.steps.find((s) => s.title === 'A')?.source_verified).toBe(true);
   });
 });
 

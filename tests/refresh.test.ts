@@ -68,7 +68,32 @@ describe('清理策略', () => {
 
   it('有来源产出即可清理，不要求所有来源都成功', () => {
     // Galxe 长期不可用属已知情况，不应因此永久无法清理历史垃圾数据
-    expect(canPrune([{ ok: true, fetched: 10 }, { ok: false, fetched: 0 }])).toBe(true);
+    expect(canPrune([{ ok: true, fetched: 10 }, { ok: true, fetched: 10 }, { ok: false, fetched: 0 }])).toBe(true);
+  });
+
+  /**
+   * ⚠️ P0-1 复核新增（审查员留的 P2 之一）。
+   *
+   * 旧实现是 `produced.length > 0`：只要**一个**来源成功就放行。
+   * 于是「Airdrops 成功 + DefiLlama 挂掉」这种最常见的故障下依旧返回 true，
+   * prune 会按「本轮未出现」把 DefiLlama 独有的真项目连删两轮 ——
+   * 一次来源抖动就能静默清掉上百条真实数据。
+   */
+  it('多数来源失败时拒绝清理（防一次抖动清掉半个库）', () => {
+    // 1 个成功 + 2 个失败 → 成功来源不占多数，不清理
+    expect(canPrune([
+      { ok: true, fetched: 100 },
+      { ok: false, fetched: 0 },
+      { ok: false, fetched: 0 },
+    ])).toBe(false);
+    // 成功来源数量过半，但抓到的条目只占 1/6（两个半死的来源）→ 不清理
+    expect(canPrune([
+      { ok: true, fetched: 5 },
+      { ok: false, fetched: 0 },
+      { ok: true, fetched: 5 },
+      { ok: false, fetched: 0 },
+      { ok: false, fetched: 50 },
+    ])).toBe(false);
   });
 
   it('已知运营页会被清理', () => {
