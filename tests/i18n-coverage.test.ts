@@ -17,7 +17,14 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadCache, localizeText, localizeTitle, hasChinese } from '../scripts/i18n/translate.mjs';
+import {
+  findLeftoverPlaceholders,
+  loadCache,
+  localizeText,
+  localizeTitle,
+  hasChinese,
+  restoreTerms,
+} from '../scripts/i18n/translate.mjs';
 import {
   HUMAN_FIX,
   TERM_MAP,
@@ -175,6 +182,40 @@ describe('本地化输出形态', () => {
   });
 });
 
+describe('占位符还原（翻译引擎会改写占位符）', () => {
+  /**
+   * 为什么单独测这个：
+   *   翻译引擎**不保证**把占位符原样吐回。实测同一句它吐回过
+   *   `__T0__`、`_ _T 0 _ _`、`_   _T 0 _  __` 三种形态，旧实现对后两种全部失败。
+   *   占位符一旦未还原，会被当正文展示给用户。
+   *   这里直接模拟引擎的各种破形态。
+   */
+  const tokens = ['$CARDS', '$CTM'];
+
+  it('正常形态：⟦T0⟧ 能还原为原词', () => {
+    expect(restoreTerms('持有 ⟦T0⟧ 即可', tokens)).toBe('持有 $CARDS 即可');
+  });
+
+  it('相邻占位符不会互相吃掉', () => {
+    // 旧实现按序号逐个 replace，尾部类会跨空白吞掉下一个占位符开头
+    expect(restoreTerms('⟦T1⟧ 和 ⟦T0⟧', tokens)).toBe('$CTM 和 $CARDS');
+  });
+
+  it('旧格式 __T0__ 仍能还原（历史缓存兼容）', () => {
+    expect(restoreTerms('持有 __T0__ 即可', tokens)).toBe('持有 $CARDS 即可');
+  });
+
+  it('序号越界时保留原文，不静默丢失', () => {
+    expect(restoreTerms('持有 ⟦T9⟧ 即可', tokens)).toBe('持有 ⟦T9⟧ 即可');
+  });
+
+  it('findLeftoverPlaceholders 能识别新旧两种碎片', () => {
+    expect(findLeftoverPlaceholders('持有 ⟦T0⟧')).toEqual(['⟦T0⟧']);
+    expect(findLeftoverPlaceholders('持有 _ _T 0 _ _')).toEqual(['_ _T 0 _ _']);
+    expect(findLeftoverPlaceholders('持有 $CARDS')).toEqual([]);
+  });
+});
+
 describe('缓存完整性', () => {
   it('缓存里没有占位符泄漏（术语保护方案的回归护栏）', () => {
     const leaked = Object.values(CACHE).filter((v) => /_T\d+_/.test(String(v)));
@@ -240,10 +281,20 @@ describe('缓存完整性', () => {
       '带您进入',
       '铸币美元',
     ];
+    /**
+     * 为什么先做 sanitize（真实踩过的误报）：
+     *   常用词「加密货币安全」的中间两字恰好是「币安」，
+     *   于是 `includes('币安')` 会把它误判为交易所名被音译，
+     *   导致这条断言永远红而真正的错译反而被淹没。
+     *   先把这个词换成不含子串的说法，再做子串检测。
+     */
+    const sanitize = (text: string) =>
+      String(text).split('加密货币安全').join('加密资产合规');
     const hits: string[] = [];
     for (const [en, zh] of Object.entries(CACHE)) {
+      const value = sanitize(String(zh));
       for (const bad of mistranslations) {
-        if (String(zh).includes(bad)) hits.push(`${bad} :: ${en.slice(0, 40)}`);
+        if (value.includes(bad)) hits.push(`${bad} :: ${en.slice(0, 40)}`);
       }
     }
     // 术语表里的「铸币 → 铸造」等纠错必须真正生效

@@ -34,7 +34,12 @@ export const TOKEN_TERMS = [
   'Phantom', 'Solflare', 'Backpack', 'Rabby', 'Trust', 'Bybit', 'OKX', 'Kraken',
   'GM', 'Craterun', 'Magma', 'Lambda256', 'AMM', 'LP', 'TVL', 'TGE', 'DAO', 'Gas',
   'MetaMask', 'Layer3', 'Questboard', 'EvoEvo', 'Zealy', 'SoPoints', 'Feathers',
-  'Crates', 'Gacha', 'Bonus', 'Wheel', 'Uptime', 'UPTIME', 'Bookie', 'Bookies',
+  'Crates', 'Gacha', 'Uptime', 'UPTIME', 'Bookie', 'Bookies',
+  // 注意：'Bonus' / 'Wheel' 已移除。
+  // 它们在教程里几乎只作普通名词（Daily Bonus / Spin the Wheel），
+  // 保护后反而会把「每日奖励」变成「每日 Bonus」，属于过度保护。
+  // 'Push Chain' 必须比裸词 'Push' 长；否则 'Push' 先替换，只剩 'Chain' 被译成「Push链」。
+  'Push Chain', 'Canopy Network', 'Gyndore', 'Hertzflow', 'DualMint',
   'Solana', 'Ethereum', 'Base', 'Arbitrum', 'Optimism', 'Polygon', 'Avalanche',
   'Sui', 'Aptos', 'TON', 'Linea', 'Scroll', 'Blast', 'zkSync', 'Mantle', 'Cosmos',
   'Starknet', 'Sei', 'Berachain', 'Sonic', 'Unichain', 'Ink', 'Ink Sepolia',
