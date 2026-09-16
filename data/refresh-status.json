@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T05:35:30.431Z",
-  "finished_at": "2026-09-16T05:35:41.813Z",
+  "started_at": "2026-09-16T05:29:18.364Z",
+  "finished_at": "2026-09-16T05:29:37.159Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T05:35:30.431Z",
+  "updated_at": "2026-09-16T05:29:18.364Z",
   "data_changed": true,
-  "change_summary": "变更 99 个：Aave V3 内容有更新；Aiw3 风险：低 → 中；Allox 内容有更新",
+  "change_summary": "变更 26 个：Ammora 内容有更新；Arcium 内容有更新；Brownian 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Aiw3 风险：低 → 中",
-    "Allox 内容有更新",
-    "Amadeus Protocol 内容有更新",
-    "Ammora 内容有更新"
+    "Ammora 内容有更新",
+    "Arcium 内容有更新",
+    "Brownian 内容有更新",
+    "C8ntinuum 内容有更新",
+    "Collector Crypt 内容有更新"
   ],
   "added": 0,
-  "modified": 99,
+  "modified": 26,
   "removed": 0
 }

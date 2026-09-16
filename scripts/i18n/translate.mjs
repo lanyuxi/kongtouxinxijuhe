@@ -45,21 +45,52 @@ export function protectTerms(text) {
     const re = new RegExp(`(?<![A-Za-z0-9_$])${escaped}(?![A-Za-z0-9_])`, 'g');
     out = out.replace(re, () => {
       tokens.push(term);
-      return ` __T${tokens.length - 1}__ `;
+      return ` ⟦T${tokens.length - 1}⟧ `;
     });
   }
   return { text: out, tokens };
 }
 
-/** 还原受保护的专有名词 */
+/**
+ * 占位符容错匹配式（真实故障的根因，两轮审查都没碰到）。
+ *
+ * 为什么不能只认 `__T0__`：
+ *   翻译引擎**不保证**把占位符原样吐回。实测同一条句子它吐回过：
+ *     `持有 __T0__ 即可获得每月空投`    ← 正常
+ *     `持有 _ _T 0 _ _ 即可获得每月空投`  ← 下划线被拆开、数字被空格切开
+ *     `持有 _   _T 0 _  __ 即可获得每月空投`
+ *   旧实现的两条正则对后两种**全部匹配失败**，于是占位符原样留在译文里，
+ *   被前端当正文展示给用户。根因是占位符选型——
+ *   `_` 和空格都是引擎会自由重排的字符。
+ *
+ *   现改用 `⟦T0⟧`：实测引擎原样保留，且相邻占位符（`⟦T0⟧ ⟦T1⟧`）不会互相吞。
+ *
+ * 为什么要**单次扫描 + 回调**：
+ *   旧实现按序号逐个 `replace`，尾部 `[_ \t]*_` 会跨越空白吃掉**下一个占位符**
+ *   的开头，实测 `__T1__   __T0__` 被吞成 `词 T0__`。一次性扫出全部占位符
+ *   （正则自带数字捕获）再回填，每个匹配都自包含。
+ */
+const PLACEHOLDER_RE = /⟦T(\d+)⟧|__T(\d+)__/g;
+
+/**
+ * 说明：译文里残留的占位符碎片（用于自检与报错，正常译文不应命中）。
+ * 同时吞旧格式 `__T0__` 及其被拆散形态，保留历史缓存的检测能力。
+ */
+export function findLeftoverPlaceholders(text) {
+  return String(text ?? '').match(/⟦T\d+⟧|_[ \t_]*T[ \t]*\d+[ \t_]*_/g) ?? [];
+}
+
+/**
+ * 还原受保护的专有名词。
+ *
+ * 新格式 `⟦T0⟧`；同时兼容旧格式 `__T0__`（历史缓存里可能还有）。
+ * 序号越界时保留原文，宁可展示占位符也不静默丢失原文。
+ */
 export function restoreTerms(text, tokens) {
-  let out = String(text ?? '');
-  tokens.forEach((term, i) => {
-    out = out.replace(new RegExp(`_\\s*_?T${i}_\\s*_`, 'g'), term);
-    out = out.replace(new RegExp(`__T${i}__`, 'g'), term);
+  return String(text ?? '').replace(PLACEHOLDER_RE, (whole, a, b) => {
+    const i = Number(a ?? b);
+    return tokens[i] !== undefined ? tokens[i] : whole;
   });
-  // 兜底：仍有未还原的占位符时，说明索引错位，宁可保留占位符也不静默丢失原文
-  return out;
 }
 
 /**

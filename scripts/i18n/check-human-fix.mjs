@@ -109,8 +109,13 @@ function main() {
   // 因此不再重复提示 —— 否则会把「待修正的机器译文」刷成噪音，
   // 反而掩盖真正尚未处理的错译。
   const pending = new Set(Object.keys(HUMAN_FIX).map((k) => CACHE[k]).filter(Boolean));
+  /**
+   * 误报排除：常用词「加密货币安全」中间两字恰是「币安」，
+   * 会被 `/\u5e01\u5b89/` 误判为交易所名音译。先把该词替换成不含子串的说法再检测。
+   */
+  const sanitize = (text) => String(text).split('加密货币安全').join('加密资产合规');
   const suspects = Object.entries(CACHE).filter(
-    ([, zh]) => !pending.has(zh) && SUSPECT.some((re) => re.test(zh)),
+    ([, zh]) => !pending.has(zh) && SUSPECT.some((re) => re.test(sanitize(zh))),
   );
   if (suspects.length) {
     console.log(`\n[human-fix] 提示：缓存中仍有 ${suspects.length} 条疑似错译，可考虑登记修正`);
