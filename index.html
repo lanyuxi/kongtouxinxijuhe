@@ -43,7 +43,14 @@
       rel="alternate" 让浏览器与阅读器能自动发现该订阅源。
     -->
     <link rel="alternate" type="application/atom+xml" title="空投情报平台 · 新空投提醒" href="./feed.xml" />
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <!--
+      站点图标（标签页 / 收藏夹）。
+      使用站点自有品牌标 public/favicon.png（与左上角 logo 同一张源图）：
+      两处各自维护一份 SVG 时，最容易出现「页面改了、标签页还是旧图」的错位，
+      因此这里统一为同一张图，只是落成不同文件名。
+      路径用 ./ 相对地址：站点既跑在根路径，也跑在 GitHub Pages 的子路径下。
+    -->
+    <link rel="icon" href="./favicon.png" type="image/png" />
   </head>
   <body>
     <div id="root"></div>
