@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T06:12:10.655Z",
+  "updated_at": "2026-09-16T07:12:10.937Z",
   "new_today": 16,
   "projects": [
     {
@@ -31,7 +31,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20Horizon%20RWA",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -91,7 +91,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.844Z"
     },
     {
@@ -126,7 +126,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20V3",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -186,7 +186,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.510Z"
     },
     {
@@ -219,7 +219,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20V4",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -279,7 +279,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.844Z"
     },
     {
@@ -310,7 +310,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aerodrome%20Slipstream",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -370,7 +370,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.845Z"
     },
     {
@@ -403,7 +403,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Anemoy%20Capital",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -463,7 +463,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.846Z"
     },
     {
@@ -496,7 +496,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/b14g",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -556,14 +556,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.846Z"
     },
     {
       "id": "b2-buzz",
       "name": "B2 Buzz",
       "slug": "b2-buzz",
-      "tagline": "Canonical Bridge 协议，TVL 约 $217M。",
+      "tagline": "Canonical Bridge 协议，TVL 约 $218M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin"
@@ -587,7 +587,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/B2%20Buzz",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -655,8 +655,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
-      "last_changed_at": "2026-09-16T01:48:06.846Z"
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
+      "last_changed_at": "2026-09-16T07:12:24.793Z"
     },
     {
       "id": "babylon-protocol",
@@ -686,7 +686,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Babylon%20Protocol",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -746,7 +746,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.511Z"
     },
     {
@@ -776,7 +776,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Bedrock%20uniBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -836,7 +836,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.511Z"
     },
     {
@@ -869,7 +869,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/BitFi%20Basis",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -929,7 +929,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T05:16:57.436Z"
     },
     {
@@ -957,7 +957,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Buzz%20Farming",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1017,7 +1017,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.848Z"
     },
     {
@@ -1049,7 +1049,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/cap",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1109,7 +1109,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.849Z"
     },
     {
@@ -1142,7 +1142,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/CCIP",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1210,7 +1210,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.849Z"
     },
     {
@@ -1243,7 +1243,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/CIAN%20Yield%20Layer",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1303,7 +1303,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.850Z"
     },
     {
@@ -1333,7 +1333,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Clearstar",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1393,7 +1393,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.513Z"
     },
     {
@@ -1427,7 +1427,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Compound%20V3",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1487,7 +1487,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.850Z"
     },
     {
@@ -1521,7 +1521,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Concrete",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1581,7 +1581,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T05:16:57.437Z"
     },
     {
@@ -1614,7 +1614,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Convex%20Finance",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1674,7 +1674,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -1706,7 +1706,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Cooler%20Loans",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1766,7 +1766,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -1799,7 +1799,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Curve%20DEX",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1859,7 +1859,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -1893,7 +1893,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Defi%20Saver%20Asset%20Management",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -1953,7 +1953,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -1986,7 +1986,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/DigiFT",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2046,7 +2046,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -2080,7 +2080,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Dolomite",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2140,7 +2140,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.852Z"
     },
     {
@@ -2171,7 +2171,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EigenCloud",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2231,7 +2231,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.515Z"
     },
     {
@@ -2262,7 +2262,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ethena%20USDe",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2322,7 +2322,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.515Z"
     },
     {
@@ -2353,7 +2353,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ethena%20USDtb",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2413,7 +2413,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.853Z"
     },
     {
@@ -2446,7 +2446,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EtherFi%20Borrowing%20Market",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2506,7 +2506,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.854Z"
     },
     {
@@ -2535,7 +2535,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EtherFi%20Cash%20Liquid",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2595,7 +2595,7 @@
       "created_at": "2026-09-16T01:37:46.776Z",
       "first_seen_at": "2026-09-16T01:37:46.776Z",
       "discovered_at": "2026-09-16T01:37:46.776Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.854Z"
     },
     {
@@ -2629,7 +2629,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Euler%20V2",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2689,7 +2689,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.854Z"
     },
     {
@@ -2720,7 +2720,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Falcon%20Finance",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2780,7 +2780,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.854Z"
     },
     {
@@ -2812,7 +2812,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/FAssets",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2880,7 +2880,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -2912,7 +2912,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Figure%20Markets%20Democratized%20Prime",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -2972,7 +2972,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3005,7 +3005,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20DEX",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3065,7 +3065,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3099,7 +3099,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20Lending",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3159,7 +3159,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3190,7 +3190,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20Lite",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3250,7 +3250,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3281,7 +3281,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Function%20FBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3349,7 +3349,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.856Z"
     },
     {
@@ -3379,7 +3379,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Gauntlet",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3439,7 +3439,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.518Z"
     },
     {
@@ -3472,7 +3472,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/GMX%20V2%20Perps",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3532,7 +3532,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T05:16:57.440Z"
     },
     {
@@ -3566,7 +3566,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Grove%20Finance",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3626,7 +3626,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.857Z"
     },
     {
@@ -3655,7 +3655,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/GTBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3715,7 +3715,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.518Z"
     },
     {
@@ -3748,7 +3748,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Huma%20Finance%20V2",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3808,7 +3808,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.858Z"
     },
     {
@@ -3838,7 +3838,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Hyperithm",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3898,7 +3898,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.244Z"
     },
     {
@@ -3929,7 +3929,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Hyperliquid%20HLP",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -3989,7 +3989,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.858Z"
     },
     {
@@ -4022,7 +4022,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Invesco%20USTB",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4082,7 +4082,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.859Z"
     },
     {
@@ -4114,7 +4114,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Jupiter%20Lend",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4174,7 +4174,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.859Z"
     },
     {
@@ -4205,7 +4205,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Jupiter%20Perpetual%20Exchange",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4265,7 +4265,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.245Z"
     },
     {
@@ -4296,7 +4296,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustCryptos",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4364,7 +4364,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.860Z"
     },
     {
@@ -4396,7 +4396,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustLend%20V1",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4456,7 +4456,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.860Z"
     },
     {
@@ -4486,7 +4486,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/K3%20Capital",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4546,7 +4546,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.245Z"
     },
     {
@@ -4578,7 +4578,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kamino%20Lend",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4638,7 +4638,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.860Z"
     },
     {
@@ -4669,7 +4669,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kelp",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4729,7 +4729,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.520Z"
     },
     {
@@ -4760,7 +4760,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kinetiq%20kHYPE",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4820,7 +4820,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.520Z"
     },
     {
@@ -4850,7 +4850,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/KPK",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -4910,7 +4910,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.861Z"
     },
     {
@@ -4943,7 +4943,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/LayerZero%20V2",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5011,7 +5011,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.861Z"
     },
     {
@@ -5044,7 +5044,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lido",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5104,7 +5104,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.521Z"
     },
     {
@@ -5133,7 +5133,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lightning%20Network",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5193,7 +5193,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5224,7 +5224,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Liquid%20Collective",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5284,7 +5284,7 @@
       "created_at": "2026-09-16T01:37:46.776Z",
       "first_seen_at": "2026-09-16T01:37:46.776Z",
       "discovered_at": "2026-09-16T01:37:46.776Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T05:37:05.709Z"
     },
     {
@@ -5316,7 +5316,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Liquity%20V1",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5376,7 +5376,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5408,7 +5408,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lista%20CDP",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5468,7 +5468,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5501,7 +5501,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lista%20Lending",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5561,7 +5561,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5591,7 +5591,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lombard%20LBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5651,7 +5651,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.863Z"
     },
     {
@@ -5682,7 +5682,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lorenzo%20enzoBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5750,7 +5750,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.863Z"
     },
     {
@@ -5778,7 +5778,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/M0",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5838,7 +5838,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.247Z"
     },
     {
@@ -5871,7 +5871,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Maple",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -5931,7 +5931,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.863Z"
     },
     {
@@ -5962,7 +5962,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Marinade%20Native",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6022,7 +6022,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T05:16:57.444Z"
     },
     {
@@ -6053,7 +6053,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Marinade%20Select",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6113,7 +6113,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.863Z"
     },
     {
@@ -6147,7 +6147,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Mellow%20Core",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6207,7 +6207,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.522Z"
     },
     {
@@ -6241,7 +6241,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Merlins%20Seal",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6309,7 +6309,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.247Z"
     },
     {
@@ -6340,7 +6340,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Meteora%20DLMM",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6400,14 +6400,14 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.864Z"
     },
     {
       "id": "meth-protocol",
       "name": "mETH Protocol",
       "slug": "meth-protocol",
-      "tagline": "Liquid Staking 协议，TVL 约 $585M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $551M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -6431,7 +6431,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/mETH%20Protocol",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6491,8 +6491,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
-      "last_changed_at": "2026-09-16T01:48:06.864Z"
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
+      "last_changed_at": "2026-09-16T07:12:24.805Z"
     },
     {
       "id": "morpho-blue",
@@ -6525,7 +6525,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Morpho%20Blue",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6585,7 +6585,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.865Z"
     },
     {
@@ -6616,7 +6616,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Nexus%20BTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6684,7 +6684,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.867Z"
     },
     {
@@ -6715,7 +6715,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Obol",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6775,7 +6775,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.868Z"
     },
     {
@@ -6806,7 +6806,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/OnRe",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6866,7 +6866,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.868Z"
     },
     {
@@ -6899,7 +6899,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/OpenTrade",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -6959,7 +6959,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -6991,7 +6991,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Orca%20DEX",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7051,7 +7051,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7084,7 +7084,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PancakeSwap%20AMM",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7144,7 +7144,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7177,7 +7177,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PancakeSwap%20AMM%20V3",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7237,7 +7237,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7270,7 +7270,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Pendle%20V2",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7330,7 +7330,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7361,7 +7361,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Polymarket%20International",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7421,7 +7421,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.526Z"
     },
     {
@@ -7454,7 +7454,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Portal",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7522,7 +7522,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7553,7 +7553,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PumpSwap",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7613,7 +7613,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7644,7 +7644,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Raydium%20AMM",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7704,7 +7704,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7737,7 +7737,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Re",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7797,7 +7797,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7827,7 +7827,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/RockawayX",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7887,14 +7887,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.250Z"
     },
     {
       "id": "rocket-pool",
       "name": "Rocket Pool",
       "slug": "rocket-pool",
-      "tagline": "Liquid Staking 协议，TVL 约 $1255M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1253M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -7918,7 +7918,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Rocket%20Pool",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -7978,8 +7978,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
-      "last_changed_at": "2026-09-16T04:58:11.250Z"
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
+      "last_changed_at": "2026-09-16T07:12:24.809Z"
     },
     {
       "id": "sanctum-infinity",
@@ -8009,7 +8009,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sanctum%20Infinity",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8069,7 +8069,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.871Z"
     },
     {
@@ -8100,7 +8100,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sanctum%20Validator%20LSTs",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8160,7 +8160,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.527Z"
     },
     {
@@ -8190,7 +8190,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sentora%20Curator",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8250,7 +8250,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.527Z"
     },
     {
@@ -8282,7 +8282,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sky%20Lending",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8342,7 +8342,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.872Z"
     },
     {
@@ -8373,13 +8373,13 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/solstice/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         },
         {
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Solstice",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8439,7 +8439,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.872Z"
     },
     {
@@ -8472,7 +8472,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Solv%20Basis%20Trading",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8532,7 +8532,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.529Z"
     },
     {
@@ -8565,7 +8565,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SolvBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8633,7 +8633,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.872Z"
     },
     {
@@ -8667,7 +8667,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Spark%20Liquidity%20Layer",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8727,7 +8727,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.529Z"
     },
     {
@@ -8760,7 +8760,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Spark%20Savings",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8820,7 +8820,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
@@ -8853,7 +8853,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SparkLend",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -8913,7 +8913,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
@@ -8944,7 +8944,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SSV%20Network",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9004,7 +9004,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.530Z"
     },
     {
@@ -9035,7 +9035,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Stacks%20sBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9103,14 +9103,14 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
       "id": "stader",
       "name": "Stader",
       "slug": "stader",
-      "tagline": "Liquid Staking 协议，TVL 约 $244M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $243M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -9136,7 +9136,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Stader",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9196,8 +9196,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
-      "last_changed_at": "2026-09-16T05:16:57.449Z"
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
+      "last_changed_at": "2026-09-16T07:12:24.812Z"
     },
     {
       "id": "stakewise-v3",
@@ -9228,7 +9228,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/StakeWise%20V3",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9288,7 +9288,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
@@ -9318,7 +9318,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Steakhouse%20Financial",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9378,7 +9378,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.530Z"
     },
     {
@@ -9409,7 +9409,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/stHYPE",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9469,7 +9469,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.530Z"
     },
     {
@@ -9500,7 +9500,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SUNSwap%20V2",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9560,7 +9560,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.874Z"
     },
     {
@@ -9591,7 +9591,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SUNSwap%20V3",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9651,7 +9651,7 @@
       "created_at": "2026-09-12T07:12:26.570Z",
       "first_seen_at": "2026-09-12T07:12:26.570Z",
       "discovered_at": "2026-09-12T07:12:26.570Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.874Z"
     },
     {
@@ -9683,7 +9683,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Symbiotic",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9743,7 +9743,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.531Z"
     },
     {
@@ -9772,7 +9772,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/tBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9832,7 +9832,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T05:16:57.450Z"
     },
     {
@@ -9863,7 +9863,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Tonstakers%20LSD",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -9923,7 +9923,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.874Z"
     },
     {
@@ -9956,7 +9956,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V2",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10016,7 +10016,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10049,7 +10049,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V3",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10109,7 +10109,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10142,7 +10142,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V4",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10202,7 +10202,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10235,7 +10235,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Unit",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10303,7 +10303,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10337,7 +10337,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Upshift",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10397,7 +10397,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T04:58:11.253Z"
     },
     {
@@ -10428,7 +10428,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USD%20AI",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10488,7 +10488,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10522,7 +10522,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USDD",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10582,7 +10582,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10613,7 +10613,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USDT0",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10681,7 +10681,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.876Z"
     },
     {
@@ -10715,7 +10715,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Veda",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10775,7 +10775,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.533Z"
     },
     {
@@ -10809,7 +10809,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Venus%20Core%20Pool",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10869,7 +10869,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.876Z"
     },
     {
@@ -10900,7 +10900,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/WBTC",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -10968,7 +10968,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.876Z"
     },
     {
@@ -10999,7 +10999,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/World%20Chain",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -11067,7 +11067,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T06:12:28.533Z"
     },
     {
@@ -11100,7 +11100,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Yearn%20Finance",
-          "fetched_at": "2026-09-16T06:12:28.416Z"
+          "fetched_at": "2026-09-16T07:12:24.696Z"
         }
       ],
       "scores": {
@@ -11160,7 +11160,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-16T06:12:28.416Z",
+      "last_checked_at": "2026-09-16T07:12:24.696Z",
       "last_changed_at": "2026-09-16T01:48:06.877Z"
     },
     {
@@ -11187,7 +11187,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/aiw3/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -11303,7 +11303,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.576Z"
     },
     {
@@ -11333,7 +11333,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/allox/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -11425,7 +11425,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:26:58.970Z"
     },
     {
@@ -11451,7 +11451,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/amadeus-protocol/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -11543,7 +11543,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:25:22.216Z"
     },
     {
@@ -11569,7 +11569,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ammora/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -11677,7 +11677,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.077Z"
     },
     {
@@ -11706,7 +11706,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/arcium/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -11790,7 +11790,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.077Z"
     },
     {
@@ -11821,7 +11821,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/basedapp/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -11889,7 +11889,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.577Z"
     },
     {
@@ -11918,7 +11918,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/beldex/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12010,7 +12010,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.436Z"
     },
     {
@@ -12037,7 +12037,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/blackboard/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12129,7 +12129,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:26:58.972Z"
     },
     {
@@ -12159,7 +12159,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/brownian/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12251,7 +12251,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.079Z"
     },
     {
@@ -12280,7 +12280,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/c8ntinuum/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12388,7 +12388,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.079Z"
     },
     {
@@ -12418,7 +12418,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/cambria/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12518,7 +12518,7 @@
       "created_at": "2026-09-16T01:15:42.247Z",
       "first_seen_at": "2026-09-16T01:15:42.247Z",
       "discovered_at": "2026-09-16T01:15:42.247Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:25:22.218Z"
     },
     {
@@ -12547,7 +12547,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/canopy/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12607,7 +12607,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:25:22.218Z"
     },
     {
@@ -12636,7 +12636,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/collector-crypt/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12728,7 +12728,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.080Z"
     },
     {
@@ -12758,7 +12758,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/deepbook/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12850,7 +12850,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.438Z"
     },
     {
@@ -12880,7 +12880,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/doppler-finance/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -12972,7 +12972,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.081Z"
     },
     {
@@ -13002,7 +13002,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/dow-protocol/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13094,7 +13094,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.081Z"
     },
     {
@@ -13121,7 +13121,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/dualmint/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13213,7 +13213,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.081Z"
     },
     {
@@ -13242,7 +13242,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/dymension/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13302,7 +13302,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.082Z"
     },
     {
@@ -13329,7 +13329,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/entropy/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13413,7 +13413,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.082Z"
     },
     {
@@ -13464,7 +13464,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ethena/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13564,7 +13564,7 @@
       "created_at": "2026-09-11T14:29:52.346Z",
       "first_seen_at": "2026-09-11T14:29:52.346Z",
       "discovered_at": "2026-09-11T14:29:52.346Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.082Z"
     },
     {
@@ -13598,7 +13598,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/fireplace/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13658,7 +13658,7 @@
       "created_at": "2026-09-16T04:57:51.921Z",
       "first_seen_at": "2026-09-16T04:57:51.921Z",
       "discovered_at": "2026-09-16T04:57:51.921Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:47.068Z"
     },
     {
@@ -13687,7 +13687,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/flop-labs/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13763,7 +13763,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:25:22.223Z"
     },
     {
@@ -13792,7 +13792,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/fortune-foes/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13876,7 +13876,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.582Z"
     },
     {
@@ -13925,7 +13925,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/grass/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -13993,7 +13993,7 @@
       "created_at": "2026-09-11T14:29:52.345Z",
       "first_seen_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.582Z"
     },
     {
@@ -14023,7 +14023,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/grvt/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14099,7 +14099,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.085Z"
     },
     {
@@ -14125,7 +14125,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/gyndore/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14201,7 +14201,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.085Z"
     },
     {
@@ -14231,7 +14231,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/hertzflow/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14323,7 +14323,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.085Z"
     },
     {
@@ -14353,7 +14353,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/huma-finance/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14445,7 +14445,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.086Z"
     },
     {
@@ -14474,7 +14474,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/infinex/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14558,7 +14558,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.087Z"
     },
     {
@@ -14588,7 +14588,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/jupiter/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14672,7 +14672,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.087Z"
     },
     {
@@ -14701,7 +14701,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/laptop/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14793,7 +14793,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.088Z"
     },
     {
@@ -14823,7 +14823,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/limitless-prediction-markets/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -14923,7 +14923,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.089Z"
     },
     {
@@ -14952,7 +14952,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/mint-io/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15036,7 +15036,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:26:58.981Z"
     },
     {
@@ -15062,7 +15062,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/moonpay/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15146,7 +15146,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.444Z"
     },
     {
@@ -15176,7 +15176,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/nado/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15276,7 +15276,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.091Z"
     },
     {
@@ -15305,7 +15305,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/neosoul/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15389,7 +15389,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.091Z"
     },
     {
@@ -15415,7 +15415,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/noise/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15475,7 +15475,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.586Z"
     },
     {
@@ -15501,7 +15501,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/nowa/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15601,7 +15601,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.586Z"
     },
     {
@@ -15631,7 +15631,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/o1-exchange/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15723,7 +15723,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:26:58.982Z"
     },
     {
@@ -15752,7 +15752,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/omega/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15836,7 +15836,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.092Z"
     },
     {
@@ -15866,7 +15866,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/perpl/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -15958,7 +15958,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.588Z"
     },
     {
@@ -15985,7 +15985,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/plume-network/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16045,7 +16045,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.588Z"
     },
     {
@@ -16071,7 +16071,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/push-chain/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16179,7 +16179,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.094Z"
     },
     {
@@ -16206,7 +16206,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/reels/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16274,7 +16274,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.447Z"
     },
     {
@@ -16303,7 +16303,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/rep/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16395,7 +16395,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:26:58.984Z"
     },
     {
@@ -16424,7 +16424,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ritual/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16484,7 +16484,7 @@
       "created_at": "2026-09-16T01:15:42.247Z",
       "first_seen_at": "2026-09-16T01:15:42.247Z",
       "discovered_at": "2026-09-16T01:15:42.247Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.095Z"
     },
     {
@@ -16511,7 +16511,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/satsuma/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16571,7 +16571,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.589Z"
     },
     {
@@ -16600,7 +16600,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/solpump/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16660,7 +16660,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.589Z"
     },
     {
@@ -16686,7 +16686,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/sosovalue/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16794,7 +16794,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.448Z"
     },
     {
@@ -16820,7 +16820,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/sweep-finance/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -16912,7 +16912,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.099Z"
     },
     {
@@ -16941,7 +16941,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/tbook/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17025,7 +17025,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.450Z"
     },
     {
@@ -17054,7 +17054,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/tread-fi/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17154,7 +17154,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.451Z"
     },
     {
@@ -17183,7 +17183,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/vangrid/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17283,7 +17283,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.592Z"
     },
     {
@@ -17313,7 +17313,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/voice/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17421,7 +17421,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.452Z"
     },
     {
@@ -17450,7 +17450,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/wager-predict/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17542,7 +17542,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:29:37.101Z"
     },
     {
@@ -17571,7 +17571,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/wheelx/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17663,7 +17663,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T04:59:12.593Z"
     },
     {
@@ -17689,7 +17689,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/worldie/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17773,7 +17773,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.452Z"
     },
     {
@@ -17802,7 +17802,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/yakkamon/",
-          "fetched_at": "2026-09-16T06:12:10.870Z"
+          "fetched_at": "2026-09-16T07:12:11.012Z"
         }
       ],
       "scores": {
@@ -17894,7 +17894,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-16T06:12:10.870Z",
+      "last_checked_at": "2026-09-16T07:12:11.012Z",
       "last_changed_at": "2026-09-16T05:16:57.452Z"
     },
     {
