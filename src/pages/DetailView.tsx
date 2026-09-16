@@ -404,6 +404,15 @@ export function DetailView({
                   <span className="ml-1.5 text-base font-normal text-ink-faint">/ 100</span>
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">{AUTH_LEVEL(p.scores.authenticity)}</p>
+                {/* P1-3：真实性分原本是一个 90% 项目都相同的常数，
+                    归一化后仍然有 28% 的项目同分 —— 因为它们的证据本就同形。
+                    因此这里优先展示**证据核查清单的达成数**：
+                    「已核实 2/9 项」既能与同批项目横向比较，
+                    也诚实表达了「我们查了什么、查到什么」。
+                    分位与百分比都退为辅助信息。 */}
+                {coverageSummary(p) && (
+                  <p className="mt-2 text-sm font-medium text-ink-soft">{coverageSummary(p)}</p>
+                )}
                 <PercentileTrack pct={percentiles?.authenticity} total={percentiles?.total ?? 0} />
                 <p className="detail-link mt-4">查看评分明细 {showAuth ? '↑' : '↓'}</p>
               </button>
@@ -437,6 +446,13 @@ export function DetailView({
                 <p className="mt-2 text-sm text-ink-soft">
                   <RiskBadge risk={p.scores.risk} />
                 </p>
+                {/* 风险已不再只看文本关键词（P0-2）：
+                    分级现在同时采信「要投入多少本金」「是否包含签名步骤」这两个结构化事实。
+                    因此卡片上必须直接把理由说出来 —— 只说「高」不说「为什么高」，
+                    用户依然不知道自己面对的是什么。 */}
+                <p className="mt-2 text-xs leading-relaxed text-ink-soft">
+                  {riskBasis(p)}
+                </p>
                 <p className="detail-link mt-4">这意味着什么 {showRisk ? '↑' : '↓'}</p>
               </button>
             </div>
@@ -448,6 +464,35 @@ export function DetailView({
               <p className="mt-2 text-sm text-ink-soft">
                 基于当前公开证据判断可信程度，不代表官方保证。
               </p>
+              {/* 证据核查清单：把「我们查了什么、查到什么」逐项摊开。
+                  比一个看起来精确的百分比更有用 —— 用户能直接看到
+                  「官方文档：未找到」「链上规模：已核实 $16754M」。 */}
+              {p.scores.evidenceChecklist && p.scores.evidenceChecklist.length > 0 && (
+                <div className="mt-5">
+                  <h3 className="text-base font-semibold text-ink">
+                    证据核查清单（已核实 {p.scores.authenticityVerifiedCount ?? 0} 项
+                    {p.scores.authenticityPartialCount ? `，部分核实 ${p.scores.authenticityPartialCount} 项` : ''}
+                    ，共 {p.scores.evidenceChecklist.length} 项）
+                  </h3>
+                  <ul className="mt-3 divide-y divide-line-soft">
+                    {p.scores.evidenceChecklist.map((c) => (
+                      <li key={c.label} className="flex items-start gap-3 py-2.5">
+                        <span
+                          className={`mt-0.5 shrink-0 rounded-md border px-2 py-0.5 text-xs font-medium ${CHECK_TONE[c.status]}`}
+                        >
+                          {CHECK_LABEL[c.status]}
+                        </span>
+                        <span className="min-w-0 text-sm text-ink">{c.label}</span>
+                        <span className="ml-auto shrink-0 text-right text-xs text-ink-soft">{c.note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-xs text-ink-faint">
+                    「不适用」表示该项对这类项目本就不存在（例如潜在项目官方还没有公告），
+                    既不加分也不扣分；「未找到」表示我们查过但没有查到。
+                  </p>
+                </div>
+              )}
               <div className="mt-4">
                 <ScoreBreakdown items={p.scores.authenticityItems} />
               </div>
@@ -889,6 +934,62 @@ export function DetailView({
  *   而分位只反映「在这批数据里排在哪」。
  *   样本不足（total < 2）或没有分位数据时整块不渲染，绝不编一个数字出来。
  */
+/** 证据核查清单的三态 → 标签与配色 */
+const CHECK_LABEL: Record<'verified' | 'partial' | 'missing' | 'not_applicable', string> = {
+  verified: '已核实',
+  partial: '部分核实',
+  missing: '未找到',
+  not_applicable: '不适用',
+};
+
+const CHECK_TONE: Record<'verified' | 'partial' | 'missing' | 'not_applicable', string> = {
+  verified: 'border-ok/30 bg-ok-wash text-ok',
+  partial: 'border-warn/30 bg-warn-wash text-warn',
+  missing: 'border-line bg-page text-ink-soft',
+  not_applicable: 'border-line-soft bg-white text-ink-faint',
+};
+
+/**
+ * 真实性的一句话达成度说明（P1-3）。
+ *
+ * 为什么不再只显示「38/100」：
+ *   实测 28% 的项目仍然同分（它们证据本就同形）。
+ *   与其给一个看起来精确的伪分，不如直接说「已核实 2 / 9 项可得证据」——
+ *   这是用户真正能比较、也真正能理解的信息。
+ */
+function coverageSummary(p: AirdropProject): string | null {
+  const total = p.scores.authenticityTotalCount ?? p.scores.evidenceChecklist?.length;
+  const verified = p.scores.authenticityVerifiedCount;
+  if (!total || verified === undefined) return null;
+  const partial = p.scores.authenticityPartialCount ?? 0;
+  return `已核实 ${verified}/${total} 项证据${partial > 0 ? `（另有 ${partial} 项部分核实）` : ''}`;
+}
+
+/**
+ * 风险等级的一句话依据（P0-2）。
+ *
+ * 为什么要写在评分卡上：
+ *   修复前风险只按文本关键词推断，Aave V3 因为「存入资产 / 借出资产」里
+ *   没有任何风险词而判成「低」；而卡片上同时写着「预计资金 $20–200」。
+ *   现在分级改为采信结构化字段（本金、签名），那么依据就必须一起展示 ——
+ *   否则用户看到一个更高的等级，却不知道是被什么抬上去的。
+ */
+function riskBasis(p: AirdropProject): string {
+  const capital = p.cost?.capital_max_usd ?? 0;
+  const signs = p.guide.some((g) => g.needs_signature);
+  if (p.scores.risk === 'critical') return '检测到一票否决行为，系统不建议参与。';
+  const parts: string[] = [];
+  if (capital > 0) {
+    // 必须标明「预估」：capital_max_usd 是流水线按关键词推断的统一上限，
+    // 不是说这个项目一定要求这么多钱。实测 96 个项目的区间全是 $20–200。
+    const min = p.cost?.capital_min_usd ?? 0;
+    parts.push(`来源推断需投入${min > 0 ? ` $${min}–${capital}` : `约 $${capital}`} 本金（预估区间）`);
+  }
+  if (signs) parts.push('含需签名的链上步骤');
+  if (parts.length === 0) return '未发现资金或签名要求。';
+  return `判定依据：${parts.join('、')}。`;
+}
+
 function PercentileTrack({ pct, total }: { pct?: number; total: number }) {
   if (pct === undefined || total < 2) return null;
   return (

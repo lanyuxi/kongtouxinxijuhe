@@ -73,6 +73,19 @@ export interface ListProject {
   guide: ListGuideStep[];
   guide_source: AirdropProject['guide_source'];
   created_at: string;
+  /**
+   * 首次被本系统收录的时间（P2-1）。
+   *
+   * ⚠️ 必须保留：列表磁贴「今日新收录」的口径依据就是这个字段。
+   *    它只占一个 ISO 时间串（约 24 字节/项目），
+   *    剔除它会让口径静默退回「本轮进入数据集」的旧语义 ——
+   *    那正是 P2-1 要修的误导。
+   *
+   *    这也是「瘦身白名单必须逐字段审」的实例：
+   *    main 侧的瘦身按「详情页才要」的标准裁字段，
+   *    但 first_seen_at 是**列表口径**依据，漏掉它会改行为而不是省体积。
+   */
+  first_seen_at?: string;
   discovered_at: string;
   last_checked_at: string;
   last_changed_at: string;
@@ -117,6 +130,7 @@ export function toListProject(p: AirdropProject): ListProject {
     })),
     guide_source: p.guide_source,
     created_at: p.created_at,
+    first_seen_at: p.first_seen_at,
     discovered_at: p.discovered_at,
     last_checked_at: p.last_checked_at,
     last_changed_at: p.last_changed_at,

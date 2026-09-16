@@ -209,6 +209,7 @@ export function App() {
                 refreshMessage={refreshMessage}
                 changeDetails={changeDetails}
                 percentiles={percentiles}
+                health={health}
                 onRefresh={handleRefresh}
                 onToggleFavorite={toggleFavorite}
                 onClearAll={clearAll}

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import type { LiveIndex } from '../lib/types';
+import type { LiveIndex, SourceHealthFile } from '../lib/types';
 import { STALE_MINUTES, isStale } from '../lib/refresh';
 import { relativeTime } from '../lib/labels';
+import { computeCoverageGap } from '../lib/coverage';
+import { refreshCapability, refreshEndpoint } from '../lib/refresh';
 
 /**
  * 「一键更新」工具条。
@@ -17,6 +19,8 @@ export function RefreshBar({
   refreshing,
   message,
   changeDetails,
+  health,
+  totalProjects,
 }: {
   index: LiveIndex | null;
   onRefresh: () => void;
@@ -24,6 +28,10 @@ export function RefreshBar({
   message: string | null;
   /** 最近一次抓取的项目级变更明细，例如「Monad 状态：潜在空投 → 开放领取」 */
   changeDetails?: string[];
+  /** 数据源健康状态；用于把「库内 vs 本轮」的差异摊开（P2-2） */
+  health?: SourceHealthFile | null;
+  /** 库内项目总数 */
+  totalProjects?: number;
 }) {
   // 让相对时间自己走起来，否则页面停留久了会显示过期信息
   const [, tick] = useState(0);
@@ -34,6 +42,35 @@ export function RefreshBar({
 
   const stale = isStale(index);
   const healthy = index?.sources ?? [];
+
+  /**
+   * 库内数据 vs 本轮来源的覆盖率差异（P2-2）。
+   *
+   * 为什么必须显式展示：工具条原本只说「2/2 来源正常」，
+   * 用户合理地以为「库里的每一条都是刚抓到的」。
+   * 实测库内 202 条、本轮来源 178 条 —— 多出来的 24 条是历史留存
+   * （Last Known Good 机制要求保留，否则来源抖动会清空全库）。
+   * 这层差异不解释，就会变成「来源正常但数据对不上」的困惑。
+   */
+  /**
+   * 「一键更新」在当前部署下的真实能力（P2-3）。
+   * 未接入触发器时按钮改叫「重新加载数据」，并明确写出「不会触发新的抓取」——
+   * 原来按钮写着「一键更新」、点完说「已更新到最新数据」，
+   * 用户会以为平台刚刚抓取了最新情报，而实际只是重新拉了一次静态 JSON。
+   */
+  const capability = refreshCapability(refreshEndpoint());
+
+  const coverage =
+    totalProjects === undefined
+      ? null
+      : computeCoverageGap({
+          totalProjects,
+          currentRoundItems: healthy.reduce((s, x) => s + x.count, 0),
+          sources: health?.sources.length ?? healthy.length,
+          okSources: health
+            ? health.sources.filter((x) => x.ok).length
+            : healthy.length,
+        });
 
   return (
     <section className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-card lg:flex-row lg:items-center lg:justify-between">
@@ -58,6 +95,10 @@ export function RefreshBar({
             </span>
           )}
         </div>
+
+        {/* 能力说明：必须紧跟标题出现，而不是只在点击后才解释。
+            用户点之前就该知道「这次点击能不能拿到新数据」。 */}
+        <p className="mt-2 text-xs text-ink-faint">{capability.note}</p>
 
         <p className="mt-2 truncate text-sm text-ink-soft">
           {healthy.length > 0 ? (
@@ -85,6 +126,21 @@ export function RefreshBar({
           >
             {refreshing ? '⏳ ' : '✓ '}
             {message}
+          </p>
+        )}
+
+        {/* 库内 vs 本轮覆盖率（P2-2）：把差异显式摊开，而不是只说「来源正常」。
+            「正常」只说明抓取动作成功，不说明库内每条都是本轮抓到的。 */}
+        {coverage && coverage.level !== 'aligned' && (
+          <p
+            className={`mt-2 text-xs ${
+              coverage.level === 'warning' || coverage.level === 'source_error'
+                ? 'text-warn'
+                : 'text-ink-faint'
+            }`}
+          >
+            {coverage.level === 'source_error' ? '⚠ ' : coverage.level === 'warning' ? '⚠ ' : 'ℹ '}
+            {coverage.message}
           </p>
         )}
 
@@ -121,7 +177,9 @@ export function RefreshBar({
             更新中…
           </>
         ) : (
-          <>⟳ 一键更新</>
+          <>
+            ⟳ {capability.buttonLabel}
+          </>
         )}
       </button>
     </section>

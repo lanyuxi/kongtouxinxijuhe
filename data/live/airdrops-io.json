@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T13:12:11.947Z",
+  "fetched_at": "2026-09-16T01:49:19.777Z",
   "source": "Airdrops.io",
   "source_url": "https://airdrops.io/latest/",
   "items": [
@@ -16,7 +16,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solpump/",
       "officialUrl": "https://solpump.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Solpump",
       "officialHost": "solpump.io",
       "steps": [],
@@ -36,7 +36,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/aiw3/",
       "officialUrl": "https://aiw3.ai",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Aiw3",
       "officialHost": "aiw3.ai",
       "steps": [
@@ -87,54 +87,38 @@
       "description": "The AIW3 Genesis Airdrop eligibility checker opened July 29, letting you verify whether your address qualifies based on the July 28 snapshot. The checker displays snapshot eligibility, wallet verification status, and initial airdrop qualification."
     },
     {
-      "slug": "yakkamon",
-      "name": "Yakkamon",
-      "tagline": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Mon",
+      "slug": "ritual",
+      "name": "Ritual",
+      "tagline": "There hasn’t been any news about an official airdrop. There is no confirmed $RITUAL token, ticker, or way to get it. Tha",
       "status": "potential",
-      "categoryText": "gaming",
+      "categoryText": "ai",
       "chains": [
-        "Ronin"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/yakkamon/",
-      "officialUrl": "https://yakkamon.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
-      "rawTitle": "Yakkamon",
-      "officialHost": "yakkamon.com",
+      "sourceUrl": "https://airdrops.io/ritual/",
+      "officialUrl": "https://ritualtrials.domino.page",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
+      "rawTitle": "Ritual",
+      "officialHost": "ritualtrials.domino.page",
       "steps": [
         {
-          "title": "Sign Up at Yakkamon",
-          "body": "Create your account with an email address on the Yakkamon pre-registration page . No wallet is needed at this stage. Enter the referral code YAKKA-52UCFU during sign-up.",
-          "url": "/visit/w0b3/"
+          "title": "Join the Ritual Discord",
+          "body": "Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.",
+          "url": "/visit/ed93/"
         },
         {
-          "title": "Nurture Your Egg Daily",
-          "body": "Tap your egg three times each day for +6 points. Daily streaks add bonuses, and a missed day resets the streak."
+          "title": "Complete Community Quests",
+          "body": "Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)",
+          "url": "/visit/dd93/"
         },
         {
-          "title": "Connect Discord and X",
-          "body": "Link your Discord and X accounts for +10 points each. Helpful posts in the Discord earn extra points through community reactions, and the weekly share quest pays +20 points per week once X is connected."
-        },
-        {
-          "title": "Link and Verify a Wallet",
-          "body": "Connect a wallet and sign a message to prove ownership for +10 points. A verified wallet is also required for the free mint whitelist, so complete this well before October 1, 2026."
-        },
-        {
-          "title": "Refer Friends",
-          "body": "Each verified friend who joins earns you +30 points. Your first five referrals count instantly; after that, invitees must verify Discord and X and reach 100 points before the bonus lands. Multi-accounting gets filtered out on review."
-        },
-        {
-          "title": "Mint the Free Monster NFT on October 1",
-          "body": "Join the free mint of 10,000 Monster NFTs on Ronin using your verified wallet. It costs nothing beyond a small gas fee, is limited to one mint per trainer, and minting adds points to your leaderboard total."
-        },
-        {
-          "title": "Mint Your Yakkamon NFT",
-          "body": "Check which waves your Ronin wallet qualifies for on the whitelist checker Deposit 5 $FLOWER if you’re minting in Wave 2 or Wave 4 (see the $FLOWER deposit guide ) Connect your Ronin wallet to the Ronin Launchpad when your wave opens and mint, keeping some RON for gas",
-          "url": "/visit/ceb3/"
+          "title": "Earn and Upgrade Discord Roles",
+          "body": "You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role."
         }
       ],
-      "description": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Monster NFTs when early access launches: ranks 1 to 1,000 get Legendary Monster NFTs and ranks 1,001 to 5,000 get Rare Monster NFTs. Distribution is automatic and based purely on points, never on sign-up order. The same leaderboard decides early access, with the top 100,000 trainers entering in waves."
+      "description": "There hasn’t been any news about an official airdrop. There is no confirmed $RITUAL token, ticker, or way to get it. That being said, the project has active community programs like Discord role quests and ambassador activities that are similar to how projects that later rewarded contributors got people involved in the beginning."
     },
     {
       "slug": "worldie",
@@ -148,7 +132,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/worldie/",
       "officialUrl": "https://worldie.world",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Worldie",
       "officialHost": "worldie.world",
       "steps": [
@@ -193,7 +177,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/collector-crypt/",
       "officialUrl": "https://gacha.collectorcrypt.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Collector Crypt",
       "officialHost": "gacha.collectorcrypt.com",
       "steps": [
@@ -232,29 +216,54 @@
       "description": "The Collector Crypt airdrop is confirmed and recurring. The team runs a quarterly rewards program that distributes $CARDS to active users, and $CARDS holders receive separate monthly airdrops on top of that. The most recent quarterly distribution went live on June 14, 2026, releasing 15 million $CARDS."
     },
     {
-      "slug": "beezie",
-      "name": "Beezie",
-      "tagline": "Beezie operates an ongoing points and referral campaign rather than a traditional token airdrop. Users accumulate points",
+      "slug": "yakkamon",
+      "name": "Yakkamon",
+      "tagline": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Mon",
       "status": "potential",
       "categoryText": "gaming",
       "chains": [
-        "Base"
+        "Ronin"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/beezie/",
-      "officialUrl": "https://beezie.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
-      "rawTitle": "Beezie",
-      "officialHost": "beezie.com",
+      "sourceUrl": "https://airdrops.io/yakkamon/",
+      "officialUrl": "https://yakkamon.com",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
+      "rawTitle": "Yakkamon",
+      "officialHost": "yakkamon.com",
       "steps": [
         {
-          "title": "Apply to the Beezie Creator Program",
-          "body": "Fill out the Beezie Creator Program application form . Accepted creators may start with one-off campaigns or move into longer-term partnerships. Applicants who miss the first wave can still be picked later, since Beezie will keep reviewing applications as the program grows.",
-          "url": "/visit/9eb3/"
+          "title": "Sign Up at Yakkamon",
+          "body": "Create your account with an email address on the Yakkamon pre-registration page . No wallet is needed at this stage. Enter the referral code YAKKA-52UCFU during sign-up.",
+          "url": "/visit/w0b3/"
+        },
+        {
+          "title": "Nurture Your Egg Daily",
+          "body": "Tap your egg three times each day for +6 points. Daily streaks add bonuses, and a missed day resets the streak."
+        },
+        {
+          "title": "Connect Discord and X",
+          "body": "Link your Discord and X accounts for +10 points each. Helpful posts in the Discord earn extra points through community reactions, and the weekly share quest pays +20 points per week once X is connected."
+        },
+        {
+          "title": "Link and Verify a Wallet",
+          "body": "Connect a wallet and sign a message to prove ownership for +10 points. A verified wallet is also required for the free mint whitelist, so complete this well before October 1, 2026."
+        },
+        {
+          "title": "Refer Friends",
+          "body": "Each verified friend who joins earns you +30 points. Your first five referrals count instantly; after that, invitees must verify Discord and X and reach 100 points before the bonus lands. Multi-accounting gets filtered out on review."
+        },
+        {
+          "title": "Mint the Free Monster NFT on October 1",
+          "body": "Join the free mint of 10,000 Monster NFTs on Ronin using your verified wallet. It costs nothing beyond a small gas fee, is limited to one mint per trainer, and minting adds points to your leaderboard total."
+        },
+        {
+          "title": "Mint Your Yakkamon NFT",
+          "body": "Check which waves your Ronin wallet qualifies for on the whitelist checker Deposit 5 $FLOWER if you’re minting in Wave 2 or Wave 4 (see the $FLOWER deposit guide ) Connect your Ronin wallet to the Ronin Launchpad when your wave opens and mint, keeping some RON for gas",
+          "url": "/visit/ceb3/"
         }
       ],
-      "description": "Beezie operates an ongoing points and referral campaign rather than a traditional token airdrop. Users accumulate points through platform activity, which may convert to future token rewards or additional benefits as the project develops."
+      "description": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Monster NFTs when early access launches: ranks 1 to 1,000 get Legendary Monster NFTs and ranks 1,001 to 5,000 get Rare Monster NFTs. Distribution is automatic and based purely on points, never on sign-up order. The same leaderboard decides early access, with the top 100,000 trainers entering in waves."
     },
     {
       "slug": "blackboard",
@@ -269,7 +278,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/blackboard/",
       "officialUrl": "https://blackboard.fi",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Blackboard",
       "officialHost": "blackboard.fi",
       "steps": [
@@ -320,7 +329,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/deepbook/",
       "officialUrl": "https://waitlist.deepbook.tech",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Deepbook",
       "officialHost": "waitlist.deepbook.tech",
       "steps": [
@@ -372,7 +381,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/flop-labs/",
       "officialUrl": "https://flop.finance",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Flop Labs",
       "officialHost": "flop.finance",
       "steps": [
@@ -415,7 +424,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ammora/",
       "officialUrl": "https://ammora.org",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Ammora",
       "officialHost": "ammora.org",
       "steps": [
@@ -474,7 +483,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/canopy/",
       "officialUrl": "https://app.canopynetwork.org",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Canopy",
       "officialHost": "app.canopynetwork.org",
       "steps": [
@@ -499,7 +508,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/noise/",
       "officialUrl": "https://airdrops.io/noise/",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Noise",
       "steps": [],
       "description": "The Noise beta has ended. The Noise testnet closes on September 11 at 16:00 as the team prepares for the Mainnet launch. Users who purchased Credits during the testnet will receive rewards on Mainnet equal to the amount they spent."
@@ -517,7 +526,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/rep/",
       "officialUrl": "https://app.r3p.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Rep",
       "officialHost": "app.r3p.xyz",
       "steps": [
@@ -567,7 +576,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/satsuma/",
       "officialUrl": "https://satsuma.exchange",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Satsuma",
       "officialHost": "satsuma.exchange",
       "steps": [],
@@ -586,7 +595,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/voice/",
       "officialUrl": "https://voice.fun",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Voice",
       "officialHost": "voice.fun",
       "steps": [
@@ -646,7 +655,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/vangrid/",
       "officialUrl": "https://hub.vangrid.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Vangrid",
       "officialHost": "hub.vangrid.io",
       "steps": [
@@ -700,7 +709,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/laptop/",
       "officialUrl": "https://claim.laptoptoken.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Laptop",
       "officialHost": "claim.laptoptoken.com",
       "steps": [
@@ -750,7 +759,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/reels/",
       "officialUrl": "https://click.trkreels.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Reels",
       "officialHost": "click.trkreels.com",
       "steps": [
@@ -788,7 +797,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/entropy/",
       "officialUrl": "https://entropy.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Entropy",
       "officialHost": "entropy.io",
       "steps": [
@@ -834,7 +843,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/beldex/",
       "officialUrl": "https://quest.beldex.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Beldex",
       "officialHost": "quest.beldex.io",
       "steps": [
@@ -883,7 +892,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dualmint/",
       "officialUrl": "https://uptime.dualmint.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Dualmint",
       "officialHost": "uptime.dualmint.com",
       "steps": [
@@ -932,7 +941,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/gyndore/",
       "officialUrl": "https://app.gyndore.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Gyndore",
       "officialHost": "app.gyndore.com",
       "steps": [
@@ -973,7 +982,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/c8ntinuum/",
       "officialUrl": "https://app.c8ntinuum.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "C8ntinuum",
       "officialHost": "app.c8ntinuum.com",
       "steps": [
@@ -1031,7 +1040,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/amadeus-protocol/",
       "officialUrl": "https://amahub.ama.one",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Amadeus Protocol",
       "officialHost": "amahub.ama.one",
       "steps": [
@@ -1080,7 +1089,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/neosoul/",
       "officialUrl": "https://event.neosoul.ai",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Neosoul",
       "officialHost": "event.neosoul.ai",
       "steps": [
@@ -1128,7 +1137,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dow-protocol/",
       "officialUrl": "https://app.dowprotocol.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Dow Protocol",
       "officialHost": "app.dowprotocol.com",
       "steps": [
@@ -1178,7 +1187,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tbook/",
       "officialUrl": "https://engage.tbook.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Tbook",
       "officialHost": "engage.tbook.com",
       "steps": [
@@ -1225,7 +1234,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/omega/",
       "officialUrl": "https://olympus.omeganetwork.co",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Omega",
       "officialHost": "olympus.omeganetwork.co",
       "steps": [
@@ -1271,7 +1280,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/mint-io/",
       "officialUrl": "https://mint.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Mint Io",
       "officialHost": "mint.io",
       "steps": [
@@ -1317,7 +1326,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/hertzflow/",
       "officialUrl": "https://hertzflow.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Hertzflow",
       "officialHost": "hertzflow.xyz",
       "steps": [
@@ -1367,7 +1376,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nowa/",
       "officialUrl": "https://app.nowa.finance",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Nowa",
       "officialHost": "app.nowa.finance",
       "steps": [
@@ -1420,7 +1429,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sweep-finance/",
       "officialUrl": "https://sweep.finance",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Sweep Finance",
       "officialHost": "sweep.finance",
       "steps": [
@@ -1469,7 +1478,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wager-predict/",
       "officialUrl": "https://wagerpredict.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Wager Predict",
       "officialHost": "wagerpredict.com",
       "steps": [
@@ -1519,7 +1528,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/allox/",
       "officialUrl": "https://app.allox.ai",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Allox",
       "officialHost": "app.allox.ai",
       "steps": [
@@ -1569,7 +1578,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/push-chain/",
       "officialUrl": "https://portal.push.org",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Push Chain",
       "officialHost": "portal.push.org",
       "steps": [
@@ -1627,7 +1636,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/brownian/",
       "officialUrl": "https://brownian.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Brownian",
       "officialHost": "brownian.xyz",
       "steps": [
@@ -1677,7 +1686,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/perpl/",
       "officialUrl": "https://app.perpl.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Perpl",
       "officialHost": "app.perpl.xyz",
       "steps": [
@@ -1727,7 +1736,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/moonpay/",
       "officialUrl": "https://paybox.sh",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Moonpay",
       "officialHost": "paybox.sh",
       "steps": [
@@ -1773,7 +1782,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wheelx/",
       "officialUrl": "https://wheelx.fi",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Wheelx",
       "officialHost": "wheelx.fi",
       "steps": [
@@ -1823,7 +1832,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/fortune-foes/",
       "officialUrl": "https://fortunefoes.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Fortune Foes",
       "officialHost": "fortunefoes.com",
       "steps": [
@@ -1856,6 +1865,61 @@
       "description": "Fortune Foes has not announced a token, a ticker, or a TGE, so treat any token distribution as speculative, like the other pre-token projects. What exists today is a points program: Fortune Points set your allowlist tier, and your tier decides your mint discount when the collection opens."
     },
     {
+      "slug": "cambria",
+      "name": "Cambria",
+      "tagline": "Cambria has two confirmed reward tracks tied to $RSGP. The first is Loot Chests, which scores wallets on a Degen Score (",
+      "status": "potential",
+      "categoryText": "gaming",
+      "chains": [
+        "Ethereum",
+        "Abstract"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/cambria/",
+      "officialUrl": "https://lobby.cambria.gg",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
+      "rawTitle": "Cambria",
+      "officialHost": "lobby.cambria.gg",
+      "steps": [
+        {
+          "title": "Create Your Cambria Account",
+          "body": "Visit the Cambria lobby and set up an account. Use invite code 9df14149 at sign-up, which gives both you and the referrer a points boost on future activity.",
+          "url": "/visit/vpa3/"
+        },
+        {
+          "title": "Link Your Wallets",
+          "body": "Connect an EVM wallet, a Solana wallet, and an Abstract wallet from your account settings. Cambria checks activity across all three when it calculates your Degen and Chad Scores, so linking all of them matters even if you only plan to play on one chain."
+        },
+        {
+          "title": "Check Your Loot Chests Eligibility",
+          "body": "Once your wallets are linked, head to the claims dashboard to see your Degen Score and Chad Score, along with any Loot Chests you’ve already qualified for. Your Care Package size scales based on your degen score across: Solana trading activity (memecoins, DeFi, prediction markets) Polymarket trading activity Multi-chain risk-taking (perps, options, NFT trading) Time-weighted holdings across degen-adjacent assets Notable community participation"
+        },
+        {
+          "title": "Claim Your Loot Chests",
+          "body": "Claim available chests from the lobby within the 14-day claim window. Chests convert into $RSGP allocations, and anything tied to an eligible wallet is also sent automatically at TGE."
+        },
+        {
+          "title": "Fund Your Wallet for Gameplay",
+          "body": "Playing Dungeons and Gold Rush takes USDC or ETH for Risk Keys and in-game costs. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
+          "url": "/visit/rka3/"
+        },
+        {
+          "title": "Play Dungeons for Loot and Points",
+          "body": "Buy a Risk Key for about 0.1 USDC and run a dungeon. Extract successfully and you keep the loot; die inside and you lose the key’s stake. Loot you cash out at the Royal Treasury converts into Genesis Airdrop points on top of any in-game currency."
+        },
+        {
+          "title": "Earn Points Through Duel Arena and Side Activities",
+          "body": "Duel Arena lets you wager directly against other players in 1v1 fights, and side activities like Pit Fights, island fishing, and bar games generate smaller, steady point drips between bigger runs."
+        },
+        {
+          "title": "Mint a Royal Charter for Full Seasonal Earning",
+          "body": "During Gold Rush seasons, minting a Royal Charter unlocks full earning features and daily energy regeneration. Without one, you can still play, but your point accumulation is capped."
+        }
+      ],
+      "description": "Cambria has two confirmed reward tracks tied to $RSGP. The first is Loot Chests, which scores wallets on a Degen Score ( Solana trading, Polymarket positions, and perps activity over the past year) and a Chad Score (token holdings). Chests are claimable now through the lobby, and eligible allocations are also sent automatically to linked wallets at TGE. The second is the Genesis Airdrop, a points-based track built on Trinkets and Essence Points earned from gameplay, including points from past Gold Rush and Duel Arena seasons."
+    },
+    {
       "slug": "jupiter",
       "name": "Jupiter",
       "tagline": "The Jupiter airdrop is confirmed and has run in phases since January 2024. Jupuary 2026 was the third and final annual d",
@@ -1868,7 +1932,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/jupiter/",
       "officialUrl": "https://jup.ag",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Jupiter",
       "officialHost": "jup.ag",
       "steps": [
@@ -1917,7 +1981,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tread-fi/",
       "officialUrl": "https://app.tread.fi",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Tread Fi",
       "officialHost": "app.tread.fi",
       "steps": [
@@ -1973,7 +2037,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nado/",
       "officialUrl": "https://app.nado.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Nado",
       "officialHost": "app.nado.xyz",
       "steps": [
@@ -2030,7 +2094,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dymension/",
       "officialUrl": "https://portal.dymension.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Dymension",
       "officialHost": "portal.dymension.xyz",
       "steps": [
@@ -2055,7 +2119,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/limitless-prediction-markets/",
       "officialUrl": "https://limitless.exchange",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Limitless Prediction Markets",
       "officialHost": "limitless.exchange",
       "steps": [
@@ -2112,7 +2176,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grvt/",
       "officialUrl": "https://grvt.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Grvt",
       "officialHost": "grvt.io",
       "steps": [
@@ -2153,7 +2217,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sosovalue/",
       "officialUrl": "https://sosovalue.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Sosovalue",
       "officialHost": "sosovalue.com",
       "steps": [
@@ -2212,7 +2276,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/arcium/",
       "officialUrl": "https://rtg.arcium.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Arcium",
       "officialHost": "rtg.arcium.com",
       "steps": [
@@ -2258,7 +2322,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/doppler-finance/",
       "officialUrl": "https://app.doppler.finance",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Doppler Finance",
       "officialHost": "app.doppler.finance",
       "steps": [
@@ -2310,7 +2374,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solstice/",
       "officialUrl": "https://claim.solstice.finance",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Solstice",
       "officialHost": "claim.solstice.finance",
       "steps": [],
@@ -2331,7 +2395,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/basedapp/",
       "officialUrl": "https://basedfoundation.com",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Basedapp",
       "officialHost": "basedfoundation.com",
       "steps": [],
@@ -2350,7 +2414,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/o1-exchange/",
       "officialUrl": "https://o1.exchange",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "O1 Exchange",
       "officialHost": "o1.exchange",
       "steps": [
@@ -2400,7 +2464,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/infinex/",
       "officialUrl": "https://app.infinex.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Infinex",
       "officialHost": "app.infinex.xyz",
       "steps": [
@@ -2448,7 +2512,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ethena/",
       "officialUrl": "https://app.ethena.fi",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Ethena",
       "officialHost": "app.ethena.fi",
       "steps": [
@@ -2506,7 +2570,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/huma-finance/",
       "officialUrl": "https://claim.huma.finance",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Huma Finance",
       "officialHost": "claim.huma.finance",
       "steps": [
@@ -2557,7 +2621,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grass/",
       "officialUrl": "https://app.getgrass.io",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Grass",
       "officialHost": "app.getgrass.io",
       "steps": [
@@ -2587,7 +2651,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/plume-network/",
       "officialUrl": "https://claim-pp.plume.org",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
+      "fetchedAt": "2026-09-16T01:49:19.820Z",
       "rawTitle": "Plume Network",
       "officialHost": "claim-pp.plume.org",
       "steps": [
@@ -2598,25 +2662,6 @@
         }
       ],
       "description": "The Plume Season 2 airdrop allocates 150,000,000 PLUME for users who were active on mainnet. Eligibility is tied to Plume Points (PP), earned through staking, liquidity provision, trading volume, swaps, transactions, unique dApp interactions, and referrals. Point accumulation ended on March 31, 2026, and registration ran from April 29 to May 27, 2026. Wallets needed at least 10,000 PP by the deadline to qualify, and the airdrop excludes users in the United States and OFAC-sanctioned regions."
-    },
-    {
-      "slug": "nexus",
-      "name": "Nexus",
-      "tagline": "Nexus has not made an official airdrop announcement yet, but allocations can already be checked through the project’s ex",
-      "status": "potential",
-      "categoryText": "blockchain infrastructure",
-      "chains": [
-        "Own Chain"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/nexus/",
-      "officialUrl": "https://explorer.nexus.xyz",
-      "fetchedAt": "2026-09-15T13:12:11.986Z",
-      "rawTitle": "Nexus",
-      "officialHost": "explorer.nexus.xyz",
-      "steps": [],
-      "description": "Nexus has not made an official airdrop announcement yet, but allocations can already be checked through the project’s explorer. Visit the Nexus explorer , enter your wallet address in the search bar, and view any allocation tied to it."
     }
   ]
 }

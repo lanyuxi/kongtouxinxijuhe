@@ -16,6 +16,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
 import { RefreshBar } from '../components/RefreshBar';
+import type { SourceHealthFile } from '../lib/types';
 import { SafetyBar } from '../components/Onboarding';
 import { TodayTodos } from '../components/TodayTodos';
 import { CardSkeletonGrid } from '../components/Skeleton';
@@ -35,6 +36,7 @@ export function ListView({
   refreshMessage,
   changeDetails,
   percentiles,
+  health,
   onRefresh,
   onToggleFavorite,
   onClearAll,
@@ -48,6 +50,8 @@ export function ListView({
   refreshing: boolean;
   refreshMessage: string | null;
   changeDetails?: string[];
+  /** 数据源健康状态：供工具条展示「库内 vs 本轮」覆盖率差异（P2-2） */
+  health?: SourceHealthFile | null;
   /** 相对分位与参照样本量，用于给卡片补「在本批数据中的相对位置」 */
   percentiles?: Percentiles;
   onRefresh: () => void;
@@ -257,6 +261,8 @@ export function ListView({
         refreshing={refreshing}
         message={refreshMessage}
         changeDetails={changeDetails}
+        health={health}
+        totalProjects={projects.length}
       />
       <FilterBar
         filters={filters}
