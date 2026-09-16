@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T02:42:10.269Z",
-  "finished_at": "2026-09-16T02:42:22.359Z",
+  "started_at": "2026-09-16T03:12:09.522Z",
+  "finished_at": "2026-09-16T03:12:20.281Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T02:42:10.269Z",
+  "updated_at": "2026-09-16T03:12:09.522Z",
   "data_changed": true,
-  "change_summary": "变更 7 个：BitFi Basis 内容有更新；EigenCloud 内容有更新；K3 Capital 内容有更新",
+  "change_summary": "变更 32 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
   "change_details": [
-    "BitFi Basis 内容有更新",
-    "EigenCloud 内容有更新",
-    "K3 Capital 内容有更新",
-    "Liquid Collective 内容有更新",
-    "Spark Liquidity Layer 内容有更新"
+    "Aave V3 内容有更新",
+    "b14g 内容有更新",
+    "B2 Buzz 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 7,
+  "modified": 32,
   "removed": 0
 }
