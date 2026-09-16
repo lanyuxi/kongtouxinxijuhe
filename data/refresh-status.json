@@ -1,19 +1,18 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T09:42:10.837Z",
-  "finished_at": "2026-09-16T09:42:23.900Z",
+  "started_at": "2026-09-16T10:12:10.567Z",
+  "finished_at": "2026-09-16T10:12:26.240Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T09:42:10.837Z",
+  "updated_at": "2026-09-16T10:12:10.567Z",
   "data_changed": true,
-  "change_summary": "变更 4 个：GMX V2 Perps 内容有更新；Lombard LBTC 内容有更新；Stader 内容有更新",
+  "change_summary": "变更 3 个：mETH Protocol 内容有更新；StakeWise V3 内容有更新；Veda 内容有更新",
   "change_details": [
-    "GMX V2 Perps 内容有更新",
-    "Lombard LBTC 内容有更新",
-    "Stader 内容有更新",
-    "World Chain 内容有更新"
+    "mETH Protocol 内容有更新",
+    "StakeWise V3 内容有更新",
+    "Veda 内容有更新"
   ],
   "added": 0,
-  "modified": 4,
+  "modified": 3,
   "removed": 0
 }
