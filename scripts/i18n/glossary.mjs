@@ -156,7 +156,6 @@ export const HUMAN_FIX = {
     'TGE 时在 mint.io 的奖励页面领取你的份额，然后质押 $MNTD 激活 MINT 等级，赚取复利质押奖励并开始升级。',
   'Build one on-chain portfolio per day and share your portfolio card on X. This earns guaranteed Gem rewards from the $100,000 pool and stacks with the points you already earn per portfolio.':
     '每天创建一个链上投资组合，并在 X 上分享你的投资组合卡片。这能从 10 万美元奖池中获得保底的 Gems 奖励，并与每个投资组合本身的积分叠加。',
-  'Check In Daily and Spin the Wheel': '每天签到并转动幸运转盘',
   'Ranks run across seven tiers, from pilgrim at the bottom to the top 0.5% band. Once your badges are claimed, set the rank emoji on your REP profile and on Telegram, where it acts as the signal other users read before connecting with you.':
     '等级共七层，从最底层的 Pilgrim 到最高的 0.5% 层级。徽章领取后，请在 REP 个人资料和 Telegram 上设置排名表情，其他用户会先看到它再决定是否联系你。',
   'Claim and stake your $MNTD': '领取并质押你的 $MNTD',

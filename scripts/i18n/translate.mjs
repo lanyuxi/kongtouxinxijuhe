@@ -76,14 +76,30 @@ export function cacheKey(text) {
   return String(text ?? '').replace(/\\s+/g, ' ').trim();
 }
 
-/** 术语表与人工修正：统一站内口径 */
-export function applyGlossary(text) {
+/**
+ * 术语表与人工修正：统一站内口径。
+ *
+ * ⚠️ 入参约定（被独立审查连续抓到两次的根因，务必遵守）：
+ *   `text` 是**机器翻译的原始译文**（即 cache.zh.json 的值），
+ *   而 `HUMAN_FIX` 的键是**英文原文**。因此查表必须用 `origin`（英文原文），
+ *   不能拿译文去查 —— 那样永远落空，且不报错。
+ *
+ *   调用方（localizeText）手里同时有原文与译文，所以由它把 origin 传进来；
+ *   直接调用 applyGlossary 时若不传 origin，则只做纯文本规整（术语表 + 人称 + 空格），
+ *   不做人工修正 —— 这也让本函数在无原文场景下依然可安全使用。
+ */
+export function applyGlossary(text, origin) {
   let out = String(text ?? '').trim();
-  if (HUMAN_FIX[out]) out = HUMAN_FIX[out];
+  // 人工修正：按英文原文查表（修正表登记的就是「原文 → 正确译文」）
+  const key = origin === undefined ? undefined : cacheKey(origin);
+  if (key !== undefined && HUMAN_FIX[key]) return finalize(HUMAN_FIX[key]);
   for (const [re, to] of TERM_MAP) out = out.replace(re, to);
-  out = unifyPerson(out);
-  out = normalizeSpacing(out);
-  return out.trim();
+  return finalize(out);
+}
+
+/** 收尾规整：人称统一 + 空格规整，顺序固定 */
+function finalize(text) {
+  return normalizeSpacing(unifyPerson(String(text ?? ''))).trim();
 }
 
 /**
@@ -96,7 +112,8 @@ export function localizeText(text) {
   const raw = String(text ?? '').trim();
   if (!raw) return { zh: '', en: undefined };
   if (hasChinese(raw)) return { zh: raw, en: undefined };
-  const zh = applyGlossary(translateWithCache(raw));
+  // 顺序固定：先取机器译文，再把「英文原文」交给术语层做人工修正
+  const zh = applyGlossary(translateWithCache(raw), raw);
   if (!hasChinese(zh)) return { zh: raw, en: undefined };
   return { zh, en: raw };
 }

@@ -1,16 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T05:18:24.115Z",
-  "finished_at": "2026-09-16T05:18:36.741Z",
+  "started_at": "2026-09-16T05:26:45.104Z",
+  "finished_at": "2026-09-16T05:26:59.028Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T05:18:24.115Z",
+  "updated_at": "2026-09-16T05:26:45.104Z",
   "data_changed": true,
-  "change_summary": "变更 1 个：Laptop 状态：已确认 → 已结束",
+  "change_summary": "变更 9 个：Allox 内容有更新；Arcium 内容有更新；Blackboard 内容有更新",
   "change_details": [
-    "Laptop 状态：已确认 → 已结束"
+    "Allox 内容有更新",
+    "Arcium 内容有更新",
+    "Blackboard 内容有更新",
+    "Hertzflow 内容有更新",
+    "Huma Finance 内容有更新"
   ],
   "added": 0,
-  "modified": 1,
+  "modified": 9,
   "removed": 0
 }

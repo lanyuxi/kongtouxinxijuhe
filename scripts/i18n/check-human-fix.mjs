@@ -21,6 +21,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { HUMAN_FIX } from './glossary.mjs';
+import { loadCache, localizeText } from './translate.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE = JSON.parse(readFileSync(path.join(ROOT, 'scripts/i18n/cache.zh.json'), 'utf8'));
@@ -33,11 +34,23 @@ const CACHE = JSON.parse(readFileSync(path.join(ROOT, 'scripts/i18n/cache.zh.jso
  *    再去找键 —— 那样得到的是「已修正后的文本」，永远找不到键
  *    （这正是我第一次写体检脚本时踩的坑，会把有效修正误报成失效）。
  */
-export function auditHumanFix(cache, fixes) {
+export function auditHumanFix(cache, fixes, localize) {
   const total = Object.keys(fixes).length;
+  // 键必须命中缓存（= 必须是真实存在的英文原文）
   const missing = Object.keys(fixes).filter((k) => cache[k] === undefined);
-  const effective = total - missing.length;
-  return { total, effective, missing };
+  /**
+   * 端到端有效性：localizeText(英文原文) 必须等于登记的修正值。
+   *
+   * 只检查「键存在」是不够的 —— 实测出现过「键存在但修正不生效」：
+   * applyGlossary 拿译文去查英文键，永远落空，
+   * 而「键命中」检查全绿。两次被同一类缺陷绕过，因此这里改成端到端验证。
+   */
+  const ineffective = localize
+    ? Object.entries(fixes)
+        .filter(([k, v]) => localize(k) !== v)
+        .map(([k]) => k)
+    : [];
+  return { total, effective: total - ineffective.length, missing, ineffective };
 }
 
 /** 仍疑似错译的条目：只用于体检提示，不做自动修正（避免误改正确译文） */
@@ -45,7 +58,10 @@ const SUSPECT = [
   /您/,
   /宝石/,
   /奖励部分/,
-  /认领/,
+  // 「认领」本身是合法中文，只有跟在「索赔 / 认领 + 门户」这类机器翻译搭配里才是错译。
+  // 直接匹配裸词会把已修正文本（`确认领取交易`）误报成错译，
+  // 因此限定为固定搭配。
+  /认领(入口|门户|页|申请)/,
   /选项卡/,
   /小部件/,
   /燃料/,
@@ -72,20 +88,29 @@ const SUSPECT = [
 
 function main() {
   const strict = process.argv.includes('--strict');
-  const { total, effective, missing } = auditHumanFix(CACHE, HUMAN_FIX);
+  loadCache(CACHE);
+  const { total, effective, missing, ineffective } = auditHumanFix(
+    CACHE,
+    HUMAN_FIX,
+    (en) => localizeText(en).zh,
+  );
 
-  console.log(`[human-fix] 修正表共 ${total} 条，命中缓存 ${effective} 条`);
+  console.log(`[human-fix] 修正表共 ${total} 条，端到端生效 ${effective} 条`);
   if (missing.length) {
-    console.log('[human-fix] ✗ 以下键在缓存中不存在（等于死条目，错译不会被修正）：');
+    console.log('[human-fix] ✗ 以下键在缓存中不存在（不是任何真实英文原文）：');
     for (const k of missing) console.log(`    ${JSON.stringify(k)}`);
   }
+  if (ineffective.length) {
+    console.log('[human-fix] ✗ 以下修正已登记但**未生效**（localizeText 结果与登记值不一致）：');
+    for (const k of ineffective) console.log(`    ${JSON.stringify(k)}`);
+  }
 
-  // 已经在 HUMAN_FIX 里登记过的条目不再重复提示：
-  // 它们的缓存值本身就是「修正后的最终文本」，再扫一遍只会产生噪音
-  // （实测会把 5 条已修正的条目报成「疑似错译」，反而掩盖真正待修的部分）。
-  const fixedValues = new Set(Object.values(HUMAN_FIX));
+  // 已登记为 HUMAN_FIX 的英文原文，其对应译文会被自动修正，
+  // 因此不再重复提示 —— 否则会把「待修正的机器译文」刷成噪音，
+  // 反而掩盖真正尚未处理的错译。
+  const pending = new Set(Object.keys(HUMAN_FIX).map((k) => CACHE[k]).filter(Boolean));
   const suspects = Object.entries(CACHE).filter(
-    ([, zh]) => !fixedValues.has(zh) && SUSPECT.some((re) => re.test(zh)),
+    ([, zh]) => !pending.has(zh) && SUSPECT.some((re) => re.test(zh)),
   );
   if (suspects.length) {
     console.log(`\n[human-fix] 提示：缓存中仍有 ${suspects.length} 条疑似错译，可考虑登记修正`);
@@ -95,7 +120,7 @@ function main() {
     }
   }
 
-  const failed = missing.length > 0 || effective === 0;
+  const failed = missing.length > 0 || ineffective.length > 0 || effective === 0;
   if (failed) {
     console.log('\n[human-fix] 结论：不通过（修正表已失效，需按上面打印的键重新登记）');
     if (strict) process.exitCode = 1;

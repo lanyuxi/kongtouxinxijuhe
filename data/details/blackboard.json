@@ -22,7 +22,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/blackboard/",
-      "fetched_at": "2026-09-16T05:18:24.143Z"
+      "fetched_at": "2026-09-16T05:26:45.135Z"
     }
   ],
   "evidence": [
@@ -422,8 +422,8 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T05:18:24.143Z",
-  "last_changed_at": "2026-09-16T05:18:00.614Z",
+  "last_checked_at": "2026-09-16T05:26:45.135Z",
+  "last_changed_at": "2026-09-16T05:26:58.972Z",
   "sourcedSteps": [
     {
       "title": "Join the Blackboard Waitlist",

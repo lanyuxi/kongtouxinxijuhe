@@ -32,6 +32,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = JSON.parse(readFileSync(path.join(ROOT, 'scripts/i18n/cache.zh.json'), 'utf8'));
 loadCache(CACHE);
 
+/** 端到端本地化：英文原文 → 最终中文（供人工修正表的护栏使用） */
+const localize = (text: string) => localizeText(text).zh;
+
 describe('中文判定', () => {
   it('含汉字的文案视为已中文化', () => {
     expect(hasChinese('连接 MetaMask 钱包')).toBe(true);
@@ -96,16 +99,44 @@ describe('人称与标题规整', () => {
    * 键与缓存失配时（改术语表、重刷缓存后最容易发生），测试立刻失败。
    */
   it('人工修正表每一条都真实命中缓存（禁止退化为死代码）', () => {
-    const { total, effective, missing } = auditHumanFix(CACHE, HUMAN_FIX);
+    const { total, effective, missing } = auditHumanFix(CACHE, HUMAN_FIX, localize);
     expect(total).toBeGreaterThan(0);
     expect(missing).toEqual([]);
     expect(effective).toBe(total);
   });
 
-  it('人工修正确实改变了输出（不是「值等于键」的空转条目）', () => {
+  /**
+   * ⚠️ 第二轮审查补的护栏：**端到端生效**。
+   *
+   * 「键命中缓存」不够 —— 实测出现过键全部命中、但修正一条都不生效：
+   * `applyGlossary` 当时拿的是译文，而 HUMAN_FIX 的键是英文原文，
+   * 查表永远落空。加上这条后，两类失效（查不到 / 查到了没用）都会被拦住。
+   */
+  it('人工修正必须端到端生效（localizeText 的输出等于登记值）', () => {
+    const ineffective = Object.entries(HUMAN_FIX)
+      .filter(([k, v]) => localize(k) !== v)
+      .map(([k]) => k.slice(0, 60));
+    expect(ineffective).toEqual([]);
+  });
+
+  /**
+   * ⚠️ 该断言被独立审查 P1（第二轮）修正过，原实现比较对象写错了。
+   *
+   * 原实现比较 `v === k`（修正值 vs 英文原文），恒为 false —— 测不出空转。
+   * 真正的空转条件是 **`CACHE[k] === HUMAN_FIX[k]`**：
+   * 缓存里已经是修正后的文本时，`applyGlossary` 虽然能查到键，
+   * 但替换不产生任何变化，整张修正表等于运行期空转。
+   *
+   * 实测教训：第二轮审查时 13 条全部满足 `CACHE[k] === HUMAN_FIX[k]`，
+   * 也就是「专门为 P1-1 写的护栏」本身成了恒真断言 —— 同一个坑又挖了一遍。
+   * 现在与「键必须命中缓存」互相牵制：命中率要 100%，同时又不允许空转。
+   */
+  it('人工修正不得成为空转条目（译文经术语层处理后必须仍在变化）', () => {
+    // 空转 = 机器译文与最终输出一致，说明这条修正在运行期不产生任何变化。
+    // 判定必须覆盖「译文→最终」这一段，而不能只看键。
     const noop = Object.entries(HUMAN_FIX)
-      .filter(([k, v]) => v === k)
-      .map(([k]) => k.slice(0, 50));
+      .filter(([k, v]) => CACHE[k] === v)
+      .map(([k]) => k.slice(0, 60));
     expect(noop).toEqual([]);
   });
 
@@ -173,6 +204,28 @@ describe('缓存完整性', () => {
       .filter(([, zh]) => /\$\s/.test(String(zh)))
       .map(([en]) => en.slice(0, 50));
     expect(broken).toEqual([]);
+  });
+
+  /**
+   * ⚠️ 独立审查 P1-2（第二轮）的产物。
+   *
+   * 原断言只要 `zh.includes(symbol)` 就算通过，而 `$RSGP RSGP` 里
+   * 确实含有 `$RSGP` —— 符号被重复输出却测不出来，
+   * 实测漏掉 10 条（`$CNPY CNPY`、`$PST PST`、`$FLOP FLOP` 等）。
+   */
+  it('代币符号不得被重复输出', () => {
+    const dup = Object.entries(CACHE)
+      .filter(([, zh]) => /\$([A-Za-z][A-Za-z0-9]{1,12})\s+\1\b/.test(String(zh)))
+      .map(([en]) => en.slice(0, 50));
+    expect(dup).toEqual([]);
+  });
+
+  it('代币符号不得被中文量词粘连', () => {
+    // `$CARDS牌`、`$CARDS通过` 这类写法会让用户读成「$CARDS 牌」
+    const stuck = Object.entries(CACHE)
+      .filter(([, zh]) => /\$[A-Za-z][A-Za-z0-9]{1,12}[\u4e00-\u9fa5]/.test(String(zh)))
+      .map(([en]) => en.slice(0, 50));
+    expect(stuck).toEqual([]);
   });
 
   it('译文里不出现专有名词被音译 / 意译的已知错译', () => {
