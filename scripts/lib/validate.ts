@@ -10,6 +10,7 @@
  */
 
 import type { AirdropProject } from '../../src/lib/types';
+import { classifyNonAirdrop } from './non-airdrop';
 
 /**
  * 中文判定：只要含汉字即视为中文文案。
@@ -27,7 +28,16 @@ export interface ValidationResult {
   warnings: string[];
 }
 
-export function validateProjects(projects: AirdropProject[]): ValidationResult {
+export function validateProjects(
+  projects: AirdropProject[],
+  /**
+   * 人工档案登记的 slug。这些项目已被人工核实是真实空投项目，
+   * 即便名字命中交易所 / 桥 / 质押衍生品的排除规则也应放行
+   * （例如 `Gate`：gate.io 同时是交易所，也是项目池）。
+   * 默认空集合 = 不豁免任何条目，保证门禁本身不会静默失效。
+   */
+  knownProfileSlugs: Set<string> = new Set(),
+): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
 
@@ -90,12 +100,15 @@ export function validateProjects(projects: AirdropProject[]): ValidationResult {
       }
     }
 
-    // 信任不变量：模板教程（guide_source==='template'）不得自称已核实。
-    // 模板步骤每轮都会重新生成，若这里放行，前端会重新出现绿色「✓ 来源已核实」。
-    if (p.guide_source === 'template') {
+    // 信任不变量：模板 / 第三方整理的教程不得自称已核实。
+    // 模板步骤每轮都会重新生成；第三方步骤来自聚合站编辑、不是官方 HowTo。
+    // 两者若放行，前端都会重新出现绿色「✓ 来源已核实」。
+    if (p.guide_source === 'template' || p.guide_source === 'third_party') {
       const fake = p.guide.find((g) => g.source_verified);
       if (fake) {
-        errors.push(`${p.slug}: 模板教程的步骤 ${fake.step} 谎称「来源已核实」`);
+        errors.push(
+          `${p.slug}: ${p.guide_source === 'template' ? '模板' : '第三方整理'}教程的步骤 ${fake.step} 谎称「来源已核实」`,
+        );
       }
     }
 
@@ -106,6 +119,35 @@ export function validateProjects(projects: AirdropProject[]): ValidationResult {
     // （例如误把 guide.description 也裁掉，详情页会缺文案但不报错）
     if (!p.guide.some((step) => !!step.description)) {
       warnings.push(`${p.slug}: 教程步骤缺少描述文案`);
+    }
+
+    // ---- 非空投条目门禁（P0-1 复核）----
+    //
+    // 为什么必须放在 validate 而不是只靠 prune：
+    //   prune 是**运行时单点**，而且它只在「来源健康」时才跑；
+    //   一旦抓取抖动导致 canPrune 为 false，脏数据就会原样落盘，
+    //   直到下一轮健康抓取才可能被清掉 —— 中间这段时间它就在线上。
+    //   实测（本轮复核）：`validate` 里**没有**这条断言，
+    //   审查员当时明确提过，但一直没补上。
+    //
+    // 规则与抓取侧共用同一份定义（scripts/lib/non-airdrop.ts），
+    // 避免「代码里写了规则、库里没应用」的断层。
+    // 人工档案登记过的项目豁免（例如 Gate：既是交易所也是项目池）。
+    if (!knownProfileSlugs.has(p.slug)) {
+      const verdict = classifyNonAirdrop({
+        name: p.name,
+        categoryText: p.sources?.some((s) => s.name === 'DefiLlama') ? p.category : undefined,
+        // 与 prune 同口径：弱类目必须叠加「无空投叙事证据」才排除
+        status: p.status,
+        tagline: p.tagline,
+        tasks: p.tasks,
+        requirements: p.requirements,
+      });
+      if (verdict.excluded) {
+        errors.push(
+          `${p.slug}: 命中非空投规则（${verdict.reason ?? '未知'}），不属于空投项目，不得发布`,
+        );
+      }
     }
 
     // ---- 中文覆盖不变量（issue #28）----

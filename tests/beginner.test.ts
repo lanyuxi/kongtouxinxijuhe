@@ -277,6 +277,33 @@ describe('教程来源标注', () => {
     }
   });
 
+
+  it('全部步骤都没有官方来源时不算「真实教程」（P1-2 误判修正）', () => {
+    // 实测事故：聚合站自己写的推广流程（夹着 airdrops.io/goto/bybit/ 这类
+    // 返佣跳转）曾被判成官方 HowTo，项目因此拿到 guide_source='sourced'，
+    // 绕开了「模板教程最高只能到 B」的等级上限 —— 28 个项目因此
+    // 显示「建议参与」，而教程里是跨链组件的广告段。
+    const g = buildGuide(
+      makeProject({
+        official: { website: 'https://demo.xyz' },
+        sourcedSteps: [
+          { title: 'A', body: 'a' },
+          { title: 'B', body: 'b' },
+          { title: 'C', body: 'c' },
+          { title: 'D', body: 'd' },
+        ],
+      }),
+    );
+    // ⚠️ 三档口径（2026-09-16 独立审查后细化）：
+    //    有实质步骤但一条都追溯不到官方 → `third_party`（第三方整理），
+    //    而不是 `template`（通用流程示意）。
+    //    理由：这几条步骤是聚合站编辑手写的、与该项目相关的内容，
+    //    说成「平台编的通用流程」不准确（实测 308 条真内容曾被这样降级）。
+    //    注意 third_party 的**等级上限与 template 一致**（最高 B），
+    //    P1-2 的修复不会被新档位绕开 —— 见 score.ts 的 gradeOfWithGuideTrust。
+    expect(g.source, '有实质步骤但无官方链接时算「第三方整理」').toBe('third_party');
+  });
+
   it('真实步骤（sourced）只有带自身来源链接才标为已核实', () => {
     const g = buildGuide(
       makeProject({
@@ -288,14 +315,29 @@ describe('教程来源标注', () => {
         ],
       }),
     );
-    expect(g.source).toBe('sourced');
-    // 平台自己插入的安全首步不是官方步骤，同样不得自称已核实
-    expect(g.steps[0].source_verified).toBe(false);
-    const noUrl = g.steps.find((s) => s.title === 'C');
-    expect(noUrl?.source_verified).toBe(false);
-    const withUrl = g.steps.find((s) => s.title === 'A');
-    expect(withUrl?.source_verified).toBe(true);
-    expect(withUrl?.source_url).toBe('https://demo.xyz/a');
+    // ⚠️ P1-2 收紧后：判定「真实教程」看的是**可追溯步骤条数 >= 3**，
+    //    这里 3 条里只有 A / B 两条带官方链接，因此不算 sourced。
+    //    但它也不是 template —— 步骤有实质内容，只是来源是第三方，
+    //    因此如实判为 `third_party`，等级上限同样封在 B。
+    expect(g.source).toBe('third_party');
+    // C 本身无来源链接，即便在 sourced 形态下也不得自称已核实：
+    // 这里改用 4 条（3 条带官方链接）来验证「逐条如实标注」这条不变量。
+    const g2 = buildGuide(
+      makeProject({
+        official: { website: 'https://demo.xyz' },
+        sourcedSteps: [
+          { title: 'A', body: 'a', url: 'https://demo.xyz/a' },
+          { title: 'B', body: 'b', url: 'https://demo.xyz/b' },
+          { title: 'C', body: 'c' },
+          { title: 'D', body: 'd', url: 'https://demo.xyz/d' },
+        ],
+      }),
+    );
+    expect(g2.source).toBe('sourced');
+    expect(g2.steps[0].source_verified).toBe(false);
+    expect(g2.steps.find((s) => s.title === 'C')?.source_verified).toBe(false);
+    expect(g2.steps.find((s) => s.title === 'A')?.source_url).toBe('https://demo.xyz/a');
+    expect(g2.steps.find((s) => s.title === 'A')?.source_verified).toBe(true);
   });
 });
 

@@ -320,8 +320,26 @@ export interface AirdropProject {
    *   模板教程看起来与真实教程完全一样（同样有步骤号、耗时、完成标准），
    *   用户无法自行分辨。若不标注，就会把通用流程误当成官方要求，
    *   既误导用户，也违背「教程必须可追溯」这条不变量。
+   *
+   * 三档语义（`third_party` 为 2026-09-16 独立审查后新增）：
+   *   · `sourced`     步骤带**项目官方域名**的来源链接，可追溯到官方页面；
+   *   · `third_party` 步骤是聚合站编辑手写的**项目特异性**步骤
+   *                   （「每天玩 Sweepbird」「持有 $CARDS 每月空投」），
+   *                   有实质内容但**不是官方 HowTo**；
+   *   · `template`    没有任何项目特异性，是「参与前准备 → 进入官方页面 →
+   *                   连接钱包」这类任何项目都适用的通用流程。
+   *
+   * ⚠️ 新增 `third_party` 的原因（审查实测）：
+   *   上一版把「没有官方链接」一律归为 `template`，于是 308 条
+   *   **确实有项目特异性**的步骤被一起降级成「流程示意（非官方步骤）」，
+   *   用户会以为这些步骤是平台凭空编的通用流程，其实是聚合站编辑写的内容。
+   *   既不准确、也丢信息。
+   *
+   * ⚠️ 但 `third_party` 的**等级上限与 template 一致**（最高 B）：
+   *   P1-2 的修复不能被它绕开 —— 「没有官方步骤就不该推动用户投入时间」
+   *   这条结论与来源是聚合站还是模板无关。
    */
-  guide_source: 'sourced' | 'template';
+  guide_source: 'sourced' | 'third_party' | 'template';
   faq: FaqItem[];
   risks: string[];
 
@@ -441,7 +459,7 @@ export interface ListProject {
   cost: CostModel;
   recommendation: Recommendation;
   guide: ListGuideStep[];
-  guide_source: 'sourced' | 'template';
+  guide_source: 'sourced' | 'third_party' | 'template';
   created_at: string;
   /**
    * 首次被本系统收录的时间（P2-1）。

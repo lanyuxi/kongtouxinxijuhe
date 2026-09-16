@@ -45,6 +45,11 @@ export function auditHumanFix(cache, fixes, localize) {
    * applyGlossary 拿译文去查英文键，永远落空，
    * 而「键命中」检查全绿。两次被同一类缺陷绕过，因此这里改成端到端验证。
    */
+  // 入参是**英文原文**（修正表的键）。
+  // ⚠️ 曾经改成过 `cache[k]`（机器译文）来「更贴近 applyGlossary 的入参」，
+  //    结果是这个脚本反过来推动缓存被改写成修正值 —— 与「缓存必须存机器译文」
+  //    冲突，触发 75 条自指条目（P2-4 收口时的真实事故）。
+  //    现在统一以英文原文为键、机器译文只存在于缓存里，两边职责互不重叠。
   const ineffective = localize
     ? Object.entries(fixes)
         .filter(([k, v]) => localize(k) !== v)
@@ -54,14 +59,26 @@ export function auditHumanFix(cache, fixes, localize) {
 }
 
 /** 仍疑似错译的条目：只用于体检提示，不做自动修正（避免误改正确译文） */
+/**
+ * 仍疑似错译的条目：只用于体检提示，不做自动修正（避免误改正确译文）。
+ *
+ * ⚠️ 检测对象是**管线最终输出**（localizeText 的结果），不是缓存原值 ——
+ *    只看缓存原值会把「已登记修正、运行期完全正常」的条目反复提示成待修，
+ *    噪音反而掩盖真正没修的那些。
+ *
+ * ⚠️ 本数组必须**无重复**（独立审查指出）：曾出现同一模式登记两次、
+ *    以及 `任务板` 与上方已有的模式重复。功能上 `some()` 无影响，
+ *    但会让「监督覆盖面」虚高 —— 与 `HUMAN_FIX` 自指、`TERM_MAP` 恒等
+ *    同一类「看起来在工作」的形态。测试里有断言锁死不重复。
+ */
 const SUSPECT = [
+  // ---- 人称 / 明显错译 ----
   /您/,
   /宝石/,
   /奖励部分/,
   // 「认领」本身是合法中文，只有跟在「索赔 / 认领 + 门户」这类机器翻译搭配里才是错译。
-  // 直接匹配裸词会把已修正文本（`确认领取交易`）误报成错译，
-  // 因此限定为固定搭配。
-  /认领(入口|门户|页|申请)/,
+  // 直接匹配裸词会把已修正文本（`确认领取交易`）误报成错译，因此限定为固定搭配。
+  /认领(?=入口|门户|页|申请)/,
   /选项卡/,
   /小部件/,
   /燃料/,
@@ -84,6 +101,20 @@ const SUSPECT = [
   /朝圣者/,
   // 货币符号后跟空格 = 代币符号被译坏（`$ 卡`、`$ 张卡片`）的头号特征
   /\$\s/,
+  // ---- 2026-09-16 P1-5：把「已中文化但译得不准」也纳入监督 ----
+  //
+  // 旧词表只盯「明显坏掉的写法」（您 / 宝石 / 背包…），
+  // 于是「portal → 门户」这类**看起来像正常中文**的错译完全不在监督范围内：
+  // 页面上没有一处英文，校验全绿，但用户按「门户」去项目页面里找不到入口 ——
+  // 实测 36 条教程正文都是这么写的。
+  // 现在把「术语表已明确要求保留英文原样」的词一并列进来。
+  /门户/,
+  /羽毛/,
+  /卡牌/,
+  /气体/,
+  /笔记本电脑/,
+  /智能链/,
+  /推荐 XP/,
 ];
 
 function main() {
@@ -92,7 +123,7 @@ function main() {
   const { total, effective, missing, ineffective } = auditHumanFix(
     CACHE,
     HUMAN_FIX,
-    (en) => localizeText(en).zh,
+    (raw) => localizeText(raw).zh,
   );
 
   console.log(`[human-fix] 修正表共 ${total} 条，端到端生效 ${effective} 条`);
@@ -114,9 +145,17 @@ function main() {
    * 会被 `/\u5e01\u5b89/` 误判为交易所名音译。先把该词替换成不含子串的说法再检测。
    */
   const sanitize = (text) => String(text).split('加密货币安全').join('加密资产合规');
-  const suspects = Object.entries(CACHE).filter(
-    ([, zh]) => !pending.has(zh) && SUSPECT.some((re) => re.test(sanitize(zh))),
-  );
+  /**
+   * ⚠️ 检测对象是**管线最终输出**（localizeText 的结果），不是缓存原值。
+   *    只看缓存原值会把「已经登记过修正、运行期完全正常」的条目
+   *    反复提示成待修，噪音反而掩盖真正没修的那些。
+   *    改成看输出后，「已修好的」自动从提示里消失，
+   *    剩下的每一条都是真的还没处理。
+   */
+  const localizeOne = (en) => localizeText(en).zh;
+  const suspects = Object.entries(CACHE)
+    .filter(([en]) => SUSPECT.some((re) => re.test(sanitize(localizeOne(en)))))
+    .map(([en, zh]) => [en, zh]);
   if (suspects.length) {
     console.log(`\n[human-fix] 提示：缓存中仍有 ${suspects.length} 条疑似错译，可考虑登记修正`);
     for (const [en, zh] of suspects.slice(0, 30)) {
@@ -125,7 +164,99 @@ function main() {
     }
   }
 
-  const failed = missing.length > 0 || ineffective.length > 0 || effective === 0;
+  /**
+   * 自指检查（P2-4 收口的关键护栏）。
+   *
+   * 修正表里 `CACHE[key] === HUMAN_FIX[key]` 意味着：
+   * 缓存里存的已经是修正值，applyGlossary 查得到键、但换出来还是同一句话 ——
+   * 整张表在运行期空转。第二轮独立审查正是被这个形态绕过一次，
+   * 而当时所有断言依然全绿。
+   *
+   * 出现原因通常是「批量脚本把修正值误写回了缓存」——
+   * 本轮收口过程中真实发生过（75 条全部自指）。
+   */
+  const selfRef = Object.keys(HUMAN_FIX).filter((k) => CACHE[k] === HUMAN_FIX[k]);
+  if (selfRef.length) {
+    console.log(`\n[human-fix] ✗ 以下 ${selfRef.length} 条在缓存里已经是修正值（自指空转）：`);
+    for (const k of selfRef) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
+    console.log('    修法：把 cache.zh.json 里该键的值改回**机器译文**，修正只登记在本表。');
+  }
+
+  /**
+   * 「修正值必须含中文」检查（独立审查 P3）。
+   *
+   * 为什么单列一条：`auditHumanFix` 用 `localizeText(k) !== v` 判有效性，
+   * 而 `applyGlossary` 会**原样返回** HUMAN_FIX 的值 —— 于是
+   * 「把某条修正值改成它自己的英文原文」时，两边自洽、恒等通过，
+   * `validate` 全绿。实测该变异下只有 vitest 会红，而
+   * `npm run validate` 才是文档里让大家跑的那条命令。
+   * 因此把这条从 vitest 同步进体检脚本。
+   */
+  const noChinese = Object.entries(HUMAN_FIX)
+    .filter(([, v]) => !/[\u4e00-\u9fff]/.test(String(v)))
+    .map(([k]) => k);
+  if (noChinese.length) {
+    console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${noChinese.length} \u6761\u4fee\u6b63\u503c\u672c\u8eab\u4e0d\u542b\u4e2d\u6587\uff08\u7b49\u4e8e\u6ca1\u4fee\u6b63\uff09\uff1a`);
+    for (const k of noChinese) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
+  }
+
+  /**
+   * 修正值本身的「坏中文」检查（跨词边界拼坏）。
+   *
+   * 实测事故：75 条批量改写把 `确认索赔交易` 经术语表跑过一遍后
+   * 得到的「确领取取交易」直接登记进了 HUMAN_FIX ——
+   * 修正表成了坏文案的持久化仓库，而且因为「值是中文」，
+   * 所有 hasChinese 类门禁全绿。
+   * 这里只做**确定性**的坏模式检测，不做语义判断。
+   */
+  const BROKEN_PATTERNS = [/取取/, /确认领取交易交易/, /领取领取/];
+  /**
+   * ⚠️ 通用重复字检测（独立审查建议，比字面量黑名单更抗未来改动）。
+   *
+   * 上面 3 个是字面量黑名单，按当前 TERM_MAP 实测该类缺陷产出的坏字符
+   * **恰好都是「取取」**，所以覆盖是够的。但下一个人若加一条新规则，
+   * 坏字符可能换形态（`代币币`、`积分分`…）—— 黑名单就漏了。
+   *
+   * 判据：把英文原文喂进管线后，**输出出现了「输入没有、输出却有」的
+   * 连续重复汉字**，即视为跨词边界拼坏。干净输入下当前 TERM_MAP
+   * 不产生任何重复字，因此同样零误报。
+   */
+  const dupInOutput = Object.keys(HUMAN_FIX).filter((k) => {
+    let out;
+    try {
+      out = localizeText(k).zh;
+    } catch {
+      return false;
+    }
+    const m = String(out).match(/([\u4e00-\u9fff])\1/);
+    if (!m) return false;
+    // 输入本身就有的重复（如原文含「哈哈」）不算拼坏
+    return !String(k).includes(m[0]);
+  });
+
+  const brokenValues = Object.entries(HUMAN_FIX)
+    .filter(([, v]) => BROKEN_PATTERNS.some((re) => re.test(String(v))))
+    .map(([k]) => k);
+  if (brokenValues.length) {
+    console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${brokenValues.length} \u6761\u4fee\u6b63\u503c\u542b\u62fc\u574f\u7684\u4e2d\u6587\uff1a`);
+    for (const k of brokenValues) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
+  }
+  if (dupInOutput.length) {
+    console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${dupInOutput.length} \u6761\u7ecf\u7ba1\u7ebf\u540e\u65b0\u589e\u91cd\u590d\u5b57\uff08\u8de8\u8bcd\u8fb9\u754c\u62fc\u574f\uff09\uff1a`);
+    for (const k of dupInOutput) {
+      console.log(`    原文：${JSON.stringify(k.slice(0, 60))}`);
+      console.log(`    输出：${JSON.stringify(localizeText(k).zh.slice(0, 60))}`);
+    }
+  }
+
+  const failed =
+    missing.length > 0 ||
+    brokenValues.length > 0 ||
+    dupInOutput.length > 0 ||
+    ineffective.length > 0 ||
+    selfRef.length > 0 ||
+    noChinese.length > 0 ||
+    effective === 0;
   if (failed) {
     console.log('\n[human-fix] 结论：不通过（修正表已失效，需按上面打印的键重新登记）');
     if (strict) process.exitCode = 1;

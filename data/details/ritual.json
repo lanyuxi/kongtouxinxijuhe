@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/ritual/",
-      "fetched_at": "2026-09-16T07:12:11.012Z"
+      "fetched_at": "2026-09-16T07:18:55.548Z"
     }
   ],
   "evidence": [
@@ -45,9 +45,9 @@
   ],
   "scores": {
     "authenticity": 23,
-    "value": 59,
+    "value": 50,
     "risk": "medium",
-    "grade": "A",
+    "grade": "C",
     "authenticityItems": [
       {
         "key": "authenticity.website",
@@ -174,9 +174,9 @@
       {
         "key": "value.guide_trust",
         "label": "教程可信度",
-        "value": 9,
+        "value": 0,
         "max": 12,
-        "reason": "教程来自官方 HowTo，但仅 4 步，信息量有限"
+        "reason": "教程由第三方整理，共 4 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性"
       }
     ],
     "riskItems": [
@@ -248,9 +248,9 @@
     "summary": "低成本、纯时间投入型项目，适合新手练手。"
   },
   "recommendation": {
-    "grade": "A",
-    "action": "participate",
-    "summary": "值得参与，建议先完成低成本任务，再决定是否追加投入。"
+    "grade": "C",
+    "action": "observe",
+    "summary": "优先级较低，可先收藏关注后续变化。"
   },
   "guide": [
     {
@@ -277,15 +277,14 @@
       "needs_signature": true,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "/visit/ed93/",
-      "source_verified": true,
+      "source_verified": false,
       "original_title": "Join the Ritual Discord",
       "original_description": "Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated."
     },
     {
       "step": 3,
       "title": "完成社区任务",
-      "description": "访问 Ritual 任务门户并使用你的 Discord 帐户登录。完成可用任务即可获得 XP 和角色升级。当前的任务类别包括： 社交任务 Discord 参与和邀请承诺部分提交（如果开放 - 激活时提交唯一文本）",
+      "description": "访问 Ritual 任务 portal 并使用你的 Discord 帐户登录。完成可用任务即可获得 XP 和角色升级。当前的任务类别包括： 社交任务 Discord 参与和邀请承诺板块（如果开放 - 激活时提交唯一文本）",
       "official_url": "https://ritualtrials.domino.page",
       "minutes": 3,
       "cost_usd": 0,
@@ -293,8 +292,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_url": "/visit/dd93/",
-      "source_verified": true,
+      "source_verified": false,
       "original_title": "Complete Community Quests",
       "original_description": "Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)"
     },
@@ -314,7 +312,7 @@
       "original_description": "You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role."
     }
   ],
-  "guide_source": "sourced",
+  "guide_source": "third_party",
   "faq": [
     {
       "q": "这个空投确认了吗？",
@@ -357,25 +355,23 @@
   ],
   "created_at": "2026-09-16T01:15:42.247Z",
   "discovered_at": "2026-09-16T01:15:42.247Z",
-  "last_checked_at": "2026-09-16T07:12:11.012Z",
-  "last_changed_at": "2026-09-16T05:29:37.095Z",
+  "last_checked_at": "2026-09-16T07:18:55.548Z",
+  "last_changed_at": "2026-09-16T06:44:34.976Z",
   "sourcedSteps": [
     {
       "title": "Join the Ritual Discord",
-      "body": "Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.",
-      "url": "/visit/ed93/"
+      "body": "Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated."
     },
     {
       "title": "Complete Community Quests",
-      "body": "Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)",
-      "url": "/visit/dd93/"
+      "body": "Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)"
     },
     {
       "title": "Earn and Upgrade Discord Roles",
       "body": "You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role."
     }
   ],
-  "digest": "{\"category\":\"AI\",\"chains\":[\"Own Chain\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":12},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://ritualtrials.domino.page\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/ritual/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"根据目前信息暂不需要。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-16T01:15:42.247Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"前往 Ritual 的 Discord 并完成入职。你需要一个经过验证的 Discord 账户。 Discord 是分配角色和限制测试网访问的地方。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"original_description\":\"Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.\",\"original_title\":\"Join the Ritual Discord\",\"risk\":\"low\",\"source_url\":\"/visit/ed93/\",\"source_verified\":true,\"step\":2,\"title\":\"加入 RitualDiscord\"},{\"cost_usd\":0,\"description\":\"访问 Ritual 任务门户并使用你的 Discord 帐户登录。完成可用任务即可获得 XP 和角色升级。当前的任务类别包括： 社交任务 Discord 参与和邀请承诺部分提交（如果开放 - 激活时提交唯一文本）\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"original_description\":\"Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)\",\"original_title\":\"Complete Community Quests\",\"risk\":\"low\",\"source_url\":\"/visit/dd93/\",\"source_verified\":true,\"step\":3,\"title\":\"完成社区任务\"},{\"cost_usd\":0,\"description\":\"你可以通过积极参与 Discord 来提升你的角色。该团队跟踪仪式师、狂热者、召唤师、光辉仪式师和 Synful 誓言等角色。更高的角色让你可以优先访问测试网。请密切关注特定于你角色的任务的渠道和公告。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"original_description\":\"You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role.\",\"original_title\":\"Earn and Upgrade Discord Roles\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"赢得并升级 Discord 角色\"}],\"guide_source\":\"sourced\",\"id\":\"ritual\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Ritual\",\"official\":{\"website\":\"https://ritualtrials.domino.page\"},\"recommendation\":{\"action\":\"participate\",\"grade\":\"A\",\"summary\":\"值得参与，建议先完成低成本任务，再决定是否追加投入。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":23,\"authenticityItems\":[{\"evidenceUrl\":\"https://ritualtrials.domino.page\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目尚未确认空投，官方本就没有公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"A\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":59,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 12 分钟，共 4 个步骤\",\"value\":15},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自官方 HowTo，但仅 4 步，信息量有限\",\"value\":9}]},\"slug\":\"ritual\",\"sourcedSteps\":[{\"body\":\"Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.\",\"title\":\"Join the Ritual Discord\",\"url\":\"/visit/ed93/\"},{\"body\":\"Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)\",\"title\":\"Complete Community Quests\",\"url\":\"/visit/dd93/\"},{\"body\":\"You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role.\",\"title\":\"Earn and Upgrade Discord Roles\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/ritual/\"}],\"status\":\"potential\",\"tagline\":\"目前还没有任何关于官方空投的消息。\",\"tagline_en\":\"There hasn’t been any news about an official airdrop.\",\"tasks\":[\"完成注册\",\"试用产品\"]}",
+  "digest": "{\"category\":\"AI\",\"chains\":[\"Own Chain\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":12},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://ritualtrials.domino.page\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/ritual/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"根据目前信息暂不需要。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-16T01:15:42.247Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"前往 Ritual 的 Discord 并完成入职。你需要一个经过验证的 Discord 账户。 Discord 是分配角色和限制测试网访问的地方。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"original_description\":\"Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.\",\"original_title\":\"Join the Ritual Discord\",\"risk\":\"low\",\"source_verified\":false,\"step\":2,\"title\":\"加入 RitualDiscord\"},{\"cost_usd\":0,\"description\":\"访问 Ritual 任务 portal 并使用你的 Discord 帐户登录。完成可用任务即可获得 XP 和角色升级。当前的任务类别包括： 社交任务 Discord 参与和邀请承诺板块（如果开放 - 激活时提交唯一文本）\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"original_description\":\"Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)\",\"original_title\":\"Complete Community Quests\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"完成社区任务\"},{\"cost_usd\":0,\"description\":\"你可以通过积极参与 Discord 来提升你的角色。该团队跟踪仪式师、狂热者、召唤师、光辉仪式师和 Synful 誓言等角色。更高的角色让你可以优先访问测试网。请密切关注特定于你角色的任务的渠道和公告。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ritualtrials.domino.page\",\"original_description\":\"You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role.\",\"original_title\":\"Earn and Upgrade Discord Roles\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"赢得并升级 Discord 角色\"}],\"guide_source\":\"third_party\",\"id\":\"ritual\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Ritual\",\"official\":{\"website\":\"https://ritualtrials.domino.page\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"C\",\"summary\":\"优先级较低，可先收藏关注后续变化。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":23,\"authenticityItems\":[{\"evidenceUrl\":\"https://ritualtrials.domino.page\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目尚未确认空投，官方本就没有公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"C\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":50,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 12 分钟，共 4 个步骤\",\"value\":15},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 4 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"ritual\",\"sourcedSteps\":[{\"body\":\"Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.\",\"title\":\"Join the Ritual Discord\"},{\"body\":\"Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)\",\"title\":\"Complete Community Quests\"},{\"body\":\"You can move up in your role by being active on Discord. The team keeps track of roles like Ritualist, Zealot, Summoner, Radiant Ritualist, and Pledged to Synful. Higher roles give you priority access to the testnet. Keep an eye on channels and announcements for tasks that are specific to your role.\",\"title\":\"Earn and Upgrade Discord Roles\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/ritual/\"}],\"status\":\"potential\",\"tagline\":\"目前还没有任何关于官方空投的消息。\",\"tagline_en\":\"There hasn’t been any news about an official airdrop.\",\"tasks\":[\"完成注册\",\"试用产品\"]}",
   "first_seen_at": "2026-09-16T01:15:42.247Z",
   "tagline_en": "There hasn’t been any news about an official airdrop."
 }

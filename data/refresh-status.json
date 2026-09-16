@@ -1,19 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T07:12:10.937Z",
-  "finished_at": "2026-09-16T07:12:24.878Z",
+  "started_at": "2026-09-16T07:18:55.499Z",
+  "finished_at": "2026-09-16T07:19:07.809Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T07:12:10.937Z",
-  "data_changed": true,
-  "change_summary": "变更 4 个：B2 Buzz 内容有更新；mETH Protocol 内容有更新；Rocket Pool 内容有更新",
-  "change_details": [
-    "B2 Buzz 内容有更新",
-    "mETH Protocol 内容有更新",
-    "Rocket Pool 内容有更新",
-    "Stader 内容有更新"
-  ],
+  "updated_at": "2026-09-16T07:18:55.499Z",
+  "data_changed": false,
+  "change_summary": "无实质变化",
+  "change_details": [],
   "added": 0,
-  "modified": 4,
+  "modified": 0,
   "removed": 0
 }

@@ -119,7 +119,10 @@ describe('人称与标题规整', () => {
    * `applyGlossary` 当时拿的是译文，而 HUMAN_FIX 的键是英文原文，
    * 查表永远落空。加上这条后，两类失效（查不到 / 查到了没用）都会被拦住。
    */
-  it('人工修正必须端到端生效（localizeText 的输出等于登记值）', () => {
+  it('人工修正必须端到端生效（输入英文原文，输出登记值）', () => {
+    // 修正表的键是**英文原文**，值是修正后的中文。
+    // 断言等价于「把英文原文喂进完整管线，出来的必须正好是登记值」——
+    // 覆盖「查表落空」「缓存被就地改写成修正值」两类失效。
     const ineffective = Object.entries(HUMAN_FIX)
       .filter(([k, v]) => localize(k) !== v)
       .map(([k]) => k.slice(0, 60));
@@ -127,22 +130,41 @@ describe('人称与标题规整', () => {
   });
 
   /**
-   * ⚠️ 该断言被独立审查 P1（第二轮）修正过，原实现比较对象写错了。
+   * ⚠️ P2-4 收口时真实踩到的坑，必须由断言锁死。
    *
-   * 原实现比较 `v === k`（修正值 vs 英文原文），恒为 false —— 测不出空转。
-   * 真正的空转条件是 **`CACHE[k] === HUMAN_FIX[k]`**：
-   * 缓存里已经是修正后的文本时，`applyGlossary` 虽然能查到键，
-   * 但替换不产生任何变化，整张修正表等于运行期空转。
-   *
-   * 实测教训：第二轮审查时 13 条全部满足 `CACHE[k] === HUMAN_FIX[k]`，
-   * 也就是「专门为 P1-1 写的护栏」本身成了恒真断言 —— 同一个坑又挖了一遍。
-   * 现在与「键必须命中缓存」互相牵制：命中率要 100%，同时又不允许空转。
+   * 缓存（cache.zh.json）只放**机器译文**，修正表只放**人工修正**。
+   * 一旦有人把修正值反写回缓存，就会出现自指条目：
+   * `CACHE[k] === HUMAN_FIX[k]` —— applyGlossary 查得到键，
+   * 但换出来的还是同一句话，整张表在运行期空转，而所有断言依然全绿。
+   * 第二轮独立审查被绕过一次，因此这里把它固化成硬断言。
    */
-  it('人工修正不得成为空转条目（译文经术语层处理后必须仍在变化）', () => {
-    // 空转 = 机器译文与最终输出一致，说明这条修正在运行期不产生任何变化。
-    // 判定必须覆盖「译文→最终」这一段，而不能只看键。
+  it('缓存里不得出现「修正值」条目（禁止自指空转）', () => {
+    const selfRef = Object.entries(HUMAN_FIX)
+      .filter(([, v]) => Object.values(CACHE).some((zh) => zh === v))
+      .map(([k]) => k.slice(0, 60));
+    expect(selfRef).toEqual([]);
+  });
+
+  /**
+   * ⚠️ 该断言被独立审查 P1（第二轮）修正过，原实现比较对象写错了。
+   * 原实现比较 `v === k`，恒为 false —— 测不出空转。
+   *
+   * 但第二轮给的判定式（`CACHE[k] === v`）在 P2-4 收口后**方向反了**：
+   * 现在 `k` 就是「人工修正前的机器译文」，因此 `CACHE[k] !== v` 才是正确形态，
+   * 而 `CACHE[k] === v` 恰恰说明「缓存被反写成了修正值」。
+   *
+   * 判定的真实目标是同一个：**这条修正在运行期必须真的改变输出**。
+   * 所以不再比字符串，而是直接看「输入 → 输出」有没有变化：
+   * 把缓存原文喂进去，输出必须与输入不同。
+   * 这样无论键取哪一形态（英文原文 / 机器译文），空转都会被抓住。
+   */
+  it('人工修正不得成为空转条目（输出必须与缓存里的机器译文不同）', () => {
+    // 空转 = 修正没产生任何变化。判定必须比「缓存里的机器译文」与「最终输出」：
+    // 二者相同，说明这条修正在运行期等于没写。
+    // 注意不能写成 `localize(k) === k`（k 是英文原文），那样恒为 false，
+    // 等于没断言 —— 第二轮审查正是被这种写法绕过的。
     const noop = Object.entries(HUMAN_FIX)
-      .filter(([k, v]) => CACHE[k] === v)
+      .filter(([k, v]) => CACHE[k] !== undefined && CACHE[k] !== v && localize(k) === CACHE[k])
       .map(([k]) => k.slice(0, 60));
     expect(noop).toEqual([]);
   });
@@ -318,6 +340,64 @@ describe('缓存完整性', () => {
     const sorted = [...TOKEN_TERMS].sort((a, b) => b.length - a.length);
     expect(TOKEN_TERMS).toEqual(sorted);
   });
+
+  /**
+   * ⚠️ 独立审查指出的 P3：术语表曾有多处重复登记。
+   *
+   * 实测当时：`TOKEN_TERMS` 有 1 处重复（`Feathers`），
+   * `TERM_MAP` 有 6 条重复规则 + **13 条恒等规则**（`[/金库/g,'金库']` 等，
+   * 源与目标完全相同 = 运行期空转）。
+   *
+   * 恒等规则无害，但会让「术语表覆盖率」虚高 ——
+   * 与 `HUMAN_FIX` 自指是同一类「看起来在工作」的形态，
+   * 因此用断言钉死，防止下次补词时又叠上去。
+   */
+  it('专有名词表不得有重复项', () => {
+    expect(new Set(TOKEN_TERMS).size, 'TOKEN_TERMS 存在重复项').toBe(TOKEN_TERMS.length);
+  });
+
+  /**
+   * ⚠️ 独立审查 P0（本轮新引入的回归）：术语表规则在**词边界**上互相咬。
+   *
+   * 历史上 `TERM_MAP` 同时存在 `[/索赔/g,'领取']` 与 `[/认领/g,'领取']`：
+   *   确认索赔交易 --索赔→领取--> 确认领取交易 --认领→领取--> 确领取取交易
+   * 「确认|领取」跨词边界恰好拼出「认领」，于是被第二条规则再替换一次，
+   * 产出用户可见的坏中文「确领取取交易」。
+   *
+   * 「已译但不准」这类退化，`hasChinese` 门禁天然测不到（它是中文，只是更差），
+   * 所以必须单独钉一条：**整段文案喂进术语表后不得出现「取取」**。
+   */
+  it('术语表不得拼出「取取」这类跨词边界坏中文', () => {
+    const samples = [
+      '确认索赔交易',
+      '请在你的钱包中确认索赔交易',
+      '请打开领取 portal 并确认索赔交易',
+      '如果你有分配，请在你的钱包中确认索赔交易',
+    ];
+    const bad: string[] = [];
+    for (const raw of samples) {
+      let out = raw;
+      for (const [re, to] of TERM_MAP) out = out.replace(re, to);
+      if (out.includes('取取')) bad.push(`${raw} → ${out}`);
+    }
+    expect(bad, '术语表跨词边界拼出「取取」').toEqual([]);
+  });
+
+  it('术语表不得有重复规则或恒等规则（恒等 = 运行期空转）', () => {
+    const seen = new Set<string>();
+    const dup: string[] = [];
+    const identity: string[] = [];
+    for (const [re, to] of TERM_MAP) {
+      const key = `${re.source}=>${to}`;
+      if (seen.has(key)) dup.push(key);
+      seen.add(key);
+      // 恒等：正则字面量（去掉定界符与转义）与目标完全相同
+      const literal = re.source.replace(/\\(.)/g, '$1');
+      if (literal === to) identity.push(key);
+    }
+    expect(dup, 'TERM_MAP 存在重复规则').toEqual([]);
+    expect(identity, 'TERM_MAP 存在源=目标的恒等规则（空转）').toEqual([]);
+  });
 });
 
 describe('全量数据：用户可见文案必须含中文', () => {
@@ -385,6 +465,51 @@ describe('全量数据：用户可见文案必须含中文', () => {
       for (const g of p.guide ?? []) {
         if (g.original_description && hasChinese(g.original_description)) {
           offenders.push(`${p.slug}: 步骤 ${g.step} original_description`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  /**
+   * ⚠️ P1-5 新增：**已中文化但译错**的收口断言。
+   *
+   * 旧的「必须含中文」门禁抓不住「门户 / 羽毛 / 宝石 / 您」这类错译 ——
+   * 页面上没有一处英文，校验全绿，但用户拿「门户」去项目页面里
+   * 根本找不到对应入口（实测 36 条教程正文如此）。
+   * 这里对**全量数据**做一次最终输出扫描：
+   * 只要用户可见文案里还出现这些「术语表已明确要求保留英文」的词，直接失败。
+   */
+  it('全量数据里不得出现已收口的机器错译（门户 / 羽毛 / 您 …）', async () => {
+    const { loadCache, localizeText } = await import('../scripts/i18n/translate.mjs');
+    loadCache(CACHE);
+    const BAD = [
+      '门户',
+      '羽毛',
+      '卡牌',
+      '朝圣者',
+      '您',
+      '索赔',
+      '选项卡',
+      '小部件',
+      '桥接',
+      '笔记本',
+      '任务板',
+    ];
+    const offenders: string[] = [];
+    for (const file of files) {
+      const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
+      const visible = [
+        p.tagline,
+        ...(p.guide ?? []).flatMap((g: { title?: string; description?: string }) => [
+          g.title,
+          g.description,
+        ]),
+      ];
+      for (const text of visible) {
+        const out = typeof text === 'string' ? localizeText(text).zh : '';
+        for (const bad of BAD) {
+          if (out.includes(bad)) offenders.push(`${p.slug}: ${bad} :: ${out.slice(0, 40)}`);
         }
       }
     }

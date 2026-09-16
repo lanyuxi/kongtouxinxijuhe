@@ -997,27 +997,44 @@ export function scoreValue(p: AirdropProject): {
    *   另外再补一道硬门槛：模板教程不得进 S（见 gradeOfWithGuideTrust）。
    */
   const guideSteps = p.guide.length;
+  /**
+   * ⚠️ 三档教程来源的扣分口径（2026-09-16 独立审查后细化）。
+   *
+   * `third_party` 与 `template` **扣同样的分**（0 分）：
+   *   新增这一档是为了「如实描述步骤来源」（聚合站编辑手写 ≠ 平台编的通用流程），
+   *   不是为了放宽等级。若给它加分，P1-2 的修复会被新档位绕开 ——
+   *   「没有官方步骤就不该推动用户投入时间」这条结论，
+   *   与来源是聚合站还是模板无关。
+   */
   const guideTrust = (() => {
-    if (p.guide_source !== 'sourced' && p.guide_source !== 'template') return 12;
-    if (p.guide_source === 'template') return 0;
-    // 真实教程但步骤过少：可追溯但信息量不足，给部分分
+    if (p.guide_source !== 'sourced' && p.guide_source !== 'third_party' && p.guide_source !== 'template') {
+      return 12;
+    }
+    if (p.guide_source === 'template' || p.guide_source === 'third_party') return 0;
+    // 官方 HowTo 但步骤过少：可追溯但信息量不足，给部分分
     if (guideSteps >= 5) return 12;
     if (guideSteps >= 3) return 9;
     return 5;
+  })();
+  const guideReason = (() => {
+    if (p.guide_source === 'template') {
+      return guideSteps === 0
+        ? '该项目没有任何教程步骤，也没有官方 HowTo，操作路径未知'
+        : '教程为通用流程示意（非官方步骤），未拿到该项目特有的官方 HowTo，投入时间存在不确定性';
+    }
+    if (p.guide_source === 'third_party') {
+      return `教程由第三方整理，共 ${guideSteps} 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性`;
+    }
+    return guideSteps >= 5
+      ? `教程来自数据源抓取到的官方 HowTo，共 ${guideSteps} 步，可追溯到原始页面`
+      : `教程来自官方 HowTo，但仅 ${guideSteps} 步，信息量有限`;
   })();
   items.push({
     key: 'value.guide_trust',
     label: '教程可信度',
     value: guideTrust,
     max: 12,
-    reason:
-      p.guide_source === 'template'
-        ? guideSteps === 0
-          ? '该项目没有任何教程步骤，也没有官方 HowTo，操作路径未知'
-          : '教程为通用流程示意（非官方步骤），未拿到该项目特有的官方 HowTo，投入时间存在不确定性'
-        : guideSteps >= 5
-          ? `教程来自数据源抓取到的官方 HowTo，共 ${guideSteps} 步，可追溯到原始页面`
-          : `教程来自官方 HowTo，但仅 ${guideSteps} 步，信息量有限`,
+    reason: guideReason,
   });
 
   const total = clamp(items.reduce((s, i) => s + i.value, 0));
@@ -1047,10 +1064,16 @@ export function scoreValue(p: AirdropProject): {
  *   这正是「有信号但缺官方步骤」的项目应得的结论，既不埋没机会，
  *   也不推动用户在信息不足时投入时间。
  */
-function gradeOfWithGuideTrust(total: number, guideSource: 'sourced' | 'template'): ValueGrade {
+function gradeOfWithGuideTrust(
+  total: number,
+  guideSource: 'sourced' | 'third_party' | 'template',
+): ValueGrade {
   const g = gradeOf(total);
+  // 只有「可追溯到官方的教程」才配得上 S/A（两者都会推动用户投入时间）
   if (guideSource === 'sourced') return g;
-  // 模板教程：S/A 一律降为 B（可观察），C/D 保持原判
+  // 模板 / 第三方整理：S/A 一律降为 B（可观察），C/D 保持原判。
+  // ⚠️ third_party 必须和 template 同档 —— 它是「如实描述来源」而新增的，
+  //    不是「放宽等级」的口子（独立审查明确指出的一条约束）。
   return g === 'S' || g === 'A' ? 'B' : g;
 }
 

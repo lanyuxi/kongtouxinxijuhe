@@ -680,6 +680,13 @@ export function DetailView({
                   >
                     ✓ 真实教程（可追溯来源）
                   </span>
+                ) : p.guide_source === 'third_party' ? (
+                  <span
+                    className="chip border-warn/30 bg-warn-wash text-warn"
+                    title="步骤由第三方整理，内容与该项目的活动相关，但没有可追溯到官方页面的来源链接"
+                  >
+                    ⚠ 第三方整理（非官方）
+                  </span>
                 ) : (
                   <span
                     className="chip border-warn/30 bg-warn-wash text-warn"
@@ -702,6 +709,13 @@ export function DetailView({
                 <strong className="font-semibold">通用参与流程示意</strong>，用于帮助你理解大致顺序，
                 不代表项目方的具体要求。请务必以
                 <strong className="font-semibold">官方页面 / 官方公告</strong>的实际说明为准。
+              </p>
+            ) : p.guide_source === 'third_party' ? (
+              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
+                以下步骤由<strong className="font-semibold">第三方整理</strong>，内容与该项目的活动相关，
+                但没有可追溯到项目官方页面的来源链接。
+                步骤顺序与细节请以
+                <strong className="font-semibold">官方页面 / 官方公告</strong>为准。
               </p>
             ) : (
               <p className="mt-4 rounded-xl border border-ok/30 bg-ok-wash px-5 py-4 text-sm text-ok">
@@ -839,6 +853,8 @@ export function DetailView({
                           </a>
                         ) : p.guide_source === 'template' ? (
                           <span className="text-sm text-warn">⚠ 流程示意，非官方步骤</span>
+                        ) : p.guide_source === 'third_party' ? (
+                          <span className="text-sm text-warn">⚠ 第三方整理，非官方步骤</span>
                         ) : (
                           <span className="text-sm text-warn">⚠ 本步骤尚未通过完整来源验证</span>
                         )}
