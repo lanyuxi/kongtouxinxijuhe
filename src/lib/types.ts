@@ -223,6 +223,18 @@ export interface GuideStep {
   source_url?: string;
   /** 来源是否充分，false 时前端显示「尚未通过完整来源验证」 */
   source_verified: boolean;
+  /**
+   * 英文原文标题（issue #28）。
+   *
+   * 数据源的官方 HowTo 是英文，`title` 会被转成中文；
+   * 原文在这里原样保留，前端以「原文对照」形式同时展示 ——
+   * 只给译文会让用户看不懂按钮与页面上的英文标识，
+   * 只给原文又违背「所有教程都是中文」的要求，因此两者都给。
+   * 原文本身已是中文时为 undefined（无需对照）。
+   */
+  original_title?: string;
+  /** 英文原文描述，用途同 original_title */
+  original_description?: string;
 }
 
 export interface FaqItem {
@@ -243,8 +255,16 @@ export interface AirdropProject {
   id: string;
   name: string;
   slug: string;
-  /** 一句话介绍 */
+  /** 一句话介绍（简体中文；英文原文见 tagline_en） */
   tagline: string;
+  /**
+   * 一句话介绍的英文原文（issue #28）。
+   *
+   * 介绍来自数据源的英文描述，`tagline` 已是中文译文；
+   * 原文保留在详情页以「原文对照」展示，避免翻译失真时无从核对。
+   * 来源本身就是中文时为 undefined。
+   */
+  tagline_en?: string;
   category: Category;
   chains: Chain[];
   status: AirdropStatus;

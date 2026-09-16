@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T03:12:09.522Z",
-  "finished_at": "2026-09-16T03:12:20.281Z",
+  "started_at": "2026-09-16T05:36:52.125Z",
+  "finished_at": "2026-09-16T05:37:05.776Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T03:12:09.522Z",
+  "updated_at": "2026-09-16T05:36:52.125Z",
   "data_changed": true,
-  "change_summary": "变更 32 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
+  "change_summary": "变更 1 个：Liquid Collective 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "B2 Buzz 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新"
+    "Liquid Collective 内容有更新"
   ],
   "added": 0,
-  "modified": 32,
+  "modified": 1,
   "removed": 0
 }

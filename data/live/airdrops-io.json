@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-16T03:12:09.522Z",
+  "fetched_at": "2026-09-16T05:36:52.125Z",
   "source": "Airdrops.io",
   "source_url": "https://airdrops.io/latest/",
   "items": [
@@ -16,7 +16,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solpump/",
       "officialUrl": "https://solpump.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Solpump",
       "officialHost": "solpump.io",
       "steps": [],
@@ -36,7 +36,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/aiw3/",
       "officialUrl": "https://aiw3.ai",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Aiw3",
       "officialHost": "aiw3.ai",
       "steps": [
@@ -99,7 +99,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ritual/",
       "officialUrl": "https://ritualtrials.domino.page",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Ritual",
       "officialHost": "ritualtrials.domino.page",
       "steps": [
@@ -121,6 +121,30 @@
       "description": "There hasn’t been any news about an official airdrop. There is no confirmed $RITUAL token, ticker, or way to get it. That being said, the project has active community programs like Discord role quests and ambassador activities that are similar to how projects that later rewarded contributors got people involved in the beginning."
     },
     {
+      "slug": "fireplace",
+      "name": "Fireplace",
+      "tagline": "Fireplace is closing down, with the site going dark for good after September 30, 2026 at 23:59 UTC. Anyone holding an op",
+      "status": "potential",
+      "categoryText": "prediction market",
+      "chains": [
+        "Arbitrum",
+        "Base",
+        "BNB Chain",
+        "Ethereum",
+        "Optimism",
+        "Polygon"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/fireplace/",
+      "officialUrl": "https://pro.fireplace.gg",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "rawTitle": "Fireplace",
+      "officialHost": "pro.fireplace.gg",
+      "steps": [],
+      "description": "Fireplace is closing down, with the site going dark for good after September 30, 2026 at 23:59 UTC. Anyone holding an open position or cash balance on the platform needs to act before then. No positions get automatically liquidated, but once the deadline passes, there’s no way to retrieve anything."
+    },
+    {
       "slug": "worldie",
       "name": "Worldie",
       "tagline": "Worldie has not confirmed an airdrop, and the $WORLDIE token has not launched. The early access page invites users to “b",
@@ -132,7 +156,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/worldie/",
       "officialUrl": "https://worldie.world",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Worldie",
       "officialHost": "worldie.world",
       "steps": [
@@ -177,7 +201,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/collector-crypt/",
       "officialUrl": "https://gacha.collectorcrypt.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Collector Crypt",
       "officialHost": "gacha.collectorcrypt.com",
       "steps": [
@@ -228,7 +252,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/yakkamon/",
       "officialUrl": "https://yakkamon.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Yakkamon",
       "officialHost": "yakkamon.com",
       "steps": [
@@ -278,7 +302,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/blackboard/",
       "officialUrl": "https://blackboard.fi",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Blackboard",
       "officialHost": "blackboard.fi",
       "steps": [
@@ -329,7 +353,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/deepbook/",
       "officialUrl": "https://waitlist.deepbook.tech",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Deepbook",
       "officialHost": "waitlist.deepbook.tech",
       "steps": [
@@ -381,7 +405,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/flop-labs/",
       "officialUrl": "https://flop.finance",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Flop Labs",
       "officialHost": "flop.finance",
       "steps": [
@@ -424,7 +448,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ammora/",
       "officialUrl": "https://ammora.org",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Ammora",
       "officialHost": "ammora.org",
       "steps": [
@@ -483,7 +507,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/canopy/",
       "officialUrl": "https://app.canopynetwork.org",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Canopy",
       "officialHost": "app.canopynetwork.org",
       "steps": [
@@ -508,7 +532,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/noise/",
       "officialUrl": "https://airdrops.io/noise/",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Noise",
       "steps": [],
       "description": "The Noise beta has ended. The Noise testnet closes on September 11 at 16:00 as the team prepares for the Mainnet launch. Users who purchased Credits during the testnet will receive rewards on Mainnet equal to the amount they spent."
@@ -526,7 +550,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/rep/",
       "officialUrl": "https://app.r3p.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Rep",
       "officialHost": "app.r3p.xyz",
       "steps": [
@@ -576,7 +600,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/satsuma/",
       "officialUrl": "https://satsuma.exchange",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Satsuma",
       "officialHost": "satsuma.exchange",
       "steps": [],
@@ -595,7 +619,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/voice/",
       "officialUrl": "https://voice.fun",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Voice",
       "officialHost": "voice.fun",
       "steps": [
@@ -643,6 +667,57 @@
       "description": "The $VOICE token and its token generation event are confirmed, with the TGE targeted for Q4 2026. VOICE ties $VOICE distribution to activity: CLOUT earned in Social Camp hard-syncs to your profile, and the tiers list a base $VOICE airdrop allocation, whitelist access, NFT drops, and early access at the higher levels."
     },
     {
+      "slug": "laptop",
+      "name": "Laptop",
+      "tagline": "The Day 1 airdrop is confirmed and its snapshots have closed, claim will run 30 days from TGE, after which anything uncl",
+      "status": "potential",
+      "categoryText": "memecoin",
+      "chains": [
+        "Base"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/laptop/",
+      "officialUrl": "https://claim.laptoptoken.com",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "rawTitle": "Laptop",
+      "officialHost": "claim.laptoptoken.com",
+      "steps": [
+        {
+          "title": "Identify Which Cohort You Fall Under",
+          "body": "Work out which of the three groups applies to you first. Substack and Channel 5 recipients claim by email through the official portal. TRUMP loss recipients never use it, since those tokens move through exchanges."
+        },
+        {
+          "title": "Verify the Contract Address and Domain",
+          "body": "The project lists its official Base contract as 0xB095274743941e953c746F9C228DA9c18Bb6ec29 . Verify it on the official LAPTOP website rather than a screener or a search result. Our crypto safety guide explains how fake claim pages work.",
+          "url": "/visit/kdb3/"
+        },
+        {
+          "title": "Open the Official Claim Portal",
+          "body": "Go to the LAPTOP claim portal and enter the email tied to your Substack or Channel 5 subscription. It shows your eligibility and allocation before you commit.",
+          "url": "/visit/jdb3/"
+        },
+        {
+          "title": "Connect an Email and Create an Embedded Wallet",
+          "body": "Connect an eligble Email adress, connect wallet if you have an allocation. With an embedded wallet, export your keys or move the tokens out afterwards, since access depends on that service staying up."
+        },
+        {
+          "title": "Fund the Wallet With ETH on Base",
+          "body": "A self-custody claim needs a little ETH on Base for gas. Buy ETH on Bybit and withdraw straight to Base, or move some across from another network using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
+          "url": "https://airdrops.io/goto/bybit/"
+        },
+        {
+          "title": "Claim Within the 30-Day Window",
+          "body": "Sign the claim transaction and confirm the tokens arrive. Read what you sign. A legitimate claim never asks for a seed phrase and never asks you to send funds first."
+        },
+        {
+          "title": "Check Your Exchange for the TRUMP Loss Share",
+          "body": "If you qualify through TRUMP losses, watch announcements from the exchange or app where you traded. Each venue sets its own rules, so allocations vary and some may sit out."
+        }
+      ],
+      "description": "The Day 1 airdrop is confirmed and its snapshots have closed, claim will run 30 days from TGE, after which anything unclaimed is burned. A second round exists with no published rules."
+    },
+    {
       "slug": "vangrid",
       "name": "Vangrid",
       "tagline": "Vangrid has not confirmed an airdrop. A token is planned for later in 2026, but no allocation, snapshot, or eligibility ",
@@ -655,7 +730,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/vangrid/",
       "officialUrl": "https://hub.vangrid.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Vangrid",
       "officialHost": "hub.vangrid.io",
       "steps": [
@@ -697,57 +772,6 @@
       "description": "Vangrid has not confirmed an airdrop. A token is planned for later in 2026, but no allocation, snapshot, or eligibility rule has been published, which makes this a potential future airdrop rather than a scheduled one."
     },
     {
-      "slug": "laptop",
-      "name": "Laptop",
-      "tagline": "The Day 1 airdrop is confirmed and its snapshots have closed, claim will run 30 days from TGE, after which anything uncl",
-      "status": "potential",
-      "categoryText": "memecoin",
-      "chains": [
-        "Base"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/laptop/",
-      "officialUrl": "https://claim.laptoptoken.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
-      "rawTitle": "Laptop",
-      "officialHost": "claim.laptoptoken.com",
-      "steps": [
-        {
-          "title": "Identify Which Cohort You Fall Under",
-          "body": "Work out which of the three groups applies to you first. Substack and Channel 5 recipients claim by email through the official portal. TRUMP loss recipients never use it, since those tokens move through exchanges."
-        },
-        {
-          "title": "Verify the Contract Address and Domain",
-          "body": "The project lists its official Base contract as 0xB095274743941e953c746F9C228DA9c18Bb6ec29 . Verify it on the official LAPTOP website rather than a screener or a search result. Our crypto safety guide explains how fake claim pages work.",
-          "url": "/visit/kdb3/"
-        },
-        {
-          "title": "Open the Official Claim Portal",
-          "body": "Go to the LAPTOP claim portal and enter the email tied to your Substack or Channel 5 subscription. It shows your eligibility and allocation before you commit.",
-          "url": "/visit/jdb3/"
-        },
-        {
-          "title": "Connect an Email and Create an Embedded Wallet",
-          "body": "Connect an eligble Email adress, connect wallet if you have an allocation. With an embedded wallet, export your keys or move the tokens out afterwards, since access depends on that service staying up."
-        },
-        {
-          "title": "Fund the Wallet With ETH on Base",
-          "body": "A self-custody claim needs a little ETH on Base for gas. Buy ETH on Bybit and withdraw straight to Base, or move some across from another network using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
-        },
-        {
-          "title": "Claim Within the 30-Day Window",
-          "body": "Sign the claim transaction and confirm the tokens arrive. Read what you sign. A legitimate claim never asks for a seed phrase and never asks you to send funds first."
-        },
-        {
-          "title": "Check Your Exchange for the TRUMP Loss Share",
-          "body": "If you qualify through TRUMP losses, watch announcements from the exchange or app where you traded. Each venue sets its own rules, so allocations vary and some may sit out."
-        }
-      ],
-      "description": "The Day 1 airdrop is confirmed and its snapshots have closed, claim will run 30 days from TGE, after which anything unclaimed is burned. A second round exists with no published rules."
-    },
-    {
       "slug": "reels",
       "name": "Reels",
       "tagline": "Reels runs a welcome offer for new players: a 275% match up to 2,000 USDT plus 50 free spins. The bonus is credited auto",
@@ -759,7 +783,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/reels/",
       "officialUrl": "https://click.trkreels.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Reels",
       "officialHost": "click.trkreels.com",
       "steps": [
@@ -797,7 +821,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/entropy/",
       "officialUrl": "https://entropy.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Entropy",
       "officialHost": "entropy.io",
       "steps": [
@@ -843,7 +867,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/beldex/",
       "officialUrl": "https://quest.beldex.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Beldex",
       "officialHost": "quest.beldex.io",
       "steps": [
@@ -892,7 +916,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dualmint/",
       "officialUrl": "https://uptime.dualmint.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Dualmint",
       "officialHost": "uptime.dualmint.com",
       "steps": [
@@ -941,7 +965,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/gyndore/",
       "officialUrl": "https://app.gyndore.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Gyndore",
       "officialHost": "app.gyndore.com",
       "steps": [
@@ -982,7 +1006,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/c8ntinuum/",
       "officialUrl": "https://app.c8ntinuum.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "C8ntinuum",
       "officialHost": "app.c8ntinuum.com",
       "steps": [
@@ -1040,7 +1064,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/amadeus-protocol/",
       "officialUrl": "https://amahub.ama.one",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Amadeus Protocol",
       "officialHost": "amahub.ama.one",
       "steps": [
@@ -1089,7 +1113,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/neosoul/",
       "officialUrl": "https://event.neosoul.ai",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Neosoul",
       "officialHost": "event.neosoul.ai",
       "steps": [
@@ -1137,7 +1161,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dow-protocol/",
       "officialUrl": "https://app.dowprotocol.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Dow Protocol",
       "officialHost": "app.dowprotocol.com",
       "steps": [
@@ -1187,7 +1211,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tbook/",
       "officialUrl": "https://engage.tbook.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Tbook",
       "officialHost": "engage.tbook.com",
       "steps": [
@@ -1234,7 +1258,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/omega/",
       "officialUrl": "https://olympus.omeganetwork.co",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Omega",
       "officialHost": "olympus.omeganetwork.co",
       "steps": [
@@ -1280,7 +1304,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/mint-io/",
       "officialUrl": "https://mint.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Mint Io",
       "officialHost": "mint.io",
       "steps": [
@@ -1326,7 +1350,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/hertzflow/",
       "officialUrl": "https://hertzflow.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Hertzflow",
       "officialHost": "hertzflow.xyz",
       "steps": [
@@ -1376,7 +1400,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nowa/",
       "officialUrl": "https://app.nowa.finance",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Nowa",
       "officialHost": "app.nowa.finance",
       "steps": [
@@ -1429,7 +1453,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sweep-finance/",
       "officialUrl": "https://sweep.finance",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Sweep Finance",
       "officialHost": "sweep.finance",
       "steps": [
@@ -1478,7 +1502,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wager-predict/",
       "officialUrl": "https://wagerpredict.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Wager Predict",
       "officialHost": "wagerpredict.com",
       "steps": [
@@ -1528,7 +1552,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/allox/",
       "officialUrl": "https://app.allox.ai",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Allox",
       "officialHost": "app.allox.ai",
       "steps": [
@@ -1578,7 +1602,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/push-chain/",
       "officialUrl": "https://portal.push.org",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Push Chain",
       "officialHost": "portal.push.org",
       "steps": [
@@ -1636,7 +1660,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/brownian/",
       "officialUrl": "https://brownian.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Brownian",
       "officialHost": "brownian.xyz",
       "steps": [
@@ -1686,7 +1710,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/perpl/",
       "officialUrl": "https://app.perpl.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Perpl",
       "officialHost": "app.perpl.xyz",
       "steps": [
@@ -1736,7 +1760,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/moonpay/",
       "officialUrl": "https://paybox.sh",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Moonpay",
       "officialHost": "paybox.sh",
       "steps": [
@@ -1782,7 +1806,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wheelx/",
       "officialUrl": "https://wheelx.fi",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Wheelx",
       "officialHost": "wheelx.fi",
       "steps": [
@@ -1832,7 +1856,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/fortune-foes/",
       "officialUrl": "https://fortunefoes.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Fortune Foes",
       "officialHost": "fortunefoes.com",
       "steps": [
@@ -1878,7 +1902,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/cambria/",
       "officialUrl": "https://lobby.cambria.gg",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Cambria",
       "officialHost": "lobby.cambria.gg",
       "steps": [
@@ -1932,7 +1956,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/jupiter/",
       "officialUrl": "https://jup.ag",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Jupiter",
       "officialHost": "jup.ag",
       "steps": [
@@ -1981,7 +2005,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tread-fi/",
       "officialUrl": "https://app.tread.fi",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Tread Fi",
       "officialHost": "app.tread.fi",
       "steps": [
@@ -2037,7 +2061,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nado/",
       "officialUrl": "https://app.nado.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Nado",
       "officialHost": "app.nado.xyz",
       "steps": [
@@ -2094,7 +2118,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dymension/",
       "officialUrl": "https://portal.dymension.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Dymension",
       "officialHost": "portal.dymension.xyz",
       "steps": [
@@ -2119,7 +2143,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/limitless-prediction-markets/",
       "officialUrl": "https://limitless.exchange",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Limitless Prediction Markets",
       "officialHost": "limitless.exchange",
       "steps": [
@@ -2176,7 +2200,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grvt/",
       "officialUrl": "https://grvt.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Grvt",
       "officialHost": "grvt.io",
       "steps": [
@@ -2217,7 +2241,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sosovalue/",
       "officialUrl": "https://sosovalue.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Sosovalue",
       "officialHost": "sosovalue.com",
       "steps": [
@@ -2276,7 +2300,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/arcium/",
       "officialUrl": "https://rtg.arcium.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Arcium",
       "officialHost": "rtg.arcium.com",
       "steps": [
@@ -2322,7 +2346,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/doppler-finance/",
       "officialUrl": "https://app.doppler.finance",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Doppler Finance",
       "officialHost": "app.doppler.finance",
       "steps": [
@@ -2374,7 +2398,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solstice/",
       "officialUrl": "https://claim.solstice.finance",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Solstice",
       "officialHost": "claim.solstice.finance",
       "steps": [],
@@ -2395,7 +2419,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/basedapp/",
       "officialUrl": "https://basedfoundation.com",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Basedapp",
       "officialHost": "basedfoundation.com",
       "steps": [],
@@ -2414,7 +2438,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/o1-exchange/",
       "officialUrl": "https://o1.exchange",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "O1 Exchange",
       "officialHost": "o1.exchange",
       "steps": [
@@ -2464,7 +2488,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/infinex/",
       "officialUrl": "https://app.infinex.xyz",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Infinex",
       "officialHost": "app.infinex.xyz",
       "steps": [
@@ -2512,7 +2536,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ethena/",
       "officialUrl": "https://app.ethena.fi",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Ethena",
       "officialHost": "app.ethena.fi",
       "steps": [
@@ -2570,7 +2594,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/huma-finance/",
       "officialUrl": "https://claim.huma.finance",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Huma Finance",
       "officialHost": "claim.huma.finance",
       "steps": [
@@ -2621,7 +2645,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grass/",
       "officialUrl": "https://app.getgrass.io",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Grass",
       "officialHost": "app.getgrass.io",
       "steps": [
@@ -2651,7 +2675,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/plume-network/",
       "officialUrl": "https://claim-pp.plume.org",
-      "fetchedAt": "2026-09-16T03:12:09.579Z",
+      "fetchedAt": "2026-09-16T05:36:52.158Z",
       "rawTitle": "Plume Network",
       "officialHost": "claim-pp.plume.org",
       "steps": [

@@ -91,6 +91,8 @@ export function DetailView({
   const [showValue, setShowValue] = useState(false);
   const [showRisk, setShowRisk] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  /** 是否展开英文原文对照（issue #28）：默认收起，避免中文站里出现大段英文 */
+  const [showOriginal, setShowOriginal] = useState(false);
 
   const done = progress?.completed_steps ?? [];
   const officialEntries = useMemo(
@@ -195,9 +197,27 @@ export function DetailView({
               <StatusBadge status={p.status} />
               <RiskBadge risk={p.scores.risk} withLabel />
             </div>
-            <p className="mt-3 max-w-3xl text-lg text-ink-soft">
-              {p.tagline || '暂无项目简介'}
-            </p>
+            {/* 一句话简介：优先展示中文（issue #28）。
+                来源方给的是英文长句，这里已由构建期中文化；
+                原文以「原文对照」折叠保留，翻译失真时用户可自行核对。 */}
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <p className="max-w-3xl text-lg text-ink-soft">{p.tagline || '暂无项目简介'}</p>
+              {p.tagline_en && (
+                <button
+                  type="button"
+                  onClick={() => setShowOriginal((v) => !v)}
+                  className="chip border-line bg-page text-ink-faint transition-colors hover:border-brand/30 hover:text-brand"
+                >
+                  {showOriginal ? '收起英文原文' : '查看英文原文'}
+                </button>
+              )}
+            </div>
+            {p.tagline_en && showOriginal && (
+              <p className="mt-2 max-w-3xl rounded-xl border border-line-soft bg-page/60 px-4 py-3 text-sm leading-relaxed text-ink-faint">
+                <span className="font-medium text-ink-faint">英文原文：</span>
+                {p.tagline_en}
+              </p>
+            )}
 
             <dl className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
               <div className="flex items-center gap-2">
@@ -749,6 +769,30 @@ export function DetailView({
                       <p className="mt-3.5 text-base leading-relaxed text-ink-soft">
                         {g.description}
                       </p>
+
+                      {/* 英文原文对照（issue #28）。
+                          步骤原文来自官方 HowTo，翻译可能与人家的按钮名对不上；
+                          保留原文让用户能对照页面实际文字，避免「照着做却找不到按钮」。 */}
+                      {(g.original_title || g.original_description) && (
+                        <details className="group mt-3 rounded-xl border border-line-soft bg-white px-4 py-3">
+                          <summary className="cursor-pointer select-none text-sm font-medium text-ink-faint transition-colors hover:text-brand">
+                            查看英文原文对照
+                          </summary>
+                          <div className="mt-3 border-t border-line-soft pt-3">
+                            {g.original_title && (
+                              <p className="text-sm font-semibold text-ink-soft">{g.original_title}</p>
+                            )}
+                            {g.original_description && (
+                              <p className="mt-2 text-sm leading-relaxed text-ink-faint">
+                                {g.original_description}
+                              </p>
+                            )}
+                            <p className="mt-3 text-xs text-ink-faint">
+                              提示：以上为数据源提供的英文原文，实际以官方页面文字为准。
+                            </p>
+                          </div>
+                        </details>
+                      )}
 
                       <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line-soft pt-5 sm:grid-cols-4">
                         <Mini label="预计耗时" value={`${g.minutes} 分钟`} />

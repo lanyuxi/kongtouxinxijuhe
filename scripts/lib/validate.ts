@@ -11,6 +11,16 @@
 
 import type { AirdropProject } from '../../src/lib/types';
 
+/**
+ * 中文判定：只要含汉字即视为中文文案。
+ *
+ * 不能用「不含 ASCII」这种反向判定：教程里必然出现项目名、代币符号、
+ * 网址等英文片段（`连接 MetaMask`），那不代表文案没中文化。
+ */
+function hasChinese(text: unknown): boolean {
+  return /[\u4e00-\u9fa5]/.test(String(text ?? ''));
+}
+
 export interface ValidationResult {
   ok: boolean;
   errors: string[];
@@ -96,6 +106,31 @@ export function validateProjects(projects: AirdropProject[]): ValidationResult {
     // （例如误把 guide.description 也裁掉，详情页会缺文案但不报错）
     if (!p.guide.some((step) => !!step.description)) {
       warnings.push(`${p.slug}: 教程步骤缺少描述文案`);
+    }
+
+    // ---- 中文覆盖不变量（issue #28）----
+    //
+    // 站点的用户全部是中文用户，教程与简介必须可读。
+    // 历史事故：数据源（Airdrops.io）的 HowTo 是英文，原样落盘后
+    // 49 个项目 / 339 步教程整段显示英文，而系统完全不报错 ——
+    // 只有人工截图才能发现。因此把「中文覆盖」升级为发布门禁：
+    // 缺中文就直接拒绝发布，避免同类问题再次静默上线。
+    if (!hasChinese(p.tagline)) {
+      errors.push(`${p.slug}: 一句话简介缺少中文（当前：${p.tagline.slice(0, 40)}）`);
+    }
+    for (const g of p.guide) {
+      if (!hasChinese(g.title)) {
+        errors.push(`${p.slug}: 教程步骤 ${g.step} 标题缺少中文（当前：${g.title.slice(0, 40)}）`);
+      }
+      if (!hasChinese(g.description)) {
+        errors.push(`${p.slug}: 教程步骤 ${g.step} 描述缺少中文`);
+      }
+      // 中英对照不变量：译文来自机器翻译时，必须同时保留英文原文，
+      // 否则翻译一旦失真，用户没有任何办法核对官方页面的实际文字。
+      if (!hasChinese(g.title) || !hasChinese(g.description)) continue;
+      if (g.original_title && !g.original_description) {
+        warnings.push(`${p.slug}: 教程步骤 ${g.step} 有英文标题但缺少英文描述`);
+      }
     }
   }
 

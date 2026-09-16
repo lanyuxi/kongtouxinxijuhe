@@ -31,6 +31,7 @@ import type { AirdropProject, GuideStep, ListDataset, ScoreItem } from '../../sr
 /** 列表卡片所需的「轻量教程步骤」：只保留渲染与判定需要的字段 */
 export interface ListGuideStep {
   step: number;
+  /** 步骤标题（简体中文） */
   title: string;
   minutes: number;
   needs_wallet: boolean;
