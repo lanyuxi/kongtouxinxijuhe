@@ -2,7 +2,7 @@
   "id": "mint-io",
   "name": "Mint Io",
   "slug": "mint-io",
-  "tagline": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity.",
+  "tagline": "第 1 季空投已确认，将根据已验证的平台活动，向符合条件的玩家发放价值 12.5 万美元的 $MNTD。",
   "category": "DeFi",
   "chains": [
     "Base"
@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/mint-io/",
-      "fetched_at": "2026-09-16T03:12:09.579Z"
+      "fetched_at": "2026-09-16T05:35:30.472Z"
     }
   ],
   "evidence": [
@@ -275,8 +275,8 @@
     },
     {
       "step": 2,
-      "title": "Create your MINT account",
-      "description": "Register on the MINT website . An account is required before any play counts toward Season 1 XP.",
+      "title": "创建你的 MINT 账户",
+      "description": "在 MINT 网站上注册。任何游戏都需要有一个账户才能计入第 1 季 XP。",
       "official_url": "https://mint.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -285,12 +285,14 @@
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_url": "/visit/wsa3/",
-      "source_verified": true
+      "source_verified": true,
+      "original_title": "Create your MINT account",
+      "original_description": "Register on the MINT website . An account is required before any play counts toward Season 1 XP."
     },
     {
       "step": 3,
-      "title": "Fund your MINT wallet",
-      "description": "Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp.",
+      "title": "为你的 MINT 钱包充值",
+      "description": "将 USDT、USDC 或 ETH 存入受支持网络之一上的 MINT 钱包。确保 MINT 上选择的网络与你的发送钱包或交易所使用的网络相匹配，因为通过错误网络发送的存款可能会丢失。或者，你可以直接通过 Mint 收银台现金入口提取任何这些资产。",
       "official_url": "https://mint.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -299,12 +301,14 @@
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_url": "/visit/wsa3/",
-      "source_verified": true
+      "source_verified": true,
+      "original_title": "Fund your MINT wallet",
+      "original_description": "Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp."
     },
     {
       "step": 4,
-      "title": "Play casino games and sportsbook markets",
-      "description": "Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet.",
+      "title": "玩赌场游戏和体育博彩市场",
+      "description": "每场符合条件的比赛均可赢得第 1 季 XP。你需要累计下注至少 50 美元才有资格获得空投，因此较小的常规赌注与一大笔赌注一样重要。",
       "official_url": "https://mint.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -312,12 +316,14 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Play casino games and sportsbook markets",
+      "original_description": "Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet."
     },
     {
       "step": 5,
-      "title": "Climb the XP leaderboard",
-      "description": "Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play.",
+      "title": "攀登 XP 排行榜",
+      "description": "你的 XP 决定了你在实时排行榜上的位置。快照中的排名越高，意味着在 125,000 美元池中的潜在份额就越大。合格的推荐、可用的提升和选定的任务可以在你自己的游戏之上添加 XP。",
       "official_url": "https://mint.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -325,12 +331,14 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Climb the XP leaderboard",
+      "original_description": "Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play."
     },
     {
       "step": 6,
-      "title": "Keep earning XP until the snapshot",
-      "description": "The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation.",
+      "title": "继续赚取 XP 直到快照出现",
+      "description": "第一季快照发生在 2026 年第四季度 TGE 之前不久，具体日期通过 MINT 官方渠道公布。此时你经过验证的 XP 会锁定你的分配。",
       "official_url": "https://mint.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -338,12 +346,14 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Keep earning XP until the snapshot",
+      "original_description": "The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation."
     },
     {
       "step": 7,
-      "title": "Claim and stake your $MNTD",
-      "description": "At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels.",
+      "title": "领取并质押你的 $MNTD",
+      "description": "TGE 时在 mint.io 的奖励页面领取你的份额，然后质押 $MNTD 激活 MINT 等级，赚取复利质押奖励并开始升级。",
       "official_url": "https://mint.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -351,7 +361,9 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Claim and stake your $MNTD",
+      "original_description": "At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels."
     }
   ],
   "faq": [
@@ -395,8 +407,8 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T03:12:09.579Z",
-  "last_changed_at": "2026-09-16T01:48:06.864Z",
+  "last_checked_at": "2026-09-16T05:35:30.472Z",
+  "last_changed_at": "2026-09-16T05:35:41.759Z",
   "sourcedSteps": [
     {
       "title": "Create your MINT account",
@@ -425,7 +437,8 @@
       "body": "At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels."
     }
   ],
-  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Base\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":21},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://mint.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/mint-io/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：已确认空投。官方渠道已有明确信号。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Register on the MINT website . An account is required before any play counts toward Season 1 XP.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_url\":\"/visit/wsa3/\",\"source_verified\":true,\"step\":2,\"title\":\"Create your MINT account\"},{\"cost_usd\":0,\"description\":\"Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_url\":\"/visit/wsa3/\",\"source_verified\":true,\"step\":3,\"title\":\"Fund your MINT wallet\"},{\"cost_usd\":0,\"description\":\"Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"Play casino games and sportsbook markets\"},{\"cost_usd\":0,\"description\":\"Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"Climb the XP leaderboard\"},{\"cost_usd\":0,\"description\":\"The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"Keep earning XP until the snapshot\"},{\"cost_usd\":0,\"description\":\"At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"Claim and stake your $MNTD\"}],\"guide_source\":\"sourced\",\"id\":\"mint-io\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Mint Io\",\"official\":{\"website\":\"https://mint.io\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"B\",\"summary\":\"存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。\"},\"requirements\":[\"钱包\"],\"risks\":[\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":31,\"authenticityItems\":[{\"evidenceUrl\":\"https://mint.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目状态已确认，但未找到可直接引用的官方公告\",\"value\":10},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目已确认，但未找到可直接引用的官方公告\",\"status\":\"missing\"},{\"label\":\"融资信息\",\"note\":\"项目已确认，但未核实到团队或融资信息\",\"status\":\"missing\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"S\",\"risk\":\"high\",\"riskItems\":[{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk.capital\",\"label\":\"需要投入较大本金\",\"max\":3,\"reason\":\"信息来源推断预计需投入 $20–200（预估区间，非实测金额），上限已超出「小额试错」范围，风险等级至少偏高\",\"value\":2}],\"value\":62,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"空投已确认，信号较强\",\"value\":16},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 21 分钟，共 7 个步骤\",\"value\":12},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":3},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"项目风险较高，参与者结构可能不健康\",\"value\":1},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自数据源抓取到的官方 HowTo，共 7 步，可追溯到原始页面\",\"value\":12}]},\"slug\":\"mint-io\",\"sourcedSteps\":[{\"body\":\"Register on the MINT website . An account is required before any play counts toward Season 1 XP.\",\"title\":\"Create your MINT account\",\"url\":\"/visit/wsa3/\"},{\"body\":\"Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp.\",\"title\":\"Fund your MINT wallet\",\"url\":\"/visit/wsa3/\"},{\"body\":\"Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet.\",\"title\":\"Play casino games and sportsbook markets\"},{\"body\":\"Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play.\",\"title\":\"Climb the XP leaderboard\"},{\"body\":\"The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation.\",\"title\":\"Keep earning XP until the snapshot\"},{\"body\":\"At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels.\",\"title\":\"Claim and stake your $MNTD\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/mint-io/\"}],\"status\":\"confirmed\",\"tagline\":\"The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity.\",\"tasks\":[\"参与预测\",\"提供流动性\"]}",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Base\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":21},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://mint.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/mint-io/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：已确认空投。官方渠道已有明确信号。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"在 MINT 网站上注册。任何游戏都需要有一个账户才能计入第 1 季 XP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"original_description\":\"Register on the MINT website . An account is required before any play counts toward Season 1 XP.\",\"original_title\":\"Create your MINT account\",\"risk\":\"low\",\"source_url\":\"/visit/wsa3/\",\"source_verified\":true,\"step\":2,\"title\":\"创建你的 MINT 账户\"},{\"cost_usd\":0,\"description\":\"将 USDT、USDC 或 ETH 存入受支持网络之一上的 MINT 钱包。确保 MINT 上选择的网络与你的发送钱包或交易所使用的网络相匹配，因为通过错误网络发送的存款可能会丢失。或者，你可以直接通过 Mint 收银台现金入口提取任何这些资产。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://mint.io\",\"original_description\":\"Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp.\",\"original_title\":\"Fund your MINT wallet\",\"risk\":\"low\",\"source_url\":\"/visit/wsa3/\",\"source_verified\":true,\"step\":3,\"title\":\"为你的 MINT 钱包充值\"},{\"cost_usd\":0,\"description\":\"每场符合条件的比赛均可赢得第 1 季 XP。你需要累计下注至少 50 美元才有资格获得空投，因此较小的常规赌注与一大笔赌注一样重要。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"original_description\":\"Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet.\",\"original_title\":\"Play casino games and sportsbook markets\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"玩赌场游戏和体育博彩市场\"},{\"cost_usd\":0,\"description\":\"你的 XP 决定了你在实时排行榜上的位置。快照中的排名越高，意味着在 125,000 美元池中的潜在份额就越大。合格的推荐、可用的提升和选定的任务可以在你自己的游戏之上添加 XP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"original_description\":\"Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play.\",\"original_title\":\"Climb the XP leaderboard\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"攀登 XP 排行榜\"},{\"cost_usd\":0,\"description\":\"第一季快照发生在 2026 年第四季度 TGE 之前不久，具体日期通过 MINT 官方渠道公布。此时你经过验证的 XP 会锁定你的分配。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"original_description\":\"The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation.\",\"original_title\":\"Keep earning XP until the snapshot\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"继续赚取 XP 直到快照出现\"},{\"cost_usd\":0,\"description\":\"TGE 时在 mint.io 的奖励页面领取你的份额，然后质押 $MNTD 激活 MINT 等级，赚取复利质押奖励并开始升级。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://mint.io\",\"original_description\":\"At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels.\",\"original_title\":\"Claim and stake your $MNTD\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"领取并质押你的 $MNTD\"}],\"guide_source\":\"sourced\",\"id\":\"mint-io\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Mint Io\",\"official\":{\"website\":\"https://mint.io\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"B\",\"summary\":\"存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。\"},\"requirements\":[\"钱包\"],\"risks\":[\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":31,\"authenticityItems\":[{\"evidenceUrl\":\"https://mint.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目状态已确认，但未找到可直接引用的官方公告\",\"value\":10},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目已确认，但未找到可直接引用的官方公告\",\"status\":\"missing\"},{\"label\":\"融资信息\",\"note\":\"项目已确认，但未核实到团队或融资信息\",\"status\":\"missing\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"S\",\"risk\":\"high\",\"riskItems\":[{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk.capital\",\"label\":\"需要投入较大本金\",\"max\":3,\"reason\":\"信息来源推断预计需投入 $20–200（预估区间，非实测金额），上限已超出「小额试错」范围，风险等级至少偏高\",\"value\":2}],\"value\":62,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"空投已确认，信号较强\",\"value\":16},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 21 分钟，共 7 个步骤\",\"value\":12},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":3},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"项目风险较高，参与者结构可能不健康\",\"value\":1},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自数据源抓取到的官方 HowTo，共 7 步，可追溯到原始页面\",\"value\":12}]},\"slug\":\"mint-io\",\"sourcedSteps\":[{\"body\":\"Register on the MINT website . An account is required before any play counts toward Season 1 XP.\",\"title\":\"Create your MINT account\",\"url\":\"/visit/wsa3/\"},{\"body\":\"Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp.\",\"title\":\"Fund your MINT wallet\",\"url\":\"/visit/wsa3/\"},{\"body\":\"Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet.\",\"title\":\"Play casino games and sportsbook markets\"},{\"body\":\"Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play.\",\"title\":\"Climb the XP leaderboard\"},{\"body\":\"The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation.\",\"title\":\"Keep earning XP until the snapshot\"},{\"body\":\"At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels.\",\"title\":\"Claim and stake your $MNTD\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/mint-io/\"}],\"status\":\"confirmed\",\"tagline\":\"第 1 季空投已确认，将根据已验证的平台活动，向符合条件的玩家发放价值 12.5 万美元的 $MNTD。\",\"tagline_en\":\"The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity.\",\"tasks\":[\"参与预测\",\"提供流动性\"]}",
   "guide_source": "sourced",
-  "first_seen_at": "2026-09-12T06:08:39.056Z"
+  "first_seen_at": "2026-09-12T06:08:39.056Z",
+  "tagline_en": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity."
 }

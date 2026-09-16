@@ -2,7 +2,7 @@
   "id": "grvt",
   "name": "Grvt",
   "slug": "grvt",
-  "tagline": "The airdrop is confirmed, retroactive, and live.",
+  "tagline": "空投已确认、追溯和实时。",
   "category": "DeFi",
   "chains": [
     "BNB Chain"
@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/grvt/",
-      "fetched_at": "2026-09-16T03:12:09.579Z"
+      "fetched_at": "2026-09-16T05:35:30.472Z"
     }
   ],
   "evidence": [
@@ -290,8 +290,8 @@
     },
     {
       "step": 2,
-      "title": "Open the GRVT reward portal",
-      "description": "Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet.",
+      "title": "打开 GRVT 奖励门户",
+      "description": "登录 GRVT 网站，使用你在第 1 赛季或第 2 赛季交易的确切账户进入奖励门户。分配与该账户绑定，因此请使用相同的邮箱和钱包。",
       "official_url": "https://grvt.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -300,12 +300,14 @@
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_url": "/visit/fta3/",
-      "source_verified": true
+      "source_verified": true,
+      "original_title": "Open the GRVT reward portal",
+      "original_description": "Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet."
     },
     {
       "step": 3,
-      "title": "Check your allocation",
-      "description": "The checker is live. Your $GRVT figure reflects your combined points from both seasons, adjusted for any Multiplier Plan you locked in before the July 17 cutoff.",
+      "title": "检查你的分配",
+      "description": "检查器已上线。你的 $GRVT 数字反映了你在 7 月 17 日截止日期前锁定的任何倍数计划中，两个赛季的综合积分。",
       "official_url": "https://grvt.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -313,12 +315,14 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Check your allocation",
+      "original_description": "The checker is live. Your $GRVT figure reflects your combined points from both seasons, adjusted for any Multiplier Plan you locked in before the July 17 cutoff."
     },
     {
       "step": 4,
-      "title": "Confirm how your first tranche arrives",
-      "description": "If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion.",
+      "title": "确认你的第一笔款项是如何到达的",
+      "description": "如果你在 7 月 17 日之前注册并选择了目的地，你的第一笔款项将自动发送。路由到你的 GRVT 账户的代币立即到达 TGE；由于网络拥堵，外部 BSC 或以太坊钱包可能需要长达 30 分钟。",
       "official_url": "https://grvt.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -326,12 +330,14 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Confirm how your first tranche arrives",
+      "original_description": "If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion."
     },
     {
       "step": 5,
-      "title": "Claim manually if you registered after July 17",
-      "description": "Later registrants claim through the reward portal instead. Locate your unlocked batch, click Claim, and the $GRVT is credited to your GRVT account once confirmed. If several batches are unlocked, claim each one individually.",
+      "title": "如果你在 7 月 17 日之后登记，请手动申请",
+      "description": "后来的注册者通过奖励门户网站进行领取。找到已解锁的批次，点击领取，确认后， $GRVT 将记入你的 GRVT 账户。如果解锁了多个批次，则分别领取每个批次。",
       "official_url": "https://grvt.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -339,12 +345,14 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Claim manually if you registered after July 17",
+      "original_description": "Later registrants claim through the reward portal instead. Locate your unlocked batch, click Claim, and the $GRVT is credited to your GRVT account once confirmed. If several batches are unlocked, claim each one individually."
     },
     {
       "step": 6,
-      "title": "Claim each remaining tranche over the next 12 months",
-      "description": "Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date.",
+      "title": "在未来 12 个月内领取每笔剩余款项",
+      "description": "标准计划代币全年不断批量解锁。乘数计划分配从第 4 个月（2x）或第 8 个月（4x）开始。每个解锁批次都有 30 天的领取时间窗口，之后没有例外，因此请在每个解锁日期之前设置提醒。",
       "official_url": "https://grvt.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -352,7 +360,9 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false
+      "source_verified": false,
+      "original_title": "Claim each remaining tranche over the next 12 months",
+      "original_description": "Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date."
     }
   ],
   "faq": [
@@ -396,8 +406,8 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T03:12:09.579Z",
-  "last_changed_at": "2026-09-16T01:48:06.857Z",
+  "last_checked_at": "2026-09-16T05:35:30.472Z",
+  "last_changed_at": "2026-09-16T05:35:41.756Z",
   "sourcedSteps": [
     {
       "title": "Open the GRVT reward portal",
@@ -421,7 +431,8 @@
       "body": "Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date."
     }
   ],
-  "digest": "{\"category\":\"DeFi\",\"chains\":[\"BNB Chain\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":18},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://grvt.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/grvt/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：已确认空投。官方渠道已有明确信号。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_url\":\"/visit/fta3/\",\"source_verified\":true,\"step\":2,\"title\":\"Open the GRVT reward portal\"},{\"cost_usd\":0,\"description\":\"The checker is live. Your $GRVT figure reflects your combined points from both seasons, adjusted for any Multiplier Plan you locked in before the July 17 cutoff.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"Check your allocation\"},{\"cost_usd\":0,\"description\":\"If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"Confirm how your first tranche arrives\"},{\"cost_usd\":0,\"description\":\"Later registrants claim through the reward portal instead. Locate your unlocked batch, click Claim, and the $GRVT is credited to your GRVT account once confirmed. If several batches are unlocked, claim each one individually.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"Claim manually if you registered after July 17\"},{\"cost_usd\":0,\"description\":\"Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"Claim each remaining tranche over the next 12 months\"}],\"guide_source\":\"sourced\",\"id\":\"grvt\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Grvt\",\"official\":{\"website\":\"https://grvt.io\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"B\",\"summary\":\"存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。\"},\"requirements\":[\"钱包\",\"资金准备\"],\"risks\":[\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":31,\"authenticityItems\":[{\"evidenceUrl\":\"https://grvt.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目状态已确认，但未找到可直接引用的官方公告\",\"value\":10},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目已确认，但未找到可直接引用的官方公告\",\"status\":\"missing\"},{\"label\":\"融资信息\",\"note\":\"项目已确认，但未核实到团队或融资信息\",\"status\":\"missing\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"S\",\"risk\":\"high\",\"riskItems\":[{\"key\":\"risk._swap_\",\"label\":\"涉及 Swap / 交易\",\"max\":3,\"reason\":\"检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk.capital\",\"label\":\"需要投入较大本金\",\"max\":3,\"reason\":\"信息来源推断预计需投入 $20–200（预估区间，非实测金额），上限已超出「小额试错」范围，风险等级至少偏高\",\"value\":2},{\"key\":\"risk.contract_coverage\",\"label\":\"合约地址未覆盖（数据源不提供）\",\"max\":3,\"reason\":\"本平台的数据源不提供合约地址，因此无法替你验证合约。参与前请自行到区块浏览器核对合约地址是否来自官方公告。\",\"value\":0}],\"value\":65,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"空投已确认，信号较强\",\"value\":16},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 18 分钟，共 6 个步骤\",\"value\":15},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":3},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"项目风险较高，参与者结构可能不健康\",\"value\":1},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自数据源抓取到的官方 HowTo，共 6 步，可追溯到原始页面\",\"value\":12}]},\"slug\":\"grvt\",\"sourcedSteps\":[{\"body\":\"Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet.\",\"title\":\"Open the GRVT reward portal\",\"url\":\"/visit/fta3/\"},{\"body\":\"The checker is live. Your $GRVT figure reflects your combined points from both seasons, adjusted for any Multiplier Plan you locked in before the July 17 cutoff.\",\"title\":\"Check your allocation\"},{\"body\":\"If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion.\",\"title\":\"Confirm how your first tranche arrives\"},{\"body\":\"Later registrants claim through the reward portal instead. Locate your unlocked batch, click Claim, and the $GRVT is credited to your GRVT account once confirmed. If several batches are unlocked, claim each one individually.\",\"title\":\"Claim manually if you registered after July 17\"},{\"body\":\"Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date.\",\"title\":\"Claim each remaining tranche over the next 12 months\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/grvt/\"}],\"status\":\"confirmed\",\"tagline\":\"The airdrop is confirmed, retroactive, and live.\",\"tasks\":[\"开仓交易\",\"提供流动性\"]}",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"BNB Chain\"],\"cost\":{\"capital_max_usd\":200,\"capital_min_usd\":20,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"高资金投入，不适合新手大额参与。\",\"time_minutes\":18},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://grvt.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/grvt/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：已确认空投。官方渠道已有明确信号。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计资金成本 $20–200，Gas 约 $0。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"需要少量主网资产用于支付 Gas。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"登录 GRVT 网站，使用你在第 1 赛季或第 2 赛季交易的确切账户进入奖励门户。分配与该账户绑定，因此请使用相同的邮箱和钱包。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://grvt.io\",\"original_description\":\"Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet.\",\"original_title\":\"Open the GRVT reward portal\",\"risk\":\"low\",\"source_url\":\"/visit/fta3/\",\"source_verified\":true,\"step\":2,\"title\":\"打开 GRVT 奖励门户\"},{\"cost_usd\":0,\"description\":\"检查器已上线。你的 $GRVT 数字反映了你在 7 月 17 日截止日期前锁定的任何倍数计划中，两个赛季的综合积分。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"original_description\":\"The checker is live. Your $GRVT figure reflects your combined points from both seasons, adjusted for any Multiplier Plan you locked in before the July 17 cutoff.\",\"original_title\":\"Check your allocation\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"检查你的分配\"},{\"cost_usd\":0,\"description\":\"如果你在 7 月 17 日之前注册并选择了目的地，你的第一笔款项将自动发送。路由到你的 GRVT 账户的代币立即到达 TGE；由于网络拥堵，外部 BSC 或以太坊钱包可能需要长达 30 分钟。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://grvt.io\",\"original_description\":\"If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion.\",\"original_title\":\"Confirm how your first tranche arrives\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"确认你的第一笔款项是如何到达的\"},{\"cost_usd\":0,\"description\":\"后来的注册者通过奖励门户网站进行领取。找到已解锁的批次，点击领取，确认后， $GRVT 将记入你的 GRVT 账户。如果解锁了多个批次，则分别领取每个批次。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"original_description\":\"Later registrants claim through the reward portal instead. Locate your unlocked batch, click Claim, and the $GRVT is credited to your GRVT account once confirmed. If several batches are unlocked, claim each one individually.\",\"original_title\":\"Claim manually if you registered after July 17\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"如果你在 7 月 17 日之后登记，请手动申请\"},{\"cost_usd\":0,\"description\":\"标准计划代币全年不断批量解锁。乘数计划分配从第 4 个月（2x）或第 8 个月（4x）开始。每个解锁批次都有 30 天的领取时间窗口，之后没有例外，因此请在每个解锁日期之前设置提醒。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://grvt.io\",\"original_description\":\"Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date.\",\"original_title\":\"Claim each remaining tranche over the next 12 months\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"在未来 12 个月内领取每笔剩余款项\"}],\"guide_source\":\"sourced\",\"id\":\"grvt\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Grvt\",\"official\":{\"website\":\"https://grvt.io\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"B\",\"summary\":\"存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。\"},\"requirements\":[\"钱包\",\"资金准备\"],\"risks\":[\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":31,\"authenticityItems\":[{\"evidenceUrl\":\"https://grvt.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目状态已确认，但未找到可直接引用的官方公告\",\"value\":10},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目已确认，但未找到可直接引用的官方公告\",\"status\":\"missing\"},{\"label\":\"融资信息\",\"note\":\"项目已确认，但未核实到团队或融资信息\",\"status\":\"missing\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"S\",\"risk\":\"high\",\"riskItems\":[{\"key\":\"risk._swap_\",\"label\":\"涉及 Swap / 交易\",\"max\":3,\"reason\":\"检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk.capital\",\"label\":\"需要投入较大本金\",\"max\":3,\"reason\":\"信息来源推断预计需投入 $20–200（预估区间，非实测金额），上限已超出「小额试错」范围，风险等级至少偏高\",\"value\":2},{\"key\":\"risk.contract_coverage\",\"label\":\"合约地址未覆盖（数据源不提供）\",\"max\":3,\"reason\":\"本平台的数据源不提供合约地址，因此无法替你验证合约。参与前请自行到区块浏览器核对合约地址是否来自官方公告。\",\"value\":0}],\"value\":65,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"空投已确认，信号较强\",\"value\":16},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 18 分钟，共 6 个步骤\",\"value\":15},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":3},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"项目风险较高，参与者结构可能不健康\",\"value\":1},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自数据源抓取到的官方 HowTo，共 6 步，可追溯到原始页面\",\"value\":12}]},\"slug\":\"grvt\",\"sourcedSteps\":[{\"body\":\"Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet.\",\"title\":\"Open the GRVT reward portal\",\"url\":\"/visit/fta3/\"},{\"body\":\"The checker is live. Your $GRVT figure reflects your combined points from both seasons, adjusted for any Multiplier Plan you locked in before the July 17 cutoff.\",\"title\":\"Check your allocation\"},{\"body\":\"If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion.\",\"title\":\"Confirm how your first tranche arrives\"},{\"body\":\"Later registrants claim through the reward portal instead. Locate your unlocked batch, click Claim, and the $GRVT is credited to your GRVT account once confirmed. If several batches are unlocked, claim each one individually.\",\"title\":\"Claim manually if you registered after July 17\"},{\"body\":\"Standard plan tokens keep unlocking in batches across the year. Multiplier Plan distributions begin at Month 4 (2x) or Month 8 (4x). Each unlocked batch has a 30 day claim window with no exceptions afterward, so set a reminder ahead of every unlock date.\",\"title\":\"Claim each remaining tranche over the next 12 months\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/grvt/\"}],\"status\":\"confirmed\",\"tagline\":\"空投已确认、追溯和实时。\",\"tagline_en\":\"The airdrop is confirmed, retroactive, and live.\",\"tasks\":[\"开仓交易\",\"提供流动性\"]}",
   "guide_source": "sourced",
-  "first_seen_at": "2026-09-12T06:08:39.056Z"
+  "first_seen_at": "2026-09-12T06:08:39.056Z",
+  "tagline_en": "The airdrop is confirmed, retroactive, and live."
 }
