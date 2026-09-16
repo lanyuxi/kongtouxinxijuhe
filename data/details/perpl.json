@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/perpl/",
-      "fetched_at": "2026-09-16T06:49:23.973Z"
+      "fetched_at": "2026-09-16T07:06:58.130Z"
     }
   ],
   "evidence": [
@@ -436,7 +436,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T06:49:23.973Z",
+  "last_checked_at": "2026-09-16T07:06:58.130Z",
   "last_changed_at": "2026-09-16T06:44:34.974Z",
   "sourcedSteps": [
     {

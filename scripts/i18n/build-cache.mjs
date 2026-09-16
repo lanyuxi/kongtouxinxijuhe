@@ -43,8 +43,59 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
  *      而 issue #28 的 47 处错译正是这样错过了一轮。
  *      现在 catch 必须**打印原因**，不允许静默回退。
  */
+/**
+ * 把「被截断的英文原文」还原成缓存里的完整键。
+ *
+ * ⚠️ 为什么需要这一步（独立审查 P2 实测）：
+ *   `data/details/*.json` 里的 `original_description` 被
+ *   `truncateAtSentence(..., 400)` 截到 400 字，而缓存键是**完整原文**
+ *   （例：键 427 字 vs 落盘 400 字），两边永远对不上 ——
+ *   脚本于是报「缺失 22 条」，而这 22 条其实**缓存里都有**。
+ *   后果不是用户可见 bug（`localizeCarriedOver` 优先用已中文化的
+ *   `description`），但补译脚本会把**已存在的译文重复再翻一遍**，
+ *   且报告数字失真，掩盖真实缺口。
+ *
+ * 做法：用 400 字前缀建反查索引（实测 738 条键前缀零冲突）。
+ * 只在「原文长度 >= 400」时启用，避免短句误配。
+ */
+const TRUNCATE_LEN = 400;
+
+function buildFullKeyIndex() {
+  if (!existsSync(CACHE_FILE)) return new Map();
+  let cache;
+  try {
+    cache = JSON.parse(readFileSync(CACHE_FILE, 'utf8'));
+  } catch (e) {
+    console.error(`[i18n] ✗ 读取缓存失败，无法建反查索引：${e.message}`);
+    return new Map();
+  }
+  const index = new Map();
+  for (const key of Object.keys(cache)) {
+    if (key.length < TRUNCATE_LEN) continue;
+    const prefix = key.slice(0, TRUNCATE_LEN);
+    if (index.has(prefix) && index.get(prefix) !== key) {
+      console.error(`[i18n] ✗ 反查索引前缀冲突，请人工确认：${prefix.slice(0, 40)}…`);
+      return new Map();
+    }
+    index.set(prefix, key);
+  }
+  return index;
+}
+
+/** 把可能被截断的文案还原为缓存里的完整键 */
+function resolveFullKey(text, index) {
+  if (!text) return text;
+  if (index.has(text)) return index.get(text);
+  if (text.length >= TRUNCATE_LEN) {
+    const hit = index.get(text.slice(0, TRUNCATE_LEN));
+    if (hit) return hit;
+  }
+  return text;
+}
+
 export function collectTexts() {
   const out = new Set();
+  const fullKeyIndex = buildFullKeyIndex();
   let files = [];
   try {
     files = readdirSync(DETAILS).filter((f) => f.endsWith('.json'));
@@ -76,12 +127,12 @@ export function collectTexts() {
     // 而 `guide` 已本地化、英文原文挂在 `original_*` 上。两者都收，
     // 保证「首次补译」与「重新生成缓存」都能收齐。
     for (const s of p.sourcedSteps ?? []) {
-      if (s.title && !hasChinese(s.title)) out.add(s.title);
-      if (s.body && !hasChinese(s.body)) out.add(s.body);
+      if (s.title && !hasChinese(s.title)) out.add(resolveFullKey(s.title, fullKeyIndex));
+      if (s.body && !hasChinese(s.body)) out.add(resolveFullKey(s.body, fullKeyIndex));
     }
     for (const g of p.guide ?? []) {
-      if (g.original_title) out.add(g.original_title);
-      if (g.original_description) out.add(g.original_description);
+      if (g.original_title) out.add(resolveFullKey(g.original_title, fullKeyIndex));
+      if (g.original_description) out.add(resolveFullKey(g.original_description, fullKeyIndex));
     }
     if (p.tagline_en) out.add(p.tagline_en);
     else if (p.tagline && !hasChinese(p.tagline)) out.add(p.tagline);

@@ -182,8 +182,49 @@ function main() {
     console.log('    修法：把 cache.zh.json 里该键的值改回**机器译文**，修正只登记在本表。');
   }
 
+  /**
+   * 「修正值必须含中文」检查（独立审查 P3）。
+   *
+   * 为什么单列一条：`auditHumanFix` 用 `localizeText(k) !== v` 判有效性，
+   * 而 `applyGlossary` 会**原样返回** HUMAN_FIX 的值 —— 于是
+   * 「把某条修正值改成它自己的英文原文」时，两边自洽、恒等通过，
+   * `validate` 全绿。实测该变异下只有 vitest 会红，而
+   * `npm run validate` 才是文档里让大家跑的那条命令。
+   * 因此把这条从 vitest 同步进体检脚本。
+   */
+  const noChinese = Object.entries(HUMAN_FIX)
+    .filter(([, v]) => !/[\u4e00-\u9fff]/.test(String(v)))
+    .map(([k]) => k);
+  if (noChinese.length) {
+    console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${noChinese.length} \u6761\u4fee\u6b63\u503c\u672c\u8eab\u4e0d\u542b\u4e2d\u6587\uff08\u7b49\u4e8e\u6ca1\u4fee\u6b63\uff09\uff1a`);
+    for (const k of noChinese) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
+  }
+
+  /**
+   * 修正值本身的「坏中文」检查（跨词边界拼坏）。
+   *
+   * 实测事故：75 条批量改写把 `确认索赔交易` 经术语表跑过一遍后
+   * 得到的「确领取取交易」直接登记进了 HUMAN_FIX ——
+   * 修正表成了坏文案的持久化仓库，而且因为「值是中文」，
+   * 所有 hasChinese 类门禁全绿。
+   * 这里只做**确定性**的坏模式检测，不做语义判断。
+   */
+  const BROKEN_PATTERNS = [/取取/, /确认领取交易交易/, /领取领取/];
+  const brokenValues = Object.entries(HUMAN_FIX)
+    .filter(([, v]) => BROKEN_PATTERNS.some((re) => re.test(String(v))))
+    .map(([k]) => k);
+  if (brokenValues.length) {
+    console.log(`\n[human-fix] \u2717 \u4ee5\u4e0b ${brokenValues.length} \u6761\u4fee\u6b63\u503c\u542b\u62fc\u574f\u7684\u4e2d\u6587\uff1a`);
+    for (const k of brokenValues) console.log(`    ${JSON.stringify(k.slice(0, 60))}`);
+  }
+
   const failed =
-    missing.length > 0 || ineffective.length > 0 || selfRef.length > 0 || effective === 0;
+    missing.length > 0 ||
+    brokenValues.length > 0 ||
+    ineffective.length > 0 ||
+    selfRef.length > 0 ||
+    noChinese.length > 0 ||
+    effective === 0;
   if (failed) {
     console.log('\n[human-fix] 结论：不通过（修正表已失效，需按上面打印的键重新登记）');
     if (strict) process.exitCode = 1;

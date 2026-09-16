@@ -356,6 +356,33 @@ describe('缓存完整性', () => {
     expect(new Set(TOKEN_TERMS).size, 'TOKEN_TERMS 存在重复项').toBe(TOKEN_TERMS.length);
   });
 
+  /**
+   * ⚠️ 独立审查 P0（本轮新引入的回归）：术语表规则在**词边界**上互相咬。
+   *
+   * 历史上 `TERM_MAP` 同时存在 `[/索赔/g,'领取']` 与 `[/认领/g,'领取']`：
+   *   确认索赔交易 --索赔→领取--> 确认领取交易 --认领→领取--> 确领取取交易
+   * 「确认|领取」跨词边界恰好拼出「认领」，于是被第二条规则再替换一次，
+   * 产出用户可见的坏中文「确领取取交易」。
+   *
+   * 「已译但不准」这类退化，`hasChinese` 门禁天然测不到（它是中文，只是更差），
+   * 所以必须单独钉一条：**整段文案喂进术语表后不得出现「取取」**。
+   */
+  it('术语表不得拼出「取取」这类跨词边界坏中文', () => {
+    const samples = [
+      '确认索赔交易',
+      '请在你的钱包中确认索赔交易',
+      '请打开领取 portal 并确认索赔交易',
+      '如果你有分配，请在你的钱包中确认索赔交易',
+    ];
+    const bad: string[] = [];
+    for (const raw of samples) {
+      let out = raw;
+      for (const [re, to] of TERM_MAP) out = out.replace(re, to);
+      if (out.includes('取取')) bad.push(`${raw} → ${out}`);
+    }
+    expect(bad, '术语表跨词边界拼出「取取」').toEqual([]);
+  });
+
   it('术语表不得有重复规则或恒等规则（恒等 = 运行期空转）', () => {
     const seen = new Set<string>();
     const dup: string[] = [];

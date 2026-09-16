@@ -130,7 +130,6 @@ export const TERM_MAP = [
   [/打开桥/g, '打开跨链页面'],
   [/桥接基金/g, '跨链资金'],
   [/提款地址/g, '提现地址'],
-  [/认领/g, '领取'],
   [/门户网站/g, '入口页面'],
   [/门户/g, 'portal'],
 ];
@@ -235,7 +234,7 @@ export const HUMAN_FIX = {
   "Holding is scored per chain, not on a combined balance, so positions on Ethereum, BNB Chain and Solana each earn separately and stack. A chain needs at least 5 CTM before it scores. Buy ETH, BNB or SOL on Bybit , withdraw to your own wallet, then use the widget below to move funds onto the chain you plan to hold on. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab":
     "持有是按每条链计分，而不是按总余额计分，因此 Ethereum、BNB Chain 和 Solana 上的仓位各自单独赚取并叠加。一条链至少需要 5 个 CTM 才能得分。在 Bybit 上购买 ETH、BNB 或 SOL，提现到你自己的钱包，然后使用下面的组件将资金转移到你打算持有的链上。跨链资金无需离开此页面即可在 30 多个链之间进行交换和跨链。路线快，费用低。现在桥打开交互式桥组件在新标签页中打开桥",
   "If you have an allocation, confirm the claim transaction in your wallet. Keep a small amount of SOL on hand to cover the Solana network fee. Your ARX will arrive in the connected wallet once the transaction settles.":
-    "如果你有分配，请在你的钱包中确领取取交易。手头保留少量 SOL 以支付 Solana 网络费用。交易结算后，你的 ARX 将到达连接的钱包中。",
+    "如果你有分配，请在你的钱包中确认领取交易。手头保留少量 SOL 以支付 Solana 网络费用。交易结算后，你的 ARX 将到达连接的钱包中。",
   "If you have no allocation yet, submit new contributions through the RTG Directory inside the portal. Work across the Developer, Ecosystem, and Community tracks earns Encrypted Credits that can convert to ARX in a future wave.":
     "如果你还没有分配，请通过 portal 内的 RTG 目录提交新的贡献。跨开发者、生态系统和社区轨道的工作可以获得加密积分，这些积分可以在未来的浪潮中转换为 ARX。",
   "If you hold HUMA, staking it earns additional Feathers on top of your LP rewards, with no fixed lockup. Holding $PST while staking adds a further boost, and keeping tokens staked for six months unlocks Vanguard status. Unstake any time.":
@@ -243,7 +242,7 @@ export const HUMAN_FIX = {
   "If you registered before July 17 and selected a destination, your first tranche is sent automatically. Tokens routed to your GRVT account land immediately at the TGE; external BSC or Ethereum wallets can take up to 30 minutes because of network congestion.":
     "如果你在 7 月 17 日之前注册并选择了目的地，你的第一笔款项将自动发送。发送至你 GRVT 账户的代币将立即到达 TGE；由于网络拥塞，外部 BSC 或 Ethereum 钱包可能需要长达 30 分钟的时间。",
   "If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.":
-    "如果你在第 3 赛季期间进行过交易，请打开领取 portal，连接你使用的钱包，并确领取取交易。 LMTS 总供应量的 3% 分配给平台交易者。",
+    "如果你在第 3 赛季期间进行过交易，请打开领取 portal，连接你使用的钱包，并确认领取交易。 LMTS 总供应量的 3% 分配给平台交易者。",
   "Install a Solana wallet such as Phantom, Solflare, or Backpack. You need SOL for network fees and USDC (or $CARDS) to open Gacha packs. If you don’t have any, buy them on Binance or use the bridge below Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab":
     "安装 Solana 钱包，例如 Phantom、Solflare 或 Backpack。你需要 SOL 来支付网络费用，并需要 USDC（或 $CARDS）来打开 Gacha 礼包。如果你没有，请在 Binance 上购买，或使用跨链交换下方的桥，在 30 多个链之间进行跨链，而无需离开此页面。路线快，费用低。现在桥打开交互式桥组件在新标签页中打开桥",
   "Install a Sui wallet first. Slush and Nabox both work across TBook’s products, and you will want a little SUI for gas. Then open the TBook engagement portal , connect the wallet, and link your X account and Discord. The Passport is the container every score writes into, so an incomplete profile caps everything downstream.":
@@ -327,6 +326,22 @@ export const HUMAN_FIX = {
   "You need USD1 or U plus a little BNB for gas. Stablecoins can be bought on Bybit and withdrawn straight to BNB Chain. If your funds sit elsewhere, the widget below will bridge or swap them across. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab":
     "你需要 USD1 或 U 加上一点 BNB 用于支付 Gas。稳定币可以在 Bybit 购买并直接提现到 BNB Chain。如果你的资金位于其他地方，下面的组件将跨链或交换它们。跨链资金无需离开此页面即可在 30 多个链之间进行交换和跨链。路线快，费用低。现在桥打开交互式桥组件在新标签页中打开桥",
 
+
+  /**
+   * ⚠️ 基线回归项（独立审查 P1，务必保留）：
+   *   下面 3 条在 277ef35c 那轮批量改写 HUMAN_FIX 时被**误删**，
+   *   结果用户可见文案从「好中文」退回「机器中文」：
+   *     · Access the Rewards Section  → 「访问奖励部分」（回到「进入奖励页面」）
+   *     · Season 1 … $125,000         → 「分发 125,000 美元」（回到「发放 12.5 万美元」）
+   *     · Enter at least $10 after fees … → 「换成 1 美元…保管库」（USD1 被吞）
+   *   「0 处英文残留」类门禁天然测不到这类退化 —— 它们是中文，只是更差。
+   */
+  "Access the Rewards Section":
+    "进入奖励页面",
+  "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity.":
+    "第 1 季空投已确认，将根据已验证的平台活动，向符合条件的玩家发放价值 12.5 万美元的 $MNTD。",
+  "Enter at least $10 after fees, then approve and confirm. Holding a different token is fine, since the deposit flow swaps into USD1 or U first. Once the phase cap fills, the vault stops taking new money while existing deposits keep running.":
+    "扣除手续费后至少存入 $10，然后授权并确认。持有其他代币也可以，存款会先自动换成 USD1 或 U。一旦该阶段额度满了，金库会停止接受新资金，已有存款继续计息。",
 };
 
 /**
