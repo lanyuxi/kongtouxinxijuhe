@@ -20,7 +20,7 @@
  *   3. 分数必须可解释：新增 `value.guide_trust` 评分项，写明扣了多少、为什么
  */
 import { describe, it, expect } from 'vitest';
-import { scoreValue, gradeOf } from '../scripts/lib/score';
+import { scoreValue, gradeOf, buildRecommendation } from '../scripts/lib/score';
 import type { AirdropProject } from '../src/lib/types';
 import { toSkeleton } from '../scripts/lib/merge';
 
@@ -76,7 +76,7 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
     expect(item!.value).toBe(item!.max);
   });
 
-  it('模板教程的项目不得进入 S 级（A 允许）', () => {
+  it('模板教程的项目不得进入 S 级', () => {
     const p = make({
       status: 'claim_live',
       guide_source: 'template',
@@ -94,6 +94,45 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
     ];
     const r = scoreValue(p);
     expect(r.grade, '模板教程的项目不该被判「重点参与」').not.toBe('S');
+  });
+
+  it('模板教程的项目也不得进入 A 级（最终采纳审查建议）', () => {
+    // 第一版只卡了 S，理由是「A 的语义比 S 弱」。
+    // 实跑数据推翻了它：11 个 A 级项目全部是模板教程，
+    // 其中 7 个 recommendation.action='participate'，详情页显示「建议参与」，
+    // 而点进去的教程是任何项目都适用的通用流程。
+    // 「建议参与」这个动作词对用户的推动与 S 级没有本质区别。
+    const p = make({
+      status: 'claim_live',
+      guide_source: 'template',
+      guide: steps(5),
+      tasks: ['领取空投'],
+      official: { website: 'https://demo.xyz', docs: 'https://docs.demo.xyz', github: 'https://github.com/demo' },
+      meta: { funding: 'Series A', investors: ['A'], token_status: '已发币' },
+      cost: { capital_min_usd: 0, capital_max_usd: 0, gas_estimate_usd: 0, time_minutes: 30, long_term: false, summary: '' },
+    });
+    p.evidence = [
+      { type: 'official_website', label: 'w', url: 'https://demo.xyz', verified: true },
+      { type: 'official_docs', label: 'd', url: 'https://docs.demo.xyz', verified: true },
+      { type: 'third_party', label: 't', url: 'https://a.io/x', verified: true },
+      { type: 'third_party', label: 't2', url: 'https://b.io/x', verified: true },
+    ];
+    const r = scoreValue(p);
+    expect(r.grade, '模板教程的项目最高只能到 B（可观察）').toBe('B');
+  });
+
+  it('模板教程不得触发「建议参与」这个动作词', () => {
+    const p = make({
+      status: 'claim_live',
+      guide_source: 'template',
+      guide: steps(5),
+      tasks: ['领取空投'],
+      official: { website: 'https://demo.xyz', docs: 'https://docs.demo.xyz' },
+      cost: { capital_min_usd: 0, capital_max_usd: 0, gas_estimate_usd: 0, time_minutes: 30, long_term: false, summary: '' },
+    });
+    const r = scoreValue(p);
+    const rec = buildRecommendation(r.grade, 'low');
+    expect(rec.action, '「建议参与」会推动用户投入时间，模板教程不足以为它背书').not.toBe('participate');
   });
 
   it('教程步骤过少时额外扣分', () => {
@@ -114,7 +153,7 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
 });
 
 describe('P1-2 全量数据不变量', () => {
-  it('不存在「模板教程却判 S 级」的项目', async () => {
+  it('不存在「模板教程却判 S/A 级」的项目', async () => {
     const { readFile } = await import('node:fs/promises');
     const path = await import('node:path');
     const root = path.resolve(__dirname, '..');
@@ -122,11 +161,11 @@ describe('P1-2 全量数据不变量', () => {
       await readFile(path.join(root, 'data/airdrops.json'), 'utf8'),
     ) as { projects: AirdropProject[] };
     const bad = dataset.projects.filter(
-      (p) => p.scores.grade === 'S' && p.guide_source === 'template',
+      (p) => (p.scores.grade === 'S' || p.scores.grade === 'A') && p.guide_source === 'template',
     );
     expect(
       bad.map((p) => p.slug),
-      `以下项目教程是模板却判 S 级：${bad.map((p) => p.slug).join('、')}`,
+      `以下项目教程是模板却判 S/A 级：${bad.map((p) => p.slug).join('、')}`,
     ).toEqual([]);
   });
 });
