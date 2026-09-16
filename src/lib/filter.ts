@@ -3,7 +3,7 @@
  * 对应方案文档第 7 章「筛选能力」与第 5 章「空投雷达」。
  */
 
-import type { AirdropProject, AirdropStatus, Chain, RiskLevel } from './types';
+import type { ListProject, AirdropStatus, Chain, RiskLevel } from './types';
 import { isBeginnerFriendly } from './beginner';
 
 export type SortKey = 'latest' | 'value' | 'authenticity' | 'risk' | 'cost';
@@ -54,7 +54,7 @@ export const DEFAULT_FILTERS: Filters = {
 
 const RISK_ORDER: Record<RiskLevel, number> = { low: 0, medium: 1, high: 2, critical: 3 };
 
-export function applyCostBucket(p: AirdropProject, bucket: Filters['cost']): boolean {
+export function applyCostBucket(p: ListProject, bucket: Filters['cost']): boolean {
   const max = p.cost.capital_max_usd;
   const gas = p.cost.gas_estimate_usd;
   switch (bucket) {
@@ -72,9 +72,9 @@ export function applyCostBucket(p: AirdropProject, bucket: Filters['cost']): boo
 }
 
 export function filterProjects(
-  projects: AirdropProject[],
+  projects: ListProject[],
   f: Filters,
-): AirdropProject[] {
+): ListProject[] {
   const kw = f.keyword.trim().toLowerCase();
   return projects.filter((p) => {
     // status === 'all' 表示「全部仍可参与的状态」：默认排除已结束项目，
@@ -99,7 +99,7 @@ export function filterProjects(
   });
 }
 
-export function sortProjects(projects: AirdropProject[], sort: SortKey): AirdropProject[] {
+export function sortProjects(projects: ListProject[], sort: SortKey): ListProject[] {
   const list = [...projects];
   switch (sort) {
     case 'value':
@@ -151,10 +151,12 @@ export type OverviewKey = 'total' | 'newToday' | 'highValue' | 'highRisk';
  *   已结束的项目不该出现在「值得关注」里 —— 「值得关注」的语义是
  *   「现在还值得投入时间」。而原先 `ended` 项目只要价值等级够高
  *   就会被计入，用户点进磁贴后看到的是一批无法再参与的项目。
- *   实测修复前 `sanctum`（ended，B 级）与 `dymension`（ended，D 级）虽未触发，
- *   但这是**口径本身漏了约束**，一旦有 S/A 级的 ended 项目就会立刻误导。
+ *
+ * 入参用 `ListProject`：main 侧已把列表数据瘦身为 ListProject
+ * （剔除 evidence / 评分明细 / 教程描述，完整数据落到 data/details/）。
+ * 本函数只读 status 与 scores.grade/risk，两者都在 ListProject 里，不受影响。
  */
-export function isHighValue(p: AirdropProject): boolean {
+export function isHighValue(p: ListProject): boolean {
   if (p.status === 'ended') return false;
   return p.scores.grade === 'S' || p.scores.grade === 'A';
 }
@@ -163,7 +165,7 @@ export function isHighValue(p: AirdropProject): boolean {
  * 高风险 —— 与 StatBar「高风险」口径一致。
  * 同样排除 `ended`：一个已经结束的活动不存在「现在的风险」。
  */
-export function isHighRisk(p: AirdropProject): boolean {
+export function isHighRisk(p: ListProject): boolean {
   if (p.status === 'ended') return false;
   return p.scores.risk === 'high' || p.scores.risk === 'critical';
 }
@@ -188,8 +190,11 @@ export function utcTodayStart(now: Date = new Date()): number {
  * 现在改用 `first_seen_at`（在本系统里首次被记录的时间），
  * 与磁贴文案「今日新收录」严格一致。历史项目不会被回填成今天，
  * 因此这个数字不会因为口径修正而突然变大。
+ *
+ * ⚠️ `first_seen_at` 必须同时存在于 `ListProject` 里 ——
+ *    main 侧的列表瘦身把它漏掉了，这是我合并时补的（见 types.ts 注释）。
  */
-export function isNewToday(p: AirdropProject, now: Date = new Date()): boolean {
+export function isNewToday(p: ListProject, now: Date = new Date()): boolean {
   // 已结束的项目不算「今日新收录」：用户看到数字后点进去，
   // 期望是一批可以参与的新机会，而不是刚收录就已经结束的项目。
   if (p.status === 'ended') return false;
@@ -209,10 +214,10 @@ export const OVERVIEW_LABEL: Record<OverviewKey, string> = {
  * 排序仍由列表自己的 sort 决定，避免点一下磁贴顺带改掉用户的排序设置。
  */
 export function filterByOverview(
-  projects: AirdropProject[],
+  projects: ListProject[],
   key: OverviewKey | null,
   now: Date = new Date(),
-): AirdropProject[] {
+): ListProject[] {
   if (!key) return projects;
   switch (key) {
     case 'total':

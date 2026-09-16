@@ -41,6 +41,11 @@
     "reels": {
       "domain": "reels.gg",
       "note": "数据源抓到的是营销短链 click.trkreels.com，无稳定官网；使用项目实际域名 reels.gg"
+    },
+    "beezie": {
+      "domain": "beezie.com",
+      "llama": "beezie",
+      "note": "beezie.com 对数据中心出口 IP 返回 403（Cloudflare challenge），改用 DefiLlama 图标库稳定获取"
     }
   }
 }

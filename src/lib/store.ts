@@ -127,3 +127,48 @@ export function useLocalState() {
 
   return { state, toggleFavorite, setProgress, toggleStep, clearAll };
 }
+
+/**
+ * 筛选条件的本地持久化。
+ *
+ * 为什么需要（第一性原理：用户回访时不想重做同一件事）：
+ *   旧实现把筛选条件放在 ListView 的 useState 里，于是
+ *   「筛出 Solana + 免费 + 新手友好」→ 点进一个项目详情 → 返回，
+ *   筛选条件**全部重置**，用户必须重新点一遍。
+ *   对一个「每天回来看新空投」的产品，这是每天都要重复的摩擦。
+ *
+ * 设计取舍：
+ *   - 与收藏共用同一套 LocalStorage 约定（清缓存会丢，可接受）；
+ *   - **不持久化排序以外的临时态**（例如总览磁贴口径），
+ *     因为口径是一次性探索动作，持久化会让用户下次看到一个「莫名少了很多」的列表；
+ *   - 读取失败的键一律回落到默认值，避免旧版本/脏数据把筛选器卡死。
+ */
+const FILTER_KEY = 'dropscope.filters.v1';
+
+/** 仅保留「用户主动设定过、且值得记住」的字段，其余交由默认值兜底 */
+export function loadFilters<T extends object>(defaults: T): T {
+  try {
+    const raw = localStorage.getItem(FILTER_KEY);
+    if (!raw) return defaults;
+    const saved = JSON.parse(raw) as Partial<T>;
+    if (!saved || typeof saved !== 'object') return defaults;
+    // 以 defaults 为白名单合并：只接受两边都存在的键，
+    // 防止历史遗留字段或恶意构造的键污染筛选状态。
+    const out: Record<string, unknown> = { ...(defaults as Record<string, unknown>) };
+    for (const k of Object.keys(defaults)) {
+      const v = (saved as Record<string, unknown>)[k];
+      if (v !== undefined && v !== null) out[k] = v;
+    }
+    return out as T;
+  } catch {
+    return defaults;
+  }
+}
+
+export function persistFilters(filters: object): void {
+  try {
+    localStorage.setItem(FILTER_KEY, JSON.stringify(filters));
+  } catch {
+    /* 忽略隐私模式下的写入失败 */
+  }
+}

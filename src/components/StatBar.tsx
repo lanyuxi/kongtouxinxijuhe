@@ -1,4 +1,4 @@
-import type { AirdropProject } from '../lib/types';
+import type { ListProject } from '../lib/types';
 import { relativeTime, isStale } from '../lib/labels';
 import { MetricTile } from './galaxy';
 import { isHighRisk, isHighValue, utcTodayStart, type OverviewKey } from '../lib/filter';
@@ -21,7 +21,7 @@ export function StatBar({
   active = null,
   onSelect,
 }: {
-  projects: AirdropProject[];
+  projects: ListProject[];
   updatedAt: string;
   lastDiscovery: string;
   /** 当前生效的总览口径；null = 未按总览筛选 */

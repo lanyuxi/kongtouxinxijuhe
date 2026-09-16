@@ -9,10 +9,15 @@
  * - 不变量 3：单个来源失败不能清空数据集，必须保留 Last Known Good
  */
 
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import type { Dataset, RefreshStatus, SourceHealth, SourceHealthFile } from '../src/lib/types';
+import type {
+  AirdropProject,
+  RefreshStatus,
+  SourceHealth,
+  SourceHealthFile,
+} from '../src/lib/types';
 import { adapters } from './fetch/index';
 import { normalizeAll } from './lib/normalize';
 import { mergeAll } from './lib/merge';
@@ -29,6 +34,7 @@ import { canPrune, pruneProjects } from './lib/prune';
 import { reconcileAll } from './lib/status';
 import { markFirstSeenAll } from './lib/first-seen';
 import { loadProfiles } from './lib/enrich';
+import { buildListDataset } from './lib/list';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -44,15 +50,44 @@ async function readJson<T>(file: string, fallback: T): Promise<T> {
   }
 }
 
+/**
+ * 从 data/details/ 读回全部完整项目（Last Known Good 的唯一可信来源）。
+ *
+ * 为什么不用 airdrops.json：它是瘦身后的列表形态，缺少 Prune / 变化判定
+ * 必需的 evidence、digest 等字段（见文件头注释）。
+ * 单个分片损坏时跳过而不是整体失败：宁可少一个历史项目，也不能让整轮停摆。
+ */
+async function readDetailProjects(dir: string): Promise<AirdropProject[]> {
+  let files: string[] = [];
+  try {
+    files = (await readdir(dir)).filter((f) => f.endsWith('.json'));
+  } catch {
+    return [];
+  }
+  const out: AirdropProject[] = [];
+  for (const f of files) {
+    const p = await readJson<AirdropProject | null>(path.join(dir, f), null);
+    if (p?.slug) out.push(p);
+  }
+  return out;
+}
+
 async function main() {
   const now = new Date().toISOString();
   console.log('[pipeline] 开始执行，时间：', now);
   await writeRefreshStatus({ state: 'running', started_at: now });
 
   // 1) 读取上一版数据（Last Known Good）
+  //
+  //    ⚠️ 关键：上一版**完整项目**必须从 data/details/ 读回，不能从 airdrops.json 读。
+  //    因为 airdrops.json 现在是瘦身后的列表形态（见 scripts/lib/list.ts），
+  //    里面没有 evidence / digest / guide.description 等字段。
+  //    若用它当 Last Known Good：
+  //      · Prune 会因为 `p.evidence` 为 undefined 直接抛错（曾经真实发生）；
+  //      · 变化判定也会把「字段消失」误判成「内容全部变化」。
+  //    details/ 才是完整项目的落盘处，因此以它为准；airdrops.json 只用于读取元信息。
   const previousFile = path.join(DATA_DIR, 'airdrops.json');
-  const previousDataset = await readJson<Dataset | null>(previousFile, null);
-  const previousProjects = previousDataset?.projects ?? [];
+  const previousProjects = await readDetailProjects(DETAILS_DIR);
   const previousHealth = await readJson<SourceHealthFile | null>(
     path.join(DATA_DIR, 'source-health.json'),
     null,
@@ -221,15 +256,30 @@ async function main() {
     (p) => new Date(p.first_seen_at ?? p.discovered_at).getTime() >= startOfDay,
   ).length;
 
-  const dataset: Dataset = {
+  /**
+   * 列表数据集：**只含卡片/筛选/排序所需字段**。
+   *
+   * 为什么不再把完整项目写进 airdrops.json：
+   *   完整数据里 digest / guide.description / scores.*Items / sourcedSteps / faq
+   *   合计占 3.87 MB 的绝大部分，而列表页一个字节都不用。
+   *   详情页改为按需拉取 data/details/<slug>.json（见 src/lib/data.ts）。
+   *   这里仍保留新字段名 new_today / updated_at，前端协议不变。
+   */
+  // 注意：这是**列表数据集**，类型与内部 projects 不同（见 scripts/lib/list.ts）。
+  // 不要把它赋给 Dataset —— 那会让 TS 误以为后续还能拿到 evidence / faq。
+  const dataset = buildListDataset(projects, {
     updated_at: now,
     new_today: newToday,
-    projects,
-  };
+  });
 
-  // 6) Write JSON：列表 + 详情分片 + 数据源健康
+  // 6) Write JSON：列表（瘦身）+ 详情分片（完整）+ 数据源健康
   await mkdir(DETAILS_DIR, { recursive: true });
   await writeFile(previousFile, JSON.stringify(dataset, null, 2) + '\n', 'utf8');
+
+  // 关键：先清掉上一轮的详情分片，避免被 prune 的项目留下孤儿文件。
+  // 否则 slug 变更后 dist 里会残留旧项目详情，白占体积还可能被误读为「仍存在」。
+  await rm(DETAILS_DIR, { recursive: true, force: true });
+  await mkdir(DETAILS_DIR, { recursive: true });
 
   for (const p of projects) {
     await writeFile(

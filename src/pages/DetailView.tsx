@@ -10,6 +10,7 @@ import {
   relativeTime,
 } from '../lib/labels';
 import { StatusBadge, RiskBadge } from '../components/Badge';
+import { DIFFICULTY_LABEL, difficultyOf } from '../lib/difficulty';
 import { percentileNote, percentilePhrase } from '../lib/percentile';
 import { explainRiskItem, riskExplain } from '../lib/risk';
 import { ExitChecklist } from '../components/ExitChecklist';
@@ -43,6 +44,16 @@ const RISK_TONE: Record<AirdropProject['scores']['risk'], string> = {
   high: 'text-danger',
   critical: 'text-danger',
 };
+
+/** 展示来源主机名，便于用户一眼核对「这条来源到底来自哪个站」 */
+function safeHost(url?: string): string {
+  if (!url) return '';
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
 
 const TOC = [
   { id: 'decision', label: '系统结论' },
@@ -98,7 +109,8 @@ export function DetailView({
   );
 
   const stale = isStale(p.last_checked_at);
-  const difficulty = Math.max(1, Math.min(5, Math.round(p.cost.time_minutes / 20) || 1));
+  // 难度由可信的结构化字段推导，不再用模板编造的耗时（见 lib/difficulty.ts）
+  const difficulty = difficultyOf(p);
   const verifiedCount = p.evidence.filter((e) => e.verified).length;
   const sourceCount = new Set(
     p.evidence
@@ -547,6 +559,9 @@ export function DetailView({
                   <span className="text-line">{'★'.repeat(5 - difficulty)}</span>
                 </span>
                 <span className="metric text-base">{difficulty} / 5</span>
+                <span className="chip border-line bg-page text-ink-soft">
+                  {DIFFICULTY_LABEL[difficulty]}
+                </span>
               </p>
               <p className="text-base text-ink-soft">{p.cost.summary}</p>
               {p.requirements.length > 0 && (
@@ -769,7 +784,17 @@ export function DetailView({
                           </a>
                         )}
                         {g.source_verified ? (
-                          <span className="text-sm text-ok">✓ 来源已核实</span>
+                          <a
+                            className="text-sm text-ok underline-offset-2 hover:underline"
+                            href={g.source_url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            title={`本步骤来源：${g.source_url}`}
+                          >
+                            ✓ 来源已核实（{safeHost(g.source_url)}）↗
+                          </a>
+                        ) : p.guide_source === 'template' ? (
+                          <span className="text-sm text-warn">⚠ 流程示意，非官方步骤</span>
                         ) : (
                           <span className="text-sm text-warn">⚠ 本步骤尚未通过完整来源验证</span>
                         )}

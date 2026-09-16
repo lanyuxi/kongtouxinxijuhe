@@ -13,7 +13,7 @@
  */
 
 import { useMemo, useState } from 'react';
-import type { AirdropProject } from '../lib/types';
+import type { ListProject } from '../lib/types';
 import { SCAM_TYPES, buildOfficialDomains, checkDomain } from '../lib/scam';
 import type { CheckResult } from '../lib/scam';
 
@@ -33,7 +33,7 @@ const VERDICT_LABEL: Record<CheckResult['verdict'], string> = {
   invalid: '— 输入无效',
 };
 
-export function SafetyView({ projects }: { projects: AirdropProject[] }) {
+export function SafetyView({ projects }: { projects: ListProject[] }) {
   const officialDomains = useMemo(() => buildOfficialDomains(projects), [projects]);
   const [input, setInput] = useState('');
   const [result, setResult] = useState<CheckResult | null>(null);

@@ -7,7 +7,7 @@
 import { access, readFile, readdir, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import type { AirdropProject, Dataset } from '../src/lib/types';
+import type { AirdropProject } from '../src/lib/types';
 import { validateProjects, scanForSecrets } from './lib/validate';
 import { isProjectVerified } from './lib/verify';
 
@@ -28,15 +28,49 @@ async function collectSourceFiles(dir: string): Promise<{ file: string; content:
   return out;
 }
 
-async function main() {
-  const dataset = JSON.parse(
-    await readFile(path.join(ROOT, 'data/airdrops.json'), 'utf8'),
-  ) as Dataset;
+/**
+ * 读取全部**完整项目**用于校验。
+ *
+ * ⚠️ 为什么不能读 data/airdrops.json：
+ *   它现在是瘦身后的**列表形态**（见 scripts/lib/list.ts），没有 evidence / guide / faq。
+ *   而校验逻辑恰好全部依赖这些字段（证据条数、教程可追溯性、logo 覆盖等）。
+ *   历史事故：列表瘦身后这里仍读 airdrops.json，
+ *   结果 `p.evidence.filter(...)` 直接抛 `Cannot read properties of undefined`，
+ *   让 GitHub Pages 的「发布前校验」整步失败、部署被跳过。
+ *   完整项目的唯一可信来源是 data/details/。
+ */
+async function readFullProjects(dir: string): Promise<AirdropProject[]> {
+  const out: AirdropProject[] = [];
+  let files: string[] = [];
+  try {
+    files = (await readdir(dir)).filter((f) => f.endsWith('.json'));
+  } catch {
+    return out;
+  }
+  for (const f of files) {
+    try {
+      const p = JSON.parse(await readFile(path.join(dir, f), 'utf8')) as AirdropProject;
+      if (p?.slug) out.push(p);
+    } catch {
+      /* 单个分片损坏不阻断整体校验，交由上层统计 */
+    }
+  }
+  return out;
+}
 
-  const result = validateProjects(dataset.projects);
+async function main() {
+  // 校验对象是完整项目（来自 details/），而不是瘦身后的列表（见 readFullProjects 注释）
+  const projects = await readFullProjects(path.join(ROOT, 'data', 'details'));
+  if (projects.length === 0) {
+    console.log('\n错误 1 条：\n  ✗ 未找到任何项目详情（data/details/ 为空）');
+    process.exitCode = 1;
+    return;
+  }
+
+  const result = validateProjects(projects);
 
   // 额外检查：真实性分 >= 70 的项目应至少满足「已验证」门槛
-  const suspicious = dataset.projects.filter(
+  const suspicious = projects.filter(
     (p: AirdropProject) => p.scores.authenticity >= 70 && !isProjectVerified(p),
   );
 
@@ -49,10 +83,10 @@ async function main() {
   // Logo 覆盖率校验：列表页不允许出现缺省图 / 字母图。
   // 校验对象是 data/logo-map.json 与实际文件是否一一对应，
   // 而不是「抓取脚本跑了没」—— 只有文件真的存在，前端才不会破图。
-  const logoErrors = await validateLogoCoverage(dataset.projects, warnings);
+  const logoErrors = await validateLogoCoverage(projects, warnings);
   errors.push(...logoErrors);
 
-  console.log(`\n数据集：${dataset.projects.length} 个项目`);
+  console.log(`\n数据集：${projects.length} 个项目（完整详情分片）`);
   console.log(`校验通过：${result.ok && errors.length === 0 ? '是' : '否'}`);
   if (warnings.length) {
     console.log(`\n警告 ${warnings.length} 条：`);

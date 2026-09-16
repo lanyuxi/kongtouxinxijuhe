@@ -1,4 +1,4 @@
-import type { AirdropProject } from '../lib/types';
+import type { ListProject } from '../lib/types';
 import { CHAIN_LABEL, RISK_LABEL, STATUS_LABEL, relativeTime } from '../lib/labels';
 import { operationSummary } from '../lib/tasks';
 import { beginnerVerdict } from '../lib/beginner';
@@ -42,7 +42,7 @@ import { SpotlightHost } from './Glow';
  */
 
 /** 状态 → 文字色（设计稿里状态是彩色文字，不是色块） */
-const STATUS_TONE: Record<AirdropProject['status'], string> = {
+const STATUS_TONE: Record<ListProject['status'], string> = {
   new: 'text-brand',
   potential: 'text-warn',
   confirmed: 'text-ok',
@@ -51,7 +51,7 @@ const STATUS_TONE: Record<AirdropProject['status'], string> = {
 };
 
 /** 状态 → 圆点色（与文字色同源，但用一个实心点把状态从「一行字」变成「一个信号」） */
-const STATUS_DOT: Record<AirdropProject['status'], string> = {
+const STATUS_DOT: Record<ListProject['status'], string> = {
   new: 'bg-brand',
   potential: 'bg-warn',
   confirmed: 'bg-ok',
@@ -60,7 +60,7 @@ const STATUS_DOT: Record<AirdropProject['status'], string> = {
 };
 
 /** 风险 → 文字色 */
-const RISK_TONE: Record<AirdropProject['scores']['risk'], string> = {
+const RISK_TONE: Record<ListProject['scores']['risk'], string> = {
   low: 'text-ok',
   medium: 'text-warn',
   high: 'text-danger',
@@ -75,7 +75,7 @@ export function ProjectCard({
   variantOf,
   percentiles,
 }: {
-  project: AirdropProject;
+  project: ListProject;
   favorited: boolean;
   /**
    * 相对分位（相对本批全部项目）。
@@ -86,7 +86,7 @@ export function ProjectCard({
    */
   percentiles?: Percentiles;
   /** 同一协议下的其他产品线（仅主条目传入），折叠展示，避免用户以为是多个空投 */
-  variants?: AirdropProject[];
+  variants?: ListProject[];
   /** 本条目归属的主条目（产品线时由父级传入） */
   variantOf?: string;
   onToggleFavorite: (slug: string) => void;
@@ -166,7 +166,7 @@ export function ProjectCard({
           {beginner.friendly && (
             <span
               title={beginner.reason}
-              className="shrink-0 rounded-full border border-ok/30 bg-ok-wash px-2 py-0.5 text-[11px] font-medium text-ok"
+              className="shrink-0 rounded-full border border-ok/30 bg-ok-wash px-2 py-0.5 text-[10px] font-medium text-ok"
             >
               🌱 新手友好
             </span>
@@ -190,13 +190,13 @@ export function ProjectCard({
 
         {/* 同协议产品线：折叠成一行文字，避免「Aave V3 / V4 / Horizon」被当成 3 个空投 */}
         {variants.length > 0 && (
-          <p className="mt-1 truncate text-[11px] text-ink-faint" title={variants.map((v) => v.name).join('、')}>
+          <p className="mt-1 truncate text-[10px] text-ink-faint" title={variants.map((v) => v.name).join('、')}>
             同协议还有 {variants.length} 条产品线：
             {variants.map((v) => v.name).join('、')}
           </p>
         )}
         {variantOf && (
-          <p className="mt-1 truncate text-[11px] text-ink-faint">
+          <p className="mt-1 truncate text-[10px] text-ink-faint">
             属于同一协议 <a href={`#/project/${variantOf}`} className="text-brand no-underline hover:underline">{variantOf}</a>
           </p>
         )}
@@ -229,7 +229,7 @@ export function ProjectCard({
               className="mt-2"
               title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
             >
-              <div className="flex items-center justify-between gap-2 text-[11px] text-ink-faint">
+              <div className="flex items-center justify-between gap-2 text-[10px] text-ink-faint">
                 <span>本批相对位置</span>
                 <span className="tabular-nums text-ink-soft">{percentilePhrase(valuePct)}</span>
               </div>

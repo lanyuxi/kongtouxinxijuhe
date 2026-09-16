@@ -31,9 +31,25 @@ export function pickStatus(a: AirdropStatus, b: AirdropStatus): AirdropStatus {
   return (STATUS_RANK[b] ?? 0) > (STATUS_RANK[a] ?? 0) ? b : a;
 }
 
-/** 基本类型数组去重 */
-function mergeUnique<T>(a: T[], b: T[]): T[] {
-  return Array.from(new Set([...a, ...b]));
+/**
+ * 合并公链列表。
+ *
+ * ⚠️ 与普通 mergeUnique 的差别（这是「65% 显示其他公链」的第二个根因）：
+ *   链信息是**会随时间被补全**的 —— 第一轮某个项目只被 Airdrops.io 抓到、
+ *   公链未知（Other），第二轮 DefiLlama 补上了 ['Ethereum','Base']。
+ *   若照搬 mergeUnique 只做并集，'Other' 会**永久粘住**：
+ *   实测 121 个项目同时带着 'Other' 和真实公链，
+ *   于是卡片上又出现「其他公链」，筛选器里 Other 计数高得离谱。
+ *
+ *   规则：一旦某一侧给出了**已知链**，'Other' 就不该再保留 ——
+ *   它的语义是「我们不知道这条链叫什么」，而不是「这项目还有一条其他链」。
+ *   只有两侧都只有 'Other' 时才保留 'Other'。
+ */
+function mergeChains(a: Chain[], b: Chain[]): Chain[] {
+  const all = Array.from(new Set([...(a ?? []), ...(b ?? [])]));
+  const known = all.filter((c) => c !== 'Other');
+  // 有真实链 → 丢掉「未知」占位；否则保留 Other，表示确实没识别出来
+  return known.length ? known : all.length ? ['Other'] : [];
 }
 
 /** 按对象身份去重无法处理结构相同的对象，这里改用 key 提取函数做值去重 */
@@ -113,7 +129,7 @@ export function mergeProject(
   return {
     ...base,
     status: pickStatus(base.status, incoming.status as AirdropStatus),
-    chains: mergeUnique(base.chains, incoming.chains as Chain[]),
+    chains: mergeChains(base.chains, incoming.chains as Chain[]),
     sources: mergeUniqueBy<SourceRef>(
       base.sources,
       [

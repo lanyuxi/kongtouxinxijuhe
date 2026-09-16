@@ -20,7 +20,7 @@
  *   3. 分数必须可解释：新增 `value.guide_trust` 评分项，写明扣了多少、为什么
  */
 import { describe, it, expect } from 'vitest';
-import { scoreValue, gradeOf, buildRecommendation } from '../scripts/lib/score';
+import { scoreValue, gradeOf, buildRecommendation, GRADE_THRESHOLDS } from '../scripts/lib/score';
 import type { AirdropProject } from '../src/lib/types';
 import { toSkeleton } from '../scripts/lib/merge';
 
@@ -143,12 +143,25 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
     expect(b).toBeLessThan(a);
   });
 
-  it('gradeOf 阈值不变（避免静默改变历史结论）', () => {
-    expect(gradeOf(85)).toBe('S');
-    expect(gradeOf(70)).toBe('A');
-    expect(gradeOf(55)).toBe('B');
-    expect(gradeOf(40)).toBe('C');
-    expect(gradeOf(39)).toBe('D');
+  it('gradeOf 阈值与 GRADE_THRESHOLDS 一致（阈值本身由 main 重新标定）', () => {
+    // 阈值在合并 main 时被重新标定为 60 / 56 / 52 / 42 ——
+    // 因为 main 侧的价值模型引入了 TVL 规模分，分数分布整体下移，
+    // 沿用旧的 85/70/55/40 会导致几乎全部项目落到 C/D。
+    // 本用例只锁定「函数与常量一致」，不锁定具体数值
+    // （数值属于产品标定，应由数据分布决定，不适合写死成断言）。
+    expect(gradeOf(GRADE_THRESHOLDS.S)).toBe('S');
+    expect(gradeOf(GRADE_THRESHOLDS.A)).toBe('A');
+    expect(gradeOf(GRADE_THRESHOLDS.B)).toBe('B');
+    expect(gradeOf(GRADE_THRESHOLDS.C)).toBe('C');
+    expect(gradeOf(GRADE_THRESHOLDS.C - 1)).toBe('D');
+    // 单调性：分数越高等级不降低
+    const order = { D: 0, C: 1, B: 2, A: 3, S: 4 } as const;
+    let prev = -1;
+    for (let v = 0; v <= 100; v += 1) {
+      const cur = order[gradeOf(v)];
+      expect(cur).toBeGreaterThanOrEqual(prev);
+      prev = cur;
+    }
   });
 });
 

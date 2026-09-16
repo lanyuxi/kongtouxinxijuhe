@@ -11,7 +11,7 @@
  *   3. 抓取逻辑会分裂成两份（前端一份、流水线一份），长期必然不一致。
  */
 
-import type { LiveIndex, RefreshStatus, Dataset, LogoMap } from './types';
+import type { LiveIndex, ListDataset, LogoMap, RefreshStatus } from './types';
 
 const BASE = import.meta.env.BASE_URL || './';
 
@@ -40,8 +40,8 @@ export async function loadRefreshStatus(): Promise<RefreshStatus | null> {
   return fetchNoCache<RefreshStatus>('refresh-status.json');
 }
 
-export async function reloadDataset(): Promise<Dataset | null> {
-  return fetchNoCache<Dataset>('airdrops.json');
+export async function reloadDataset(): Promise<ListDataset | null> {
+  return fetchNoCache<ListDataset>('airdrops.json');
 }
 
 /**
@@ -65,7 +65,7 @@ export async function reloadLogoMap(): Promise<LogoMap | null> {
  * 把图标映射贴到数据集上。
  * 与 lib/data.ts 的 loadDataset 使用同一套规则，避免两处实现漂移。
  */
-export function attachLogos(dataset: Dataset, logoMap: LogoMap | null): Dataset {
+export function attachLogos<T extends ListDataset>(dataset: T, logoMap: LogoMap | null): T {
   if (!logoMap || typeof logoMap.logos !== 'object') return dataset;
   const logos = logoMap.logos;
   return {
@@ -74,7 +74,7 @@ export function attachLogos(dataset: Dataset, logoMap: LogoMap | null): Dataset 
       const file = logos[p.slug];
       return file ? { ...p, logo: `${BASE}${file}` } : p;
     }),
-  };
+  } as T;
 }
 
 /** 数据是否已过期 */
@@ -183,7 +183,7 @@ export async function triggerRefresh(): Promise<{ triggered: boolean; detail: st
 }
 
 export interface RefreshOutcome {
-  dataset: Dataset | null;
+  dataset: ListDataset | null;
   index: LiveIndex | null;
   changed: boolean;
   message: string;

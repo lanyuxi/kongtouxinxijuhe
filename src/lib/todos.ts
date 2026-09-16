@@ -24,7 +24,7 @@
  *   P3 风险需要复核     → 高风险且仍在关注列表里
  */
 
-import type { AirdropProject } from './types';
+import type { ListProject } from './types';
 import type { ProgressStatus, ProjectProgress } from './store';
 
 export type TodoLevel = 'p0' | 'p1' | 'p2' | 'p3';
@@ -52,7 +52,7 @@ export const TODO_LEVEL_LABEL: Record<TodoLevel, string> = {
 const LEVEL_ORDER: Record<TodoLevel, number> = { p0: 0, p1: 1, p2: 2, p3: 3 };
 
 /** 单个项目的待办（最多产出一条，避免同一项目刷屏） */
-function todoOf(p: AirdropProject, progress: ProjectProgress | undefined): TodoItem | null {
+function todoOf(p: ListProject, progress: ProjectProgress | undefined): TodoItem | null {
   const status: ProgressStatus = progress?.status ?? 'saved';
   const doneSteps = progress?.completed_steps?.length ?? 0;
   const totalSteps = p.guide.length;
@@ -120,7 +120,7 @@ function todoOf(p: AirdropProject, progress: ProjectProgress | undefined): TodoI
  * @param limit 最多返回条数（默认 6，避免把关注页压垮）
  */
 export function buildTodos(
-  projects: AirdropProject[],
+  projects: ListProject[],
   favorites: string[],
   progress: Record<string, ProjectProgress>,
   limit = 6,

@@ -21,7 +21,7 @@
  *     因此按「注册域」归组，同组只展示主条目，其余折叠为「可参与的产品线」。
  */
 
-import type { AirdropProject, Category, AirdropStatus } from './types';
+import type { ListProject, Category, AirdropStatus } from './types';
 import { hostOf, registrableDomain } from './scam';
 
 /** 协议类型 → 中文业务说明（确定性映射，不含主观判断） */
@@ -143,7 +143,7 @@ export const TAGLINE_NEGATIVE_HINT =
  * 组成：业务说明（优先用协议类型的确定性映射）+ 阶段说明 + 可选 TVL。
  * 若 tagline 已是中文且有实质内容，则不覆盖，直接沿用。
  */
-export function chineseBlurb(p: Pick<AirdropProject, 'tagline' | 'category' | 'status'>): string {
+export function chineseBlurb(p: Pick<ListProject, 'tagline' | 'category' | 'status'>): string {
   const tagline = (p.tagline ?? '').trim();
   const type = protocolTypeOf(tagline);
   const tvl = extractTvl(tagline);
@@ -171,9 +171,9 @@ export function chineseBlurb(p: Pick<AirdropProject, 'tagline' | 'category' | 's
 /** 归组后的协议 */
 export interface ProtocolGroup {
   /** 组内主条目（信息最全 / 最先出现的一个） */
-  primary: AirdropProject;
+  primary: ListProject;
   /** 同一协议下的其他产品线 */
-  variants: AirdropProject[];
+  variants: ListProject[];
   /** 归组键：注册域，例如 aave.com；无法取域名时用 slug */
   key: string;
 }
@@ -220,7 +220,7 @@ export function isAggregatorHost(host: string): boolean {
 }
 
 /** 取项目归属键：只有「项目自有官网域名」才参与归组，其余退回 slug（绝不误合并） */
-export function groupKeyOf(p: AirdropProject): string {
+export function groupKeyOf(p: ListProject): string {
   const w = p.official?.website;
   if (!w) return `slug:${p.slug}`;
   const host = hostOf(w);
@@ -229,11 +229,20 @@ export function groupKeyOf(p: AirdropProject): string {
   return registrableDomain(host);
 }
 
-/** 信息量评分：用于挑选组内「主条目」——教程越真实、证据越多、越新者优先 */
-function richness(p: AirdropProject): number {
+/**
+ * 信息量评分：用于挑选组内「主条目」——教程越真实、证据越充分者优先。
+ *
+ * ⚠️ 列表瘦身后不能再读 `p.evidence`（详情字段，列表里不存在的）：
+ *   这里改用「真实性置信度 + 来源数量」作为等价代理。
+ *   二者本来就是由 evidence 逐项加权算出来的（见 scripts/lib/score.ts），
+ *   因此排序语义不变，只是不再依赖未下发的原始明细。
+ */
+function richness(p: ListProject): number {
   let n = 0;
   n += p.guide_source === 'sourced' ? 100 : 0;
-  n += p.evidence.filter((e) => e.verified).length * 10;
+  // 真实性分数直接反映「已验证证据有多少」；来源数反映交叉验证广度
+  n += Math.round((p.scores?.authenticity ?? 0) / 2);
+  n += (p.sources?.length ?? 0) * 5;
   n += p.official?.docs ? 5 : 0;
   n += p.official?.x ? 3 : 0;
   n += p.guide.length;
@@ -251,8 +260,8 @@ function richness(p: AirdropProject): number {
  *    主条目仍可点进详情，变体也各自保留自己的详情页与 URL，
  *    只是列表里不再并列展示 —— 既不误导用户重复投入，也不丢失信息。
  */
-export function groupByProtocol(projects: AirdropProject[]): ProtocolGroup[] {
-  const buckets = new Map<string, AirdropProject[]>();
+export function groupByProtocol(projects: ListProject[]): ProtocolGroup[] {
+  const buckets = new Map<string, ListProject[]>();
   for (const p of projects) {
     const key = groupKeyOf(p);
     const list = buckets.get(key);
@@ -286,9 +295,9 @@ export function groupByProtocol(projects: AirdropProject[]): ProtocolGroup[] {
  * 前端列表用这个结果渲染：主条目卡片可展开变体。
  */
 export interface FlatEntry {
-  project: AirdropProject;
+  project: ListProject;
   /** 同协议的其他产品线（仅主条目有值） */
-  variants: AirdropProject[];
+  variants: ListProject[];
   /** 若本条目是某协议的产品线（非主条目），指向主条目 slug */
   variantOf?: string;
 }

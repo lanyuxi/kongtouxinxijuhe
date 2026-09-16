@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { AirdropProject, LiveIndex } from '../lib/types';
+import type { ListProject, LiveIndex } from '../lib/types';
 import {
   applyCostBucket,
   DEFAULT_FILTERS,
@@ -11,7 +11,7 @@ import { OVERVIEW_LABEL } from '../lib/filter';
 import type { OverviewKey } from '../lib/filter';
 import { flattenGroups, groupByProtocol } from '../lib/describe';
 import type { Filters } from '../lib/filter';
-import { FilterBar } from '../components/FilterBar';
+import { FilterBar, chainOptions } from '../components/FilterBar';
 import { ProjectCard } from '../components/ProjectCard';
 import { StatBar } from '../components/StatBar';
 import type { NavKey } from '../components/Layout';
@@ -23,6 +23,7 @@ import { CardSkeletonGrid } from '../components/Skeleton';
 import { MetricTile } from '../components/galaxy';
 import type { Percentiles } from '../lib/percentile';
 import type { ProjectProgress } from '../lib/store';
+import { loadFilters, persistFilters } from '../lib/store';
 
 export function ListView({
   view,
@@ -41,7 +42,7 @@ export function ListView({
   onClearAll,
 }: {
   view: NavKey;
-  projects: AirdropProject[];
+  projects: ListProject[];
   updatedAt: string;
   favorites: string[];
   progress: Record<string, ProjectProgress>;
@@ -57,7 +58,27 @@ export function ListView({
   onToggleFavorite: (slug: string) => void;
   onClearAll: () => void;
 }) {
-  const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  /**
+   * 筛选条件持久化到 LocalStorage（见 lib/store.ts 的 loadFilters）。
+   *
+   * 为什么用惰性初始化函数而不是 useEffect：
+   *   用 useEffect 会导致首帧先渲染默认筛选、再渲染恢复后的筛选 ——
+   *   用户会看到列表「闪一下」再变。惰性初始化让首帧就是正确结果。
+   */
+  const [filters, setFiltersState] = useState<Filters>(() => loadFilters(DEFAULT_FILTERS));
+  const setFilters = (next: Filters) => {
+    setFiltersState(next);
+    persistFilters(next);
+  };
+
+  /**
+   * 重置筛选时**必须把持久化也一起清掉**，
+   * 否则用户「重置」后一刷新又回到旧的筛选条件（比不持久化更困惑）。
+   */
+  const resetFilters = () => {
+    setFiltersState(DEFAULT_FILTERS);
+    persistFilters(DEFAULT_FILTERS);
+  };
   /**
    * 数据总览口径（点磁贴选中）。
    *
@@ -117,21 +138,21 @@ export function ListView({
   /**
    * 骨架屏开关。
    *
-   * 触发条件：筛选项变了、数据变了，但这一帧还没算出结果。
-   * 为什么需要它：真实数据集首屏要下载 3.8 MB 的 airdrops.json（188 个项目），
-   * 在此期间页面只有一行「正在加载空投数据…」，用户会以为站点坏了。
-   * 骨架屏给出「结构已就位、内容马上来」的预期，感知等待时间显著更短。
+   * ⚠️ 这里**只在「数据本身还没到位」时**显示骨架屏，不跟随筛选条件。
    *
-   * 刻意不做的事：不在「筛选结果为空」时显示骨架屏 ——
-   * 那是真实的空结果，用空态文案说明「放宽筛选条件」才有指导意义。
+   * 为什么改（这是一次真实的体验倒退）：
+   *   旧实现监听 [projects, filters, view, overview]，
+   *   于是用户**每改一次筛选**都会强制闪 180ms 白骨架。
+   *   但筛选是纯内存同步计算（`visible` 由 useMemo 一次算出，无 I/O），
+   *   数据早就在内存里 —— 本来瞬间就能出结果，却因为「故意等 180ms」
+   *   显得比不显示骨架屏还卡。首屏那份 3.8 MB 的下载早已由 App 层的
+   *   加载骨架覆盖（见 App.tsx 的 `!dataset` 分支），不该在这里再模拟一次。
+   *
+   *   保留的判断：只有真的没有项目可渲染时才提示加载中。
+   *   刻意不做的事：不在「筛选结果为空」时显示骨架屏 ——
+   *   那是真实的空结果，用空态文案说明「放宽筛选条件」才有指导意义。
    */
-  const [computing, setComputing] = useState(false);
-  useEffect(() => {
-    if (projects.length === 0) return;
-    setComputing(true);
-    const t = setTimeout(() => setComputing(false), 180);
-    return () => clearTimeout(t);
-  }, [projects, filters, view, overview]);
+  const computing = projects.length === 0;
 
   /**
    * 同协议归组：aave-v3 / aave-v4 / aave-horizon-rwa 共用 aave.com，
@@ -143,6 +164,12 @@ export function ListView({
    *    用户点进去会看到残缺信息。先筛选保证主条目一定在当前结果集内。
    */
   const entries = useMemo(() => flattenGroups(groupByProtocol(visible)), [visible]);
+
+  /**
+   * 公链下拉选项：从**当前视图范围**的项目推导，而不是硬编码 9 条。
+   * 必须放在任何提前 return 之前，否则 Hooks 调用顺序会随分支变化。
+   */
+  const chainOpts = useMemo(() => chainOptions(viewProjects), [viewProjects]);
 
   /** 被折叠为产品线的条目数：让「卡片数 < 项目数」这件事对用户是透明的，而不是看起来像丢数据 */
   const mergedVariants = useMemo(
@@ -240,7 +267,8 @@ export function ListView({
       <FilterBar
         filters={filters}
         onChange={setFilters}
-        onReset={() => setFilters(DEFAULT_FILTERS)}
+        chainOptions={chainOpts}
+        onReset={resetFilters}
         resultCount={entries.length}
         mergedVariants={mergedVariants}
         activeOverview={overviewLabel}

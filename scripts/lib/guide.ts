@@ -41,12 +41,25 @@ export function generateGuide(p: AirdropProject): GuideStep[] {
   return buildGuide(p).steps;
 }
 
-/** 确定性模板教程：数据源未提供 HowTo 时的兜底「流程示意」 */
+/**
+ * 确定性模板教程：数据源未提供 HowTo 时的兜底「流程示意」。
+ *
+ * ⚠️ 信任不变量（本次修复的核心）：
+ *   模板步骤**不是**官方要求，因此：
+ *     - source_verified 一律为 false —— 绝不谎称「来源已核实」；
+ *     - source_url 一律为空 —— 官网首页只能证明「项目存在」，
+ *       不能证明「这一步的操作顺序 / 耗时来自官方」，
+ *       拿它冒充步骤来源就是伪造可追溯性。
+ *   前端随后据 guide_source==='template' 如实标注为「流程示意（非官方步骤）」。
+ *   历史问题：曾经写成 `source_verified: !!officialUrl`，导致 142 个模板项目
+ *   在前端显示绿色「✓ 来源已核实」，用户以为步骤经官方确认。
+ */
+type TemplateStep = Omit<GuideStep, 'source_verified' | 'source_url'>;
+
 function generateTemplateGuide(p: AirdropProject): GuideStep[] {
 
-  const steps: GuideStep[] = [];
+  const steps: TemplateStep[] = [];
   const officialUrl = p.official.website ?? '';
-  const hasDocs = !!p.official.docs;
   const needsWallet = /钱包|wallet|galxe|quest|swap|bridge|connect/i.test(
     [p.tagline, ...p.tasks].join(' '),
   );
@@ -65,8 +78,6 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
     needs_signature: false,
     risk: 'low',
     done_when: '已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。',
-    source_url: hasDocs ? p.official.docs : officialUrl,
-    source_verified: !!officialUrl,
   });
 
   steps.push({
@@ -80,8 +91,6 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
     needs_signature: false,
     risk: 'low',
     done_when: '页面成功打开，且域名与官方一致。',
-    source_url: officialUrl,
-    source_verified: !!officialUrl,
   });
 
   if (needsWallet) {
@@ -96,8 +105,6 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
       needs_signature: false,
       risk: 'low',
       done_when: '页面右上角显示钱包地址。',
-      source_url: officialUrl,
-      source_verified: !!officialUrl,
     });
   }
 
@@ -113,8 +120,6 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
       needs_signature: false,
       risk: 'low',
       done_when: '所有社交任务显示为已完成 / Verified。',
-      source_url: p.official.galxe ?? officialUrl,
-      source_verified: !!officialUrl,
     });
   }
 
@@ -129,8 +134,6 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
     needs_signature: true,
     risk: p.scores.risk === 'low' ? 'low' : 'medium',
     done_when: '任务状态在官方页面显示为已完成。',
-    source_url: hasDocs ? p.official.docs : officialUrl,
-    source_verified: !!officialUrl,
   });
 
   steps.push({
@@ -144,8 +147,6 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
     needs_signature: false,
     risk: 'low',
     done_when: '所有任务均显示已完成，且积分已计入。',
-    source_url: officialUrl,
-    source_verified: !!officialUrl,
   });
 
   if (p.cost.long_term) {
@@ -160,12 +161,12 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
       needs_signature: false,
       risk: 'medium',
       done_when: '形成固定的回访节奏，账户保持活跃。',
-      source_url: officialUrl,
-      source_verified: !!officialUrl,
     });
   }
 
-  return steps;
+  // 信任不变量：模板步骤永远不携带「已核实」标记与伪造的步骤来源。
+  // 这里统一兜底，避免后续新增模板步骤时忘记标注而再次出现「假核实」。
+  return steps.map((s) => ({ ...s, source_verified: false, source_url: undefined }));
 }
 
 /** 依据已有证据生成 FAQ；未知信息必须明确写「官方暂未公布」 */
@@ -314,8 +315,10 @@ function withSafetyFirst(p: AirdropProject, steps: GuideStep[]): GuideStep[] {
     needs_signature: false,
     risk: 'low',
     done_when: '已确认官方域名，并准备好专用的独立空投钱包。',
-    source_url: officialUrl || p.sources[0]?.url,
-    source_verified: !!officialUrl,
+    // 这一步是「平台自己写的安全提示」，不是官方步骤：
+    // 官网链接只能作为「去哪核对域名」的入口，不能当作本步骤的官方来源。
+    // 因此 source_verified 必须为 false，避免把平台提示伪装成官方核实结果。
+    source_verified: false,
   };
   return [safety, ...steps.map((s, i) => ({ ...s, step: i + 2 }))];
 }

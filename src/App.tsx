@@ -5,7 +5,7 @@ import type { NavKey } from './components/Layout';
 import { ListView } from './pages/ListView';
 import { DetailView } from './pages/DetailView';
 import { SafetyView } from './pages/SafetyView';
-import { loadDataset, loadSourceHealth } from './lib/data';
+import { loadDataset, loadProjectDetail, loadSourceHealth } from './lib/data';
 import { loadLiveIndex, runRefresh } from './lib/refresh';
 import type { LiveIndex } from './lib/types';
 import { useRoute } from './lib/router';
@@ -13,13 +13,13 @@ import { useLocalState } from './lib/store';
 import { buildPercentiles } from './lib/percentile';
 import type { Percentiles } from './lib/percentile';
 import { CardSkeletonGrid, DetailSkeleton } from './components/Skeleton';
-import type { AirdropProject, Dataset, SourceHealthFile } from './lib/types';
+import type { AirdropProject, ListDataset, SourceHealthFile } from './lib/types';
 
 export function App() {
   const route = useRoute();
   const { state, toggleFavorite, setProgress, toggleStep, clearAll } = useLocalState();
 
-  const [dataset, setDataset] = useState<Dataset | null>(null);
+  const [dataset, setDataset] = useState<ListDataset | null>(null);
   const [health, setHealth] = useState<SourceHealthFile | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -78,9 +78,53 @@ export function App() {
     return { authenticity, value, total: projects.length };
   }, [projects]);
 
-  const detailProject = useMemo<AirdropProject | null>(() => {
-    if (route.kind !== 'detail') return null;
-    return projects.find((p) => p.slug === route.slug) ?? null;
+  /**
+   * 详情页项目：**按需加载完整分片**（data/details/<slug>.json）。
+   *
+   * 为什么不再是 `projects.find(slug)`：
+   *   列表数据已瘦身，只含卡片字段；详情页需要的 faq / evidence /
+   *   guide.description / scores 明细 / digest 都不在列表里。
+   *   因此详情改为进入路由后再单独拉一个约 16 KB 的分片，
+   *   首屏因此不必下载完整的 3.87 MB。
+   *
+   * 三种状态必须区分，否则用户会把「加载中」误读成「项目不存在」：
+   *   loading   → 显示详情骨架
+   *   notFound  → 显示「未找到该项目」（分片确实不存在）
+   *   ready     → 正常渲染
+   */
+  const [detailProject, setDetailProject] = useState<AirdropProject | null>(null);
+  const [detailState, setDetailState] = useState<'idle' | 'loading' | 'ready' | 'notFound'>('idle');
+
+  useEffect(() => {
+    if (route.kind !== 'detail') {
+      setDetailProject(null);
+      setDetailState('idle');
+      return;
+    }
+    // 列表里没有这个 slug，说明路由本身是错的，不必再发请求
+    if (!projects.some((p) => p.slug === route.slug)) {
+      setDetailProject(null);
+      setDetailState('notFound');
+      return;
+    }
+    let alive = true;
+    setDetailState('loading');
+    loadProjectDetail(route.slug).then((full) => {
+      if (!alive) return;
+      if (!full) {
+        setDetailProject(null);
+        setDetailState('notFound');
+        return;
+      }
+      // 详情分片本身不带 logo（logo 由 logo-map 在列表加载时贴上），
+      // 这里从列表项补一份，避免详情页头部图标丢失。
+      const logo = projects.find((p) => p.slug === route.slug)?.logo;
+      setDetailProject(logo ? { ...full, logo } : full);
+      setDetailState('ready');
+    });
+    return () => {
+      alive = false;
+    };
   }, [route, projects]);
 
   if (error) {
@@ -104,13 +148,11 @@ export function App() {
       <>
         <Header current="latest" />
         <Page>
-          {/* 骨架屏而不是一行文字：首屏要下载约 3.8 MB 数据，
+          {/* 骨架屏而不是一行文字：首屏只下载列表数据（约 500 KB / gzip 后约 27 KB），
               在此之前给出「结构已就位」的预期，用户不会以为站点坏了。
               详情路由下用详情骨架，避免闪出一块「未找到该项目」的误导提示。 */}
           {route.kind === 'detail' ? <DetailSkeleton /> : <CardSkeletonGrid rows={2} />}
-          <p className="mt-4 text-center text-sm text-ink-faint">
-            正在加载空投数据（约 3.8 MB，首次访问稍慢，之后走缓存）…
-          </p>
+          <p className="mt-4 text-center text-sm text-ink-faint">正在加载空投数据…</p>
         </Page>
       </>
     );
@@ -126,7 +168,9 @@ export function App() {
           {route.kind === 'safety' ? (
             <SafetyView projects={projects} />
           ) : route.kind === 'detail' ? (
-            detailProject ? (
+            detailState === 'loading' ? (
+              <DetailSkeleton />
+            ) : detailProject ? (
               <DetailView
                 project={detailProject}
                 favorited={state.favorites.includes(detailProject.slug)}

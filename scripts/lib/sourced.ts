@@ -56,8 +56,11 @@ export function stepsFromSource(p: AirdropProject): GuideStep[] {
     needs_signature: /签名|sign|approve|授权/i.test(s.body ?? ''),
     risk: 'low' as const,
     done_when: '页面显示该步骤已完成 / 状态已更新。',
-    source_url: s.url ?? p.sources[0]?.url,
-    source_verified: !!(s.url ?? p.sources[0]?.url),
+    // 只有步骤自带的 url 才算「可追溯的步骤来源」。
+    // 不能退化成聚合站条目链接：那是「这个项目从哪发现的」，
+    // 不是「这一步从哪来的」，拿来标 source_verified 属于伪造可追溯性。
+    source_url: s.url,
+    source_verified: !!s.url,
   }));
 }
 
