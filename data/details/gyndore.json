@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/gyndore/",
-      "fetched_at": "2026-09-16T05:29:18.404Z"
+      "fetched_at": "2026-09-16T05:36:52.158Z"
     }
   ],
   "evidence": [
@@ -382,7 +382,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T05:29:18.404Z",
+  "last_checked_at": "2026-09-16T05:36:52.158Z",
   "last_changed_at": "2026-09-16T05:29:37.085Z",
   "sourcedSteps": [
     {

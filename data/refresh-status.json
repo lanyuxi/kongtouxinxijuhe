@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T05:29:18.364Z",
-  "finished_at": "2026-09-16T05:29:37.159Z",
+  "started_at": "2026-09-16T05:36:52.125Z",
+  "finished_at": "2026-09-16T05:37:05.776Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T05:29:18.364Z",
+  "updated_at": "2026-09-16T05:36:52.125Z",
   "data_changed": true,
-  "change_summary": "变更 26 个：Ammora 内容有更新；Arcium 内容有更新；Brownian 内容有更新",
+  "change_summary": "变更 1 个：Liquid Collective 内容有更新",
   "change_details": [
-    "Ammora 内容有更新",
-    "Arcium 内容有更新",
-    "Brownian 内容有更新",
-    "C8ntinuum 内容有更新",
-    "Collector Crypt 内容有更新"
+    "Liquid Collective 内容有更新"
   ],
   "added": 0,
-  "modified": 26,
+  "modified": 1,
   "removed": 0
 }
