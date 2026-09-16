@@ -23,7 +23,7 @@ import { CardSkeletonGrid } from '../components/Skeleton';
 import { MetricTile } from '../components/galaxy';
 import type { Percentiles } from '../lib/percentile';
 import type { ProjectProgress } from '../lib/store';
-import { loadFilters, persistFilters } from '../lib/store';
+import { loadFilters, persistFilters, resolveProgress } from '../lib/store';
 
 export function ListView({
   view,
@@ -204,7 +204,11 @@ export function ListView({
                 用同一套磁贴表达，用户扫一眼就知道自己卡在哪一步 */}
             <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {(['saved', 'preparing', 'doing', 'done'] as const).map((s) => {
-                const count = saved.filter((p) => (progress[p.slug]?.status ?? 'saved') === s).length;
+                // 收藏集合是唯一真源：这里不再用 `?? 'saved'` 兜底，
+                // 否则「没收藏」会被算成「已收藏」，漏斗四个格子加起来虚高。
+                const count = saved.filter(
+                  (p) => resolveProgress(p.slug, favorites, progress)?.status === s,
+                ).length;
                 const meta = {
                   saved: { label: '已收藏', tone: 'brand' as const },
                   preparing: { label: '准备参与', tone: 'warn' as const },

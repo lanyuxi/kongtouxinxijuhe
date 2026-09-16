@@ -25,6 +25,7 @@
  */
 
 import type { ListProject } from './types';
+import { resolveProgress } from './store';
 import type { ProgressStatus, ProjectProgress } from './store';
 
 export type TodoLevel = 'p0' | 'p1' | 'p2' | 'p3';
@@ -51,7 +52,13 @@ export const TODO_LEVEL_LABEL: Record<TodoLevel, string> = {
 
 const LEVEL_ORDER: Record<TodoLevel, number> = { p0: 0, p1: 1, p2: 2, p3: 3 };
 
-/** 单个项目的待办（最多产出一条，避免同一项目刷屏） */
+/**
+ * 单个项目的待办（最多产出一条，避免同一项目刷屏）。
+ *
+ * @param progress 该项目**已解析过**的进度（未收藏时为 undefined）。
+ *   这里不再自己写 `?? 'saved'` 兜底：默认值只允许由 resolveProgress 提供，
+ *   否则「没收藏」会被当成「已收藏」，待办列表就会出现用户从没关注过的项目。
+ */
 function todoOf(p: ListProject, progress: ProjectProgress | undefined): TodoItem | null {
   const status: ProgressStatus = progress?.status ?? 'saved';
   const doneSteps = progress?.completed_steps?.length ?? 0;
@@ -129,7 +136,7 @@ export function buildTodos(
   const items: TodoItem[] = [];
   for (const p of projects) {
     if (!favSet.has(p.slug)) continue;
-    const item = todoOf(p, progress[p.slug]);
+    const item = todoOf(p, resolveProgress(p.slug, favorites, progress));
     if (item) items.push(item);
   }
   items.sort((a, b) => {

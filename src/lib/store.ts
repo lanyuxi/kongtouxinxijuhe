@@ -32,6 +32,36 @@ export const PROGRESS_LABEL: Record<ProgressStatus, string> = {
   done: '已完成',
 };
 
+/** 新建项目在用户设置之前的初始进度（唯一来源，禁止在 UI 里另写兜底值） */
+export const INITIAL_PROGRESS: ProjectProgress = { status: 'saved', completed_steps: [] };
+
+/**
+ * 解析某个项目的进度用于展示。
+ *
+ * 为什么必须有这个函数（BUG 记录）：
+ *   详情页、我的关注漏斗、今日待办三处原先各自写
+ *   `progress[slug]?.status ?? 'saved'`，而 `saved` 的中文是「已收藏」。
+ *   于是**没收藏过的项目**在详情页「我的参与进度」里显示成「已收藏」，
+ *   与它左边那颗「☆ 收藏」按钮（未收藏态）自相矛盾 ——
+ *   用户明确没点收藏，却被系统告知已收藏。
+ *
+ * 判定规则（顺序不可调换，以收藏集合为准）：
+ *   - 没有收藏记录      → undefined，由 UI 显示「未收藏 / 先收藏后可记录进度」；
+ *   - 有收藏、进度为 none（旧版本写的脏数据）→ 回落成「已收藏」并丢弃残留勾选，
+ *     避免旧数据把漏斗统计灌进一个不该存在的分档；
+ *   - 老数据没有 progress 字段 → 视作刚收藏。
+ */
+export function resolveProgress(
+  slug: string,
+  favorites: readonly string[],
+  progress: Record<string, ProjectProgress | undefined>,
+): ProjectProgress | undefined {
+  if (!favorites.includes(slug)) return undefined;
+  const cur = progress[slug];
+  if (!cur || cur.status === 'none') return INITIAL_PROGRESS;
+  return cur;
+}
+
 function load(): LocalState {
   try {
     const raw = localStorage.getItem(KEY);
@@ -107,14 +137,21 @@ export function useLocalState() {
   const toggleStep = useCallback(
     (slug: string, step: number) => {
       update((prev) => {
-        const cur = prev.progress[slug] ?? { status: 'doing' as ProgressStatus, completed_steps: [] };
-        const has = cur.completed_steps.includes(step);
-        const completed_steps = has
-          ? cur.completed_steps.filter((s) => s !== step)
-          : [...cur.completed_steps, step].sort((a, b) => a - b);
+        const has = prev.favorites.includes(slug);
+        const cur = prev.progress[slug];
+        // 勾选步骤不改变「是否收藏」这件事：
+        //   - 没收藏就没有进度可改，直接忽略（曾被默认值伪造成「已收藏 + 进行中」）；
+        //   - 已收藏但还没设过进度，勾第一步等价于用户主动开始 → 记「进行中」。
+        if (!has) return prev;
+        const status: ProgressStatus = cur?.status ?? 'doing';
+        const steps = cur?.completed_steps ?? [];
+        const done = steps.includes(step);
+        const completed_steps = done
+          ? steps.filter((s) => s !== step)
+          : [...steps, step].sort((a, b) => a - b);
         return {
           ...prev,
-          progress: { ...prev.progress, [slug]: { status: cur.status, completed_steps } },
+          progress: { ...prev.progress, [slug]: { status, completed_steps } },
         };
       });
     },
