@@ -1,16 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T05:36:52.125Z",
-  "finished_at": "2026-09-16T05:37:05.776Z",
+  "started_at": "2026-09-16T07:06:57.987Z",
+  "finished_at": "2026-09-16T07:07:19.160Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T05:36:52.125Z",
+  "updated_at": "2026-09-16T07:06:57.987Z",
   "data_changed": true,
-  "change_summary": "变更 1 个：Liquid Collective 内容有更新",
+  "change_summary": "变更 2 个：Arcium 内容有更新；Limitless Prediction Markets 内容有更新",
   "change_details": [
-    "Liquid Collective 内容有更新"
+    "Arcium 内容有更新",
+    "Limitless Prediction Markets 内容有更新"
   ],
   "added": 0,
-  "modified": 1,
+  "modified": 2,
   "removed": 0
 }

@@ -239,7 +239,10 @@ export function groupKeyOf(p: ListProject): string {
  */
 function richness(p: ListProject): number {
   let n = 0;
-  n += p.guide_source === 'sourced' ? 100 : 0;
+  // 排序权重：官方可追溯教程 > 第三方整理 > 通用流程示意。
+  // third_party 排在中间只是「描述更准确」的排序微调，
+  // 不影响等级上限（三者中只有 sourced 能进 S/A，见 score.ts）。
+  n += p.guide_source === 'sourced' ? 100 : p.guide_source === 'third_party' ? 40 : 0;
   // 真实性分数直接反映「已验证证据有多少」；来源数反映交叉验证广度
   n += Math.round((p.scores?.authenticity ?? 0) / 2);
   n += (p.sources?.length ?? 0) * 5;

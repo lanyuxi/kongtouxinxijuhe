@@ -58,6 +58,64 @@ async function readFullProjects(dir: string): Promise<AirdropProject[]> {
   return out;
 }
 
+/**
+ * 读取人工档案登记的 slug（data/seed/official-profiles.json）。
+ *
+ * 这份名单是「人工确认过是真实空投项目」的记录，
+ * 非空投条目门禁必须认它 —— 否则像 `Gate`（既是交易所也是项目池）
+ * 这类边界情况会被一刀切掉，属于误杀。
+ *
+ * ⚠️ 结构非法时**必须报错并让校验失败**，不能静默返回空集
+ *    （独立审查指出的 P1，与 `build-cache` 的裸 catch 是同一个病）。
+ *
+ *    为什么「返回空集」看起来安全、实际危险：
+ *      空集意味着「不豁免任何条目」，方向上是收紧，不会漏放脏数据 ——
+ *      但它把「**配置坏了**」伪装成「门禁正常工作」。
+ *      结果就是：豁免名单被误删 / 字段改名 / 写成数组，
+ *      `validate` 依然打印「✓ 全部检查通过」，
+ *      而边界项目（Gate）会被静默排除，且没有任何人知道。
+ *      这正是 review 里反复出现的那类「看起来在工作」的形态。
+ *
+ *    因此这里区分两种情况：
+ *      · 文件不存在 → 允许（本地/裁切环境中可以没有档案），返回空集；
+ *      · 文件存在但结构非法 → 抛错，由 main 转成 validate 失败。
+ */
+async function loadProfileSlugs(): Promise<Set<string>> {
+  const file = path.join(ROOT, 'data', 'seed', 'official-profiles.json');
+  let raw: string;
+  try {
+    raw = await readFile(file, 'utf8');
+  } catch {
+    console.warn('⚠ 未找到 data/seed/official-profiles.json，豁免名单按空处理（门禁全量生效）');
+    return new Set();
+  }
+
+  const data = JSON.parse(raw) as { profiles?: unknown } | null;
+  if (!data || typeof data !== 'object') {
+    throw new Error('official-profiles.json 顶层必须是对象');
+  }
+  const profiles = data.profiles;
+  /**
+   * ⚠️ 必须排除数组：`typeof [] === 'object'` 会让守卫放行，
+   *    而 `Object.keys(['a','b'])` 返回 `['0','1']` ——
+   *    把**下标**当成豁免 slug，是更难发现的宽松放行。
+   */
+  if (!profiles || typeof profiles !== 'object' || Array.isArray(profiles)) {
+    throw new Error(
+      'official-profiles.json 的 `profiles` 必须是对象（不是数组 / null）：' +
+        '否则豁免名单会静默失效，边界项目被误删却无人发现',
+    );
+  }
+  const slugs = Object.keys(profiles);
+  // 说明性字段绝不能被当成项目 slug
+  for (const bad of ['_comment', 'profiles']) {
+    if (slugs.includes(bad)) {
+      throw new Error(`official-profiles.json 的 profiles 里混入了说明字段「${bad}」，不是项目 slug`);
+    }
+  }
+  return new Set(slugs);
+}
+
 async function main() {
   // 校验对象是完整项目（来自 details/），而不是瘦身后的列表（见 readFullProjects 注释）
   const projects = await readFullProjects(path.join(ROOT, 'data', 'details'));
@@ -67,7 +125,17 @@ async function main() {
     return;
   }
 
-  const result = validateProjects(projects);
+  // 人工档案：命中排除规则但已人工核实为真实空投项目的豁免名单。
+  // ⚠️ 结构非法时直接让校验失败，不静默降级成空集（见 loadProfileSlugs 注释）。
+  let profiles: Set<string>;
+  try {
+    profiles = await loadProfileSlugs();
+  } catch (e) {
+    console.log(`\n错误 1 条：\n  ✗ 人工档案解析失败：${(e as Error).message}`);
+    process.exitCode = 1;
+    return;
+  }
+  const result = validateProjects(projects, profiles);
 
   // 额外检查：真实性分 >= 70 的项目应至少满足「已验证」门槛
   const suspicious = projects.filter(

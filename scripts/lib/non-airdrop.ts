@@ -85,12 +85,95 @@ const KNOWN_REAL_PROJECT_SLUGS = new Set([
 ]);
 
 /**
- * 类目级别的排除规则。
+ * 类目级别的排除规则（**强规则**：只覆盖确定不存在空投语义的类目）。
  *
  * 为什么要单独看类目：`DefiLlama` 的协议名未必带 "CEX" 字样，
  * 但 `category` 一定是 "CEX"。只按 name 过滤会漏掉一部分。
+ *
+ * ⚠️ 为什么这个数组只留两类（2026-09-16 独立审查的否决结论）：
+ *   我曾把 Bridge / Liquid Staking / Restaking / Wrapped / Yield Aggregator /
+ *   Risk Curators 等 14 类一并加进来「补全规则」，理由是
+ *   「桥与质押衍生品本身没有空投叙事」。
+ *   审查用真实数据否决了这个前提：
+ *     · `LayerZero`（Bridge）**已发 ZRO 空投**且库里是 `claim_live`；
+ *     · `EigenLayer` / `EigenCloud`（Restaking）发过 6000 万美元空投；
+ *     · `Lido` / `Rocket Pool` / `Stader` / `Kelp` / `Babylon`（LST/LRT）都有空投叙事；
+ *     · `Yearn Finance`（Yield Aggregator）同样发过。
+ *   按 DefiLlama 全量（TVL ≥ $5M，845 条）实跑：14 类规则会把选中集从
+ *   682 条砍到 458 条，**净排除 224 条**，且 13 个类目被整类清空。
+ *   「桥不发空投」这个前提本身就是错的，所以不能按类目一刀切。
+ *
+ * 结论：**只有「类目本身就等于非项目」的两类**才留在强规则里
+ * （CEX / 中心化平台 —— 它们不是「一个可参与的活动」，而是交易场所）。
+ * 其余「弱类目」（桥 / LST / 聚合器等）改由 `EXCLUDE_WEAK_CATEGORY_PATTERNS`
+ * 表达，并且**只在同时缺少空投叙事证据时**才排除（见 classifyNonAirdrop）。
  */
 export const EXCLUDE_CATEGORY_PATTERNS: RegExp[] = [/^cex$/i, /^centralized/i];
+
+/**
+ * 「弱类目」：这类协议**通常**不是可直接参与的空投活动
+ * （LST 子池凭证、包装资产、策略金库、桥的基础设施部分），
+ * 但**确实存在**同类项目发空投的先例（LayerZero / EigenLayer / Yearn…）。
+ *
+ * 因此它们**不能单独构成排除理由**，必须叠加「没有空投叙事证据」
+ * 才判为排除 —— 证据包括：
+ *   · 来源侧明确给出了活动状态（confirmed / claim_live）；
+ *   · 文案里出现空投 / 领取 / 资格等叙事关键词；
+ *   · 已经登记在人工档案里（说明有人核实过它确有活动）。
+ *
+ * 换句话说：弱类目只用来「降低默认权重」，不用来「一刀切掉」。
+ */
+export const EXCLUDE_WEAK_CATEGORY_PATTERNS: RegExp[] = [
+  /^bridge$/i,
+  /^canonical bridge$/i,
+  /^liquid staking$/i,
+  /^liquid restaking$/i,
+  /^restaking$/i,
+  /^restaked btc$/i,
+  /^staking pool$/i,
+  /^wrapped/i,
+  /^yield aggregator$/i,
+  /^farm$/i,
+  /^anchor btc$/i,
+  /^decentralized btc$/i,
+  /^risk curators?$/i,
+  /^onchain capital allocator$/i,
+];
+
+/**
+ * 「有真实空投叙事」的证据判定。
+ *
+ * 为什么必须有这一层：弱类目规则若不叠加证据判定，
+ * 就会把 LayerZero / EigenLayer 这类**已经发过空投**的项目整类误杀。
+ * 判据刻意从宽（宁可保留、不可误删）：只要文案或状态里出现任意一条
+ * 空投相关信号，就不再按弱类目排除。
+ */
+const AIRDROP_NARRATIVE = [
+  /空投/,
+  /airdrop/i,
+  /领取/,
+  /claim/i,
+  /资格/,
+  /eligib/i,
+  /积分/,
+  /points?/i,
+  /代币领取/,
+  /TGE/i,
+];
+
+export function hasAirdropNarrative(input: {
+  status?: string;
+  tagline?: string;
+  tasks?: string[];
+  requirements?: string[];
+}): boolean {
+  // 来源侧明确给出「已确认 / 可领取」状态 = 最强证据
+  if (input.status === 'confirmed' || input.status === 'claim_live') return true;
+  const text = [input.tagline, ...(input.tasks ?? []), ...(input.requirements ?? [])]
+    .filter(Boolean)
+    .join(' ');
+  return AIRDROP_NARRATIVE.some((re) => re.test(text));
+}
 
 export interface NonAirdropVerdict {
   /** 是否属于「非空投条目」 */
@@ -119,30 +202,70 @@ function slugifyLite(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-/** 综合名称与类目给出判定 */
+/**
+ * 综合名称与类目给出判定。
+ *
+ * 判定顺序（从严到宽）：
+ *   1. 人工豁免名单 —— 已核实是真实空投项目，直接放行；
+ *   2. **强类目**（CEX / 中心化）—— 不是「可参与的活动」，直接排除；
+ *   3. **空投叙事证据** —— 只要来源给了 confirmed/claim_live 状态、
+ *      或文案里出现空投 / 领取 / 资格 / 积分等信号，一律保留
+ *      （LayerZero / EigenLayer 这类「弱类目 + 真实空投」靠这一步救回）；
+ *   4. 名称规则 —— 交易所 / 包装资产 / 质押衍生品的**具体条目**；
+ *   5. **弱类目** —— 仅在没有空投叙事证据时才排除。
+ */
 export function classifyNonAirdrop(input: {
   name: string;
   categoryText?: string;
+  /** 来源侧状态，`confirmed` / `claim_live` 视为「确有活动」 */
+  status?: string;
+  /** 用户可见文案，用于判定是否存在空投叙事 */
+  tagline?: string;
+  tasks?: string[];
+  requirements?: string[];
 }): NonAirdropVerdict {
   const name = (input.name ?? '').trim();
   const category = (input.categoryText ?? '').trim();
 
-  // 已核实的豁免优先：避免规则误伤真实项目
+  // 1) 已核实的豁免优先：避免规则误伤真实项目
   if (KNOWN_REAL_PROJECT_SLUGS.has(slugifyLite(name))) {
     return { excluded: false };
   }
 
+  // 2) 强类目：交易所不是「一个可参与的活动」
   for (const re of EXCLUDE_CATEGORY_PATTERNS) {
     if (re.test(category)) {
-      return { excluded: true, reason: `类目为「${category}」（交易所，不属于空投项目）`, pattern: re.source };
+      return {
+        excluded: true,
+        reason: `类目为「${category}」（交易所 / 中心化平台，不是可参与的空投活动）`,
+        pattern: re.source,
+      };
     }
   }
+
+  // 3) 空投叙事证据：有证据就不按类目排除
+  //    （只有明确证据才走到这里；无证据时后面的弱类目规则才有机会生效）
+  const narrative = hasAirdropNarrative(input);
+  if (narrative) return { excluded: false };
+
+  // 4) 名称规则：交易所 / 包装资产 / 质押衍生品的具体条目
   for (const re of EXCLUDE_PATTERNS) {
     if (re.test(name)) {
       const m = name.match(re);
       return {
         excluded: true,
         reason: `名称命中排除规则（${m?.[0] ?? re.source}）：交易所 / 包装资产 / 质押衍生品不属于空投项目`,
+        pattern: re.source,
+      };
+    }
+  }
+
+  // 5) 弱类目：仅在没有空投叙事证据时才排除
+  for (const re of EXCLUDE_WEAK_CATEGORY_PATTERNS) {
+    if (re.test(category)) {
+      return {
+        excluded: true,
+        reason: `类目为「${category}」且未发现任何空投叙事证据（无已确认状态 / 无领取相关文案），按基础设施或子池凭证处理`,
         pattern: re.source,
       };
     }

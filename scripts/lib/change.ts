@@ -224,7 +224,12 @@ export function describeProjectChanges(
     out.push(`参与价值：${before.scores.value} → ${after.scores.value}`);
   }
   if (out.length < 3 && before.guide_source !== after.guide_source) {
-    out.push(after.guide_source === 'sourced' ? '教程：升级为真实教程' : '教程：转为流程示意');
+    const LABEL: Record<string, string> = {
+      sourced: '教程：升级为官方可追溯教程',
+      third_party: '教程：改为第三方整理',
+      template: '教程：转为流程示意',
+    };
+    out.push(LABEL[after.guide_source] ?? '教程来源有变化');
   }
   if (out.length < 3 && before.cost.capital_max_usd !== after.cost.capital_max_usd) {
     out.push(`资金门槛：$${before.cost.capital_max_usd} → $${after.cost.capital_max_usd}`);

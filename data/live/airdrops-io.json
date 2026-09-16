@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-16T05:36:52.125Z",
+  "fetched_at": "2026-09-16T07:06:57.987Z",
   "source": "Airdrops.io",
   "source_url": "https://airdrops.io/latest/",
   "items": [
@@ -16,7 +16,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solpump/",
       "officialUrl": "https://solpump.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Solpump",
       "officialHost": "solpump.io",
       "steps": [],
@@ -36,19 +36,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/aiw3/",
       "officialUrl": "https://aiw3.ai",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Aiw3",
       "officialHost": "aiw3.ai",
       "steps": [
         {
           "title": "Check Your Eligibility",
-          "body": "Visit the AIW3 airdrop page Connect your wallet Click “Verify Now” to view your status If your results appear incorrect, contact the AIW3 support team to request a manual review.",
-          "url": "/visit/tsa3/"
+          "body": "Visit the AIW3 airdrop page Connect your wallet Click “Verify Now” to view your status If your results appear incorrect, contact the AIW3 support team to request a manual review."
         },
         {
           "title": "Visit the AIW3 airdrop page",
-          "body": "Go to the AIW3 airdrop page and open the Airdrop tab. This is where your points, tasks, and ranking live.",
-          "url": "/visit/vna3/"
+          "body": "Go to the AIW3 airdrop page and open the Airdrop tab. This is where your points, tasks, and ranking live."
         },
         {
           "title": "Connect your wallet and complete the tutorial",
@@ -68,8 +66,7 @@
         },
         {
           "title": "Trade on the platform",
-          "body": "You earn points for every 1,000 USDT in trading volume, plus milestone bonuses for consistent activity. You can grab USDT or SOL on Bybit , and if your funds sit on another chain, the widget below moves them over to Solana or BNB Chain in one transaction. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "You earn points for every 1,000 USDT in trading volume, plus milestone bonuses for consistent activity. You can grab USDT or SOL on Bybit , and if your funds sit on another chain, the widget below moves them over to Solana or BNB Chain in one transaction. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Publish AI strategies",
@@ -99,19 +96,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ritual/",
       "officialUrl": "https://ritualtrials.domino.page",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Ritual",
       "officialHost": "ritualtrials.domino.page",
       "steps": [
         {
           "title": "Join the Ritual Discord",
-          "body": "Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated.",
-          "url": "/visit/ed93/"
+          "body": "Go to Ritual’s Discord and complete onboarding. You’ll need a verified Discord account. The Discord is where roles are assigned and where testnet access is gated."
         },
         {
           "title": "Complete Community Quests",
-          "body": "Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)",
-          "url": "/visit/dd93/"
+          "body": "Visit the Ritual quest portal and log in with your Discord account. Complete available tasks to earn XP and role upgrades. Current quest categories include: Social tasks Discord engagement and invites Pledge section submissions (if open — submit unique text when active)"
         },
         {
           "title": "Earn and Upgrade Discord Roles",
@@ -138,7 +133,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/fireplace/",
       "officialUrl": "https://pro.fireplace.gg",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Fireplace",
       "officialHost": "pro.fireplace.gg",
       "steps": [],
@@ -156,14 +151,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/worldie/",
       "officialUrl": "https://worldie.world",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Worldie",
       "officialHost": "worldie.world",
       "steps": [
         {
           "title": "Visit the Worldie Early Access Page",
-          "body": "Go to the Worldie early access page and click “Join early.” Sign in with your X account or Google.",
-          "url": "/visit/5eb3/"
+          "body": "Go to the Worldie early access page and click “Join early.” Sign in with your X account or Google."
         },
         {
           "title": "Join the Worldie Discord",
@@ -201,19 +195,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/collector-crypt/",
       "officialUrl": "https://gacha.collectorcrypt.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Collector Crypt",
       "officialHost": "gacha.collectorcrypt.com",
       "steps": [
         {
           "title": "Set Up a Solana Wallet and Fund it",
-          "body": "Install a Solana wallet such as Phantom, Solflare, or Backpack. You need SOL for network fees and USDC (or $CARDS) to open Gacha packs. If you don’t have any, buy them on Binance or use the bridge below Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Install a Solana wallet such as Phantom, Solflare, or Backpack. You need SOL for network fees and USDC (or $CARDS) to open Gacha packs. If you don’t have any, buy them on Binance or use the bridge below Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Visit Collector Crypt and Sign In",
-          "body": "Go to the Collector Crypt platform and sign in with your email or wallet.",
-          "url": "/visit/2aa3/"
+          "body": "Go to the Collector Crypt platform and sign in with your email or wallet."
         },
         {
           "title": "Open Gacha Packs to Earn Points",
@@ -233,8 +225,7 @@
         },
         {
           "title": "Claim Your Rewards",
-          "body": "When a quarterly distribution goes live, claim through the official page and connect the wallet you used for activity. The Q2 2026 rewards were processed on June 14, with 15,000,000 $CARDS (0.75% of total supply) allocated across the ecosystem. Review and claim your allocation at claim.collectorcrypt.com .",
-          "url": "/visit/4aa3/"
+          "body": "When a quarterly distribution goes live, claim through the official page and connect the wallet you used for activity. The Q2 2026 rewards were processed on June 14, with 15,000,000 $CARDS (0.75% of total supply) allocated across the ecosystem. Review and claim your allocation at claim.collectorcrypt.com ."
         }
       ],
       "description": "The Collector Crypt airdrop is confirmed and recurring. The team runs a quarterly rewards program that distributes $CARDS to active users, and $CARDS holders receive separate monthly airdrops on top of that. The most recent quarterly distribution went live on June 14, 2026, releasing 15 million $CARDS."
@@ -252,14 +243,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/yakkamon/",
       "officialUrl": "https://yakkamon.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Yakkamon",
       "officialHost": "yakkamon.com",
       "steps": [
         {
           "title": "Sign Up at Yakkamon",
-          "body": "Create your account with an email address on the Yakkamon pre-registration page . No wallet is needed at this stage. Enter the referral code YAKKA-52UCFU during sign-up.",
-          "url": "/visit/w0b3/"
+          "body": "Create your account with an email address on the Yakkamon pre-registration page . No wallet is needed at this stage. Enter the referral code YAKKA-52UCFU during sign-up."
         },
         {
           "title": "Nurture Your Egg Daily",
@@ -283,8 +273,7 @@
         },
         {
           "title": "Mint Your Yakkamon NFT",
-          "body": "Check which waves your Ronin wallet qualifies for on the whitelist checker Deposit 5 $FLOWER if you’re minting in Wave 2 or Wave 4 (see the $FLOWER deposit guide ) Connect your Ronin wallet to the Ronin Launchpad when your wave opens and mint, keeping some RON for gas",
-          "url": "/visit/ceb3/"
+          "body": "Check which waves your Ronin wallet qualifies for on the whitelist checker Deposit 5 $FLOWER if you’re minting in Wave 2 or Wave 4 (see the $FLOWER deposit guide ) Connect your Ronin wallet to the Ronin Launchpad when your wave opens and mint, keeping some RON for gas"
         }
       ],
       "description": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Monster NFTs when early access launches: ranks 1 to 1,000 get Legendary Monster NFTs and ranks 1,001 to 5,000 get Rare Monster NFTs. Distribution is automatic and based purely on points, never on sign-up order. The same leaderboard decides early access, with the top 100,000 trainers entering in waves."
@@ -302,19 +291,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/blackboard/",
       "officialUrl": "https://blackboard.fi",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Blackboard",
       "officialHost": "blackboard.fi",
       "steps": [
         {
           "title": "Join the Blackboard Waitlist",
-          "body": "Go to the Blackboard waitlist page and sign up with a Google or X account. Your rank updates live, and higher ranked users reach Alpha sooner.",
-          "url": "/visit/odb3/"
+          "body": "Go to the Blackboard waitlist page and sign up with a Google or X account. Your rank updates live, and higher ranked users reach Alpha sooner."
         },
         {
           "title": "Follow Blackboard and Post the Referral Tweet",
-          "body": "Link your X account in the waitlist task list, follow Blackboard , and then post the referral tweet the page generates. Blackboard verifies both before crediting the task, which is worth 60 points.",
-          "url": "https://x.com/BlackboardFi"
+          "body": "Link your X account in the waitlist task list, follow Blackboard , and then post the referral tweet the page generates. Blackboard verifies both before crediting the task, which is worth 60 points."
         },
         {
           "title": "Share Your Invite Link",
@@ -326,8 +313,7 @@
         },
         {
           "title": "Deposit USDC to Your Blackboard Wallet",
-          "body": "Open Deposit from the Portfolio screen, choose the asset and network, then send funds to the address shown. Picking the wrong network can lose the deposit permanently. Instant and free: USDC on Arbitrum, Polygon, HyperEVM or Solana Routed for a fee shown before you confirm: USDC on Ethereum, Base or BNB Chain Also accepted: USDT credited as USDC, $10 minimum You can buy USDC on Bybit and withdraw straight to Arbitrum , or shift what you already hold onto a supported network with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "Open Deposit from the Portfolio screen, choose the asset and network, then send funds to the address shown. Picking the wrong network can lose the deposit permanently. Instant and free: USDC on Arbitrum, Polygon, HyperEVM or Solana Routed for a fee shown before you confirm: USDC on Ethereum, Base or BNB Chain Also accepted: USDT credited as USDC, $10 minimum You can buy USDC on Bybit and withdraw straight to Arbitrum , or shift what you already hold onto a supported network with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Trade Perpetual Futures",
@@ -353,14 +339,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/deepbook/",
       "officialUrl": "https://waitlist.deepbook.tech",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Deepbook",
       "officialHost": "waitlist.deepbook.tech",
       "steps": [
         {
           "title": "Visit the DeepBook Waitlist",
-          "body": "Go to the DeepBook waitlist page and enter your email address to request early access to the new trading app.",
-          "url": "/visit/53a3/"
+          "body": "Go to the DeepBook waitlist page and enter your email address to request early access to the new trading app."
         },
         {
           "title": "Verify Your Email",
@@ -372,18 +357,15 @@
         },
         {
           "title": "Visit the DeepBook Claims Portal",
-          "body": "Go to the DeepBook claims portal . Read and accept the terms of use and privacy policy before moving on.",
-          "url": "/visit/63a3/"
+          "body": "Go to the DeepBook claims portal . Read and accept the terms of use and privacy policy before moving on."
         },
         {
           "title": "Confirm You Have SUI for Gas",
-          "body": "Claiming is an on-chain transaction, so your wallet needs a small amount of SUI to cover the network fee. If you need some, you can buy SUI from Binance , or swap and bridge funds using the widget below.",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Claiming is an on-chain transaction, so your wallet needs a small amount of SUI to cover the network fee. If you need some, you can buy SUI from Binance , or swap and bridge funds using the widget below."
         },
         {
           "title": "Connect Your Season 1 Wallet",
-          "body": "Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab Click “Connect Wallet” and link the same wallet you used to earn points during Season 1. Approve the connection request in your wallet. If you traded from more than one address, connect each separately to check for allocations.",
-          "url": "/visit/rka3/"
+          "body": "Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab Click “Connect Wallet” and link the same wallet you used to earn points during Season 1. Approve the connection request in your wallet. If you traded from more than one address, connect each separately to check for allocations."
         },
         {
           "title": "Review and Submit Your Claim",
@@ -405,24 +387,21 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/flop-labs/",
       "officialUrl": "https://flop.finance",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Flop Labs",
       "officialHost": "flop.finance",
       "steps": [
         {
           "title": "Follow Flop Labs on X",
-          "body": "Follow the official Flop Labs X account and turn on notifications. This is the only requirement the project has published for eligibility, and it is where testnet dates will land first.",
-          "url": "https://x.com/flop_labs"
+          "body": "Follow the official Flop Labs X account and turn on notifications. This is the only requirement the project has published for eligibility, and it is where testnet dates will land first."
         },
         {
           "title": "Follow Arthur Hayes for early terms",
-          "body": "Follow CryptoHayes and subscribe to his Substack. His essays have carried more detail than the project account, including the 20% testnet figure, and more are coming. Terms tend to surface there first.",
-          "url": "https://x.com/cryptohayes"
+          "body": "Follow CryptoHayes and subscribe to his Substack. His essays have carried more detail than the project account, including the 20% testnet figure, and more are coming. Terms tend to surface there first."
         },
         {
           "title": "Apply for a network role",
-          "body": "Open the Flop website and submit the form matching what you can deliver. Three of the four roles are open: GPU provider or miner: for anyone with hardware that can run inference. Miners earn block rewards plus payment per job. No minimum specifications have been published, so treat any circulating hardware requirement as unverified. Validator: confirms miners completed their assigned work and stores agent memory. Suited to people comfortable running nodes. KOL or creator: the lowest barrier of the three. A few solid posts plus the form is the entry price, and Substack counts, which helps if your X account is weak. The fourth role, Agents, is the demand side: they spend $FLOP rather than earn it, so there is nothing to apply for.",
-          "url": "/visit/49b3/"
+          "body": "Open the Flop website and submit the form matching what you can deliver. Three of the four roles are open: GPU provider or miner: for anyone with hardware that can run inference. Miners earn block rewards plus payment per job. No minimum specifications have been published, so treat any circulating hardware requirement as unverified. Validator: confirms miners completed their assigned work and stores agent memory. Suited to people comfortable running nodes. KOL or creator: the lowest barrier of the three. A few solid posts plus the form is the entry price, and Substack counts, which helps if your X account is weak. The fourth role, Agents, is the demand side: they spend $FLOP rather than earn it, so there is nothing to apply for."
         },
         {
           "title": "Start publishing $FLOP content now",
@@ -448,7 +427,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ammora/",
       "officialUrl": "https://ammora.org",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Ammora",
       "officialHost": "ammora.org",
       "steps": [
@@ -458,18 +437,15 @@
         },
         {
           "title": "Claim GIWA Sepolia test ETH",
-          "body": "Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little.",
-          "url": "/visit/wdb3/"
+          "body": "Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little."
         },
         {
           "title": "Join the Ammora waitlist",
-          "body": "Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard.",
-          "url": "/visit/vdb3/"
+          "body": "Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard."
         },
         {
           "title": "Follow @AmmoraHQ on X",
-          "body": "Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP.",
-          "url": "https://x.com/AmmoraHQ"
+          "body": "Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP."
         },
         {
           "title": "Retweet the pinned post",
@@ -507,14 +483,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/canopy/",
       "officialUrl": "https://app.canopynetwork.org",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Canopy",
       "officialHost": "app.canopynetwork.org",
       "steps": [
         {
           "title": "Submit Your Testnet Points",
-          "body": "Visit the submission portal and sign in with the EVM wallet you registered Create or select a Canopy wallet to receive tokens The locked portion is already credited to your wallet and releases on its own schedule, so there is nothing further to claim, sign, or pay gas for.",
-          "url": "/visit/5db3/"
+          "body": "Visit the submission portal and sign in with the EVM wallet you registered Create or select a Canopy wallet to receive tokens The locked portion is already credited to your wallet and releases on its own schedule, so there is nothing further to claim, sign, or pay gas for."
         }
       ],
       "description": "Canopy Network has confirmed a $CNPY token airdrop through a points-based rewards program. Points earned through platform activity — including retroactive rewards for early participation, testnet interactions, and quests — will convert to $CNPY allocations at a future date."
@@ -532,7 +507,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/noise/",
       "officialUrl": "https://airdrops.io/noise/",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Noise",
       "steps": [],
       "description": "The Noise beta has ended. The Noise testnet closes on September 11 at 16:00 as the team prepares for the Mainnet launch. Users who purchased Credits during the testnet will receive rewards on Mainnet equal to the amount they spent."
@@ -550,14 +525,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/rep/",
       "officialUrl": "https://app.r3p.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Rep",
       "officialHost": "app.r3p.xyz",
       "steps": [
         {
           "title": "Log In With Your X Account",
-          "body": "Go to the REP app and sign in with X. This becomes the anchor identity for your profile, and REP reads public metrics like follower quality to seed your first badges.",
-          "url": "/visit/hdb3/"
+          "body": "Go to the REP app and sign in with X. This becomes the anchor identity for your profile, and REP reads public metrics like follower quality to seed your first badges."
         },
         {
           "title": "Connect Your Wallets",
@@ -569,8 +543,7 @@
         },
         {
           "title": "Claim Your Achievements",
-          "body": "Open the achievements list and claim every badge you qualify for. Values range from a few hundred REP points for social milestones up to 3,000 for top-percentile DeFi activity. Some claims charge a small on-chain fee, so keep a little of the relevant gas token in your connected wallet. You can buy it on Bybit and withdraw it directly, or move assets you already hold with the widget below to bridge or swap onto the chain you need. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "Open the achievements list and claim every badge you qualify for. Values range from a few hundred REP points for social milestones up to 3,000 for top-percentile DeFi activity. Some claims charge a small on-chain fee, so keep a little of the relevant gas token in your connected wallet. You can buy it on Bybit and withdraw it directly, or move assets you already hold with the widget below to bridge or swap onto the chain you need. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Set Your Remoji Rank",
@@ -600,7 +573,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/satsuma/",
       "officialUrl": "https://satsuma.exchange",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Satsuma",
       "officialHost": "satsuma.exchange",
       "steps": [],
@@ -619,14 +592,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/voice/",
       "officialUrl": "https://voice.fun",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Voice",
       "officialHost": "voice.fun",
       "steps": [
         {
           "title": "Visit the VOICE Social Camp",
-          "body": "Go to the VOICE Social Camp page. This is the pre-launch hub where quests, leaderboards, and CLOUT tracking live.",
-          "url": "https://airdrops.io/visit/rxa3/"
+          "body": "Go to the VOICE Social Camp page. This is the pre-launch hub where quests, leaderboards, and CLOUT tracking live."
         },
         {
           "title": "Sign in with your X account",
@@ -634,8 +606,7 @@
         },
         {
           "title": "Complete Core, Daily, and Burst tasks",
-          "body": "Clear the Core tasks first, then return for the Daily set. Burst tasks are shorter, higher-value entries announced in the VOICE Discord , so keep an eye there for drops.",
-          "url": "https://discord.gg/MDKCRdAWaZ"
+          "body": "Clear the Core tasks first, then return for the Daily set. Burst tasks are shorter, higher-value entries announced in the VOICE Discord , so keep an eye there for drops."
         },
         {
           "title": "Vote in polls and Opinion Cup battles",
@@ -647,8 +618,7 @@
         },
         {
           "title": "Complete the Layer3 VOICE campaign",
-          "body": "Head to the separate VOICE campaign on Layer3 , which carries an advertised $2,000 reward pool. Complete the listed quests to qualify for a share.",
-          "url": "/visit/lab3/"
+          "body": "Head to the separate VOICE campaign on Layer3 , which carries an advertised $2,000 reward pool. Complete the listed quests to qualify for a share."
         },
         {
           "title": "Enter partner clusters",
@@ -660,8 +630,7 @@
         },
         {
           "title": "Apply for the Ambassador Program",
-          "body": "Open the VOICE Ambassador application and enter your region, X, Discord, and Telegram handles, average views, and posts per day Pick your content themes and answer the quick checks, including whether you’ve joined the VOICE Discord and the VOICE social campaign Explain why you want to join and submit Applicants need organic engagement and must post in English at least 80% of the time. A blue checkmark isn’t required. Selected creators are contacted on Discord or X within a few days.",
-          "url": "/visit/1eb3/"
+          "body": "Open the VOICE Ambassador application and enter your region, X, Discord, and Telegram handles, average views, and posts per day Pick your content themes and answer the quick checks, including whether you’ve joined the VOICE Discord and the VOICE social campaign Explain why you want to join and submit Applicants need organic engagement and must post in English at least 80% of the time. A blue checkmark isn’t required. Selected creators are contacted on Discord or X within a few days."
         }
       ],
       "description": "The $VOICE token and its token generation event are confirmed, with the TGE targeted for Q4 2026. VOICE ties $VOICE distribution to activity: CLOUT earned in Social Camp hard-syncs to your profile, and the tiers list a base $VOICE airdrop allocation, whitelist access, NFT drops, and early access at the higher levels."
@@ -679,7 +648,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/laptop/",
       "officialUrl": "https://claim.laptoptoken.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Laptop",
       "officialHost": "claim.laptoptoken.com",
       "steps": [
@@ -689,13 +658,11 @@
         },
         {
           "title": "Verify the Contract Address and Domain",
-          "body": "The project lists its official Base contract as 0xB095274743941e953c746F9C228DA9c18Bb6ec29 . Verify it on the official LAPTOP website rather than a screener or a search result. Our crypto safety guide explains how fake claim pages work.",
-          "url": "/visit/kdb3/"
+          "body": "The project lists its official Base contract as 0xB095274743941e953c746F9C228DA9c18Bb6ec29 . Verify it on the official LAPTOP website rather than a screener or a search result. Our crypto safety guide explains how fake claim pages work."
         },
         {
           "title": "Open the Official Claim Portal",
-          "body": "Go to the LAPTOP claim portal and enter the email tied to your Substack or Channel 5 subscription. It shows your eligibility and allocation before you commit.",
-          "url": "/visit/jdb3/"
+          "body": "Go to the LAPTOP claim portal and enter the email tied to your Substack or Channel 5 subscription. It shows your eligibility and allocation before you commit."
         },
         {
           "title": "Connect an Email and Create an Embedded Wallet",
@@ -703,8 +670,7 @@
         },
         {
           "title": "Fund the Wallet With ETH on Base",
-          "body": "A self-custody claim needs a little ETH on Base for gas. Buy ETH on Bybit and withdraw straight to Base, or move some across from another network using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "A self-custody claim needs a little ETH on Base for gas. Buy ETH on Bybit and withdraw straight to Base, or move some across from another network using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Claim Within the 30-Day Window",
@@ -730,14 +696,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/vangrid/",
       "officialUrl": "https://hub.vangrid.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Vangrid",
       "officialHost": "hub.vangrid.io",
       "steps": [
         {
           "title": "Install the Vangrid App",
-          "body": "Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified.",
-          "url": "/visit/7cb3/"
+          "body": "Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified."
         },
         {
           "title": "Record a Capture That Meets the Spec",
@@ -749,8 +714,7 @@
         },
         {
           "title": "Connect Your Wallet to the Loyalty Hub",
-          "body": "Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own.",
-          "url": "/visit/6cb3/"
+          "body": "Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own."
         },
         {
           "title": "Complete Loyalty Hub Quests",
@@ -783,14 +747,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/reels/",
       "officialUrl": "https://click.trkreels.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Reels",
       "officialHost": "click.trkreels.com",
       "steps": [
         {
           "title": "Create a Reels Account",
-          "body": "Go to the Reels sign-up page and register with email, X, Google, or Telegram. Registration takes under a minute and does not require a deposit.",
-          "url": "/visit/dcb3/"
+          "body": "Go to the Reels sign-up page and register with email, X, Google, or Telegram. Registration takes under a minute and does not require a deposit."
         },
         {
           "title": "Apply the Promo Code",
@@ -798,8 +761,7 @@
         },
         {
           "title": "Make a Qualifying Deposit",
-          "body": "Deposit at least 20 USD in BTC, ETH, USDT, USDC, TON, SOL, or another supported coin. If you need to pick up crypto first, Bybit is a straightforward option for buying BTC, ETH, or USDT before sending it over. If you’re holding funds on a different chain, use the widget below to swap or bridge to whatever coin you plan to deposit. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "Deposit at least 20 USD in BTC, ETH, USDT, USDC, TON, SOL, or another supported coin. If you need to pick up crypto first, Bybit is a straightforward option for buying BTC, ETH, or USDT before sending it over. If you’re holding funds on a different chain, use the widget below to swap or bridge to whatever coin you plan to deposit. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Play Across the Casino, Sportsbook, or Prediction Markets",
@@ -821,14 +783,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/entropy/",
       "officialUrl": "https://entropy.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Entropy",
       "officialHost": "entropy.io",
       "steps": [
         {
           "title": "Connect your wallet to Entropy",
-          "body": "Go to the Entropy trading app and connect Rabby, MetaMask, or another supported wallet.",
-          "url": "/visit/fcb3/"
+          "body": "Go to the Entropy trading app and connect Rabby, MetaMask, or another supported wallet."
         },
         {
           "title": "Set your username",
@@ -836,8 +797,7 @@
         },
         {
           "title": "Deposit USDC to your Hyperliquid account",
-          "body": "Entropy markets settle in USDC held in your Hyperliquid perps balance, funded via Arbitrum. Buy USDC on Bybit and withdraw straight to Arbitrum, or shift existing funds across chains using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "Entropy markets settle in USDC held in your Hyperliquid perps balance, funded via Arbitrum. Buy USDC on Bybit and withdraw straight to Arbitrum, or shift existing funds across chains using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Trade the live Entropy markets",
@@ -867,14 +827,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/beldex/",
       "officialUrl": "https://quest.beldex.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Beldex",
       "officialHost": "quest.beldex.io",
       "steps": [
         {
           "title": "Connect Your Wallet to the Loyalty Dashboard",
-          "body": "Open the Beldex Loyalty Program and connect an EVM wallet. Your points and rank attach to that address, so use a wallet you intend to keep.",
-          "url": "/visit/lbb3/"
+          "body": "Open the Beldex Loyalty Program and connect an EVM wallet. Your points and rank attach to that address, so use a wallet you intend to keep."
         },
         {
           "title": "Link Your X Account",
@@ -916,14 +875,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dualmint/",
       "officialUrl": "https://uptime.dualmint.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Dualmint",
       "officialHost": "uptime.dualmint.com",
       "steps": [
         {
           "title": "Sign Up for UPTIME with Your Email",
-          "body": "Go to the UPTIME campaign page and enter the email address you want tied to your points. Balances are held on the waitlist server, so the same address works from any device.",
-          "url": "/visit/wbb3/"
+          "body": "Go to the UPTIME campaign page and enter the email address you want tied to your points. Balances are held on the waitlist server, so the same address works from any device."
         },
         {
           "title": "Confirm the 6-Digit Code",
@@ -965,14 +923,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/gyndore/",
       "officialUrl": "https://app.gyndore.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Gyndore",
       "officialHost": "app.gyndore.com",
       "steps": [
         {
           "title": "Open the DropWave Reservation Portal",
-          "body": "Go to the Gyndore reservation portal . The old DropWave campaign page now redirects here, so any saved bookmark should land in the same place.",
-          "url": "LINK"
+          "body": "Go to the Gyndore reservation portal . The old DropWave campaign page now redirects here, so any saved bookmark should land in the same place."
         },
         {
           "title": "Connect the Wallet You Used in Season One",
@@ -1006,14 +963,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/c8ntinuum/",
       "officialUrl": "https://app.c8ntinuum.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "C8ntinuum",
       "officialHost": "app.c8ntinuum.com",
       "steps": [
         {
           "title": "Create Your C8ntinuum Account",
-          "body": "Open the C8ntinuum dashboard and sign in with email, a wallet or a social account. p8ints accrue to the account itself, not to any single wallet.",
-          "url": "/visit/1cb3/"
+          "body": "Open the C8ntinuum dashboard and sign in with email, a wallet or a social account. p8ints accrue to the account itself, not to any single wallet."
         },
         {
           "title": "Claim Your Legacy p8ints",
@@ -1029,8 +985,7 @@
         },
         {
           "title": "Buy and Hold $CTM Across Chains",
-          "body": "Holding is scored per chain, not on a combined balance, so positions on Ethereum, BNB Chain and Solana each earn separately and stack. A chain needs at least 5 CTM before it scores. Buy ETH, BNB or SOL on Bybit , withdraw to your own wallet, then use the widget below to move funds onto the chain you plan to hold on. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/bnb-chain/"
+          "body": "Holding is scored per chain, not on a combined balance, so positions on Ethereum, BNB Chain and Solana each earn separately and stack. A chain needs at least 5 CTM before it scores. Buy ETH, BNB or SOL on Bybit , withdraw to your own wallet, then use the widget below to move funds onto the chain you plan to hold on. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Supply $CTM Liquidity",
@@ -1064,14 +1019,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/amadeus-protocol/",
       "officialUrl": "https://amahub.ama.one",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Amadeus Protocol",
       "officialHost": "amahub.ama.one",
       "steps": [
         {
           "title": "Connect a Wallet",
-          "body": "Open the AMA Hub quests page and connect an EVM wallet such as MetaMask, Rabby, or Trust. This is the address your PRIME Points are paid to.",
-          "url": "/visit/fab3/"
+          "body": "Open the AMA Hub quests page and connect an EVM wallet such as MetaMask, Rabby, or Trust. This is the address your PRIME Points are paid to."
         },
         {
           "title": "Create Your Amadeus Wallet",
@@ -1113,19 +1067,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/neosoul/",
       "officialUrl": "https://event.neosoul.ai",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Neosoul",
       "officialHost": "event.neosoul.ai",
       "steps": [
         {
           "title": "Connect Your Wallet on the NeoSoul Questboard",
-          "body": "Go to the NeoSoul Questboard and connect an EVM wallet. Complete the Newbie Tasks to bind your X account, follow the official profile, and join the Telegram and Discord groups. These one-time tasks open up the rest of the point system.",
-          "url": "/visit/8ab3/"
+          "body": "Go to the NeoSoul Questboard and connect an EVM wallet. Complete the Newbie Tasks to bind your X account, follow the official profile, and join the Telegram and Discord groups. These one-time tasks open up the rest of the point system."
         },
         {
           "title": "Create an AI Agent on EvoEvo",
-          "body": "Open EvoEvo , create your agent, and bind its ERC-8004 identity on BNB Smart Chain. This registration needs a small amount of BNB for gas. You can buy BNB on Bybit and withdraw it to BNB Chain, or move funds you already hold using the widget below to bridge or swap into BNB. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "/visit/9ab3/"
+          "body": "Open EvoEvo , create your agent, and bind its ERC-8004 identity on BNB Smart Chain. This registration needs a small amount of BNB for gas. You can buy BNB on Bybit and withdraw it to BNB Chain, or move funds you already hold using the widget below to bridge or swap into BNB. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Train Your Agent With Predictions",
@@ -1137,8 +1089,7 @@
         },
         {
           "title": "Finish the NeoSoul Quests on Galxe",
-          "body": "NeoSoul runs a separate quest campaign on Galxe . Open the NeoSoul quest page and complete whatever tasks are active there to earn extra entries and points.",
-          "url": "/visit/bab3/"
+          "body": "NeoSoul runs a separate quest campaign on Galxe . Open the NeoSoul quest page and complete whatever tasks are active there to earn extra entries and points."
         },
         {
           "title": "Invite Friends With Your Referral Link",
@@ -1161,14 +1112,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dow-protocol/",
       "officialUrl": "https://app.dowprotocol.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Dow Protocol",
       "officialHost": "app.dowprotocol.com",
       "steps": [
         {
           "title": "Connect Your Wallet to the Dow Points Dashboard",
-          "body": "Open the Dow Protocol points page and connect a wallet. BNB Chain is the primary network for XP tracking. BNB Chain: MetaMask, Rabby or any EVM wallet works for the main dashboard Sui: bind a Sui wallet too if you plan to use the Volo vault",
-          "url": "/visit/wcb3/"
+          "body": "Open the Dow Protocol points page and connect a wallet. BNB Chain is the primary network for XP tracking. BNB Chain: MetaMask, Rabby or any EVM wallet works for the main dashboard Sui: bind a Sui wallet too if you plan to use the Volo vault"
         },
         {
           "title": "Connect Your X Account",
@@ -1184,8 +1134,7 @@
         },
         {
           "title": "Deposit Stablecoins Into an Open Vault",
-          "body": "When a subscription window opens on the Dow Protocol app, deposit stablecoins into the Dow E-Commerce Financing Vault on BNB Chain or Dowsure Stable #1 on Sui. Vaults run a 90-day term, so plan around the lock first. You can buy stablecoins on Bybit and withdraw them, or move funds from another chain with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "When a subscription window opens on the Dow Protocol app, deposit stablecoins into the Dow E-Commerce Financing Vault on BNB Chain or Dowsure Stable #1 on Sui. Vaults run a 90-day term, so plan around the lock first. You can buy stablecoins on Bybit and withdraw them, or move funds from another chain with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Share Your Referral Link",
@@ -1211,14 +1160,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tbook/",
       "officialUrl": "https://engage.tbook.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Tbook",
       "officialHost": "engage.tbook.com",
       "steps": [
         {
           "title": "Build Your Incentive Passport",
-          "body": "Install a Sui wallet first. Slush and Nabox both work across TBook’s products, and you will want a little SUI for gas. Then open the TBook engagement portal , connect the wallet, and link your X account and Discord. The Passport is the container every score writes into, so an incomplete profile caps everything downstream.",
-          "url": "/visit/f9b3/"
+          "body": "Install a Sui wallet first. Slush and Nabox both work across TBook’s products, and you will want a little SUI for gas. Then open the TBook engagement portal , connect the wallet, and link your X account and Discord. The Passport is the container every score writes into, so an incomplete profile caps everything downstream."
         },
         {
           "title": "Mint Your WISE Credit Score",
@@ -1230,13 +1178,11 @@
         },
         {
           "title": "Fund Your Wallet with USDC",
-          "body": "The vault takes USDC on Sui. Bybit lists USDC and supports direct Sui withdrawals, which skips bridging entirely. Already holding USDC elsewhere? Move it across with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "The vault takes USDC on Sui. Bybit lists USDC and supports direct Sui withdrawals, which skips bridging entirely. Already holding USDC elsewhere? Move it across with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Deposit into the rcUSD Vault",
-          "body": "Open the TBook Vault and pick the rcUSD Vault, which routes deposits into the R25 Protocol. Deposits run from 1 USDC to 1 million with no fee, settlement is T+1, and you receive shares that appreciate as yield accrues rather than paying out separately. APY has recently sat above 8%.",
-          "url": "/visit/h9b3/"
+          "body": "Open the TBook Vault and pick the rcUSD Vault, which routes deposits into the R25 Protocol. Deposits run from 1 USDC to 1 million with no fee, settlement is T+1, and you receive shares that appreciate as yield accrues rather than paying out separately. APY has recently sat above 8%."
         },
         {
           "title": "Mint a Bookies NFT",
@@ -1258,14 +1204,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/omega/",
       "officialUrl": "https://olympus.omeganetwork.co",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Omega",
       "officialHost": "olympus.omeganetwork.co",
       "steps": [
         {
           "title": "Visit the Olympus Aptos claim page",
-          "body": "Go to the Olympus Aptos page . The claim tab sits directly on the dashboard.",
-          "url": "/visit/loa3/"
+          "body": "Go to the Olympus Aptos page . The claim tab sits directly on the dashboard."
         },
         {
           "title": "Connect your wallet",
@@ -1273,8 +1218,7 @@
         },
         {
           "title": "Fund your wallet with a small amount of APT",
-          "body": "You need APT to cover gas plus the $0.20 anti-sybil fee per claim. You can buy APT on Bybit and withdraw it straight to your Aptos address. If you also plan to use Olympus on its other chains, the widget below lets you bridge or swap funds to the network you need. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "You need APT to cover gas plus the $0.20 anti-sybil fee per claim. You can buy APT on Bybit and withdraw it straight to your Aptos address. If you also plan to use Olympus on its other chains, the widget below lets you bridge or swap funds to the network you need. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Claim your pOmega and the NFT",
@@ -1304,19 +1248,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/mint-io/",
       "officialUrl": "https://mint.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Mint Io",
       "officialHost": "mint.io",
       "steps": [
         {
           "title": "Create your MINT account",
-          "body": "Register on the MINT website . An account is required before any play counts toward Season 1 XP.",
-          "url": "/visit/wsa3/"
+          "body": "Register on the MINT website . An account is required before any play counts toward Season 1 XP."
         },
         {
           "title": "Fund your MINT wallet",
-          "body": "Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp.",
-          "url": "/visit/wsa3/"
+          "body": "Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp."
         },
         {
           "title": "Play casino games and sportsbook markets",
@@ -1350,19 +1292,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/hertzflow/",
       "officialUrl": "https://hertzflow.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Hertzflow",
       "officialHost": "hertzflow.xyz",
       "steps": [
         {
           "title": "Open the Genesis Vault and Connect Your Wallet",
-          "body": "Go to the HertzFlow Genesis Vault page and connect an EVM wallet. Anything supported by Privy works, including OKX Wallet, MetaMask, and Rabby. No invite code, no whitelist.",
-          "url": "/visit/6ab3/"
+          "body": "Go to the HertzFlow Genesis Vault page and connect an EVM wallet. Anything supported by Privy works, including OKX Wallet, MetaMask, and Rabby. No invite code, no whitelist."
         },
         {
           "title": "Fund Your Wallet",
-          "body": "You need USD1 or U plus a little BNB for gas. Stablecoins can be bought on Bybit and withdrawn straight to BNB Chain. If your funds sit elsewhere, the widget below will bridge or swap them across. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "You need USD1 or U plus a little BNB for gas. Stablecoins can be bought on Bybit and withdrawn straight to BNB Chain. If your funds sit elsewhere, the widget below will bridge or swap them across. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Review and Accept the User Agreement",
@@ -1400,14 +1340,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nowa/",
       "officialUrl": "https://app.nowa.finance",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Nowa",
       "officialHost": "app.nowa.finance",
       "steps": [
         {
           "title": "Open the Nowa Farming Page",
-          "body": "Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA.",
-          "url": "/visit/s6b3/"
+          "body": "Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA."
         },
         {
           "title": "Connect Your Wallet",
@@ -1419,8 +1358,7 @@
         },
         {
           "title": "Complete the Three Mandatory Tasks",
-          "body": "Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you.",
-          "url": "https://x.com/NowaFinance"
+          "body": "Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you."
         },
         {
           "title": "Trade on the Spot Orderbook",
@@ -1453,14 +1391,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sweep-finance/",
       "officialUrl": "https://sweep.finance",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Sweep Finance",
       "officialHost": "sweep.finance",
       "steps": [
         {
           "title": "Sign Up on the Sweep Airdrop Page",
-          "body": "Visit the Sweep airdrop page and create an account using Google, X, email, or a connected wallet. Registration is free and takes under a minute.",
-          "url": "/visit/r0b3/"
+          "body": "Visit the Sweep airdrop page and create an account using Google, X, email, or a connected wallet. Registration is free and takes under a minute."
         },
         {
           "title": "Verify Your Account",
@@ -1502,14 +1439,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wager-predict/",
       "officialUrl": "https://wagerpredict.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Wager Predict",
       "officialHost": "wagerpredict.com",
       "steps": [
         {
           "title": "Connect Your Wallet to the Wager Predict Testnet",
-          "body": "Visit the Wager Predict app and connect MetaMask or any WalletConnect wallet. Grab free tBNB for gas by clicking the faucet button.",
-          "url": "/visit/ata3/"
+          "body": "Visit the Wager Predict app and connect MetaMask or any WalletConnect wallet. Grab free tBNB for gas by clicking the faucet button."
         },
         {
           "title": "Claim 10,000 Testnet USDC",
@@ -1552,19 +1488,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/allox/",
       "officialUrl": "https://app.allox.ai",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Allox",
       "officialHost": "app.allox.ai",
       "steps": [
         {
           "title": "Connect Your Wallet to AlloX",
-          "body": "Go to the AlloX app and click “Connect Wallet”. MetaMask, Coinbase Wallet, and most major wallets work. Connecting earns you your one-time 5,000 point welcome bonus.",
-          "url": "/visit/3ra3/"
+          "body": "Go to the AlloX app and click “Connect Wallet”. MetaMask, Coinbase Wallet, and most major wallets work. Connecting earns you your one-time 5,000 point welcome bonus."
         },
         {
           "title": "Fund Your Wallet on BNB Chain",
-          "body": "Portfolios execute on BNB Chain, so you need BNB for gas plus capital to invest. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "/visit/mra3/"
+          "body": "Portfolios execute on BNB Chain, so you need BNB for gas plus capital to invest. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Create Your First AI Portfolio",
@@ -1602,19 +1536,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/push-chain/",
       "officialUrl": "https://portal.push.org",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Push Chain",
       "officialHost": "portal.push.org",
       "steps": [
         {
           "title": "Visit the Push Portal",
-          "body": "Go to the Push Portal rewards page and log in with a wallet or a social account. If you farmed Season 1 or 2, use the same wallet so your earlier points carry over.",
-          "url": "/visit/dra3/"
+          "body": "Go to the Push Portal rewards page and log in with a wallet or a social account. If you farmed Season 1 or 2, use the same wallet so your earlier points carry over."
         },
         {
           "title": "Verify your social accounts",
-          "body": "Follow PushChain on X and join the Push Chain Discord , then complete verification inside the portal. This unlocks the quest board and referral link.",
-          "url": "https://x.com/PushChain"
+          "body": "Follow PushChain on X and join the Push Chain Discord , then complete verification inside the portal. This unlocks the quest board and referral link."
         },
         {
           "title": "Claim testnet PC from the faucet",
@@ -1660,14 +1592,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/brownian/",
       "officialUrl": "https://brownian.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Brownian",
       "officialHost": "brownian.xyz",
       "steps": [
         {
           "title": "Visit the Brownian app",
-          "body": "Go to the Brownian app to get started.",
-          "url": "/visit/kwa3/"
+          "body": "Go to the Brownian app to get started."
         },
         {
           "title": "Connect your wallet",
@@ -1675,8 +1606,7 @@
         },
         {
           "title": "Deposit collateral",
-          "body": "Deposit USDC, USDT, or ETH to fund your trading account. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "/visit/rka3/"
+          "body": "Deposit USDC, USDT, or ETH to fund your trading account. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Enable trading",
@@ -1710,14 +1640,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/perpl/",
       "officialUrl": "https://app.perpl.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Perpl",
       "officialHost": "app.perpl.xyz",
       "steps": [
         {
           "title": "Visit the Perpl website",
-          "body": "Go to the Perpl website .",
-          "url": "/visit/nta3/"
+          "body": "Go to the Perpl website ."
         },
         {
           "title": "Connect your wallet",
@@ -1725,8 +1654,7 @@
         },
         {
           "title": "Fund your wallet with stablecoins",
-          "body": "Perpl uses AUSD as its collateral asset, but you can start from USDC or USDT. If you need funds, you can buy them on Bybit and withdraw them to your wallet. Open the deposit flow on the Perpl app. If you hold USDC, USDT, or another supported coin, Perpl’s built-in bridge converts it to AUSD during the deposit. A minimum of 10 AUSD is required to open an account.",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "Perpl uses AUSD as its collateral asset, but you can start from USDC or USDT. If you need funds, you can buy them on Bybit and withdraw them to your wallet. Open the deposit flow on the Perpl app. If you hold USDC, USDT, or another supported coin, Perpl’s built-in bridge converts it to AUSD during the deposit. A minimum of 10 AUSD is required to open an account."
         },
         {
           "title": "Trade perps to earn weekly points",
@@ -1760,14 +1688,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/moonpay/",
       "officialUrl": "https://paybox.sh",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Moonpay",
       "officialHost": "paybox.sh",
       "steps": [
         {
           "title": "Create Your PayBox Account",
-          "body": "Go to PayBox and sign up with your email. You do not need a MoonPay account. Pick Claude or ChatGPT as your assistant and copy the connector URL: https://api.paybox.sh/mcp",
-          "url": "/visit/6ta3/"
+          "body": "Go to PayBox and sign up with your email. You do not need a MoonPay account. Pick Claude or ChatGPT as your assistant and copy the connector URL: https://api.paybox.sh/mcp"
         },
         {
           "title": "Add the PayBox Connector to Your AI Assistant",
@@ -1783,8 +1710,7 @@
         },
         {
           "title": "Verify Everything on the Dashboard",
-          "body": "Open the PayBox Dashboard and sign in with your passkey. Your AI platform should be listed under Agents and both wallets under Credentials. If something is missing, reconnect before the faucet goes live.",
-          "url": "/visit/8ta3/"
+          "body": "Open the PayBox Dashboard and sign in with your passkey. Your AI platform should be listed under Agents and both wallets under Credentials. If something is missing, reconnect before the faucet goes live."
         },
         {
           "title": "Connect X and Claim the USDC Drop",
@@ -1806,19 +1732,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wheelx/",
       "officialUrl": "https://wheelx.fi",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Wheelx",
       "officialHost": "wheelx.fi",
       "steps": [
         {
           "title": "Visit WheelX and connect your wallet",
-          "body": "Go to WheelX and connect an EVM wallet like MetaMask or Rabby. First-time connections receive a 1,000 XP newcomer bonus automatically. At the current rate, the base bonus is worth about $0.36.",
-          "url": "/visit/3na3/"
+          "body": "Go to WheelX and connect an EVM wallet like MetaMask or Rabby. First-time connections receive a 1,000 XP newcomer bonus automatically. At the current rate, the base bonus is worth about $0.36."
         },
         {
           "title": "Fund your wallet with ETH or stablecoins",
-          "body": "You need real assets to bridge and swap. Grab ETH, USDT, or USDC from Bybit and withdraw to your wallet, or move funds you already hold onto a supported chain using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "You need real assets to bridge and swap. Grab ETH, USDT, or USDC from Bybit and withdraw to your wallet, or move funds you already hold onto a supported chain using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Complete the social quests",
@@ -1856,14 +1780,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/fortune-foes/",
       "officialUrl": "https://fortunefoes.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Fortune Foes",
       "officialHost": "fortunefoes.com",
       "steps": [
         {
           "title": "Visit the Allowlist Dashboard and Connect Your Wallet",
-          "body": "Open the Fortune Foes allowlist dashboard and connect your wallet. Points, tier, and mint spot all attach to this address, so pick a wallet you intend to hold and mint from, not a burner.",
-          "url": "/visit/v6b3/"
+          "body": "Open the Fortune Foes allowlist dashboard and connect your wallet. Points, tier, and mint spot all attach to this address, so pick a wallet you intend to hold and mint from, not a burner."
         },
         {
           "title": "Apply a Referral Code First",
@@ -1902,14 +1825,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/cambria/",
       "officialUrl": "https://lobby.cambria.gg",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Cambria",
       "officialHost": "lobby.cambria.gg",
       "steps": [
         {
           "title": "Create Your Cambria Account",
-          "body": "Visit the Cambria lobby and set up an account. Use invite code 9df14149 at sign-up, which gives both you and the referrer a points boost on future activity.",
-          "url": "/visit/vpa3/"
+          "body": "Visit the Cambria lobby and set up an account. Use invite code 9df14149 at sign-up, which gives both you and the referrer a points boost on future activity."
         },
         {
           "title": "Link Your Wallets",
@@ -1925,8 +1847,7 @@
         },
         {
           "title": "Fund Your Wallet for Gameplay",
-          "body": "Playing Dungeons and Gold Rush takes USDC or ETH for Risk Keys and in-game costs. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "/visit/rka3/"
+          "body": "Playing Dungeons and Gold Rush takes USDC or ETH for Risk Keys and in-game costs. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Play Dungeons for Loot and Points",
@@ -1956,19 +1877,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/jupiter/",
       "officialUrl": "https://jup.ag",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Jupiter",
       "officialHost": "jup.ag",
       "steps": [
         {
           "title": "Acquire JUP to Stake",
-          "body": "ASR pays stakers, so you need JUP in a Solana wallet such as Phantom or Solflare. Buy it on Binance and withdraw to your Solana address, or swap SOL for JUP on Jupiter itself. The 50 JUP minimum stake is a floor, not a target: your share of the pool scales with size and duration. Keep some SOL spare for network fees. Alternatively, you can use the below widget to swap or bridge assets for SOL & JUP. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance"
+          "body": "ASR pays stakers, so you need JUP in a Solana wallet such as Phantom or Solflare. Buy it on Binance and withdraw to your Solana address, or swap SOL for JUP on Jupiter itself. The 50 JUP minimum stake is a floor, not a target: your share of the pool scales with size and duration. Keep some SOL spare for network fees. Alternatively, you can use the below widget to swap or bridge assets for SOL & JUP. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Stake JUP Through the Governance Portal",
-          "body": "Go to the Jupiter governance portal , connect your wallet, and stake. Unstaking has a 30-day cooldown, so treat the position as locked for at least a quarter if you plan to farm consecutive rounds.",
-          "url": "https://airdrops.io/visit/2293/"
+          "body": "Go to the Jupiter governance portal , connect your wallet, and stake. Unstaking has a 30-day cooldown, so treat the position as locked for at least a quarter if you plan to farm consecutive rounds."
         },
         {
           "title": "Vote on Active DAO Proposals",
@@ -1976,18 +1895,15 @@
         },
         {
           "title": "Claim Your Q2 2026 ASR Rewards",
-          "body": "The Q2 pool holds 50 million JUP and the window runs until October 8, 2026. Claims go through Jupiter Mobile or the browser extension, not the web app: Install Jupiter Mobile on iOS or Android, or add the browser extension Import the wallet that held your stake between April and June Open the ASR rewards page inside the app Review the allocation and approve the claim transaction",
-          "url": "/visit/sga3/"
+          "body": "The Q2 pool holds 50 million JUP and the window runs until October 8, 2026. Claims go through Jupiter Mobile or the browser extension, not the web app: Install Jupiter Mobile on iOS or Android, or add the browser extension Import the wallet that held your stake between April and June Open the ASR rewards page inside the app Review the allocation and approve the claim transaction"
         },
         {
           "title": "Trade With Ultra and Prediction Markets",
-          "body": "Fee-paying activity has driven every Jupiter reward campaign so far, and the protocol keeps running new ones. Three things worth doing on the Jupiter website : Route swaps through Ultra Mode, which recent trader campaigns have been keyed to Try the Kalshi-powered prediction markets , where each position settles at $1 if correct and $0 if not Open the Referral tab, create a link, and set a fee rate up to 1% on tokens you choose",
-          "url": "/visit/w393/"
+          "body": "Fee-paying activity has driven every Jupiter reward campaign so far, and the protocol keeps running new ones. Three things worth doing on the Jupiter website : Route swaps through Ultra Mode, which recent trader campaigns have been keyed to Try the Kalshi-powered prediction markets , where each position settles at $1 if correct and $0 if not Open the Referral tab, create a link, and set a fee rate up to 1% on tokens you choose"
         },
         {
           "title": "Open a Gacha Pack",
-          "body": "Visit the Gacha packs page and connect a Solana wallet. Fund the wallet with USDC. You can purchase USDC directly from Binance . Choose a tier: Silver ($25), Gold ($50), Water ($100), Diamond ($250), Grail ($1,000) or God ($2,500) for Pokémon, or Straw Hat ($50) and Emperor ($250) for One Piece. Open the pack, then keep the card, list it on the Gacha marketplace , or use instant buyback to sell it for USDC within three days. Pack spend builds battlepass progress toward free packs and sets your rank on the season leaderboard , where the top collectors split the prize pool once the season ends. Turbo mode auto-sells common pulls for USDC.",
-          "url": "/visit/1ha3/"
+          "body": "Visit the Gacha packs page and connect a Solana wallet. Fund the wallet with USDC. You can purchase USDC directly from Binance . Choose a tier: Silver ($25), Gold ($50), Water ($100), Diamond ($250), Grail ($1,000) or God ($2,500) for Pokémon, or Straw Hat ($50) and Emperor ($250) for One Piece. Open the pack, then keep the card, list it on the Gacha marketplace , or use instant buyback to sell it for USDC within three days. Pack spend builds battlepass progress toward free packs and sets your rank on the season leaderboard , where the top collectors split the prize pool once the season ends. Turbo mode auto-sells common pulls for USDC."
         }
       ],
       "description": "The Jupiter airdrop is confirmed and has run in phases since January 2024. Jupuary 2026 was the third and final annual distribution, and its claim window has now closed. Unclaimed allocations went back to the DAO treasury. What continues is Active Staking Rewards (ASR), a quarterly pool paid to JUP stakers who vote on DAO proposals, and the Q2 2026 round is open for claims now."
@@ -2005,14 +1921,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tread-fi/",
       "officialUrl": "https://app.tread.fi",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Tread Fi",
       "officialHost": "app.tread.fi",
       "steps": [
         {
           "title": "Visit the Tread fi Terminal",
-          "body": "Go to the Tread fi website and open the app to begin.",
-          "url": "https://airdrops.io/visit/5773/"
+          "body": "Go to the Tread fi website and open the app to begin."
         },
         {
           "title": "Sign In or Create an Account",
@@ -2020,8 +1935,7 @@
         },
         {
           "title": "Connect Your Exchange Accounts",
-          "body": "Open the wallet section from the icon in the top right of the dashboard and link your trading venues: Connect your Hyperliquid account Optionally add Aster , Pacifica , Bybit, or an EVM wallet Trading to earn points requires real capital on your connected venues. If you need to fund an account, you can buy assets on Binance or using the below widget. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/hyperliquid/"
+          "body": "Open the wallet section from the icon in the top right of the dashboard and link your trading venues: Connect your Hyperliquid account Optionally add Aster , Pacifica , Bybit, or an EVM wallet Trading to earn points requires real capital on your connected venues. If you need to fund an account, you can buy assets on Binance or using the below widget. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Check Your Season 1 Points",
@@ -2037,13 +1951,11 @@
         },
         {
           "title": "Track Distribution Announcements",
-          "body": "Watch the airdrop claims list and the official Tread channels so you know the moment eligibility and the TREAD claim go live.",
-          "url": "https://airdrops.io/claims/"
+          "body": "Watch the airdrop claims list and the official Tread channels so you know the moment eligibility and the TREAD claim go live."
         },
         {
           "title": "Set Up a Custom Agent",
-          "body": "Open the Agents section Configure settings and select which exchange you want the agent to trade on Go to New Agent Use an agent built by Tread or create your own",
-          "url": "/visit/dka3/"
+          "body": "Open the Agents section Configure settings and select which exchange you want the agent to trade on Go to New Agent Use an agent built by Tread or create your own"
         }
       ],
       "description": "The TREAD token is confirmed. The Tread Foundation has announced TREAD, a token used within the tread.fi ecosystem, and has tied the points seasons to it: Season 2 begins only once more token utility is built around TREAD."
@@ -2061,19 +1973,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nado/",
       "officialUrl": "https://app.nado.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Nado",
       "officialHost": "app.nado.xyz",
       "steps": [
         {
           "title": "Fund a Wallet and Bridge to Ink",
-          "body": "You need ETH for Ink gas and USDT0 to trade or deposit. Buy ETH and stablecoins on Binance , then move them to the Ink network using the bridge widget below or another bridge that supports Ink. Keep a small ETH balance for transaction fees. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "You need ETH for Ink gas and USDT0 to trade or deposit. Buy ETH and stablecoins on Binance , then move them to the Ink network using the bridge widget below or another bridge that supports Ink. Keep a small ETH balance for transaction fees. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Create Your Nado Account",
-          "body": "Go to the Nado app and connect an EVM-compatible wallet such as MetaMask or Rabby. Season 2 opened to everyone, so you can sign up directly without a referral code.",
-          "url": "/visit/b783/"
+          "body": "Go to the Nado app and connect an EVM-compatible wallet such as MetaMask or Rabby. Season 2 opened to everyone, so you can sign up directly without a referral code."
         },
         {
           "title": "Deposit Collateral",
@@ -2081,8 +1991,7 @@
         },
         {
           "title": "Trade Spot and Perpetual Markets",
-          "body": "Open positions across the Nado markets to earn points. Points reward genuine market participation rather than raw volume, so trading, posting limit orders as a maker, and supporting liquidations all count. Wash trading and self-matching can reduce or zero out your allocation for that week.",
-          "url": "/visit/b783/"
+          "body": "Open positions across the Nado markets to earn points. Points reward genuine market participation rather than raw volume, so trading, posting limit orders as a maker, and supporting liquidations all count. Wash trading and self-matching can reduce or zero out your allocation for that week."
         },
         {
           "title": "Provide Liquidity to the NLP Vault",
@@ -2090,8 +1999,7 @@
         },
         {
           "title": "Use Tokenized Equities as Collateral",
-          "body": "Deposit SPYx or QQQx to hold spot exposure to US markets while trading from one portfolio. You can also borrow USDT0 against these positions and open BTC, ETH, or SOL perps, since Nado evaluates spot balances, perp positions, and borrowed liabilities under a single portfolio margin. Learn how to deposit xStocks on Nado .",
-          "url": "/visit/k5a3/"
+          "body": "Deposit SPYx or QQQx to hold spot exposure to US markets while trading from one portfolio. You can also borrow USDT0 against these positions and open BTC, ETH, or SOL perps, since Nado evaluates spot balances, perp positions, and borrowed liabilities under a single portfolio margin. Learn how to deposit xStocks on Nado ."
         },
         {
           "title": "Refer Active Traders",
@@ -2099,8 +2007,7 @@
         },
         {
           "title": "Track Points and Trading Tier",
-          "body": "Check the points page to monitor your weekly points, ranking, and Trading Tier. Tiers range from Breeze at the bottom to Tornado at the top and influence future NLP eligibility, so consistent weekly activity matters more than a single large session. Full mechanics are in the documentation .",
-          "url": "/visit/7i73/"
+          "body": "Check the points page to monitor your weekly points, ranking, and Trading Tier. Tiers range from Breeze at the bottom to Tornado at the top and influence future NLP eligibility, so consistent weekly activity matters more than a single large session. Full mechanics are in the documentation ."
         }
       ],
       "description": "Nado now supports xStocks for spot trading and as collateral. AAPLx, METAx, GOOGLx, TSLAx, and NVDAx are live on the platform and can be traded or used to back positions."
@@ -2118,14 +2025,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/dymension/",
       "officialUrl": "https://portal.dymension.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Dymension",
       "officialHost": "portal.dymension.xyz",
       "steps": [
         {
           "title": "Claim Your Season 2 Drop",
-          "body": "Visit the Season 2 claim page Connect your eligible wallet and claim your allocation Holders above the 200 DYM threshold can check their wallets, as the tokens were sent automatically. One editorial gap to flag: the source does not mention a claim deadline. Worth confirming whether this second window closes on a set date before publishing, since claim posts normally lead with the deadline.",
-          "url": "/visit/f353/"
+          "body": "Visit the Season 2 claim page Connect your eligible wallet and claim your allocation Holders above the 200 DYM threshold can check their wallets, as the tokens were sent automatically. One editorial gap to flag: the source does not mention a claim deadline. Worth confirming whether this second window closes on a set date before publishing, since claim posts normally lead with the deadline."
         }
       ],
       "description": "Dymension has airdropped a total of 70,000,000 DYM to Ethereum L2s, Cosmos, Celestia, Solana and various NFT holders. Users who qualified had until January 21st, 2024 to claim the airdrop. Unclaimed tokens were redistributed to those who had already claimed the airdrop."
@@ -2143,19 +2049,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/limitless-prediction-markets/",
       "officialUrl": "https://limitless.exchange",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Limitless Prediction Markets",
       "officialHost": "limitless.exchange",
       "steps": [
         {
           "title": "Visit Limitless and Connect Your Wallet",
-          "body": "Go to the Limitless platform and connect a Web3 wallet such as MetaMask or Coinbase Wallet. Approve the connection request.",
-          "url": "/visit/9253/"
+          "body": "Go to the Limitless platform and connect a Web3 wallet such as MetaMask or Coinbase Wallet. Approve the connection request."
         },
         {
           "title": "Switch to Base and Fund Your Wallet",
-          "body": "Set your wallet to the Base network and add USDC to cover trades. You can buy USDC or ETH on Binance , then move funds to Base using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Set your wallet to the Base network and add USDC to cover trades. You can buy USDC or ETH on Binance , then move funds to Base using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Place Trades on Active Markets",
@@ -2171,18 +2075,15 @@
         },
         {
           "title": "User Generated Markets are Live",
-          "body": "Limitless has opened User-Generated Markets, letting anyone create their own prediction market by picking an asset, choosing an outcome, and launching it on the Create a Market page . Every market you launch pays you a share of the fees it generates from trading activity, for as long as people keep trading it.",
-          "url": "/visit/a0a3/"
+          "body": "Limitless has opened User-Generated Markets, letting anyone create their own prediction market by picking an asset, choosing an outcome, and launching it on the Create a Market page . Every market you launch pays you a share of the fees it generates from trading activity, for as long as people keep trading it."
         },
         {
           "title": "Claim Your Season 3 Allocation",
-          "body": "If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders.",
-          "url": "/visit/d073/"
+          "body": "If you traded during Season 3, open the claim portal , connect the wallet you used, and confirm the claim transaction. 3% of the total LMTS supply allocated to platform traders."
         },
         {
           "title": "Apply to the Program",
-          "body": "Submit your application through the application form . The team reviews candidates based on their contributions and engagement history.",
-          "url": "https://airdrops.io/visit/9t93/"
+          "body": "Submit your application through the application form . The team reviews candidates based on their contributions and engagement history."
         }
       ],
       "description": "Limitless has opened its Season 3 airdrop claim, with 3% of the total $LMTS supply set aside to reward traders on the platform. Eligible users can connect their wallet at the claim portal to check their allocation and claim their tokens."
@@ -2200,14 +2101,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grvt/",
       "officialUrl": "https://grvt.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Grvt",
       "officialHost": "grvt.io",
       "steps": [
         {
           "title": "Open the GRVT reward portal",
-          "body": "Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet.",
-          "url": "/visit/fta3/"
+          "body": "Sign in at the GRVT website and go to the reward portal with the exact account you traded with during Season 1 or Season 2. Allocations are tied to that account, so use the same email and wallet."
         },
         {
           "title": "Check your allocation",
@@ -2241,24 +2141,21 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sosovalue/",
       "officialUrl": "https://sosovalue.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Sosovalue",
       "officialHost": "sosovalue.com",
       "steps": [
         {
           "title": "Create Your SoSoValue Account",
-          "body": "Visit SoSoValue and sign up with email or a wallet. The same account works across the web platform and the iOS and Android apps.",
-          "url": "/visit/sox2/"
+          "body": "Visit SoSoValue and sign up with email or a wallet. The same account works across the web platform and the iOS and Android apps."
         },
         {
           "title": "Earn EXP Through Platform Tasks",
-          "body": "Open the EXP page from the badge in the top-right of the SoSoValue interface and complete Starter Pack and daily tasks. These include exploring dashboards, learning about SSI indexes, the daily check-in, and inviting friends with your referral link. This Season 3 path is free and does not require any capital.",
-          "url": "/visit/sox2/"
+          "body": "Open the EXP page from the badge in the top-right of the SoSoValue interface and complete Starter Pack and daily tasks. These include exploring dashboards, learning about SSI indexes, the daily check-in, and inviting friends with your referral link. This Season 3 path is free and does not require any capital."
         },
         {
           "title": "Connect a Wallet and Add ValueChain",
-          "body": "Connect MetaMask or another Web3 wallet, then add the ValueChain network so you can hold SSI tokens and trade on SoDEX. Fund the wallet with USDC, which you can buy on Binance if you need it, or bridge directly using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Connect MetaMask or another Web3 wallet, then add the ValueChain network so you can hold SSI tokens and trade on SoDEX. Fund the wallet with USDC, which you can buy on Binance if you need it, or bridge directly using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Buy SSI Index Tokens",
@@ -2300,14 +2197,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/arcium/",
       "officialUrl": "https://rtg.arcium.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Arcium",
       "officialHost": "rtg.arcium.com",
       "steps": [
         {
           "title": "Check Your ARX Eligibility",
-          "body": "Go to the Arcium RTG portal or use the Magna portal and open the eligibility checker.",
-          "url": "/visit/n9a3/"
+          "body": "Go to the Arcium RTG portal or use the Magna portal and open the eligibility checker."
         },
         {
           "title": "Connect Your Solana Wallet",
@@ -2323,8 +2219,7 @@
         },
         {
           "title": "Claim Through Binance Alpha",
-          "body": "Eligible Binance users can claim ARX with Binance Alpha Points on the Alpha Events page once trading is open. Create or log in to Binance , or swap and bridge funds using the widget below, open Alpha Events, and follow the on-screen claim steps for ARX. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Eligible Binance users can claim ARX with Binance Alpha Points on the Alpha Events page once trading is open. Create or log in to Binance , or swap and bridge funds using the widget below, open Alpha Events, and follow the on-screen claim steps for ARX. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Keep Earning in Future RTG Waves",
@@ -2346,19 +2241,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/doppler-finance/",
       "officialUrl": "https://app.doppler.finance",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Doppler Finance",
       "officialHost": "app.doppler.finance",
       "steps": [
         {
           "title": "Check Which Wallet Holds Your Doppler Points",
-          "body": "Open the Doppler Finance app and connect the XRPL wallet you deposited with, whether that was Girin, Xaman, Bifrost or Crossmark. The Points tab shows your DP balance from both seasons. Eligibility is tied to the address that earned the points, so register with this wallet and no other.",
-          "url": "/visit/xna3/"
+          "body": "Open the Doppler Finance app and connect the XRPL wallet you deposited with, whether that was Girin, Xaman, Bifrost or Crossmark. The Points tab shows your DP balance from both seasons. Eligibility is tied to the address that earned the points, so register with this wallet and no other."
         },
         {
           "title": "Open the XDP Genesis Airdrop Portal",
-          "body": "Go to the official $XDP Airdrop portal . Doppler links it from its own X account and site, so check the domain before signing anything. Token launch pages attract copycat sites; our safety guide covers the warning signs.",
-          "url": "/visit/xna3/"
+          "body": "Go to the official $XDP Airdrop portal . Doppler links it from its own X account and site, so check the domain before signing anything. Token launch pages attract copycat sites; our safety guide covers the warning signs."
         },
         {
           "title": "Connect the Wallet Holding Your Points",
@@ -2370,8 +2263,7 @@
         },
         {
           "title": "Fund the Base Address With Gas",
-          "body": "Claiming at TGE happens on Base and costs a small amount of ETH. You can buy it on Bybit and withdraw straight to Base, or move ETH you already hold across using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/bybit/"
+          "body": "Claiming at TGE happens on Base and costs a small amount of ETH. You can buy it on Bybit and withdraw straight to Base, or move ETH you already hold across using the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Confirm and Record Your Registration",
@@ -2379,8 +2271,7 @@
         },
         {
           "title": "Watch for the Claim Window",
-          "body": "Registration is not a claim. Tokens become claimable at TGE, and Doppler has not published a date. Follow the project on X and check our claims page so you catch the window.",
-          "url": "https://airdrops.io/claims/"
+          "body": "Registration is not a claim. Tokens become claimable at TGE, and Doppler has not published a date. Follow the project on X and check our claims page so you catch the window."
         }
       ],
       "description": "Doppler ran two seasons of Doppler Points (DP), earned by depositing XRP, referring users and completing Galxe quests. Both seasons have finished and points accrual has stopped. The protocol has moved to the next phase: XDP Genesis Airdrop registration, open to wallets that qualified through DP Season 1, DP Season 2 and other activity meeting Doppler’s criteria."
@@ -2398,7 +2289,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solstice/",
       "officialUrl": "https://claim.solstice.finance",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Solstice",
       "officialHost": "claim.solstice.finance",
       "steps": [],
@@ -2419,7 +2310,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/basedapp/",
       "officialUrl": "https://basedfoundation.com",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Basedapp",
       "officialHost": "basedfoundation.com",
       "steps": [],
@@ -2438,14 +2329,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/o1-exchange/",
       "officialUrl": "https://o1.exchange",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "O1 Exchange",
       "officialHost": "o1.exchange",
       "steps": [
         {
           "title": "Visit o1.exchange",
-          "body": "Go to the o1.exchange platform and click “Enter App” on the homepage.",
-          "url": "/visit/n553/"
+          "body": "Go to the o1.exchange platform and click “Enter App” on the homepage."
         },
         {
           "title": "Create Your Account",
@@ -2453,8 +2343,7 @@
         },
         {
           "title": "Fund Your Wallet with SOL",
-          "body": "You need SOL to trade on the platform. Buy SOL from Binance and transfer it to your Solana wallet, or bridge assets from another network using the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "You need SOL to trade on the platform. Buy SOL from Binance and transfer it to your Solana wallet, or bridge assets from another network using the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Trade Across Multiple Token Mints",
@@ -2488,14 +2377,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/infinex/",
       "officialUrl": "https://app.infinex.xyz",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Infinex",
       "officialHost": "app.infinex.xyz",
       "steps": [
         {
           "title": "Open Your Infinex Account",
-          "body": "Go to the Infinex platform , pick a username, and create a passkey to set up your account. If you already have one, log in and head to the dashboard.",
-          "url": "https://airdrops.io/visit/h7p2/"
+          "body": "Go to the Infinex platform , pick a username, and create a passkey to set up your account. If you already have one, log in and head to the dashboard."
         },
         {
           "title": "Claim Your Patron Allocation",
@@ -2503,8 +2391,7 @@
         },
         {
           "title": "Redeem Your INX Vouchers",
-          "body": "Open the app and go to the Crates page . Select how many of each voucher type you want to redeem, then complete checkout to convert them into INX at the listed price. Vouchers are valid from TGE and expire on January 30, 2027 Each voucher type locks in a different fixed FDV, so check the price before redeeming",
-          "url": "https://airdrops.io/visit/nb83/"
+          "body": "Open the app and go to the Crates page . Select how many of each voucher type you want to redeem, then complete checkout to convert them into INX at the listed price. Vouchers are valid from TGE and expire on January 30, 2027 Each voucher type locks in a different fixed FDV, so check the price before redeeming"
         },
         {
           "title": "Enable Funds Recovery",
@@ -2512,8 +2399,7 @@
         },
         {
           "title": "Fund Your Account",
-          "body": "Go to “Deposit,” choose a network, and send supported assets to the generated address. You can buy most assets on Binance or move them over using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Go to “Deposit,” choose a network, and send supported assets to the generated address. You can buy most assets on Binance or move them over using the bridge widget below if they sit on another chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Trade Perps to Earn Crates",
@@ -2536,19 +2422,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ethena/",
       "officialUrl": "https://app.ethena.fi",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Ethena",
       "officialHost": "app.ethena.fi",
       "steps": [
         {
           "title": "Connect Your Wallet to the Ethena App",
-          "body": "Go to the Ethena app and click “Connect Wallet.” Ethena supports MetaMask, WalletConnect, and other major Ethereum wallets. Make sure you are on Ethereum mainnet, since staking happens on the production network.",
-          "url": "/visit/udm2/"
+          "body": "Go to the Ethena app and click “Connect Wallet.” Ethena supports MetaMask, WalletConnect, and other major Ethereum wallets. Make sure you are on Ethereum mainnet, since staking happens on the production network."
         },
         {
           "title": "Acquire Stablecoins or ENA",
-          "body": "You need stablecoins to mint USDe, and optionally ENA to stake for the highest base multiplier. If you do not already hold these, buy them from Binance and withdraw to your wallet: USDT, USDC, DAI, or FRAX to mint USDe ENA to stake and lock as sENA Keep some ETH on hand for gas.",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "You need stablecoins to mint USDe, and optionally ENA to stake for the highest base multiplier. If you do not already hold these, buy them from Binance and withdraw to your wallet: USDT, USDC, DAI, or FRAX to mint USDe ENA to stake and lock as sENA Keep some ETH on hand for gas."
         },
         {
           "title": "Mint USDe",
@@ -2560,18 +2444,15 @@
         },
         {
           "title": "Stake and Lock ENA for sENA",
-          "body": "Go to the staking section, stake your ENA to receive sENA, then lock it. Locking sENA carries one of the strongest Sats multipliers in the program (reported around 40x), and longer lock durations increase the boost. Locked sENA also accrues points for partner ecosystems including Ethereal , Derive, and Echelon.",
-          "url": "https://airdrops.io/ethereal/"
+          "body": "Go to the staking section, stake your ENA to receive sENA, then lock it. Locking sENA carries one of the strongest Sats multipliers in the program (reported around 40x), and longer lock durations increase the boost. Locked sENA also accrues points for partner ecosystems including Ethereal , Derive, and Echelon."
         },
         {
           "title": "Deploy Into Partner Protocols",
-          "body": "Route your USDe and sUSDe through integrated DeFi platforms to stack additional multipliers. Options include: Pendle USDe markets, which have offered the highest reported boosts (up to 60x) USDe/sUSDe liquidity pools for roughly 30x Yield vaults such as Strata and Ethereal, also around 30x Check current multipliers in the app before committing, since rates shift between partners and seasons.",
-          "url": "https://airdrops.io/strata/"
+          "body": "Route your USDe and sUSDe through integrated DeFi platforms to stack additional multipliers. Options include: Pendle USDe markets, which have offered the highest reported boosts (up to 60x) USDe/sUSDe liquidity pools for roughly 30x Yield vaults such as Strata and Ethereal, also around 30x Check current multipliers in the app before committing, since rates shift between partners and seasons."
         },
         {
           "title": "Farm Cross-Chain on Solana and Avalanche",
-          "body": "USDe works beyond Ethereum, and activity on other chains qualifies for points and ecosystem rewards. Bridge USDe using a service like the bridge below, then connect a Solana or Avalanche wallet on the Sats page to keep earning across networks. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "/visit/rka3/"
+          "body": "USDe works beyond Ethereum, and activity on other chains qualifies for points and ecosystem rewards. Bridge USDe using a service like the bridge below, then connect a Solana or Avalanche wallet on the Sats page to keep earning across networks. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Track Your Sats and Claim at Season End",
@@ -2594,19 +2475,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/huma-finance/",
       "officialUrl": "https://claim.huma.finance",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Huma Finance",
       "officialHost": "claim.huma.finance",
       "steps": [
         {
           "title": "Fund a Solana Wallet with USDC",
-          "body": "Huma 2.0 settles in USDC on Solana, so you will need both in a Solana wallet such as Phantom or Solflare. You can buy USDC and SOL on Binance and withdraw to your wallet, or move existing funds across chains using the bridge widget below. Keep a small amount of SOL on hand for transaction fees. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
-          "url": "https://airdrops.io/goto/binance/"
+          "body": "Huma 2.0 settles in USDC on Solana, so you will need both in a Solana wallet such as Phantom or Solflare. You can buy USDC and SOL on Binance and withdraw to your wallet, or move existing funds across chains using the bridge widget below. Keep a small amount of SOL on hand for transaction fees. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
           "title": "Connect Your Wallet to the Huma App",
-          "body": "Open the official Huma Finance application and connect your Solana wallet. Huma 2.0 is permissionless and requires no KYC, so you can move straight to depositing once connected.",
-          "url": "/visit/dc33/"
+          "body": "Open the official Huma Finance application and connect your Solana wallet. Huma 2.0 is permissionless and requires no KYC, so you can move straight to depositing once connected."
         },
         {
           "title": "Choose Your Farming Strategy",
@@ -2626,8 +2505,7 @@
         },
         {
           "title": "Check Eligibility and Claim",
-          "body": "If you farmed in a completed season, head to the eligibility checker , connect your wallet, and claim your HUMA on Solana. The Season 4 checker is live now. For the next round, keep monitoring your Feathers balance in the Huma app and claim again once its snapshot is taken and the window opens.",
-          "url": "https://airdrops.io/visit/xi73/"
+          "body": "If you farmed in a completed season, head to the eligibility checker , connect your wallet, and claim your HUMA on Solana. The Season 4 checker is live now. For the next round, keep monitoring your Feathers balance in the Huma app and claim again once its snapshot is taken and the window opens."
         }
       ],
       "description": "Huma Finance has opened the Season 4 eligibility checker. Visit the eligibility checker to connect your wallet and confirm whether you qualify. Full distribution details haven’t been released yet."
@@ -2645,19 +2523,17 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grass/",
       "officialUrl": "https://app.getgrass.io",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Grass",
       "officialHost": "app.getgrass.io",
       "steps": [
         {
           "title": "Check Your Eligibility",
-          "body": "Open the Grass Dashboard Go to the Allocation tab Review your estimated rewards in the Rewards Checker",
-          "url": "/visit/wda3/"
+          "body": "Open the Grass Dashboard Go to the Allocation tab Review your estimated rewards in the Rewards Checker"
         },
         {
           "title": "Claim Your Rewards",
-          "body": "After 1:00 PM EST on July 22, open the Grass Dashboard Confirm your claim Rewards are deposited into your in-app, self-custodial wallet, which can be exported at any time A small network fee is deducted from claimed rewards to cover on-chain delivery; Grass does not keep this fee. Full eligibility terms are outlined in the Grass Rewards Program Terms and Conditions . Only check and claim through the official dashboard: Grass will never DM first or ask for a seed phrase or private keys.",
-          "url": "/visit/wda3/"
+          "body": "After 1:00 PM EST on July 22, open the Grass Dashboard Confirm your claim Rewards are deposited into your in-app, self-custodial wallet, which can be exported at any time A small network fee is deducted from claimed rewards to cover on-chain delivery; Grass does not keep this fee. Full eligibility terms are outlined in the Grass Rewards Program Terms and Conditions . Only check and claim through the official dashboard: Grass will never DM first or ask for a seed phrase or private keys."
         }
       ],
       "description": "Building on the success of Stage 1, Grass has launched Stage 2 with enhanced rewards and new features. The Grass browser extension is no longer available. Please install the Desktop app to continue earning rewards."
@@ -2675,14 +2551,13 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/plume-network/",
       "officialUrl": "https://claim-pp.plume.org",
-      "fetchedAt": "2026-09-16T05:36:52.158Z",
+      "fetchedAt": "2026-09-16T07:06:58.130Z",
       "rawTitle": "Plume Network",
       "officialHost": "claim-pp.plume.org",
       "steps": [
         {
           "title": "Claim Your Rewards",
-          "body": "Visit the claim portal and connect your registered wallet to claim your allocation. Season 1 Airdrop Eligibility The Season 1 Airdrop rewards contributors across the Plume ecosystem. Both Early Adopters and Global Community Members had to complete the registration form to qualify for the claim. Early Adopters Testnet Users with Miles: Rewards are distributed above a set threshold on a tier-based system, calculated from Plume Miles, Stamps earned, and airplane mode tasks. Anti-sybil measures apply to protect genuine participants. Active Community Members: Holders of select Plume Discord roles who took part in the testnet campaign. Pre-Deposit Stakers: Users who deposited above a threshold across the three StakeStone and Nest pre-deposit campaigns and held funds until TGE, with rewards proportional to deposit size. The third campaign snapshot was taken January 18 at 5:00 PM UTC. Global Community Members Select RWA and Plume-aligned communities are also included: Polymarket Ondo World Liberty Financial (WLFI) AIXBT by Virtuals Select users of Backed Assets, Dinari, and Swarm X",
-          "url": "/visit/n3a3/"
+          "body": "Visit the claim portal and connect your registered wallet to claim your allocation. Season 1 Airdrop Eligibility The Season 1 Airdrop rewards contributors across the Plume ecosystem. Both Early Adopters and Global Community Members had to complete the registration form to qualify for the claim. Early Adopters Testnet Users with Miles: Rewards are distributed above a set threshold on a tier-based system, calculated from Plume Miles, Stamps earned, and airplane mode tasks. Anti-sybil measures apply to protect genuine participants. Active Community Members: Holders of select Plume Discord roles who took part in the testnet campaign. Pre-Deposit Stakers: Users who deposited above a threshold across the three StakeStone and Nest pre-deposit campaigns and held funds until TGE, with rewards proportional to deposit size. The third campaign snapshot was taken January 18 at 5:00 PM UTC. Global Community Members Select RWA and Plume-aligned communities are also included: Polymarket Ondo World Liberty Financial (WLFI) AIXBT by Virtuals Select users of Backed Assets, Dinari, and Swarm X"
         }
       ],
       "description": "The Plume Season 2 airdrop allocates 150,000,000 PLUME for users who were active on mainnet. Eligibility is tied to Plume Points (PP), earned through staking, liquidity provision, trading volume, swaps, transactions, unique dApp interactions, and referrals. Point accumulation ended on March 31, 2026, and registration ran from April 29 to May 27, 2026. Wallets needed at least 10,000 PP by the deadline to qualify, and the airdrop excludes users in the United States and OFAC-sanctioned regions."

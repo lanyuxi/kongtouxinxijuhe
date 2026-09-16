@@ -16,6 +16,7 @@
  *   3. 覆盖率过低时明确降级，不给一个看起来很确定的百分比
  */
 import { describe, it, expect } from 'vitest';
+import { officialStepLink } from '../scripts/fetch/airdrops-io';
 import { scoreAuthenticity, AUTH_MIN_COVERAGE } from '../scripts/lib/score';
 import type { AirdropProject, Evidence } from '../src/lib/types';
 import { toSkeleton } from '../scripts/lib/merge';
@@ -216,5 +217,82 @@ describe('P1-3 全量数据校验：真实性分不得退化成常数', () => {
       ratio,
       `真实性分 ${topScore} 覆盖了 ${(ratio * 100).toFixed(0)}% 的项目，说明评分又退化成常数了`,
     ).toBeLessThan(0.6);
+  });
+});
+
+
+describe('P1-2 教程来源判定：只认项目自己的官方域名', () => {
+  /**
+   * ⚠️ 必须 import **生产函数**，不能在测试里复刻实现。
+   *
+   * 独立审查实测：本文件原先把 `officialStepLink` 抄了一遍放在测试里，
+   * 于是把**真实实现**放宽成「取第一个链接」后，
+   * `npx vitest run` 全绿、`npm run validate` 全绿 ——
+   * 护栏只在测自己抄的那份代码，拦不住任何回归。
+   * 实测放宽后 `guide_source` 会从 template:258 变成 template:253 / sourced:5，
+   * 5 个项目凭空拿到「真实教程」、15 条步骤被标 `source_verified: true`
+   * （doppler-finance / ethena / infinex / jupiter / tread-fi），
+   * 正是 P1-2 的原故障形态。
+   *
+   * 因此这里从 `scripts/fetch/airdrops-io` 直接 import。
+   * 该模块顶层没有网络副作用（只声明常量与函数），可以安全引入。
+   */
+  it('官方域名的链接被接受（含 www 前缀与大小写差异）', () => {
+    expect(officialStepLink('<a href="https://sweep.finance/a">x</a>', 'sweep.finance')).toBe(
+      'https://sweep.finance/a',
+    );
+    expect(officialStepLink('<a href="https://www.sweep.finance/a">x</a>', 'sweep.finance')).toBe(
+      'https://www.sweep.finance/a',
+    );
+    expect(officialStepLink('<a href="https://SWEEP.FINANCE/a">x</a>', 'sweep.finance')).toBe(
+      'https://SWEEP.FINANCE/a',
+    );
+  });
+
+  it('聚合站跳转与相对链接一律不算官方来源', () => {
+    expect(officialStepLink('<a href="/visit/r0b3/">x</a>', 'sweep.finance')).toBeUndefined();
+    expect(
+      officialStepLink('<a href="https://airdrops.io/goto/bybit/">x</a>', 'sweep.finance'),
+    ).toBeUndefined();
+  });
+
+  it('缺失官方域名时不做任何猜测', () => {
+    expect(officialStepLink('<a href="https://sweep.finance/a">x</a>', undefined)).toBeUndefined();
+    expect(officialStepLink('', 'sweep.finance')).toBeUndefined();
+  });
+
+  /**
+   * 回归护栏（对抗「放宽成取第一个链接」的变异）：聚合站跳转必须被跳过，
+   * 即便它出现在官方链接**之前**。旧实现会返回第一个链接 → 本断言变红。
+   */
+  it('广告链接在前、官方链接在后时，必须返回官方链接（变异护栏）', () => {
+    const html =
+      '<a href="https://airdrops.io/goto/bybit/">赞助商</a><a href="https://demo.xyz/go">开始</a>';
+    expect(officialStepLink(html, 'demo.xyz')).toBe('https://demo.xyz/go');
+    expect(
+      officialStepLink(html, 'demo.xyz'),
+      '放宽成「取第一个链接」时这里会返回 airdrops.io 的返佣跳转',
+    ).not.toContain('airdrops.io');
+  });
+
+  it('只要官方链接，不要第三方域名的链接', () => {
+    const html =
+      '<a href="https://t.me/demo">社群</a><a href="https://demo.xyz/claim">领取</a><a href="https://x.com/demo">关注</a>';
+    expect(officialStepLink(html, 'demo.xyz')).toBe('https://demo.xyz/claim');
+  });
+
+  /**
+   * ⚠️ 已知取舍：子域名（app.example.com）**不**算官方来源。
+   *    理由：官方步骤链接通常指向主域或 www；放宽到子域名的收益为零
+   *    （实测来源侧步骤链接数 = 0/344），而风险非零
+   *    —— `app.x.com` 与 `x.com` 可能指向不同实体。
+   *    （此处原先写的理由是「避免放进 app.airdrops.io」，但
+   *     `officialHost` 取自 `data-outbound-host`，本就不会是聚合站域名，
+   *     该理由不成立，已按审查意见更正。）
+   */
+  it('子域名不算官方来源（保守取舍：收益为零、风险非零）', () => {
+    expect(
+      officialStepLink('<a href="https://app.sweep.finance/a">x</a>', 'sweep.finance'),
+    ).toBeUndefined();
   });
 });
