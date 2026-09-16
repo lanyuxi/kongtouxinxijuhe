@@ -100,12 +100,15 @@ export function validateProjects(
       }
     }
 
-    // 信任不变量：模板教程（guide_source==='template'）不得自称已核实。
-    // 模板步骤每轮都会重新生成，若这里放行，前端会重新出现绿色「✓ 来源已核实」。
-    if (p.guide_source === 'template') {
+    // 信任不变量：模板 / 第三方整理的教程不得自称已核实。
+    // 模板步骤每轮都会重新生成；第三方步骤来自聚合站编辑、不是官方 HowTo。
+    // 两者若放行，前端都会重新出现绿色「✓ 来源已核实」。
+    if (p.guide_source === 'template' || p.guide_source === 'third_party') {
       const fake = p.guide.find((g) => g.source_verified);
       if (fake) {
-        errors.push(`${p.slug}: 模板教程的步骤 ${fake.step} 谎称「来源已核实」`);
+        errors.push(
+          `${p.slug}: ${p.guide_source === 'template' ? '模板' : '第三方整理'}教程的步骤 ${fake.step} 谎称「来源已核实」`,
+        );
       }
     }
 
@@ -134,6 +137,11 @@ export function validateProjects(
       const verdict = classifyNonAirdrop({
         name: p.name,
         categoryText: p.sources?.some((s) => s.name === 'DefiLlama') ? p.category : undefined,
+        // 与 prune 同口径：弱类目必须叠加「无空投叙事证据」才排除
+        status: p.status,
+        tagline: p.tagline,
+        tasks: p.tasks,
+        requirements: p.requirements,
       });
       if (verdict.excluded) {
         errors.push(

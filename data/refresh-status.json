@@ -1,14 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T06:18:35.941Z",
-  "finished_at": "2026-09-16T06:18:47.866Z",
+  "started_at": "2026-09-16T06:49:23.906Z",
+  "finished_at": "2026-09-16T06:49:41.461Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T06:18:35.941Z",
-  "data_changed": true,
-  "change_summary": "移除 1 个",
+  "updated_at": "2026-09-16T06:49:23.906Z",
+  "data_changed": false,
+  "change_summary": "无实质变化",
   "change_details": [],
   "added": 0,
   "modified": 0,
-  "removed": 1
+  "removed": 0
 }

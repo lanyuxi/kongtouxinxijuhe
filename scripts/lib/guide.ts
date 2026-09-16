@@ -23,25 +23,45 @@ const SAFETY_NOTE = '请使用专用的独立空投钱包，任何时候都不�
  */
 export function buildGuide(p: AirdropProject): {
   steps: GuideStep[];
-  source: 'sourced' | 'template';
+  source: 'sourced' | 'third_party' | 'template';
 } {
   // 优先使用「数据源侧的真实步骤」。
   // 对应方案第 16 章：教程步骤必须可追溯到来源。
   // 官方页面给出的 HowTo 天然带来源链接，可信度与可执行性都高于确定性模板，
   // 因此只要拿到真实步骤就用它，模板仅作兜底（拿不到时才生成）。
   //
-  // ⚠️ P1-2 / P0-1：判定「真实教程」的标准在 2026-09-16 被收紧过一次。
-  //    旧实现只看「抓到了 >= 3 条步骤」，于是聚合站**自己写的推广流程**
-  //    （夹着 `airdrops.io/goto/bybit/` 返佣链接）也被算成官方 HowTo，
-  //    项目因此拿到 `guide_source = 'sourced'`，
-  //    连「模板教程最高只能到 B」这道等级上限都被绕开 ——
-  //    最终 28 个项目显示「建议参与」，而教程里是
-  //    「跨链资金 · 无需离开本页即可在 30 多条链之间兑换」这种广告段。
-  //    现在要求：步骤必须指向**该项目自己的官方域名**才算可追溯。
+  /**
+   * ⚠️ 判定标准在 2026-09-16 被收紧、随后又细化过一次，最终是三档。
+   *
+   * 第一版（旧实现）：只看「抓到了 >= 3 条步骤」。
+   *   → 聚合站**自己写的推广流程**（夹着 `airdrops.io/goto/bybit/` 返佣跳转）
+   *     也被算成官方 HowTo，项目拿到 `sourced`，
+   *     连「模板教程最高只能到 B」这道等级上限都被绕开 ——
+   *     最终 28 个项目显示「建议参与」，而教程里是
+   *     「跨链资金 · 无需离开本页即可在 30 多条链之间兑换」这种广告段。
+   *
+   * 第二版（本轮初稿）：要求步骤链接指向**项目自己的官方域名**。
+   *   → 修复了「伪 sourced」，但实测来源侧带官方链接的步骤 = 0/344，
+   *     于是 **100% 降级为 template**。审查指出这会误伤 308 条
+   *     **确实有项目特异性**的步骤（「每天玩 Sweepbird」「持有 $CARDS 每月空投」），
+   *     让用户以为它们是平台编的通用流程。
+   *
+   * 第三版（现在）：三档
+   *   · 可追溯步骤 >= 3          → `sourced`（官方 HowTo）
+   *   · 有实质步骤但无官方链接   → `third_party`（聚合站编辑整理，非官方）
+   *   · 步骤不足 / 只有通用流程 → `template`
+   *   其中 `third_party` 与 `template` 的**等级上限一致**（最高 B），
+   *   保证 P1-2 的修复不被新档位绕开（见 score.ts 的 gradeOfWithGuideTrust）。
+   */
   const sourced = stepsFromSource(p);
   const traceable = sourced.filter((g) => g.source_verified || g.source_url);
   if (traceable.length >= 3) {
     return { steps: withSafetyFirst(p, sourced), source: 'sourced' };
+  }
+  if (sourced.length >= 3) {
+    // 有实质内容（聚合站编辑手写），但没有一条能追溯到官方页面。
+    // 步骤照常展示，但如实告知「第三方整理、非官方」。
+    return { steps: withSafetyFirst(p, sourced), source: 'third_party' };
   }
   return { steps: generateTemplateGuide(p), source: 'template' };
 }

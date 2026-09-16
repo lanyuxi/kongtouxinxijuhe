@@ -78,10 +78,22 @@ export const defiLlamaAdapter: SourceAdapter = {
     const picked = protocols
       .filter((p) => typeof p.tvl === 'number' && p.tvl >= MIN_TVL)
       .filter((p) => !EXCLUDE_PATTERNS.some((re) => re.test(p.name)))
-      // 类目过滤：CEX / 中心化平台等类目不存在「项目空投」语义。
-      // 注意这里只覆盖**明确非空投**的类目，不覆盖 Lending / Dexs 这类
-      // 真实协议类目 —— 它们里既有真实空投项目，也可能有子池，
-      // 需要靠名字规则与 Prune 治理，不能按类目整体排除。
+      /**
+       * 类目过滤：只砍掉**强类目**（CEX / 中心化平台）——
+       * 它们不是「一个可参与的活动」，而是交易场所。
+       *
+       * ⚠️ 不要在这里加弱类目（Bridge / Liquid Staking / Restaking …）。
+       *    独立审查用真实数据否决过这个做法：
+       *      · LayerZero（Bridge）已发 ZRO 空投，库里是 claim_live；
+       *      · EigenLayer / EigenCloud（Restaking）发过 6000 万美元空投；
+       *      · Lido / Rocket Pool / Stader / Kelp（LST）与 Yearn（Yield Aggregator）
+       *        同样都有空投叙事。
+       *    14 类一刀切实测会把选中集从 682 条砍到 458 条（净排除 224 条）。
+       *
+       *    弱类目改由 `classifyNonAirdrop` 在**治理阶段**处理，
+       *    并且必须叠加「没有空投叙事证据」才排除 —— 抓取阶段
+       *    还没有 tagline / tasks，判不了证据，因此这里只管强类目。
+       */
       .filter((p) => !EXCLUDE_CATEGORY_PATTERNS.some((re) => re.test((p.category ?? '').trim())))
       .filter((p) => !!p.url && /^https?:\/\//i.test(p.url))
       .sort((a, b) => (b.tvl ?? 0) - (a.tvl ?? 0))

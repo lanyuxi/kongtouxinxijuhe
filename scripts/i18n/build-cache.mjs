@@ -15,7 +15,7 @@
  * 注意：本脚本**不参与** CI / 定时流水线，只在人工需要补译文时执行。
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { protectTerms, restoreTerms, hasChinese } from './translate.mjs';
@@ -26,16 +26,35 @@ const DETAILS = path.join(ROOT, 'data/details');
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** 收集当前数据里所有「面向用户且仍是英文」的文案 */
-function collectTexts() {
+/**
+ * 收集当前数据里所有「面向用户且仍是英文」的文案。
+ *
+ * ⚠️ 两个真实故障（独立审查实测，本脚本曾整体失效）：
+ *
+ *   1. **`require` 在 ESM 里不存在**：本文件是 `.mjs`，package.json 是
+ *      `"type": "module"`，`require('node:fs')` 直接抛 `ReferenceError`。
+ *      改用已 import 的 `readdirSync`。
+ *
+ *   2. **裸 `catch` 把错误吞掉**（这才是真正的病根）：
+ *      旧写法 `try { ... } catch { return [] }` 让上面的 ReferenceError
+ *      变成「语料为空」，脚本于是永远打印「缺失 0 条」——
+ *      任何人按文档来补译，都会得到「无缺口」的结论。
+ *      实测修正后从「缺失 0 条」变为「缺失 736 条」，
+ *      而 issue #28 的 47 处错译正是这样错过了一轮。
+ *      现在 catch 必须**打印原因**，不允许静默回退。
+ */
+export function collectTexts() {
   const out = new Set();
   let files = [];
   try {
-    files = [];
-    for (const f of require('node:fs').readdirSync(DETAILS)) {
-      if (f.endsWith('.json')) files.push(f);
-    }
-  } catch {
+    files = readdirSync(DETAILS).filter((f) => f.endsWith('.json'));
+  } catch (e) {
+    console.error(`[i18n] ✗ 读取 data/details 失败，补译语料为空：${e.message}`);
+    console.error('[i18n]   这会导致下面的「缺失 0 条」是假象，请先修目录问题。');
+    return [];
+  }
+  if (files.length === 0) {
+    console.error(`[i18n] ✗ ${DETAILS} 下没有 .json 分片，语料为空（目录或流水线异常）`);
     return [];
   }
   for (const f of files) {
@@ -128,7 +147,19 @@ async function main() {
   console.log(`[i18n] 完成，缓存共 ${Object.keys(sorted).length} 条`);
 }
 
-main().catch((e) => {
-  console.error('[i18n] 异常：', e);
-  process.exitCode = 1;
-});
+/**
+ * ⚠️ 只在「作为脚本直接执行」时才跑 main()。
+ *
+ * 否则测试 `import` 本模块做护栏校验时，会顺带触发一次真实翻译请求
+ * （打第三方接口、还可能需要写文件），既慢又不该发生在单测里。
+ * 判断方式：`import.meta.url` 是否等于入口脚本 —— 这是 ESM 的标准写法。
+ */
+const isDirectRun =
+  process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isDirectRun) {
+  main().catch((e) => {
+    console.error('[i18n] 异常：', e);
+    process.exitCode = 1;
+  });
+}

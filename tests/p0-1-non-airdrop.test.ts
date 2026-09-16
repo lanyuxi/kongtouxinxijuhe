@@ -332,3 +332,68 @@ describe('P0-1 豁免名单解析：结构异常时不得宽松放行', () => {
     expect(slugs).not.toContain('profiles');
   });
 });
+
+describe('P0-1 弱类目不得一刀切（独立审查否决了初版做法）', () => {
+  /**
+   * ⚠️ 这是本轮最重要的一条反向断言。
+   *
+   * 我曾把 Bridge / Liquid Staking / Restaking / Wrapped / Yield Aggregator /
+   * Risk Curators 等 14 类一并加进类目强规则，理由是「桥与质押衍生品
+   * 本身没有空投叙事」。
+   *
+   * 独立审查用真实数据否决了这个前提（不是风险推演，是活证据）：
+   *   · `LayerZero`（Bridge）已发 ZRO 空投，库里状态是 `claim_live`；
+   *   · `EigenLayer` / `EigenCloud`（Restaking）发过 6000 万美元空投；
+   *   · `Lido` / `Rocket Pool` / `Stader` / `Kelp`（LST）、`Yearn`（Yield Aggregator）
+   *     同样都有空投叙事。
+   * 按 DefiLlama 全量（TVL ≥ $5M，845 条）实跑：14 类规则会把选中集
+   * 从 682 条砍到 458 条，**净排除 224 条**，13 个类目被整类清空。
+   *
+   * 因此现在改为：弱类目**必须叠加「没有空投叙事证据」**才排除。
+   */
+  it('弱类目 + 有真实空投叙事 → 不得排除（LayerZero / EigenLayer 类）', async () => {
+    const { classifyNonAirdrop } = await import('../scripts/lib/non-airdrop');
+    const cases: [string, string, Record<string, unknown>][] = [
+      ['LayerZero V2', 'Bridge', { status: 'claim_live' }],
+      ['EigenCloud', 'Restaking', { tagline: 'EigenLayer 生态，已完成空投分发' }],
+      ['Yearn Finance', 'Yield Aggregator', { tagline: '积分活动进行中，可领取奖励' }],
+      ['Kelp', 'Liquid Restaking', { status: 'confirmed' }],
+      ['Rocket Pool', 'Liquid Staking', { tagline: 'RPL 空投与质押激励' }],
+    ];
+    for (const [name, categoryText, extra] of cases) {
+      const v = classifyNonAirdrop({ name, categoryText, ...extra });
+      expect(v.excluded, `${name}（${categoryText}）是真实空投项目，不得被类目一刀切`).toBe(false);
+    }
+  });
+
+  it('弱类目 + 完全没有空投叙事 → 才按基础设施 / 子池凭证排除', async () => {
+    const { classifyNonAirdrop } = await import('../scripts/lib/non-airdrop');
+    for (const [name, categoryText] of [
+      ['Some Bridge Protocol', 'Bridge'],
+      ['Wrapped Bitcoin Clone', 'Wrapped'],
+      ['Random LST Pool', 'Liquid Staking'],
+    ] as [string, string][]) {
+      expect(classifyNonAirdrop({ name, categoryText }).excluded, `${categoryText} 无叙事应排除`).toBe(true);
+    }
+  });
+
+  it('强类目（CEX / 中心化平台）不受叙事证据影响，一律排除', async () => {
+    const { classifyNonAirdrop } = await import('../scripts/lib/non-airdrop');
+    // 交易所即便文案里写了「空投」，也不是「一个可参与的活动」，而是交易场所
+    for (const [name, categoryText] of [
+      ['Binance CEX', 'CEX'],
+      ['某中心化平台', 'Centralized Exchange'],
+    ] as [string, string][]) {
+      expect(
+        classifyNonAirdrop({ name, categoryText, tagline: '平台空投活动' }).excluded,
+        '强类目必须排除（叙事证据不能翻案）',
+      ).toBe(true);
+    }
+  });
+
+  it('类目规则不按名字判定（换名字也不漏）', async () => {
+    const { classifyNonAirdrop } = await import('../scripts/lib/non-airdrop');
+    expect(classifyNonAirdrop({ name: '任意名字', categoryText: 'CEX' }).excluded).toBe(true);
+    expect(classifyNonAirdrop({ name: '任意名字', categoryText: 'Liquid Staking' }).excluded).toBe(true);
+  });
+});

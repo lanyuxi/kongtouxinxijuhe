@@ -5,12 +5,29 @@
   <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/"/>
   <link rel="self" type="application/atom+xml" href="https://lanyuxi.github.io/kongtouxinxijuhe/feed.xml"/>
   <id>https://lanyuxi.github.io/kongtouxinxijuhe/feed.xml</id>
-  <updated>2026-09-16T06:18:35.941Z</updated>
+  <updated>2026-09-16T06:47:37.113Z</updated>
   <author>
     <name>空投情报平台</name>
     <uri>https://lanyuxi.github.io/kongtouxinxijuhe/</uri>
   </author>
   <rights>公开信息聚合，请以项目方官方公告为准。</rights>
+  <entry>
+    <title>Nexus BTC｜潜在空投｜风险中</title>
+    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/nexus-btc"/>
+    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/nexus-btc</id>
+    <updated>2026-09-16T06:46:09.855Z</updated>
+    <published>2026-09-16T06:46:09.855Z</published>
+    <summary type="text">Bridge 协议，TVL 约 $212M。
+
+当前状态：潜在空投｜风险等级：中｜价值等级：C
+真实性置信度 32/100｜参与价值 51/100
+预计成本：资金 免费｜Gas $0｜时间 32 分钟
+
+官方入口：https://www.bit.com/
+
+提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
+详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/nexus-btc</summary>
+  </entry>
   <entry>
     <title>Aave V2｜潜在空投｜风险高</title>
     <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/aave-v2"/>
@@ -673,22 +690,5 @@
 
 提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
 详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/r25</summary>
-  </entry>
-  <entry>
-    <title>RAAC｜潜在空投｜风险中</title>
-    <link rel="alternate" type="text/html" href="https://lanyuxi.github.io/kongtouxinxijuhe/#/project/raac"/>
-    <id>https://lanyuxi.github.io/kongtouxinxijuhe/#/project/raac</id>
-    <updated>2026-09-16T06:14:36.946Z</updated>
-    <published>2026-09-16T06:14:36.946Z</published>
-    <summary type="text">RWA 协议，TVL 约 $115M。
-
-当前状态：潜在空投｜风险等级：中｜价值等级：B
-真实性置信度 32/100｜参与价值 55/100
-预计成本：资金 免费｜Gas $0｜时间 30 分钟
-
-官方入口：https://raac.io/
-
-提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。
-详情页：https://lanyuxi.github.io/kongtouxinxijuhe/#/project/raac</summary>
   </entry>
 </feed>

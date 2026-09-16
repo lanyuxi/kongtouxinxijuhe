@@ -340,6 +340,37 @@ describe('缓存完整性', () => {
     const sorted = [...TOKEN_TERMS].sort((a, b) => b.length - a.length);
     expect(TOKEN_TERMS).toEqual(sorted);
   });
+
+  /**
+   * ⚠️ 独立审查指出的 P3：术语表曾有多处重复登记。
+   *
+   * 实测当时：`TOKEN_TERMS` 有 1 处重复（`Feathers`），
+   * `TERM_MAP` 有 6 条重复规则 + **13 条恒等规则**（`[/金库/g,'金库']` 等，
+   * 源与目标完全相同 = 运行期空转）。
+   *
+   * 恒等规则无害，但会让「术语表覆盖率」虚高 ——
+   * 与 `HUMAN_FIX` 自指是同一类「看起来在工作」的形态，
+   * 因此用断言钉死，防止下次补词时又叠上去。
+   */
+  it('专有名词表不得有重复项', () => {
+    expect(new Set(TOKEN_TERMS).size, 'TOKEN_TERMS 存在重复项').toBe(TOKEN_TERMS.length);
+  });
+
+  it('术语表不得有重复规则或恒等规则（恒等 = 运行期空转）', () => {
+    const seen = new Set<string>();
+    const dup: string[] = [];
+    const identity: string[] = [];
+    for (const [re, to] of TERM_MAP) {
+      const key = `${re.source}=>${to}`;
+      if (seen.has(key)) dup.push(key);
+      seen.add(key);
+      // 恒等：正则字面量（去掉定界符与转义）与目标完全相同
+      const literal = re.source.replace(/\\(.)/g, '$1');
+      if (literal === to) identity.push(key);
+    }
+    expect(dup, 'TERM_MAP 存在重复规则').toEqual([]);
+    expect(identity, 'TERM_MAP 存在源=目标的恒等规则（空转）').toEqual([]);
+  });
 });
 
 describe('全量数据：用户可见文案必须含中文', () => {

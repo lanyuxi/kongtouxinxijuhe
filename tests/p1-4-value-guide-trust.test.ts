@@ -143,6 +143,50 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
     expect(b).toBeLessThan(a);
   });
 
+
+  /**
+   * ⚠️ 独立审查明确要求锁定的一条约束。
+   *
+   * `third_party` 是 2026-09-16 新增的档位，用途是「如实描述步骤来源」
+   * （聚合站编辑手写 ≠ 平台编的通用流程），**不是放宽等级的口子**。
+   * 它必须与 `template` 同样封在 B 级，否则 P1-2 的修复会被新档位绕开 ——
+   * 「没有官方步骤就不该推动用户投入时间」这条结论，
+   * 与来源是聚合站还是模板无关。
+   */
+  it('第三方整理的教程同样不得进入 S/A（新档位不得成为绕开口子）', () => {
+    const p = make({
+      status: 'claim_live',
+      guide_source: 'third_party',
+      guide: steps(8),
+      tasks: ['领取空投'],
+      official: { website: 'https://demo.xyz', docs: 'https://docs.demo.xyz', github: 'https://github.com/demo' },
+      meta: { funding: 'Series A', investors: ['A'], token_status: '已发币' },
+      cost: { capital_min_usd: 0, capital_max_usd: 0, gas_estimate_usd: 0, time_minutes: 30, long_term: false, summary: '' },
+    });
+    p.evidence = [
+      { type: 'official_website', label: 'w', url: 'https://demo.xyz', verified: true },
+      { type: 'official_docs', label: 'd', url: 'https://docs.demo.xyz', verified: true },
+      { type: 'third_party', label: 't', url: 'https://a.io/x', verified: true },
+      { type: 'third_party', label: 't2', url: 'https://b.io/x', verified: true },
+    ];
+    const r = scoreValue(p);
+    expect(r.grade, 'third_party 与 template 同为上限 B').toBe('B');
+    expect(
+      buildRecommendation(r.grade, 'low').action,
+      '第三方整理的教程不得触发「建议参与」',
+    ).not.toBe('participate');
+  });
+
+  it('third_party 的扣分与 template 一致，且理由如实描述来源', () => {
+    const mk = (guide_source: 'template' | 'third_party') =>
+      make({ guide_source, guide: steps(6), tasks: ['存入资产'] });
+    const t = scoreValue(mk('template')).items.find((i) => i.key === 'value.guide_trust')!;
+    const x = scoreValue(mk('third_party')).items.find((i) => i.key === 'value.guide_trust')!;
+    expect(x.value).toBe(t.value);
+    expect(x.reason).toContain('第三方');
+    expect(t.reason).toContain('示意');
+  });
+
   it('gradeOf 阈值与 GRADE_THRESHOLDS 一致（阈值本身由 main 重新标定）', () => {
     // 阈值在合并 main 时被重新标定为 60 / 56 / 52 / 42 ——
     // 因为 main 侧的价值模型引入了 TVL 规模分，分数分布整体下移，

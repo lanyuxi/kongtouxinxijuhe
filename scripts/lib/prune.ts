@@ -92,6 +92,13 @@ export function pruneProjects(
     const verdict = classifyNonAirdrop({
       name: p.name,
       categoryText: p.sources.some((s) => s.name === 'DefiLlama') ? p.category : undefined,
+      // 空投叙事证据：弱类目（桥 / LST / 聚合器…）只有在**没有**证据时才排除。
+      // 否则 LayerZero（Bridge，已发 ZRO 空投）、EigenLayer（Restaking）
+      // 这类「弱类目 + 真实空投」的项目会被整类误删。
+      status: p.status,
+      tagline: p.tagline,
+      tasks: p.tasks,
+      requirements: p.requirements,
     });
     if (verdict.excluded && !hasHumanProfile) {
       removed.push(p.slug);

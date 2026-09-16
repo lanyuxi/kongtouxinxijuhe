@@ -46,7 +46,7 @@ const LIST_PAGES: { url: string; status: string }[] = [
  * 同一段里顺带提到的交易所 / 跨链组件等第三方链接。
  * 取不到官方链接时返回 undefined —— 宁可不标来源，也不冒充可追溯。
  */
-function officialStepLink(html: string, officialHost?: string): string | undefined {
+export function officialStepLink(html: string, officialHost?: string): string | undefined {
   if (!html || !officialHost) return undefined;
   const host = officialHost.replace(/^www\./, '').toLowerCase();
   for (const l of extractLinks(html)) {
