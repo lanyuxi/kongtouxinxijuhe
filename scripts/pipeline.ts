@@ -37,6 +37,7 @@ import { reconcileAll } from './lib/status';
 import { markFirstSeenAll } from './lib/first-seen';
 import { loadProfiles } from './lib/enrich';
 import { buildListDataset } from './lib/list';
+import { backfillXHandles } from './lib/x-handles';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -195,6 +196,28 @@ async function main() {
   projects = await enrichAll(projects);
   // enrich 后证据变了，重新 verify 一次以生成完整 Evidence 清单
   projects = verifyAll(projects);
+
+  // 3.25) X 账号索引回填（issue #28）
+  //
+  //       为什么这一步必须独立于抓取阶段存在：
+  //         X 的推文在本环境抓不到（TLS 被重置，见 scripts/fetch/twitter.ts）。
+  //         但「哪个项目对应哪个官方 X 账号」是**确定性信息** ——
+  //         它来自人工档案与 DefiLlama，不需要联网。
+  //         把它落到项目上，用户至少能一键跳到官方 X 核对一手消息；
+  //         等凭据就绪时，适配器产出的推文线索可直接挂到同一个 handle 上。
+  //       不做任何覆盖：只在项目还没有 X 链接时补上，人工档案优先级最高。
+  {
+    const xSeeds = Object.entries(profiles)
+      .map(([slug, prof]) => ({ slug, x: prof.official?.x ?? '' }))
+      .filter((s) => !!s.x);
+    const filled = backfillXHandles(projects, xSeeds);
+    projects = filled.projects;
+    console.log(
+      `[pipeline] 官方 X 账号：补全 ${filled.filled} 个，` +
+        `无公开账号留空 ${filled.missing.length} 个（不猜账号）`,
+    );
+    for (const r of filled.rejected) console.warn(`[pipeline] ⚠ ${r.slug} ${r.reason}`);
+  }
 
   // 3.3) Guide / Cost → Score → FAQ / Risks
   //

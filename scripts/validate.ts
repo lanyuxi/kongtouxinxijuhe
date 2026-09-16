@@ -142,10 +142,17 @@ async function main() {
     (p: AirdropProject) => p.scores.authenticity >= 70 && !isProjectVerified(p),
   );
 
+  // X 数据源接入校验（issue #28）
+  const xErrors = await validateXSource(projects);
+
   // 扫描前端源码中的 Secret（不变量 5）
   const secrets = scanForSecrets(await collectSourceFiles(path.join(ROOT, 'src')));
 
-  const errors = [...result.errors, ...secrets.map((s) => `Secret 泄漏：${s}`)];
+  const errors = [
+    ...result.errors,
+    ...xErrors,
+    ...secrets.map((s) => `Secret 泄漏：${s}`),
+  ];
   const warnings = [...result.warnings];
 
   // Logo 覆盖率校验：列表页不允许出现缺省图 / 字母图。
@@ -179,6 +186,42 @@ async function main() {
  * 前端会退化成「文字块 / 缺省图」，正是本次需求要消除的情况。
  * 因此在 CI 里直接拒绝发布，而不是等用户看到破图。
  */
+/**
+ * X 信息源接入校验（issue #28）。
+ *
+ * 为什么需要它：
+ *   「接入了 X」这件事在界面上只体现为一条来源状态。
+ *   如果哪天有人（包括 AI 自己）把适配器从 adapters 里摘掉，
+ *   或者往 official.x 里写进了非 X 域名的链接，
+ *   站点看起来完全正常 —— 用户不会发现「说好的 X 消息源没了」。
+ *   因此这里把两件事变成硬门禁：
+ *     1. X 适配器必须在 adapters 里（防止被静默移除）
+ *     2. official.x 必须全部是合法的 x.com 链接（防止把用户引到钓鱼账号）
+ */
+async function validateXSource(projects: AirdropProject[]): Promise<string[]> {
+  const errors: string[] = [];
+
+  // 1) 适配器必须在册
+  const { adapters } = await import('./fetch/index');
+  if (!adapters.some((a) => a.name === 'X (Twitter)')) {
+    errors.push('X (Twitter) 适配器未接入 adapters —— 用户要的 X 消息源被移除了');
+  }
+
+  // 2) official.x 必须全部合法。
+  //    注意这里**不检查「数量够不够」**：没有官方 X 账号的项目本就该留空，
+  //    强行要求覆盖率会逼着后人去猜账号，那才是真正的风险。
+  const { normalizeXUrl } = await import('./lib/x-handles');
+  for (const p of projects) {
+    const raw = p.official?.x;
+    if (!raw) continue;
+    if (!normalizeXUrl(raw) || normalizeXUrl(raw) !== raw) {
+      errors.push(`${p.slug} 的 official.x 非法或非规范 X 链接：${raw}`);
+    }
+  }
+
+  return errors;
+}
+
 async function validateLogoCoverage(projects: AirdropProject[], warnings: string[]): Promise<string[]> {
   const errors: string[] = [];
   const mapFile = path.join(ROOT, 'data', 'logo-map.json');

@@ -60,6 +60,18 @@ export function RefreshBar({
    */
   const capability = refreshCapability(refreshEndpoint());
 
+  /**
+   * X（Twitter）来源的专门说明（issue #28）。
+   *
+   * 为什么单独处理而不是混在「来源失败」里：
+   *   X 抓不到不是「抖动」，而是**能力门槛**：需要 X_BEARER_TOKEN 才能抓推文。
+   *   把它和普通失败一起显示成红字「数据源异常」，用户会以为系统坏了
+   *   （这正是 Galxe 当时被下线的原因）。这里改成中性措辞 + 给出解法，
+   *   用户知道「加一个 Token 就能开」，而不是「这站坏了」。
+   */
+  const xSource = health?.sources.find((s) => /^X\s*\(Twitter\)/.test(s.name));
+  const xUnavailable = xSource && !xSource.ok;
+
   const coverage =
     totalProjects === undefined
       ? null
@@ -126,6 +138,15 @@ export function RefreshBar({
           >
             {refreshing ? '⏳ ' : '✓ '}
             {message}
+          </p>
+        )}
+
+        {/* X 来源状态（issue #28）：中性措辞 + 明确解法，不伪装成「故障」 */}
+        {xUnavailable && (
+          <p className="mt-2 text-xs text-ink-faint">
+            ℹ X（Twitter）推文暂未接入：抓取推文需要平台凭据（环境变量{' '}
+            <code className="rounded bg-canvas px-1">X_BEARER_TOKEN</code>），
+            未配置时无法稳定读取推文。官方 X 账号索引仍可用 —— 可在项目详情页直接跳转核对一手消息。
           </p>
         )}
 
