@@ -203,3 +203,41 @@ describe('流水线步骤顺序：构建必须在单元测试之前', () => {
     expect(src).toMatch(/缺少 dist\/ 产物/);
   });
 });
+
+/**
+ * 详情页左栏宽度回归测试。
+ * ---------------------------------------------------------------------------
+ * 背景：左栏曾是 24rem（384px）。目录项与官方链接都只放 2~6 个字的短标签，
+ * 384px 下每行右侧留出大片空白，用户反馈「左侧有些宽」。
+ *
+ * 这类回归的麻烦之处在于：改宽改窄都不会报错、不会溢出、测试全绿，
+ * 只有人肉看截图才发现「又变宽了」。因此这里把宽度上限固化下来。
+ */
+describe('详情页左栏宽度：收窄后不得回弹', () => {
+  const src = readFileSync(join(ROOT, 'src/styles/index.css'), 'utf8');
+
+  it('detail-grid 左栏不得超过 19rem', () => {
+    const m = src.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/);
+    expect(m, '未能从 detail-grid 解析出左栏宽度').not.toBeNull();
+    const rem = Number(m![1]);
+    expect(rem).toBeLessThanOrEqual(19);
+  });
+
+  it('左栏也不能窄到挤坏短标签（保留 ≥ 16rem）', () => {
+    const m = src.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/);
+    const rem = Number(m![1]);
+    expect(rem).toBeGreaterThanOrEqual(16);
+  });
+
+  it('构建产物里左栏宽度与源码一致', () => {
+    // 这是本测试真正的价值所在：只断言源码，改不动产物等于没改。
+    // 实测产物保留 rem（不会换算成 px），直接按 rem 匹配。
+    const rem = src.match(/xl:grid-cols-\[(\d+(?:\.\d+)?)rem_minmax\(0,1fr\)\]/)![1];
+    const grid = css.slice(css.indexOf('.detail-grid'));
+    expect(grid.slice(0, 400)).toContain(`grid-template-columns:${rem}rem minmax(0,1fr)`);
+  });
+
+  it('xl 以下仍是单列堆叠（收窄不得影响移动端）', () => {
+    expect(src).toMatch(/detail-grid\s*\{[\s\S]*?grid-cols-1/);
+  });
+});

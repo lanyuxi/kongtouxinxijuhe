@@ -231,7 +231,13 @@
     @apply text-sm font-medium text-brand underline-offset-4 hover:underline;
   }
   .detail-grid {
-    @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[24rem_minmax(0,1fr)];
+    /*
+     * 左栏宽度：曾是 24rem（384px），实测在 1728px 视口下显得过宽 ——
+     * 目录项与官方链接都是 2~6 字的短标签，384px 里大量留白。
+     * 收到 19rem（304px）后每栏仍明显宽于最长标签，重排检查未见任何换行/溢出。
+     * 移动端不受影响（xl 以下本就是单列堆叠）。
+     */
+    @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[19rem_minmax(0,1fr)];
   }
   .detail-aside {
     @apply flex flex-col gap-5 xl:sticky xl:top-28;
