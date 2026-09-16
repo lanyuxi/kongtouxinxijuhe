@@ -2,7 +2,7 @@
   "id": "vangrid",
   "name": "Vangrid",
   "slug": "vangrid",
-  "tagline": "Vangrid 尚未确认空投。",
+  "tagline": "Vangrid has not confirmed an airdrop.",
   "category": "AI",
   "chains": [
     "Base"
@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/vangrid/",
-      "fetched_at": "2026-09-16T05:26:45.135Z"
+      "fetched_at": "2026-09-16T03:12:09.579Z"
     }
   ],
   "evidence": [
@@ -268,8 +268,8 @@
     },
     {
       "step": 2,
-      "title": "安装 Vangrid 应用",
-      "description": "Android 上下载 Vangrid App，iOS 上则打开浏览器捕获工具。允许相机和位置访问，因为无法验证没有位置数据的捕获。",
+      "title": "Install the Vangrid App",
+      "description": "Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -278,14 +278,12 @@
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_url": "/visit/7cb3/",
-      "source_verified": true,
-      "original_title": "Install the Vangrid App",
-      "original_description": "Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified."
+      "source_verified": true
     },
     {
       "step": 3,
-      "title": "录制符合规范的捕获",
-      "description": "拍摄机器人实际需要穿越的位置。 Vangrid 接受： 人行道和人行道楼梯和楼梯间小巷和服务车道公共广场和广场跳过道路、人群和私人室内空间。录制要求： 双手将手机垂直握住胸部，以稳定的速度行走并平稳地从一侧到另一侧平移在白天录制 30 至 60 秒",
+      "title": "Record a Capture That Meets the Spec",
+      "description": "Film a location a robot would realistically need to cross. Vangrid accepts: Sidewalks and pedestrian paths Stairs and stairwells Alleys and service lanes Public squares and plazas Skip roads, crowds of people, and private indoor spaces. Recording requirements: Hold the phone vertically at chest level, using both hands Walk at a steady pace and pan smoothly from side to side Record 30 to 60 seconds",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -293,14 +291,12 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false,
-      "original_title": "Record a Capture That Meets the Spec",
-      "original_description": "Film a location a robot would realistically need to cross. Vangrid accepts: Sidewalks and pedestrian paths Stairs and stairwells Alleys and service lanes Public squares and plazas Skip roads, crowds of people, and private indoor spaces. Recording requirements: Hold the phone vertically at chest level, using both hands Walk at a steady pace and pan smoothly from side to side Record 30 to 60 seconds"
+      "source_verified": false
     },
     {
       "step": 4,
-      "title": "输入邀请码并上传",
-      "description": "上传是通过邀请码进行的。上传前输入 GRID-01。每天上传可额外获得 50 点奖励，总视频数为 5、10 和 50 时还可获得额外奖励。",
+      "title": "Enter an Invite Code and Upload",
+      "description": "Uploads are gated behind an invite code. Enter GRID-01 before uploading. Uploading daily adds a 50-point bonus, with further bonuses at 5, 10, and 50 total videos.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -308,14 +304,12 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false,
-      "original_title": "Enter an Invite Code and Upload",
-      "original_description": "Uploads are gated behind an invite code. Enter GRID-01 before uploading. Uploading daily adds a 50-point bonus, with further bonuses at 5, 10, and 50 total videos."
+      "source_verified": false
     },
     {
       "step": 5,
-      "title": "将你的钱包连接到忠诚度中心",
-      "description": "打开 Vangrid Loyalty Hub 并连接 EVM 钱包。你的首次登录将自行计入 PTC 的积分。",
+      "title": "Connect Your Wallet to the Loyalty Hub",
+      "description": "Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -324,14 +318,12 @@
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_url": "/visit/6cb3/",
-      "source_verified": true,
-      "original_title": "Connect Your Wallet to the Loyalty Hub",
-      "original_description": "Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own."
+      "source_verified": true
     },
     {
       "step": 6,
-      "title": "完成忠诚度中心任务",
-      "description": "完成任务列表：在 X 上关注 Vangrid、加入 Discord、连接 LinkedIn、参与帖子以及每周发布 X 帖子。通过 Hub 任务链接而不是转发的邀请来到达 Discord。没有合法的验证要求你签署钱包交易，因此请关闭任何这样做的页面。",
+      "title": "Complete Loyalty Hub Quests",
+      "description": "Work through the quest list: follow Vangrid on X, join the Discord, connect LinkedIn, engage with posts, and publish weekly X posts. Reach Discord through the Hub quest link rather than a forwarded invite. No legitimate verification asks you to sign a wallet transaction, so close any page that does.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -339,14 +331,12 @@
       "needs_signature": true,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false,
-      "original_title": "Complete Loyalty Hub Quests",
-      "original_description": "Work through the quest list: follow Vangrid on X, join the Discord, connect LinkedIn, engage with posts, and publish weekly X posts. Reach Discord through the Hub quest link rather than a forwarded invite. No legitimate verification asks you to sign a wallet transaction, so close any page that does."
+      "source_verified": false
     },
     {
       "step": 7,
-      "title": "解锁电网运营商状态",
-      "description": "在 X 上关注 Vangrid，加入 Discord，并提交一个应用内视频即可获得网格运营商角色和徽章，这将为你的 PTC 带来 1.5 倍的乘数。",
+      "title": "Unlock Grid Operator Status",
+      "description": "Follow Vangrid on X, join the Discord, and submit one in-app video to earn the Grid Operator role and badge, which applies a 1.5x multiplier to your PTC.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -354,14 +344,12 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false,
-      "original_title": "Unlock Grid Operator Status",
-      "original_description": "Follow Vangrid on X, join the Discord, and submit one in-app video to earn the Grid Operator role and badge, which applies a 1.5x multiplier to your PTC."
+      "source_verified": false
     },
     {
       "step": 8,
-      "title": "提交资助赏金",
-      "description": "在 Vangrid 赏金门户浏览开放请求。这些是买家提出的特定地点的请求，选定的提交内容将在 Base 上向 USDC 付款。浏览不需要邀请码。",
+      "title": "Submit to Funded Bounties",
+      "description": "Browse open requests at the Vangrid bounty portal. These are location-specific asks from buyers, and selected submissions pay USDC on Base. Browsing requires no invite code.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -369,14 +357,12 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false,
-      "original_title": "Submit to Funded Bounties",
-      "original_description": "Browse open requests at the Vangrid bounty portal. These are location-specific asks from buyers, and selected submissions pay USDC on Base. Browsing requires no invite code."
+      "source_verified": false
     },
     {
       "step": 9,
-      "title": "参考其他贡献者",
-      "description": "分享你的 Hub 邀请链接。你将获得推荐产生的 PTC 的 10%，并且每个通过链接加入的新用户都将获得 50 PTC 奖金。",
+      "title": "Refer Other Contributors",
+      "description": "Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus.",
       "official_url": "https://hub.vangrid.io",
       "minutes": 3,
       "cost_usd": 0,
@@ -384,9 +370,7 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
-      "source_verified": false,
-      "original_title": "Refer Other Contributors",
-      "original_description": "Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus."
+      "source_verified": false
     }
   ],
   "faq": [
@@ -431,8 +415,8 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T05:26:45.135Z",
-  "last_changed_at": "2026-09-16T04:59:12.592Z",
+  "last_checked_at": "2026-09-16T03:12:09.579Z",
+  "last_changed_at": "2026-09-16T01:48:06.876Z",
   "sourcedSteps": [
     {
       "title": "Install the Vangrid App",
@@ -469,8 +453,7 @@
       "body": "Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus."
     }
   ],
-  "digest": "{\"category\":\"AI\",\"chains\":[\"Base\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":27},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://hub.vangrid.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/vangrid/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Android 上下载 Vangrid App，iOS 上则打开浏览器捕获工具。允许相机和位置访问，因为无法验证没有位置数据的捕获。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified.\",\"original_title\":\"Install the Vangrid App\",\"risk\":\"low\",\"source_url\":\"/visit/7cb3/\",\"source_verified\":true,\"step\":2,\"title\":\"安装 Vangrid 应用\"},{\"cost_usd\":0,\"description\":\"拍摄机器人实际需要穿越的位置。 Vangrid 接受： 人行道和人行道楼梯和楼梯间小巷和服务车道公共广场和广场跳过道路、人群和私人室内空间。录制要求： 双手将手机垂直握住胸部，以稳定的速度行走并平稳地从一侧到另一侧平移在白天录制 30 至 60 秒\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Film a location a robot would realistically need to cross. Vangrid accepts: Sidewalks and pedestrian paths Stairs and stairwells Alleys and service lanes Public squares and plazas Skip roads, crowds of people, and private indoor spaces. Recording requirements: Hold the phone vertically at chest level, using both hands Walk at a steady pace and pan smoothly from side to side Record 30 to 60 seconds\",\"original_title\":\"Record a Capture That Meets the Spec\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"录制符合规范的捕获\"},{\"cost_usd\":0,\"description\":\"上传是通过邀请码进行的。上传前输入 GRID-01。每天上传可额外获得 50 点奖励，总视频数为 5、10 和 50 时还可获得额外奖励。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Uploads are gated behind an invite code. Enter GRID-01 before uploading. Uploading daily adds a 50-point bonus, with further bonuses at 5, 10, and 50 total videos.\",\"original_title\":\"Enter an Invite Code and Upload\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"输入邀请码并上传\"},{\"cost_usd\":0,\"description\":\"打开 Vangrid Loyalty Hub 并连接 EVM 钱包。你的首次登录将自行计入 PTC 的积分。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own.\",\"original_title\":\"Connect Your Wallet to the Loyalty Hub\",\"risk\":\"low\",\"source_url\":\"/visit/6cb3/\",\"source_verified\":true,\"step\":5,\"title\":\"将你的钱包连接到忠诚度中心\"},{\"cost_usd\":0,\"description\":\"完成任务列表：在 X 上关注 Vangrid、加入 Discord、连接 LinkedIn、参与帖子以及每周发布 X 帖子。通过 Hub 任务链接而不是转发的邀请来到达 Discord。没有合法的验证要求你签署钱包交易，因此请关闭任何这样做的页面。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Work through the quest list: follow Vangrid on X, join the Discord, connect LinkedIn, engage with posts, and publish weekly X posts. Reach Discord through the Hub quest link rather than a forwarded invite. No legitimate verification asks you to sign a wallet transaction, so close any page that does.\",\"original_title\":\"Complete Loyalty Hub Quests\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"完成忠诚度中心任务\"},{\"cost_usd\":0,\"description\":\"在 X 上关注 Vangrid，加入 Discord，并提交一个应用内视频即可获得网格运营商角色和徽章，这将为你的 PTC 带来 1.5 倍的乘数。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Follow Vangrid on X, join the Discord, and submit one in-app video to earn the Grid Operator role and badge, which applies a 1.5x multiplier to your PTC.\",\"original_title\":\"Unlock Grid Operator Status\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"解锁电网运营商状态\"},{\"cost_usd\":0,\"description\":\"在 Vangrid 赏金门户浏览开放请求。这些是买家提出的特定地点的请求，选定的提交内容将在 Base 上向 USDC 付款。浏览不需要邀请码。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Browse open requests at the Vangrid bounty portal. These are location-specific asks from buyers, and selected submissions pay USDC on Base. Browsing requires no invite code.\",\"original_title\":\"Submit to Funded Bounties\",\"risk\":\"low\",\"source_verified\":false,\"step\":8,\"title\":\"提交资助赏金\"},{\"cost_usd\":0,\"description\":\"分享你的 Hub 邀请链接。你将获得推荐产生的 PTC 的 10%，并且每个通过链接加入的新用户都将获得 50 PTC 奖金。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"original_description\":\"Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus.\",\"original_title\":\"Refer Other Contributors\",\"risk\":\"low\",\"source_verified\":false,\"step\":9,\"title\":\"参考其他贡献者\"}],\"guide_source\":\"sourced\",\"id\":\"vangrid\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Vangrid\",\"official\":{\"website\":\"https://hub.vangrid.io\"},\"recommendation\":{\"action\":\"participate\",\"grade\":\"A\",\"summary\":\"值得参与，建议先完成低成本任务，再决定是否追加投入。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":23,\"authenticityItems\":[{\"evidenceUrl\":\"https://hub.vangrid.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目尚未确认空投，官方本就没有公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"A\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":56,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 27 分钟，共 9 个步骤\",\"value\":9},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自数据源抓取到的官方 HowTo，共 9 步，可追溯到原始页面\",\"value\":12}]},\"slug\":\"vangrid\",\"sourcedSteps\":[{\"body\":\"Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified.\",\"title\":\"Install the Vangrid App\",\"url\":\"/visit/7cb3/\"},{\"body\":\"Film a location a robot would realistically need to cross. Vangrid accepts: Sidewalks and pedestrian paths Stairs and stairwells Alleys and service lanes Public squares and plazas Skip roads, crowds of people, and private indoor spaces. Recording requirements: Hold the phone vertically at chest level, using both hands Walk at a steady pace and pan smoothly from side to side Record 30 to 60 seconds in daylight\",\"title\":\"Record a Capture That Meets the Spec\"},{\"body\":\"Uploads are gated behind an invite code. Enter GRID-01 before uploading. Uploading daily adds a 50-point bonus, with further bonuses at 5, 10, and 50 total videos.\",\"title\":\"Enter an Invite Code and Upload\"},{\"body\":\"Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own.\",\"title\":\"Connect Your Wallet to the Loyalty Hub\",\"url\":\"/visit/6cb3/\"},{\"body\":\"Work through the quest list: follow Vangrid on X, join the Discord, connect LinkedIn, engage with posts, and publish weekly X posts. Reach Discord through the Hub quest link rather than a forwarded invite. No legitimate verification asks you to sign a wallet transaction, so close any page that does.\",\"title\":\"Complete Loyalty Hub Quests\"},{\"body\":\"Follow Vangrid on X, join the Discord, and submit one in-app video to earn the Grid Operator role and badge, which applies a 1.5x multiplier to your PTC.\",\"title\":\"Unlock Grid Operator Status\"},{\"body\":\"Browse open requests at the Vangrid bounty portal. These are location-specific asks from buyers, and selected submissions pay USDC on Base. Browsing requires no invite code.\",\"title\":\"Submit to Funded Bounties\"},{\"body\":\"Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus.\",\"title\":\"Refer Other Contributors\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/vangrid/\"}],\"status\":\"potential\",\"tagline\":\"Vangrid 尚未确认空投。\",\"tagline_en\":\"Vangrid has not confirmed an airdrop.\",\"tasks\":[\"完成注册\",\"试用产品\"]}",
+  "digest": "{\"category\":\"AI\",\"chains\":[\"Base\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":27},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://hub.vangrid.io\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/vangrid/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_url\":\"/visit/7cb3/\",\"source_verified\":true,\"step\":2,\"title\":\"Install the Vangrid App\"},{\"cost_usd\":0,\"description\":\"Film a location a robot would realistically need to cross. Vangrid accepts: Sidewalks and pedestrian paths Stairs and stairwells Alleys and service lanes Public squares and plazas Skip roads, crowds of people, and private indoor spaces. Recording requirements: Hold the phone vertically at chest level, using both hands Walk at a steady pace and pan smoothly from side to side Record 30 to 60 seconds\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"Record a Capture That Meets the Spec\"},{\"cost_usd\":0,\"description\":\"Uploads are gated behind an invite code. Enter GRID-01 before uploading. Uploading daily adds a 50-point bonus, with further bonuses at 5, 10, and 50 total videos.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"Enter an Invite Code and Upload\"},{\"cost_usd\":0,\"description\":\"Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_url\":\"/visit/6cb3/\",\"source_verified\":true,\"step\":5,\"title\":\"Connect Your Wallet to the Loyalty Hub\"},{\"cost_usd\":0,\"description\":\"Work through the quest list: follow Vangrid on X, join the Discord, connect LinkedIn, engage with posts, and publish weekly X posts. Reach Discord through the Hub quest link rather than a forwarded invite. No legitimate verification asks you to sign a wallet transaction, so close any page that does.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"Complete Loyalty Hub Quests\"},{\"cost_usd\":0,\"description\":\"Follow Vangrid on X, join the Discord, and submit one in-app video to earn the Grid Operator role and badge, which applies a 1.5x multiplier to your PTC.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"Unlock Grid Operator Status\"},{\"cost_usd\":0,\"description\":\"Browse open requests at the Vangrid bounty portal. These are location-specific asks from buyers, and selected submissions pay USDC on Base. Browsing requires no invite code.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":8,\"title\":\"Submit to Funded Bounties\"},{\"cost_usd\":0,\"description\":\"Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus.\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.vangrid.io\",\"risk\":\"low\",\"source_verified\":false,\"step\":9,\"title\":\"Refer Other Contributors\"}],\"guide_source\":\"sourced\",\"id\":\"vangrid\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Vangrid\",\"official\":{\"website\":\"https://hub.vangrid.io\"},\"recommendation\":{\"action\":\"participate\",\"grade\":\"A\",\"summary\":\"值得参与，建议先完成低成本任务，再决定是否追加投入。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":23,\"authenticityItems\":[{\"evidenceUrl\":\"https://hub.vangrid.io\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目尚未确认空投，官方本就没有公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"A\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":56,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 27 分钟，共 9 个步骤\",\"value\":9},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程来自数据源抓取到的官方 HowTo，共 9 步，可追溯到原始页面\",\"value\":12}]},\"slug\":\"vangrid\",\"sourcedSteps\":[{\"body\":\"Download the Vangrid App on Android, or open the browser capture tool if you are on iOS. Allow camera and location access, since captures without location data cannot be verified.\",\"title\":\"Install the Vangrid App\",\"url\":\"/visit/7cb3/\"},{\"body\":\"Film a location a robot would realistically need to cross. Vangrid accepts: Sidewalks and pedestrian paths Stairs and stairwells Alleys and service lanes Public squares and plazas Skip roads, crowds of people, and private indoor spaces. Recording requirements: Hold the phone vertically at chest level, using both hands Walk at a steady pace and pan smoothly from side to side Record 30 to 60 seconds in daylight\",\"title\":\"Record a Capture That Meets the Spec\"},{\"body\":\"Uploads are gated behind an invite code. Enter GRID-01 before uploading. Uploading daily adds a 50-point bonus, with further bonuses at 5, 10, and 50 total videos.\",\"title\":\"Enter an Invite Code and Upload\"},{\"body\":\"Open the Vangrid Loyalty Hub and connect an EVM wallet. Your first login credits PTC on its own.\",\"title\":\"Connect Your Wallet to the Loyalty Hub\",\"url\":\"/visit/6cb3/\"},{\"body\":\"Work through the quest list: follow Vangrid on X, join the Discord, connect LinkedIn, engage with posts, and publish weekly X posts. Reach Discord through the Hub quest link rather than a forwarded invite. No legitimate verification asks you to sign a wallet transaction, so close any page that does.\",\"title\":\"Complete Loyalty Hub Quests\"},{\"body\":\"Follow Vangrid on X, join the Discord, and submit one in-app video to earn the Grid Operator role and badge, which applies a 1.5x multiplier to your PTC.\",\"title\":\"Unlock Grid Operator Status\"},{\"body\":\"Browse open requests at the Vangrid bounty portal. These are location-specific asks from buyers, and selected submissions pay USDC on Base. Browsing requires no invite code.\",\"title\":\"Submit to Funded Bounties\"},{\"body\":\"Share your Hub referral link. You earn 10% of the PTC your referrals generate, and each new user who joins through a link starts with a 50 PTC bonus.\",\"title\":\"Refer Other Contributors\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/vangrid/\"}],\"status\":\"potential\",\"tagline\":\"Vangrid has not confirmed an airdrop.\",\"tasks\":[\"完成注册\",\"试用产品\"]}",
   "guide_source": "sourced",
-  "first_seen_at": "2026-09-12T06:08:39.056Z",
-  "tagline_en": "Vangrid has not confirmed an airdrop."
+  "first_seen_at": "2026-09-12T06:08:39.056Z"
 }

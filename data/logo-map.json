@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-09-16T05:04:08.862Z",
-  "total": 205,
+  "updated_at": "2026-09-16T03:12:20.619Z",
+  "total": 204,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -64,7 +64,6 @@
     "falcon-finance": "logos/falcon-finance.png",
     "fassets": "logos/fassets.png",
     "figure-markets-democratized-prime": "logos/figure-markets-democratized-prime.png",
-    "fireplace": "logos/fireplace.png",
     "flop-labs": "logos/flop-labs.svg",
     "fluid-dex": "logos/fluid-dex.png",
     "fluid-lending": "logos/fluid-lending.png",
@@ -413,7 +412,6 @@
     "yearn-finance": "https://icons.llamao.fi/icons/protocols/yearn-finance",
     "fraxtal": "https://icons.llamao.fi/icons/protocols/fraxtal",
     "etherfi-cash-liquid": "https://icons.llamao.fi/icons/protocols/etherfi-cash-liquid",
-    "liquid-collective": "https://icons.llamao.fi/icons/protocols/liquid-collective",
-    "fireplace": "https://www.faviconextractor.com/favicon/pro.fireplace.gg?larger=true"
+    "liquid-collective": "https://icons.llamao.fi/icons/protocols/liquid-collective"
   }
 }
