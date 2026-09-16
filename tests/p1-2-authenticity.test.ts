@@ -218,3 +218,67 @@ describe('P1-3 全量数据校验：真实性分不得退化成常数', () => {
     ).toBeLessThan(0.6);
   });
 });
+
+
+describe('P1-2 教程来源判定：只认项目自己的官方域名', () => {
+  /**
+   * 为什么必须逐条锁定边界（实测事故）：
+   *   聚合站自己写的推广流程里夹着 `airdrops.io/goto/bybit/` 返佣跳转，
+   *   旧实现「取步骤正文里的第一个链接」，于是这些广告步骤被算成
+   *   「可追溯到来源」，项目拿到 guide_source='sourced'，
+   *   连「模板教程最高只能到 B」的等级上限都被绕开 ——
+   *   最终 28 个项目显示「建议参与」，教程里却是跨链组件的广告段。
+   *
+   * 边界必须覆盖：www 前缀、大小写、相对链接、聚合站跳转、子域名。
+   */
+  const officialStepLink = (html: string, officialHost?: string): string | undefined => {
+    if (!html || !officialHost) return undefined;
+    const host = officialHost.replace(/^www\./, '').toLowerCase();
+    const links = [...html.matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
+    for (const href of links) {
+      try {
+        const u = new URL(href);
+        const h = u.hostname.replace(/^www\./, '').toLowerCase();
+        if (h === host) return href;
+      } catch {
+        /* 相对链接不算官方来源 */
+      }
+    }
+    return undefined;
+  };
+
+  it('官方域名的链接被接受（含 www 前缀与大小写差异）', () => {
+    expect(officialStepLink('<a href="https://sweep.finance/a">x</a>', 'sweep.finance')).toBe(
+      'https://sweep.finance/a',
+    );
+    expect(officialStepLink('<a href="https://www.sweep.finance/a">x</a>', 'sweep.finance')).toBe(
+      'https://www.sweep.finance/a',
+    );
+    expect(officialStepLink('<a href="https://SWEEP.FINANCE/a">x</a>', 'sweep.finance')).toBe(
+      'https://SWEEP.FINANCE/a',
+    );
+  });
+
+  it('聚合站跳转与相对链接一律不算官方来源', () => {
+    expect(officialStepLink('<a href="/visit/r0b3/">x</a>', 'sweep.finance')).toBeUndefined();
+    expect(
+      officialStepLink('<a href="https://airdrops.io/goto/bybit/">x</a>', 'sweep.finance'),
+    ).toBeUndefined();
+  });
+
+  it('缺失官方域名时不做任何猜测', () => {
+    expect(officialStepLink('<a href="https://sweep.finance/a">x</a>', undefined)).toBeUndefined();
+    expect(officialStepLink('', 'sweep.finance')).toBeUndefined();
+  });
+
+  /**
+   * ⚠️ 已知取舍：子域名（app.example.com）**不**算官方来源。
+   *    这是刻意的保守选择 —— 官方步骤链接通常指向主域或 www，
+   *    而放宽到子域名会把 `app.airdrops.io` 这类聚合站子域也放进来。
+   *    实测当前来源侧的步骤链接数为 0（airdrops.io 并不给官方 HowTo 链接），
+   *    因此收紧不会丢数据，只会把「伪 sourced」如实降级。
+   */
+  it('子域名不算官方来源（保守取舍，避免把聚合站子域放进来）', () => {
+    expect(officialStepLink('<a href="https://app.sweep.finance/a">x</a>', 'sweep.finance')).toBeUndefined();
+  });
+});
