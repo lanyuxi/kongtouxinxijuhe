@@ -19,6 +19,8 @@ import type {
   SourceHealthFile,
 } from '../src/lib/types';
 import { adapters } from './fetch/index';
+import { loadCache as loadI18nCache } from './i18n/translate.mjs';
+import { readFileSync } from 'node:fs';
 import { normalizeAll } from './lib/normalize';
 import { mergeAll } from './lib/merge';
 import { applyAllSourced } from './lib/sourced';
@@ -72,9 +74,29 @@ async function readDetailProjects(dir: string): Promise<AirdropProject[]> {
   return out;
 }
 
+/**
+ * 加载教程中文化的机器翻译缓存（issue #28）。
+ *
+ * 缓存文件随仓库提交，运行期只查表、不发起任何翻译请求：
+ * 这样每 10 分钟的定时抓取不依赖第三方服务，文案也不会时好时坏。
+ * 缺缓存时教程会退回英文原文（前端仍会给出中文安全提示），不会报错中断。
+ */
+function loadLocalizationCache() {
+  try {
+    const file = path.join(ROOT, 'scripts', 'i18n', 'cache.zh.json');
+    const cache = JSON.parse(readFileSync(file, 'utf8'));
+    loadI18nCache(cache);
+    console.log(`[pipeline] 教程中文化缓存：${Object.keys(cache).length} 条`);
+  } catch (e) {
+    console.warn(`[pipeline] 教程中文化缓存缺失（教程将保留英文原文）：${(e as Error).message}`);
+    loadI18nCache({});
+  }
+}
+
 async function main() {
   const now = new Date().toISOString();
   console.log('[pipeline] 开始执行，时间：', now);
+  loadLocalizationCache();
   await writeRefreshStatus({ state: 'running', started_at: now });
 
   // 1) 读取上一版数据（Last Known Good）

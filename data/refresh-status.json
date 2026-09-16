@@ -1,14 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T01:49:19.777Z",
-  "finished_at": "2026-09-16T01:49:29.699Z",
+  "started_at": "2026-09-16T05:03:10.957Z",
+  "finished_at": "2026-09-16T05:03:24.931Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T01:49:19.777Z",
-  "data_changed": false,
-  "change_summary": "无实质变化",
-  "change_details": [],
+  "updated_at": "2026-09-16T05:03:10.957Z",
+  "data_changed": true,
+  "change_summary": "变更 2 个：Beezie 内容有更新；Nexus 内容有更新",
+  "change_details": [
+    "Beezie 内容有更新",
+    "Nexus 内容有更新"
+  ],
   "added": 0,
-  "modified": 0,
+  "modified": 2,
   "removed": 0
 }

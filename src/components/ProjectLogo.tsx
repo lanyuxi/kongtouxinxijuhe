@@ -57,7 +57,8 @@ export function ProjectLogo({
     <span className={box}>
       <img
         src={project.logo}
-        alt={`${project.name} Logo`}
+        // alt 也走中文（issue #28）：无障碍朗读同样应面向中文用户
+        alt={`${project.name} 项目图标`}
         loading="lazy"
         decoding="async"
         width={LOGO_PX[size]}
