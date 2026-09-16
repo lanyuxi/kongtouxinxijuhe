@@ -1,14 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T01:37:36.981Z",
-  "finished_at": "2026-09-16T01:37:46.993Z",
+  "started_at": "2026-09-16T01:39:03.662Z",
+  "finished_at": "2026-09-16T01:39:15.394Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T01:37:36.981Z",
+  "updated_at": "2026-09-16T01:39:03.662Z",
   "data_changed": true,
-  "change_summary": "新增 2 个",
-  "change_details": [],
-  "added": 2,
-  "modified": 0,
+  "change_summary": "变更 204 个：Aave Horizon RWA 真实性：22 → 32；Aave V3 真实性：26 → 39；Aave V4 真实性：23 → 35",
+  "change_details": [
+    "Aave Horizon RWA 真实性：22 → 32",
+    "Aave V3 真实性：26 → 39",
+    "Aave V4 真实性：23 → 35",
+    "Aerodrome Slipstream 真实性：22 → 32",
+    "Aiw3 真实性：13 → 23"
+  ],
+  "added": 0,
+  "modified": 204,
   "removed": 0
 }

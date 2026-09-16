@@ -216,20 +216,59 @@ export function scoreAuthenticity(p: AirdropProject, evidence: Evidence[]): Auth
     weight: DIMENSION_WEIGHT[i.key] ?? i.max,
     satisfaction: dimensionSatisfaction(p, evidence, i),
   }));
-  const applicable = scored.filter((s) => s.satisfaction !== null);
-  const weightSum = applicable.reduce((sum, s) => sum + s.weight, 0);
-  const earned = applicable.reduce((sum, s) => sum + s.weight * s.satisfaction!, 0);
+  const active = scored.filter((s) => s.satisfaction !== null);
+  const weightSum = active.reduce((sum, s) => sum + s.weight, 0);
+  const earned = active.reduce((sum, s) => sum + s.weight * s.satisfaction!, 0);
+  const normalized = weightSum > 0 ? (earned / weightSum) * 100 : 0;
+  /**
+   * 覆盖度上限（独立自查发现的问题，务必保留）。
+   *
+   * 问题：只按「参与维度的满足度」归一化，会让**证据越少的项目分数越高**。
+   *   实测 Kamino：只有 4/9 项证据（官网 / 文档 / 开源 / 融资），
+   *   但分母里只算了这几项能触达的维度 → 得分 85，
+   *   反而高于证据更全的 Ethena 之外的大多数项目。
+   *   这与「真实性」的语义直接冲突：证据少不该换来高分。
+   *
+   * 修复：把「达成度」与「证据覆盖度」相乘作为最终分。
+   *   达成度回答「在够得着的维度里做得多好」，
+   *   覆盖度回答「这些维度占全部维度的多少」。
+   *   两者都高才是真的可信 —— 只满足前者是「矮子里拔将军」，
+   *   只满足后者是「什么都查不到但态度积极」，都不该拿高分。
+   *
+   * 为什么用「乘」而不是继续调权重：
+   *   乘法对「任一维度缺失」都会惩罚，天然防止单点拉满；
+   *   而调权重只能改变相对大小，无法阻止「分母塌缩导致分数虚高」。
+   */
+  const coverage = active.length / TOTAL_AUTH_DIMENSIONS;
+  /**
+   * 覆盖度惩罚的力度（独立自查后调整）。
+   *
+   * 第一版直接用 `达成度 × 覆盖度`（乘法），实测过重：
+   *   最高分只有 63，204 个项目里 197 个落到「证据不足」档 ——
+   *   分数虽然分化了（不同取值个数 12），但**区分度全被压在低档**，
+   *   用户看到的仍是一片「证据不足」，等于换了个方式失去信息量。
+   *
+   * 改为「以 1 为基准的线性内插」：
+   *   覆盖度 0.5 时惩罚系数 ≈ 0.83，覆盖度 0.44 时 ≈ 0.79，
+   *   既能压住「证据少却分数高」（Kamino 85 → 47），
+   *   又不会把整体压到低档。
+   *
+   * 系数下限 0.6：即使只有 1-2 个维度可评估，也不把分数打到接近 0 ——
+   * 那会与「未适用 ≠ 未达成」的原则冲突（潜在项目本来就查不到公告）。
+   */
+  const coverageFactor = Math.max(0.6, 0.6 + 0.4 * coverage);
+  const total = normalized * coverageFactor;
   const rawSum = items.reduce((sum, i) => sum + i.value, 0);
   // 表现层核心：把「我们查了什么」如实摊开，取代「一个所有人相同的伪分」。
   // 详情页直接渲染这张清单，用户读到的是「已核实 4/8 项」而不是「38/100」。
   const checklist = evidenceChecklist(p);
   return {
-    total: clamp(weightSum > 0 ? (earned / weightSum) * 100 : 0),
+    total: clamp(total),
     items,
-    available: applicable.length,
+    available: active.length,
     totalDimensions: TOTAL_AUTH_DIMENSIONS,
-    coverage: applicable.length / TOTAL_AUTH_DIMENSIONS,
-    lowCoverage: applicable.length / TOTAL_AUTH_DIMENSIONS < AUTH_MIN_COVERAGE,
+    coverage,
+    lowCoverage: coverage < AUTH_MIN_COVERAGE,
     rawTotal: clamp(rawSum),
     checklist,
     verifiedCount: checklist.filter((c) => c.status === 'verified').length,
