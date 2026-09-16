@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/omega/",
-      "fetched_at": "2026-09-16T11:12:11.220Z"
+      "fetched_at": "2026-09-16T12:12:10.300Z"
     }
   ],
   "evidence": [
@@ -420,7 +420,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T11:12:11.220Z",
+  "last_checked_at": "2026-09-16T12:12:10.300Z",
   "last_changed_at": "2026-09-16T06:44:34.973Z",
   "sourcedSteps": [
     {
