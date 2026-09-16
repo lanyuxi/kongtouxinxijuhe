@@ -1,14 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T07:18:55.499Z",
-  "finished_at": "2026-09-16T07:19:07.809Z",
+  "started_at": "2026-09-16T07:42:09.751Z",
+  "finished_at": "2026-09-16T07:42:22.983Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T07:18:55.499Z",
-  "data_changed": false,
-  "change_summary": "无实质变化",
-  "change_details": [],
+  "updated_at": "2026-09-16T07:42:09.751Z",
+  "data_changed": true,
+  "change_summary": "变更 16 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；Concrete 内容有更新",
+  "change_details": [
+    "Aave V3 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "Concrete 内容有更新",
+    "EigenCloud 内容有更新",
+    "GTBTC 内容有更新"
+  ],
   "added": 0,
-  "modified": 0,
+  "modified": 16,
   "removed": 0
 }
