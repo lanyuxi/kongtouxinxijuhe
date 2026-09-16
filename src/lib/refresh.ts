@@ -86,6 +86,75 @@ export function isStale(index: LiveIndex | null, now = Date.now()): boolean {
 }
 
 /**
+ * 「一键更新」在当前部署下**到底能做什么**（P2-3，对应上轮审查 P2-3）。
+ *
+ * 为什么必须显式建模这件事：
+ *   线上是 GitHub Pages，没有配 `VITE_REFRESH_ENDPOINT`，
+ *   因此按钮实际只能「重新拉取已发布的 JSON」——**不会产生任何新数据**。
+ *   但按钮写着「一键更新」、点完显示「已更新到最新数据」，
+ *   用户会以为平台刚刚抓取了最新情报。
+ *
+ *   这是「用文案承诺了能力没有的事」，比按钮失效更伤信任。
+ *   修复取向是**如实命名**，而不是把按钮藏起来 ——
+ *   重新加载数据本身是有用的（能看到定时任务刚发布的新数据），
+ *   只是不该被说成「抓取」。
+ */
+export interface RefreshCapability {
+  /** 当前部署是否真的能触发服务端/CI 抓取 */
+  canTriggerFetch: boolean;
+  /** 按钮文案 */
+  buttonLabel: string;
+  /** 按钮下方的口径说明（必须如实告知用户这次点击的实际效果） */
+  note: string;
+}
+
+export function refreshCapability(endpoint: string | undefined | null): RefreshCapability {
+  const configured = typeof endpoint === 'string' && endpoint.trim().length > 0;
+  if (configured) {
+    return {
+      canTriggerFetch: true,
+      buttonLabel: '一键更新',
+      note: '点击后将触发一次完整抓取，抓取完成后自动加载最新数据',
+    };
+  }
+  return {
+    canTriggerFetch: false,
+    buttonLabel: '重新加载数据',
+    // 关键措辞：明确说「不会触发新的抓取」。
+    // 也不说「已更新到最新数据」—— 那是原实现里最误导的一句。
+    note: '当前部署未接入抓取触发器：点击只会重新加载已发布的数据，不会触发新的抓取',
+  };
+}
+
+/** 读取构建期注入的触发器地址 */
+export function refreshEndpoint(): string | undefined {
+  return import.meta.env.VITE_REFRESH_ENDPOINT as string | undefined;
+}
+
+/**
+ * 点击结果的说明文案（P2-3）。
+ *
+ * 与 `runRefresh` 里的旧逻辑相比，这里把「是否真的触发了抓取」
+ * 与「数据是否真的有变化」分成两个独立维度，不再用一句模糊的
+ * 「已更新到最新数据」覆盖所有情况。
+ */
+export function describeRefreshOutcome(input: {
+  triggered: boolean;
+  changed: boolean;
+  dataChanged: boolean;
+}): string {
+  const { triggered, changed, dataChanged } = input;
+  if (!triggered) {
+    // 未触发抓取：如实说明「只是重新加载了」，并明确「未触发新的抓取」
+    return changed
+      ? '已重新加载最新已发布数据（未触发新的抓取）'
+      : '已重新加载数据，内容未发生变化（未触发新的抓取）';
+  }
+  if (!changed) return '抓取任务已提交，本轮数据无内容变化';
+  return dataChanged ? '已更新到最新数据' : '已重新加载最新数据（本轮无内容变化）';
+}
+
+/**
  * 触发仓库抓取任务。
  *
  * 说明：静态站点本身没有触发能力，因此这里采用「尽力而为」策略：
@@ -97,9 +166,10 @@ export function isStale(index: LiveIndex | null, now = Date.now()): boolean {
  * 只是更新强度不同（完全重算 vs 拉取定时任务的最新产物）。
  */
 export async function triggerRefresh(): Promise<{ triggered: boolean; detail: string }> {
-  const endpoint = import.meta.env.VITE_REFRESH_ENDPOINT as string | undefined;
-  if (!endpoint) {
-    return { triggered: false, detail: '未配置触发器，已改为重新拉取最新数据' };
+  const endpoint = (refreshEndpoint() ?? '').trim();
+  if (!refreshCapability(endpoint).canTriggerFetch) {
+    // 措辞与 refreshCapability 保持一致：不承诺「抓取」，只说明「重新加载」
+    return { triggered: false, detail: '未接入抓取触发器，已改为重新加载已发布数据' };
   }
   try {
     const res = await fetch(endpoint, { method: 'POST', mode: 'cors' });
@@ -173,14 +243,13 @@ export async function runRefresh(
   const details = status?.change_details ?? [];
   const dataChanged = status?.data_changed;
 
-  let message: string;
-  if (changed) {
-    message = dataChanged === false ? '已是最新数据（本轮无内容变化）' : '已更新到最新数据';
-  } else if (trigger.triggered) {
-    message = '抓取任务已提交，数据暂未变化';
-  } else {
-    message = '已重新拉取最新数据（数据源无变化）';
-  }
+  // 文案统一收敛到 describeRefreshOutcome，避免「一处改了、另一处忘了」
+  // 导致的措辞不一致（P2-3 的核心正是措辞诚信）。
+  let message = describeRefreshOutcome({
+    triggered: trigger.triggered,
+    changed,
+    dataChanged: dataChanged !== false,
+  });
   if (summary && summary !== '无实质变化') message += `：${summary}`;
 
   return { dataset, index, changed, message, details };

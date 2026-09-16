@@ -61,9 +61,39 @@ export function buildOfficialDomains(
     if (!w) continue;
     const host = hostOf(w);
     if (!host) continue;
+    // 非空投条目（交易所 / 跨链桥 / 质押衍生品）不得进入官方域名库。
+    // 为什么必须挡在这里：本表是「防骗自查」的比对基准。
+    // 若把 binance.com 这类交易所域名当成「本库已知官方域名」，
+    // 用户拿真域名来比对会被判「无法确认」，反而制造出「真假难辨」的错觉；
+    // 而这类条目本来就不该出现在空投库里（P0-1 数据治理同步处理）。
+    if (isNonAirdropName(p.name)) continue;
     if (!map[host]) map[host] = p.name;
   }
   return map;
+}
+
+/** 与 scripts/lib/non-airdrop.ts 保持同一份规则的轻量镜像（前端不能 import scripts/） */
+const NON_AIRDROP_NAME_PATTERNS: RegExp[] = [
+  /\bcex\b/i,
+  /\bdex\s?cex\b/i,
+  /\bwrapped\b/i,
+  /\bstaked?\b/i,
+  /\bliquid\b/i,
+  /\blst\b|\blrt\b/i,
+  /\bpooled\b/i,
+  /\bindex\b/i,
+  /\bvault\b/i,
+  /\bbridge\b/i,
+  /\bderivatives?\b/i,
+  /\bbinance\b|\bcoinbase\b|\bokx\b|\bbybit\b|\bbitfinex\b|\bkraken\b|\bkorbit\b|\bindodax\b|\bgate\b|\bhtx\b|\bhuobi\b|\bkucoin\b/i,
+  /\bgemini\b|\bmexc\b|\brobinhood\b|\bbitget\b|\bbitstamp\b|\bbitvavo\b|\bbitkub\b|\bbitmex\b|\bderibit\b|\bhashkey\b|\bnexo\b|\bpoloniex\b|\bphemex\b/i,
+  /\bcrypto\.com\b|\bswissborg\b|\bosl\b|\bweex\b|\bbingx\b/i,
+];
+
+export function isNonAirdropName(name: string): boolean {
+  const n = (name ?? '').trim();
+  if (!n) return false;
+  return NON_AIRDROP_NAME_PATTERNS.some((re) => re.test(n));
 }
 
 /**

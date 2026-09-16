@@ -50,9 +50,15 @@ export function StatBar({
     },
     {
       key: 'newToday',
-      label: '今日新增',
-      value: projects.filter((p) => new Date(p.discovered_at).getTime() >= todayStart).length,
-      note: `数据更新 ${relativeTime(updatedAt)}`,
+      // 口径修正（P2-1）：原叫「今日新增」，但数字实际统计的是
+      // 「本轮首次进入当前筛选口径」的项目 —— 实测那批项目的来源抓取时间是 4 天前，
+      // 它们不是「今天出现的空投」。改用 first_seen_at（本系统首次收录时间）后，
+      // 文案与口径严格一致，并明确写出「本平台首次收录」以免被读成「世界上今天出现」。
+      label: '今日新收录',
+      value: projects.filter(
+        (p) => new Date(p.first_seen_at ?? p.discovered_at).getTime() >= todayStart,
+      ).length,
+      note: `本平台首次收录 · 数据更新 ${relativeTime(updatedAt)}`,
       tone: 'ink',
     },
     {

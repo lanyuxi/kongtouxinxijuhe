@@ -18,9 +18,26 @@
 
 import type { AirdropProject } from '../../src/lib/types';
 import type { NormalizedItem } from './normalize';
+import { classifyNonAirdrop } from './non-airdrop';
 
 /** 连续多少轮未被任何来源提及后清理 */
 const MISS_STREAK_LIMIT = 2;
+
+/**
+ * 「来源已停止收录」的最长宽限轮次（P0-1）。
+ *
+ * 与 MISS_STREAK_LIMIT 的区别：
+ *   - MISS_STREAK_LIMIT 适用于「有官方证据的真项目」，来源波动不应删数据；
+ *   - 这里适用于**只有第三方来源、且没有任何官方证据**的条目。
+ *     它们之所以还在库里，唯一原因是「某来源曾经收录过」。
+ *     一旦该来源不再收录，就没有任何理由继续保留 ——
+ *     否则历史误抓的运营页 / 交易所条目会永久驻留，这正是 BUG-1 的成因。
+ *
+ * 为什么仍然给 3 轮宽限而不是立刻删：
+ *   来源侧的列表页存在轮换与分页，单轮缺席可能只是排序变化。
+ *   3 轮（≈ 定时任务 3 轮）足以区分「偶发缺席」与「真的停收」。
+ */
+const SOURCE_DROPPED_LIMIT = 3;
 
 /** 已知的聚合站运营页 / 交易所跳转页路径关键词（历史误抓） */
 const NON_PROJECT_SLUGS = new Set([
@@ -62,6 +79,25 @@ export function pruneProjects(
   }
 
   const kept = projects.filter((p) => {
+    const hasHumanProfile = knownProfileSlugs.has(p.slug);
+    const hasOfficialEvidence = p.evidence.some(
+      (e) => e.verified && /^official_|^quest_space$/.test(e.type),
+    );
+
+    // 0) 非空投条目：交易所 / 跨链桥 / 质押衍生品 / 聚合站运营页。
+    //    这类条目**无论本轮是否被提及**都不应该出现在空投库里。
+    //    为什么放在最前面：它必须能压过「本轮被提及」这条豁免 ——
+    //    DefiLlama 每轮都会继续返回 Binance CEX，只要按「本轮出现即保留」
+    //    处理，它就永远清不掉（这正是 BUG-1 顽固了数天的原因）。
+    const verdict = classifyNonAirdrop({
+      name: p.name,
+      categoryText: p.sources.some((s) => s.name === 'DefiLlama') ? p.category : undefined,
+    });
+    if (verdict.excluded && !hasHumanProfile) {
+      removed.push(p.slug);
+      return false;
+    }
+
     if (thisRoundSlugs.has(p.slug)) {
       // 本轮被提及：清零「缺席计数」
       delete p.miss_streak;
@@ -69,13 +105,10 @@ export function pruneProjects(
     }
 
     // 有官方证据的真项目：保留（来源波动不应导致被删）
-    const hasOfficialEvidence = p.evidence.some(
-      (e) => e.verified && /^official_|^quest_space$/.test(e.type),
-    );
     if (hasOfficialEvidence) return true;
 
     // 人工登记过的项目：保留
-    if (knownProfileSlugs.has(p.slug)) return true;
+    if (hasHumanProfile) return true;
 
     // 已经不在本轮来源、且属于已知运营页 → 立即清理
     if (NON_PROJECT_SLUGS.has(p.slug)) {
@@ -89,6 +122,16 @@ export function pruneProjects(
       removed.push(p.slug);
       return false;
     }
+
+    // 边界情况：只有第三方来源、且没有任何官方证据的条目。
+    // 它们没有「官方证据」这个免死金牌，宽限期应显著更短 ——
+    // 否则只要曾经被某个来源收录过，就会无限期驻留。
+    const onlyThirdParty = !hasOfficialEvidence;
+    if (onlyThirdParty && streak >= SOURCE_DROPPED_LIMIT) {
+      removed.push(p.slug);
+      return false;
+    }
+
     p.miss_streak = streak;
     return true;
   });

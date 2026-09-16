@@ -44,14 +44,36 @@ const NON_OFFICIAL_HOSTS = [
   'trk' /* 营销短链：click.trkreels.com 之类 */,
 ];
 
-/** 是否可信的「官方站点」域名 */
+/**
+ * 是否可信的「官方站点」域名。
+ *
+ * ⚠ 匹配方式必须是「域名级」的，不能用 `host.includes(bad)` 做子串匹配。
+ *   2026-09-16 实测到的真实 BUG：
+ *     `x.com` 是聚合站黑名单里的一项（官方 X 账号链接，不是项目官网），
+ *     而 `frax.com` 里巧合地含有子串 `x.com` ——
+ *     于是 Fraxtal 的官网 `frax.com` 被判成「非官方域名」，
+ *     该项目的图标抓取直接没有候选地址，导致 `ensure-logos` 在构建期中断，
+ *     整条发布链路（单测 / 校验 / 构建 / 发布）被一个域名子串匹配错误卡死。
+ *   同名的坑还有 `trk`（营销短链）这类过短的关键词，
+ *   任何包含这三个字母的域名都会被误杀。
+ *
+ *   因此这里改为三段判断，且全部限定在「标签边界」上：
+ *     1. 完全相等；
+ *     2. 是黑名单域名的子域（host 以 `.bad` 结尾）；
+ *     3. host 按 `.` 切分后，某一段标签完全等于黑名单项（用于 `t.me`、`x.com`、
+ *        `trk` 这类「本身就是一段标签」的条目）。
+ *   这样 `frax.com` 不再命中 `x.com`，`t.me` 与 `click.trk` 仍然能被拦住。
+ */
 export function isOfficialHost(host) {
   if (!host) return false;
   if (!host.includes('.')) return false;
-  if (/^(www\.)?[a-z0-9-]+\.(io|xyz|fi|so|ag|com|org|net|finance|exchange|fun|world|ai|one|tech|network|co|app|dev|dao|money|cash|farm|protocol|labs)?$/.test(host) === false) {
-    /* 兜底规则留给下面的排除表，这里不做后缀白名单限制 */
-  }
-  return !NON_OFFICIAL_HOSTS.some((bad) => host === bad || host.endsWith(`.${bad}`) || host.includes(bad));
+  const labels = host.split('.');
+  return !NON_OFFICIAL_HOSTS.some(
+    (bad) =>
+      host === bad ||
+      host.endsWith(`.${bad}`) ||
+      labels.includes(bad),
+  );
 }
 
 /**

@@ -111,11 +111,31 @@ export function protocolTypeOf(tagline: string): string | null {
 export function taglineSaysConfirmed(tagline: string): boolean {
   const t = tagline.toLowerCase();
   // 先排除否定句式，避免把 "has not confirmed" 判成已确认
-  if (/not\s+(yet\s+)?confirm|no\s+token|hasn'?t\s+confirm|unconfirmed/.test(t)) return false;
+  if (
+    /not\s+(yet\s+)?confirm|no\s+token|hasn'?t\s+confirm|haven'?t\s+confirm|unconfirmed|not\s+live|not\s+open/.test(
+      t,
+    )
+  ) {
+    return false;
+  }
   return /\bis confirmed\b|\bare confirmed\b|\bconfirmed\b|\bis live\b|\bare live\b|has airdropped|claim is open|is open/.test(
     t,
   );
 }
+
+/**
+ * 与流水线侧 `scripts/lib/status.ts` 的推断规则保持一致。
+ *
+ * 为什么必须显式对齐：
+ *   这里原本只有「文案对账」（避免简介与状态自相矛盾），
+ *   而 P1-1 之后流水线会**真的按 tagline 修正 status**。
+ *   两处规则若漂移，就会出现「文案认为已确认、数据已被改成潜在」的新矛盾 ——
+ *   正是这次要修的那类问题。因此把否定词表与肯定词表统一口径。
+ *   注意：这里不引入 scripts/ 的依赖（前端不能引构建脚本），
+ *   改为在测试中做「两处规则行为一致」的交叉校验，见 tests/p1-1-status-consistency.test.ts。
+ */
+export const TAGLINE_NEGATIVE_HINT =
+  /not\s+(yet\s+)?confirm|no\s+token|hasn'?t\s+confirm|haven'?t\s+confirm|unconfirmed|not\s+live|not\s+open/i;
 
 /**
  * 生成一句话中文简介。

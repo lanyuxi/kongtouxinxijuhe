@@ -97,7 +97,17 @@ export function ProjectCard({
   const chain = p.chains[0] ? CHAIN_LABEL[p.chains[0]] : '';
   const href = `#/project/${p.slug}`;
   const actions = operationSummary(p).join('、');
-  const actionText = actions ? `操作：${actions}` : '操作：查看项目详情';
+  /**
+   * 操作摘要。
+   *
+   * 为什么不再是「操作：查看项目详情」（P1-2 一并修）：
+   *   实测全站有 31 个项目的 tasks 为空，卡片上一律显示
+   *   「操作：查看项目详情」—— 这句占位文案等于没有操作信息，
+   *   却在视觉上与真实摘要（「操作：存入资产、借出资产」）一模一样，
+   *   用户无法分辨「没有信息」和「有信息」。
+   *   现在改为如实告知「任务信息待补全」，并提示去看官方。
+   */
+  const actionText = actions ? `操作：${actions}` : '操作：任务信息待补全，请以官方页面为准';
   const beginner = beginnerVerdict(p);
   const valuePct = percentiles?.value.get(p.slug);
 

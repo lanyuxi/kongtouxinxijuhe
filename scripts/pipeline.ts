@@ -9,7 +9,7 @@
  * - 不变量 3：单个来源失败不能清空数据集，必须保留 Last Known Good
  */
 
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import type { Dataset, RefreshStatus, SourceHealth, SourceHealthFile } from '../src/lib/types';
@@ -26,6 +26,8 @@ import { describeDiff, describeDiffDetails, diffProjects, projectDigest } from '
 import { writeLiveSnapshots } from './lib/live';
 import type { LiveSnapshot } from './lib/live';
 import { canPrune, pruneProjects } from './lib/prune';
+import { reconcileAll } from './lib/status';
+import { markFirstSeenAll } from './lib/first-seen';
 import { loadProfiles } from './lib/enrich';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -118,6 +120,17 @@ async function main() {
     console.log(`[pipeline] 清理 ${pruned.removed.length} 个失效条目：${pruned.removed.join('、')}`);
   }
 
+  // 3.15) Status 对账（P1-1）：用 tagline 的明确信号修正 status。
+  //
+  //       为什么必须在 Sourced 之前（而不是之后）：
+  //         Sourced 会用数据源描述覆盖 tagline，而对账依据正是 tagline。
+  //         顺序反了会先用旧 tagline 对账、再换成新 tagline，出现新的不一致。
+  {
+    const reconciled = reconcileAll(projects);
+    projects = reconciled.projects;
+    for (const c of reconciled.changes) console.log(`[pipeline] status 对账：${c}`);
+  }
+
   // 3.2) Sourced：把真实抓取到的官网 / 描述 / 教程步骤落到项目上
   //      （人工档案在 Enrich 阶段覆盖，优先级更高）
   projects = applyAllSourced(projects, rawItems);
@@ -184,9 +197,28 @@ async function main() {
     return a.slug.localeCompare(b.slug, 'en');
   });
 
+  // 4.8) 首次记录时间（P2-1）：补 `first_seen_at`，让「今日新收录」的口径
+  //      与用户理解一致。
+  //
+  //      为什么不能直接用 `discovered_at` 当「新增」：
+  //        实测 2026-09-16「新增」的 13 个项目，其来源抓取时间是 9-12 ——
+  //        它们不是「今天出现的空投」，而是「今天首次进入当前筛选口径」。
+  //        把后者说成「今日新增」，会让用户以为每天冒出十几个新机会。
+  //      `first_seen_at` 从 `created_at` 继承，历史项目不会被回填成今天。
+  {
+    const marked = markFirstSeenAll(projects, new Date(now));
+    projects = marked.projects;
+    if (marked.backfilled) {
+      console.log(`[pipeline] first_seen_at：为 ${marked.backfilled} 个历史项目回填首次记录时间`);
+    }
+  }
+
   const startOfDay = new Date(now.slice(0, 10) + 'T00:00:00Z').getTime();
+  // 「今日新收录」= 首次记录时间落在今天的项目数。
+  // 命名从 new_today 的旧语义（今日进入筛选范围）改为「今日首次收录」，
+  // 与磁贴文案、以及 first_seen_at 的口径严格一致。
   const newToday = projects.filter(
-    (p) => new Date(p.discovered_at).getTime() >= startOfDay,
+    (p) => new Date(p.first_seen_at ?? p.discovered_at).getTime() >= startOfDay,
   ).length;
 
   const dataset: Dataset = {
@@ -205,6 +237,20 @@ async function main() {
       JSON.stringify(p, null, 2) + '\n',
       'utf8',
     );
+  }
+
+  // 6.1) 清理**孤儿分片**：已经不在数据集里的 slug，其 data/details/<slug>.json 必须删除。
+  //
+  //      为什么必须做（P0-1 的核心一环）：
+  //        分片目录由「先 rm -rf 再全量重写」维护，但只要有一次是手工提交、
+  //        或者某个中间版本的写入被中断，残片就会永久留在仓库里。
+  //        实测 2026-09-16：56 个孤儿分片，其中 binance-cex.json 的
+  //        recommendation.action 仍是「可参与」，任何消费 data/details/ 的
+  //        程序（含历史版本前端 / 外部索引 / 脚本）都会把交易所读成空投项目。
+  //        这类「已出库但仍可被读到」的残留，比列表页上的错误更隐蔽。
+  const orphans = await cleanupOrphanDetails(new Set(projects.map((p) => p.slug)));
+  if (orphans.length) {
+    console.log(`[pipeline] 清理孤儿分片 ${orphans.length} 个：${orphans.join('、')}`);
   }
 
   const healthFile: SourceHealthFile = { updated_at: now, sources: health };
@@ -240,6 +286,34 @@ async function main() {
   console.log(
     `[pipeline] 完成：${projects.length} 个项目，${okCount}/${health.length} 个来源正常，今日新增 ${newToday}`,
   );
+}
+
+/**
+ * 删除 data/details 下「不在当前数据集里」的分片文件。
+ *
+ * 只删除 `.json` 分片，且只删除 slug 确实已出库的文件；
+ * 任何读取失败都视为「无法确认 → 不删除」，宁留勿误删。
+ */
+async function cleanupOrphanDetails(liveSlugs: Set<string>): Promise<string[]> {
+  const removed: string[] = [];
+  let files: string[];
+  try {
+    files = await readdir(DETAILS_DIR);
+  } catch {
+    return removed;
+  }
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    const slug = file.slice(0, -'.json'.length);
+    if (liveSlugs.has(slug)) continue;
+    try {
+      await rm(path.join(DETAILS_DIR, file), { force: true });
+      removed.push(slug);
+    } catch {
+      /* 删不掉就留着，不影响本轮发布 */
+    }
+  }
+  return removed;
 }
 
 /** 写入抓取任务状态（失败也要写，前端据此展示真实原因） */

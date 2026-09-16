@@ -78,6 +78,35 @@ export interface ScoreBreakdown {
   valueItems: ScoreItem[];
   /** 风险评分明细 */
   riskItems: ScoreItem[];
+  /**
+   * 证据核查清单（P1-3）：逐项说明「查了什么 / 查到什么」。
+   *
+   * 为什么必须有这张清单，而不是只给一个真实性百分比：
+   *   实测 202 个项目里有 130 个的结构化证据完全同形
+   *   （官网 + 官方 X + 1 个第三方来源，没有 Docs / GitHub / 融资 / 合约信息）。
+   *   对这批项目，**任何百分比都会是同一个数字** ——
+   *   这不是公式没调好，而是数据本身没有区分度。
+   *   与其给一个看起来精确的伪分，不如如实说「已核实 4/8 项」。
+   */
+  evidenceChecklist?: EvidenceCheckItem[];
+  /** 清单里「已核实」的项数 */
+  authenticityVerifiedCount?: number;
+  /** 清单里「部分满足」的项数 */
+  authenticityPartialCount?: number;
+  /** 证据覆盖率所用的总项数 */
+  authenticityTotalCount?: number;
+}
+
+/** 证据核查清单的单条结果（三态） */
+export interface EvidenceCheckItem {
+  label: string;
+  /**
+   * verified        已核实
+   * missing         查了但没查到（这是一条真实信息，用户应当知道）
+   * not_applicable  该维度对这类项目本就不存在（不参与评估）
+   */
+  status: 'verified' | 'partial' | 'missing' | 'not_applicable';
+  note: string;
 }
 
 /** 来源记录：任何进入系统的数据都必须带来源 */
@@ -235,6 +264,19 @@ export interface AirdropProject {
 
   /** 发现时间 */
   created_at: string;
+  /**
+   * 该项目**在本系统里**首次被记录的时间（P2-1）。
+   *
+   * 为什么需要它：`discovered_at` 的语义是「本轮首次进入数据集」，
+   * 而前端把它当作「这个空投第一次出现的时间」展示成「今日新增」。
+   * 实测 2026-09-16「新增」的 13 个项目，其来源抓取时间是 9-12，
+   * 说明它们不是「今天出现的空投」，而是「今天首次进入当前筛选口径」。
+   *
+   * 我们无从得知一个项目在世界上第一次出现的时间（猜就是编造），
+   * 但**确切知道**它在我们系统里第一次被记录的时间 —— 那就是这个字段。
+   * 磁贴文案据此改为「今日新收录」，口径与字面一致。
+   */
+  first_seen_at?: string;
   /** 数据新鲜度三件套 */
   discovered_at: string;
   /** 最近一次「被数据源检查」的时间，每轮抓取都会更新 */
@@ -296,7 +338,11 @@ export interface SourceHealthFile {
 
 export interface Dataset {
   updated_at: string;
-  /** 今日新增数量 */
+  /**
+   * 今日「新收录」的项目数（P2-1）。
+   * 口径 = `first_seen_at` 落在今天（UTC）且未结束的项目。
+   * 注意不是「今天在世界上出现的空投」—— 那无从得知，见 AirdropProject.first_seen_at。
+   */
   new_today: number;
   projects: AirdropProject[];
 }
