@@ -1,20 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T01:40:18.658Z",
-  "finished_at": "2026-09-16T01:40:26.762Z",
+  "started_at": "2026-09-16T01:41:19.263Z",
+  "finished_at": "2026-09-16T01:41:28.869Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T01:40:18.658Z",
-  "data_changed": true,
-  "change_summary": "变更 96 个：Aave Horizon RWA 内容有更新；Aave V3 内容有更新；Aave V4 内容有更新",
-  "change_details": [
-    "Aave Horizon RWA 内容有更新",
-    "Aave V3 内容有更新",
-    "Aave V4 内容有更新",
-    "Aerodrome Slipstream 内容有更新",
-    "b14g 内容有更新"
-  ],
+  "updated_at": "2026-09-16T01:41:19.263Z",
+  "data_changed": false,
+  "change_summary": "无实质变化",
+  "change_details": [],
   "added": 0,
-  "modified": 96,
+  "modified": 0,
   "removed": 0
 }

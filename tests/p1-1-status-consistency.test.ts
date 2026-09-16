@@ -148,3 +148,50 @@ describe('P1-1 前后端规则一致性（防止两处实现漂移）', () => {
     }
   });
 });
+
+/**
+ * P1-1 独立压测（由审查员提出的疑点反例）。
+ *
+ * 这三类误判的后果比原问题严重得多 ——
+ * 把仍在进行的项目判成「已结束」会让它从列表里消失，
+ * 把「被确认为骗局」翻成「官方确认有空投」直接误导用户。
+ * 因此这些用例必须长期存在。
+ */
+describe('P1-1 独立压测：分阶段活动不得被判成已结束', () => {
+  const stillActive = [
+    'The claim window is closed for phase 1, phase 2 opens next week.',
+    'Phase 1 claim has ended, Season 2 is live.',
+    'Season 1 claim is closed but Season 2 is open.',
+  ];
+  for (const t of stillActive) {
+    it(`不得判 ended：${t}`, () => {
+      expect(inferStatusFromTagline(t)).not.toBe('ended');
+    });
+  }
+
+  it('确实整体结束的仍要判 ended', () => {
+    expect(inferStatusFromTagline('The airdrop has ended.')).toBe('ended');
+    expect(inferStatusFromTagline('Phase 1 claim has ended.')).toBe('ended');
+    expect(inferStatusFromTagline('The claim window is closed.')).toBe('ended');
+  });
+});
+
+describe('P1-1 独立压测：假设句与「确认为坏消息」不得判为已确认', () => {
+  const notFacts = [
+    'The airdrop will be confirmed soon.',
+    'Once confirmed, users can claim.',
+    'If the airdrop is confirmed, we will announce.',
+    'The airdrop was confirmed to be a scam.',
+    'Airdrop is confirmed to have been cancelled.',
+  ];
+  for (const t of notFacts) {
+    it(`不得判 confirmed：${t}`, () => {
+      expect(inferStatusFromTagline(t)).not.toBe('confirmed');
+    });
+  }
+
+  it('真正的已确认仍要判 confirmed', () => {
+    expect(inferStatusFromTagline('The Infinex airdrop is confirmed and live.')).toBe('confirmed');
+    expect(inferStatusFromTagline('The $PC airdrop is confirmed.')).toBe('confirmed');
+  });
+});

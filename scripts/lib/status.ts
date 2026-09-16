@@ -47,12 +47,65 @@ const STATUS_RANK: Record<AirdropStatus, number> = {
  */
 const NEGATIVE = /not\s+(yet\s+)?confirm|no\s+token|hasn'?t\s+confirm|haven'?t\s+confirm|unconfirmed|尚未确认|未有确认|not\s+live|not\s+open/i;
 
-/** 「已结束」信号 */
-const ENDED = /\bhas\s+(now\s+)?ended\b|\bairdrop\s+ended\b|\bclaim\s+(window\s+)?(is\s+)?closed\b|\bno\s+longer\s+claimable\b|已结束|领取已关闭/i;
+/**
+ * 「已结束」信号。
+ *
+ * ⚠️ 必须排除「分阶段活动」与「后续仍有开放期」的表述
+ *   （2026-09-16 独立压测发现的反例，务必保留）：
+ *     · `The claim window is closed for phase 1, phase 2 opens next week.`
+ *     · `Phase 1 claim has ended, Season 2 is live.`
+ *     · `Season 1 claim is closed but Season 2 is open.`
+ *   这三句里都出现「closed / ended」，但**活动整体仍然开放**。
+ *   把它们判成 `ended` 会把一个正在进行的项目从列表里移除，
+ *   比原问题（已结束项目留在列表）严重得多 —— 用户会以为项目消失了。
+ *
+ *   因此判定分两步：
+ *     1. 先看是否明确「整体结束」（`has ended` / `no longer claimable`）；
+ *     2. 只看 `closed` 时，要求**不能出现后续期次仍在开放**的表述。
+ */
+const ENDED_ABSOLUTE =
+  /\bhas\s+(now\s+)?ended\b|\bairdrop\s+(has\s+)?ended\b|\bno\s+longer\s+claimable\b|\bairdrop\s+is\s+over\b|已结束|活动已结束/i;
 
-/** 「已确认」信号 */
+/**
+ * 期次级结束：`Phase 1 claim has ended` / `Season 1 has ended`。
+ *
+ * 与 `ENDED_ABSOLUTE` 分开，因为它**只在没有后续期次开放时才成立**。
+ * 实测反例：`Phase 1 claim has ended, Season 2 is live.` ——
+ * 整句确实含 `has ended`，但活动整体仍在进行。
+ */
+const ENDED_PHASE_SCOPED =
+  /\b(phase|season|round|stage|epoch)\s*\d*[^.]{0,30}\b(has\s+)?(now\s+)?ended\b/i;
+/** 仅 `closed` 类措辞：需要额外排除「后续期次仍开放」 */
+const ENDED_SOFT = /\bclaim\s+(window\s+)?(is\s+)?closed\b|\bclaiming\s+(is\s+)?closed\b|领取已关闭/i;
+/**
+ * 「后续期次仍在开放」信号：一旦命中，`closed` 不再作为整体结束的依据。
+ * 覆盖 `phase 2 opens next week` / `Season 2 is live` / `Season 2 is open`
+ * 这类「本期关了但还有下一期」的表述。
+ */
+const LATER_PHASE_OPEN =
+  /\b(phase|season|round|stage|epoch)\s*\d*\s*(is\s+)?(now\s+)?(open|live|active|ongoing|opens?|starts?)\b|\bnext\s+(phase|season|round)\b|后续(阶段|期次)|下一(期|阶段)/i;
+
+/**
+ * 「已确认」信号。
+ *
+ * ⚠️ 必须排除假设句与否定结论（2026-09-16 独立压测发现的反例）：
+ *   · `If the airdrop is confirmed, we will announce.`  → 假设句，不是事实
+ *   · `The airdrop was confirmed to be a scam.`         → 「被确认为骗局」
+ *   · `Airdrop is confirmed to have been cancelled.`    → 「被确认已取消」
+ *   后两句里 `confirmed` 修饰的是 **坏消息**，若判成「已确认空投」，
+ *   等于把「官方说这是骗局」翻成「官方确认有空投」——
+ *   这是整个系统里最危险的一类误判。
+ */
 const CONFIRMED =
   /\bis\s+confirmed\b|\bare\s+confirmed\b|\bhas\s+been\s+confirmed\b|\baidrop\s+is\s+confirmed\b|\bhas\s+airdropped\b|\bairdrop(ed)?\s+(has\s+)?(run|runs|started)\b/i;
+
+/** 「confirmed 之后跟着的是坏消息」——这类句子里的 confirmed 不构成空投确认 */
+const CONFIRMED_BAD_NEWS =
+  /confirm(ed)?\s+to\s+(be|have\s+been)\s+(a\s+)?(scam|fraud|phishing|fake|rug|cancel\w*|hack\w*|exploit\w*)|confirmed\s+(a\s+)?(scam|fraud|rug)|被确认为(骗局|诈骗)|确认(已)?(取消|终止)/i;
+
+/** 假设 / 将来 / 条件句：出现即不把 confirmed 当作已发生的事实 */
+const HYPOTHETICAL =
+  /\b(if|once|when|unless|in\s+case)\b[^.]{0,60}\b(confirm\w*|live|open\w*)\b|\bwill\s+be\s+confirm\w*|\bto\s+be\s+confirm\w*|\bwould\s+be\s+confirm\w*|一经确认|若(确认|开放)|确认后将/i;
 
 /** 「已开放领取」信号 */
 const CLAIM_LIVE = /\bclaim\s+is\s+open\b|\bclaiming\s+(is\s+)?(now\s+)?live\b|\bclaim\s+(now\s+)?live\b|\bclaim\s+has\s+(now\s+)?(opened|started)\b/i;
@@ -66,9 +119,29 @@ const CLAIM_LIVE = /\bclaim\s+is\s+open\b|\bclaiming\s+(is\s+)?(now\s+)?live\b|\
 export function inferStatusFromTagline(tagline: string): AirdropStatus | null {
   const t = (tagline ?? '').trim();
   if (!t) return null;
-  // 否定优先：这一条必须在所有肯定规则之前
+
+  // 1) 否定优先（`is not confirmed` / `no token` / `unconfirmed` …）
   if (NEGATIVE.test(t)) return null;
-  if (ENDED.test(t)) return 'ended';
+
+  // 2) 假设 / 条件句：`If the airdrop is confirmed…` 不是事实陈述
+  if (HYPOTHETICAL.test(t)) return null;
+
+  // 3) `confirmed` 指向坏消息：`was confirmed to be a scam`
+  if (CONFIRMED_BAD_NEWS.test(t)) return null;
+
+  // 4) 后续期次仍在开放 → 先判定这一条，避免被期次级 `has ended` 误判。
+  //    顺序很关键：`Phase 1 claim has ended, Season 2 is live.` 同时命中
+  //    ENDED_ABSOLUTE 与 LATER_PHASE_OPEN，必须让「仍在开放」优先。
+  if (LATER_PHASE_OPEN.test(t)) {
+    return CLAIM_LIVE.test(t) ? 'claim_live' : null;
+  }
+
+  // 5) 整体结束：无条件成立
+  if (ENDED_ABSOLUTE.test(t)) return 'ended';
+
+  // 6) 期次级结束 / 仅 `closed` 类措辞：无后续期次即视为整体结束
+  if (ENDED_PHASE_SCOPED.test(t) || ENDED_SOFT.test(t)) return 'ended';
+
   if (CLAIM_LIVE.test(t)) return 'claim_live';
   if (CONFIRMED.test(t)) return 'confirmed';
   return null;
