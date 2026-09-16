@@ -1,18 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T10:12:10.567Z",
-  "finished_at": "2026-09-16T10:12:26.240Z",
+  "started_at": "2026-09-16T10:42:10.836Z",
+  "finished_at": "2026-09-16T10:42:21.387Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T10:12:10.567Z",
+  "updated_at": "2026-09-16T10:42:10.836Z",
   "data_changed": true,
-  "change_summary": "变更 3 个：mETH Protocol 内容有更新；StakeWise V3 内容有更新；Veda 内容有更新",
+  "change_summary": "变更 26 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
   "change_details": [
-    "mETH Protocol 内容有更新",
-    "StakeWise V3 内容有更新",
-    "Veda 内容有更新"
+    "Aave V3 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
+    "CIAN Yield Layer 内容有更新"
   ],
   "added": 0,
-  "modified": 3,
+  "modified": 26,
   "removed": 0
 }
