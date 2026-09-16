@@ -1,14 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T01:49:19.777Z",
-  "finished_at": "2026-09-16T01:49:29.699Z",
+  "started_at": "2026-09-16T02:22:09.534Z",
+  "finished_at": "2026-09-16T02:22:21.099Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T01:49:19.777Z",
-  "data_changed": false,
-  "change_summary": "无实质变化",
-  "change_details": [],
+  "updated_at": "2026-09-16T02:22:09.534Z",
+  "data_changed": true,
+  "change_summary": "变更 7 个：Babylon Protocol 内容有更新；Gauntlet 内容有更新；Hyperithm 内容有更新",
+  "change_details": [
+    "Babylon Protocol 内容有更新",
+    "Gauntlet 内容有更新",
+    "Hyperithm 内容有更新",
+    "Kelp 内容有更新",
+    "Lido 内容有更新"
+  ],
   "added": 0,
-  "modified": 0,
+  "modified": 7,
   "removed": 0
 }
