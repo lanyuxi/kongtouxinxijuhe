@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-16T08:12:09.639Z",
-  "finished_at": "2026-09-16T08:12:21.455Z",
+  "started_at": "2026-09-16T09:12:10.186Z",
+  "finished_at": "2026-09-16T09:12:22.668Z",
   "sources": 2,
   "ok_sources": 2,
-  "updated_at": "2026-09-16T08:12:09.639Z",
+  "updated_at": "2026-09-16T09:12:10.186Z",
   "data_changed": true,
-  "change_summary": "变更 9 个：Babylon Protocol 内容有更新；Clearstar 内容有更新；Ethena USDe 内容有更新",
+  "change_summary": "变更 38 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
+    "Aave V3 内容有更新",
+    "B2 Buzz 内容有更新",
     "Babylon Protocol 内容有更新",
-    "Clearstar 内容有更新",
-    "Ethena USDe 内容有更新",
-    "Gauntlet 内容有更新",
-    "Hyperithm 内容有更新"
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新"
   ],
   "added": 0,
-  "modified": 9,
+  "modified": 38,
   "removed": 0
 }
