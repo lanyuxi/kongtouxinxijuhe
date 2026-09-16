@@ -284,6 +284,12 @@ export function DetailView({
               <label className="label" htmlFor="detail-progress">
                 我的参与进度
               </label>
+              {/*
+                未收藏时**不能**渲染成「已收藏」（原 BUG）：
+                过去这里 `?? 'saved'`，而 saved 的中文正是「已收藏」，
+                于是左侧还挂着「☆ 收藏」按钮，右侧进度却已经写着「已收藏」。
+                现在未收藏就只给一个「未收藏」占位项，并以「先收藏后才可设置」为准。
+              */}
               <select
                 id="detail-progress"
                 className="select w-full"
@@ -292,6 +298,7 @@ export function DetailView({
                 disabled={!favorited}
                 title={favorited ? '设置参与进度' : '先收藏后可设置进度'}
               >
+                {!favorited && <option value="none">{PROGRESS_LABEL.none}</option>}
                 {(['saved', 'preparing', 'doing', 'done'] as const).map((s) => (
                   <option key={s} value={s}>
                     {PROGRESS_LABEL[s]}

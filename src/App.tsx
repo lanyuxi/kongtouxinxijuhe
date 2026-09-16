@@ -9,7 +9,7 @@ import { loadDataset, loadProjectDetail, loadSourceHealth } from './lib/data';
 import { loadLiveIndex, runRefresh } from './lib/refresh';
 import type { LiveIndex } from './lib/types';
 import { useRoute } from './lib/router';
-import { useLocalState } from './lib/store';
+import { resolveProgress, useLocalState } from './lib/store';
 import { buildPercentiles } from './lib/percentile';
 import type { Percentiles } from './lib/percentile';
 import { CardSkeletonGrid, DetailSkeleton } from './components/Skeleton';
@@ -174,7 +174,9 @@ export function App() {
               <DetailView
                 project={detailProject}
                 favorited={state.favorites.includes(detailProject.slug)}
-                progress={state.progress[detailProject.slug]}
+                // 用 resolveProgress 统一解析：未收藏必须是 undefined，
+                // 不能让 UI 用 `?? 'saved'` 把「没收藏」显示成「已收藏」。
+                progress={resolveProgress(detailProject.slug, state.favorites, state.progress)}
                 percentiles={{
                   authenticity: percentiles.authenticity.get(detailProject.slug),
                   value: percentiles.value.get(detailProject.slug),
