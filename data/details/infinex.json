@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/infinex/",
-      "fetched_at": "2026-09-16T02:22:09.593Z"
+      "fetched_at": "2026-09-16T02:42:10.346Z"
     }
   ],
   "evidence": [
@@ -389,7 +389,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T02:22:09.593Z",
+  "last_checked_at": "2026-09-16T02:42:10.346Z",
   "last_changed_at": "2026-09-16T01:48:06.859Z",
   "sourcedSteps": [
     {
