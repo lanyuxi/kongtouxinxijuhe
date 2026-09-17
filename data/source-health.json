@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T23:22:09.314Z",
+  "updated_at": "2026-09-17T23:32:10.380Z",
   "sources": [
     {
       "name": "Airdrops.io",
@@ -8,15 +8,15 @@
       "fetched": 0,
       "error": "Airdrops.io 全部分类页抓取失败或未解析到项目",
       "last_success_at": "2026-09-16T12:12:10.229Z",
-      "checked_at": "2026-09-17T23:22:09.314Z"
+      "checked_at": "2026-09-17T23:32:10.380Z"
     },
     {
       "name": "DefiLlama",
       "url": "https://api.llama.fi/protocols",
       "ok": true,
       "fetched": 120,
-      "last_success_at": "2026-09-17T23:22:09.314Z",
-      "checked_at": "2026-09-17T23:22:09.314Z"
+      "last_success_at": "2026-09-17T23:32:10.380Z",
+      "checked_at": "2026-09-17T23:32:10.380Z"
     },
     {
       "name": "X (Twitter)",
@@ -24,7 +24,7 @@
       "ok": false,
       "fetched": 0,
       "error": "40 个账号（样例：@HyperliquidX、@LayerZero_Labs、@Scroll_ZKP）全部探测失败：本环境无法访问 X（连续 3 次网络层失败后熔断）。如需抓取推文，请配置环境变量 X_BEARER_TOKEN；否则该来源将持续显示为不可用，不会伪造数据。",
-      "checked_at": "2026-09-17T23:22:09.314Z"
+      "checked_at": "2026-09-17T23:32:10.380Z"
     }
   ]
 }
