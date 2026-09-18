@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T03:42:12.201Z",
-  "finished_at": "2026-09-18T03:42:39.099Z",
+  "started_at": "2026-09-18T04:22:10.790Z",
+  "finished_at": "2026-09-18T04:22:39.872Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T03:42:12.201Z",
+  "updated_at": "2026-09-18T04:22:10.790Z",
   "data_changed": true,
-  "change_summary": "变更 22 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
+  "change_summary": "变更 2 个：Ethena USDe 内容有更新；Stader 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "B2 Buzz 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "BitFi Basis 内容有更新"
+    "Ethena USDe 内容有更新",
+    "Stader 内容有更新"
   ],
   "added": 0,
-  "modified": 22,
+  "modified": 2,
   "removed": 0
 }
