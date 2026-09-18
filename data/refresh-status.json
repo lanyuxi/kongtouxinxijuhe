@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T13:02:10.137Z",
-  "finished_at": "2026-09-18T13:02:42.662Z",
+  "started_at": "2026-09-18T13:32:12.008Z",
+  "finished_at": "2026-09-18T13:32:43.027Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T13:02:10.137Z",
+  "updated_at": "2026-09-18T13:32:12.008Z",
   "data_changed": true,
-  "change_summary": "变更 9 个：EigenCloud 内容有更新；Kinetiq kHYPE 内容有更新；Liquid Collective 内容有更新",
+  "change_summary": "变更 5 个：b14g 内容有更新；Defi Saver Asset Management 内容有更新；Gauntlet 内容有更新",
   "change_details": [
-    "EigenCloud 内容有更新",
-    "Kinetiq kHYPE 内容有更新",
-    "Liquid Collective 内容有更新",
-    "Lombard LBTC 内容有更新",
-    "Marinade Native 内容有更新"
+    "b14g 内容有更新",
+    "Defi Saver Asset Management 内容有更新",
+    "Gauntlet 内容有更新",
+    "Obol 内容有更新",
+    "Sanctum Validator LSTs 内容有更新"
   ],
   "added": 0,
-  "modified": 9,
+  "modified": 5,
   "removed": 0
 }
