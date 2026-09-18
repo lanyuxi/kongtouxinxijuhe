@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T06:32:11.288Z",
-  "finished_at": "2026-09-18T06:32:39.918Z",
+  "started_at": "2026-09-18T07:32:10.267Z",
+  "finished_at": "2026-09-18T07:32:37.204Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T06:32:11.288Z",
+  "updated_at": "2026-09-18T07:32:10.267Z",
   "data_changed": true,
-  "change_summary": "变更 37 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 7 个：Aave V3 内容有更新；EigenCloud 内容有更新；Kinetiq kHYPE 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Concrete 内容有更新",
-    "EigenCloud 内容有更新"
+    "EigenCloud 内容有更新",
+    "Kinetiq kHYPE 内容有更新",
+    "Marinade Native 内容有更新",
+    "Sentora Curator 内容有更新"
   ],
   "added": 0,
-  "modified": 37,
+  "modified": 7,
   "removed": 0
 }
