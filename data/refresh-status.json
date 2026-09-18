@@ -1,19 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T08:32:13.352Z",
-  "finished_at": "2026-09-18T08:32:41.240Z",
+  "started_at": "2026-09-18T09:02:10.315Z",
+  "finished_at": "2026-09-18T09:02:37.649Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T08:32:13.352Z",
+  "updated_at": "2026-09-18T09:02:10.315Z",
   "data_changed": true,
-  "change_summary": "变更 4 个：EigenCloud 内容有更新；Lombard LBTC 内容有更新；mETH Protocol 内容有更新",
+  "change_summary": "变更 16 个：B2 Buzz 内容有更新；Bedrock uniBTC 内容有更新；BitFi Basis 内容有更新",
   "change_details": [
-    "EigenCloud 内容有更新",
-    "Lombard LBTC 内容有更新",
-    "mETH Protocol 内容有更新",
-    "Sentora Curator 内容有更新"
+    "B2 Buzz 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
+    "GMX V2 Perps 内容有更新",
+    "GTBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 4,
+  "modified": 16,
   "removed": 0
 }
