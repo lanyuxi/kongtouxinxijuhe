@@ -1,18 +1,18 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T20:42:09.354Z",
-  "finished_at": "2026-09-18T20:42:35.304Z",
+  "started_at": "2026-09-18T21:02:09.316Z",
+  "finished_at": "2026-09-18T21:02:35.145Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T20:42:09.354Z",
+  "updated_at": "2026-09-18T21:02:09.316Z",
   "data_changed": true,
-  "change_summary": "变更 5 个：EtherFi Cash Liquid 内容有更新；Polymarket International 内容有更新；Sentora Curator 内容有更新",
+  "change_summary": "变更 5 个：Bedrock uniBTC 内容有更新；EigenCloud 内容有更新；Marinade Select 内容有更新",
   "change_details": [
-    "EtherFi Cash Liquid 内容有更新",
-    "Polymarket International 内容有更新",
-    "Sentora Curator 内容有更新",
-    "Solv Basis Trading 内容有更新",
-    "stHYPE 内容有更新"
+    "Bedrock uniBTC 内容有更新",
+    "EigenCloud 内容有更新",
+    "Marinade Select 内容有更新",
+    "Veda 内容有更新",
+    "World Chain 内容有更新"
   ],
   "added": 0,
   "modified": 5,
