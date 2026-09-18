@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T21:02:09.316Z",
-  "finished_at": "2026-09-18T21:02:35.145Z",
+  "started_at": "2026-09-18T21:32:10.516Z",
+  "finished_at": "2026-09-18T21:32:36.421Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T21:02:09.316Z",
+  "updated_at": "2026-09-18T21:32:10.516Z",
   "data_changed": true,
-  "change_summary": "变更 5 个：Bedrock uniBTC 内容有更新；EigenCloud 内容有更新；Marinade Select 内容有更新",
+  "change_summary": "变更 21 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Concrete 内容有更新",
   "change_details": [
-    "Bedrock uniBTC 内容有更新",
-    "EigenCloud 内容有更新",
-    "Marinade Select 内容有更新",
-    "Veda 内容有更新",
-    "World Chain 内容有更新"
+    "Aave V3 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Concrete 内容有更新",
+    "Defi Saver Asset Management 内容有更新",
+    "Fluid Lite 内容有更新"
   ],
   "added": 0,
-  "modified": 5,
+  "modified": 21,
   "removed": 0
 }
