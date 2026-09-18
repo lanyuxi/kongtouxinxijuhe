@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T02:22:10.619Z",
-  "finished_at": "2026-09-18T02:22:37.007Z",
+  "started_at": "2026-09-18T03:02:41.777Z",
+  "finished_at": "2026-09-18T03:03:08.495Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T02:22:10.619Z",
+  "updated_at": "2026-09-18T03:02:41.777Z",
   "data_changed": true,
-  "change_summary": "变更 22 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 真实性：32 → 35",
+  "change_summary": "变更 19 个：Bedrock uniBTC 内容有更新；Fluid Lite 内容有更新；Jupiter Perpetual Exchange 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 真实性：32 → 35",
-    "Concrete 内容有更新",
-    "Defi Saver Asset Management 内容有更新"
+    "Bedrock uniBTC 内容有更新",
+    "Fluid Lite 内容有更新",
+    "Jupiter Perpetual Exchange 内容有更新",
+    "K3 Capital 内容有更新",
+    "Kinetiq kHYPE 内容有更新"
   ],
   "added": 0,
-  "modified": 22,
+  "modified": 19,
   "removed": 0
 }
