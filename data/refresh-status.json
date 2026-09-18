@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T20:02:09.692Z",
-  "finished_at": "2026-09-18T20:02:36.085Z",
+  "started_at": "2026-09-18T20:42:09.354Z",
+  "finished_at": "2026-09-18T20:42:35.304Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T20:02:09.692Z",
+  "updated_at": "2026-09-18T20:42:09.354Z",
   "data_changed": true,
-  "change_summary": "变更 39 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 5 个：EtherFi Cash Liquid 内容有更新；Polymarket International 内容有更新；Sentora Curator 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新"
+    "EtherFi Cash Liquid 内容有更新",
+    "Polymarket International 内容有更新",
+    "Sentora Curator 内容有更新",
+    "Solv Basis Trading 内容有更新",
+    "stHYPE 内容有更新"
   ],
   "added": 0,
-  "modified": 39,
+  "modified": 5,
   "removed": 0
 }
