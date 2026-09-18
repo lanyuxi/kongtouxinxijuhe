@@ -1,20 +1,18 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T11:12:10.952Z",
-  "finished_at": "2026-09-18T11:12:37.884Z",
+  "started_at": "2026-09-18T11:32:11.454Z",
+  "finished_at": "2026-09-18T11:32:46.972Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T11:12:10.952Z",
+  "updated_at": "2026-09-18T11:32:11.454Z",
   "data_changed": true,
-  "change_summary": "变更 31 个：b14g 内容有更新；Babylon Protocol 内容有更新；Concrete 内容有更新",
+  "change_summary": "变更 3 个：EigenCloud 内容有更新；Lido 内容有更新；tBTC 内容有更新",
   "change_details": [
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Concrete 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Ethena USDe 内容有更新"
+    "EigenCloud 内容有更新",
+    "Lido 内容有更新",
+    "tBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 31,
+  "modified": 3,
   "removed": 0
 }
