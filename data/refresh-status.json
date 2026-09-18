@@ -1,17 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T01:02:09.964Z",
-  "finished_at": "2026-09-18T01:02:36.095Z",
+  "started_at": "2026-09-18T01:42:10.125Z",
+  "finished_at": "2026-09-18T01:42:38.431Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T01:02:09.964Z",
+  "updated_at": "2026-09-18T01:42:10.125Z",
   "data_changed": true,
-  "change_summary": "变更 2 个：Aave V3 内容有更新；Concrete 内容有更新",
+  "change_summary": "变更 7 个：EigenCloud 内容有更新；GTBTC 内容有更新；Mellow Core 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Concrete 内容有更新"
+    "EigenCloud 内容有更新",
+    "GTBTC 内容有更新",
+    "Mellow Core 内容有更新",
+    "mETH Protocol 内容有更新",
+    "Morpho Blue 内容有更新"
   ],
   "added": 0,
-  "modified": 2,
+  "modified": 7,
   "removed": 0
 }
