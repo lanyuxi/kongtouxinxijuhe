@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T14:32:09.663Z",
-  "finished_at": "2026-09-18T14:32:44.412Z",
+  "started_at": "2026-09-18T15:12:10.753Z",
+  "finished_at": "2026-09-18T15:12:41.845Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T14:32:09.663Z",
+  "updated_at": "2026-09-18T15:12:10.753Z",
   "data_changed": true,
-  "change_summary": "变更 32 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 17 个：BitFi Basis 内容有更新；Concrete 内容有更新；Ethena USDe 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
     "BitFi Basis 内容有更新",
-    "Concrete 内容有更新"
+    "Concrete 内容有更新",
+    "Ethena USDe 内容有更新",
+    "Gauntlet 内容有更新",
+    "GMX V2 Perps 内容有更新"
   ],
   "added": 0,
-  "modified": 32,
+  "modified": 17,
   "removed": 0
 }
