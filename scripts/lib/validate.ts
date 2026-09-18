@@ -11,6 +11,12 @@
 
 import type { AirdropProject } from '../../src/lib/types';
 import { classifyNonAirdrop } from './non-airdrop';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+/** 仓库根目录：用于定位随仓库提交的离线翻译缓存 */
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 /**
  * 中文判定：只要含汉字即视为中文文案。
@@ -20,6 +26,40 @@ import { classifyNonAirdrop } from './non-airdrop';
  */
 function hasChinese(text: unknown): boolean {
   return /[\u4e00-\u9fa5]/.test(String(text ?? ''));
+}
+
+/**
+ * 判断一段「仍是英文」的文案，到底是「翻译管线坏了」还是「还没翻」。
+ *
+ * 为什么需要这个区分（2026-09-18 的线上故障）：
+ *   「缺中文」原本一律算发布阻断错误，结果任何**新抓到的英文项目**
+ *   都会让 `pipeline` 以 exit 1 结束 —— 而 Airdrops.io 每轮都可能带来新项目。
+ *   于是一个项目的英文教程，代价是整站 259 个项目停止更新
+ *   （validate 不通过就保留上一版），GitHub Pages 也连带不再发布。
+ *
+ *   但直接把这条断言删掉又会放过真正的回归：
+ *   历史事故里缓存**明明有译文**，`localizeText` 却因改错顺序退回英文原文，
+ *   整站 736 条教程静默变成英文，而所有测试仍是绿的。
+ *
+ * 因此按「缓存里有没有这条」分别处理：
+ *   · 缓存命中 → 有译文却没用上 → 真回归 → 报错（保持门禁强度）；
+ *   · 缓存未命中 → 新文案还没翻 → 告警 → 放行（不阻断整轮发布）。
+ *
+ * 缓存文件缺失 / 解析失败时一律按「未命中」处理（宁可告警，不误拦发布）。
+ */
+function translationMissing(text: unknown): boolean {
+  const raw = String(text ?? '').trim();
+  if (!raw) return false;
+  try {
+    // 延迟 require：validate 也被前端构建链路间接引用，避免顶层耦合 i18n 模块
+    const cachePath = path.join(ROOT, 'scripts', 'i18n', 'cache.zh.json');
+    const cache = JSON.parse(readFileSync(cachePath, 'utf8')) as Record<string, string>;
+    // 命中且译文含中文 → 说明有译文却没用上，属于回归
+    const translated = cache[raw];
+    return typeof translated === 'string' && translated.trim() !== '' && hasChinese(translated);
+  } catch {
+    return false;
+  }
 }
 
 export interface ValidationResult {
@@ -155,17 +195,46 @@ export function validateProjects(
     // 站点的用户全部是中文用户，教程与简介必须可读。
     // 历史事故：数据源（Airdrops.io）的 HowTo 是英文，原样落盘后
     // 49 个项目 / 339 步教程整段显示英文，而系统完全不报错 ——
-    // 只有人工截图才能发现。因此把「中文覆盖」升级为发布门禁：
-    // 缺中文就直接拒绝发布，避免同类问题再次静默上线。
+    // 只有人工截图才能发现。因此这里对「中文覆盖」做硬性检查。
+    //
+    // ⚠️ 2026-09-18 修正：**降级为告警，不再阻断发布**。
+    //
+    //   原先这里是 `errors.push(...)`，即「只要有一步文案没中文就拒绝整轮发布」。
+    //   在定时抓取场景下这是个必然踩中的陷阱：
+    //     Airdrops.io 每轮都可能带来**全新项目**，而其中文译文只存在于
+    //     离线准备的 `scripts/i18n/cache.zh.json`（构建期纯查表、不联网翻译）。
+    //     新项目天然不在缓存里 → 门禁必然报错 → `pipeline` 以 exit 1 结束。
+    //   实测后果（GitHub Actions + CNB 双侧同一根因）：
+    //     · 只要某一轮 Airdrops.io 抓取成功且带回新项目，就整轮失败；
+    //       失败率约 1/3（实测 71 轮里 23 轮 error），且随时间推移越来越频繁；
+    //     · GitHub 侧失败的直接现象是「构建静态站点」13 秒挂掉，
+    //       后面的「发布到 GitHub Pages」被 skip —— 也就是用户收到的
+    //       「Some jobs were not successful」邮件；
+    //     · 更糟的是它会让**整站数据停止更新**：一个项目的英文教程，
+    //       代价是全站 259 个项目都不再发布（validate 不过就保留上一版）。
+    //
+    //   因此判定标准改为「文案能不能被用户看懂」，而不是「有没有中文」：
+    //     · 缺中文 → 告警 + 由前端按既有降级分支展示英文原文并附中文安全提示；
+    //     · 这样既不静默，也不会让一条新数据卡死整站发布。
+    //   译文补齐仍由 `npm run i18n:cache`（离线）负责，且该缺口会持续告警。
     if (!hasChinese(p.tagline)) {
-      errors.push(`${p.slug}: 一句话简介缺少中文（当前：${p.tagline.slice(0, 40)}）`);
+      // 缓存命中却没中文 = 翻译管线坏了（真回归，必须拦）；
+      // 缓存未命中 = 新抓到的英文文案，属于正常缺口（告警，不拦发布）。
+      const regressed = translationMissing(p.tagline);
+      (regressed ? errors : warnings).push(
+        `${p.slug}: 一句话简介缺少中文（当前：${p.tagline.slice(0, 40)}）`,
+      );
     }
     for (const g of p.guide) {
       if (!hasChinese(g.title)) {
-        errors.push(`${p.slug}: 教程步骤 ${g.step} 标题缺少中文（当前：${g.title.slice(0, 40)}）`);
+        const regressed = translationMissing(g.title);
+        (regressed ? errors : warnings).push(
+          `${p.slug}: 教程步骤 ${g.step} 标题缺少中文（当前：${g.title.slice(0, 40)}）`,
+        );
       }
       if (!hasChinese(g.description)) {
-        errors.push(`${p.slug}: 教程步骤 ${g.step} 描述缺少中文`);
+        const regressed = translationMissing(g.description);
+        (regressed ? errors : warnings).push(`${p.slug}: 教程步骤 ${g.step} 描述缺少中文`);
       }
       // 中英对照不变量：译文来自机器翻译时，必须同时保留英文原文，
       // 否则翻译一旦失真，用户没有任何办法核对官方页面的实际文字。
