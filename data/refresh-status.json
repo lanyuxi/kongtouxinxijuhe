@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-18T17:32:10.203Z",
-  "finished_at": "2026-09-18T17:32:39.982Z",
+  "started_at": "2026-09-18T18:02:25.364Z",
+  "finished_at": "2026-09-18T18:02:52.284Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-18T17:32:10.203Z",
+  "updated_at": "2026-09-18T18:02:25.364Z",
   "data_changed": true,
-  "change_summary": "变更 10 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；EigenCloud 内容有更新",
+  "change_summary": "变更 9 个：BitFi Basis 内容有更新；EigenCloud 内容有更新；GMX V2 Perps 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
     "EigenCloud 内容有更新",
-    "Kelp 内容有更新",
-    "Liquid Collective 内容有更新"
+    "GMX V2 Perps 内容有更新",
+    "Marinade Native 内容有更新",
+    "mETH Protocol 内容有更新"
   ],
   "added": 0,
-  "modified": 10,
+  "modified": 9,
   "removed": 0
 }
