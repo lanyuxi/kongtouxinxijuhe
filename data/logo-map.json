@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-09-19T03:42:36.948Z",
-  "total": 259,
+  "updated_at": "2026-09-19T04:02:41.801Z",
+  "total": 260,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v2": "logos/aave-v2.png",
@@ -29,6 +29,7 @@
     "benqi-lending": "logos/benqi-lending.png",
     "berachain": "logos/berachain.png",
     "bitfi-basis": "logos/bitfi-basis.png",
+    "bittensor-dtao": "logos/bittensor-dtao.webp",
     "bitway-earn": "logos/bitway-earn.png",
     "bitwise-uscc": "logos/bitwise-uscc.png",
     "blackboard": "logos/blackboard.png",
@@ -522,6 +523,7 @@
     "usual-usd0": "https://icons.llamao.fi/icons/protocols/usual-usd0",
     "vvs-standard": "https://icons.llamao.fi/icons/protocols/vvs-standard",
     "yield-basis": "https://icons.llamao.fi/icons/protocols/yield-basis",
-    "yuzu-money": "https://icons.llamao.fi/icons/protocols/yuzu-money"
+    "yuzu-money": "https://icons.llamao.fi/icons/protocols/yuzu-money",
+    "bittensor-dtao": "https://icons.llamao.fi/icons/protocols/bittensor-dtao"
   }
 }
