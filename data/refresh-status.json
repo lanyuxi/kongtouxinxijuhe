@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T17:12:11.942Z",
-  "finished_at": "2026-09-19T17:12:38.820Z",
+  "started_at": "2026-09-19T18:02:11.800Z",
+  "finished_at": "2026-09-19T18:02:38.346Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T17:12:11.942Z",
+  "updated_at": "2026-09-19T18:02:11.800Z",
   "data_changed": true,
-  "change_summary": "变更 28 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；BitFi Basis 内容有更新",
+  "change_summary": "变更 1 个：Lombard LBTC 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新",
-    "Concrete 内容有更新",
-    "EigenCloud 内容有更新"
+    "Lombard LBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 28,
+  "modified": 1,
   "removed": 0
 }
