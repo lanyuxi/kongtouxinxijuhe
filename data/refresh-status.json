@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T04:02:10.214Z",
-  "finished_at": "2026-09-19T04:02:36.499Z",
+  "started_at": "2026-09-19T04:12:11.195Z",
+  "finished_at": "2026-09-19T04:12:37.647Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T04:02:10.214Z",
+  "updated_at": "2026-09-19T04:12:11.195Z",
   "data_changed": true,
-  "change_summary": "新增 1 个、变更 13 个：Bedrock uniBTC 内容有更新；BitFi Basis 内容有更新；Defi Saver Asset Management 内容有更新",
+  "change_summary": "变更 1 个：Bittensor dTAO 风险：中 → 高",
   "change_details": [
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Derive V2 内容有更新",
-    "EigenCloud 内容有更新"
+    "Bittensor dTAO 风险：中 → 高"
   ],
-  "added": 1,
-  "modified": 13,
+  "added": 0,
+  "modified": 1,
   "removed": 0
 }
