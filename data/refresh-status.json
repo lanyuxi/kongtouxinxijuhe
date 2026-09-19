@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T16:02:10.428Z",
-  "finished_at": "2026-09-19T16:02:39.389Z",
+  "started_at": "2026-09-19T17:12:11.942Z",
+  "finished_at": "2026-09-19T17:12:38.820Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T16:02:10.428Z",
+  "updated_at": "2026-09-19T17:12:11.942Z",
   "data_changed": true,
-  "change_summary": "变更 8 个：GTBTC 内容有更新；Jupiter Perpetual Exchange 内容有更新；KPK 内容有更新",
+  "change_summary": "变更 28 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；BitFi Basis 内容有更新",
   "change_details": [
-    "GTBTC 内容有更新",
-    "Jupiter Perpetual Exchange 内容有更新",
-    "KPK 内容有更新",
-    "Rocket Pool 内容有更新",
-    "Sanctum Validator LSTs 内容有更新"
+    "Aave V3 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
+    "Concrete 内容有更新",
+    "EigenCloud 内容有更新"
   ],
   "added": 0,
-  "modified": 8,
+  "modified": 28,
   "removed": 0
 }
