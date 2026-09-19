@@ -8477,7 +8477,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/solstice/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         },
         {
           "type": "third_party",
@@ -11202,7 +11202,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/acepyr/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -11302,7 +11302,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:12:52.872Z"
     },
     {
@@ -11329,7 +11329,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/aiw3/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -11445,7 +11445,129 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.954Z"
+    },
+    {
+      "id": "allox",
+      "name": "Allox",
+      "slug": "allox",
+      "tagline": "AlloX 尚未确认空投，但其奖励系统明显指向空投。",
+      "category": "AI",
+      "chains": [
+        "Base",
+        "BNB Chain"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://app.allox.ai"
+      },
+      "meta": {},
+      "tasks": [
+        "完成注册",
+        "试用产品"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/allox/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 44,
+        "risk": "low",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 24,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "将你的钱包连接到 AlloX",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "在 BNB Chain 上为你的钱包充值",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "创建你的第一个人工智能投资组合",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "领取每日奖励",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "完成社交任务",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "加入“证明你的投资组合”活动",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "激活你的邀请链接",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.954Z"
     },
     {
@@ -11471,7 +11593,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/amadeus-protocol/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -11563,7 +11685,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.954Z"
     },
     {
@@ -11589,7 +11711,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ammora/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -11697,7 +11819,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.954Z"
     },
     {
@@ -11726,7 +11848,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/arcium/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -11810,7 +11932,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:32:49.302Z"
     },
     {
@@ -11837,7 +11959,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/baibai/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -11929,7 +12051,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:02:09.703Z"
     },
     {
@@ -11960,7 +12082,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/basedapp/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12028,7 +12150,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T04:59:12.577Z"
     },
     {
@@ -12057,7 +12179,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/beldex/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12149,7 +12271,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.956Z"
     },
     {
@@ -12176,7 +12298,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/blackboard/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12268,7 +12390,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.956Z"
     },
     {
@@ -12297,7 +12419,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/c8ntinuum/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12405,7 +12527,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.957Z"
     },
     {
@@ -12435,7 +12557,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/cambria/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12535,7 +12657,7 @@
       "created_at": "2026-09-16T01:15:42.247Z",
       "first_seen_at": "2026-09-16T01:15:42.247Z",
       "discovered_at": "2026-09-16T01:15:42.247Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:02:53.946Z"
     },
     {
@@ -12564,7 +12686,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/canopy/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12624,7 +12746,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:15:02.314Z"
     },
     {
@@ -12653,7 +12775,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/collector-crypt/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12745,7 +12867,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:47:48.728Z"
     },
     {
@@ -12775,7 +12897,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/deepbook/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -12867,7 +12989,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.959Z"
     },
     {
@@ -12899,7 +13021,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/doppler-finance/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         },
         {
           "type": "third_party",
@@ -12997,7 +13119,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:42:55.132Z"
     },
     {
@@ -13024,7 +13146,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/dualmint/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13116,7 +13238,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.960Z"
     },
     {
@@ -13145,7 +13267,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/dymension/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13205,7 +13327,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:22:53.972Z"
     },
     {
@@ -13232,7 +13354,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/entropy/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13316,7 +13438,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.961Z"
     },
     {
@@ -13367,7 +13489,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ethena/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13467,7 +13589,7 @@
       "created_at": "2026-09-11T14:29:52.346Z",
       "first_seen_at": "2026-09-11T14:29:52.346Z",
       "discovered_at": "2026-09-11T14:29:52.346Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.962Z"
     },
     {
@@ -13496,7 +13618,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/fables/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13588,7 +13710,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:12:52.878Z"
     },
     {
@@ -13622,7 +13744,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/fireplace/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13682,7 +13804,7 @@
       "created_at": "2026-09-16T04:57:51.921Z",
       "first_seen_at": "2026-09-16T04:57:51.921Z",
       "discovered_at": "2026-09-16T04:57:51.921Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T04:59:47.068Z"
     },
     {
@@ -13711,7 +13833,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/flop-labs/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13787,7 +13909,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.963Z"
     },
     {
@@ -13836,7 +13958,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/grass/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -13904,7 +14026,7 @@
       "created_at": "2026-09-11T14:29:52.345Z",
       "first_seen_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:15:02.325Z"
     },
     {
@@ -13934,7 +14056,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/grvt/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14010,7 +14132,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:32:49.309Z"
     },
     {
@@ -14036,7 +14158,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/gyndore/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14112,8 +14234,130 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.965Z"
+    },
+    {
+      "id": "hertzflow",
+      "name": "Hertzflow",
+      "slug": "hertzflow",
+      "tagline": "HertzFlow 已确认代币生成事件和空投。",
+      "category": "DeFi",
+      "chains": [
+        "BNB Chain"
+      ],
+      "status": "confirmed",
+      "official": {
+        "website": "https://hertzflow.xyz"
+      },
+      "meta": {},
+      "tasks": [
+        "开仓交易",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/hertzflow/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 47,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 24,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "打开 Genesis Vault 并连接你的钱包",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "绑定你的钱包",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "查看并接受用户协议",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "将 USD1 或 U 存入 Genesis Vault",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "绑定你的 X 和 Discord 账号",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "连续 90 天保留存款",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "第 2 赛季开启后进行交易",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:22:53.975Z"
     },
     {
       "id": "huma-finance",
@@ -14142,7 +14386,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/huma-finance/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14234,7 +14478,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:42:55.135Z"
     },
     {
@@ -14263,7 +14507,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/infinex/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14347,7 +14591,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:02:53.952Z"
     },
     {
@@ -14377,7 +14621,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/jupiter/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14461,7 +14705,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.967Z"
     },
     {
@@ -14488,7 +14732,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/kryvora-network/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14588,7 +14832,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:02:09.703Z"
     },
     {
@@ -14617,7 +14861,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/laptop/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14709,7 +14953,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.969Z"
     },
     {
@@ -14739,7 +14983,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/limitless-prediction-markets/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14839,7 +15083,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:42:55.137Z"
     },
     {
@@ -14869,7 +15113,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/memebook/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -14961,8 +15205,121 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:02:09.703Z"
+    },
+    {
+      "id": "mint-io",
+      "name": "Mint Io",
+      "slug": "mint-io",
+      "tagline": "第 1 季空投已确认，将根据已验证的平台活动，向符合条件的玩家发放价值 12.5 万美元的 $MNTD。",
+      "category": "DeFi",
+      "chains": [
+        "Base"
+      ],
+      "status": "confirmed",
+      "official": {
+        "website": "https://mint.io"
+      },
+      "meta": {},
+      "tasks": [
+        "参与预测",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/mint-io/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 50,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 21,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "创建你的 MINT 账户",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "为你的 MINT 钱包充值",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "玩赌场游戏和体育博彩市场",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "攀登 XP 排行榜",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "继续赚取 XP 直到快照出现",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "领取并质押你的 $MNTD",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T07:06:16.141Z"
     },
     {
       "id": "nado",
@@ -14991,7 +15348,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/nado/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -15091,2155 +15448,8 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:22:53.979Z"
-    },
-    {
-      "id": "o1-exchange",
-      "name": "O1 Exchange",
-      "slug": "o1-exchange",
-      "tagline": "第 1 季参与者的 $O 代币空投已确认。",
-      "category": "DeFi",
-      "chains": [
-        "Solana"
-      ],
-      "status": "claim_live",
-      "official": {
-        "website": "https://o1.exchange"
-      },
-      "meta": {},
-      "tasks": [
-        "执行交易",
-        "提供流动性"
-      ],
-      "requirements": [
-        "钱包",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/o1-exchange/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 49,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 24,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "访问 o1.exchange",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "创建你的账户",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "使用 SOL 为你的钱包充值",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "跨多个代币铸造厂进行交易",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "进入奖励页面",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "推荐活跃交易者",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "参与 X 和 Discord",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:42:55.140Z"
-    },
-    {
-      "id": "onchain-cc",
-      "name": "Onchain Cc",
-      "slug": "onchain-cc",
-      "tagline": "The Onchain.cc team has not confirmed a native token or token airdrop.",
-      "category": "DeFi",
-      "chains": [
-        "Base",
-        "Ethereum",
-        "Hyperliquid",
-        "Solana"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://app.onchain.cc"
-      },
-      "meta": {},
-      "tasks": [
-        "开仓交易",
-        "提供流动性"
-      ],
-      "requirements": [
-        "钱包",
-        "主网 Gas",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/onchain-cc/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 41,
-        "risk": "high",
-        "grade": "D"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 5,
-        "time_minutes": 27,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "D",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "Visit Onchain.cc",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "Authenticate with Privy",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "Fund Your Wallets",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "Place Your First Trade",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "Climb the Colosseum Leaderboard",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "Earn Points from X Posts",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "Trade Perps on Hyperliquid Markets",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 9,
-          "title": "Stack Sessions and Refer Friends",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-19T05:02:09.703Z",
-      "first_seen_at": "2026-09-19T05:02:09.703Z",
-      "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:02:09.703Z"
-    },
-    {
-      "id": "plume-network",
-      "name": "Plume Network",
-      "slug": "plume-network",
-      "tagline": "Plume 第 2 季空投为主网活跃用户分配 150,000,000 PLUME。",
-      "category": "L2",
-      "chains": [
-        "Own Chain"
-      ],
-      "status": "claim_live",
-      "official": {
-        "website": "https://claim-pp.plume.org"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/plume-network/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 52,
-        "risk": "high",
-        "grade": "B"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 30,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "B",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "minutes": 5,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "minutes": 2,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "完成核心链上任务",
-          "minutes": 20,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium"
-        },
-        {
-          "step": 4,
-          "title": "检查任务状态",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "template",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:42:55.141Z"
-    },
-    {
-      "id": "reels",
-      "name": "Reels",
-      "slug": "reels",
-      "tagline": "Reels 为新玩家提供欢迎优惠：275% 匹配，最高 2,000 USDT，外加 50 次免费旋转。",
-      "category": "Other",
-      "chains": [
-        "Own Chain"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://click.trkreels.com"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/reels/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 47,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 15,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "创建一个 Reels 账户",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "应用促销代码",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "进行合格存款",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "跨赌场、体育博彩或预测市场进行游戏",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T06:44:34.976Z"
-    },
-    {
-      "id": "rep",
-      "name": "Rep",
-      "slug": "rep",
-      "tagline": "REP 尚未宣布代币或空投。",
-      "category": "AI",
-      "chains": [
-        "Base"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://app.r3p.xyz"
-      },
-      "meta": {},
-      "tasks": [
-        "完成注册",
-        "试用产品"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/rep/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 44,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 24,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "使用你的 X 账户登录",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "连接你的钱包",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "链接你的其他社交账户",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "声称你的成就",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "设置你的 Remoji 排名",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "浏览比赛并加入房间",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "分享你的社交图谱邀请链接",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T06:44:34.976Z"
-    },
-    {
-      "id": "ritual",
-      "name": "Ritual",
-      "slug": "ritual",
-      "tagline": "目前还没有任何关于官方空投的消息。",
-      "category": "AI",
-      "chains": [
-        "Own Chain"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://ritualtrials.domino.page"
-      },
-      "meta": {},
-      "tasks": [
-        "完成注册",
-        "试用产品"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/ritual/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 50,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 12,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "加入 RitualDiscord",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "完成社区任务",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "赢得并升级 Discord 角色",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-16T01:15:42.247Z",
-      "first_seen_at": "2026-09-16T01:15:42.247Z",
-      "discovered_at": "2026-09-16T01:15:42.247Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T06:44:34.976Z"
-    },
-    {
-      "id": "satsuma",
-      "name": "Satsuma",
-      "slug": "satsuma",
-      "tagline": "Satsuma 的空投检查器现已于 2026 年 6 月 4 日在 SUMA TGE 之前上线，向早期支持者分配了 3,000,000 SUMA，流动性......",
-      "category": "DeFi",
-      "chains": [
-        "Citrea"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://satsuma.exchange"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/satsuma/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 44,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 30,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "minutes": 5,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "minutes": 2,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "完成核心链上任务",
-          "minutes": 20,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium"
-        },
-        {
-          "step": 4,
-          "title": "检查任务状态",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "template",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T04:59:12.589Z"
-    },
-    {
-      "id": "solpump",
-      "name": "Solpump",
-      "slug": "solpump",
-      "tagline": "SolPump 运营着一个持续的空投系统，通过多种机制奖励活跃的社区成员和玩家。",
-      "category": "NFT",
-      "chains": [
-        "Solana"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://solpump.io"
-      },
-      "meta": {},
-      "tasks": [
-        "查看资格",
-        "领取空投"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/solpump/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 47,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 30,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前准备",
-          "minutes": 5,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "进入官方活动页面",
-          "minutes": 2,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "完成核心链上任务",
-          "minutes": 20,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "medium"
-        },
-        {
-          "step": 4,
-          "title": "检查任务状态",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "template",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T04:59:12.589Z"
-    },
-    {
-      "id": "sosovalue",
-      "name": "Sosovalue",
-      "slug": "sosovalue",
-      "tagline": "SoSoValue 空投已确认并正在运行，SOSO 已经上线并进行交易。",
-      "category": "DeFi",
-      "chains": [
-        "Other"
-      ],
-      "status": "claim_live",
-      "official": {
-        "website": "https://sosovalue.com"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/sosovalue/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 49,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 30,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "创建你的 SoSoValue 账户",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "通过平台任务赚取经验值",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "连接钱包并添加 ValueChain",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "购买 SSI 指数代币",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "质押你的 SSI 代币",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "存入 SoDEX Vault",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "在 SoDEX 上进行交易以获得 SoPoints",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 9,
-          "title": "质押 SOSO 并邀请朋友",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 10,
-          "title": "领取你的 SOSO 奖励",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:02:53.959Z"
-    },
-    {
-      "id": "tread-fi",
-      "name": "Tread Fi",
-      "slug": "tread-fi",
-      "tagline": "TREAD 代币已确认。",
-      "category": "DeFi",
-      "chains": [
-        "BNB Chain"
-      ],
-      "status": "claim_live",
-      "official": {
-        "website": "https://app.tread.fi"
-      },
-      "meta": {},
-      "tasks": [
-        "开仓交易",
-        "提供流动性"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/tread-fi/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 49,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 27,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "访问 Tread fi 终端",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "登录或创建账户",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "连接你的 Exchange 账户",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "检查你的第 1 季积分",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "交易赚取赛季 1.5 积分",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "生成你的邀请链接",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "追踪发行公告",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 9,
-          "title": "设置自定义代理",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:32:49.320Z"
-    },
-    {
-      "id": "vangrid",
-      "name": "Vangrid",
-      "slug": "vangrid",
-      "tagline": "Vangrid 尚未确认空投。",
-      "category": "AI",
-      "chains": [
-        "Base"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://hub.vangrid.io"
-      },
-      "meta": {},
-      "tasks": [
-        "完成注册",
-        "试用产品"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/vangrid/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 44,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 27,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "安装 Vangrid 应用",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "录制符合规范的捕获",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "输入邀请码并上传",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "将你的钱包连接到忠诚度中心",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "完成忠诚度中心任务",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "解锁电网运营商状态",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "提交资助赏金",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 9,
-          "title": "参考其他贡献者",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T06:44:34.983Z"
-    },
-    {
-      "id": "vibe-vibe",
-      "name": "Vibe Vibe",
-      "slug": "vibe-vibe",
-      "tagline": "Vibe Vibe says 5% of its token supply is set aside for testnet participants.",
-      "category": "Other",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://testnet.vibevibe.fun"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/vibe-vibe/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 44,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 21,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "Claim Test ETH from the Faucet",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "Connect Your Wallet to Vibe Vibe",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "Create a Testnet Token",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "Buy and Sell Testnet Tokens",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "Join the Telegram Raiding Channel",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "Apply for a Vibe Vibers Whitelist",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-19T05:02:09.703Z",
-      "first_seen_at": "2026-09-19T05:02:09.703Z",
-      "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:02:09.703Z"
-    },
-    {
-      "id": "voice",
-      "name": "Voice",
-      "slug": "voice",
-      "tagline": "$VOICE 代币及其代币生成活动已确认，TGE 计划于 2026 年第四季度进行。",
-      "category": "Social",
-      "chains": [
-        "Solana"
-      ],
-      "status": "confirmed",
-      "official": {
-        "website": "https://voice.fun"
-      },
-      "meta": {},
-      "tasks": [
-        "创建账号",
-        "发布内容",
-        "邀请用户"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/voice/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 50,
-        "risk": "low",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 27,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "参观 VOICE 社交营",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "使用你的 X 账户登录",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "完成核心任务、每日任务和突发任务",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "投票和意见杯之战",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "加入语音脉冲活动",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "完成 Layer3 VOICE 活动",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "进入合作伙伴集群",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 9,
-          "title": "通过 FRENS 邀请好友",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:02:53.963Z"
-    },
-    {
-      "id": "wick",
-      "name": "Wick",
-      "slug": "wick",
-      "tagline": "Wick has not confirmed an airdrop, and no allocation, points system, or TGE date has been announced.",
-      "category": "DeFi",
-      "chains": [
-        "Lighter"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://wick.xyz"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/wick/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 50,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 18,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "Join the Wick Waitlist",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "Share Wick on X",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "Join the Wick Discord",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "Claim Your Referral Link",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "Explore the Wick Docs",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-19T05:02:09.703Z",
-      "first_seen_at": "2026-09-19T05:02:09.703Z",
-      "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-19T05:02:09.703Z"
-    },
-    {
-      "id": "worldie",
-      "name": "Worldie",
-      "slug": "worldie",
-      "tagline": "Worldie 尚未确认空投，$WORLDIE 代币尚未启动。",
-      "category": "Other",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://worldie.world"
-      },
-      "meta": {},
-      "tasks": [],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/worldie/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 47,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 21,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "访问 Worldie 抢先体验页面",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "加入 Worldie Discord",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "连接你的 X 账户和钱包",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "索取你的邀请链接",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "分享你的链接",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "追踪你在排行榜上的排名",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T06:44:34.985Z"
-    },
-    {
-      "id": "yakkamon",
-      "name": "Yakkamon",
-      "slug": "yakkamon",
-      "tagline": "Yakkamon 空投已确认，重点关注 NFT。",
-      "category": "GameFi",
-      "chains": [
-        "Ronin"
-      ],
-      "status": "confirmed",
-      "official": {
-        "website": "https://yakkamon.com"
-      },
-      "meta": {},
-      "tasks": [
-        "创建账号",
-        "参与游戏"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/yakkamon/",
-          "fetched_at": "2026-09-19T05:42:13.816Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 50,
-        "risk": "medium",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 24,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "在 Yakkamon 注册",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "每天培育你的卵子",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "连接 Discord 和 X",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "链接并验证钱包",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "推荐朋友",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "10 月 1 日铸造免费 Monster NFT",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "铸造你的 Yakkamon NFT",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:42:13.816Z",
-      "last_changed_at": "2026-09-16T06:44:34.985Z"
-    },
-    {
-      "id": "allox",
-      "name": "Allox",
-      "slug": "allox",
-      "tagline": "AlloX 尚未确认空投，但其奖励系统明显指向空投。",
-      "category": "AI",
-      "chains": [
-        "Base",
-        "BNB Chain"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://app.allox.ai"
-      },
-      "meta": {},
-      "tasks": [
-        "完成注册",
-        "试用产品"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/allox/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 23,
-        "value": 44,
-        "risk": "low",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 0,
-        "capital_max_usd": 0,
-        "gas_estimate_usd": 0,
-        "time_minutes": 24,
-        "long_term": false,
-        "summary": "低成本、纯时间投入型项目，适合新手练手。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "优先级较低，可先收藏关注后续变化。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "将你的钱包连接到 AlloX",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "在 BNB Chain 上为你的钱包充值",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "创建你的第一个人工智能投资组合",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "领取每日奖励",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "完成社交任务",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "加入“证明你的投资组合”活动",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "激活你的邀请链接",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
-      "last_changed_at": "2026-09-16T06:44:34.954Z"
-    },
-    {
-      "id": "hertzflow",
-      "name": "Hertzflow",
-      "slug": "hertzflow",
-      "tagline": "HertzFlow 已确认代币生成事件和空投。",
-      "category": "DeFi",
-      "chains": [
-        "BNB Chain"
-      ],
-      "status": "confirmed",
-      "official": {
-        "website": "https://hertzflow.xyz"
-      },
-      "meta": {},
-      "tasks": [
-        "开仓交易",
-        "提供流动性"
-      ],
-      "requirements": [
-        "钱包",
-        "资金准备"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/hertzflow/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 47,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 24,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "打开 Genesis Vault 并连接你的钱包",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "绑定你的钱包",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "查看并接受用户协议",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "将 USD1 或 U 存入 Genesis Vault",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": true,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "绑定你的 X 和 Discord 账号",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "连续 90 天保留存款",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 8,
-          "title": "第 2 赛季开启后进行交易",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
-      "last_changed_at": "2026-09-19T05:22:53.975Z"
-    },
-    {
-      "id": "mint-io",
-      "name": "Mint Io",
-      "slug": "mint-io",
-      "tagline": "第 1 季空投已确认，将根据已验证的平台活动，向符合条件的玩家发放价值 12.5 万美元的 $MNTD。",
-      "category": "DeFi",
-      "chains": [
-        "Base"
-      ],
-      "status": "confirmed",
-      "official": {
-        "website": "https://mint.io"
-      },
-      "meta": {},
-      "tasks": [
-        "参与预测",
-        "提供流动性"
-      ],
-      "requirements": [
-        "钱包"
-      ],
-      "sources": [
-        {
-          "type": "airdrop_aggregator",
-          "name": "Airdrops.io",
-          "url": "https://airdrops.io/mint-io/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 31,
-        "value": 50,
-        "risk": "high",
-        "grade": "C"
-      },
-      "cost": {
-        "capital_min_usd": 20,
-        "capital_max_usd": 200,
-        "gas_estimate_usd": 0,
-        "time_minutes": 21,
-        "long_term": false,
-        "summary": "高资金投入，不适合新手大额参与。"
-      },
-      "recommendation": {
-        "grade": "C",
-        "action": "observe",
-        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
-      },
-      "guide": [
-        {
-          "step": 1,
-          "title": "参与前安全检查",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 2,
-          "title": "创建你的 MINT 账户",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 3,
-          "title": "为你的 MINT 钱包充值",
-          "minutes": 3,
-          "needs_wallet": true,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 4,
-          "title": "玩赌场游戏和体育博彩市场",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 5,
-          "title": "攀登 XP 排行榜",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 6,
-          "title": "继续赚取 XP 直到快照出现",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        },
-        {
-          "step": 7,
-          "title": "领取并质押你的 $MNTD",
-          "minutes": 3,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "low"
-        }
-      ],
-      "guide_source": "third_party",
-      "created_at": "2026-09-12T06:08:39.056Z",
-      "first_seen_at": "2026-09-12T06:08:39.056Z",
-      "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
-      "last_changed_at": "2026-09-16T07:06:16.141Z"
     },
     {
       "id": "nowa",
@@ -17264,7 +15474,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/nowa/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -17364,8 +15574,130 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.973Z"
+    },
+    {
+      "id": "o1-exchange",
+      "name": "O1 Exchange",
+      "slug": "o1-exchange",
+      "tagline": "第 1 季参与者的 $O 代币空投已确认。",
+      "category": "DeFi",
+      "chains": [
+        "Solana"
+      ],
+      "status": "claim_live",
+      "official": {
+        "website": "https://o1.exchange"
+      },
+      "meta": {},
+      "tasks": [
+        "执行交易",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/o1-exchange/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 49,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 24,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "访问 o1.exchange",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "创建你的账户",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "使用 SOL 为你的钱包充值",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "跨多个代币铸造厂进行交易",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "进入奖励页面",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "推荐活跃交易者",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "参与 X 和 Discord",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:42:55.140Z"
     },
     {
       "id": "omega",
@@ -17393,7 +15725,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/omega/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -17477,8 +15809,229 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-19T05:32:49.314Z"
+    },
+    {
+      "id": "onchain-cc",
+      "name": "Onchain Cc",
+      "slug": "onchain-cc",
+      "tagline": "The Onchain.cc team has not confirmed a native token or token airdrop.",
+      "category": "DeFi",
+      "chains": [
+        "Base",
+        "Ethereum",
+        "Hyperliquid",
+        "Solana"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://app.onchain.cc"
+      },
+      "meta": {},
+      "tasks": [
+        "开仓交易",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包",
+        "主网 Gas",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/onchain-cc/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 41,
+        "risk": "high",
+        "grade": "D"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 5,
+        "time_minutes": 27,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "D",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "Visit Onchain.cc",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "Authenticate with Privy",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "Fund Your Wallets",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "Place Your First Trade",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "Climb the Colosseum Leaderboard",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "Earn Points from X Posts",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "Trade Perps on Hyperliquid Markets",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 9,
+          "title": "Stack Sessions and Refer Friends",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-19T05:02:09.703Z",
+      "first_seen_at": "2026-09-19T05:02:09.703Z",
+      "discovered_at": "2026-09-19T05:02:09.703Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:02:09.703Z"
+    },
+    {
+      "id": "plume-network",
+      "name": "Plume Network",
+      "slug": "plume-network",
+      "tagline": "Plume 第 2 季空投为主网活跃用户分配 150,000,000 PLUME。",
+      "category": "L2",
+      "chains": [
+        "Own Chain"
+      ],
+      "status": "claim_live",
+      "official": {
+        "website": "https://claim-pp.plume.org"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/plume-network/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 52,
+        "risk": "high",
+        "grade": "B"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 30,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "B",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "minutes": 5,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "minutes": 2,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "完成核心链上任务",
+          "minutes": 20,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium"
+        },
+        {
+          "step": 4,
+          "title": "检查任务状态",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "template",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:42:55.141Z"
     },
     {
       "id": "push-chain",
@@ -17503,7 +16056,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/push-chain/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -17611,8 +16164,623 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.975Z"
+    },
+    {
+      "id": "reels",
+      "name": "Reels",
+      "slug": "reels",
+      "tagline": "Reels 为新玩家提供欢迎优惠：275% 匹配，最高 2,000 USDT，外加 50 次免费旋转。",
+      "category": "Other",
+      "chains": [
+        "Own Chain"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://click.trkreels.com"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/reels/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 47,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 15,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "创建一个 Reels 账户",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "应用促销代码",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "进行合格存款",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "跨赌场、体育博彩或预测市场进行游戏",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.976Z"
+    },
+    {
+      "id": "rep",
+      "name": "Rep",
+      "slug": "rep",
+      "tagline": "REP 尚未宣布代币或空投。",
+      "category": "AI",
+      "chains": [
+        "Base"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://app.r3p.xyz"
+      },
+      "meta": {},
+      "tasks": [
+        "完成注册",
+        "试用产品"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/rep/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 44,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 24,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "使用你的 X 账户登录",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "连接你的钱包",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "链接你的其他社交账户",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "声称你的成就",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "设置你的 Remoji 排名",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "浏览比赛并加入房间",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "分享你的社交图谱邀请链接",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.976Z"
+    },
+    {
+      "id": "ritual",
+      "name": "Ritual",
+      "slug": "ritual",
+      "tagline": "目前还没有任何关于官方空投的消息。",
+      "category": "AI",
+      "chains": [
+        "Own Chain"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://ritualtrials.domino.page"
+      },
+      "meta": {},
+      "tasks": [
+        "完成注册",
+        "试用产品"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/ritual/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 50,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 12,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "加入 RitualDiscord",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "完成社区任务",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "赢得并升级 Discord 角色",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-16T01:15:42.247Z",
+      "first_seen_at": "2026-09-16T01:15:42.247Z",
+      "discovered_at": "2026-09-16T01:15:42.247Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.976Z"
+    },
+    {
+      "id": "satsuma",
+      "name": "Satsuma",
+      "slug": "satsuma",
+      "tagline": "Satsuma 的空投检查器现已于 2026 年 6 月 4 日在 SUMA TGE 之前上线，向早期支持者分配了 3,000,000 SUMA，流动性......",
+      "category": "DeFi",
+      "chains": [
+        "Citrea"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://satsuma.exchange"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/satsuma/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 44,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 30,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "minutes": 5,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "minutes": 2,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "完成核心链上任务",
+          "minutes": 20,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium"
+        },
+        {
+          "step": 4,
+          "title": "检查任务状态",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "template",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T04:59:12.589Z"
+    },
+    {
+      "id": "solpump",
+      "name": "Solpump",
+      "slug": "solpump",
+      "tagline": "SolPump 运营着一个持续的空投系统，通过多种机制奖励活跃的社区成员和玩家。",
+      "category": "NFT",
+      "chains": [
+        "Solana"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://solpump.io"
+      },
+      "meta": {},
+      "tasks": [
+        "查看资格",
+        "领取空投"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/solpump/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 47,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 30,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前准备",
+          "minutes": 5,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "进入官方活动页面",
+          "minutes": 2,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "完成核心链上任务",
+          "minutes": 20,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "medium"
+        },
+        {
+          "step": 4,
+          "title": "检查任务状态",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "template",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T04:59:12.589Z"
+    },
+    {
+      "id": "sosovalue",
+      "name": "Sosovalue",
+      "slug": "sosovalue",
+      "tagline": "SoSoValue 空投已确认并正在运行，SOSO 已经上线并进行交易。",
+      "category": "DeFi",
+      "chains": [
+        "Other"
+      ],
+      "status": "claim_live",
+      "official": {
+        "website": "https://sosovalue.com"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/sosovalue/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 49,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 30,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "创建你的 SoSoValue 账户",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "通过平台任务赚取经验值",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "连接钱包并添加 ValueChain",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "购买 SSI 指数代币",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "质押你的 SSI 代币",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "存入 SoDEX Vault",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "在 SoDEX 上进行交易以获得 SoPoints",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 9,
+          "title": "质押 SOSO 并邀请朋友",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 10,
+          "title": "领取你的 SOSO 奖励",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:02:53.959Z"
     },
     {
       "id": "sweep-finance",
@@ -17637,7 +16805,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/sweep-finance/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -17729,7 +16897,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.981Z"
     },
     {
@@ -17758,7 +16926,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/tbook/",
-          "fetched_at": "2026-09-19T05:32:10.013Z"
+          "fetched_at": "2026-09-19T06:01:59.981Z"
         }
       ],
       "scores": {
@@ -17842,8 +17010,961 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T05:32:10.013Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
       "last_changed_at": "2026-09-16T06:44:34.982Z"
+    },
+    {
+      "id": "tread-fi",
+      "name": "Tread Fi",
+      "slug": "tread-fi",
+      "tagline": "TREAD 代币已确认。",
+      "category": "DeFi",
+      "chains": [
+        "BNB Chain"
+      ],
+      "status": "claim_live",
+      "official": {
+        "website": "https://app.tread.fi"
+      },
+      "meta": {},
+      "tasks": [
+        "开仓交易",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/tread-fi/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 49,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 27,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "访问 Tread fi 终端",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "登录或创建账户",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "连接你的 Exchange 账户",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "检查你的第 1 季积分",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "交易赚取赛季 1.5 积分",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "生成你的邀请链接",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "追踪发行公告",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 9,
+          "title": "设置自定义代理",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:32:49.320Z"
+    },
+    {
+      "id": "vangrid",
+      "name": "Vangrid",
+      "slug": "vangrid",
+      "tagline": "Vangrid 尚未确认空投。",
+      "category": "AI",
+      "chains": [
+        "Base"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://hub.vangrid.io"
+      },
+      "meta": {},
+      "tasks": [
+        "完成注册",
+        "试用产品"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/vangrid/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 44,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 27,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "安装 Vangrid 应用",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "录制符合规范的捕获",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "输入邀请码并上传",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "将你的钱包连接到忠诚度中心",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "完成忠诚度中心任务",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "解锁电网运营商状态",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "提交资助赏金",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 9,
+          "title": "参考其他贡献者",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.983Z"
+    },
+    {
+      "id": "vibe-vibe",
+      "name": "Vibe Vibe",
+      "slug": "vibe-vibe",
+      "tagline": "Vibe Vibe says 5% of its token supply is set aside for testnet participants.",
+      "category": "Other",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://testnet.vibevibe.fun"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包",
+        "资金准备"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/vibe-vibe/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 44,
+        "risk": "high",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 20,
+        "capital_max_usd": 200,
+        "gas_estimate_usd": 0,
+        "time_minutes": 21,
+        "long_term": false,
+        "summary": "高资金投入，不适合新手大额参与。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "存在较高风险，建议使用独立空投钱包小额观察，不建议投入大额资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "Claim Test ETH from the Faucet",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "Connect Your Wallet to Vibe Vibe",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "Create a Testnet Token",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "Buy and Sell Testnet Tokens",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "Join the Telegram Raiding Channel",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "Apply for a Vibe Vibers Whitelist",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-19T05:02:09.703Z",
+      "first_seen_at": "2026-09-19T05:02:09.703Z",
+      "discovered_at": "2026-09-19T05:02:09.703Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:02:09.703Z"
+    },
+    {
+      "id": "voice",
+      "name": "Voice",
+      "slug": "voice",
+      "tagline": "$VOICE 代币及其代币生成活动已确认，TGE 计划于 2026 年第四季度进行。",
+      "category": "Social",
+      "chains": [
+        "Solana"
+      ],
+      "status": "confirmed",
+      "official": {
+        "website": "https://voice.fun"
+      },
+      "meta": {},
+      "tasks": [
+        "创建账号",
+        "发布内容",
+        "邀请用户"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/voice/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 50,
+        "risk": "low",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 27,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "参观 VOICE 社交营",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "使用你的 X 账户登录",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "完成核心任务、每日任务和突发任务",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "投票和意见杯之战",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "加入语音脉冲活动",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "完成 Layer3 VOICE 活动",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "进入合作伙伴集群",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 9,
+          "title": "通过 FRENS 邀请好友",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:02:53.963Z"
+    },
+    {
+      "id": "wager-predict",
+      "name": "Wager Predict",
+      "slug": "wager-predict",
+      "tagline": "空投直接写入官方代币经济学：300 亿美元 $WP 供应量的 10%，没有悬崖，因此接收者开始流动......",
+      "category": "DeFi",
+      "chains": [
+        "BNB Chain"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://wagerpredict.com"
+      },
+      "meta": {},
+      "tasks": [
+        "参与预测",
+        "提供流动性"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/wager-predict/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 41,
+        "risk": "medium",
+        "grade": "D"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 24,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "D",
+        "action": "avoid",
+        "summary": "当前不值得投入时间与资金。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "将你的钱包连接到 Wager Predict 测试网",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "领取 10,000 测试网 USDC",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "批准 USDC 并进行第一笔交易",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "跨市场交易并测试杠杆",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "创建你自己的市场",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "LP Vault 的股份",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "攀登第 01 季排行榜",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-19T06:01:59.981Z",
+      "first_seen_at": "2026-09-19T06:01:59.981Z",
+      "discovered_at": "2026-09-19T06:01:59.981Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T06:01:59.981Z"
+    },
+    {
+      "id": "wick",
+      "name": "Wick",
+      "slug": "wick",
+      "tagline": "Wick has not confirmed an airdrop, and no allocation, points system, or TGE date has been announced.",
+      "category": "DeFi",
+      "chains": [
+        "Lighter"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://wick.xyz"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/wick/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 50,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 18,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "Join the Wick Waitlist",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "Share Wick on X",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "Join the Wick Discord",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "Claim Your Referral Link",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "Explore the Wick Docs",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-19T05:02:09.703Z",
+      "first_seen_at": "2026-09-19T05:02:09.703Z",
+      "discovered_at": "2026-09-19T05:02:09.703Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-19T05:02:09.703Z"
+    },
+    {
+      "id": "worldie",
+      "name": "Worldie",
+      "slug": "worldie",
+      "tagline": "Worldie 尚未确认空投，$WORLDIE 代币尚未启动。",
+      "category": "Other",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "potential",
+      "official": {
+        "website": "https://worldie.world"
+      },
+      "meta": {},
+      "tasks": [],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/worldie/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 23,
+        "value": 47,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 21,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "访问 Worldie 抢先体验页面",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "加入 Worldie Discord",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "连接你的 X 账户和钱包",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "索取你的邀请链接",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "分享你的链接",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "追踪你在排行榜上的排名",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.985Z"
+    },
+    {
+      "id": "yakkamon",
+      "name": "Yakkamon",
+      "slug": "yakkamon",
+      "tagline": "Yakkamon 空投已确认，重点关注 NFT。",
+      "category": "GameFi",
+      "chains": [
+        "Ronin"
+      ],
+      "status": "confirmed",
+      "official": {
+        "website": "https://yakkamon.com"
+      },
+      "meta": {},
+      "tasks": [
+        "创建账号",
+        "参与游戏"
+      ],
+      "requirements": [
+        "钱包"
+      ],
+      "sources": [
+        {
+          "type": "airdrop_aggregator",
+          "name": "Airdrops.io",
+          "url": "https://airdrops.io/yakkamon/",
+          "fetched_at": "2026-09-19T06:01:59.981Z"
+        }
+      ],
+      "scores": {
+        "authenticity": 31,
+        "value": 50,
+        "risk": "medium",
+        "grade": "C"
+      },
+      "cost": {
+        "capital_min_usd": 0,
+        "capital_max_usd": 0,
+        "gas_estimate_usd": 0,
+        "time_minutes": 24,
+        "long_term": false,
+        "summary": "低成本、纯时间投入型项目，适合新手练手。"
+      },
+      "recommendation": {
+        "grade": "C",
+        "action": "observe",
+        "summary": "优先级较低，可先收藏关注后续变化。"
+      },
+      "guide": [
+        {
+          "step": 1,
+          "title": "参与前安全检查",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 2,
+          "title": "在 Yakkamon 注册",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 3,
+          "title": "每天培育你的卵子",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 4,
+          "title": "连接 Discord 和 X",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 5,
+          "title": "链接并验证钱包",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": true,
+          "risk": "low"
+        },
+        {
+          "step": 6,
+          "title": "推荐朋友",
+          "minutes": 3,
+          "needs_wallet": false,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 7,
+          "title": "10 月 1 日铸造免费 Monster NFT",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        },
+        {
+          "step": 8,
+          "title": "铸造你的 Yakkamon NFT",
+          "minutes": 3,
+          "needs_wallet": true,
+          "needs_signature": false,
+          "risk": "low"
+        }
+      ],
+      "guide_source": "third_party",
+      "created_at": "2026-09-12T06:08:39.056Z",
+      "first_seen_at": "2026-09-12T06:08:39.056Z",
+      "discovered_at": "2026-09-12T06:08:39.056Z",
+      "last_checked_at": "2026-09-19T06:01:59.981Z",
+      "last_changed_at": "2026-09-16T06:44:34.985Z"
     },
     {
       "id": "meteora-dlmm",
