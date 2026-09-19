@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T09:42:11.413Z",
-  "finished_at": "2026-09-19T09:42:38.114Z",
+  "started_at": "2026-09-19T10:02:09.909Z",
+  "finished_at": "2026-09-19T10:02:37.154Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T09:42:11.413Z",
+  "updated_at": "2026-09-19T10:02:09.909Z",
   "data_changed": true,
-  "change_summary": "变更 29 个：b14g 内容有更新；Babylon Protocol 内容有更新；Concrete 内容有更新",
+  "change_summary": "变更 8 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；Marinade Native 内容有更新",
   "change_details": [
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Concrete 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Derive V2 内容有更新"
+    "Aave V3 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "Marinade Native 内容有更新",
+    "Marinade Select 内容有更新",
+    "mETH Protocol 内容有更新"
   ],
   "added": 0,
-  "modified": 29,
+  "modified": 8,
   "removed": 0
 }
