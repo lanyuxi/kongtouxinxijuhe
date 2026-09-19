@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T05:02:09.649Z",
-  "finished_at": "2026-09-19T05:02:54.009Z",
+  "started_at": "2026-09-19T05:12:09.663Z",
+  "finished_at": "2026-09-19T05:12:52.942Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-19T05:02:09.649Z",
+  "updated_at": "2026-09-19T05:12:09.663Z",
   "data_changed": true,
-  "change_summary": "新增 8 个、移除 1 个、变更 32 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "新增 1 个、移除 1 个、变更 2 个：Acepyr 价值等级：C → D；Fables 资金门槛：$0 → $200",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "Cambria 状态：潜在空投 → 开放领取"
+    "Acepyr 价值等级：C → D",
+    "Fables 资金门槛：$0 → $200"
   ],
-  "added": 8,
-  "modified": 32,
+  "added": 1,
+  "modified": 2,
   "removed": 1
 }
