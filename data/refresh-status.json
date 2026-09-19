@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T11:12:10.613Z",
-  "finished_at": "2026-09-19T11:12:37.155Z",
+  "started_at": "2026-09-19T11:32:09.392Z",
+  "finished_at": "2026-09-19T11:32:36.685Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T11:12:10.613Z",
+  "updated_at": "2026-09-19T11:32:09.392Z",
   "data_changed": true,
-  "change_summary": "变更 29 个：Aave V3 内容有更新；EigenCloud 内容有更新；Ethena USDe 内容有更新",
+  "change_summary": "变更 2 个：Babylon Protocol 内容有更新；Concrete 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "EigenCloud 内容有更新",
-    "Ethena USDe 内容有更新",
-    "EtherFi Cash Liquid 内容有更新",
-    "Gauntlet 内容有更新"
+    "Babylon Protocol 内容有更新",
+    "Concrete 内容有更新"
   ],
   "added": 0,
-  "modified": 29,
+  "modified": 2,
   "removed": 0
 }
