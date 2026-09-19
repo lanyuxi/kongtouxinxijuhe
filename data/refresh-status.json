@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T05:22:09.732Z",
-  "finished_at": "2026-09-19T05:22:54.038Z",
+  "started_at": "2026-09-19T05:32:09.967Z",
+  "finished_at": "2026-09-19T05:32:49.369Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-19T05:22:09.732Z",
+  "updated_at": "2026-09-19T05:32:09.967Z",
   "data_changed": true,
-  "change_summary": "变更 5 个：Dymension 状态：已结束 → 开放领取；Hertzflow 状态：潜在空投 → 已确认；Nado 状态：潜在空投 → 开放领取",
+  "change_summary": "变更 6 个：Arcium 状态：潜在空投 → 开放领取；Grvt 状态：已确认 → 开放领取；Omega 状态：潜在空投 → 已确认",
   "change_details": [
-    "Dymension 状态：已结束 → 开放领取",
-    "Hertzflow 状态：潜在空投 → 已确认",
-    "Nado 状态：潜在空投 → 开放领取",
-    "Solstice 状态：潜在空投 → 开放领取",
-    "Wager Predict 风险：中 → 高"
+    "Arcium 状态：潜在空投 → 开放领取",
+    "Grvt 状态：已确认 → 开放领取",
+    "Omega 状态：潜在空投 → 已确认",
+    "tBTC 内容有更新",
+    "Tread Fi 状态：已确认 → 开放领取"
   ],
   "added": 0,
-  "modified": 5,
+  "modified": 6,
   "removed": 0
 }
