@@ -1,20 +1,14 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T10:02:09.909Z",
-  "finished_at": "2026-09-19T10:02:37.154Z",
+  "started_at": "2026-09-19T10:22:09.987Z",
+  "finished_at": "2026-09-19T10:22:43.341Z",
   "sources": 3,
-  "ok_sources": 1,
-  "updated_at": "2026-09-19T10:02:09.909Z",
+  "ok_sources": 2,
+  "updated_at": "2026-09-19T10:22:09.987Z",
   "data_changed": true,
-  "change_summary": "变更 8 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；Marinade Native 内容有更新",
-  "change_details": [
-    "Aave V3 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "Marinade Native 内容有更新",
-    "Marinade Select 内容有更新",
-    "mETH Protocol 内容有更新"
-  ],
+  "change_summary": "移除 1 个",
+  "change_details": [],
   "added": 0,
-  "modified": 8,
-  "removed": 0
+  "modified": 0,
+  "removed": 1
 }
