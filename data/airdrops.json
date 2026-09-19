@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T07:02:10.320Z",
+  "updated_at": "2026-09-19T08:02:10.705Z",
   "new_today": 9,
   "projects": [
     {
@@ -31,7 +31,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20Horizon%20RWA",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -91,14 +91,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.844Z"
     },
     {
       "id": "aave-v3",
       "name": "Aave V3",
       "slug": "aave-v3",
-      "tagline": "Lending 协议，TVL 约 $17991M。",
+      "tagline": "Lending 协议，TVL 约 $17983M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -126,7 +126,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20V3",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -186,8 +186,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.374Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.830Z"
     },
     {
       "id": "aave-v4",
@@ -220,7 +220,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20V4",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -280,7 +280,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T11:12:23.989Z"
     },
     {
@@ -312,7 +312,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aerodrome%20Slipstream",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -372,7 +372,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T11:12:23.990Z"
     },
     {
@@ -405,7 +405,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Anemoy%20Capital",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -465,7 +465,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.846Z"
     },
     {
@@ -498,7 +498,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/b14g",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -558,14 +558,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T05:02:53.945Z"
     },
     {
       "id": "b2-buzz",
       "name": "B2 Buzz",
       "slug": "b2-buzz",
-      "tagline": "Canonical Bridge 协议，TVL 约 $232M。",
+      "tagline": "Canonical Bridge 协议，TVL 约 $233M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin"
@@ -589,7 +589,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/B2%20Buzz",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -657,14 +657,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.376Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.834Z"
     },
     {
       "id": "babylon-protocol",
       "name": "Babylon Protocol",
       "slug": "babylon-protocol",
-      "tagline": "Restaking 协议，TVL 约 $3344M。",
+      "tagline": "Restaking 协议，TVL 约 $3343M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin"
@@ -688,7 +688,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Babylon%20Protocol",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -748,14 +748,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.376Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.834Z"
     },
     {
       "id": "bedrock-unibtc",
       "name": "Bedrock uniBTC",
       "slug": "bedrock-unibtc",
-      "tagline": "Anchor BTC 协议，TVL 约 $376M。",
+      "tagline": "Anchor BTC 协议，TVL 约 $373M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin",
@@ -779,7 +779,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Bedrock%20uniBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -839,8 +839,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.376Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.834Z"
     },
     {
       "id": "bitfi-basis",
@@ -872,7 +872,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/BitFi%20Basis",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -932,7 +932,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T04:02:36.392Z"
     },
     {
@@ -963,7 +963,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Bittensor%20dTAO",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1023,7 +1023,7 @@
       "created_at": "2026-09-19T04:02:15.467Z",
       "first_seen_at": "2026-09-19T04:02:15.467Z",
       "discovered_at": "2026-09-19T04:02:15.467Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T04:12:37.538Z"
     },
     {
@@ -1051,7 +1051,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Buzz%20Farming",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1111,7 +1111,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.848Z"
     },
     {
@@ -1143,7 +1143,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/cap",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1203,7 +1203,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.849Z"
     },
     {
@@ -1236,7 +1236,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/CCIP",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1304,7 +1304,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.849Z"
     },
     {
@@ -1337,7 +1337,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/CIAN%20Yield%20Layer",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1397,7 +1397,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.379Z"
     },
     {
@@ -1427,7 +1427,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Clearstar",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1487,7 +1487,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T07:02:38.298Z"
     },
     {
@@ -1521,7 +1521,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Compound%20V3",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1581,7 +1581,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.850Z"
     },
     {
@@ -1615,7 +1615,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Concrete",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1675,7 +1675,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:02:38.823Z"
     },
     {
@@ -1708,7 +1708,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Convex%20Finance",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1768,7 +1768,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -1800,7 +1800,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Cooler%20Loans",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1860,7 +1860,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -1894,7 +1894,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Curve%20DEX",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -1954,7 +1954,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-17T23:22:35.052Z"
     },
     {
@@ -1988,7 +1988,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Defi%20Saver%20Asset%20Management",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2048,14 +2048,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.380Z"
     },
     {
       "id": "derive-v2",
       "name": "Derive V2",
       "slug": "derive-v2",
-      "tagline": "Derivatives 协议，TVL 约 $192M。",
+      "tagline": "Derivatives 协议，TVL 约 $194M。",
       "category": "DeFi",
       "chains": [
         "Hyperliquid L1",
@@ -2082,7 +2082,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Derive%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2142,8 +2142,8 @@
       "created_at": "2026-09-16T06:14:36.946Z",
       "first_seen_at": "2026-09-16T06:14:36.946Z",
       "discovered_at": "2026-09-16T06:14:36.946Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T07:02:38.300Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.842Z"
     },
     {
       "id": "digift",
@@ -2175,7 +2175,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/DigiFT",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2235,7 +2235,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.851Z"
     },
     {
@@ -2269,7 +2269,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Dolomite",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2329,14 +2329,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.852Z"
     },
     {
       "id": "eigencloud",
       "name": "EigenCloud",
       "slug": "eigencloud",
-      "tagline": "Restaking 协议，TVL 约 $6898M。",
+      "tagline": "Restaking 协议，TVL 约 $6895M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -2360,7 +2360,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EigenCloud",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2420,8 +2420,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.381Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.844Z"
     },
     {
       "id": "ethena-usde",
@@ -2451,7 +2451,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ethena%20USDe",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2511,7 +2511,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.382Z"
     },
     {
@@ -2542,7 +2542,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ethena%20USDtb",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2602,7 +2602,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.853Z"
     },
     {
@@ -2635,7 +2635,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EtherFi%20Borrowing%20Market",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2695,7 +2695,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.854Z"
     },
     {
@@ -2724,7 +2724,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EtherFi%20Cash%20Liquid",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2784,7 +2784,7 @@
       "created_at": "2026-09-16T01:37:46.776Z",
       "first_seen_at": "2026-09-16T01:37:46.776Z",
       "discovered_at": "2026-09-16T01:37:46.776Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T03:02:36.505Z"
     },
     {
@@ -2818,7 +2818,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Euler%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2878,14 +2878,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.854Z"
     },
     {
       "id": "falcon-finance",
       "name": "Falcon Finance",
       "slug": "falcon-finance",
-      "tagline": "Basis Trading 协议，TVL 约 $1208M。",
+      "tagline": "Basis Trading 协议，TVL 约 $1207M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -2909,7 +2909,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Falcon%20Finance",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -2969,8 +2969,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-18T18:42:37.184Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.846Z"
     },
     {
       "id": "fassets",
@@ -3001,7 +3001,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/FAssets",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3069,7 +3069,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3101,7 +3101,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Figure%20Markets%20Democratized%20Prime",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3161,7 +3161,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3194,7 +3194,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20DEX",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3254,7 +3254,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3288,7 +3288,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20Lending",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3348,7 +3348,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.855Z"
     },
     {
@@ -3379,7 +3379,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20Lite",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3439,7 +3439,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T05:02:53.950Z"
     },
     {
@@ -3470,7 +3470,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Function%20FBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3538,7 +3538,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.856Z"
     },
     {
@@ -3568,7 +3568,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Gauntlet",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3628,7 +3628,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.385Z"
     },
     {
@@ -3661,7 +3661,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/GMX%20V2%20Perps",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3721,7 +3721,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-18T21:32:36.322Z"
     },
     {
@@ -3755,7 +3755,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Grove%20Finance",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3815,14 +3815,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T00:32:35.483Z"
     },
     {
       "id": "gtbtc",
       "name": "GTBTC",
       "slug": "gtbtc",
-      "tagline": "Restaked BTC 协议，TVL 约 $280M。",
+      "tagline": "Restaked BTC 协议，TVL 约 $281M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin"
@@ -3844,7 +3844,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/GTBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3904,8 +3904,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T07:02:38.305Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.850Z"
     },
     {
       "id": "huma-finance-v2",
@@ -3937,7 +3937,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Huma%20Finance%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -3997,7 +3997,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.858Z"
     },
     {
@@ -4027,7 +4027,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Hyperithm",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4087,7 +4087,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T03:42:36.548Z"
     },
     {
@@ -4120,7 +4120,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Invesco%20USTB",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4180,7 +4180,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.859Z"
     },
     {
@@ -4212,7 +4212,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Jupiter%20Lend",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4272,14 +4272,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.859Z"
     },
     {
       "id": "jupiter-perpetual-exchange",
       "name": "Jupiter Perpetual Exchange",
       "slug": "jupiter-perpetual-exchange",
-      "tagline": "Derivatives 协议，TVL 约 $798M。",
+      "tagline": "Derivatives 协议，TVL 约 $794M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -4303,7 +4303,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Jupiter%20Perpetual%20Exchange",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4363,8 +4363,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.387Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.854Z"
     },
     {
       "id": "justcryptos",
@@ -4394,7 +4394,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustCryptos",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4462,7 +4462,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.860Z"
     },
     {
@@ -4494,7 +4494,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustLend%20V1",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4554,7 +4554,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.860Z"
     },
     {
@@ -4584,7 +4584,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/K3%20Capital",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4644,7 +4644,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.388Z"
     },
     {
@@ -4676,7 +4676,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kamino%20Lend",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4736,14 +4736,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.860Z"
     },
     {
       "id": "kelp",
       "name": "Kelp",
       "slug": "kelp",
-      "tagline": "Liquid Restaking 协议，TVL 约 $1125M。",
+      "tagline": "Liquid Restaking 协议，TVL 约 $1124M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -4767,7 +4767,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kelp",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4827,14 +4827,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T07:02:38.308Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.855Z"
     },
     {
       "id": "kinetiq-khype",
       "name": "Kinetiq kHYPE",
       "slug": "kinetiq-khype",
-      "tagline": "Liquid Staking 协议，TVL 约 $1186M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1196M。",
       "category": "DeFi",
       "chains": [
         "Hyperliquid L1"
@@ -4858,7 +4858,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kinetiq%20kHYPE",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -4918,8 +4918,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T07:02:38.308Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.855Z"
     },
     {
       "id": "kpk",
@@ -4948,7 +4948,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/KPK",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5008,7 +5008,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-18T21:32:36.326Z"
     },
     {
@@ -5021,7 +5021,8 @@
         "Ethereum",
         "ApeChain",
         "Base",
-        "Arbitrum"
+        "Arbitrum",
+        "Fantom"
       ],
       "status": "potential",
       "official": {
@@ -5042,7 +5043,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/LayerZero%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5110,8 +5111,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-16T09:12:22.608Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.857Z"
     },
     {
       "id": "lido",
@@ -5143,7 +5144,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lido",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5203,7 +5204,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.389Z"
     },
     {
@@ -5232,7 +5233,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lightning%20Network",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5292,7 +5293,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5323,7 +5324,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Liquid%20Collective",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5383,7 +5384,7 @@
       "created_at": "2026-09-16T01:37:46.776Z",
       "first_seen_at": "2026-09-16T01:37:46.776Z",
       "discovered_at": "2026-09-16T01:37:46.776Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.389Z"
     },
     {
@@ -5415,7 +5416,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lista%20CDP",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5475,7 +5476,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5508,7 +5509,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lista%20Lending",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5568,7 +5569,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.862Z"
     },
     {
@@ -5598,7 +5599,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lombard%20LBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5658,7 +5659,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-18T13:02:42.562Z"
     },
     {
@@ -5689,7 +5690,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lorenzo%20enzoBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5757,7 +5758,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.863Z"
     },
     {
@@ -5785,7 +5786,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/M0",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5845,7 +5846,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T05:02:53.954Z"
     },
     {
@@ -5878,7 +5879,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Maple",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -5938,14 +5939,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.863Z"
     },
     {
       "id": "marinade-native",
       "name": "Marinade Native",
       "slug": "marinade-native",
-      "tagline": "Staking Pool 协议，TVL 约 $431M。",
+      "tagline": "Staking Pool 协议，TVL 约 $427M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -5969,7 +5970,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Marinade%20Native",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6029,14 +6030,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.390Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.860Z"
     },
     {
       "id": "marinade-select",
       "name": "Marinade Select",
       "slug": "marinade-select",
-      "tagline": "Staking Pool 协议，TVL 约 $210M。",
+      "tagline": "Staking Pool 协议，TVL 约 $208M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -6060,7 +6061,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Marinade%20Select",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6120,8 +6121,8 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.391Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.860Z"
     },
     {
       "id": "mellow-core",
@@ -6154,7 +6155,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Mellow%20Core",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6214,7 +6215,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T07:02:38.310Z"
     },
     {
@@ -6248,7 +6249,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Merlins%20Seal",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6316,14 +6317,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T04:58:11.247Z"
     },
     {
       "id": "meth-protocol",
       "name": "mETH Protocol",
       "slug": "meth-protocol",
-      "tagline": "Liquid Staking 协议，TVL 约 $601M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $602M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -6347,7 +6348,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/mETH%20Protocol",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6407,14 +6408,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T07:02:38.311Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.862Z"
     },
     {
       "id": "morpho-blue",
       "name": "Morpho Blue",
       "slug": "morpho-blue",
-      "tagline": "Lending 协议，TVL 约 $10713M。",
+      "tagline": "Lending 协议，TVL 约 $10716M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -6441,7 +6442,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Morpho%20Blue",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6501,8 +6502,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T07:02:38.312Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.863Z"
     },
     {
       "id": "nexus-btc",
@@ -6532,7 +6533,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Nexus%20BTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6600,7 +6601,7 @@
       "created_at": "2026-09-16T06:46:09.855Z",
       "first_seen_at": "2026-09-16T06:46:09.855Z",
       "discovered_at": "2026-09-16T06:46:09.855Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T06:46:09.855Z"
     },
     {
@@ -6631,7 +6632,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Obol",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6691,7 +6692,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.393Z"
     },
     {
@@ -6724,7 +6725,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ondo%20Global%20Markets",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6784,7 +6785,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-17T23:22:35.065Z"
     },
     {
@@ -6815,7 +6816,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/OnRe",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6875,7 +6876,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.868Z"
     },
     {
@@ -6908,7 +6909,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/OpenTrade",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -6968,7 +6969,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7000,7 +7001,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Orca%20DEX",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7060,7 +7061,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7093,7 +7094,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PancakeSwap%20AMM",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7153,7 +7154,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7186,7 +7187,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PancakeSwap%20AMM%20V3",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7246,7 +7247,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7279,7 +7280,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Pendle%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7339,7 +7340,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.869Z"
     },
     {
@@ -7373,7 +7374,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Plume%20Vaults",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7433,14 +7434,14 @@
       "created_at": "2026-09-16T06:14:36.946Z",
       "first_seen_at": "2026-09-16T06:14:36.946Z",
       "discovered_at": "2026-09-16T06:14:36.946Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-18T08:02:38.903Z"
     },
     {
       "id": "polymarket-international",
       "name": "Polymarket International",
       "slug": "polymarket-international",
-      "tagline": "Prediction Market 协议，TVL 约 $344M。",
+      "tagline": "Prediction Market 协议，TVL 约 $345M。",
       "category": "DeFi",
       "chains": [
         "Polygon"
@@ -7464,7 +7465,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Polymarket%20International",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7524,8 +7525,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T05:02:53.957Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.869Z"
     },
     {
       "id": "portal",
@@ -7557,7 +7558,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Portal",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7625,7 +7626,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7656,7 +7657,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PumpSwap",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7716,7 +7717,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7747,7 +7748,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Raydium%20AMM",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7807,7 +7808,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7840,7 +7841,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Re",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7900,7 +7901,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.870Z"
     },
     {
@@ -7930,7 +7931,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/RockawayX",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -7990,14 +7991,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T03:02:36.520Z"
     },
     {
       "id": "rocket-pool",
       "name": "Rocket Pool",
       "slug": "rocket-pool",
-      "tagline": "Liquid Staking 协议，TVL 约 $1372M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1371M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -8021,7 +8022,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Rocket%20Pool",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8081,8 +8082,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.397Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.872Z"
     },
     {
       "id": "sanctum-infinity",
@@ -8112,7 +8113,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sanctum%20Infinity",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8172,14 +8173,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.871Z"
     },
     {
       "id": "sanctum-validator-lsts",
       "name": "Sanctum Validator LSTs",
       "slug": "sanctum-validator-lsts",
-      "tagline": "Liquid Staking 协议，TVL 约 $1796M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1781M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -8203,7 +8204,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sanctum%20Validator%20LSTs",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8263,14 +8264,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:02:38.841Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.873Z"
     },
     {
       "id": "sentora-curator",
       "name": "Sentora Curator",
       "slug": "sentora-curator",
-      "tagline": "Risk Curators 协议，TVL 约 $2670M。",
+      "tagline": "Risk Curators 协议，TVL 约 $2668M。",
       "category": "Infra",
       "chains": [
         "Ethereum",
@@ -8293,7 +8294,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sentora%20Curator",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8353,8 +8354,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.398Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.874Z"
     },
     {
       "id": "sky-lending",
@@ -8385,7 +8386,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sky%20Lending",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8445,7 +8446,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.872Z"
     },
     {
@@ -8482,7 +8483,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Solstice",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8542,7 +8543,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T05:22:53.984Z"
     },
     {
@@ -8575,7 +8576,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Solv%20Basis%20Trading",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8635,7 +8636,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T04:02:36.414Z"
     },
     {
@@ -8668,7 +8669,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SolvBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8736,7 +8737,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.872Z"
     },
     {
@@ -8770,7 +8771,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Spark%20Liquidity%20Layer",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8830,7 +8831,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.400Z"
     },
     {
@@ -8863,7 +8864,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Spark%20Savings",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -8923,7 +8924,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
@@ -8956,7 +8957,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SparkLend",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9016,7 +9017,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
@@ -9047,7 +9048,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SSV%20Network",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9107,7 +9108,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T07:02:38.321Z"
     },
     {
@@ -9138,7 +9139,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Stacks%20sBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9206,7 +9207,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.873Z"
     },
     {
@@ -9239,7 +9240,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Stader",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9299,14 +9300,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.400Z"
     },
     {
       "id": "stakewise-v3",
       "name": "StakeWise V3",
       "slug": "stakewise-v3",
-      "tagline": "Liquid Staking 协议，TVL 约 $994M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $992M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -9331,7 +9332,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/StakeWise%20V3",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9391,14 +9392,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.401Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.878Z"
     },
     {
       "id": "steakhouse-financial",
       "name": "Steakhouse Financial",
       "slug": "steakhouse-financial",
-      "tagline": "Risk Curators 协议，TVL 约 $3110M。",
+      "tagline": "Risk Curators 协议，TVL 约 $3111M。",
       "category": "Infra",
       "chains": [
         "Base",
@@ -9421,7 +9422,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Steakhouse%20Financial",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9481,8 +9482,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.401Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.879Z"
     },
     {
       "id": "sthype",
@@ -9512,7 +9513,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/stHYPE",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9572,7 +9573,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.401Z"
     },
     {
@@ -9603,7 +9604,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SUNSwap%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9663,7 +9664,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.874Z"
     },
     {
@@ -9694,7 +9695,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SUNSwap%20V3",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9754,7 +9755,7 @@
       "created_at": "2026-09-12T07:12:26.570Z",
       "first_seen_at": "2026-09-12T07:12:26.570Z",
       "discovered_at": "2026-09-12T07:12:26.570Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.874Z"
     },
     {
@@ -9786,7 +9787,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Symbiotic",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9846,7 +9847,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T02:32:36.290Z"
     },
     {
@@ -9875,7 +9876,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/tBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -9935,7 +9936,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T07:02:38.323Z"
     },
     {
@@ -9968,7 +9969,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V2",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10028,7 +10029,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10061,7 +10062,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V3",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10121,7 +10122,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10154,7 +10155,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V4",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10214,7 +10215,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10247,7 +10248,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Unit",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10315,7 +10316,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10349,7 +10350,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Upshift",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10409,7 +10410,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:02:38.847Z"
     },
     {
@@ -10440,7 +10441,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USD%20AI",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10500,7 +10501,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10534,7 +10535,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USDD",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10594,7 +10595,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.875Z"
     },
     {
@@ -10625,7 +10626,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USDT0",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10693,7 +10694,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.876Z"
     },
     {
@@ -10727,7 +10728,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Veda",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10787,7 +10788,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T05:02:53.963Z"
     },
     {
@@ -10821,7 +10822,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Venus%20Core%20Pool",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10881,7 +10882,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.876Z"
     },
     {
@@ -10912,7 +10913,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/WBTC",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -10980,14 +10981,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-16T01:48:06.876Z"
     },
     {
       "id": "world-chain",
       "name": "World Chain",
       "slug": "world-chain",
-      "tagline": "Canonical Bridge 协议，TVL 约 $388M。",
+      "tagline": "Canonical Bridge 协议，TVL 约 $385M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -11011,7 +11012,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/World%20Chain",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -11079,8 +11080,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
-      "last_changed_at": "2026-09-19T06:42:55.406Z"
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
+      "last_changed_at": "2026-09-19T08:02:41.886Z"
     },
     {
       "id": "yearn-finance",
@@ -11112,7 +11113,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Yearn%20Finance",
-          "fetched_at": "2026-09-19T07:02:17.216Z"
+          "fetched_at": "2026-09-19T08:02:20.609Z"
         }
       ],
       "scores": {
@@ -11172,7 +11173,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-09-19T07:02:17.216Z",
+      "last_checked_at": "2026-09-19T08:02:20.609Z",
       "last_changed_at": "2026-09-19T06:42:55.406Z"
     },
     {
