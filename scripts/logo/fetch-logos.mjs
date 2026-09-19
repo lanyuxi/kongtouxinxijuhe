@@ -25,6 +25,12 @@
  *   本次需求明确要求「不出现缺省图或字母图」，
  *   因此脚本会对最终结果做硬校验：没有任何项目落在兜底上才算成功（见 verifyCoverage）。
  *
+ * 运行环境要求：**零外部二进制依赖**。
+ *   尺寸解析走文件头自解析（image-size.mjs），
+ *   ffmpeg 只用于把非 PNG 缩放到 128×128，缺失时自动降级为原样保存。
+ *   这样 CNB / GitHub Actions 的 node:22 镜像（不含 ffmpeg）也能正常跑完，
+ *   不会因为「构建机少装一个二进制」把整条发布链路拖停。
+ *
  * 用法：
  *   node scripts/logo/fetch-logos.mjs            # 增量抓取（已存在的图标跳过）
  *   node scripts/logo/fetch-logos.mjs --force    # 全部重新抓取
@@ -36,6 +42,7 @@ import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import path from 'node:path';
 import { faviconUrls, hostOf, isOfficialHost, isPlaceholderSvg, llamaIconUrl, sniffImage } from './sources.mjs';
+import { imageSize } from './image-size.mjs';
 
 const execFileAsync = promisify(execFile);
 
@@ -112,26 +119,73 @@ async function httpGet(url, { timeout = 15000, retries = 2 } = {}) {
  */
 /**
  * 读出实际像素尺寸（同时用于识别 1×1 之类的僵尸图）。
- * 用 ffprobe 而不是 ffmpeg：ffmpeg 的 -select_streams 属于 ffprobe 选项，
- * 直接调 ffmpeg 会报 “Unrecognized option”，导致所有图片都被误判为不可解析。
+ *
+ * 实现方式：直接从文件头解析（scripts/logo/image-size.mjs），**不再依赖 ffprobe**。
+ *
+ * 为什么必须改（2026-09-15 线上部署失败的真正根因）：
+ *   CI 的 `node:22` 镜像里没有 ffmpeg。原实现调 `ffprobe` 读尺寸，
+ *   命令不存在 → 子进程报错 → 被 catch 吞成 null → 每个候选图标都被判成
+ *   「无法解析图像尺寸」→ 189 个项目全部抓不到图标 + `npm run logos` 非 0 退出。
+ *
+ *   这一点非常容易被误判成「图床抖动」：错误文案是「无法解析图像尺寸」，
+ *   看起来像图片坏了；而本机（装了 ffmpeg）跑 `--force` 又是 188/189 成功，
+ *   于是「本地好的、CI 不好」看上去像网络问题。
+ *   实际上是**与网络无关的 100% 必然失败**：换任何一台没装 ffmpeg 的机器都一样。
+ *   （注意：beezie 确实另有 Cloudflare 反爬问题，见 mapping.json 的 _blocked，
+ *    但那只是 1 个项目；这里说的是「全部项目都失败」这一类。）
+ *
+ *   尺寸信息本来就在文件头里：自解析零依赖、可离线、可测试，
+ *   也不会因为「构建机少装一个二进制」就把整条发布链路拖停。
  */
-async function probeSize(file) {
-  try {
-    const { stdout } = await execFileAsync(
-      'ffprobe',
-      ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', file],
-      { timeout: 20000 },
-    );
-    const [w, h] = stdout.trim().split(',').map(Number);
-    if (!w || !h) return null;
-    return { w, h };
-  } catch {
-    return null;
-  }
+async function probeSize(buf, format) {
+  if (!format) return null;
+  return imageSize(buf, format);
 }
 
-/** 统一下载后的处理：转成 128×128 PNG，保证前端零解码差异 */
-async function toPng128(inputFile, outputFile) {
+/**
+ * 构建机是否装了 ffmpeg —— 只在第一次询问时探测一次。
+ *
+ * 为什么必须探测而不是直接调用（这是另一半原因）：
+ *   `node:22` 官方镜像不含 ffmpeg。原实现无条件调用它做 128×128 转码，
+ *   于是即使尺寸校验通过，也会在转码时变成「spawn ffmpeg ENOENT」→ 判为失败。
+ *   换成「探测 + 可降级」后，构建机有没有 ffmpeg 都不再影响发布。
+ */
+let ffmpegAvailable = null;
+async function hasFfmpeg() {
+  if (ffmpegAvailable !== null) return ffmpegAvailable;
+  try {
+    await execFileAsync('ffmpeg', ['-version'], { timeout: 10000 });
+    ffmpegAvailable = true;
+  } catch {
+    ffmpegAvailable = false;
+    console.warn(
+      '[logo] 未检测到 ffmpeg，将直接保存原始图标（不做 128×128 转码）。' +
+        '展示尺寸由前端 <img> 统一约束，不影响视觉一致性。',
+    );
+  }
+  return ffmpegAvailable;
+}
+
+/**
+ * 统一下载后的处理：优先转成 128×128 PNG。
+ *
+ * 无 ffmpeg 时**降级为原样保存**，而不是让下载失败：
+ *   图标尺寸只是展示层的统一约定，前端本来就按 64px 渲染，
+ *   不该因为构建机少装一个二进制就把所有项目判成「抓取失败」。
+ *   （原生格式 PNG / WebP / ICO / JPEG 浏览器全都能直接显示。）
+ */
+async function toPng128(inputFile, outputFile, format) {
+  if (format === 'png') {
+    // PNG 无需转码即可直接用；只有要缩放的才需要 ffmpeg
+    const size = imageSize(await readFile(inputFile), 'png');
+    if (size && size.w <= SIZE * 2 && size.h <= SIZE * 2) {
+      await writeFile(outputFile, await readFile(inputFile));
+      return { ext: 'png', transcoded: false };
+    }
+  }
+  if (!(await hasFfmpeg())) {
+    return { ext: format, transcoded: false };
+  }
   await execFileAsync(
     'ffmpeg',
     [
@@ -142,6 +196,7 @@ async function toPng128(inputFile, outputFile) {
     ],
     { timeout: 30000 },
   );
+  return { ext: 'png', transcoded: true };
 }
 
 async function exists(p) {
@@ -152,7 +207,7 @@ async function exists(p) {
  * 从一个候选文件里判断「是不是真的项目 logo」。
  * 判定失败会返回原因，便于报告里说清为什么换下一个来源。
  */
-async function validateCandidate(tmpFile, buf, format) {
+async function validateCandidate(buf, format) {
   if (!format) return { ok: false, reason: '不是图片格式' };
   if (format === 'svg') {
     const text = buf.toString('utf8');
@@ -160,7 +215,7 @@ async function validateCandidate(tmpFile, buf, format) {
     // SVG 交给 ffmpeg 前先落盘，尺寸检测对 SVG 不可靠，直接放行
     return { ok: true, format };
   }
-  const size = await probeSize(tmpFile);
+  const size = await probeSize(buf, format);
   if (!size) return { ok: false, reason: '无法解析图像尺寸' };
   if (size.w < 24 || size.h < 24) return { ok: false, reason: `尺寸过小 ${size.w}×${size.h}`, lowres: size };
   const ratio = size.w / size.h;
@@ -180,7 +235,7 @@ async function tryCandidate(url, slug, allowLowRes = false) {
     const format = sniffImage(buf);
     if (!format) return { ok: false, reason: '响应不是图片（可能是域名占位页）' };
     await writeFile(tmpRaw, buf);
-    const check = await validateCandidate(tmpRaw, buf, format);
+    const check = await validateCandidate(buf, format);
     if (!check.ok) {
       // 低分辨率例外：只在人工登记过的项目上放行，且必须确实是「图片尺寸太小」
       if (!(allowLowRes && check.lowres)) return { ok: false, reason: check.reason };
@@ -190,8 +245,13 @@ async function tryCandidate(url, slug, allowLowRes = false) {
       // 直接保留原文件，由前端 <img> 原样显示。
       return { ok: true, buffer: buf, ext: 'svg', url };
     }
-    await toPng128(tmpRaw, tmpPng);
-    return { ok: true, buffer: await readFile(tmpPng), ext: 'png', url };
+    const out = await toPng128(tmpRaw, tmpPng, format);
+    return {
+      ok: true,
+      buffer: await readFile(out.transcoded ? tmpPng : tmpRaw),
+      ext: out.ext ?? 'png',
+      url,
+    };
   } catch (e) {
     return { ok: false, reason: (e instanceof Error ? e.message : String(e)).slice(0, 120) };
   } finally {
@@ -274,6 +334,11 @@ async function main() {
       attempts.push(`${url} → ${r.reason}`);
     }
 
+    // 本轮所有候选都失败：先把旧来源登记进 carriedSources，
+    // 保证 --force 全量重抓时 sources 记录不会被清空（见下方 mergedSources）。
+    const carriedSrc = existingMap.sources?.[slug];
+    if (carriedSrc) carriedSources[slug] = carriedSrc;
+
     // 本轮没抓到：如果手上有旧图标，就保留旧的（可用性优先于「必须是最新图标」）。
     if (hasCached) {
       const src = existingMap.sources?.[slug];
@@ -314,7 +379,16 @@ async function main() {
   // sources 与 logos 一样按 slug 排序输出：
   // 并发抓取的完成顺序是不确定的，不排序会让 logo-map.json 每轮都产生
   // 「只换了行序」的噪音 diff（连带触发一次无意义的 GitHub 推送）。
+  // 来源记录合并顺序：old → carried → 本轮成功。
+  //
+  // 为什么必须显式带上 `existingMap.sources`（这是 --force 的一个真实缺陷）：
+  //   全量重抓时 `!force && hasCached` 这条快速路径不会执行，
+  //   所以每个项目的旧来源都不会进入 carriedSources；
+  //   一旦某个项目本轮抓取失败（网络抖动），它的 sources 记录就会凭空消失。
+  //   而 sources 是「这张图是从哪儿来的」唯一的复核线索，属于溯源信息，
+  //   绝不能因为一次重抓失败而被抹掉 —— 丢失后就再也补不回来了。
   const mergedSources = {
+    ...(existingMap.sources ?? {}),
     ...carriedSources,
     ...Object.fromEntries(report.ok.map((r) => [r.slug, r.url])),
   };

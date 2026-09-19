@@ -380,3 +380,113 @@ describe('logo 覆盖率守卫：已登记限制 vs 未知失败', () => {
     ).toEqual([]);
   });
 });
+
+/**
+ * 下载重试与「无 ffmpeg 构建机」的回归测试。
+ * ---------------------------------------------------------------------------
+ * 背景（2026-09-15 CNB 流水线真实失败，PR #19 合入后仍然复现）：
+ *   `npm run logos` 在 CI 里报「188 个项目全部拿不到图标，全部无法解析图像尺寸」，
+ *   但同一份代码在本机（装了 ffmpeg）跑 `--force` 却是 187/188 成功。
+ *
+ *   根因不是图床抖动，而是**构建机缺少 ffmpeg**：
+ *     · 尺寸校验走 `ffprobe`，命令不存在 → 被 catch 吞成 null
+ *       → 每个候选图标都判成「无法解析图像尺寸」；
+ *     · 转码走 `ffmpeg`，同样 ENOENT → 即使尺寸过了也会在转码时失败。
+ *   于是「一次网络抖动」的说法掩盖了真正的问题：
+ *   换成任何一台没装 ffmpeg 的机器，100% 必然失败，且与网络无关。
+ *
+ *   修复：尺寸改由文件头自解析（scripts/logo/image-size.mjs），
+ *        ffmpeg 仅在需要缩放时才用，缺失时降级为原样保存。
+ *   下面这些用例全部离线、不依赖外网，钉死这一行为。
+ */
+describe('无 ffmpeg 环境下的图标抓取（回归）', () => {
+  const SCRIPT = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+  const SIZE_MOD = path.join(ROOT, 'scripts/logo/image-size.mjs');
+
+  it('尺寸解析不再依赖 ffprobe，改为解析文件头', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    // 必须使用自带实现
+    expect(src).toContain("from './image-size.mjs'");
+    // validateCandidate 的尺寸判定不得再落在子进程上
+    // 取到 probeSize 函数体本身（到它自己的结束大括号为止）
+    const at = src.indexOf('async function probeSize(');
+    const probeBody = src.slice(at, src.indexOf('\n}', at) + 2);
+    expect(probeBody).not.toContain('ffprobe');
+    expect(probeBody).not.toContain('execFile');
+    expect(probeBody).toContain('imageSize(buf, format)');
+  });
+
+  it('ffprobe / ffmpeg 缺失时不再让整个下载失败', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    // 必须显式探测 ffmpeg 可用性，缺失时降级
+    expect(src).toContain('async function hasFfmpeg(');
+    expect(src).toMatch(/未检测到 ffmpeg/);
+    // toPng128 必须在无 ffmpeg 时返回原始内容，而不是抛错
+    expect(src).toMatch(/if \(!\(await hasFfmpeg\(\)\)\) \{/);
+  });
+
+  it('文件头尺寸解析对常见格式都可用（离线）', async () => {
+    const { imageSize } = await import('../scripts/logo/image-size.mjs');
+
+    // 1×1 PNG（真实头，用于确认僵尸图能被识别，而不是解析失败）
+    const png1x1 = Buffer.from(
+      '89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000a49444154789c6300010000050001',
+      'hex',
+    );
+    expect(imageSize(png1x1, 'png')).toEqual({ w: 1, h: 1 });
+
+    // GIF 逻辑屏幕尺寸（小端）
+    const gif = Buffer.from('47494638396110001000' + '00'.repeat(10), 'hex');
+    expect(imageSize(gif, 'gif')).toEqual({ w: 16, h: 16 });
+
+    // 无法识别的内容必须返回 null（由调用方决定降级），不能抛异常
+    expect(imageSize(Buffer.from('<html>Not Found</html>'), null)).toBeNull();
+  });
+
+  it('已抓到的图标文件，尺寸都能被自解析读出来', async () => {
+    const { imageSize } = await import('../scripts/logo/image-size.mjs');
+    const map = await readJson<LogoMap>('data/logo-map.json');
+    const files = new Set(Object.values(map.logos).map((f) => path.basename(f)));
+
+    const unreadable: string[] = [];
+    for (const f of files) {
+      // SVG 是矢量，无像素尺寸，由 isPlaceholderSvg 单独把关
+      if (f.endsWith('.svg')) continue;
+      const buf = await readFile(path.join(ROOT, 'public', 'logos', f));
+      if (!imageSize(buf, sniffImage(buf))) unreadable.push(f);
+    }
+    expect(unreadable, `以下图标无法解析尺寸：${unreadable.join('、')}`).toEqual([]);
+  });
+});
+
+/**
+ * `--force` 全量重抓不得丢失 sources 溯源记录。
+ * ---------------------------------------------------------------------------
+ * 背景（同上一次排查时发现）：
+ *   增量模式下「已有图标」会走快速路径并把旧来源带进 carriedSources；
+ *   而 --force 跳过该路径，一旦某个项目本轮抓取失败，
+ *   它的 sources 记录就会从 logo-map.json 里凭空消失。
+ *   sources 记录了「这张图是从哪来的」，属于溯源信息，丢了就补不回来 ——
+ *   前端「图标来源可复核」这条承诺也就断了。
+ */
+describe('--force 全量重抓保留 sources 溯源', () => {
+  const SCRIPT = path.join(ROOT, 'scripts/logo/fetch-logos.mjs');
+
+  it('来源合并会带上历史记录，而不是只用本轮结果', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    expect(src).toMatch(/const mergedSources = \{\s*\.\.\.\(existingMap\.sources \?\? \{\}\)/);
+  });
+
+  it('候选全部失败时也会登记旧来源，避免重抓后记录被掏空', async () => {
+    const src = await readFile(SCRIPT, 'utf8');
+    expect(src).toMatch(/const carriedSrc = existingMap\.sources\?\.\[slug\];/);
+  });
+
+  it('当前映射表的 sources 与 logos 一一对应（无缺失溯源）', async () => {
+    const map = JSON.parse(
+      await readFile(path.join(ROOT, 'data/logo-map.json'), 'utf8'),
+    ) as { logos: Record<string, string>; sources?: Record<string, string> };
+    const withoutSource = Object.keys(map.logos).filter((slug) => !map.sources?.[slug]);
+    expect(withoutSource, `以下图标缺少来源记录：${withoutSource.join('、')}`).toEqual([]);
+  });
+});
