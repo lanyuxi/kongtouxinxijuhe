@@ -1,16 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T15:02:11.138Z",
-  "finished_at": "2026-09-19T15:02:47.949Z",
+  "started_at": "2026-09-19T15:32:09.759Z",
+  "finished_at": "2026-09-19T15:32:58.673Z",
   "sources": 3,
-  "ok_sources": 1,
-  "updated_at": "2026-09-19T15:02:11.138Z",
+  "ok_sources": 2,
+  "updated_at": "2026-09-19T15:32:09.759Z",
   "data_changed": true,
-  "change_summary": "变更 1 个：CIAN Yield Layer 内容有更新",
+  "change_summary": "变更 19 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
   "change_details": [
-    "CIAN Yield Layer 内容有更新"
+    "Aave V3 内容有更新",
+    "b14g 内容有更新",
+    "B2 Buzz 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Baibai 状态：潜在空投 → 已确认"
   ],
   "added": 0,
-  "modified": 1,
+  "modified": 19,
   "removed": 0
 }
