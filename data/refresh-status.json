@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T08:42:10.632Z",
-  "finished_at": "2026-09-19T08:43:02.953Z",
+  "started_at": "2026-09-19T09:02:09.383Z",
+  "finished_at": "2026-09-19T09:02:39.092Z",
   "sources": 3,
-  "ok_sources": 2,
-  "updated_at": "2026-09-19T08:42:10.632Z",
+  "ok_sources": 1,
+  "updated_at": "2026-09-19T09:02:09.383Z",
   "data_changed": true,
-  "change_summary": "变更 5 个：Beldex 状态：潜在空投 → 已确认；Gyndore 状态：潜在空投 → 已确认；Nowa 状态：潜在空投 → 已确认",
+  "change_summary": "变更 2 个：Sentora Curator 内容有更新；Spark Liquidity Layer 内容有更新",
   "change_details": [
-    "Beldex 状态：潜在空投 → 已确认",
-    "Gyndore 状态：潜在空投 → 已确认",
-    "Nowa 状态：潜在空投 → 已确认",
-    "Ritual 状态：潜在空投 → 已确认",
-    "Wager Predict 风险：中 → 高"
+    "Sentora Curator 内容有更新",
+    "Spark Liquidity Layer 内容有更新"
   ],
   "added": 0,
-  "modified": 5,
+  "modified": 2,
   "removed": 0
 }
