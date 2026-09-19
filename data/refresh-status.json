@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T15:32:09.759Z",
-  "finished_at": "2026-09-19T15:32:58.673Z",
+  "started_at": "2026-09-19T15:42:10.939Z",
+  "finished_at": "2026-09-19T15:42:57.030Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-19T15:32:09.759Z",
+  "updated_at": "2026-09-19T15:42:10.939Z",
   "data_changed": true,
-  "change_summary": "变更 19 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
+  "change_summary": "变更 1 个：Dualmint 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "B2 Buzz 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Baibai 状态：潜在空投 → 已确认"
+    "Dualmint 内容有更新"
   ],
   "added": 0,
-  "modified": 19,
+  "modified": 1,
   "removed": 0
 }
