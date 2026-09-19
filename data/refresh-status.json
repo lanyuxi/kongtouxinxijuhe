@@ -1,20 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T14:32:11.437Z",
-  "finished_at": "2026-09-19T14:32:45.913Z",
+  "started_at": "2026-09-19T15:02:11.138Z",
+  "finished_at": "2026-09-19T15:02:47.949Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T14:32:11.437Z",
+  "updated_at": "2026-09-19T15:02:11.138Z",
   "data_changed": true,
-  "change_summary": "变更 5 个：Fluid Lite 内容有更新；Gauntlet 内容有更新；Marinade Select 内容有更新",
+  "change_summary": "变更 1 个：CIAN Yield Layer 内容有更新",
   "change_details": [
-    "Fluid Lite 内容有更新",
-    "Gauntlet 内容有更新",
-    "Marinade Select 内容有更新",
-    "SSV Network 内容有更新",
-    "Upshift 内容有更新"
+    "CIAN Yield Layer 内容有更新"
   ],
   "added": 0,
-  "modified": 5,
+  "modified": 1,
   "removed": 0
 }
