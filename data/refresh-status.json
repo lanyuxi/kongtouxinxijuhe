@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T21:32:11.119Z",
-  "finished_at": "2026-09-19T21:32:37.330Z",
+  "started_at": "2026-09-19T22:02:11.702Z",
+  "finished_at": "2026-09-19T22:02:37.872Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T21:32:11.119Z",
+  "updated_at": "2026-09-19T22:02:11.702Z",
   "data_changed": true,
-  "change_summary": "变更 18 个：Aave V3 内容有更新；B2 Buzz 内容有更新；BitFi Basis 内容有更新",
+  "change_summary": "变更 21 个：b14g 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "B2 Buzz 内容有更新",
-    "BitFi Basis 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "Falcon Finance 内容有更新"
+    "b14g 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "CIAN Yield Layer 内容有更新",
+    "Concrete 内容有更新"
   ],
   "added": 0,
-  "modified": 18,
+  "modified": 21,
   "removed": 0
 }
