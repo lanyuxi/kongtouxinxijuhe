@@ -1,20 +1,18 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T13:02:09.886Z",
-  "finished_at": "2026-09-19T13:02:37.531Z",
+  "started_at": "2026-09-19T13:52:09.268Z",
+  "finished_at": "2026-09-19T13:52:52.908Z",
   "sources": 3,
-  "ok_sources": 1,
-  "updated_at": "2026-09-19T13:02:09.886Z",
+  "ok_sources": 2,
+  "updated_at": "2026-09-19T13:52:09.268Z",
   "data_changed": true,
-  "change_summary": "变更 15 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；EigenCloud 内容有更新",
+  "change_summary": "新增 1 个、变更 3 个：Canopy 状态：潜在空投 → 已确认；Deepbook 状态：潜在空投 → 已确认；Satsuma 状态：潜在空投 → 已确认",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "EigenCloud 内容有更新",
-    "Ethena USDe 内容有更新",
-    "Jupiter Perpetual Exchange 内容有更新"
+    "Canopy 状态：潜在空投 → 已确认",
+    "Deepbook 状态：潜在空投 → 已确认",
+    "Satsuma 状态：潜在空投 → 已确认"
   ],
-  "added": 0,
-  "modified": 15,
+  "added": 1,
+  "modified": 3,
   "removed": 0
 }
