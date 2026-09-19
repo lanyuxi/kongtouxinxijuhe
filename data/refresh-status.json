@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T06:02:09.839Z",
-  "finished_at": "2026-09-19T06:02:38.931Z",
+  "started_at": "2026-09-19T06:42:11.252Z",
+  "finished_at": "2026-09-19T06:42:55.485Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T06:02:09.839Z",
+  "updated_at": "2026-09-19T06:42:11.252Z",
   "data_changed": true,
-  "change_summary": "变更 5 个：Concrete 内容有更新；mETH Protocol 内容有更新；Morpho Blue 内容有更新",
+  "change_summary": "变更 25 个：Aave V3 内容有更新；B2 Buzz 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
-    "Concrete 内容有更新",
-    "mETH Protocol 内容有更新",
-    "Morpho Blue 内容有更新",
-    "Sanctum Validator LSTs 内容有更新",
-    "Upshift 内容有更新"
+    "Aave V3 内容有更新",
+    "B2 Buzz 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "CIAN Yield Layer 内容有更新"
   ],
   "added": 0,
-  "modified": 5,
+  "modified": 25,
   "removed": 0
 }
