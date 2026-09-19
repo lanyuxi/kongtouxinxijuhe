@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T05:32:09.967Z",
-  "finished_at": "2026-09-19T05:32:49.369Z",
+  "started_at": "2026-09-19T05:42:13.770Z",
+  "finished_at": "2026-09-19T05:42:55.195Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-19T05:32:09.967Z",
+  "updated_at": "2026-09-19T05:42:13.770Z",
   "data_changed": true,
-  "change_summary": "变更 6 个：Arcium 状态：潜在空投 → 开放领取；Grvt 状态：已确认 → 开放领取；Omega 状态：潜在空投 → 已确认",
+  "change_summary": "移除 1 个、变更 5 个：Doppler Finance 状态：潜在空投 → 开放领取；Huma Finance 状态：潜在空投 → 开放领取；Limitless Prediction Markets 状态：潜在空投 → 开放领取",
   "change_details": [
-    "Arcium 状态：潜在空投 → 开放领取",
-    "Grvt 状态：已确认 → 开放领取",
-    "Omega 状态：潜在空投 → 已确认",
-    "tBTC 内容有更新",
-    "Tread Fi 状态：已确认 → 开放领取"
+    "Doppler Finance 状态：潜在空投 → 开放领取",
+    "Huma Finance 状态：潜在空投 → 开放领取",
+    "Limitless Prediction Markets 状态：潜在空投 → 开放领取",
+    "O1 Exchange 状态：已确认 → 开放领取",
+    "Plume Network 状态：潜在空投 → 开放领取"
   ],
   "added": 0,
-  "modified": 6,
-  "removed": 0
+  "modified": 5,
+  "removed": 1
 }

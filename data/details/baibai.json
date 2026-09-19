@@ -22,7 +22,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/baibai/",
-      "fetched_at": "2026-09-19T05:32:10.013Z"
+      "fetched_at": "2026-09-19T05:42:13.816Z"
     }
   ],
   "evidence": [
@@ -420,7 +420,7 @@
   ],
   "created_at": "2026-09-19T05:02:09.703Z",
   "discovered_at": "2026-09-19T05:02:09.703Z",
-  "last_checked_at": "2026-09-19T05:32:10.013Z",
+  "last_checked_at": "2026-09-19T05:42:13.816Z",
   "last_changed_at": "2026-09-19T05:02:09.703Z",
   "sourcedSteps": [
     {

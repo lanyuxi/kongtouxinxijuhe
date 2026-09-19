@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-09-19T05:32:49.654Z",
-  "total": 267,
+  "updated_at": "2026-09-19T05:42:55.485Z",
+  "total": 266,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v2": "logos/aave-v2.png",
@@ -258,7 +258,6 @@
     "vibe-vibe": "logos/vibe-vibe.png",
     "voice": "logos/voice.png",
     "vvs-standard": "logos/vvs-standard.png",
-    "wager-predict": "logos/wager-predict.ico",
     "wbtc": "logos/wbtc.png",
     "wheelx": "logos/wheelx.png",
     "wick": "logos/wick.ico",
