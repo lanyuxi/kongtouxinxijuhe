@@ -1,16 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T15:42:10.939Z",
-  "finished_at": "2026-09-19T15:42:57.030Z",
+  "started_at": "2026-09-19T16:02:10.428Z",
+  "finished_at": "2026-09-19T16:02:39.389Z",
   "sources": 3,
-  "ok_sources": 2,
-  "updated_at": "2026-09-19T15:42:10.939Z",
+  "ok_sources": 1,
+  "updated_at": "2026-09-19T16:02:10.428Z",
   "data_changed": true,
-  "change_summary": "变更 1 个：Dualmint 内容有更新",
+  "change_summary": "变更 8 个：GTBTC 内容有更新；Jupiter Perpetual Exchange 内容有更新；KPK 内容有更新",
   "change_details": [
-    "Dualmint 内容有更新"
+    "GTBTC 内容有更新",
+    "Jupiter Perpetual Exchange 内容有更新",
+    "KPK 内容有更新",
+    "Rocket Pool 内容有更新",
+    "Sanctum Validator LSTs 内容有更新"
   ],
   "added": 0,
-  "modified": 1,
+  "modified": 8,
   "removed": 0
 }
