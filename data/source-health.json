@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-09-19T05:42:13.770Z",
+  "updated_at": "2026-09-19T06:01:59.838Z",
   "sources": [
     {
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "ok": true,
-      "fetched": 50,
-      "last_success_at": "2026-09-19T05:42:13.770Z",
-      "checked_at": "2026-09-19T05:42:13.770Z"
+      "fetched": 59,
+      "last_success_at": "2026-09-19T06:01:59.838Z",
+      "checked_at": "2026-09-19T06:01:59.838Z"
     },
     {
       "name": "DefiLlama",
       "url": "https://api.llama.fi/protocols",
       "ok": true,
       "fetched": 120,
-      "last_success_at": "2026-09-19T05:42:13.770Z",
-      "checked_at": "2026-09-19T05:42:13.770Z"
+      "last_success_at": "2026-09-19T06:01:59.838Z",
+      "checked_at": "2026-09-19T06:01:59.838Z"
     },
     {
       "name": "X (Twitter)",
       "url": "https://x.com",
       "ok": false,
       "fetched": 0,
-      "error": "40 个账号（样例：@HyperliquidX、@LayerZero_Labs、@Scroll_ZKP）全部探测失败：本环境无法访问 X（连续 3 次网络层失败后熔断）。如需抓取推文，请配置环境变量 X_BEARER_TOKEN；否则该来源将持续显示为不可用，不会伪造数据。",
-      "checked_at": "2026-09-19T05:42:13.770Z"
+      "error": "40 个账号（样例：@HyperliquidX、@LayerZero_Labs、@Scroll_ZKP）全部探测失败：本环境无法访问 X。如需抓取推文，请配置环境变量 X_BEARER_TOKEN；否则该来源将持续显示为不可用，不会伪造数据。",
+      "checked_at": "2026-09-19T06:01:59.838Z"
     }
   ]
 }

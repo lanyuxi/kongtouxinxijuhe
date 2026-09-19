@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/wick/",
-      "fetched_at": "2026-09-19T05:42:13.816Z"
+      "fetched_at": "2026-09-19T06:01:59.981Z"
     }
   ],
   "evidence": [
@@ -382,7 +382,7 @@
   ],
   "created_at": "2026-09-19T05:02:09.703Z",
   "discovered_at": "2026-09-19T05:02:09.703Z",
-  "last_checked_at": "2026-09-19T05:42:13.816Z",
+  "last_checked_at": "2026-09-19T06:01:59.981Z",
   "last_changed_at": "2026-09-19T05:02:09.703Z",
   "sourcedSteps": [
     {
