@@ -1,13 +1,20 @@
 {
-  "updated_at": "2026-09-19T20:02:36.204Z",
+  "updated_at": "2026-09-19T20:32:41.925Z",
   "sources": [
+    {
+      "source": "Airdrops.io",
+      "source_url": "https://airdrops.io/latest/",
+      "fetched_at": "2026-09-19T20:32:10.032Z",
+      "count": 30,
+      "file": "data/live/airdrops-io.json"
+    },
     {
       "source": "DefiLlama",
       "source_url": "https://api.llama.fi/protocols",
-      "fetched_at": "2026-09-19T20:02:09.796Z",
+      "fetched_at": "2026-09-19T20:32:10.032Z",
       "count": 120,
       "file": "data/live/defillama.json"
     }
   ],
-  "total": 120
+  "total": 150
 }
