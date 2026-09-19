@@ -42,6 +42,29 @@ loadCache(CACHE);
 /** 端到端本地化：英文原文 → 最终中文（供人工修正表的护栏使用） */
 const localize = (text: string) => localizeText(text).zh;
 
+/**
+ * 判断一段「仍是英文」的文案，到底是「翻译管线坏了」还是「新文案还没翻」。
+ *
+ * 为什么数据层断言必须做这个区分（对齐 scripts/lib/validate.ts 的同名判定）：
+ *   中文译文只存在于离线准备的 scripts/i18n/cache.zh.json，构建期纯查表、不联网翻译。
+ *   因此 Airdrops.io 每轮抓到的**新项目**天然没有译文 —— 若测试把它当作错误，
+ *   一个项目的英文教程就会让 `npm test` 红掉，进而跳过 校验 / 发布 两步，
+ *   整站 259 个项目都不再更新（2026-09-18 线上事故，71 轮里 23 轮因此失败）。
+ *
+ *   但直接把断言删掉又会放过真正的回归：历史事故里缓存**明明有译文**，
+ *   localizeText 却因取值顺序写错退回英文，整站 736 条教程静默变英文，测试全绿。
+ *
+ * 所以按「缓存里有没有这条」分别处理：
+ *   · 缓存命中 → 有译文却没用上 → 真回归 → 计入 offenders（测试失败）；
+ *   · 缓存未命中 → 新文案还没翻 → 正常缺口 → 不计入（由 validate 告警并放行）。
+ */
+function isTranslationRegression(text: unknown): boolean {
+  const raw = String(text ?? '').trim();
+  if (!raw) return false;
+  const translated = (CACHE as Record<string, string>)[raw];
+  return typeof translated === 'string' && translated.trim() !== '' && hasChinese(translated);
+}
+
 describe('中文判定', () => {
   it('含汉字的文案视为已中文化', () => {
     expect(hasChinese('连接 MetaMask 钱包')).toBe(true);
@@ -414,10 +437,17 @@ describe('全量数据：用户可见文案必须含中文', () => {
       const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
       const isEnOnly = (v: unknown) =>
         typeof v === 'string' && v.trim() && !hasChinese(v) && /[A-Za-z]{4,}/.test(v);
-      if (isEnOnly(p.tagline)) offenders.push(`${p.slug}: tagline`);
+      // 只拦「缓存里有译文却仍是英文」的真回归；新抓到的英文项目属正常缺口。
+      if (isEnOnly(p.tagline) && isTranslationRegression(p.tagline)) {
+        offenders.push(`${p.slug}: tagline`);
+      }
       for (const g of p.guide ?? []) {
-        if (isEnOnly(g.title)) offenders.push(`${p.slug}: 步骤 ${g.step} 标题`);
-        if (isEnOnly(g.description)) offenders.push(`${p.slug}: 步骤 ${g.step} 描述`);
+        if (isEnOnly(g.title) && isTranslationRegression(g.title)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 标题`);
+        }
+        if (isEnOnly(g.description) && isTranslationRegression(g.description)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 描述`);
+        }
       }
     }
     expect(offenders).toEqual([]);
@@ -434,8 +464,14 @@ describe('全量数据：用户可见文案必须含中文', () => {
     for (const file of files) {
       const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
       for (const g of p.guide ?? []) {
-        if (!hasChinese(g.title)) offenders.push(`${p.slug}: 步骤 ${g.step} 标题无中文`);
-        if (!hasChinese(g.description)) offenders.push(`${p.slug}: 步骤 ${g.step} 描述无中文`);
+        // 同上：只有「缓存里有译文却没用上」才算回归；
+        // 新项目的中文译文尚未离线补齐时，不应让整条测试失败。
+        if (!hasChinese(g.title) && isTranslationRegression(g.title)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 标题无中文`);
+        }
+        if (!hasChinese(g.description) && isTranslationRegression(g.description)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 描述无中文`);
+        }
       }
     }
     expect(offenders).toEqual([]);
@@ -447,7 +483,9 @@ describe('全量数据：用户可见文案必须含中文', () => {
       const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
       for (const g of p.guide ?? []) {
         if (!g.original_title) continue;
-        if (!hasChinese(g.title)) offenders.push(`${p.slug}: 步骤 ${g.step} 有原文但标题无中文`);
+        if (!hasChinese(g.title) && isTranslationRegression(g.title)) {
+          offenders.push(`${p.slug}: 步骤 ${g.step} 有原文但标题无中文`);
+        }
         // 原文本身必须是英文，否则说明「原文/译文」字段写反了
         if (hasChinese(g.original_title)) {
           offenders.push(`${p.slug}: 步骤 ${g.step} 的 original_title 不是英文`);
@@ -538,10 +576,59 @@ describe('全量数据：用户可见文案必须含中文', () => {
     const offenders: string[] = [];
     for (const file of files) {
       const p = JSON.parse(readFileSync(path.join(detailsDir, file), 'utf8'));
-      if (p.tagline_en && !hasChinese(p.tagline)) offenders.push(`${p.slug}: tagline`);
-      // 反向对照不能是中文（曾出现「英文原文」字段里存的是中文译文）
+      // 有英文对照却没有中文译文：只有「缓存里有译文却没用上」才算回归，
+      // 新抓到的英文项目属正常缺口（否则新项目一进来测试就红）。
+      if (p.tagline_en && !hasChinese(p.tagline) && isTranslationRegression(p.tagline)) {
+        offenders.push(`${p.slug}: tagline`);
+      }
+      // 反向对照不能是中文（曾出现「英文原文」字段里存的是中文译文）——
+      // 这条与缓存无关，任何情况下都是真错误，保持严格。
       if (p.tagline_en && hasChinese(p.tagline_en)) offenders.push(`${p.slug}: tagline_en 不是英文`);
     }
     expect(offenders).toEqual([]);
+  });
+});
+
+/**
+ * 「数据层中文断言不得被新抓到的英文项目误红」的回归测试。
+ * ---------------------------------------------------------------------------
+ * 背景（2026-09-19 线上事故，issue #28）：
+ *   中文译文只存在于离线准备的 `scripts/i18n/cache.zh.json`，构建期纯查表、不联网。
+ *   但数据层断言把「缺中文」一律当错误 —— 于是 Airdrops.io 每轮**新抓到的英文项目**
+ *   （如 `acepyr`）都会让 `npm test` 变红，进而让 GitHub Actions 跳过
+ *   `发布前校验 / 构建产物自检 / 上传 Pages 制品`，整站 259 个项目停止更新。
+ *   实测 71 轮里 23 轮因此失败，用户持续收到失败邮件。
+ *
+ *   而 PR #37 只把 `validate` 门禁降级为告警，**没有同步修这里的数据层断言** ——
+ *   于是「抓取项目 Logo」修好之后，失败点就前移到了「单元测试」。
+ *   本文件把两个方向都钉死，防止再次只修一半。
+ */
+describe('数据层中文断言的判据：回归 vs 未翻译', () => {
+  const cacheKeys = Object.keys(CACHE as Record<string, string>);
+
+  it('缓存里存在中文译文的条目，被判定为「可能是回归」', () => {
+    // 从真实缓存里取一条「有中文译文」的英文键
+    const hit = cacheKeys.find((k) => {
+      const v = (CACHE as Record<string, string>)[k];
+      return typeof v === 'string' && /[\u4e00-\u9fa5]/.test(v) && /[A-Za-z]{4,}/.test(k);
+    });
+    expect(hit, '缓存里应存在带中文译文的英文键').toBeTruthy();
+    expect(isTranslationRegression(hit)).toBe(true);
+  });
+
+  it('缓存里没有的文案，不当成回归（新抓到的新项目不受影响）', () => {
+    // 一个几乎不可能出现在缓存里的句子
+    const novel = 'Zzzq Novel Project Distributes Rewards Through Points 9f3a';
+    expect(isTranslationRegression(novel)).toBe(false);
+  });
+
+  it('空文案不判定为回归', () => {
+    expect(isTranslationRegression('')).toBe(false);
+    expect(isTranslationRegression(undefined)).toBe(false);
+  });
+
+  it('缓存缺失 / 解析失败时按「未命中」处理（宁可告警，不误红测试）', () => {
+    // 传一个与本文件 CACHE 不同的键，确认不会因为查表异常而误判
+    expect(isTranslationRegression('Some Unknown English Sentence aaaa')).toBe(false);
   });
 });
