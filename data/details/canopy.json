@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/canopy/",
-      "fetched_at": "2026-09-16T12:12:10.300Z"
+      "fetched_at": "2026-09-19T05:02:09.703Z"
     }
   ],
   "evidence": [
@@ -348,7 +348,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-16T12:12:10.300Z",
+  "last_checked_at": "2026-09-19T05:02:09.703Z",
   "last_changed_at": "2026-09-16T06:15:02.314Z",
   "sourcedSteps": [
     {

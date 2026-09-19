@@ -1,16 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T04:12:11.195Z",
-  "finished_at": "2026-09-19T04:12:37.647Z",
+  "started_at": "2026-09-19T05:02:09.649Z",
+  "finished_at": "2026-09-19T05:02:54.009Z",
   "sources": 3,
-  "ok_sources": 1,
-  "updated_at": "2026-09-19T04:12:11.195Z",
+  "ok_sources": 2,
+  "updated_at": "2026-09-19T05:02:09.649Z",
   "data_changed": true,
-  "change_summary": "变更 1 个：Bittensor dTAO 风险：中 → 高",
+  "change_summary": "新增 8 个、移除 1 个、变更 32 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
-    "Bittensor dTAO 风险：中 → 高"
+    "Aave V3 内容有更新",
+    "b14g 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "Cambria 状态：潜在空投 → 开放领取"
   ],
-  "added": 0,
-  "modified": 1,
-  "removed": 0
+  "added": 8,
+  "modified": 32,
+  "removed": 1
 }
