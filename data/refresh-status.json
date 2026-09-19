@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T18:32:11.130Z",
-  "finished_at": "2026-09-19T18:32:37.164Z",
+  "started_at": "2026-09-19T19:12:10.863Z",
+  "finished_at": "2026-09-19T19:12:37.294Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T18:32:11.130Z",
+  "updated_at": "2026-09-19T19:12:10.863Z",
   "data_changed": true,
-  "change_summary": "变更 21 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；BitFi Basis 内容有更新",
+  "change_summary": "变更 13 个：Ethena USDe 内容有更新；Gauntlet 内容有更新；Jupiter Perpetual Exchange 内容有更新",
   "change_details": [
-    "Aave V3 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新",
-    "Concrete 内容有更新",
-    "Curve DEX 内容有更新"
+    "Ethena USDe 内容有更新",
+    "Gauntlet 内容有更新",
+    "Jupiter Perpetual Exchange 内容有更新",
+    "K3 Capital 内容有更新",
+    "Kelp 内容有更新"
   ],
   "added": 0,
-  "modified": 21,
+  "modified": 13,
   "removed": 0
 }
