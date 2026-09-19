@@ -1,19 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T02:32:09.764Z",
-  "finished_at": "2026-09-19T02:32:36.380Z",
+  "started_at": "2026-09-19T03:02:10.012Z",
+  "finished_at": "2026-09-19T03:02:36.610Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-19T02:32:09.764Z",
+  "updated_at": "2026-09-19T03:02:10.012Z",
   "data_changed": true,
-  "change_summary": "变更 4 个：GTBTC 内容有更新；Liquid Collective 内容有更新；Sentora Curator 内容有更新",
+  "change_summary": "变更 11 个：b14g 内容有更新；Bedrock uniBTC 内容有更新；Defi Saver Asset Management 内容有更新",
   "change_details": [
-    "GTBTC 内容有更新",
-    "Liquid Collective 内容有更新",
-    "Sentora Curator 内容有更新",
-    "Symbiotic 内容有更新"
+    "b14g 内容有更新",
+    "Bedrock uniBTC 内容有更新",
+    "Defi Saver Asset Management 内容有更新",
+    "EigenCloud 内容有更新",
+    "EtherFi Cash Liquid 内容有更新"
   ],
   "added": 0,
-  "modified": 4,
+  "modified": 11,
   "removed": 0
 }
