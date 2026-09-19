@@ -29,7 +29,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/onchain-cc/",
-      "fetched_at": "2026-09-19T05:12:09.707Z"
+      "fetched_at": "2026-09-19T05:22:09.778Z"
     }
   ],
   "evidence": [
@@ -456,7 +456,7 @@
   ],
   "created_at": "2026-09-19T05:02:09.703Z",
   "discovered_at": "2026-09-19T05:02:09.703Z",
-  "last_checked_at": "2026-09-19T05:12:09.707Z",
+  "last_checked_at": "2026-09-19T05:22:09.778Z",
   "last_changed_at": "2026-09-19T05:02:09.703Z",
   "sourcedSteps": [
     {
