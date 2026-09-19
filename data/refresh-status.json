@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-19T20:32:10.032Z",
-  "finished_at": "2026-09-19T20:32:41.926Z",
+  "started_at": "2026-09-19T21:32:11.119Z",
+  "finished_at": "2026-09-19T21:32:37.330Z",
   "sources": 3,
-  "ok_sources": 2,
-  "updated_at": "2026-09-19T20:32:10.032Z",
+  "ok_sources": 1,
+  "updated_at": "2026-09-19T21:32:11.119Z",
   "data_changed": true,
-  "change_summary": "变更 10 个：Concrete 内容有更新；Defi Saver Asset Management 内容有更新；EigenCloud 内容有更新",
+  "change_summary": "变更 18 个：Aave V3 内容有更新；B2 Buzz 内容有更新；BitFi Basis 内容有更新",
   "change_details": [
-    "Concrete 内容有更新",
+    "Aave V3 内容有更新",
+    "B2 Buzz 内容有更新",
+    "BitFi Basis 内容有更新",
     "Defi Saver Asset Management 内容有更新",
-    "EigenCloud 内容有更新",
-    "Kelp 内容有更新",
-    "Kinetiq kHYPE 内容有更新"
+    "Falcon Finance 内容有更新"
   ],
   "added": 0,
-  "modified": 10,
+  "modified": 18,
   "removed": 0
 }
