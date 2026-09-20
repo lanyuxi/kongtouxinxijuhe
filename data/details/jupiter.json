@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/jupiter/",
-      "fetched_at": "2026-09-20T05:32:11.168Z"
+      "fetched_at": "2026-09-20T07:02:56.876Z"
     }
   ],
   "evidence": [
@@ -420,7 +420,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-20T05:32:11.168Z",
+  "last_checked_at": "2026-09-20T07:02:56.876Z",
   "last_changed_at": "2026-09-20T05:02:49.193Z",
   "sourcedSteps": [
     {
