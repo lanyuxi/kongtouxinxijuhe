@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/arcium/",
-      "fetched_at": "2026-09-20T18:54:23.634Z"
+      "fetched_at": "2026-09-20T21:25:29.928Z"
     }
   ],
   "evidence": [
@@ -398,7 +398,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-20T18:54:23.634Z",
+  "last_checked_at": "2026-09-20T21:25:29.928Z",
   "last_changed_at": "2026-09-19T05:32:49.302Z",
   "sourcedSteps": [
     {

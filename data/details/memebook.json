@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/memebook/",
-      "fetched_at": "2026-09-20T18:54:23.634Z"
+      "fetched_at": "2026-09-20T21:25:29.928Z"
     }
   ],
   "evidence": [
@@ -415,7 +415,7 @@
   ],
   "created_at": "2026-09-19T05:02:09.703Z",
   "discovered_at": "2026-09-19T05:02:09.703Z",
-  "last_checked_at": "2026-09-20T18:54:23.634Z",
+  "last_checked_at": "2026-09-20T21:25:29.928Z",
   "last_changed_at": "2026-09-19T05:02:09.703Z",
   "sourcedSteps": [
     {
