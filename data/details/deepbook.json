@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/deepbook/",
-      "fetched_at": "2026-09-20T21:25:29.928Z"
+      "fetched_at": "2026-09-20T23:25:56.591Z"
     }
   ],
   "evidence": [
@@ -428,7 +428,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-20T21:25:29.928Z",
+  "last_checked_at": "2026-09-20T23:25:56.591Z",
   "last_changed_at": "2026-09-19T13:52:52.846Z",
   "sourcedSteps": [
     {

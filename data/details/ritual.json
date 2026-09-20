@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/ritual/",
-      "fetched_at": "2026-09-20T21:25:29.928Z"
+      "fetched_at": "2026-09-20T23:25:56.591Z"
     }
   ],
   "evidence": [
@@ -354,7 +354,7 @@
   ],
   "created_at": "2026-09-16T01:15:42.247Z",
   "discovered_at": "2026-09-16T01:15:42.247Z",
-  "last_checked_at": "2026-09-20T21:25:29.928Z",
+  "last_checked_at": "2026-09-20T23:25:56.591Z",
   "last_changed_at": "2026-09-19T08:43:02.899Z",
   "sourcedSteps": [
     {
