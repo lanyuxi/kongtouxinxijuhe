@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-20T02:32:13.481Z",
-  "finished_at": "2026-09-20T02:32:42.544Z",
+  "started_at": "2026-09-20T03:42:09.923Z",
+  "finished_at": "2026-09-20T03:42:40.390Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-20T02:32:13.481Z",
+  "updated_at": "2026-09-20T03:42:09.923Z",
   "data_changed": true,
-  "change_summary": "变更 12 个：Aave V3 内容有更新；Clearstar 内容有更新；Defi Saver Asset Management 内容有更新",
+  "change_summary": "变更 22 个：Aave V3 内容有更新；BitFi Basis 内容有更新；CIAN Yield Layer 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
+    "BitFi Basis 内容有更新",
+    "CIAN Yield Layer 内容有更新",
     "Clearstar 内容有更新",
-    "Defi Saver Asset Management 内容有更新",
-    "EigenCloud 内容有更新",
-    "Hyperithm 内容有更新"
+    "Concrete 内容有更新"
   ],
   "added": 0,
-  "modified": 12,
+  "modified": 22,
   "removed": 0
 }
