@@ -1,20 +1,17 @@
 {
   "state": "success",
-  "started_at": "2026-09-20T04:12:10.745Z",
-  "finished_at": "2026-09-20T04:12:36.862Z",
+  "started_at": "2026-09-20T05:02:10.673Z",
+  "finished_at": "2026-09-20T05:02:49.254Z",
   "sources": 3,
-  "ok_sources": 1,
-  "updated_at": "2026-09-20T04:12:10.745Z",
+  "ok_sources": 2,
+  "updated_at": "2026-09-20T05:02:10.673Z",
   "data_changed": true,
-  "change_summary": "变更 23 个：b14g 内容有更新；B2 Buzz 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "新增 1 个、变更 2 个：Allox 状态：潜在空投 → 已确认；Jupiter 状态：已确认 → 开放领取",
   "change_details": [
-    "b14g 内容有更新",
-    "B2 Buzz 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "Defi Saver Asset Management 内容有更新"
+    "Allox 状态：潜在空投 → 已确认",
+    "Jupiter 状态：已确认 → 开放领取"
   ],
-  "added": 0,
-  "modified": 23,
+  "added": 1,
+  "modified": 2,
   "removed": 0
 }
