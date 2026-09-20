@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-20T02:02:09.596Z",
-  "finished_at": "2026-09-20T02:02:36.362Z",
+  "started_at": "2026-09-20T02:32:13.481Z",
+  "finished_at": "2026-09-20T02:32:42.544Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-09-20T02:02:09.596Z",
+  "updated_at": "2026-09-20T02:32:13.481Z",
   "data_changed": true,
-  "change_summary": "变更 21 个：Babylon Protocol 内容有更新；Concrete 内容有更新；Ethena USDe 内容有更新",
+  "change_summary": "变更 12 个：Aave V3 内容有更新；Clearstar 内容有更新；Defi Saver Asset Management 内容有更新",
   "change_details": [
-    "Babylon Protocol 内容有更新",
-    "Concrete 内容有更新",
-    "Ethena USDe 内容有更新",
-    "Fluid Lite 内容有更新",
-    "Gauntlet 内容有更新"
+    "Aave V3 内容有更新",
+    "Clearstar 内容有更新",
+    "Defi Saver Asset Management 内容有更新",
+    "EigenCloud 内容有更新",
+    "Hyperithm 内容有更新"
   ],
   "added": 0,
-  "modified": 21,
+  "modified": 12,
   "removed": 0
 }
