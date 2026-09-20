@@ -186,6 +186,21 @@ const RESERVED_PATHS = new Set([
   'privacy-policy',
   'terms',
   'disclaimer',
+  // 以下是与「站务/法律页」相关的**精确路径**。
+  // 注意：真正兜住本次事故（`legal-notice`）的是下方的结构化判据
+  // `isNonProjectPath()`，不是这份清单 —— 清单只做精确命中的快路径，
+  // 这里仅补充结构化判据覆盖不到的少数路径，避免清单无限膨胀。
+  'editorial-policy',
+  'media-kit',
+  'donate',
+  'team',
+  'staff',
+  'submit',
+  'submit-airdrop',
+  'airdrop-submission',
+  'sign-in',
+  'dashboard',
+  'humans',
   'category',
   'tag',
   'page',
@@ -199,11 +214,103 @@ const RESERVED_PATHS = new Set([
   'wp-admin',
 ]);
 
+/**
+ * 「站务 / 法律 / 运营」类路径的**结构化**识别（不靠穷举清单）。
+ *
+ * 为什么必须加这一层（2026-09-20 线上事故的真正根因）：
+ *   上面那份清单是**枚举式**的，只能拦「已经见过」的路径。
+ *   于是 airdrops.io 上的 `/legal-notice/`（页脚的「法律声明」链接）
+ *   被当作一个正常项目抓进了库：
+ *     · 它没有官网 → logo 永远抓不到
+ *     · 它没有一句话简介、证据也不足
+ *   而图标覆盖率守卫会因为「这个项目没有图标」让 `npm run logos` 退出码 1，
+ *   进而把整轮发布（单测 / 校验 / 构建 / 部署）全部跳过 ——
+ *   **一个脏链接，让全站 268 个项目停更，用户每 10 分钟收到一封失败邮件。**
+ *
+ *   枚举清单永远追不上对方的页面改版（这次是 `legal-notice`，
+ *   下次可能是 `cookie-settings`）。因此改为「结构判据」：
+ *   凡是以法律 / 站务 / 运营词汇为**词段**命名的路径，一律不当作项目。
+ *
+ * 实现要点：按 `-` 切开逐段比对，避免 `terms` 这类短词误伤真实项目
+ *   （例如 `terms` 是站务页，而 `term-finance` 是真实项目，
+ *    沿用 `x.com` vs `frax.com` 那次子串误判的教训：必须做「段级」匹配）。
+ */
+const NON_PROJECT_SEGMENTS = new Set([
+  // 法律类：几乎不可能作为项目名首词
+  'legal',
+  'notice',
+  'privacy',
+  'terms',
+  'tos',
+  'eula',
+  'imprint',
+  'impressum',
+  'disclaimer',
+  'cookie',
+  'cookies',
+  'gdpr',
+  'dmca',
+  'policy',
+  'policies',
+  'compliance',
+  // 站务 / 运营类：同上（`about-us` 这类是页面，不是项目）
+  'faq',
+  'careers',
+  'jobs',
+  'newsletter',
+  'subscribe',
+  'advertise',
+  'advertising',
+  'sitemap',
+  'robots',
+  'rss',
+  'atom',
+  'feed',
+  'category',
+  'categories',
+  'archive',
+  'archives',
+]);
+
+/**
+ * 某路径段是否为「站务 / 法律 / 运营」页（非项目）。
+ *
+ * 事故背景见本文件顶部同名注释：`/legal-notice/` 被当成项目抓入库，
+ * 导致图标门禁阻断整站发布。
+ *
+ * 判据（两层，缺一不可）：
+ *   1. **强判据**：整个 slug 就是站务词，或 slug 的第一个词是站务词。
+ *      `legal-notice` / `terms-of-service` / `privacy-policy-v2` / `terms`
+ *      都命中；而 `term-finance`（`term` 只是修饰词）不命中。
+ *      —— 站务页的命名惯例是「站务词在前」（`terms-of-service`、`cookie-policy`），
+ *      而真实项目的站务同形词通常出现在**后面**（`term-finance`、`legalzoom`）。
+ *   2. **兜底**：所有词段都命中站务词表（如 `privacy-and-cookie`）。
+ *
+ * 为什么不用「任意命中即排除」：那会把 `term-finance`、`contact-us-dao`
+ *   这类真实项目一起误杀 —— 这正是 `x.com` 子串匹配那次栽过的坑，
+ *   教训是**匹配必须限定在词段边界上，且不能过度扩大**。
+ *
+ * 为什么刻意不收 `contact` / `about` / `press` / `media` / `support` / `help`
+ *   这些同样是页面名的词：它们作为**项目名首词**是完全可能的
+ *   （`press-play`、`media-dao`、`about-face`…）。
+ *   收进来的收益很小（这类页面很少是站务页），代价却是误杀真实项目 ——
+ *   而误杀一个真实项目，比漏掉一个脏页面严重得多。
+ *   对确实需要更强过滤的场景，宁可让它在详情页因「缺官网/缺简介」被人工发现。
+ */
+export function isNonProjectPath(seg: string): boolean {
+  const words = seg.toLowerCase().split(/[-_]/).filter(Boolean);
+  if (words.length === 0) return false;
+  // 强判据：首词即站务词（`terms-of-service`），或整体就是站务词（`terms`）
+  if (NON_PROJECT_SEGMENTS.has(words[0])) return true;
+  // 兜底：所有词段都是站务词（`privacy-cookie-policy`）
+  return words.every((w) => NON_PROJECT_SEGMENTS.has(w));
+}
+
 /** 返佣 / 跳转路径（/goto/bybit/ 之类）不是项目页 */
 const REFERRAL_PATH = /^\/(goto|visit|go|out)\//i;
 
 /** 从列表页提取项目详情页链接（排除分类页、运营页与跳转链接） */
-function extractProjectLinks(html: string): string[] {
+export function extractProjectLinks(html: string): string[] {
   const seen = new Set<string>();
   const re = /<a\b[^>]*href=["'](https:\/\/airdrops\.io\/[^"'#?]+)["']/gi;
   let m: RegExpExecArray | null;
@@ -215,6 +322,8 @@ function extractProjectLinks(html: string): string[] {
     // 项目页只有一层路径段
     if (seg.includes('/') || !seg) continue;
     if (RESERVED_PATHS.has(seg.toLowerCase())) continue;
+    // 结构化判据：法律 / 站务 / 运营页不是项目（见上方注释里的线上事故）
+    if (isNonProjectPath(seg)) continue;
     // 需要字母，排除纯数字（分页 / 时间归档）
     if (!/[a-z]/i.test(seg)) continue;
     seen.add(`${BASE}/${seg}/`);

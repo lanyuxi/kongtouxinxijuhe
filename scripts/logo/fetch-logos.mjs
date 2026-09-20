@@ -260,6 +260,35 @@ async function tryCandidate(url, slug, allowLowRes = false) {
   }
 }
 
+/**
+ * 把「本轮没拿到图标」的项目分成三类。
+ *
+ * 这条判据是 2026-09-20 线上事故的核心（详见 main() 里 coverage guard 的注释）：
+ *   - 已在 _blocked 登记 → knownBlocked：仅告警（人工确认过是对方反爬等客观限制）
+ *   - 连官网都没有 → structurallyImpossible：仅告警（结构上不可能有图，是**数据脏**）
+ *   - 有官网却没抓到 → hardFailures：**阻断发布**（可能是脚本坏了 / 网络故障 /
+ *     对方新加反爬 —— 必须让人看到，静默放过会让列表页出现空白图标位）
+ *
+ * 抽成纯函数是为了能被单元测试直接覆盖：
+ *   「结构性无图不得阻断」与「有官网失败必须阻断」这两条都要钉死。
+ *
+ * @param {{slug: string, name?: string, host?: string|null, attempts?: string[]}[]} failed
+ * @param {Record<string, string>} logos 已拥有图标的 slug 集合（含沿用的旧图标）
+ * @param {Set<string>} blocked mapping.json 中已登记的 slug
+ */
+export function classifyLogoGaps(failed, logos, blocked) {
+  const knownBlocked = [];
+  const structurallyImpossible = [];
+  const hardFailures = [];
+  for (const f of failed) {
+    if (logos[f.slug]) continue; // 已沿用旧图标，不算缺失
+    if (blocked.has(f.slug)) knownBlocked.push(f);
+    else if (!f.host) structurallyImpossible.push(f);
+    else hardFailures.push(f);
+  }
+  return { knownBlocked, structurallyImpossible, hardFailures };
+}
+
 async function main() {
   const force = process.argv.includes('--force');
   await mkdir(OUT_DIR, { recursive: true });
@@ -425,7 +454,7 @@ async function main() {
     }
   }
   /**
-   * 覆盖率守卫的分工（这里区分「阻断发布」与「仅告警」两种情况）。
+   * 覆盖率守卫的分工（区分三种：已登记限制 / 结构性无图 / 真实抓取失败）。
    *
    * 为什么必须这样区分（2026-09-15 的一次真实发布事故）：
    *   项目 beezie 的官网由 Cloudflare 托管，对**数据中心出口 IP**（GitHub Actions
@@ -437,20 +466,47 @@ async function main() {
    *   从 2026-09-14T11:42 起，Deploy 与 Refresh Data 连续 100% 失败，
    *   而日志里只写「抓取项目 Logo 失败」，很难定位到是某个项目的官网在拦爬虫。
    *
-   * 判定原则：
-   *   - 若缺图的项目**已在 mapping.json 登记为不可自动抓取**（见 _blocked），
-   *     说明这是「已确认、有记录」的客观限制，只告警、不阻断发布；
-   *   - 否则视为「未知的抓取失败」，仍然阻断 —— 因为它可能是脚本自身或
-   *     某次真实故障导致的，此时静默放过会让列表页出现空白图标位。
-   *   - 阻断时给出可直接复制的修复指引（登记到 _blocked，或在 mapping.json 指定替代源）。
+   * 判定原则（三种，具体分流见 classifyLogoGaps 与下方注释）：
+   *   - 已登记为不可自动抓取（_blocked）→ 仅告警：已确认、有记录的客观限制；
+   *   - 连官网都没有 → 仅告警：结构上不可能有图，属于**数据脏**，不该由门禁兜底；
+   *   - 有官网却没抓到 → **阻断发布**：可能是脚本自身或真实故障，
+   *     静默放过会让列表页出现空白图标位。阻断时给出登记 _blocked 的修复指引。
    */
-  const blocked = new Set(Object.keys(mapping._blocked ?? {}));
-  const hardFailures = [];
-  const knownBlocked = [];
-  for (const f of report.failed) {
-    if (logos[f.slug]) continue; // 已沿用旧图标，不算缺失
-    if (blocked.has(f.slug)) knownBlocked.push(f);
-    else hardFailures.push(f);
+  const { knownBlocked, structurallyImpossible, hardFailures } = classifyLogoGaps(
+    report.failed,
+    logos,
+    new Set(Object.keys(mapping._blocked ?? {})),
+  );
+
+  /**
+   * 「结构性无图」与「抓取失败」必须分开处理 —— 这条是 2026-09-20 事故的直接教训。
+   *
+   * 事故经过：airdrops.io 的页脚「法律声明」链接 `/legal-notice/` 被当成项目抓入库，
+   *   它没有官网 → 图标必然拿不到 → 落入 hardFailures → `npm run logos` 退出码 1
+   *   → 后面 单测 / 校验 / 构建 / 部署 四个步骤全部 skipped
+   *   → **全站 268 个项目停更，用户每 10 分钟收到一封 GitHub 失败邮件。**
+   *
+   *   这与 2026-09-15 的 beezie 事故是同一个模式：
+   *   「一个与本次发布无关的第三方/数据问题，锁死了整条发布链路」。
+   *   上次只针对 Cloudflare 反爬打了补丁（_blocked 登记表），没有把它推广成原则，
+   *   所以这次换了个马甲（无官网）又复发一次。
+   *
+   * 现在的原则：
+   *   - **能取图却没取到**（有官网域名，但抓取失败）→ 仍阻断。
+   *     这可能是脚本坏了、网络大面积故障、或对方新加了反爬，必须让人看到。
+   *   - **本来就无处取图**（连官网都没有）→ 只告警，不阻断。
+   *     阻断它对「让图标变全」毫无帮助（它永远不可能有图标），
+   *     却会连带停掉整站发布。真正该修的是「这类脏条目为什么会被收录」，
+   *     那是数据治理（fetch 侧的 reserved path 过滤）的职责，不该由发布门禁兜底。
+   */
+  if (structurallyImpossible.length) {
+    console.warn(
+      `[logo] ⚠ ${structurallyImpossible.length} 个项目**没有官网，结构性无法取图标**，按「非脚本故障」处理，不阻断发布：` +
+        structurallyImpossible.map((f) => f.slug).join('、'),
+    );
+    console.warn('[logo] 这些条目大概率是数据源把「站务/法律/运营页」误当项目抓取所致，');
+    console.warn('[logo] 请反馈到 fetch 侧过滤（scripts/fetch/airdrops-io.ts 的 NON_PROJECT_SEGMENTS），');
+    console.warn('[logo] 不要在这里把它们登记进 _blocked —— 那会把「数据脏」伪装成「已知限制」。');
   }
 
   if (knownBlocked.length) {
@@ -478,6 +534,11 @@ async function main() {
 
   // 把本轮缺图情况写入报告，便于事后复核「哪些项目长期无图标」。
   report.blocked = knownBlocked.map((f) => ({ slug: f.slug, host: f.host, attempts: f.attempts }));
+  report.structurally_impossible = structurallyImpossible.map((f) => ({
+    slug: f.slug,
+    name: f.name,
+    attempts: f.attempts,
+  }));
 }
 
 main().catch((e) => {
