@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/dymension/",
-      "fetched_at": "2026-09-21T14:00:07.745Z"
+      "fetched_at": "2026-09-21T19:18:40.230Z"
     }
   ],
   "evidence": [
@@ -361,7 +361,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-21T14:00:07.745Z",
+  "last_checked_at": "2026-09-21T19:18:40.230Z",
   "last_changed_at": "2026-09-19T05:22:53.972Z",
   "sourcedSteps": [
     {
