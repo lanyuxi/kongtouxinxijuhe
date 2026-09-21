@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-09-21T19:18:40.094Z",
+  "updated_at": "2026-09-21T22:38:32.645Z",
   "sources": [
     {
       "name": "Airdrops.io",
       "url": "https://airdrops.io/latest/",
       "ok": true,
       "fetched": 59,
-      "last_success_at": "2026-09-21T19:18:40.094Z",
-      "checked_at": "2026-09-21T19:18:40.094Z"
+      "last_success_at": "2026-09-21T22:38:32.645Z",
+      "checked_at": "2026-09-21T22:38:32.645Z"
     },
     {
       "name": "DefiLlama",
       "url": "https://api.llama.fi/protocols",
       "ok": true,
       "fetched": 120,
-      "last_success_at": "2026-09-21T19:18:40.094Z",
-      "checked_at": "2026-09-21T19:18:40.094Z"
+      "last_success_at": "2026-09-21T22:38:32.645Z",
+      "checked_at": "2026-09-21T22:38:32.645Z"
     },
     {
       "name": "X (Twitter)",
@@ -23,7 +23,7 @@
       "ok": false,
       "fetched": 0,
       "error": "40 个账号（样例：@HyperliquidX、@LayerZero_Labs、@Scroll_ZKP）全部探测失败：本环境无法访问 X。如需抓取推文，请配置环境变量 X_BEARER_TOKEN；否则该来源将持续显示为不可用，不会伪造数据。",
-      "checked_at": "2026-09-21T19:18:40.094Z"
+      "checked_at": "2026-09-21T22:38:32.645Z"
     }
   ]
 }

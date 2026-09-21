@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/wager-predict/",
-      "fetched_at": "2026-09-21T19:18:40.230Z"
+      "fetched_at": "2026-09-21T22:38:32.736Z"
     }
   ],
   "evidence": [
@@ -421,7 +421,7 @@
   ],
   "created_at": "2026-09-20T05:02:10.717Z",
   "discovered_at": "2026-09-20T05:02:10.717Z",
-  "last_checked_at": "2026-09-21T19:18:40.230Z",
+  "last_checked_at": "2026-09-21T22:38:32.736Z",
   "last_changed_at": "2026-09-20T05:32:54.599Z",
   "tagline_en": "The airdrop is written directly into the official tokenomics: 10% of the 30 billion $WP supply, with no cliff, so recipients start liquid...",
   "sourcedSteps": [
