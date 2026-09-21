@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-09-20T23:25:56.438Z",
-  "finished_at": "2026-09-20T23:26:00.874Z",
+  "started_at": "2026-09-21T01:31:17.163Z",
+  "finished_at": "2026-09-21T01:31:23.311Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-09-20T23:25:56.438Z",
+  "updated_at": "2026-09-21T01:31:17.163Z",
   "data_changed": true,
-  "change_summary": "变更 32 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
+  "change_summary": "变更 36 个：Aave V3 内容有更新；BitFi Basis 内容有更新；CIAN Yield Layer 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
-    "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
+    "BitFi Basis 内容有更新",
+    "CIAN Yield Layer 内容有更新",
     "Concrete 内容有更新",
     "Defi Saver Asset Management 内容有更新"
   ],
   "added": 0,
-  "modified": 32,
+  "modified": 36,
   "removed": 0
 }
