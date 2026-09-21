@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/huma-finance/",
-      "fetched_at": "2026-09-21T07:02:58.630Z"
+      "fetched_at": "2026-09-21T14:00:07.745Z"
     }
   ],
   "evidence": [
@@ -428,7 +428,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-21T07:02:58.630Z",
+  "last_checked_at": "2026-09-21T14:00:07.745Z",
   "last_changed_at": "2026-09-19T05:42:55.135Z",
   "sourcedSteps": [
     {
