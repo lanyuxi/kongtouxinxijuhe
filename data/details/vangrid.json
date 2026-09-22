@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/vangrid/",
-      "fetched_at": "2026-09-21T22:38:32.736Z"
+      "fetched_at": "2026-09-22T01:10:50.134Z"
     }
   ],
   "evidence": [
@@ -429,7 +429,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-09-21T22:38:32.736Z",
+  "last_checked_at": "2026-09-22T01:10:50.134Z",
   "last_changed_at": "2026-09-16T06:44:34.983Z",
   "sourcedSteps": [
     {
