@@ -191,7 +191,7 @@ export function DetailView({
       </div>
 
       {/* 1. 项目头部 */}
-      <header className="relative mt-5 overflow-hidden rounded-3xl border border-line bg-white shadow-card">
+      <header className="relative mt-4 overflow-hidden rounded-2xl border border-line bg-white shadow-card">
         {/* 装饰：右上角光斑 + 顶部渐变线 */}
         <span
           aria-hidden
@@ -204,10 +204,10 @@ export function DetailView({
         {/* 记录线：从右往左缓慢扫过，表达「这份结论是持续复核中的」，而不是一张静态海报 */}
         <span aria-hidden className="sweep-line" />
 
-        <div className="relative flex flex-col gap-8 p-7 sm:p-9 lg:flex-row lg:items-start lg:gap-10">
+        <div className="relative flex flex-col gap-5 p-5 sm:p-6 lg:flex-row lg:items-start lg:gap-6">
           <div className="flex items-center gap-5 lg:block">
             {/* 详情页同样使用项目真实官方 Logo，与列表页保持一致的品牌识别 */}
-            <ProjectLogo project={p} size="lg" className="shadow-glow" />
+            <ProjectLogo project={p} size="lg" className="block shadow-glow sm:!h-20 sm:!w-20" />
             <div className="lg:hidden">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">{CATEGORY_LABEL[p.category]}</p>
               <p className="mt-1 text-sm text-ink-soft">
@@ -219,7 +219,7 @@ export function DetailView({
           <div className="min-w-0 flex-1">
             <p className="hidden text-xs font-semibold uppercase tracking-[0.16em] text-brand lg:block">{CATEGORY_LABEL[p.category]}</p>
             <div className="mt-1 flex flex-wrap items-center gap-3 lg:mt-3">
-              <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">{p.name}</h1>
+              <h1 className="detail-project-title font-bold tracking-tight text-ink">{p.name}</h1>
               <StatusBadge status={p.status} />
               <RiskBadge risk={p.scores.risk} withLabel />
             </div>
@@ -293,7 +293,7 @@ export function DetailView({
                 type="button"
                 onClick={() => onToggleFavorite(p.slug)}
                 aria-pressed={favorited}
-                className={`btn-ghost btn-lg ${
+                className={`btn-ghost ${
                   favorited ? 'border-brand/40 bg-brand-50 text-brand-700' : ''
                 }`}
               >
@@ -307,7 +307,7 @@ export function DetailView({
 
           {/* 宽屏：进度 + 结论放在头部右侧，打开即可见
               （顺序为「我的参与进度」在上、「系统结论」在下，按使用频率排列） */}
-          <div className="flex w-full shrink-0 flex-col gap-4 lg:w-[24rem]">
+          <div className="flex w-full shrink-0 flex-col gap-4 lg:w-[18rem]">
             <div className="rounded-2xl border border-line bg-page/70 p-5">
               <label className="label" htmlFor="detail-progress">
                 我的参与进度
@@ -338,7 +338,7 @@ export function DetailView({
               </p>
             </div>
 
-            <div className={`rounded-2xl border p-6 ${ACTION_STYLE[p.recommendation.action]}`}>
+            <div className={`rounded-2xl border p-5 ${ACTION_STYLE[p.recommendation.action]}`}>
               <p className="text-xs font-semibold tracking-wide text-ink-soft">系统结论</p>
               <p className="mt-2.5 flex flex-wrap items-baseline gap-2">
                 <span className={`text-3xl font-bold tracking-tight ${ACTION_TONE[p.recommendation.action]}`}>
@@ -357,10 +357,10 @@ export function DetailView({
       <nav aria-label="详情快捷导航" className="sticky top-[8.5rem] z-20 mt-4 grid grid-cols-4 gap-1 rounded-xl border border-line bg-white p-2 xl:hidden">
         {[['guide','教程'],['cost','成本'],['evidence','证据'],['risks','注意事项']].map(([id,label]) => <button key={id} className="btn-quiet !px-1" onClick={() => jumpTo(id)}>{label}</button>)}
       </nav>
-      <div className="detail-grid mt-7">
+      <div className="detail-grid mt-5">
         {/* ---------- 左栏：本页目录（宽屏下位于左侧常驻） ---------- */}
         <aside className="detail-aside">
-          <nav className="panel hidden !p-6 xl:block" aria-label="页面目录">
+          <nav className="panel hidden !p-5 xl:block" aria-label="页面目录">
             <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
               本页目录
             </h2>
@@ -394,7 +394,7 @@ export function DetailView({
 
         </aside>
         {/* ---------- 右栏：正文内容（宽屏下位于右侧，空间更宽） ---------- */}
-        <div className="detail-main flex min-w-0 flex-col gap-7">
+        <div className="detail-main flex min-w-0 flex-col gap-5">
           {xResult && <XUpdates result={xResult} slug={p.slug} />}
           {/* 3. 成本与难度 */}
           <section id="cost" className="panel">
@@ -404,25 +404,25 @@ export function DetailView({
             <dl className="mt-6 grid grid-cols-2 gap-y-5 sm:grid-cols-4 sm:divide-x sm:divide-line-soft">
               <div className="kv sm:px-4 sm:first:pl-0">
                 <dt>预计资金</dt>
-                <dd className="metric !text-lg">
+                <dd className="metric text-base">
                   {capitalLabel(p.cost)}
                 </dd>
               </div>
               <div className="kv sm:px-4">
                 <dt>预计 Gas</dt>
-                <dd className="metric !text-lg">{gasLabel(p.cost)}</dd>
+                <dd className="metric text-base">{gasLabel(p.cost)}</dd>
               </div>
               <div className="kv sm:px-4">
                 <dt>预计时间</dt>
-                <dd className="metric !text-lg">{p.cost.time_minutes > 0 ? `${p.cost.time_minutes} 分钟` : '待核实'}</dd>
+                <dd className="metric text-base">{p.cost.time_minutes > 0 ? `${p.cost.time_minutes} 分钟` : '待核实'}</dd>
               </div>
               <div className="kv sm:px-4">
                 <dt>是否需要长期交互</dt>
-                <dd className="metric !text-lg">{p.cost.long_term ? '是，具体时长待核实' : '来源未说明'}</dd>
+                <dd className="metric text-base">{p.cost.long_term ? '是，具体时长待核实' : '来源未说明'}</dd>
               </div>
             </dl>
 
-            <div className="inset mt-6 flex flex-col gap-3 px-6 py-5">
+            <div className="inset mt-5 flex flex-col gap-3 p-5">
               <p className="flex flex-wrap items-center gap-3 text-base text-ink">
                 {difficulty === null ? <span className="font-medium text-ink-soft">操作难度待核实</span> : <>
                 <span className="font-medium text-ink-soft">操作难度</span>
@@ -525,16 +525,16 @@ export function DetailView({
               未验证步骤会明确标注。勾选状态保存在你的浏览器本地，不上传任何服务器。
             </p>
 
-            <ol className="mt-7 flex flex-col">
+            <ol className="mt-5 flex flex-col">
               {p.guide.map((g, i) => {
                 const isDone = done.includes(g.step);
                 const last = i === p.guide.length - 1;
                 return (
-                  <li key={g.step} className="relative flex gap-5 pb-7 last:pb-0">
+                  <li key={g.step} className="relative flex gap-3 pb-5 last:pb-0">
                     {/* 时间线轴 */}
-                    <div className="flex w-12 shrink-0 flex-col items-center">
+                    <div className="flex w-8 shrink-0 flex-col items-center">
                       <span
-                        className={`grid h-12 w-12 place-items-center rounded-full border-2 text-lg font-semibold transition-colors ${
+                        className={`grid h-8 w-8 place-items-center rounded-full border-2 text-base font-semibold transition-colors ${
                           isDone
                             ? 'border-ok bg-ok text-white'
                             : 'border-brand/25 bg-brand-50 text-brand'
@@ -546,18 +546,18 @@ export function DetailView({
                     </div>
 
                     <div
-                      className={`min-w-0 flex-1 rounded-2xl border px-6 py-6 transition-colors ${
+                      className={`min-w-0 flex-1 rounded-xl border p-5 transition-colors ${
                         isDone ? 'border-ok/30 bg-ok-wash/40' : 'border-line-soft bg-page/50'
                       }`}
                     >
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div className="min-w-0">
                           <p className="text-xs font-semibold tracking-wide text-brand">{executable || p.guide_source === 'template' ? '第' : '来源条目'} {g.step}{executable || p.guide_source === 'template' ? ' 步' : ''}</p>
-                          <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
+                          <h3 className="mt-2 text-base font-semibold tracking-tight text-ink">
                             {g.title}
                           </h3>
                         </div>
-                        <label className="flex shrink-0 cursor-pointer items-center gap-2.5 rounded-xl border border-line bg-white px-4 py-2.5 text-base text-ink-soft transition-colors hover:border-brand/30 hover:text-brand-700">
+                        <label className="flex min-h-11 shrink-0 cursor-pointer items-center gap-2 rounded-xl border border-line bg-white px-3 py-2 text-base text-ink-soft transition-colors hover:border-brand/30 hover:text-brand-700">
                           <input
                             type="checkbox"
                             aria-describedby={!favorited ? "guide-record-hint" : undefined}
@@ -598,7 +598,7 @@ export function DetailView({
                         </details>
                       )}
 
-                      <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line-soft pt-5 sm:grid-cols-4">
+                      <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-line-soft pt-4 sm:grid-cols-4">
                         <Mini label="预计耗时" value={g.minutes > 0 ? `${g.minutes} 分钟` : '待核实'} />
                         <Mini label="费用" value={stepCostLabel(g.cost_usd)} />
                         <Mini label="需要连接钱包" value={g.needs_wallet === null ? '待核实' : g.needs_wallet ? '是' : '否'} />
@@ -1117,7 +1117,7 @@ function Mini({ label, value }: { label: string; value: string }) {
   return (
     <div className="kv">
       <dt className="text-sm">{label}</dt>
-      <dd className="metric !text-base">{value}</dd>
+      <dd className="metric text-base">{value}</dd>
     </div>
   );
 }

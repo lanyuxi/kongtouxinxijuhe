@@ -101,7 +101,7 @@
     @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-10;
   }
   .detail-shell {
-    @apply mx-auto w-full max-w-wide px-4 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-[1280px] px-0 text-[14px] leading-relaxed sm:px-6 lg:px-8;
   }
 
   /* ---------- 表面（Surface）四阶 ---------- */
@@ -231,24 +231,51 @@
     @apply text-sm font-medium text-brand underline-offset-4 hover:underline;
   }
   .detail-grid {
-    /*
-     * 左栏宽度两轮收窄：24rem（384px）→ 19rem（304px）→ 18rem（288px）。
-     * 目录项与官方链接都只是 2~6 字的短标签，384px 里大片留白；
-     * 用户两次反馈「左侧还是有些宽」，因此这次压到**实测下限**：
-     *
-     *   18rem 时左栏内容区 = 288 - 2×24(panel padding) = 240px。
-     *   栏内最长的一段固定文案「请核对域名后再操作，谨防钓鱼站点。」
-     *   单行实测需要 238px —— 240px 是它仍能单行的最小宽度。
-     *   再收 0.05rem（239.2px）该文案立刻折成两行，
-     *   同档的「三项评分相互独立，不存在「总分」。」也会一起折行。
-     *
-     * 也就是说 18rem 是「不折行」这一硬约束下的极限值，不是估计值。
-     * 移动端不受影响（xl 以下本就是单列堆叠）。
-     */
-    @apply grid grid-cols-1 items-start gap-6 xl:grid-cols-[18rem_minmax(0,1fr)];
+    /* 目录只保留短标签，224px 足够；窄屏继续单列。 */
+    @apply grid grid-cols-1 items-start gap-5 xl:grid-cols-[14rem_minmax(0,1fr)];
   }
   .detail-aside {
     @apply flex flex-col gap-5 xl:sticky xl:top-28;
+  }
+  /* 详情页采用独立阅读标尺，避免改变列表页和设置页的字号。 */
+  .detail-shell .panel {
+    @apply rounded-2xl p-5 sm:p-6;
+  }
+  .detail-shell .text-base,
+  .detail-shell .text-lg,
+  .detail-shell .kv dd {
+    @apply text-[14px] leading-relaxed;
+  }
+  .detail-shell .text-sm,
+  .detail-shell .text-xs,
+  .detail-shell .chip,
+  .detail-shell .label,
+  .detail-shell .kv dt,
+  .detail-shell .eyebrow-lg,
+  .detail-shell .detail-link {
+    @apply text-[12px] leading-5;
+  }
+  .detail-shell .text-xl,
+  .detail-shell .panel-title {
+    @apply text-[16px] leading-6;
+  }
+  .detail-shell .panel-title {
+    @apply gap-2;
+  }
+  .detail-shell .panel-title::before {
+    @apply h-4 w-1;
+  }
+  .detail-project-title,
+  .detail-shell .text-3xl,
+  .detail-shell .metric-lg {
+    @apply text-[22px] leading-7;
+  }
+  .detail-shell .btn,
+  .detail-shell .btn-primary,
+  .detail-shell .btn-ghost,
+  .detail-shell .btn-quiet,
+  .detail-shell .select {
+    @apply min-h-11 !text-[14px] leading-5 sm:min-h-10;
   }
   .kv {
     @apply flex flex-col gap-0.5;
