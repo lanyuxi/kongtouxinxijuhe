@@ -1,5 +1,5 @@
 {
-  "total": 220,
+  "total": 244,
   "items": [
     {
       "original": "Accept the Claim Terms and Check Your Allocation",
@@ -18,6 +18,16 @@
           "slug": "concrete",
           "field": "步骤 3 正文",
           "source_url": "https://defillama.com/protocol/Concrete"
+        }
+      ]
+    },
+    {
+      "original": "Accept the DFX Terms",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 4 标题",
+          "source_url": "https://airdrops.io/drift-protocol/"
         }
       ]
     },
@@ -222,6 +232,36 @@
       ]
     },
     {
+      "original": "Check Your DFX Allocation",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 3 标题",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
+      "original": "Check Your kPoints Balance",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 1 标题",
+          "source_url": "https://airdrops.io/kinetiq/"
+        }
+      ]
+    },
+    {
+      "original": "Claim and Approve the Transaction",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 5 标题",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
       "original": "Claim Sepolia Testnet ETH",
       "locations": [
         {
@@ -298,6 +338,16 @@
           "slug": "synthra",
           "field": "步骤 2 正文",
           "source_url": "https://airdrops.io/synthra/"
+        }
+      ]
+    },
+    {
+      "original": "Click “Ready to Claim” and approve the transaction in your wallet. If you have more than one allocation, approve each one. A “Claim Failed” error usually means the wallet ran out of SOL for fees, so add a little and try again.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 5 正文",
+          "source_url": "https://airdrops.io/drift-protocol/"
         }
       ]
     },
@@ -382,12 +432,32 @@
       ]
     },
     {
+      "original": "Confirm the Tokens Arrived",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 6 标题",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
       "original": "Confirm your claim",
       "locations": [
         {
           "slug": "grass",
           "field": "步骤 4 标题",
           "source_url": "https://airdrops.io/latest/"
+        }
+      ]
+    },
+    {
+      "original": "Confirm Your KNTQ Purchase",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 4 标题",
+          "source_url": "https://airdrops.io/kinetiq/"
         }
       ]
     },
@@ -737,6 +807,16 @@
       ]
     },
     {
+      "original": "Fund Your Wallet for the Purchase",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 2 标题",
+          "source_url": "https://airdrops.io/kinetiq/"
+        }
+      ]
+    },
+    {
       "original": "Fund Your Wallet With USDC on Base",
       "locations": [
         {
@@ -817,12 +897,32 @@
       ]
     },
     {
+      "original": "Go to the DFX claim portal and connect your wallet. Check the address bar before signing anything: the official portal runs on dfx.drift.trade.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 2 正文",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
       "original": "Go to the Kash app , connect your X account, and confirm a recovery email. Use the account you post from, since trades run through replies. Completing your profile earns your first 50 XP.",
       "locations": [
         {
           "slug": "kash",
           "field": "步骤 1 正文",
           "source_url": "https://airdrops.io/kash/"
+        }
+      ]
+    },
+    {
+      "original": "Go to the KNTQ page on the Kinetiq site and connect the wallet that holds your kPoints to see your allocation.",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 3 正文",
+          "source_url": "https://airdrops.io/kinetiq/"
         }
       ]
     },
@@ -1297,6 +1397,16 @@
       ]
     },
     {
+      "original": "Open the kPoints dashboard and connect the wallet you used for staking or trading. Your final balance includes the October 1 distribution.",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 1 正文",
+          "source_url": "https://airdrops.io/kinetiq/"
+        }
+      ]
+    },
+    {
       "original": "Open the newsletter challenge on your dashboard and subscribe to In confidence, the Raycash newsletter for product news and insights. This adds another 100 RP.",
       "locations": [
         {
@@ -1363,6 +1473,16 @@
           "slug": "tastyco",
           "field": "步骤 2 正文",
           "source_url": "https://airdrops.io/tastyco/"
+        }
+      ]
+    },
+    {
+      "original": "Open the Wallet That Held Your Drift Account",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 1 标题",
+          "source_url": "https://airdrops.io/drift-protocol/"
         }
       ]
     },
@@ -1547,6 +1667,16 @@
       ]
     },
     {
+      "original": "Review the KNTQ amount and the total cost at $0.26 per token, then approve the transaction in your wallet. You have 10 days from October 1, 2026 to complete this step.",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 4 正文",
+          "source_url": "https://airdrops.io/kinetiq/"
+        }
+      ]
+    },
+    {
       "original": "Satsuma’s airdrop checker is now live ahead of the SUMA TGE on June 4, 2026, with 3,000,000 SUMA allocated to early supporters, liquidity providers, and community members.",
       "locations": [
         {
@@ -1633,6 +1763,26 @@
           "slug": "aci",
           "field": "步骤 4 标题",
           "source_url": "https://airdrops.io/aci/"
+        }
+      ]
+    },
+    {
+      "original": "Stake KNTQ for sKNTQ (Optional)",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 5 标题",
+          "source_url": "https://airdrops.io/kinetiq/"
+        }
+      ]
+    },
+    {
+      "original": "Stake on the same page to receive sKNTQ, which earns a share of protocol buybacks. Holding 2,500,000 sKNTQ or more also raises your Markets referral rate from 10% to 15%.",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 5 正文",
+          "source_url": "https://airdrops.io/kinetiq/"
         }
       ]
     },
@@ -1787,6 +1937,16 @@
       ]
     },
     {
+      "original": "The claim costs $0.26 per KNTQ, so the same wallet needs enough stablecoins to cover the amount you want, plus a little HYPE for gas on HyperEVM. Check which payment asset the claim page accepts before moving funds. If you need USDC, you can buy it on Bybit and withdraw it to your wallet. Already holding funds on another chain? Swap or bridge them to Hyperliquid with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 2 正文",
+          "source_url": "https://airdrops.io/kinetiq/"
+        }
+      ]
+    },
+    {
       "original": "The claim is an Ethereum transaction, so you need a small amount of ETH on Ethereum mainnet for gas. You can buy ETH on Bybit , or bridge and swap funds from another chain to Ethereum with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab",
       "locations": [
         {
@@ -1897,6 +2057,16 @@
       ]
     },
     {
+      "original": "The original DRIFT airdrop has ended. The live distribution is the DFX recovery token, claimable by wallets that lost funds in the April 1 exploit. Allocations are already fixed in the loss snapshot, so there is nothing left to farm.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "简介",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
       "original": "The Pharos $PROS airdrop claim is now live! Eligible participants have 180 days, from April 28 to October 25, 2026, to claim their allocations before unclaimed amounts are returned to the Pharos Foundation and the claim portal closes. Eligibility includes Testnet Participants, “Stake Before the Stake” Contributors, Pharos Discord Role Holders, and OKX Wallet Campaign Users. If participants qualify under multiple categories, their claims will be automatically consolidated into a single submission.",
       "locations": [
         {
@@ -1907,12 +2077,32 @@
       ]
     },
     {
+      "original": "The portal matches your address against the loss snapshot using a Merkle proof and shows your exact allocation. A “No recovery tokens allocated” message means you connected the wrong wallet.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 3 正文",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
       "original": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity. Casino and sportsbook play earns XP, and your final leaderboard position at the snapshot decides your share.",
       "locations": [
         {
           "slug": "mint-io",
           "field": "简介",
           "source_url": "https://airdrops.io/mint-io/"
+        }
+      ]
+    },
+    {
+      "original": "The second kPoints program ran from November 13, 2025 to September 29, 2026, distributing 800,000 kPoints every week. The final distribution landed on October 1, 2026, bringing the total to 36,800,000 kPoints. Those points now give holders the right to buy KNTQ at a fixed price rather than receive it for free.",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "简介",
+          "source_url": "https://airdrops.io/kinetiq/"
         }
       ]
     },
@@ -1963,6 +2153,16 @@
           "slug": "yakkamon",
           "field": "简介",
           "source_url": "https://airdrops.io/yakkamon/"
+        }
+      ]
+    },
+    {
+      "original": "Tick the boxes to agree to the DFX terms.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 4 正文",
+          "source_url": "https://airdrops.io/drift-protocol/"
         }
       ]
     },
@@ -2037,6 +2237,16 @@
       ]
     },
     {
+      "original": "Use the wallet that controlled your Drift account on April 1, 2026. Your claim is tied to that address, so any other wallet shows nothing to claim. Keep a small amount of SOL in it for network fees.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 1 正文",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
       "original": "Vangrid has not confirmed an airdrop. A token is planned for later in 2026, but no allocation, snapshot, or eligibility rule has been published, which makes this a potential future airdrop rather than a scheduled one.",
       "locations": [
         {
@@ -2063,6 +2273,26 @@
           "slug": "vibe-vibe",
           "field": "简介",
           "source_url": "https://airdrops.io/vibe-vibe/"
+        }
+      ]
+    },
+    {
+      "original": "Visit the DFX Claim Portal",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 2 标题",
+          "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
+      "original": "Visit the KNTQ Claim Page",
+      "locations": [
+        {
+          "slug": "kinetiq",
+          "field": "步骤 3 标题",
+          "source_url": "https://airdrops.io/kinetiq/"
         }
       ]
     },
@@ -2113,6 +2343,16 @@
           "slug": "voice",
           "field": "步骤 9 标题",
           "source_url": "https://airdrops.io/voice/"
+        }
+      ]
+    },
+    {
+      "original": "Wait for the “DFX claimed” message. The screen switches to “Already Claimed” with a View Transaction link, and the DFX is now in your wallet.",
+      "locations": [
+        {
+          "slug": "drift-protocol",
+          "field": "步骤 6 正文",
+          "source_url": "https://airdrops.io/drift-protocol/"
         }
       ]
     },

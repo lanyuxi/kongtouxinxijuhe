@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-10-01T15:44:30.971Z",
-  "finished_at": "2026-10-01T15:44:34.234Z",
+  "started_at": "2026-10-01T20:35:30.303Z",
+  "finished_at": "2026-10-01T20:35:32.619Z",
   "sources": 3,
   "ok_sources": 2,
-  "updated_at": "2026-10-01T15:44:30.971Z",
+  "updated_at": "2026-10-01T20:35:30.303Z",
   "data_changed": true,
-  "change_summary": "新增 18 个、移除 1 个、变更 196 个：Aave V2 内容有更新；Aave V3 内容有更新；Acepyr 内容有更新",
+  "change_summary": "新增 2 个、移除 98 个、变更 49 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
   "change_details": [
-    "Aave V2 内容有更新",
     "Aave V3 内容有更新",
-    "Acepyr 内容有更新",
-    "Aerodrome V1 内容有更新",
-    "Aiw3 内容有更新"
+    "b14g 内容有更新",
+    "B2 Buzz 内容有更新",
+    "Babylon Protocol 内容有更新",
+    "Bedrock uniBTC 内容有更新"
   ],
-  "added": 18,
-  "modified": 196,
-  "removed": 1
+  "added": 2,
+  "modified": 49,
+  "removed": 98
 }
