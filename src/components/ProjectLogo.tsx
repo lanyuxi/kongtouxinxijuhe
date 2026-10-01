@@ -42,7 +42,7 @@ export function ProjectLogo({
   className?: string;
 }) {
   const [failed, setFailed] = useState(false);
-  const box = `${SIZES[size]} shrink-0 overflow-hidden border border-line-soft bg-white ${className}`;
+  const box = `${SIZES[size]} shrink-0 overflow-hidden bg-white ${className}`;
 
   if (!project.logo || failed) {
     return <span className={`${box} grid place-items-center text-[10px] text-ink-faint`} data-logo-missing={project.slug} aria-label={`${project.name} 暂无图标`}>暂无图标</span>;
@@ -58,7 +58,7 @@ export function ProjectLogo({
         decoding="async"
         width={LOGO_PX[size]}
         height={LOGO_PX[size]}
-        className="h-full w-full object-contain p-1.5"
+        className="h-full w-full object-contain"
         onError={() => setFailed(true)}
       />
     </span>

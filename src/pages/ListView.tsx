@@ -296,7 +296,12 @@ export function ListView({
           title={refreshCap.note}
           className={`btn-primary shrink-0 !px-6 !py-3 disabled:cursor-not-allowed disabled:opacity-60 ${isStale(liveIndex) ? 'animate-pulse-soft' : ''}`}
         >
-          {refreshing ? <><span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />刷新中…</> : <>⟳ {refreshCap.buttonLabel}</>}
+          {refreshing ? <><span aria-hidden className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" />刷新中…</> : <>
+            <svg aria-hidden="true" focusable="false" className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 11a8 8 0 1 0-2.3 6.7M20 4v7h-7" />
+            </svg>
+            {refreshCap.buttonLabel}
+          </>}
         </button>
       </div>
       {refreshMessage && <p id="refresh-status-text" className="text-sm font-medium text-brand" role="status" aria-live="polite">{refreshing ? '⏳ ' : '✓ '}{refreshMessage}</p>}

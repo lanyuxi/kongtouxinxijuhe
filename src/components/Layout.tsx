@@ -70,7 +70,13 @@ export function Header({ current }: { current: NavKey }) {
             {watch.label}
           </a>
         )}
-        <a href="#/settings" aria-current={current === 'settings' ? 'page' : undefined} className={`flex shrink-0 items-center gap-1.5 rounded-2xl border px-3 py-2 text-sm no-underline ${current === 'settings' ? 'border-brand/40 bg-brand-50 font-medium text-brand-700' : 'border-line-soft bg-white/80 text-ink-soft hover:bg-brand-50 hover:text-brand-700'}`}><span aria-hidden>⚙</span>设置</a>
+        <a href="#/settings" aria-current={current === 'settings' ? 'page' : undefined} className={`flex shrink-0 items-center gap-1.5 rounded-2xl border px-3 py-2 text-sm no-underline ${current === 'settings' ? 'border-brand/40 bg-brand-50 font-medium text-brand-700' : 'border-line-soft bg-white/80 text-ink-soft hover:bg-brand-50 hover:text-brand-700'}`}>
+          <svg aria-hidden="true" focusable="false" className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 3h4v3l2 1 2.6-1.5 2 3.5-2.6 1.5v3l2.6 1.5-2 3.5L16 17l-2 1v3h-4v-3l-2-1-2.6 1.5-2-3.5L6 13.5v-3L3.4 9l2-3.5L8 7l2-1V3Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          设置
+        </a>
       </div>
       {/* 窄屏：主导航下沉为五列标签，避免汉堡菜单带来的额外一次点击 */}
       <nav aria-label="主导航（窄屏）" className="lg:hidden">
