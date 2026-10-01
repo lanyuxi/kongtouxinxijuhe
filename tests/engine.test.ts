@@ -14,6 +14,7 @@ import {
 import { validateProjects } from '../scripts/lib/validate';
 import type { AirdropProject, Chain } from '../src/lib/types';
 import { toSkeleton } from '../scripts/lib/merge';
+import { findMissingLogos } from '../scripts/lib/ensure-logos.mjs';
 
 const now = '2026-09-11T10:00:00.000Z';
 
@@ -64,6 +65,26 @@ describe('normalize', () => {
 });
 
 describe('merge 去重', () => {
+  it.each(['https://airdrops.io/demo/', 'https://defillama.com/protocol/demo', 'https://app.galxe.com/quest/demo'])('重复抓取不把来源页 %s 补成官网或产生虚假的缺图要求', async (url) => {
+    const item = normalize({ sourceType: 'airdrop_aggregator', sourceName: '第三方来源', sourceUrl: url, title: 'Demo', url, fetchedAt: now });
+    const first = mergeAll([item]);
+    const second = mergeAll([item], first);
+    const third = mergeAll([item], second);
+    expect(third[0].official.website).toBeUndefined();
+    expect(await findMissingLogos({ dataset: { projects: third }, map: { logos: {} }, mapping: { map: {}, _blocked: {} } })).toEqual([]);
+  });
+
+  it('真实候选官网可以补充，已有官网不会被聚合站链接覆盖', () => {
+    const item = normalize({ sourceType: 'airdrop_aggregator', sourceName: '第三方来源', sourceUrl: 'https://airdrops.io/demo/', title: 'Demo', url: 'https://airdrops.io/demo/', officialUrl: 'https://frax.com', fetchedAt: now });
+    const project = makeProject({ official: {} });
+    expect(mergeProject(project, item).official.website).toBe('https://frax.com');
+    const carried = { ...project, official: { website: item.sourceUrl } };
+    expect(mergeProject(carried, item).official.website).toBe('https://frax.com');
+    expect(mergeProject(carried, { ...item, officialUrl: item.sourceUrl }).official.website).toBeUndefined();
+    const sourced = { ...project, official: { website: 'https://demo.xyz' } };
+    expect(mergeProject(sourced, { ...item, officialUrl: item.sourceUrl }).official.website).toBe('https://demo.xyz');
+  });
+
   it('同一项目来自两个来源时合并为一个', () => {
     const a = normalize({
       sourceType: 'airdrop_aggregator',

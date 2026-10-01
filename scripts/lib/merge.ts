@@ -17,6 +17,7 @@ import type {
 } from '../../src/lib/types';
 import type { NormalizedItem } from './normalize';
 import { normalizeCategory } from './normalize';
+import { hostOf, isOfficialHost } from '../logo/sources.mjs';
 
 const STATUS_RANK: Record<string, number> = {
   ended: 0,
@@ -126,7 +127,7 @@ export function mergeProject(
   base: AirdropProject,
   incoming: NormalizedItem,
 ): AirdropProject {
-  const existingTest = (s?: string) => !!s && !s.includes('example');
+  const existingTest = (s?: string) => !!s && !s.includes('example') && isOfficialHost(hostOf(s));
   return {
     ...base,
     status: pickStatus(base.status, incoming.status as AirdropStatus),
@@ -148,7 +149,7 @@ export function mergeProject(
       ...base.official,
       website: existingTest(base.official.website)
         ? base.official.website
-        : base.official.website ?? (incoming.officialUrl || undefined),
+        : existingTest(incoming.officialUrl) ? incoming.officialUrl : undefined,
     },
     last_checked_at: incoming.fetchedAt,
   };
