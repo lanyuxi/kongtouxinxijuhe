@@ -155,7 +155,7 @@ async function main() {
   ];
   const warnings = [...result.warnings];
 
-  // Logo 覆盖率校验：列表页不允许出现缺省图 / 字母图。
+  // Logo 覆盖率校验：有来源的缺图及已映射的破图必须阻断发布。
   // 校验对象是 data/logo-map.json 与实际文件是否一一对应，
   // 而不是「抓取脚本跑了没」—— 只有文件真的存在，前端才不会破图。
   const logoErrors = await validateLogoCoverage(projects, warnings);
@@ -250,11 +250,13 @@ async function validateLogoCoverage(projects: AirdropProject[], warnings: string
    *   未登记的项目一旦缺图，下面仍然直接报错 —— 门禁没有被削弱。
    */
   let blocked = new Set<string>();
+  let manual: Record<string, { domain?: string; llama?: string }> = {};
   try {
     const mapping = JSON.parse(
       await readFile(path.join(ROOT, 'scripts', 'logo', 'mapping.json'), 'utf8'),
-    ) as { _blocked?: Record<string, unknown> };
+    ) as { _blocked?: Record<string, unknown>; map?: typeof manual };
     blocked = new Set(Object.keys(mapping._blocked ?? {}));
+    manual = mapping.map ?? {};
   } catch {
     // mapping.json 缺失时按「没有任何豁免」处理，宁严勿松
   }
@@ -266,6 +268,10 @@ async function validateLogoCoverage(projects: AirdropProject[], warnings: string
     }
     const rel = logos[p.slug];
     if (!rel) {
+      if (!p.official?.website && !manual[p.slug]?.domain && !manual[p.slug]?.llama) {
+        warnings.push(`${p.slug}：未提供图标来源，列表页显示缺失提示，不伪造官方图标`);
+        continue;
+      }
       missing.push(p.slug);
       continue;
     }

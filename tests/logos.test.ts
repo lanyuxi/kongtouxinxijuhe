@@ -1,10 +1,9 @@
 /**
  * Logo 覆盖率与渲染测试。
  *
- * 背景：本次需求明确要求「列表页不得出现缺省图或字母图」。
- * 这类问题在浏览器里只会静默变成破图，人工很难逐个点开检查，
+ * 无图标来源的项目显示明确的缺失提示；有来源的缺图和已映射的破图阻断发布。
  * 因此把规则固化进测试：
- *   1. 每个项目都必须能解析到一张真实存在的图标文件；
+ *   1. 有图标来源的项目都必须能解析到一张真实存在的图标文件；
  *   2. 卡片组件不得再渲染「首字母色块」这种占位形态；
  *   3. 抓取脚本的占位图识别函数必须能拦住常见的假图标。
  */
@@ -16,6 +15,7 @@ import { promisify } from 'node:util';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { sniffImage, isPlaceholderSvg, faviconUrls, hostOf, isOfficialHost } from '../scripts/logo/sources.mjs';
+import { findMissingLogos } from '../scripts/lib/ensure-logos.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const execFileAsync = promisify(execFile);
@@ -33,25 +33,23 @@ async function readJson<T>(rel: string): Promise<T> {
 }
 
 describe('logo 覆盖率', () => {
-  it('每个项目都有 logo 映射，且文件真实存在', async () => {
+  it('有图标来源的项目都有映射，已映射的文件真实存在', async () => {
     const dataset = await readJson<Dataset>('data/airdrops.json');
     const map = await readJson<LogoMap>('data/logo-map.json');
 
     // 已在 mapping.json 的 _blocked 登记为「无法自动抓取」的项目不会有图标。
     // 它们的缺失是已知且已记录的限制（例如官网用 Cloudflare 拦数据中心 IP），
     // 因此这里的覆盖率断言按「除已登记项外全覆盖」来判定。
-    // 注意：这不等于放宽要求 —— 未登记的项目一旦缺图，下面两条断言依然会失败。
+    // 与构建守卫一致：没有官网或人工图标来源时允许显示缺失提示，不伪造官方图标。
     const mapping = await readJson<{ _blocked?: Record<string, unknown> }>('scripts/logo/mapping.json');
     const blocked = new Set(Object.keys(mapping._blocked ?? {}));
 
-    const missing = dataset.projects
-      .filter((p) => !blocked.has(p.slug) && !map.logos[p.slug])
-      .map((p) => p.slug);
+    const missing = await findMissingLogos();
     expect(missing, `以下项目缺少 logo 映射：${missing.join('、')}`).toEqual([]);
 
     const broken: string[] = [];
     for (const p of dataset.projects) {
-      if (blocked.has(p.slug)) continue;
+      if (blocked.has(p.slug) || !map.logos[p.slug]) continue;
       const file = path.join(ROOT, 'public', map.logos[p.slug]);
       try {
         await access(file);

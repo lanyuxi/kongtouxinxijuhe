@@ -42,8 +42,9 @@ describe('build-cache 语料收集（P0-2：死脚本回归护栏）', () => {
     const hasChinese = (t: string) => /[\u4e00-\u9fa5]/.test(t);
     const withChinese = texts.filter((t: string) => hasChinese(t));
     expect(withChinese, '已中文化的文案不该进补译语料').toEqual([]);
-    const latin = texts.filter((t: string) => /[A-Za-z]{4,}/.test(t));
-    expect(latin.length, '英文原文应占绝大多数').toBe(texts.length);
+    // “Add ETH for Gas” 等正常步骤没有连续四字母的单词，也需要补译。
+    const latin = texts.filter((t: string) => /[A-Za-z]/.test(t));
+    expect(latin.length, '英文原文不应被单词长度过滤').toBe(texts.length);
   });
 
   it('缓存与语料的缺口可被真实计算（不再是恒 0）', async () => {
