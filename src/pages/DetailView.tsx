@@ -204,7 +204,7 @@ export function DetailView({
         {/* 记录线：从右往左缓慢扫过，表达「这份结论是持续复核中的」，而不是一张静态海报 */}
         <span aria-hidden className="sweep-line" />
 
-        <div className="relative flex flex-col gap-5 p-5 sm:p-6 lg:flex-row lg:items-start lg:gap-6">
+        <div className="relative flex flex-col gap-5 p-5 sm:p-6 lg:grid lg:grid-cols-[80px_minmax(0,1fr)] lg:items-start lg:gap-6 xl:flex xl:flex-row">
           <div className="flex items-center gap-5 lg:block">
             {/* 详情页同样使用项目真实官方 Logo，与列表页保持一致的品牌识别 */}
             <ProjectLogo project={p} size="lg" className="block shadow-glow sm:!h-20 sm:!w-20" />
@@ -305,9 +305,8 @@ export function DetailView({
             </p>
           </div>
 
-          {/* 宽屏：进度 + 结论放在头部右侧，打开即可见
-              （顺序为「我的参与进度」在上、「系统结论」在下，按使用频率排列） */}
-          <div className="flex w-full shrink-0 flex-col gap-4 lg:w-[18rem]">
+          {/* 宽屏将进度与结论并排，避免纵向堆叠撑高头部；平板移到介绍下方。 */}
+          <div className="flex w-full shrink-0 flex-col gap-4 lg:col-span-2 lg:grid lg:grid-cols-[11rem_minmax(0,1fr)] lg:items-start xl:w-[32rem]">
             <div className="rounded-2xl border border-line bg-page/70 p-5">
               <label className="label" htmlFor="detail-progress">
                 我的参与进度
