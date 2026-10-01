@@ -107,7 +107,7 @@ export function ListView({
 
   const [expanded, setExpanded] = useState(() => readListContext(view)?.expanded ?? false);
   const [sourceExpanded, setSourceExpanded] = useState(() => readListContext(view)?.sourceExpanded ?? false);
-  const [statsExpanded, setStatsExpanded] = useState(() => readListContext(view)?.statsExpanded ?? false);
+  const [statsExpanded, setStatsExpanded] = useState(() => readListContext(view)?.statsExpanded ?? true);
   const contextRef = useRef({ filters, overview, expanded, sourceExpanded, statsExpanded, scrollY: readListContext(view)?.scrollY ?? 0 });
   contextRef.current = { ...contextRef.current, filters, overview, expanded, sourceExpanded, statsExpanded };
   useLayoutEffect(() => {
@@ -305,18 +305,27 @@ export function ListView({
         </button>
       </div>
       {refreshMessage && <p id="refresh-status-text" className="text-sm font-medium text-brand" role="status" aria-live="polite">{refreshing ? '⏳ ' : '✓ '}{refreshMessage}</p>}
-      <FilterBar
-        expanded={expanded}
-        onExpandedChange={setExpanded}
-        filters={filters}
-        onChange={setFilters}
-        chainOptions={chainOpts}
-        onReset={resetFilters}
-        resultCount={entries.length}
-        mergedVariants={mergedVariants}
-        activeOverview={overviewLabel}
-        onClearOverview={() => setOverview(null)}
-      />
+      <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-2">
+        <FilterBar
+          expanded={expanded}
+          onExpandedChange={setExpanded}
+          filters={filters}
+          onChange={setFilters}
+          chainOptions={chainOpts}
+          onReset={resetFilters}
+          resultCount={entries.length}
+          mergedVariants={mergedVariants}
+          activeOverview={overviewLabel}
+          onClearOverview={() => setOverview(null)}
+        />
+        <details open={statsExpanded} onToggle={e => setStatsExpanded(e.currentTarget.open)} className="rounded-xl border border-line bg-white p-4">
+          <summary className="font-medium text-ink-soft">数据总览与安全提示</summary>
+          <div className="mt-4 flex flex-col gap-4">
+            <StatBar projects={projects} updatedAt={updatedAt} lastDiscovery={lastDiscovery} active={overview} onSelect={setOverview} />
+            <SafetyBar />
+          </div>
+        </details>
+      </div>
       <details open={sourceExpanded} onToggle={e => setSourceExpanded(e.currentTarget.open)} className="rounded-xl border border-line bg-white px-4 py-3">
         <summary className="text-sm text-ink-soft">公共来源检查与更新{health && ` · ${health.sources.filter(s => !s.ok && s.status !== 'not_configured').length} 个来源抓取异常`}</summary>
         {health && health.sources.some(s => !s.ok) && <div className="mt-3 text-sm text-ink-soft">
@@ -356,13 +365,6 @@ export function ListView({
           ))}
         </div>
       )}
-      <details open={statsExpanded} onToggle={e => setStatsExpanded(e.currentTarget.open)} className="rounded-xl border border-line bg-white p-4">
-        <summary className="font-medium text-ink-soft">数据总览与安全提示</summary>
-        <div className="mt-4 flex flex-col gap-4">
-          <StatBar projects={projects} updatedAt={updatedAt} lastDiscovery={lastDiscovery} active={overview} onSelect={setOverview} />
-          <SafetyBar />
-        </div>
-      </details>
       <CostHint />
     </div>
   );

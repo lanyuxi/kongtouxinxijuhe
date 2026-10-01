@@ -5,8 +5,7 @@ import { isHighRisk, isHighValue, utcTodayStart, type OverviewKey } from '../lib
 
 /**
  * 首页数据摘要。
- * 排版思路：从「一行文字」改为「四格指标条」——
- * 每个指标有独立标签、数字与辅助说明，宽度等分，视觉上形成节奏。
+ * 四个指标按两行两列展示，每项保留标签、数字与辅助说明。
  *
  * 交互补充（本轮）：
  *   四个磁贴从「只读统计」升级为「可点击的口径入口」。
@@ -92,9 +91,8 @@ export function StatBar({
           四项指标口径独立 · 数据 {relativeTime(updatedAt)}更新
         </p>
       </div>
-      {/* 指标磁贴：每个数字左侧一道极短色条表明口径，比给整块上色更克制，
-          也更适合 4 列并排时的扫描节奏。 */}
-      <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      {/* 每个数字左侧一道极短色条表明口径。 */}
+      <dl className="grid grid-cols-2 gap-3">
         {stats.map((s) => {
           const selected = active === s.key;
           return (

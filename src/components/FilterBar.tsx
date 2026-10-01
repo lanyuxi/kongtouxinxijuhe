@@ -225,7 +225,7 @@ export function FilterBar({
         </div>
         <details open={expanded} onToggle={e => onExpandedChange?.(e.currentTarget.open)}>
           <summary className="text-sm font-medium text-brand">高级筛选与排序{['chain','category','risk','cost'].filter(k => filters[k as keyof Filters] !== 'all').length > 0 && '（有条件生效）'}</summary>
-          <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3">
           <div>
             <label className="label" htmlFor="f-chain">公链</label>
             <select
