@@ -16,7 +16,7 @@ import { feedItemSummary } from '../scripts/lib/feed';
 beforeAll(() => loadCache(JSON.parse(readFileSync('scripts/i18n/cache.zh.json', 'utf8'))));
 
 function allox(): AirdropProject {
-  const p = JSON.parse(readFileSync('data/details/allox.json', 'utf8')) as AirdropProject;
+  const p = JSON.parse(readFileSync('tests/fixtures/allox.json', 'utf8')) as AirdropProject;
   return { ...p, status: 'confirmed', tagline: 'AlloX 尚未确认空投，但其奖励系统明显指向空投。',
     cost: { ...p.cost, capital_min_usd: 0, capital_max_usd: 0, gas_estimate_usd: 0, basis: undefined } };
 }

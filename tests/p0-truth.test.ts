@@ -80,7 +80,7 @@ describe('P0 成本与步骤不能用未知冒充免费', () => {
     expect(cost.gas_estimate_usd).toBeNull();
   });
   it('Allox 完整教程的资金与手续费要求覆盖旧的零值', () => {
-    const raw = JSON.parse(readFileSync('data/details/allox.json', 'utf8')) as AirdropProject;
+    const raw = JSON.parse(readFileSync('tests/fixtures/allox.json', 'utf8')) as AirdropProject;
     const p = buildGuideAndCost({ ...raw, cost: { ...raw.cost, capital_min_usd: 0, capital_max_usd: 0, gas_estimate_usd: 0 } });
     expect(p.cost.capital_max_usd).toBeNull();
     expect(p.cost.gas_estimate_usd).toBeNull();
