@@ -125,7 +125,7 @@ export function FilterBar({
    * 不额外引入 roving tabindex（那是单选组才需要的复杂语义）。
    */
   return (
-    <section className="card" aria-labelledby="filter-title">
+    <section className="card filter-controls" aria-labelledby="filter-title">
       {/* 头部：标题 + 结果计数，明确「这是筛选区」 */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         {/* 与 StatBar / 详情页统一：分区标题都用 .panel-title 的色条语言，
@@ -275,7 +275,7 @@ export function FilterBar({
             </select>
           </div>
 
-          <div className="col-span-2 sm:col-span-1">
+          <div>
             <label className="label" htmlFor="f-cost">成本</label>
             <select
               id="f-cost"
@@ -290,14 +290,12 @@ export function FilterBar({
               ))}
             </select>
           </div>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-4 border-t border-line-soft pt-5 text-sm">
-          <span className="flex items-center gap-2 text-ink-soft">
-            排序
+          <div className="col-span-2 sm:col-span-1">
+            <label className="label" htmlFor="f-sort">排序</label>
             <select
+              id="f-sort"
               aria-label="排序方式"
-              className="select"
+              className="select w-full"
               value={filters.sort}
               onChange={(e) => set('sort', e.target.value as SortKey)}
             >
@@ -307,8 +305,7 @@ export function FilterBar({
                 </option>
               ))}
             </select>
-          </span>
-
+          </div>
         </div>
         <p className="mt-3 text-xs text-ink-soft">新手条件：无需本金 · Gas ≤ ${BEGINNER_RULES.maxGasUsd} · 风险可控 · 无需签名授权</p>
         </details>

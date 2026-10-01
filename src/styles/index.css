@@ -222,6 +222,9 @@
     @apply rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink outline-none
            transition hover:border-brand/40 focus:border-brand focus:ring-4 focus:ring-brand/10;
   }
+  .filter-controls .select:focus {
+    @apply border-brand !outline-none ring-0 shadow-none;
+  }
   .label {
     @apply mb-1.5 block text-xs font-medium tracking-wide text-ink-soft;
   }
