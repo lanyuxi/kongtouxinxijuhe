@@ -318,9 +318,9 @@ export function ListView({
           activeOverview={overviewLabel}
           onClearOverview={() => setOverview(null)}
         />
-        <details open={statsExpanded} onToggle={e => setStatsExpanded(e.currentTarget.open)} className="rounded-xl border border-line bg-white p-4">
+        <details open={statsExpanded} onToggle={e => setStatsExpanded(e.currentTarget.open)} className={`overview-panel rounded-xl border border-line bg-white p-4 ${statsExpanded ? 'xl:self-stretch' : ''}`}>
           <summary className="font-medium text-ink-soft">数据总览与安全提示</summary>
-          <div className="mt-4 flex flex-col gap-4">
+          <div className="mt-2 flex flex-col gap-2">
             <StatBar projects={projects} updatedAt={updatedAt} lastDiscovery={lastDiscovery} active={overview} onSelect={setOverview} />
             <SafetyBar />
           </div>

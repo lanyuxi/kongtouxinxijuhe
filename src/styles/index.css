@@ -348,6 +348,51 @@
   --tile-tone: #8c97ac;
 }
 
+/* 列表上方的总览面板使用紧凑尺寸，不影响收藏页的指标卡片。 */
+.overview-panel {
+  font-size: 14px;
+  line-height: 20px;
+}
+.overview-panel #overview-title {
+  @apply sr-only;
+}
+.overview-panel section,
+.overview-panel dl {
+  gap: 8px;
+}
+.overview-panel section > div > p {
+  font-size: 12px;
+  line-height: 16px;
+}
+.overview-panel .stat-tile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 8px;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+.overview-panel .stat-tile__value {
+  padding-right: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.overview-panel .stat-tile__hint {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  line-height: 16px;
+  color: #5e6b82;
+}
+.overview-panel .card {
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+.overview-panel .card > summary {
+  font-size: 12px;
+  line-height: 18px;
+}
+
 /* 宽屏下进一步释放内容宽度 */
 @media (min-width: 1536px) {
   .shell {
