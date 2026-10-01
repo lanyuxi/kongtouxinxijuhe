@@ -263,10 +263,11 @@ export function ListView({
               })}
             </dl>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {saved.map((p) => (
+              {saved.map((p, index) => (
                 <ProjectCard
                   key={p.slug}
                   project={p}
+                  sequence={index + 1}
                   favorited
                   onToggleFavorite={onToggleFavorite}
                   xResult={xResult}
@@ -351,10 +352,11 @@ export function ListView({
           ref={listRef}
           className="grid scroll-mt-28 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
-          {entries.map((e) => (
+          {entries.map((e, index) => (
             <ProjectCard
               key={e.project.slug}
               project={e.project}
+              sequence={index + 1}
               variants={e.variants}
               variantOf={e.variantOf}
               favorited={favorites.includes(e.project.slug)}

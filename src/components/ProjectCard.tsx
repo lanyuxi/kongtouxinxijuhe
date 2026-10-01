@@ -77,6 +77,7 @@ export function ProjectCard({
   variants = [],
   variantOf,
   xResult,
+  sequence,
 }: {
   project: ListProject;
   favorited: boolean;
@@ -93,6 +94,8 @@ export function ProjectCard({
   /** 本条目归属的主条目（产品线时由父级传入） */
   variantOf?: string;
   xResult?: XResult;
+  /** 当前可见列表中的序号，不作为项目固定 ID。 */
+  sequence?: number;
   onToggleFavorite: (slug: string) => void;
 }) {
   const p = project;
@@ -148,6 +151,7 @@ export function ProjectCard({
       <a
         href={href}
         aria-label={`查看 ${p.name} 详情`}
+        aria-describedby={sequence === undefined ? undefined : `project-sequence-${p.slug}`}
         className="flex min-w-0 flex-1 flex-col text-inherit no-underline"
       >
         {/* 头部右侧留出两个圆形按钮的位置（2×28 + 间距 + 内边距 ≈ 76px） */}
@@ -227,8 +231,9 @@ export function ProjectCard({
           </div>
           <div className="mt-2 flex items-center justify-between gap-2 text-ink-faint">
             <span className="truncate">{relativeTime(p.last_checked_at)}抓取</span>
-            <span aria-hidden className="shrink-0 text-line transition-colors group-hover:text-brand-600">
-              ›
+            <span className="flex shrink-0 items-center gap-2">
+              {sequence !== undefined && <span id={`project-sequence-${p.slug}`}>序号 <span className="font-medium tabular-nums text-ink-soft">{sequence}</span></span>}
+              <span aria-hidden className="text-line transition-colors group-hover:text-brand-600">›</span>
             </span>
           </div>
         </div>
