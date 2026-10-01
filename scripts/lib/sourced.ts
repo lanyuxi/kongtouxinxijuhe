@@ -11,10 +11,12 @@
  */
 
 import type { AirdropProject, Category, CostModel, GuideStep } from '../../src/lib/types';
+import { isCandidateUrl, isEvidenceVerified } from '../../src/lib/evidence';
 import type { NormalizedItem } from './normalize';
 import { normalizeCategory } from './normalize';
 import {
   hasChinese,
+  needsTranslation,
   localizeText,
   localizeTitle,
   reverseLookup,
@@ -94,24 +96,31 @@ export function stepsFromSource(p: AirdropProject): GuideStep[] {
      * 译文长度与原文并不相等，因此截断必须发生在译文上。
      */
     const body = localizeText(s.body ?? '按页面提示完成本步骤。');
-    const rawTitle = hasChinese(s.title) ? undefined : s.title.slice(0, 80);
-    const rawBody = hasChinese(s.body ?? '') ? undefined : (s.body ?? '').slice(0, 400);
+    const rawTitle = needsTranslation(s.title) ? s.title : undefined;
+    const rawBody = needsTranslation(s.body ?? '') ? s.body : undefined;
+    const pending = needsTranslation(title.zh) || needsTranslation(body.zh);
+    const text = `${s.title} ${s.body ?? ''}`;
+    const registration = /(?:sign\s+(?:up|in)|register|注册|登录)/i.test(text) && /email|password|邮箱|密码/i.test(text);
+    const wallet = /钱包|\bwallet\b/i.test(text);
+    const signature = /签名|授权|\bapprove\b|\bsign(?:ing)?\b(?![-\s]+(?:up|in)\b)|\bon[- ]chain\b|链上/i.test(text);
+    const sourceVerified = !!s.url && p.evidence.some(e => e.type === 'official_guide' && isEvidenceVerified(e) && e.url === s.url);
     return {
       step: i + 1,
-      title: title.zh.slice(0, 80),
-      description: truncateAtSentence(body.zh, 400),
-      official_url: officialUrl,
-      minutes: 3,
-      cost_usd: 0,
-      needs_wallet: /钱包|wallet|connect/i.test(s.body ?? ''),
-      needs_signature: /签名|sign|approve|授权/i.test(s.body ?? ''),
-      risk: 'low' as const,
+      title: pending ? '中文教程待核实' : title.zh,
+      description: pending ? '尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。' : body.zh,
+      official_url: pending ? '' : officialUrl,
+      content_status: pending ? 'pending_translation' : 'ready',
+      minutes: 0,
+      cost_usd: null,
+      needs_wallet: wallet ? true : registration ? false : null,
+      needs_signature: signature ? true : registration ? false : null,
+      risk: signature ? 'medium' as const : 'unknown' as const,
       done_when: '页面显示该步骤已完成 / 状态已更新。',
       // 只有步骤自带的 url 才算「可追溯的步骤来源」。
       // 不能退化成聚合站条目链接：那是「这个项目从哪发现的」，
       // 不是「这一步从哪来的」，拿来标 source_verified 属于伪造可追溯性。
       source_url: s.url,
-      source_verified: !!s.url,
+      source_verified: sourceVerified,
       // 英文原文对照：仅当原文不是中文时保留，供前端「原文对照」区块展示
       original_title: rawTitle,
       original_description: rawBody,
@@ -119,66 +128,39 @@ export function stepsFromSource(p: AirdropProject): GuideStep[] {
   });
 }
 
-/** 依据来源描述推断成本模型（保守：拿不到证据就按 0 处理，不夸大） */
+/** 只记录有出处的成本事实；需要资金不等于已知金额。 */
 export function costFromSource(p: AirdropProject): Partial<CostModel> {
-  const text = [
-    p.tagline,
-    ...p.tasks,
-    ...p.requirements,
-    ...(p.risks ?? []),
-  ]
-    .join(' ')
-    .toLowerCase();
-
-  const needsCapital = /deposit|存入|质押|stake|流动性|liquidity|购买|buy|trade|交易/.test(text);
-  const needsGas = /gas|手续费|onchain|链上/.test(text);
-
-  if (!needsCapital && !needsGas) return {};
-  return {
-    capital_min_usd: needsCapital ? 20 : 0,
-    capital_max_usd: needsCapital ? 200 : 0,
-    gas_estimate_usd: needsGas ? 5 : 0,
+  const text = [p.sourcedDescription, p.tagline, p.tagline_en, ...p.tasks, ...p.requirements,
+    ...(p.sourcedSteps ?? []).map(s => `${s.title} ${s.body ?? ''}`)].join(' ');
+  const noCapital = /no capital (?:is )?required|无需本金|不需要本金/i.test(text);
+  const noGas = /no gas fees|gas[- ]free|无需手续费|不需要手续费/i.test(text);
+  const capitalText = text.replace(/no capital (?:is )?required|无需本金|不需要本金/gi, '');
+  const gasText = text.replace(/no gas fees|gas[- ]free|无需手续费|不需要手续费/gi, '');
+  const capitalRequired = /\b(deposit|stake|buy|purchase|invest|investment)\b|capital to|fund (?:your|the) wallet|存入|质押|投入|充值|购买|本金|资金准备|主网资金/i.test(capitalText);
+  const gasRequired = /\bgas\b|\bon[- ]chain\b|手续费|链上|主网资金/i.test(gasText);
+  const manual = p.cost.basis?.method === 'manual_review' &&
+    isCandidateUrl(p.cost.basis.source_url) && !!p.cost.basis.note.trim() &&
+    Number.isFinite(Date.parse(p.cost.basis.checked_at)) && Date.parse(p.cost.basis.checked_at) <= Date.now();
+  const cost = {
+    capital_min_usd: manual ? p.cost.capital_min_usd : noCapital && !capitalRequired ? 0 : null,
+    capital_max_usd: manual ? p.cost.capital_max_usd : noCapital && !capitalRequired ? 0 : null,
+    gas_estimate_usd: manual ? p.cost.gas_estimate_usd : noGas && !gasRequired ? 0 : null,
+    capital_required: capitalRequired,
+    gas_required: gasRequired,
+    basis: manual ? p.cost.basis : p.sources[0] ? {
+      method: 'source_text' as const, source_url: p.sources[0].url, checked_at: p.sources[0].fetched_at,
+      note: capitalRequired || gasRequired ? '完整来源描述或教程提到资金 / 链上操作，未核实具体金额' :
+        noCapital || noGas ? '来源明确说明无需本金或手续费；未说明的成本仍为未知' : '来源未给出可核实的成本金额',
+    } : undefined,
   };
+  // 正文明确需要资金时，不能用旧的零值覆盖这一事实。
+  if (capitalRequired && cost.capital_max_usd === 0) cost.capital_min_usd = cost.capital_max_usd = null;
+  if (gasRequired && cost.gas_estimate_usd === 0) cost.gas_estimate_usd = null;
+  return cost;
 }
 
-/**
- * 从来源类目 + 描述里推断「主要任务」。
- *
- * 为什么需要：
- *   只有聚合站提供 HowTo 的项目才有真实步骤；DefiLlama 这类事实源
- *   只给协议类型。若不为它们推断任务，卡片上会出现 200 多张一模一样的
- *   「操作：研究项目，择机参与」，列表完全失去参考价值。
- *
- * 推断原则（保守）：
- *   - 只根据**协议类型**给出该类型必然存在的动作（借贷要存款、DEX 要交易），
- *     这些都是该类协议的客观使用方式，不是编造活动规则；
- *   - 推断不出就不给，宁可留空也不硬凑。
- */
-const CATEGORY_TASK_RULES: { re: RegExp; tasks: string[] }[] = [
-  { re: /lending|cdp|collateral/i, tasks: ['存入资产', '借出资产', '保持健康度'] },
-  { re: /dex|dexs|swap|aggregator/i, tasks: ['执行交易', '提供流动性'] },
-  { re: /perpetual|derivativ|option|basis/i, tasks: ['开仓交易', '提供流动性'] },
-  { re: /liquid staking|staking|restaking|lst|lsd/i, tasks: ['质押资产', '持有凭证'] },
-  { re: /yield|vault|asset management/i, tasks: ['存入资产', '持有份额'] },
-  { re: /bridge|interoperab|canonical/i, tasks: ['跨链转移', '绑定钱包'] },
-  { re: /rwa|real world/i, tasks: ['完成资格认证', '持有资产'] },
-  { re: /prediction/i, tasks: ['参与预测', '提供流动性'] },
-  { re: /insurance/i, tasks: ['购买保险', '提供承保'] },
-  { re: /payment|pay/i, tasks: ['完成支付', '绑定账户'] },
-  { re: /wallet/i, tasks: ['创建钱包', '完成交互'] },
-  { re: /nft|collectible|gacha/i, tasks: ['铸造 NFT', '参与活动'] },
-  { re: /game|gaming/i, tasks: ['创建账号', '参与游戏'] },
-  { re: /social|socialfi/i, tasks: ['创建账号', '发布内容', '邀请用户'] },
-  { re: /ai|agent/i, tasks: ['完成注册', '试用产品'] },
-  { re: /memecoin|meme/i, tasks: ['查看资格', '领取空投'] },
-  { re: /rollup|zk|layer\s?2/i, tasks: ['跨链进入', '完成交互'] },
-];
-
-export function tasksFromSource(categoryText?: string): string[] {
-  if (!categoryText) return [];
-  for (const rule of CATEGORY_TASK_RULES) {
-    if (rule.re.test(categoryText)) return rule.tasks;
-  }
+/** 协议类型只能说明产品用途，不能推出奖励任务或资格。保留接口供既有调用方使用。 */
+export function tasksFromSource(_categoryText?: string): string[] {
   return [];
 }
 
@@ -209,9 +191,10 @@ export function applySourced(p: AirdropProject, item: NormalizedItem): AirdropPr
   //    并把英文原文挂在 tagline_en 上，供详情页「原文对照」使用。
   //    译文由构建期缓存提供（scripts/i18n/cache.zh.json），运行期不联网。
   if (item.description && item.description.length > 24) {
-    const raw = firstSentence(item.description);
+    next.sourcedDescription = item.description;
+    const raw = item.description;
     next.tagline = applyLocalizedTagline(raw).tagline;
-    next.tagline_en = applyLocalizedTagline(raw).tagline_en;
+    next.tagline_en = needsTranslation(raw) ? raw : undefined;
   } else {
     // 本轮来源没给描述时，tagline 会从 Last Known Good 继承下来 ——
     // 历史数据里存的是英文原文，不处理就等于「英文永远留在页面上」，
@@ -236,15 +219,13 @@ export function applySourced(p: AirdropProject, item: NormalizedItem): AirdropPr
     next.meta = { ...(next.meta ?? {}), funding: item.funding };
   }
 
+  // 成本判断必须在完整教程写入之后进行。
+  if (item.steps?.length) next.sourcedSteps = item.steps.slice(0, 12);
+
   // 5) 成本线索
   const cost = costFromSource({ ...next, ...(item.description ? { tagline: item.description } : {}) });
   if (Object.keys(cost).length) {
     next.cost = { ...next.cost, ...cost };
-  }
-
-  // 6) 真实教程步骤：存到内部字段，Guide 阶段优先使用
-  if (item.steps?.length) {
-    next.sourcedSteps = item.steps.slice(0, 12);
   }
 
   // 7) 主要任务：有真实步骤时由 Guide 派生；否则按协议类型推断
@@ -280,16 +261,9 @@ function applyLocalizedTagline(raw: string): { tagline: string; tagline_en?: str
   if (!text) return { tagline: '' };
   const localized = localizeText(text);
   return {
-    tagline: (localized.zh || text).slice(0, 140),
-    tagline_en: localized.en ? text.slice(0, 200) : undefined,
+    tagline: (!needsTranslation(localized.zh) ? localized.zh : '中文简介待核实，请查看来源与原文对照。').slice(0, 140),
+    tagline_en: needsTranslation(text) ? text : undefined,
   };
-}
-
-function firstSentence(text: string): string {
-  const clean = text.replace(/\s+/g, ' ').trim();
-  const cut = clean.search(/[.。!！;；]\s/);
-  const head = cut > 24 ? clean.slice(0, cut + 1) : clean;
-  return head.length > 140 ? `${head.slice(0, 137)}...` : head;
 }
 
 /**
@@ -331,30 +305,16 @@ export function applyAllSourced(
  * 其余字段（状态、评分、证据、来源）一律不动 —— 那些是事实，
  * 不能因为一次本地化就发生任何变化。
  */
-function localizeCarriedOver(p: AirdropProject): AirdropProject {
+export function localizeCarriedOver(p: AirdropProject): AirdropProject {
   let changed = false;
   const next: AirdropProject = { ...p };
 
-  if (next.tagline && !hasChinese(next.tagline)) {
-    // ⚠️ 必须先取值、再覆盖：先赋 next.tagline 再读它，
-    //    拿到的已经是中文译文，tagline_en 会变成「中文原文」（真实踩过）。
-    const original = next.tagline;
-    const localized = localizeText(original);
-    if (hasChinese(localized.zh)) {
-      next.tagline = localized.zh.slice(0, 140);
-      next.tagline_en = localized.en ? original.slice(0, 200) : undefined;
-      changed = true;
-    }
-  } else if (next.tagline && !next.tagline_en) {
-    // tagline 已是中文译文（上一轮翻译后落盘），但英文原文没保存下来：
-    // 从缓存反向找回，保证「原文对照」不会因为多跑一轮就消失。
-    const en = reverseLookup(next.tagline);
-    if (en) {
-      next.tagline_en = en.slice(0, 200);
-      // 这里也要置 changed：否则返回值直接回退成入参对象，
-      // 刚补上的英文原文会被原样丢掉（真实踩过：对照栏永远是空的）。
-      changed = true;
-    }
+  const raw = next.tagline_en ?? reverseLookup(next.tagline) ?? next.tagline;
+  const localized = applyLocalizedTagline(raw ?? '');
+  if (localized.tagline !== next.tagline || localized.tagline_en !== next.tagline_en) {
+    next.tagline = localized.tagline;
+    next.tagline_en = localized.tagline_en;
+    changed = true;
   }
 
   if (next.guide?.length) {

@@ -9,9 +9,8 @@
  */
 
 import type { AirdropProject, GuideStep, FaqItem } from '../../src/lib/types';
-import { stepsFromSource } from './sourced';
-
-const MIN = (n: number) => n;
+import { costFromSource, stepsFromSource } from './sourced';
+import { capitalLabel, gasLabel } from '../../src/lib/cost';
 
 /** 通用安全提示，始终附加在第一步 */
 const SAFETY_NOTE = '请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。';
@@ -54,14 +53,14 @@ export function buildGuide(p: AirdropProject): {
    *   保证 P1-2 的修复不被新档位绕开（见 score.ts 的 gradeOfWithGuideTrust）。
    */
   const sourced = stepsFromSource(p);
-  const traceable = sourced.filter((g) => g.source_verified || g.source_url);
-  if (traceable.length >= 3) {
+  const traceable = sourced.filter((g) => g.source_verified);
+  if (traceable.length >= 3 && traceable.length === sourced.length) {
     return { steps: withSafetyFirst(p, sourced), source: 'sourced' };
   }
   if (sourced.length >= 3) {
     // 有实质内容（聚合站编辑手写），但没有一条能追溯到官方页面。
     // 步骤照常展示，但如实告知「第三方整理、非官方」。
-    return { steps: withSafetyFirst(p, sourced), source: 'third_party' };
+    return { steps: withSafetyFirst(p, sourced.map(g => ({ ...g, source_verified: false }))), source: 'third_party' };
   }
   return { steps: generateTemplateGuide(p), source: 'template' };
 }
@@ -84,127 +83,27 @@ export function generateGuide(p: AirdropProject): GuideStep[] {
  *   历史问题：曾经写成 `source_verified: !!officialUrl`，导致 142 个模板项目
  *   在前端显示绿色「✓ 来源已核实」，用户以为步骤经官方确认。
  */
-type TemplateStep = Omit<GuideStep, 'source_verified' | 'source_url'>;
-
 function generateTemplateGuide(p: AirdropProject): GuideStep[] {
-
-  const steps: TemplateStep[] = [];
-  const officialUrl = p.official.website ?? '';
-  const needsWallet = /钱包|wallet|galxe|quest|swap|bridge|connect/i.test(
-    [p.tagline, ...p.tasks].join(' '),
-  );
-  const hasSocial = p.tasks.some((t) => /社交|social|follow|discord|x\b/i.test(t));
-
-  let n = 0;
-
-  steps.push({
-    step: ++n,
-    title: '参与前准备',
-    description: `准备一个专用的独立空投钱包，并确认设备环境安全。${SAFETY_NOTE}`,
-    official_url: officialUrl,
-    minutes: MIN(5),
-    cost_usd: 0,
-    needs_wallet: false,
-    needs_signature: false,
-    risk: 'low',
-    done_when: '已创建独立钱包，并记录好助记词（仅离线保存，不输入任何网站）。',
-  });
-
-  steps.push({
-    step: ++n,
-    title: '进入官方活动页面',
-    description: '点击下方已验证的官方链接。核对浏览器地址栏域名与官网一致后再继续。',
-    official_url: officialUrl,
-    minutes: MIN(2),
-    cost_usd: 0,
-    needs_wallet: false,
-    needs_signature: false,
-    risk: 'low',
-    done_when: '页面成功打开，且域名与官方一致。',
-  });
-
-  if (needsWallet) {
-    steps.push({
-      step: ++n,
-      title: '连接钱包',
-      description: `在官方页面连接上一步准备的独立钱包。${SAFETY_NOTE}`,
-      official_url: officialUrl,
-      minutes: MIN(2),
-      cost_usd: 0,
-      needs_wallet: true,
-      needs_signature: false,
-      risk: 'low',
-      done_when: '页面右上角显示钱包地址。',
-    });
-  }
-
-  if (hasSocial) {
-    steps.push({
-      step: ++n,
-      title: '完成社交任务',
-      description: '按官方要求关注 X、加入 Discord 等，并在官方页面完成验证。',
-      official_url: p.official.galxe ?? officialUrl,
-      minutes: MIN(10),
-      cost_usd: 0,
-      needs_wallet: true,
-      needs_signature: false,
-      risk: 'low',
-      done_when: '所有社交任务显示为已完成 / Verified。',
-    });
-  }
-
-  steps.push({
-    step: ++n,
-    title: '完成核心链上任务',
-    description: '按官方说明完成测试网、积分或交互任务。每一步操作前确认合约地址来源官方。',
-    official_url: officialUrl,
-    minutes: MIN(20),
-    cost_usd: p.cost.gas_estimate_usd,
-    needs_wallet: true,
-    needs_signature: true,
-    risk: p.scores.risk === 'low' ? 'low' : 'medium',
-    done_when: '任务状态在官方页面显示为已完成。',
-  });
-
-  steps.push({
-    step: ++n,
-    title: '检查任务状态',
-    description: '返回官方活动页面，确认所有任务与积分都已正确记录。',
-    official_url: officialUrl,
-    minutes: MIN(3),
-    cost_usd: 0,
-    needs_wallet: true,
-    needs_signature: false,
-    risk: 'low',
-    done_when: '所有任务均显示已完成，且积分已计入。',
-  });
-
-  if (p.cost.long_term) {
-    steps.push({
-      step: ++n,
-      title: '后续持续维护',
-      description: `该项目需要长期交互，建议每周固定时间回访一次，保持活跃。预计周期：4–8 周。`,
-      official_url: officialUrl,
-      minutes: MIN(10),
-      cost_usd: 0,
-      needs_wallet: true,
-      needs_signature: false,
-      risk: 'medium',
-      done_when: '形成固定的回访节奏，账户保持活跃。',
-    });
-  }
-
-  // 信任不变量：模板步骤永远不携带「已核实」标记与伪造的步骤来源。
-  // 这里统一兜底，避免后续新增模板步骤时忘记标注而再次出现「假核实」。
-  return steps.map((s) => ({ ...s, source_verified: false, source_url: undefined }));
+  const research = [
+    ['核对项目与活动公告', '查看项目资料与来源，寻找具体活动的官方公告。协议存在或提供借贷、交易产品，不代表有空投。', '记录公告链接；没有公告就保留为研究线索。'],
+    ['核对资格、期限与成本', '核对参与对象、快照或截止时间、资金与手续费要求。本站尚未收录经核验的条件，不应推定已经满足资格。', '记录可核验的资格和期限；未知项明确标为待核实。'],
+    ['等待可核验的中文教程', '在活动和步骤核实前暂停存款、交易、授权等操作。后续核对官方完成标准；研究完成不等于取得空投资格。', '有官方中文步骤及完成标准后再评估是否参与。'],
+  ];
+  return research.map(([title, description, done_when], i) => ({
+    step: i + 1, title, description, done_when,
+    official_url: p.official.website ?? '', minutes: 0,
+    cost_usd: null, needs_wallet: false, needs_signature: false,
+    risk: 'unknown', source_verified: false, content_status: 'ready',
+  }));
 }
 
 /** 依据已有证据生成 FAQ；未知信息必须明确写「官方暂未公布」 */
 export function generateFaq(p: AirdropProject): FaqItem[] {
-  const unknown = '官方暂未公布。';
+  const unknown = '相关活动信息待核实，请查看官方公告。';
   const statusLabel: Record<string, string> = {
     new: '刚被发现，尚未确认',
     potential: '潜在空投，尚未正式确认',
+    pending: '状态待核实',
     confirmed: '已确认空投',
     claim_live: '已开放领取',
     ended: '已结束',
@@ -213,26 +112,23 @@ export function generateFaq(p: AirdropProject): FaqItem[] {
   return [
     {
       q: '这个空投确认了吗？',
-      a: `当前状态：${statusLabel[p.status] ?? '未知'}。${p.status === 'confirmed' || p.status === 'claim_live' ? '官方渠道已有明确信号。' : '尚未发现官方明确确认，请谨慎参与。'}`,
+      a: `当前状态：${statusLabel[p.status] ?? '未知'}。${p.status_note ?? '请核对具体活动公告与资格条件。'}`,
     },
     {
       q: '什么时候结束？',
-      a: p.meta?.airdrop_status ?? unknown,
+      a: '本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。',
     },
     {
       q: '参与需要花钱吗？',
-      a:
-        p.cost.capital_max_usd === 0 && p.cost.gas_estimate_usd === 0
-          ? '预计无需资金成本，仅需时间。'
-          : `预计资金成本 $${p.cost.capital_min_usd}–${p.cost.capital_max_usd}，Gas 约 $${p.cost.gas_estimate_usd}。`,
+      a: `${capitalLabel(p.cost)}；${gasLabel(p.cost)}。`,
     },
     {
       q: '需要连接钱包吗？',
-      a: p.guide.some((g) => g.needs_wallet) ? '需要。请务必使用独立的空投钱包。' : '根据目前信息暂不需要。',
+      a: p.guide_source === 'template' ? '资料核对无需连接钱包，实际活动的钱包要求待核实。' : p.guide.some(g => g.needs_wallet) ? '来源描述涉及钱包，请先核对实际活动要求。' : p.guide.some(g => g.needs_wallet === null) ? '钱包要求待核实。' : '目前明确的步骤不需要连接钱包。',
     },
     {
       q: '需要主网资产吗？',
-      a: p.cost.capital_max_usd > 0 ? '需要少量主网资产用于支付 Gas。' : '暂不需要主网资产。',
+      a: p.cost.gas_estimate_usd === null ? '手续费与主网资产要求待核实。' : p.cost.gas_estimate_usd > 0 ? '需要主网资产支付手续费。' : '来源说明无需手续费。',
     },
     {
       q: '积分一定会兑换 Token 吗？',
@@ -279,7 +175,8 @@ export function generateRisks(p: AirdropProject): string[] {
  */
 export function buildGuideAndCost(p: AirdropProject): AirdropProject {
   const { steps: guide, source } = buildGuide(p);
-  return { ...p, guide, guide_source: source, cost: buildCost(p, guide) };
+  const next = { ...p, guide, guide_source: source, tasks: source === 'template' ? ['核对活动公告', '核对资格与期限'] : p.tasks };
+  return { ...next, cost: buildCost(next, guide) };
 }
 
 /**
@@ -298,31 +195,18 @@ export function generateAll(p: AirdropProject): AirdropProject {
 }
 
 function buildCost(p: AirdropProject, guide: GuideStep[]): AirdropProject['cost'] {
-  const minutes = guide.reduce((s, g) => s + g.minutes, 0);
-  const gas = p.cost.gas_estimate_usd || 0;
-  const longTerm = guide.some((g) => /后续持续维护/.test(g.title));
-  const capitalMin = p.cost.capital_min_usd ?? 0;
-  const capitalMax = Math.max(p.cost.capital_max_usd ?? 0, capitalMin);
-  let summary: string;
-  if (capitalMax === 0 && gas === 0) {
-    summary = '低成本、纯时间投入型项目，适合新手练手。';
-  } else if (capitalMax <= 20) {
-    summary = '低资金、中时间投入型项目，建议小额参与。';
-  } else if (capitalMax <= 100) {
-    summary = '中等资金投入，需评估自身风险承受能力。';
-  } else {
-    summary = '高资金投入，不适合新手大额参与。';
-  }
-  return {
-    capital_min_usd: capitalMin,
-    capital_max_usd: capitalMax,
-    gas_estimate_usd: gas,
-    time_minutes: minutes,
-    long_term: longTerm,
-    summary,
-  };
+  const facts = costFromSource(p);
+  const capital = facts.capital_max_usd ?? null;
+  const gas = facts.gas_estimate_usd ?? null;
+  const summary = capital === null || gas === null
+    ? `${facts.capital_required ? '需要准备本金，金额待核实。' : capital === null ? '本金要求待核实。' : '来源说明无需本金。'}${facts.gas_required ? '需要手续费，金额待核实。' : gas === null ? '手续费待核实。' : '来源说明无需手续费。'}信息不完整，暂不判断为新手友好。`
+    : capital === 0 && gas === 0 ? '来源说明无需本金与手续费，请继续核对资格与签名要求。'
+    : '存在资金或手续费投入，请结合来源金额与操作风险评估。';
+  return { ...p.cost, ...facts, capital_min_usd: facts.capital_min_usd ?? null,
+    capital_max_usd: capital, gas_estimate_usd: gas,
+    time_minutes: guide.some(g => g.minutes <= 0) ? 0 : guide.reduce((s, g) => s + g.minutes, 0),
+    long_term: guide.some(g => /后续持续维护/.test(g.title)), summary };
 }
-
 
 /**
  * 在真实步骤前插入一条「安全检查」首步。
@@ -349,6 +233,7 @@ function withSafetyFirst(p: AirdropProject, steps: GuideStep[]): GuideStep[] {
     // 官网链接只能作为「去哪核对域名」的入口，不能当作本步骤的官方来源。
     // 因此 source_verified 必须为 false，避免把平台提示伪装成官方核实结果。
     source_verified: false,
+    content_status: 'ready',
   };
   return [safety, ...steps.map((s, i) => ({ ...s, step: i + 2 }))];
 }

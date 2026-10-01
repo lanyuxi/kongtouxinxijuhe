@@ -18,7 +18,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { protectTerms, restoreTerms, hasChinese } from './translate.mjs';
+import { protectTerms, restoreTerms, hasChinese, loadCache, localizeText, needsTranslation } from './translate.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE_FILE = path.join(ROOT, 'scripts/i18n/cache.zh.json');
@@ -127,15 +127,15 @@ export function collectTexts() {
     // 而 `guide` 已本地化、英文原文挂在 `original_*` 上。两者都收，
     // 保证「首次补译」与「重新生成缓存」都能收齐。
     for (const s of p.sourcedSteps ?? []) {
-      if (s.title && !hasChinese(s.title)) out.add(resolveFullKey(s.title, fullKeyIndex));
-      if (s.body && !hasChinese(s.body)) out.add(resolveFullKey(s.body, fullKeyIndex));
+      if (s.title && needsTranslation(s.title)) out.add(resolveFullKey(s.title, fullKeyIndex));
+      if (s.body && needsTranslation(s.body)) out.add(resolveFullKey(s.body, fullKeyIndex));
     }
     for (const g of p.guide ?? []) {
       if (g.original_title) out.add(resolveFullKey(g.original_title, fullKeyIndex));
       if (g.original_description) out.add(resolveFullKey(g.original_description, fullKeyIndex));
     }
     if (p.tagline_en) out.add(p.tagline_en);
-    else if (p.tagline && !hasChinese(p.tagline)) out.add(p.tagline);
+    else if (p.tagline && needsTranslation(p.tagline)) out.add(p.tagline);
   }
   return [...out];
 }
@@ -174,8 +174,9 @@ async function translate(text) {
 async function main() {
   const report = process.argv.includes('--report');
   const cache = existsSync(CACHE_FILE) ? JSON.parse(readFileSync(CACHE_FILE, 'utf8')) : {};
+  loadCache(cache);
   const texts = collectTexts();
-  const missing = texts.filter((t) => !cache[t] || !hasChinese(cache[t]));
+  const missing = texts.filter((t) => needsTranslation(localizeText(t).zh));
   console.log(`[i18n] 待覆盖文案 ${texts.length} 条，缓存命中 ${texts.length - missing.length} 条，缺失 ${missing.length} 条`);
   if (report || missing.length === 0) return;
 

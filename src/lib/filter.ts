@@ -1,3 +1,4 @@
+import { hasKnownCost } from './cost';
 /**
  * 首页筛选与排序逻辑。
  * 对应方案文档第 7 章「筛选能力」与第 5 章「空投雷达」。
@@ -55,7 +56,8 @@ export const DEFAULT_FILTERS: Filters = {
 const RISK_ORDER: Record<RiskLevel, number> = { low: 0, medium: 1, high: 2, critical: 3 };
 
 export function applyCostBucket(p: ListProject, bucket: Filters['cost']): boolean {
-  const max = p.cost.capital_max_usd;
+  if (bucket !== 'all' && !hasKnownCost(p.cost)) return false;
+  const max = p.cost.capital_max_usd!;
   const gas = p.cost.gas_estimate_usd;
   switch (bucket) {
     case 'free':
@@ -111,7 +113,7 @@ export function sortProjects(projects: ListProject[], sort: SortKey): ListProjec
         (a, b) => RISK_ORDER[a.scores.risk] - RISK_ORDER[b.scores.risk],
       );
     case 'cost':
-      return list.sort((a, b) => a.cost.capital_max_usd - b.cost.capital_max_usd);
+      return list.sort((a, b) => (hasKnownCost(a.cost) ? a.cost.capital_max_usd! : Infinity) - (hasKnownCost(b.cost) ? b.cost.capital_max_usd! : Infinity));
     case 'latest':
     default:
       return list.sort(

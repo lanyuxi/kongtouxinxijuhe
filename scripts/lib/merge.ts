@@ -22,6 +22,7 @@ const STATUS_RANK: Record<string, number> = {
   ended: 0,
   new: 1,
   potential: 2,
+  pending: 2,
   confirmed: 3,
   claim_live: 4,
 };
@@ -97,9 +98,9 @@ export function toSkeleton(item: NormalizedItem): AirdropProject {
       riskItems: [],
     },
     cost: {
-      capital_min_usd: 0,
-      capital_max_usd: 0,
-      gas_estimate_usd: 0,
+      capital_min_usd: null,
+      capital_max_usd: null,
+      gas_estimate_usd: null,
       time_minutes: 0,
       long_term: false,
       summary: '待补全',

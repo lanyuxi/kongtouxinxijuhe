@@ -26,17 +26,20 @@
  *      它是纯内部字段，且不需要逐帧参与任何前端逻辑。
  */
 
+import { verifiedWebsite } from '../../src/lib/evidence';
 import type { AirdropProject, GuideStep, ListDataset, ScoreItem } from '../../src/lib/types';
 
 /** 列表卡片所需的「轻量教程步骤」：只保留渲染与判定需要的字段 */
 export interface ListGuideStep {
+  id?: string;
   step: number;
   /** 步骤标题（简体中文） */
   title: string;
   minutes: number;
-  needs_wallet: boolean;
-  needs_signature: boolean;
+  needs_wallet: GuideStep['needs_wallet'];
+  needs_signature: GuideStep['needs_signature'];
   risk: GuideStep['risk'];
+  content_status?: GuideStep['content_status'];
 }
 
 /** 列表卡片所需的「轻量评分明细」：数值与等级，不含逐项解释 */
@@ -62,7 +65,9 @@ export interface ListProject {
   category: AirdropProject['category'];
   chains: AirdropProject['chains'];
   status: AirdropProject['status'];
+  status_note?: string;
   official: AirdropProject['official'];
+  verified_official_website?: string;
   logo?: string;
   meta?: AirdropProject['meta'];
   tasks: string[];
@@ -72,6 +77,7 @@ export interface ListProject {
   cost: AirdropProject['cost'];
   recommendation: AirdropProject['recommendation'];
   guide: ListGuideStep[];
+  guide_version?: string;
   guide_source: AirdropProject['guide_source'];
   created_at: string;
   /**
@@ -108,7 +114,9 @@ export function toListProject(p: AirdropProject): ListProject {
     category: p.category,
     chains: p.chains,
     status: p.status,
+    status_note: p.status_note,
     official: p.official,
+    verified_official_website: verifiedWebsite(p),
     meta: p.meta,
     tasks: p.tasks,
     requirements: p.requirements,
@@ -122,14 +130,17 @@ export function toListProject(p: AirdropProject): ListProject {
     cost: p.cost,
     recommendation: p.recommendation,
     guide: p.guide.map((g) => ({
+      id: g.id,
       step: g.step,
       title: g.title,
       minutes: g.minutes,
       needs_wallet: g.needs_wallet,
       needs_signature: g.needs_signature,
       risk: g.risk,
+      content_status: g.content_status,
     })),
     guide_source: p.guide_source,
+    guide_version: p.guide_version,
     created_at: p.created_at,
     first_seen_at: p.first_seen_at,
     discovered_at: p.discovered_at,

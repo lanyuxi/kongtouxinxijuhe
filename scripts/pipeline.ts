@@ -1,3 +1,5 @@
+import { collectSources } from './lib/sources';
+import { collectPendingTranslations } from './i18n/review-queue.mjs';
 /**
  * 空投情报平台数据流水线主入口。
  *
@@ -15,25 +17,19 @@ import path from 'node:path';
 import type {
   AirdropProject,
   RefreshStatus,
-  SourceHealth,
   SourceHealthFile,
 } from '../src/lib/types';
 import { adapters } from './fetch/index';
 import { loadCache as loadI18nCache } from './i18n/translate.mjs';
 import { readFileSync } from 'node:fs';
-import { normalizeAll } from './lib/normalize';
 import { mergeAll } from './lib/merge';
 import { applyAllSourced } from './lib/sourced';
-import { verifyAll } from './lib/verify';
 import { enrichAll } from './lib/enrich';
-import { scoreAll } from './lib/score';
-import { buildFaqAndRisks, buildGuideAndCost } from './lib/guide';
+import { finalizeProject } from './lib/finalize';
 import { validateProjects } from './lib/validate';
 import { describeDiff, describeDiffDetails, diffProjects, projectDigest } from './lib/change';
 import { writeLiveSnapshots } from './lib/live';
-import type { LiveSnapshot } from './lib/live';
 import { canPrune, pruneProjects } from './lib/prune';
-import { reconcileAll } from './lib/status';
 import { markFirstSeenAll } from './lib/first-seen';
 import { loadProfiles } from './lib/enrich';
 import { buildListDataset } from './lib/list';
@@ -80,7 +76,7 @@ async function readDetailProjects(dir: string): Promise<AirdropProject[]> {
  *
  * 缓存文件随仓库提交，运行期只查表、不发起任何翻译请求：
  * 这样每 10 分钟的定时抓取不依赖第三方服务，文案也不会时好时坏。
- * 缺缓存时教程会退回英文原文（前端仍会给出中文安全提示），不会报错中断。
+ * 缺缓存时教程会进入中文待核实状态（前端仍会给出中文安全提示），不会报错中断。
  */
 function loadLocalizationCache() {
   try {
@@ -89,7 +85,7 @@ function loadLocalizationCache() {
     loadI18nCache(cache);
     console.log(`[pipeline] 教程中文化缓存：${Object.keys(cache).length} 条`);
   } catch (e) {
-    console.warn(`[pipeline] 教程中文化缓存缺失（教程将保留英文原文）：${(e as Error).message}`);
+    console.warn(`[pipeline] 教程中文化缓存缺失（教程将暂停操作并保留英文原文）：${(e as Error).message}`);
     loadI18nCache({});
   }
 }
@@ -117,48 +113,11 @@ async function main() {
   );
 
   // 2) Fetch：每个 Adapter 独立运行 + 错误隔离
-  const health: SourceHealth[] = [];
-  const rawItems: ReturnType<typeof normalizeAll> = [];
-
-  /** 每轮抓取后持久化的实时快照（供前端「一键更新」读取来源侧最新条目） */
-  const snapshots: LiveSnapshot[] = [];
-
-  for (const adapter of adapters) {
-    try {
-      const items = await adapter.fetch();
-      const normalized = normalizeAll(items);
-      rawItems.push(...normalized);
-      snapshots.push({
-        fetched_at: now,
-        source: adapter.name,
-        source_url: adapter.url,
-        items: normalized,
-      });
-      health.push({
-        name: adapter.name,
-        url: adapter.url,
-        ok: true,
-        fetched: normalized.length,
-        last_success_at: now,
-        checked_at: now,
-      });
-      console.log(`[pipeline] ✓ ${adapter.name} 抓取 ${normalized.length} 条`);
-    } catch (e) {
-      const msg = (e as Error).message;
-      const prev = previousHealth?.sources.find((s) => s.name === adapter.name);
-      health.push({
-        name: adapter.name,
-        url: adapter.url,
-        ok: false,
-        fetched: 0,
-        error: msg,
-        last_success_at: prev?.last_success_at,
-        checked_at: now,
-      });
-      // 关键：不抛出，继续执行下一个来源
-      console.warn(`[pipeline] ✗ ${adapter.name} 抓取失败（已隔离）：${msg}`);
-    }
-  }
+  const { health, rawItems, snapshots } = await collectSources(adapters, previousHealth?.sources ?? [], now);
+  for (const h of health) console.log(`[pipeline] ${h.status} ${h.name}：${h.ok ? h.fetched + ' 条' : h.error}`);
+  const healthFile: SourceHealthFile = { updated_at: now, sources: health };
+  await writeFile(path.join(DATA_DIR, 'source-health.json'), JSON.stringify(healthFile, null, 2) + '\n');
+  if (!health.some(h => h.ok)) throw new Error('所有已配置来源均未成功，保留上一版项目数据，不发布。');
 
   // 3) Merge → Prune → Sourced → Verify → Enrich → Verify
   //    → Guide/Cost → Score → FAQ/Risks → Digest
@@ -178,24 +137,10 @@ async function main() {
     console.log(`[pipeline] 清理 ${pruned.removed.length} 个失效条目：${pruned.removed.join('、')}`);
   }
 
-  // 3.15) Status 对账（P1-1）：用 tagline 的明确信号修正 status。
-  //
-  //       为什么必须在 Sourced 之前（而不是之后）：
-  //         Sourced 会用数据源描述覆盖 tagline，而对账依据正是 tagline。
-  //         顺序反了会先用旧 tagline 对账、再换成新 tagline，出现新的不一致。
-  {
-    const reconciled = reconcileAll(projects);
-    projects = reconciled.projects;
-    for (const c of reconciled.changes) console.log(`[pipeline] status 对账：${c}`);
-  }
-
   // 3.2) Sourced：把真实抓取到的官网 / 描述 / 教程步骤落到项目上
   //      （人工档案在 Enrich 阶段覆盖，优先级更高）
   projects = applyAllSourced(projects, rawItems);
-  projects = verifyAll(projects);
   projects = await enrichAll(projects);
-  // enrich 后证据变了，重新 verify 一次以生成完整 Evidence 清单
-  projects = verifyAll(projects);
 
   // 3.25) X 账号索引回填（issue #28）
   //
@@ -219,17 +164,8 @@ async function main() {
     for (const r of filled.rejected) console.warn(`[pipeline] ⚠ ${r.slug} ${r.reason}`);
   }
 
-  // 3.3) Guide / Cost → Score → FAQ / Risks
-  //
-  //      顺序很关键，不能先 Score 后建成本：
-  //        · 参与价值里的「任务投入产出比」依赖 cost.time_minutes
-  //        · cost.time_minutes 由教程步骤推导（guide -> cost）
-  //      先评分后建成本，会导致评分用的是「上一轮遗留的成本」，
-  //      同一份数据连跑两次得到不同的参与价值分数（第二轮才收敛）。
-  //      因此这里把 Guide/Cost 提到 Score 之前，保证一次即收敛、可复现。
-  projects = projects.map((p) => buildGuideAndCost(p));
-  projects = scoreAll(projects);
-  projects = projects.map((p) => buildFaqAndRisks(p));
+  // 完整来源及人工档案就位后统一核验、对账、生成教程成本、评分和 FAQ。
+  projects = projects.map(finalizeProject);
 
   // 4) Validate：不通过则拒绝发布
   const result = validateProjects(projects);
@@ -239,8 +175,7 @@ async function main() {
   if (!result.ok) {
     for (const err of result.errors) console.error(`[pipeline] ✗ ${err}`);
     console.error('[pipeline] 校验失败，保留上一版数据，不执行写入。');
-    process.exitCode = 1;
-    return;
+    throw new Error(`发布前校验失败：${result.errors.join('；')}`);
   }
 
   // 4.5) 变化判定：剔除时间戳后逐项对比，得出真正的「实质变化」
@@ -312,10 +247,11 @@ async function main() {
    */
   // 注意：这是**列表数据集**，类型与内部 projects 不同（见 scripts/lib/list.ts）。
   // 不要把它赋给 Dataset —— 那会让 TS 误以为后续还能拿到 evidence / faq。
-  const dataset = buildListDataset(projects, {
+  const previousMeta = await readJson<{ content_updated_at?: string }>(previousFile, {});
+  const dataset = { ...buildListDataset(projects, {
     updated_at: now,
     new_today: newToday,
-  });
+  }), last_successful_check_at: now, content_updated_at: diff.changed ? now : previousMeta.content_updated_at ?? projects.map(p => p.last_changed_at).sort().at(-1) };
 
   // 6) Write JSON：列表（瘦身）+ 详情分片（完整）+ 数据源健康
   await mkdir(DETAILS_DIR, { recursive: true });
@@ -348,12 +284,7 @@ async function main() {
     console.log(`[pipeline] 清理孤儿分片 ${orphans.length} 个：${orphans.join('、')}`);
   }
 
-  const healthFile: SourceHealthFile = { updated_at: now, sources: health };
-  await writeFile(
-    path.join(DATA_DIR, 'source-health.json'),
-    JSON.stringify(healthFile, null, 2) + '\n',
-    'utf8',
-  );
+  await writeFile(path.join(DATA_DIR, 'translation-pending.json'), JSON.stringify(collectPendingTranslations(projects), null, 2) + '\n');
 
   // 7) Write live 快照：供前端「一键更新」读取来源侧最新条目（无需服务端）
   const liveIndex = await writeLiveSnapshots(LIVE_DIR, snapshots);

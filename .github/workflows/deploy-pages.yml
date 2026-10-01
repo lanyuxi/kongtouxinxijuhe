@@ -12,7 +12,7 @@
 #      因此构建时把 BASE_PATH 设为 /<仓库名>/，保证 JS / CSS / data 资源路径正确。
 #      vite.config.ts 的 base 默认 './'（相对路径），仅在本文件显式覆盖为绝对子路径。
 
-name: Deploy to GitHub Pages
+name: 发布空投情报网站
 
 on:
   push:
@@ -49,6 +49,8 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: 抓取并生成数据
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: npm run pipeline
 
       # 列表页要求「每个项目都有真实官方图标」，
@@ -101,6 +103,16 @@ jobs:
         with:
           path: dist
 
+      - name: 保存本轮检查与失败报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 本轮运行报告
+          path: |
+            data/source-health.json
+            data/refresh-status.json
+            data/translation-pending.json
+
   deploy:
     name: 发布到 GitHub Pages
     needs: build
@@ -112,3 +124,5 @@ jobs:
       - name: 部署
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: 写入实际发布时间
+        run: echo "成功发布时间（UTC）：$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_STEP_SUMMARY"

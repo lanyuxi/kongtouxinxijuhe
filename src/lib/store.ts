@@ -6,7 +6,8 @@
  * - 不为跨设备同步引入账户系统和数据库
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import type { ListProject } from './types';
 
 const KEY = 'dropscope.local.v1';
 
@@ -15,6 +16,9 @@ export type ProgressStatus = 'none' | 'saved' | 'preparing' | 'doing' | 'done';
 export interface ProjectProgress {
   status: ProgressStatus;
   completed_steps: number[];
+  completed_step_ids?: string[];
+  guide_version?: string;
+  needs_review?: boolean;
 }
 
 export interface LocalState {
@@ -23,6 +27,59 @@ export interface LocalState {
 }
 
 const EMPTY: LocalState = { favorites: [], progress: {} };
+
+export function serializeBackup(state: LocalState): string {
+  const progress = Object.fromEntries(state.favorites.filter(slug => state.progress[slug]).map(slug =>
+    [slug, resolveProgress(slug, state.favorites, state.progress)]));
+  return JSON.stringify({ version: 1, state: { favorites: state.favorites, progress } }, null, 2);
+}
+
+/** 整份验证后才导入；只接受本站的收藏与进度字段。 */
+export function parseBackup(text: string): LocalState {
+  if (text.length > 1_000_000) throw new Error('备份超过 1 MB，请选择本站导出的文件。');
+  let parsed;
+  try { parsed = JSON.parse(text); } catch { throw new Error('备份不是有效的 JSON 文件。'); }
+  const s = parsed?.state;
+  const slug = (v: unknown): v is string => typeof v === 'string' && /^[a-z0-9-]{1,100}$/i.test(v);
+  if (parsed?.version !== 1 || !s || !Array.isArray(s.favorites) || s.favorites.length > 1000 ||
+      !s.favorites.every(slug) || !s.progress || typeof s.progress !== 'object' || Array.isArray(s.progress)) {
+    throw new Error('备份格式或版本不支持，未修改现有收藏。');
+  }
+  const progress: Record<string, ProjectProgress> = {};
+  for (const [key, value] of Object.entries(s.progress)) {
+    const p = value as ProjectProgress;
+    if (!slug(key) || !s.favorites.includes(key) || !p || !['saved','preparing','doing','done'].includes(p.status) ||
+        !Array.isArray(p.completed_steps) || p.completed_steps.length > 200 || !p.completed_steps.every(n => Number.isInteger(n) && n > 0 && n <= 200) ||
+        (p.guide_version !== undefined && (typeof p.guide_version !== 'string' || !/^[a-f0-9]{64}$/.test(p.guide_version))) ||
+        (p.completed_step_ids !== undefined && (!Array.isArray(p.completed_step_ids) || p.completed_step_ids.length > 200 || !p.completed_step_ids.every(id => typeof id === 'string' && /^[a-f0-9]{64}(?::\d+)?$/.test(id)))) ||
+        (p.needs_review !== undefined && typeof p.needs_review !== 'boolean')) {
+      throw new Error('备份中的进度记录无效，未修改现有收藏。');
+    }
+    progress[key] = { status: p.status, completed_steps: [...new Set(p.completed_steps)],
+      ...(p.guide_version ? { guide_version: p.guide_version } : {}),
+      ...(p.completed_step_ids ? { completed_step_ids: [...new Set(p.completed_step_ids)] } : {}),
+      ...(p.needs_review !== undefined ? { needs_review: p.needs_review } : {}) };
+  }
+  return { favorites: [...new Set<string>(s.favorites)], progress };
+}
+
+export function mergeBackup(local: LocalState, incoming: LocalState): LocalState {
+  return { favorites: [...new Set([...local.favorites, ...incoming.favorites])], progress: { ...incoming.progress, ...local.progress } };
+}
+
+/** 版本改变只继承可识别的步骤，不让旧序号误对应到新动作。 */
+export function resolveGuideProgress(project: Pick<ListProject, 'guide' | 'guide_version'>, p: ProjectProgress | undefined): ProjectProgress | undefined {
+  if (!p || !project.guide_version || p.guide_version === project.guide_version) return p;
+  if (!p.guide_version && !p.completed_steps.length && p.status !== 'done') return p;
+  const ids = p.completed_step_ids ?? [];
+  return { ...p, status: p.status === 'done' ? 'doing' : p.status,
+    completed_steps: project.guide.filter(g => g.id && !g.id.includes(':') && ids.includes(g.id)).map(g => g.step), needs_review: true };
+}
+
+function bindGuide(p: ProjectProgress, project: Pick<ListProject, 'guide' | 'guide_version'>): ProjectProgress {
+  return { ...p, guide_version: project.guide_version,
+    completed_step_ids: project.guide.filter(g => p.completed_steps.includes(g.step) && g.id).map(g => g.id!), needs_review: p.needs_review ?? false };
+}
 
 export const PROGRESS_LABEL: Record<ProgressStatus, string> = {
   none: '未收藏',
@@ -85,18 +142,14 @@ function persist(state: LocalState) {
 }
 
 export function useLocalState() {
-  const [state, setState] = useState<LocalState>(EMPTY);
-
-  useEffect(() => {
-    setState(load());
-  }, []);
+  const [state, setState] = useState<LocalState>(load);
+  const stateRef = useRef(state);
 
   const update = useCallback((fn: (prev: LocalState) => LocalState) => {
-    setState((prev) => {
-      const next = fn(prev);
-      persist(next);
-      return next;
-    });
+    const next = fn(stateRef.current);
+    persist(next);
+    stateRef.current = next;
+    setState(next);
   }, []);
 
   const toggleFavorite = useCallback(
@@ -119,31 +172,32 @@ export function useLocalState() {
   );
 
   const setProgress = useCallback(
-    (slug: string, status: ProgressStatus) => {
-      update((prev) => ({
+    (slug: string, status: ProgressStatus, project?: ListProject) => {
+      update((prev) => {
+        if (!prev.favorites.includes(slug)) return prev;
+        const current = project ? resolveGuideProgress(project, prev.progress[slug]) : prev.progress[slug];
+        const next = { ...current, status: status === 'done' && current?.needs_review ? 'doing' as const : status, completed_steps: current?.completed_steps ?? [] };
+        return ({
         ...prev,
         progress: {
           ...prev.progress,
-          [slug]: {
-            status,
-            completed_steps: prev.progress[slug]?.completed_steps ?? [],
-          },
+          [slug]: project ? bindGuide(next, project) : next,
         },
-      }));
+      }); });
     },
     [update],
   );
 
   const toggleStep = useCallback(
-    (slug: string, step: number) => {
+    (slug: string, step: number, project?: ListProject) => {
       update((prev) => {
         const has = prev.favorites.includes(slug);
-        const cur = prev.progress[slug];
+        const cur = project ? resolveGuideProgress(project, prev.progress[slug]) : prev.progress[slug];
         // 勾选步骤不改变「是否收藏」这件事：
         //   - 没收藏就没有进度可改，直接忽略（曾被默认值伪造成「已收藏 + 进行中」）；
         //   - 已收藏但还没设过进度，勾第一步等价于用户主动开始 → 记「进行中」。
         if (!has) return prev;
-        const status: ProgressStatus = cur?.status ?? 'doing';
+        const status: ProgressStatus = cur?.status === 'saved' || !cur ? 'doing' : cur.status;
         const steps = cur?.completed_steps ?? [];
         const done = steps.includes(step);
         const completed_steps = done
@@ -151,7 +205,7 @@ export function useLocalState() {
           : [...steps, step].sort((a, b) => a - b);
         return {
           ...prev,
-          progress: { ...prev.progress, [slug]: { status, completed_steps } },
+          progress: { ...prev.progress, [slug]: project ? bindGuide({ ...cur, status, completed_steps }, project) : { status, completed_steps } },
         };
       });
     },
@@ -162,7 +216,32 @@ export function useLocalState() {
     update(() => EMPTY);
   }, [update]);
 
-  return { state, toggleFavorite, setProgress, toggleStep, clearAll };
+  const importBackup = useCallback((text: string) => {
+    const incoming = parseBackup(text);
+    const next = mergeBackup(stateRef.current, incoming);
+    try { localStorage.setItem(KEY, JSON.stringify(next)); }
+    catch { throw new Error('本地存储写入失败，未导入。请先导出已有记录并检查浏览器存储权限。'); }
+    stateRef.current = next;
+    setState(next);
+    return incoming.favorites.length;
+  }, []);
+
+  const reconcileGuides = useCallback((projects: ListProject[]) => {
+    update(prev => {
+      const progress = { ...prev.progress };
+      for (const p of projects) if (prev.favorites.includes(p.slug) && prev.progress[p.slug]) {
+        progress[p.slug] = resolveGuideProgress(p, prev.progress[p.slug])!;
+      }
+      return JSON.stringify(progress) === JSON.stringify(prev.progress) ? prev : { ...prev, progress };
+    });
+  }, [update]);
+
+  const reviewGuide = useCallback((slug: string, project: ListProject) => {
+    update(prev => prev.favorites.includes(slug) ? { ...prev, progress: { ...prev.progress,
+      [slug]: bindGuide({ ...(resolveGuideProgress(project, prev.progress[slug]) ?? INITIAL_PROGRESS), needs_review: false }, project) } } : prev);
+  }, [update]);
+
+  return { state, toggleFavorite, setProgress, toggleStep, clearAll, importBackup, reconcileGuides, reviewGuide };
 }
 
 /**

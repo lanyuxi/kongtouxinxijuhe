@@ -1,3 +1,4 @@
+import { reviewedEvidence } from './helpers/evidence';
 import { describe, it, expect } from 'vitest';
 import { normalize, normalizeChainList, normalizeStatus, slugify } from '../scripts/lib/normalize';
 import { mergeAll, mergeProject } from '../scripts/lib/merge';
@@ -144,10 +145,11 @@ describe('verify 证据', () => {
     expect(isProjectVerified(single)).toBe(false);
   });
 
-  it('两个不同域名的官方证据才算已验证', () => {
+  it('两份有具体核验记录的官方证据可判定已验证', () => {
     const multi = verifyAll([
       makeProject({
         official: { website: 'https://demo.xyz', docs: 'https://docs.demo.xyz' },
+        evidence: [reviewedEvidence('official_website', 'https://demo.xyz'), reviewedEvidence('official_docs', 'https://docs.demo.xyz')],
       }),
     ])[0];
     expect(multi.evidence.filter((e) => e.verified).length).toBeGreaterThanOrEqual(2);
@@ -180,7 +182,7 @@ describe('score 评分', () => {
     expect(total).toBeLessThan(100);
     const ann = items.find((i) => i.key === 'authenticity.announcement');
     expect(ann?.value).toBe(0);
-    expect(ann?.reason).toContain('尚未正式确认');
+    expect(ann?.reason).toContain('尚未核实');
   });
 
   it('一票否决：索取私钥直接 critical', () => {
@@ -196,6 +198,7 @@ describe('score 评分', () => {
   it('系统生成的安全提示不应被误判为风险', () => {
     const p = makeProject({
       tasks: ['关注 X', '加入 Discord', '连接钱包'],
+      cost: { ...makeProject().cost, capital_min_usd: 0, capital_max_usd: 0, gas_estimate_usd: 0 },
       guide: [
         {
           step: 1,

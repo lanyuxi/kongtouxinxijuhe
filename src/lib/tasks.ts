@@ -1,3 +1,4 @@
+import { canExecuteGuide } from './guide';
 /**
  * 任务摘要：把「分步教程」压缩成一行可读的「操作」说明。
  *
@@ -63,6 +64,7 @@ function toAction(title: string): string | null {
  * 最多 3 条，去重，保持出现顺序。
  */
 export function operationSummary(p: ListProject, max = 3): string[] {
+  if (!canExecuteGuide(p)) return ['核对活动公告', '核对资格与期限'].slice(0, max);
   const out: string[] = [];
   const push = (s: string) => {
     if (s && !out.includes(s) && out.length < max) out.push(s);
@@ -97,5 +99,5 @@ export function operationSummary(p: ListProject, max = 3): string[] {
 
 /** 用于卡片一行展示的完整文案 */
 export function operationLine(p: ListProject): string {
-  return `操作：${operationSummary(p).join('、')}`;
+  return `${canExecuteGuide(p) ? '操作' : '研究'}：${operationSummary(p).join('、')}`;
 }

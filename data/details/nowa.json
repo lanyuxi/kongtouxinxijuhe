@@ -7,7 +7,7 @@
   "chains": [
     "Own Chain"
   ],
-  "status": "confirmed",
+  "status": "pending",
   "official": {
     "website": "https://app.nowa.finance"
   },
@@ -27,43 +27,42 @@
   "evidence": [
     {
       "type": "official_website",
-      "label": "官方网站可访问",
+      "label": "项目官网候选链接",
       "url": "https://app.nowa.finance",
-      "verified": true,
-      "note": "官方域名已验证"
+      "verified": false,
+      "note": "来源提供的候选链接，归属与可访问性尚未核实"
     },
     {
       "type": "third_party",
-      "label": "第三方来源：Airdrops.io",
+      "label": "第三方来源记录：Airdrops.io",
       "url": "https://airdrops.io/nowa/",
-      "verified": true,
-      "note": "第三方来源仅作交叉参考，不代表官方背书"
+      "verified": false,
+      "note": "记录抓取出处，不代表内容已核实或官方背书"
     }
   ],
   "scores": {
-    "authenticity": 31,
-    "value": 50,
+    "authenticity": 11,
+    "value": 15,
     "risk": "medium",
-    "grade": "C",
+    "grade": "D",
     "authenticityItems": [
       {
         "key": "authenticity.website",
         "label": "官方网站可验证",
-        "value": 15,
+        "value": 0,
         "max": 15,
-        "reason": "官方域名可直接访问",
-        "evidenceUrl": "https://app.nowa.finance"
+        "reason": "未找到可验证的官方网站"
       },
       {
         "key": "authenticity.announcement",
         "label": "官方公告明确提到活动",
-        "value": 10,
+        "value": 0,
         "max": 20,
-        "reason": "项目状态已确认，但未找到可直接引用的官方公告"
+        "reason": "尚未核实具体空投活动公告"
       },
       {
         "key": "authenticity.crosslink",
-        "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+        "label": "项目文档已核验",
         "value": 0,
         "max": 15,
         "reason": "缺少 Docs 或链接无法互相印证"
@@ -122,9 +121,9 @@
       {
         "key": "value.verification",
         "label": "信息验证充分度",
-        "value": 14,
+        "value": 0,
         "max": 20,
-        "reason": "共 2 条证据，其中 2 条已验证（验证率 100%）"
+        "reason": "共 2 条证据，其中 0 条已验证（验证率 0%）"
       },
       {
         "key": "value.breadth",
@@ -143,21 +142,21 @@
       {
         "key": "value.signal",
         "label": "Token / Airdrop 信号强度",
-        "value": 16,
+        "value": 4,
         "max": 20,
-        "reason": "空投已确认，信号较强"
+        "reason": "缺乏明确空投信号"
       },
       {
         "key": "value.roi",
         "label": "任务投入产出比",
-        "value": 9,
+        "value": 2,
         "max": 15,
-        "reason": "预计投入约 27 分钟，共 9 个步骤"
+        "reason": "任务尚不明确，无法评估投入产出比"
       },
       {
         "key": "value.timing",
         "label": "当前参与时机",
-        "value": 3,
+        "value": 1,
         "max": 5,
         "reason": "已进入后期阶段，参与窗口收窄"
       },
@@ -192,6 +191,20 @@
         "reason": "检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM"
       },
       {
+        "key": "risk.unknown",
+        "label": "成本或步骤风险待核实",
+        "value": 1,
+        "max": 3,
+        "reason": "信息不完整，不能据此认定为免费或低风险"
+      },
+      {
+        "key": "risk.capital_unknown",
+        "label": "来源提到本金投入",
+        "value": 1,
+        "max": 3,
+        "reason": "需要资金准备，但具体金额尚未核实，不能视作免费"
+      },
+      {
         "key": "risk.signature_step",
         "label": "包含需要签名的链上步骤",
         "value": 1,
@@ -202,8 +215,8 @@
     "evidenceChecklist": [
       {
         "label": "官方网站",
-        "status": "verified",
-        "note": "已找到官方域名并通过校验"
+        "status": "partial",
+        "note": "已找到候选域名，但未通过官方校验"
       },
       {
         "label": "官方文档",
@@ -222,13 +235,13 @@
       },
       {
         "label": "官方公告",
-        "status": "missing",
-        "note": "项目已确认，但未找到可直接引用的官方公告"
+        "status": "not_applicable",
+        "note": "尚未核实具体活动公告"
       },
       {
         "label": "融资信息",
-        "status": "missing",
-        "note": "项目已确认，但未核实到团队或融资信息"
+        "status": "not_applicable",
+        "note": "项目尚未确认，融资信息通常也未公开（不适用）"
       },
       {
         "label": "官方 Quest",
@@ -246,22 +259,30 @@
         "note": "暂无公开可验证合约地址"
       }
     ],
-    "authenticityVerifiedCount": 1,
-    "authenticityPartialCount": 1,
+    "authenticityVerifiedCount": 0,
+    "authenticityPartialCount": 2,
     "authenticityTotalCount": 9
   },
   "cost": {
-    "capital_min_usd": 0,
-    "capital_max_usd": 0,
-    "gas_estimate_usd": 0,
-    "time_minutes": 27,
+    "capital_min_usd": null,
+    "capital_max_usd": null,
+    "gas_estimate_usd": null,
+    "time_minutes": 0,
     "long_term": false,
-    "summary": "低成本、纯时间投入型项目，适合新手练手。"
+    "summary": "需要准备本金，金额待核实。手续费待核实。信息不完整，暂不判断为新手友好。",
+    "capital_required": true,
+    "gas_required": false,
+    "basis": {
+      "method": "source_text",
+      "source_url": "https://airdrops.io/nowa/",
+      "checked_at": "2026-09-22T11:51:39.442Z",
+      "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
+    }
   },
   "recommendation": {
-    "grade": "C",
+    "grade": "D",
     "action": "observe",
-    "summary": "优先级较低，可先收藏关注后续变化。"
+    "summary": "活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。"
   },
   "guide": [
     {
@@ -275,149 +296,167 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
-      "source_verified": false
+      "source_verified": false,
+      "content_status": "ready",
+      "id": "f6cab354245afc712e213cfc7bfa951d061c8d2c48c541b3f7891ca459b1e40d"
     },
     {
       "step": 2,
       "title": "打开 Nowa 农业页面",
       "description": "转到 Nowa 农业页面。在此阶段仅限邀请才能访问，因此在开始之前请准备好代码。公共代码是 NOWA。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Open the Nowa Farming Page",
-      "original_description": "Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA."
+      "original_description": "Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA.",
+      "id": "c3b66003d2f461a756888d963b17e302a40e942458433f58a69845677a056761"
     },
     {
       "step": 3,
       "title": "连接你的钱包",
       "description": "点击“连接钱包”并选择你的钱包。 Nowa 支持 MetaMask、Trust Wallet、WalletConnect、Phantom、Keplr、Solflare 和 Typhon。出现提示时签署连接请求。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
       "needs_wallet": true,
       "needs_signature": true,
-      "risk": "low",
+      "risk": "medium",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Connect Your Wallet",
-      "original_description": "Click Connect Wallet and pick your wallet. Nowa supports MetaMask, Trust Wallet, WalletConnect, Phantom, Keplr, Solflare, and Typhon. Sign the connection request when prompted."
+      "original_description": "Click Connect Wallet and pick your wallet. Nowa supports MetaMask, Trust Wallet, WalletConnect, Phantom, Keplr, Solflare, and Typhon. Sign the connection request when prompted.",
+      "id": "f14111b9c27c72506e94b36a7dd196df7dad8804aced7ce7eadf091bcd0606a7"
     },
     {
       "step": 4,
       "title": "输入你的邀请码",
       "description": "在邀请字段中输入 NOWA。接受后，你将进入 Nowa Farming 仪表盘，显示你的余额、徽章等级和排行榜排名。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Enter Your Invite Code",
-      "original_description": "Type NOWA into the invite field. Once accepted, you land on the Nowa Farming dashboard showing your balances, badge tier, and leaderboard rank."
+      "original_description": "Type NOWA into the invite field. Once accepted, you land on the Nowa Farming dashboard showing your balances, badge tier, and leaderboard rank.",
+      "id": "856a0cc003ca86045cf6cf7350909a21528116661004859bfb115cfda5fb01d3"
     },
     {
       "step": 5,
       "title": "完成三项强制性任务",
       "description": "耕作将保持锁定状态，直到这三项都完成为止： 在 X 上关注 Nowa 并加入 Telegram 社区使用你的个人邀请码邀请至少一位朋友点击请求资金以领取你的免费 Devnet 价值代币请求资金掉落包括 NUSC、NOWA、ETH、BTC、BNB、TRX、USDC、USDT、XRP 和 SOL，涵盖计划中的每项活动，无需你存款。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Complete the Three Mandatory Tasks",
-      "original_description": "Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you."
+      "original_description": "Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you.",
+      "id": "5749363b52ba3c4b780b10cd7b73146b7d6b64cd81bd9e48103d0a519f17d8f8"
     },
     {
       "step": 6,
       "title": "现货交易订单簿",
       "description": "在链上订单簿上下达买卖订单。现货交易量会满足其每日存储桶的需求，并计入你的排行榜排名。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Trade on the Spot Orderbook",
-      "original_description": "Place buy and sell orders on the onchain orderbook. Spot volume feeds its own daily bucket and counts toward your leaderboard rank."
+      "original_description": "Place buy and sell orders on the onchain orderbook. Spot volume feeds its own daily bucket and counts toward your leaderboard rank.",
+      "id": "454c9f41c8150b6ba3f211d536ecb2bd0ec7ef83c1a9ea386ad105350364e7cf"
     },
     {
       "step": 7,
       "title": "BNPL 未平仓头寸",
       "description": "通过 BNPL 流程购买资产，提供抵押资产，并随着时间的推移结算余额。这是 Nowa 最想测试的功能，它来自与 Spot 不同的日常存储桶。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Open BNPL Positions",
-      "original_description": "Buy an asset through the BNPL flow, post collateral, and settle the balance over time. This is the feature Nowa most wants tested, and it draws from a different daily bucket than spot."
+      "original_description": "Buy an asset through the BNPL flow, post collateral, and settle the balance over time. This is the feature Nowa most wants tested, and it draws from a different daily bucket than spot.",
+      "id": "2db6f8be1288a41f88ee250f5de5d4e0a555539449e8201ace486a918c447fbd"
     },
     {
       "step": 8,
       "title": "存入金库并赚取收益",
       "description": "将 NUSC 存入 Vault，为其他用户的 BNPL 头寸提供资金，然后质押到 Earn 中作为第二个质押桶。两者都会不断累积 NOWA，因此，当你将注意力集中在其他地方时，早期存放的资金将继续发挥作用。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Stake into Vault and Earn",
-      "original_description": "Deposit NUSC into the Vault to finance other users’ BNPL positions, then stake into Earn for the second staking bucket. Both accrue NOWA continuously, so funds parked early keep working while you focus elsewhere."
+      "original_description": "Deposit NUSC into the Vault to finance other users’ BNPL positions, then stake into Earn for the second staking bucket. Both accrue NOWA continuously, so funds parked early keep working while you focus elsewhere.",
+      "id": "fca9b8983e96930ae0c09bbf0bcb05db7ee9cb4464ed59a0e22faaeef86b3462"
     },
     {
       "step": 9,
       "title": "建立你的推荐树",
       "description": "从仪表盘分享你的邀请代码。除了 10%、5% 和 2.5% 的佣金外，推荐活动还有自己的每日佣金。",
       "official_url": "https://app.nowa.finance",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Build Your Referral Tree",
-      "original_description": "Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions."
+      "original_description": "Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions.",
+      "id": "604f5832a146a51228caec30ab69c6b2bf418f0f7a5a9cfe09a3c05ad2c2836b"
     }
   ],
   "faq": [
     {
       "q": "这个空投确认了吗？",
-      "a": "当前状态：已确认空投。官方渠道已有明确信号。"
+      "a": "当前状态：状态待核实。来源提供了活动线索，但缺少具体官方公告的核验记录"
     },
     {
       "q": "什么时候结束？",
-      "a": "官方暂未公布。"
+      "a": "本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。"
     },
     {
       "q": "参与需要花钱吗？",
-      "a": "预计无需资金成本，仅需时间。"
+      "a": "需要本金，金额待核实；手续费待核实。"
     },
     {
       "q": "需要连接钱包吗？",
-      "a": "需要。请务必使用独立的空投钱包。"
+      "a": "来源描述涉及钱包，请先核对实际活动要求。"
     },
     {
       "q": "需要主网资产吗？",
-      "a": "暂不需要主网资产。"
+      "a": "手续费与主网资产要求待核实。"
     },
     {
       "q": "积分一定会兑换 Token 吗？",
@@ -429,7 +468,7 @@
     },
     {
       "q": "领取时间确定了吗？",
-      "a": "官方暂未公布。"
+      "a": "相关活动信息待核实，请查看官方公告。"
     }
   ],
   "risks": [
@@ -440,7 +479,7 @@
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
   "last_checked_at": "2026-09-22T11:51:39.442Z",
-  "last_changed_at": "2026-09-19T08:43:02.897Z",
+  "last_changed_at": "2026-10-01T08:10:49.150Z",
   "sourcedSteps": [
     {
       "title": "Open the Nowa Farming Page",
@@ -475,8 +514,10 @@
       "body": "Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions."
     }
   ],
-  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Own Chain\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":27},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://app.nowa.finance\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/nowa/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：已确认空投。官方渠道已有明确信号。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"转到 Nowa 农业页面。在此阶段仅限邀请才能访问，因此在开始之前请准备好代码。公共代码是 NOWA。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA.\",\"original_title\":\"Open the Nowa Farming Page\",\"risk\":\"low\",\"source_verified\":false,\"step\":2,\"title\":\"打开 Nowa 农业页面\"},{\"cost_usd\":0,\"description\":\"点击“连接钱包”并选择你的钱包。 Nowa 支持 MetaMask、Trust Wallet、WalletConnect、Phantom、Keplr、Solflare 和 Typhon。出现提示时签署连接请求。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Click Connect Wallet and pick your wallet. Nowa supports MetaMask, Trust Wallet, WalletConnect, Phantom, Keplr, Solflare, and Typhon. Sign the connection request when prompted.\",\"original_title\":\"Connect Your Wallet\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"连接你的钱包\"},{\"cost_usd\":0,\"description\":\"在邀请字段中输入 NOWA。接受后，你将进入 Nowa Farming 仪表盘，显示你的余额、徽章等级和排行榜排名。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Type NOWA into the invite field. Once accepted, you land on the Nowa Farming dashboard showing your balances, badge tier, and leaderboard rank.\",\"original_title\":\"Enter Your Invite Code\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"输入你的邀请码\"},{\"cost_usd\":0,\"description\":\"耕作将保持锁定状态，直到这三项都完成为止： 在 X 上关注 Nowa 并加入 Telegram 社区使用你的个人邀请码邀请至少一位朋友点击请求资金以领取你的免费 Devnet 价值代币请求资金掉落包括 NUSC、NOWA、ETH、BTC、BNB、TRX、USDC、USDT、XRP 和 SOL，涵盖计划中的每项活动，无需你存款。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you.\",\"original_title\":\"Complete the Three Mandatory Tasks\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"完成三项强制性任务\"},{\"cost_usd\":0,\"description\":\"在链上订单簿上下达买卖订单。现货交易量会满足其每日存储桶的需求，并计入你的排行榜排名。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Place buy and sell orders on the onchain orderbook. Spot volume feeds its own daily bucket and counts toward your leaderboard rank.\",\"original_title\":\"Trade on the Spot Orderbook\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"现货交易订单簿\"},{\"cost_usd\":0,\"description\":\"通过 BNPL 流程购买资产，提供抵押资产，并随着时间的推移结算余额。这是 Nowa 最想测试的功能，它来自与 Spot 不同的日常存储桶。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Buy an asset through the BNPL flow, post collateral, and settle the balance over time. This is the feature Nowa most wants tested, and it draws from a different daily bucket than spot.\",\"original_title\":\"Open BNPL Positions\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"BNPL 未平仓头寸\"},{\"cost_usd\":0,\"description\":\"将 NUSC 存入 Vault，为其他用户的 BNPL 头寸提供资金，然后质押到 Earn 中作为第二个质押桶。两者都会不断累积 NOWA，因此，当你将注意力集中在其他地方时，早期存放的资金将继续发挥作用。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Deposit NUSC into the Vault to finance other users’ BNPL positions, then stake into Earn for the second staking bucket. Both accrue NOWA continuously, so funds parked early keep working while you focus elsewhere.\",\"original_title\":\"Stake into Vault and Earn\",\"risk\":\"low\",\"source_verified\":false,\"step\":8,\"title\":\"存入金库并赚取收益\"},{\"cost_usd\":0,\"description\":\"从仪表盘分享你的邀请代码。除了 10%、5% 和 2.5% 的佣金外，推荐活动还有自己的每日佣金。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions.\",\"original_title\":\"Build Your Referral Tree\",\"risk\":\"low\",\"source_verified\":false,\"step\":9,\"title\":\"建立你的推荐树\"}],\"guide_source\":\"third_party\",\"id\":\"nowa\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Nowa\",\"official\":{\"website\":\"https://app.nowa.finance\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"C\",\"summary\":\"优先级较低，可先收藏关注后续变化。\"},\"requirements\":[\"钱包\"],\"risks\":[\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":31,\"authenticityItems\":[{\"evidenceUrl\":\"https://app.nowa.finance\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目状态已确认，但未找到可直接引用的官方公告\",\"value\":10},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目已确认，但未找到可直接引用的官方公告\",\"status\":\"missing\"},{\"label\":\"融资信息\",\"note\":\"项目已确认，但未核实到团队或融资信息\",\"status\":\"missing\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"C\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk._swap_\",\"label\":\"涉及 Swap / 交易\",\"max\":3,\"reason\":\"检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":50,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"空投已确认，信号较强\",\"value\":16},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 27 分钟，共 9 个步骤\",\"value\":9},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":3},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 9 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"nowa\",\"sourcedSteps\":[{\"body\":\"Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA.\",\"title\":\"Open the Nowa Farming Page\"},{\"body\":\"Click Connect Wallet and pick your wallet. Nowa supports MetaMask, Trust Wallet, WalletConnect, Phantom, Keplr, Solflare, and Typhon. Sign the connection request when prompted.\",\"title\":\"Connect Your Wallet\"},{\"body\":\"Type NOWA into the invite field. Once accepted, you land on the Nowa Farming dashboard showing your balances, badge tier, and leaderboard rank.\",\"title\":\"Enter Your Invite Code\"},{\"body\":\"Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you.\",\"title\":\"Complete the Three Mandatory Tasks\"},{\"body\":\"Place buy and sell orders on the onchain orderbook. Spot volume feeds its own daily bucket and counts toward your leaderboard rank.\",\"title\":\"Trade on the Spot Orderbook\"},{\"body\":\"Buy an asset through the BNPL flow, post collateral, and settle the balance over time. This is the feature Nowa most wants tested, and it draws from a different daily bucket than spot.\",\"title\":\"Open BNPL Positions\"},{\"body\":\"Deposit NUSC into the Vault to finance other users’ BNPL positions, then stake into Earn for the second staking bucket. Both accrue NOWA continuously, so funds parked early keep working while you focus elsewhere.\",\"title\":\"Stake into Vault and Earn\"},{\"body\":\"Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions.\",\"title\":\"Build Your Referral Tree\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/nowa/\"}],\"status\":\"confirmed\",\"tagline\":\"Nowa Farming 是 Nowa 社区发展计划的开始阶段，该计划横跨 Devnet（现已上线）、测试网和主网。\",\"tagline_en\":\"Nowa Farming is the opening phase of Nowa’s Community Development Program, which runs across Devnet (live now), Testnet, and Mainnet.\",\"tasks\":[]}",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Own Chain\"],\"cost\":{\"basis\":{\"checked_at\":\"<time>\",\"method\":\"source_text\",\"note\":\"完整来源描述或教程提到资金 / 链上操作，未核实具体金额\",\"source_url\":\"https://airdrops.io/nowa/\"},\"capital_max_usd\":null,\"capital_min_usd\":null,\"capital_required\":true,\"gas_estimate_usd\":null,\"gas_required\":false,\"long_term\":false,\"summary\":\"需要准备本金，金额待核实。手续费待核实。信息不完整，暂不判断为新手友好。\",\"time_minutes\":0},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"项目官网候选链接\",\"note\":\"来源提供的候选链接，归属与可访问性尚未核实\",\"type\":\"official_website\",\"url\":\"https://app.nowa.finance\",\"verified\":false},{\"label\":\"第三方来源记录：Airdrops.io\",\"note\":\"记录抓取出处，不代表内容已核实或官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/nowa/\",\"verified\":false}],\"faq\":[{\"a\":\"当前状态：状态待核实。来源提供了活动线索，但缺少具体官方公告的核验记录\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。\",\"q\":\"什么时候结束？\"},{\"a\":\"需要本金，金额待核实；手续费待核实。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"来源描述涉及钱包，请先核对实际活动要求。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"手续费与主网资产要求待核实。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"相关活动信息待核实，请查看官方公告。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"content_status\":\"ready\",\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://app.nowa.finance\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"转到 Nowa 农业页面。在此阶段仅限邀请才能访问，因此在开始之前请准备好代码。公共代码是 NOWA。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA.\",\"original_title\":\"Open the Nowa Farming Page\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":2,\"title\":\"打开 Nowa 农业页面\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"点击“连接钱包”并选择你的钱包。 Nowa 支持 MetaMask、Trust Wallet、WalletConnect、Phantom、Keplr、Solflare 和 Typhon。出现提示时签署连接请求。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Click Connect Wallet and pick your wallet. Nowa supports MetaMask, Trust Wallet, WalletConnect, Phantom, Keplr, Solflare, and Typhon. Sign the connection request when prompted.\",\"original_title\":\"Connect Your Wallet\",\"risk\":\"medium\",\"source_verified\":false,\"step\":3,\"title\":\"连接你的钱包\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"在邀请字段中输入 NOWA。接受后，你将进入 Nowa Farming 仪表盘，显示你的余额、徽章等级和排行榜排名。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Type NOWA into the invite field. Once accepted, you land on the Nowa Farming dashboard showing your balances, badge tier, and leaderboard rank.\",\"original_title\":\"Enter Your Invite Code\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":4,\"title\":\"输入你的邀请码\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"耕作将保持锁定状态，直到这三项都完成为止： 在 X 上关注 Nowa 并加入 Telegram 社区使用你的个人邀请码邀请至少一位朋友点击请求资金以领取你的免费 Devnet 价值代币请求资金掉落包括 NUSC、NOWA、ETH、BTC、BNB、TRX、USDC、USDT、XRP 和 SOL，涵盖计划中的每项活动，无需你存款。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you.\",\"original_title\":\"Complete the Three Mandatory Tasks\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":5,\"title\":\"完成三项强制性任务\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"在链上订单簿上下达买卖订单。现货交易量会满足其每日存储桶的需求，并计入你的排行榜排名。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Place buy and sell orders on the onchain orderbook. Spot volume feeds its own daily bucket and counts toward your leaderboard rank.\",\"original_title\":\"Trade on the Spot Orderbook\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":6,\"title\":\"现货交易订单簿\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"通过 BNPL 流程购买资产，提供抵押资产，并随着时间的推移结算余额。这是 Nowa 最想测试的功能，它来自与 Spot 不同的日常存储桶。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Buy an asset through the BNPL flow, post collateral, and settle the balance over time. This is the feature Nowa most wants tested, and it draws from a different daily bucket than spot.\",\"original_title\":\"Open BNPL Positions\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":7,\"title\":\"BNPL 未平仓头寸\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"将 NUSC 存入 Vault，为其他用户的 BNPL 头寸提供资金，然后质押到 Earn 中作为第二个质押桶。两者都会不断累积 NOWA，因此，当你将注意力集中在其他地方时，早期存放的资金将继续发挥作用。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Deposit NUSC into the Vault to finance other users’ BNPL positions, then stake into Earn for the second staking bucket. Both accrue NOWA continuously, so funds parked early keep working while you focus elsewhere.\",\"original_title\":\"Stake into Vault and Earn\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":8,\"title\":\"存入金库并赚取收益\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"从仪表盘分享你的邀请代码。除了 10%、5% 和 2.5% 的佣金外，推荐活动还有自己的每日佣金。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://app.nowa.finance\",\"original_description\":\"Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions.\",\"original_title\":\"Build Your Referral Tree\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":9,\"title\":\"建立你的推荐树\"}],\"guide_source\":\"third_party\",\"id\":\"nowa\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Nowa\",\"official\":{\"website\":\"https://app.nowa.finance\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"D\",\"summary\":\"活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。\"},\"requirements\":[\"钱包\"],\"risks\":[\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":11,\"authenticityItems\":[{\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"未找到可验证的官方网站\",\"value\":0},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"尚未核实具体空投活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"项目文档已核验\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":2,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":0,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到候选域名，但未通过官方校验\",\"status\":\"partial\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"尚未核实具体活动公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"D\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk._swap_\",\"label\":\"涉及 Swap / 交易\",\"max\":3,\"reason\":\"检测到「涉及 Swap / 交易」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk._lp_farming_\",\"label\":\"涉及 LP / Farming / 质押\",\"max\":3,\"reason\":\"检测到「涉及 LP / Farming / 质押」行为，风险等级 MEDIUM\",\"value\":1},{\"key\":\"risk.unknown\",\"label\":\"成本或步骤风险待核实\",\"max\":3,\"reason\":\"信息不完整，不能据此认定为免费或低风险\",\"value\":1},{\"key\":\"risk.capital_unknown\",\"label\":\"来源提到本金投入\",\"max\":3,\"reason\":\"需要资金准备，但具体金额尚未核实，不能视作免费\",\"value\":1},{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":15,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 0 条已验证（验证率 0%）\",\"value\":0},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"缺乏明确空投信号\",\"value\":4},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"任务尚不明确，无法评估投入产出比\",\"value\":2},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"已进入后期阶段，参与窗口收窄\",\"value\":1},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 9 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"nowa\",\"sourcedSteps\":[{\"body\":\"Go to the Nowa Farming page . Access is invite-only at this stage, so have a code ready before you start. The public code is NOWA.\",\"title\":\"Open the Nowa Farming Page\"},{\"body\":\"Click Connect Wallet and pick your wallet. Nowa supports MetaMask, Trust Wallet, WalletConnect, Phantom, Keplr, Solflare, and Typhon. Sign the connection request when prompted.\",\"title\":\"Connect Your Wallet\"},{\"body\":\"Type NOWA into the invite field. Once accepted, you land on the Nowa Farming dashboard showing your balances, badge tier, and leaderboard rank.\",\"title\":\"Enter Your Invite Code\"},{\"body\":\"Farming stays locked until all three are done: Follow Nowa on X and join the Telegram community Invite at least one friend using your personal invite code Click Request Funds to claim your free Devnet-value tokens The Request Funds drop includes NUSC, NOWA, ETH, BTC, BNB, TRX, USDC, USDT, XRP, and SOL, covering every activity in the program without a deposit from you.\",\"title\":\"Complete the Three Mandatory Tasks\"},{\"body\":\"Place buy and sell orders on the onchain orderbook. Spot volume feeds its own daily bucket and counts toward your leaderboard rank.\",\"title\":\"Trade on the Spot Orderbook\"},{\"body\":\"Buy an asset through the BNPL flow, post collateral, and settle the balance over time. This is the feature Nowa most wants tested, and it draws from a different daily bucket than spot.\",\"title\":\"Open BNPL Positions\"},{\"body\":\"Deposit NUSC into the Vault to finance other users’ BNPL positions, then stake into Earn for the second staking bucket. Both accrue NOWA continuously, so funds parked early keep working while you focus elsewhere.\",\"title\":\"Stake into Vault and Earn\"},{\"body\":\"Share your invite code from the dashboard. Referral activity has its own daily bucket on top of the 10%, 5%, and 2.5% commissions.\",\"title\":\"Build Your Referral Tree\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/nowa/\"}],\"status\":\"pending\",\"status_note\":\"来源提供了活动线索，但缺少具体官方公告的核验记录\",\"tagline\":\"Nowa Farming 是 Nowa 社区发展计划的开始阶段，该计划横跨 Devnet（现已上线）、测试网和主网。\",\"tagline_en\":\"Nowa Farming is the opening phase of Nowa’s Community Development Program, which runs across Devnet (live now), Testnet, and Mainnet.\",\"tasks\":[]}",
   "guide_source": "third_party",
   "first_seen_at": "2026-09-12T06:08:39.056Z",
-  "tagline_en": "Nowa Farming is the opening phase of Nowa’s Community Development Program, which runs across Devnet (live now), Testnet, and Mainnet."
+  "tagline_en": "Nowa Farming is the opening phase of Nowa’s Community Development Program, which runs across Devnet (live now), Testnet, and Mainnet.",
+  "status_note": "来源提供了活动线索，但缺少具体官方公告的核验记录",
+  "guide_version": "0cb24e1df954afb93b71fbc6e7c7c9cb1baea2e9d4ba36701a4cdb94664b1e24"
 }

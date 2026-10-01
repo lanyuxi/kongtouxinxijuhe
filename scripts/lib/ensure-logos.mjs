@@ -55,15 +55,18 @@ async function blockedSlugs() {
  * 返回「映射里有、但文件不存在」以及「映射里没有」的 slug 列表。
  * 已登记为不可抓取（_blocked）的项目不计入 —— 它们的缺失是已知且已记录的限制。
  */
-export async function findMissingLogos({ includeBlocked = false } = {}) {
-  const dataset = await readJson(DATASET, { projects: [] });
-  const map = await readJson(MAP, { logos: {} });
+export async function findMissingLogos({ includeBlocked = false, dataset, map, mapping } = {}) {
+  dataset ??= await readJson(DATASET, { projects: [] });
+  map ??= await readJson(MAP, { logos: {} });
+  mapping ??= await readJson(MAPPING, { map: {}, _blocked: {} });
   const logos = map.logos ?? {};
-  const blocked = await blockedSlugs();
+  const blocked = new Set(Object.keys(mapping._blocked ?? {}));
 
   const missing = [];
   for (const p of dataset.projects ?? []) {
     if (!includeBlocked && blocked.has(p.slug)) continue;
+    // 来源没有候选官网或人工图标来源时，用明确的文字占位，不伪造官方图标。
+    if (!p.official?.website && !mapping.map?.[p.slug]?.domain && !mapping.map?.[p.slug]?.llama) continue;
     const rel = logos[p.slug];
     if (!rel) {
       missing.push(p.slug);

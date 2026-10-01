@@ -3,7 +3,7 @@ import { SORT_LABEL } from '../lib/filter';
 import { STATUS_LABEL, CATEGORY_LABEL, CHAIN_LABEL, RISK_LABEL } from '../lib/labels';
 import { BEGINNER_RULES } from '../lib/beginner';
 
-const STATUSES = ['all', 'new', 'potential', 'confirmed', 'claim_live', 'ended'] as const;
+const STATUSES = ['all', 'new', 'potential', 'pending', 'confirmed', 'claim_live', 'ended'] as const;
 
 /** 常用公链的**优先展示顺序**（不是白名单）。
  *  列表里出现但不在这个顺序里的链，会按项目数排在后面 —— 见 chainOptions()。
@@ -77,6 +77,8 @@ const COSTS = [
 
 export function FilterBar({
   filters,
+  expanded = false,
+  onExpandedChange,
   onChange,
   onReset,
   resultCount,
@@ -86,6 +88,8 @@ export function FilterBar({
   chainOptions,
 }: {
   filters: Filters;
+  expanded?: boolean;
+  onExpandedChange?: (expanded: boolean) => void;
   onChange: (f: Filters) => void;
   onReset: () => void;
   resultCount: number;
@@ -142,7 +146,7 @@ export function FilterBar({
         </p>
       </div>
 
-      <div className="mt-5 flex flex-col gap-5">
+      <div className="mt-3 flex flex-col gap-3">
         {/* 总览口径回显：只在生效时出现，避免长期占位变成噪音 */}
         {activeOverview && (
           <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-brand/25 bg-brand-50 px-4 py-3">
@@ -182,7 +186,7 @@ export function FilterBar({
         {/* 新手友好：单独一条醒目开关。
             小白的第一诉求是「有没有我现在就能做的」，而不是逐个调筛选器。
             因此把它做成一眼可见、一键切换的入口，而非藏在某个下拉框里。 */}
-        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-line-soft bg-page/60 px-4 py-3">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => set('beginner', filters.beginner === 'friendly' ? 'all' : 'friendly')}
@@ -197,17 +201,15 @@ export function FilterBar({
           >
             🌱 只看新手友好
           </button>
-          <span className="text-xs text-ink-faint" id="beginner-hint">
+          <span className="sr-only" id="beginner-hint">
             筛选条件：无需本金 · Gas ≤ ${BEGINNER_RULES.maxGasUsd} · 风险可控 · 无需签名授权
           </span>
-        </div>
 
-        <div className="grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
           <div>
-            <label className="label" htmlFor="f-status">状态</label>
+            <label className="sr-only" htmlFor="f-status">状态</label>
             <select
               id="f-status"
-              className="select w-full"
+              className="select !w-32 !py-2 !text-xs"
               value={filters.status}
               onChange={(e) => set('status', e.target.value as Filters['status'])}
             >
@@ -219,6 +221,11 @@ export function FilterBar({
             </select>
           </div>
 
+        <button type="button" onClick={onReset} className="btn-quiet">重置筛选 ↺</button>
+        </div>
+        <details open={expanded} onToggle={e => onExpandedChange?.(e.currentTarget.open)}>
+          <summary className="text-sm font-medium text-brand">高级筛选与排序{['chain','category','risk','cost'].filter(k => filters[k as keyof Filters] !== 'all').length > 0 && '（有条件生效）'}</summary>
+          <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
           <div>
             <label className="label" htmlFor="f-chain">公链</label>
             <select
@@ -301,10 +308,10 @@ export function FilterBar({
               ))}
             </select>
           </span>
-          <button type="button" onClick={onReset} className="btn-quiet ml-auto">
-            重置筛选 ↺
-          </button>
+
         </div>
+        <p className="mt-3 text-xs text-ink-soft">新手条件：无需本金 · Gas ≤ ${BEGINNER_RULES.maxGasUsd} · 风险可控 · 无需签名授权</p>
+        </details>
       </div>
     </section>
   );

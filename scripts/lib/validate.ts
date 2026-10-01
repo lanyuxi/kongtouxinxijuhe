@@ -1,3 +1,7 @@
+import { isEvidenceVerified } from '../../src/lib/evidence';
+import { hasKnownCost } from '../../src/lib/cost';
+import { reconcileStatus } from './status';
+import { costFromSource } from './sourced';
 /**
  * Validate：发布前校验。
  *
@@ -94,8 +98,28 @@ export function validateProjects(
     if (!p.name) errors.push(`${p.slug}: 缺少项目名称`);
     if (!p.tagline) warnings.push(`${p.slug}: 缺少一句话介绍`);
 
+    for (const e of p.evidence) {
+      if (e.verified && !isEvidenceVerified(e)) errors.push(`${p.slug}: 已核实证据缺少有效核验记录`);
+    }
+    const state = reconcileStatus(p);
+    if (state.status !== p.status) errors.push(`${p.slug}: 活动状态缺少公告支持或与来源冲突`);
+    const facts = costFromSource(p);
+    if (['capital_min_usd', 'capital_max_usd', 'gas_estimate_usd'].some(key => {
+      const field = key as 'capital_min_usd' | 'capital_max_usd' | 'gas_estimate_usd';
+      return p.cost[field] !== null && p.cost[field] !== facts[field];
+    })) errors.push(`${p.slug}: 成本金额缺少来源依据`);
+    if (facts.capital_required && p.cost.capital_max_usd === 0) errors.push(`${p.slug}: 来源需要本金，但金额标为零`);
+    if (facts.gas_required && p.cost.gas_estimate_usd === 0) errors.push(`${p.slug}: 来源需要手续费，但费用标为零`);
+    if ([p.cost.capital_min_usd, p.cost.capital_max_usd, p.cost.gas_estimate_usd].some(n => n !== null &&
+      (typeof n !== 'number' || !Number.isFinite(n) || n < 0))) errors.push(`${p.slug}: 成本金额无效`);
+    if (p.cost.capital_min_usd !== null && p.cost.capital_max_usd !== null &&
+      p.cost.capital_min_usd > p.cost.capital_max_usd) errors.push(`${p.slug}: 本金金额区间无效`);
+    const incomplete = !hasKnownCost(p.cost) || p.guide.some(g => g.needs_signature === null || g.risk === 'unknown');
+    if (incomplete && p.scores.risk === 'low') errors.push(`${p.slug}: 成本或步骤风险未知，不得判定低风险`);
+    if ((incomplete || p.status === 'pending') && p.recommendation.action === 'participate') errors.push(`${p.slug}: 活动、成本或步骤待核实，不得推荐参与`);
+
     // 不变量 1：没有证据的项目不能显示为「已验证」
-    const verifiedEvidence = p.evidence.filter((e) => e.verified);
+    const verifiedEvidence = p.evidence.filter(isEvidenceVerified);
     if (verifiedEvidence.length > 0 && verifiedEvidence.length < 2) {
       warnings.push(`${p.slug}: 已验证证据不足 2 条，不应标记为「已验证」`);
     }
@@ -138,6 +162,8 @@ export function validateProjects(
       if (g.source_verified && !g.source_url) {
         errors.push(`${p.slug}: 教程步骤 ${g.step} 标记为已核实但缺少来源链接`);
       }
+      if (g.source_verified && !p.evidence.some(e => e.type === 'official_guide' &&
+        e.url === g.source_url && isEvidenceVerified(e))) errors.push(`${p.slug}: 步骤 ${g.step} 缺少具体教程核验记录`);
     }
 
     // 信任不变量：模板 / 第三方整理的教程不得自称已核实。

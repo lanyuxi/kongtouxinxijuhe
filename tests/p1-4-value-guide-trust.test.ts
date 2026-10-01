@@ -118,7 +118,7 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
       { type: 'third_party', label: 't2', url: 'https://b.io/x', verified: true },
     ];
     const r = scoreValue(p);
-    expect(r.grade, '模板教程的项目最高只能到 B（可观察）').toBe('B');
+    expect(['B', 'C', 'D'], '模板教程的项目最高只能到 B（可观察）').toContain(r.grade);
   });
 
   it('模板教程不得触发「建议参与」这个动作词', () => {
@@ -170,7 +170,7 @@ describe('P1-2 教程可信度作为价值分门槛', () => {
       { type: 'third_party', label: 't2', url: 'https://b.io/x', verified: true },
     ];
     const r = scoreValue(p);
-    expect(r.grade, 'third_party 与 template 同为上限 B').toBe('B');
+    expect(['B', 'C', 'D'], 'third_party 与 template 同为上限 B').toContain(r.grade);
     expect(
       buildRecommendation(r.grade, 'low').action,
       '第三方整理的教程不得触发「建议参与」',

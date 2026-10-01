@@ -19,7 +19,11 @@
  *      不转义会直接产生「非法 XML」，阅读器静默解析失败 —— 这类问题极难排查。
  */
 
-import type { AirdropProject } from '../../src/lib/types';
+import { capitalLabel, gasLabel } from '../../src/lib/cost';
+import { verifiedWebsite } from '../../src/lib/evidence';
+import type { AirdropProject, ListProject } from '../../src/lib/types';
+
+type FeedProject = AirdropProject | ListProject;
 
 /** 默认站点地址（GitHub Pages 项目站点）。构建时可用 SITE_URL 覆盖。 */
 export const DEFAULT_SITE_URL = 'https://lanyuxi.github.io/kongtouxinxijuhe/';
@@ -48,6 +52,7 @@ export function escapeXml(text: string): string {
 const STATUS_TEXT: Record<AirdropProject['status'], string> = {
   new: '新发现',
   potential: '潜在空投',
+  pending: '状态待核实',
   confirmed: '已确认',
   claim_live: '开放领取',
   ended: '已结束',
@@ -64,11 +69,11 @@ const RISK_TEXT: Record<AirdropProject['scores']['risk'], string> = {
  * 挑选进入 feed 的项目。
  * 排除 ended（已结束的没有阅读价值），排除风险 critical（不做传播，避免误导）。
  */
-export function selectFeedProjects(
-  projects: AirdropProject[],
+export function selectFeedProjects<T extends FeedProject>(
+  projects: T[],
   { recentDays = 14, limit = 40 }: { recentDays?: number; limit?: number } = {},
   now = Date.now(),
-): AirdropProject[] {
+): T[] {
   const since = now - recentDays * 24 * 3600 * 1000;
   const picked = projects.filter((p) => {
     if (p.status === 'ended') return false;
@@ -91,15 +96,16 @@ export function selectFeedProjects(
 }
 
 /** 单个项目的 feed 条目描述（纯文本，阅读器里可读性最好） */
-export function feedItemSummary(p: AirdropProject, siteUrl: string): string {
+export function feedItemSummary(p: FeedProject, siteUrl: string): string {
   const lines = [
-    p.tagline?.trim() || '暂无简介',
+    `${p.status === 'pending' ? '来源简介（待核实）：' : ''}${p.tagline?.trim() || '暂无简介'}`,
     '',
     `当前状态：${STATUS_TEXT[p.status]}｜风险等级：${RISK_TEXT[p.scores.risk]}｜价值等级：${p.scores.grade}`,
     `真实性置信度 ${p.scores.authenticity}/100｜参与价值 ${p.scores.value}/100`,
-    `预计成本：资金 ${p.cost.capital_max_usd === 0 ? '免费' : `$${p.cost.capital_min_usd}–${p.cost.capital_max_usd}`}｜Gas $${p.cost.gas_estimate_usd}｜时间 ${p.cost.time_minutes} 分钟`,
+    `预计成本：${capitalLabel(p.cost)}｜${gasLabel(p.cost)}｜时间 ${p.cost.time_minutes > 0 ? `${p.cost.time_minutes} 分钟` : '待核实'}`,
   ];
-  if (p.official?.website) lines.push('', `官方入口：${p.official.website}`);
+  const website = 'evidence' in p ? verifiedWebsite(p) : p.verified_official_website === p.official.website ? p.verified_official_website : undefined;
+  if (p.official?.website) lines.push('', `${website ? '已核验官网' : '候选项目链接（未核实）'}：${p.official.website}`);
   lines.push(
     '',
     '提示：本提醒仅汇总公开信息，不构成投资建议。请务必核对官方域名，任何要求输入助记词或先转账的都是骗局。',
@@ -122,7 +128,7 @@ export function absoluteUrl(siteUrl: string, pathOrHash: string): string {
  *   - RSS 2.0 的 `<pubDate>` 格式混乱（RFC822），历史上是阅读器兼容问题的高发区。
  *   主流阅读器（Feedly / Inoreader / NetNewsWire）都完整支持 Atom。
  */
-export function buildAtomFeed(projects: AirdropProject[], options: FeedOptions): string {
+export function buildAtomFeed(projects: FeedProject[], options: FeedOptions): string {
   const { siteUrl, updatedAt } = options;
   const items = selectFeedProjects(projects, {
     recentDays: options.recentDays,

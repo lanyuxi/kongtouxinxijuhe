@@ -1,16 +1,7 @@
-# 空投情报平台 · GitHub 侧定时抓取（每 10 分钟）
-#
-# 为什么 GitHub 侧也要跑一份：
-#   CNB 侧流水线负责「抓取 + 提交回 CNB」，但 GitHub Pages 上看到的数据
-#   取决于 GitHub 仓库里的内容。如果只靠 CNB 同步，两者时间差取决于
-#   同步流水线的触发时机。
-#   在 GitHub 侧再跑一份，可以保证：
-#     - 线上站点数据每 10 分钟必然刷新一次，不依赖外部平台的推送
-#     - 即使 CNB 到 GitHub 的同步链路断了，站点也能自更新
-#
-# 写入策略：数据变化才提交，避免无意义提交刷屏。
+# 计划每 10 分钟检查；GitHub 调度可能延迟。内容不变也发布本轮检查状态。
+# GITHUB_TOKEN 的 push 不会触发另一条 push 工作流，因此在本工作流直接部署。
 
-name: Refresh Airdrop Data
+name: 抓取并发布空投数据
 
 on:
   schedule:
@@ -24,15 +15,18 @@ on:
 # 需要写权限才能把新数据提交回仓库
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 # 抓取任务串行执行；排队中的旧任务直接取消，正在跑的跑完
 concurrency:
-  group: refresh-data
+  group: github-pages
   cancel-in-progress: false
 
 jobs:
   refresh:
-    name: 抓取并提交数据
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    name: 抓取并检查数据
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -52,6 +46,8 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: 抓取并生成数据
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: npm run pipeline
 
       # 新增项目要在这里补图标；已抓过的直接复用本地文件，不会重复下载。
@@ -63,6 +59,9 @@ jobs:
       #   需要 dist/ 存在才能运行。原先的顺序会让它必然失败，
       #   进而让「数据变化检查与提交」被跳过 —— 数据因此一直无法提交回仓库。
       - name: 构建站点
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: npm run build
 
       - name: 单元测试
@@ -102,8 +101,37 @@ jobs:
           git push
           echo "已提交并推送数据更新：$SUMMARY"
 
-      # 数据有变化时重新部署 Pages，让线上内容与数据保持一致
-      # （timing：push 本身也会触发 deploy-pages.yml，这里只做兜底提示）
-      - name: 汇总
-        run: |
-          echo "本次抓取：${{ steps.commit.outputs.changed == 'true' && '数据已更新并推送' || '数据无变化' }}"
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      # 无实质内容变化只跳过 Git 提交，仍上传本轮已检查的站点和运行时间。
+      - name: 上传 Pages 制品
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: 保存本轮检查与失败报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 本轮运行报告
+          path: |
+            data/source-health.json
+            data/refresh-status.json
+            data/translation-pending.json
+
+  deploy:
+    name: 发布本轮已检查的站点
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: 写入实际发布时间
+        run: echo "成功发布时间（UTC）：$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_STEP_SUMMARY"

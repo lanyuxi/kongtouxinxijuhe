@@ -228,6 +228,7 @@ export async function fetchRecentTweets(
 }
 
 export const twitterAdapter: SourceAdapter = {
+  configured: () => !!process.env.X_BEARER_TOKEN?.trim(),
   name: 'X (Twitter)',
   url: 'https://x.com',
 

@@ -5,16 +5,21 @@
   "type": "module",
   "description": "空投情报平台 — Web3 空投情报与决策助手",
   "scripts": {
-    "dev": "npm run sync-data && vite",
-    "build": "npm run ensure-logos && npm run sync-data && npm run feed && tsc -b && vite build",
+    "dev": "node --env-file-if-exists=.env scripts/api/dev.mjs",
+    "start": "node --env-file-if-exists=.env --import tsx scripts/api/server.ts --production",
+    "build": "npm run ensure-logos && npm run sync-data && npm run feed && node scripts/publication.mjs && tsc -b && vite build",
     "preview": "vite preview",
     "sync-data": "node scripts/sync-data.mjs",
     "pipeline": "tsx scripts/pipeline.ts",
+    "repair:p0": "node --import tsx scripts/rebuild-p0.ts",
     "test": "vitest run",
     "validate": "tsx scripts/validate.ts && node scripts/i18n/check-human-fix.mjs --strict",
     "logos": "node scripts/logo/fetch-logos.mjs",
     "ensure-logos": "node scripts/lib/ensure-logos.mjs",
-    "feed": "tsx scripts/build-feed.ts"
+    "feed": "tsx scripts/build-feed.ts",
+    "i18n:cache": "node scripts/i18n/build-cache.mjs --report",
+    "i18n:queue": "node scripts/i18n/review-queue.mjs",
+    "rebuild:data": "node --import tsx scripts/rebuild-p0.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

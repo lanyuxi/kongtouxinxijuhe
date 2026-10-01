@@ -69,13 +69,11 @@ describe('一句话中文简介', () => {
     expect(chineseBlurb(make({ status: 'ended' }))).toContain('已结束');
   });
 
-  it('tagline 说已确认但 status 仍是 potential 时，文案不得自相矛盾', () => {
-    // 实测数据里存在 27 个这样的项目；简介必须与原文对账，不能一边说 confirmed
-    // 一边又写「尚未确认发币」
+  it('第三方简介不能在文案层绕过活动状态的证据门禁', () => {
     const p = make({ tagline: 'The airdrop is confirmed, retroactive, and live.' });
     const b = chineseBlurb(p);
-    expect(b).not.toContain('尚未确认');
-    expect(b).toContain('已确认');
+    expect(b).not.toContain('官方已确认');
+    expect(b).toContain('尚未确认');
   });
 
   it('否定句式不会被误判为已确认', () => {

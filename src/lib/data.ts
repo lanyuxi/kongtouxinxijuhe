@@ -7,6 +7,7 @@
  */
 
 import type { AirdropProject, ListDataset, LogoMap, SourceHealthFile } from './types';
+import { isDetailProject, isListProject } from './project-shape';
 import { attachLogos } from './refresh';
 
 /**
@@ -14,10 +15,18 @@ import { attachLogos } from './refresh';
  */
 const BASE = import.meta.env.BASE_URL || './';
 
+export class DataLoadError extends Error {
+  constructor(public kind: 'network' | 'not_found' | 'invalid', message: string) { super(message); }
+}
+
 async function fetchJson<T>(file: string): Promise<T> {
-  const res = await fetch(`${BASE}data/${file}`, { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`加载 ${file} 失败：HTTP ${res.status}`);
-  return (await res.json()) as T;
+  let res: Response;
+  try { res = await fetch(`${BASE}data/${file}`, { cache: 'no-cache' }); }
+  catch { throw new DataLoadError('network', '网络连接失败，请检查连接后重试。'); }
+  if (!res.ok) throw new DataLoadError(res.status === 404 ? 'not_found' : 'network',
+    res.status === 404 ? '所需资料暂未找到，可能已移除或发布尚未同步。' : '服务器暂时无法提供资料，请稍后重试。');
+  try { return (await res.json()) as T; }
+  catch { throw new DataLoadError('invalid', '资料内容无法读取，请稍后重试或反馈问题。'); }
 }
 
 /**
@@ -52,8 +61,8 @@ export async function loadDataset(): Promise<ListDataset> {
     fetchJson<ListDataset>('airdrops.json'),
     loadLogoMap(),
   ]);
-  if (!dataset || !Array.isArray(dataset.projects)) {
-    throw new Error('数据格式不正确');
+  if (!dataset || typeof dataset.updated_at !== 'string' || !Array.isArray(dataset.projects) || !dataset.projects.every(isListProject)) {
+    throw new DataLoadError('invalid', '项目列表内容不完整，请重试或反馈问题。');
   }
   return attachLogos(dataset, logoMap);
 }
@@ -66,22 +75,21 @@ export async function loadDataset(): Promise<ListDataset> {
  *   合计占原 3.87 MB 的绝大部分，而列表页一个字节都不用。
  *   拆开后首屏只拉 ~300 KB 的列表，点进详情再拉单个 ~16 KB 的分片。
  *
- * 返回 null 表示该分片不存在（例如项目刚被 prune、或静态托管未同步），
- * 由调用方决定回退策略；这里不抛错，避免详情页因为一个 404 整体崩掉。
+ * 加载失败抛出带分类的错误，由页面显示原因及重试入口。
  */
-export async function loadProjectDetail(slug: string): Promise<AirdropProject | null> {
-  if (!slug || !/^[a-z0-9-]+$/i.test(slug)) return null;
-  try {
-    const p = await fetchJson<AirdropProject>(`details/${slug}.json`);
-    return p && p.slug === slug ? p : null;
-  } catch {
-    return null;
+export async function loadProjectDetail(slug: string): Promise<AirdropProject> {
+  if (!slug || !/^[a-z0-9-]+$/i.test(slug)) throw new DataLoadError('not_found', '未找到该项目。');
+  const p = await fetchJson<AirdropProject>(`details/${slug}.json`);
+  if (!isDetailProject(p) || p.slug !== slug) {
+    throw new DataLoadError('invalid', '项目资料内容不完整，请重试或反馈问题。');
   }
+  return p;
 }
 
 export async function loadSourceHealth(): Promise<SourceHealthFile | null> {
   try {
-    return await fetchJson<SourceHealthFile>('source-health.json');
+    const health = await fetchJson<SourceHealthFile>('source-health.json');
+    return health && Array.isArray(health.sources) && health.sources.every(s => s && typeof s.name === 'string' && typeof s.ok === 'boolean' && typeof s.fetched === 'number' && (s.error === undefined || typeof s.error === 'string')) ? health : null;
   } catch {
     return null;
   }

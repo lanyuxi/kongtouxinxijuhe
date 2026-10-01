@@ -285,9 +285,10 @@ function titleCase(s: string): string {
 export function normalizeStatus(text?: string): string {
   if (!text) return 'potential';
   const t = text.toLowerCase();
+  if (/not\s+(yet\s+)?confirm|hasn.?t\s+confirm|未确认|尚未确认|not\s+(yet\s+)?open|not\s+live/.test(t)) return 'potential';
+  if (/(end|closed|expired|finished|结束)/.test(t)) return 'ended';
   if (/(claim|live|claiming|领取)/.test(t)) return 'claim_live';
   if (/(confirm|verified|已确认|official)/.test(t)) return 'confirmed';
-  if (/(end|closed|expired|finished|结束)/.test(t)) return 'ended';
   if (/(potential|rumor|speculat|potential|潜在)/.test(t)) return 'potential';
   if (/(new|latest|近期)/.test(t)) return 'new';
   return 'potential';

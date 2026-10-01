@@ -11,6 +11,7 @@
 export type AirdropStatus =
   | 'new' // 新发现
   | 'potential' // 潜在空投
+  | 'pending' // 状态待核实
   | 'confirmed' // 已确认
   | 'claim_live' // 开放领取
   | 'ended'; // 已结束
@@ -172,6 +173,7 @@ export interface Evidence {
   type:
     | 'official_website'
     | 'official_announcement'
+    | 'official_guide'
     | 'official_x'
     | 'official_docs'
     | 'official_github'
@@ -186,15 +188,29 @@ export interface Evidence {
    * 注意：第三方页面提供的链接默认 false，必须交叉验证后才可置为 true。
    */
   verified: boolean;
+  /** 只有完整的人工核验记录才能支持 verified，遗留布尔值不作为证明。 */
+  verification?: {
+    method: 'manual_review';
+    source_url: string;
+    checked_at: string;
+    note: string;
+  };
+  /** 公告具体核实的活动阶段，不能从项目官网或代币存在推断。 */
+  activity_status?: 'confirmed' | 'claim_live' | 'ended';
   /** 验证说明 */
   note?: string;
 }
 
 /** 成本模型 */
 export interface CostModel {
-  capital_min_usd: number;
-  capital_max_usd: number;
-  gas_estimate_usd: number;
+  /** null 表示未核实金额；0 只表示来源明确不需要资金。 */
+  capital_required?: boolean;
+  gas_required?: boolean;
+  /** 成本事实或人工估算的出处，缺失时不继承历史金额。 */
+  basis?: { method: 'source_text' | 'manual_review'; source_url: string; checked_at: string; note: string };
+  capital_min_usd: number | null;
+  capital_max_usd: number | null;
+  gas_estimate_usd: number | null;
   time_minutes: number;
   long_term: boolean;
   /** 一句话成本结论（简体中文） */
@@ -203,6 +219,7 @@ export interface CostModel {
 
 /** 教程步骤 */
 export interface GuideStep {
+  id?: string;
   step: number;
   title: string;
   /** 操作目标 */
@@ -211,12 +228,12 @@ export interface GuideStep {
   /** 预计耗时（分钟） */
   minutes: number;
   /** 是否花钱 */
-  cost_usd: number;
+  cost_usd: number | null;
   /** 是否需要连接钱包 */
-  needs_wallet: boolean;
+  needs_wallet: boolean | null;
   /** 是否需要签名 */
-  needs_signature: boolean;
-  risk: RiskLevel;
+  needs_signature: boolean | null;
+  risk: RiskLevel | 'unknown';
   /** 完成标准 */
   done_when: string;
   /** 来源链接，用于追溯 */
@@ -235,6 +252,8 @@ export interface GuideStep {
   original_title?: string;
   /** 英文原文描述，用途同 original_title */
   original_description?: string;
+  /** 缺少中文时保留原文，但暂停该操作。 */
+  content_status?: 'ready' | 'pending_translation';
 }
 
 export interface FaqItem {
@@ -268,6 +287,7 @@ export interface AirdropProject {
   category: Category;
   chains: Chain[];
   status: AirdropStatus;
+  status_note?: string;
 
   official: {
     website?: string;
@@ -308,6 +328,7 @@ export interface AirdropProject {
   cost: CostModel;
   recommendation: Recommendation;
   guide: GuideStep[];
+  guide_version?: string;
   /**
    * 教程步骤的来源类型，用于前端如实标注，避免把「示意模板」当成真实教程。
    *
@@ -382,6 +403,8 @@ export interface AirdropProject {
    * 不会直接下发到前端（前端只消费 guide[]）。
    */
   sourcedSteps?: { title: string; body?: string; url?: string }[];
+  /** 最新来源的完整描述；状态与成本判断不得只读截断后的卡片简介。 */
+  sourcedDescription?: string;
 
   /**
    * 人工档案（data/seed/official-profiles.json）内容的指纹。
@@ -400,6 +423,7 @@ export interface AirdropProject {
 
 /** 单个数据源的健康状态 */
 export interface SourceHealth {
+  status?: 'success' | 'failed' | 'not_configured';
   name: string;
   url: string;
   ok: boolean;
@@ -428,12 +452,14 @@ export interface SourceHealthFile {
  * 字段含义与 AirdropProject 完全一致，仅做裁剪，不做任何换算。
  */
 export interface ListGuideStep {
+  id?: string;
   step: number;
   title: string;
   minutes: number;
-  needs_wallet: boolean;
-  needs_signature: boolean;
-  risk: RiskLevel;
+  needs_wallet: boolean | null;
+  needs_signature: boolean | null;
+  risk: RiskLevel | 'unknown';
+  content_status?: GuideStep['content_status'];
 }
 
 export interface ListProject {
@@ -444,7 +470,10 @@ export interface ListProject {
   category: Category;
   chains: Chain[];
   status: AirdropStatus;
+  status_note?: string;
   official: AirdropProject['official'];
+  /** 生成阶段确认的官网；用于防骗域名库，候选链接不进入。 */
+  verified_official_website?: string;
   logo?: string;
   meta?: AirdropProject['meta'];
   tasks: string[];
@@ -459,6 +488,7 @@ export interface ListProject {
   cost: CostModel;
   recommendation: Recommendation;
   guide: ListGuideStep[];
+  guide_version?: string;
   guide_source: 'sourced' | 'third_party' | 'template';
   created_at: string;
   /**
@@ -495,6 +525,8 @@ export interface Dataset {
 
 /** 下发给前端的列表数据集：projects 只含卡片字段（体积从 3.87 MB → ~300 KB） */
 export interface ListDataset {
+  last_successful_check_at?: string;
+  content_updated_at?: string;
   updated_at: string;
   new_today: number;
   projects: ListProject[];
@@ -555,4 +587,12 @@ export interface RefreshStatus {
   added?: number;
   modified?: number;
   removed?: number;
+}
+
+export interface Publication {
+  prepared_at: string;
+  last_successful_check_at?: string;
+  content_updated_at: string | null;
+  commit_sha: string | null;
+  run_url: string | null;
 }

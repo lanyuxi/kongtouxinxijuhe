@@ -27,43 +27,42 @@
   "evidence": [
     {
       "type": "official_website",
-      "label": "官方网站可访问",
+      "label": "项目官网候选链接",
       "url": "https://ammora.org",
-      "verified": true,
-      "note": "官方域名已验证"
+      "verified": false,
+      "note": "来源提供的候选链接，归属与可访问性尚未核实"
     },
     {
       "type": "third_party",
-      "label": "第三方来源：Airdrops.io",
+      "label": "第三方来源记录：Airdrops.io",
       "url": "https://airdrops.io/ammora/",
-      "verified": true,
-      "note": "第三方来源仅作交叉参考，不代表官方背书"
+      "verified": false,
+      "note": "记录抓取出处，不代表内容已核实或官方背书"
     }
   ],
   "scores": {
-    "authenticity": 23,
-    "value": 44,
+    "authenticity": 11,
+    "value": 23,
     "risk": "medium",
-    "grade": "C",
+    "grade": "D",
     "authenticityItems": [
       {
         "key": "authenticity.website",
         "label": "官方网站可验证",
-        "value": 15,
+        "value": 0,
         "max": 15,
-        "reason": "官方域名可直接访问",
-        "evidenceUrl": "https://ammora.org"
+        "reason": "未找到可验证的官方网站"
       },
       {
         "key": "authenticity.announcement",
         "label": "官方公告明确提到活动",
         "value": 0,
         "max": 20,
-        "reason": "项目尚未正式确认空投，不存在官方活动公告"
+        "reason": "尚未核实具体空投活动公告"
       },
       {
         "key": "authenticity.crosslink",
-        "label": "官网 ↔ X ↔ Docs 链接可互相印证",
+        "label": "项目文档已核验",
         "value": 0,
         "max": 15,
         "reason": "缺少 Docs 或链接无法互相印证"
@@ -122,9 +121,9 @@
       {
         "key": "value.verification",
         "label": "信息验证充分度",
-        "value": 14,
+        "value": 0,
         "max": 20,
-        "reason": "共 2 条证据，其中 2 条已验证（验证率 100%）"
+        "reason": "共 2 条证据，其中 0 条已验证（验证率 0%）"
       },
       {
         "key": "value.breadth",
@@ -150,9 +149,9 @@
       {
         "key": "value.roi",
         "label": "任务投入产出比",
-        "value": 9,
+        "value": 2,
         "max": 15,
-        "reason": "预计投入约 30 分钟，共 10 个步骤"
+        "reason": "任务尚不明确，无法评估投入产出比"
       },
       {
         "key": "value.timing",
@@ -178,6 +177,20 @@
     ],
     "riskItems": [
       {
+        "key": "risk.unknown",
+        "label": "成本或步骤风险待核实",
+        "value": 1,
+        "max": 3,
+        "reason": "信息不完整，不能据此认定为免费或低风险"
+      },
+      {
+        "key": "risk.capital_unknown",
+        "label": "来源提到本金投入",
+        "value": 1,
+        "max": 3,
+        "reason": "需要资金准备，但具体金额尚未核实，不能视作免费"
+      },
+      {
         "key": "risk.signature_step",
         "label": "包含需要签名的链上步骤",
         "value": 1,
@@ -188,8 +201,8 @@
     "evidenceChecklist": [
       {
         "label": "官方网站",
-        "status": "verified",
-        "note": "已找到官方域名并通过校验"
+        "status": "partial",
+        "note": "已找到候选域名，但未通过官方校验"
       },
       {
         "label": "官方文档",
@@ -209,7 +222,7 @@
       {
         "label": "官方公告",
         "status": "not_applicable",
-        "note": "项目尚未确认空投，官方本就没有公告"
+        "note": "尚未核实具体活动公告"
       },
       {
         "label": "融资信息",
@@ -232,22 +245,30 @@
         "note": "暂无公开可验证合约地址"
       }
     ],
-    "authenticityVerifiedCount": 1,
-    "authenticityPartialCount": 1,
+    "authenticityVerifiedCount": 0,
+    "authenticityPartialCount": 2,
     "authenticityTotalCount": 9
   },
   "cost": {
-    "capital_min_usd": 0,
-    "capital_max_usd": 0,
-    "gas_estimate_usd": 0,
-    "time_minutes": 30,
+    "capital_min_usd": null,
+    "capital_max_usd": null,
+    "gas_estimate_usd": null,
+    "time_minutes": 0,
     "long_term": false,
-    "summary": "低成本、纯时间投入型项目，适合新手练手。"
+    "summary": "需要准备本金，金额待核实。需要手续费，金额待核实。信息不完整，暂不判断为新手友好。",
+    "capital_required": true,
+    "gas_required": true,
+    "basis": {
+      "method": "source_text",
+      "source_url": "https://airdrops.io/ammora/",
+      "checked_at": "2026-09-22T11:51:39.442Z",
+      "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
+    }
   },
   "recommendation": {
-    "grade": "C",
+    "grade": "D",
     "action": "observe",
-    "summary": "优先级较低，可先收藏关注后续变化。"
+    "summary": "活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。"
   },
   "guide": [
     {
@@ -261,164 +282,184 @@
       "needs_signature": false,
       "risk": "low",
       "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
-      "source_verified": false
+      "source_verified": false,
+      "content_status": "ready",
+      "id": "54cb238978d842395aae622630795080b2fb6a4e43c5c2f4d5c295d41a93c27b"
     },
     {
       "step": 2,
       "title": "将 GIWA Sepolia 添加到你的钱包",
       "description": "打开 MetaMask 或其他 EVM 钱包，并添加 GIWA Sepolia，链条 ID 为 91342。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
       "needs_wallet": true,
-      "needs_signature": false,
-      "risk": "low",
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Add GIWA Sepolia to your wallet",
-      "original_description": "Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342."
+      "original_description": "Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342.",
+      "id": "58d866530ca6445670321692202e1bf9e7ef0fc33550f9d29db90a1553705dce"
     },
     {
       "step": 3,
       "title": "领取 GIWA Sepolia 测试 ETH",
       "description": "从 Ammora 的任务页面上链接的 Lambda256 水龙头请求测试 ETH。流动性任务的最低限额为 0.001 ETH， GIWA 上的 GAS 可以忽略不计，因此你只需要很少的资金。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Claim GIWA Sepolia test ETH",
-      "original_description": "Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little."
+      "original_description": "Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little.",
+      "id": "27152b0597b7f176656362e0dd9cb0c0a0fd7408f52f3cade45f49bf1918d748"
     },
     {
       "step": 4,
       "title": "加入 Ammora 等候名单",
       "description": "转到 Ammora 等候名单，连接你的钱包，在消息上签名并注册邮箱。在此之前，每个任务都将保持锁定状态，你使用的钱包将公开绑定到排行榜。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
       "needs_wallet": true,
       "needs_signature": true,
-      "risk": "low",
+      "risk": "medium",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Join the Ammora waitlist",
-      "original_description": "Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard."
+      "original_description": "Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard.",
+      "id": "7fce6c70a14b80424698df6cd2583dc0677f2bdd1785c6299f010acdb368f052"
     },
     {
       "step": 5,
       "title": "在 X 上关注 @AmmoraHQ",
       "description": "从你想要记入的 X 账号关注 Ammora 官方账号，然后返回仪表盘验证 100 AP。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Follow @AmmoraHQ on X",
-      "original_description": "Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP."
+      "original_description": "Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP.",
+      "id": "a1e92e0b1fa38b07e9e4171b0b538ce3ae057ab2e9bffd4f67f1cc4c38f8d8e1"
     },
     {
       "step": 6,
       "title": "转发固定帖子",
       "description": "从同一 X 账户重新发布固定的活动帖子，再获得 100 AP。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Retweet the pinned post",
-      "original_description": "Repost the pinned campaign post from the same X account for another 100 AP."
+      "original_description": "Repost the pinned campaign post from the same X account for another 100 AP.",
+      "id": "c819de2a79d059a11859e2c506b6158bcac090415be6f3e4274600026503e9bf"
     },
     {
       "step": 7,
       "title": "发布每日 X 帖子",
       "description": "仪表盘会为你填写帖子文本，因此这需要几秒钟的时间。在 200 AP 时，它是薪酬最高的可重复任务。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Publish the daily X post",
-      "original_description": "The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission."
+      "original_description": "The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission.",
+      "id": "4b152ff00b7644932ba15e9fe9119544912961494e2d06789dca29fc9a75e069"
     },
     {
       "step": 8,
       "title": "供应测试 ETH 流动性",
       "description": "按每日流动性任务的供应并将至少 0.001 GIWA Sepolia 测试 ETH 存入 Ammora 金库。每个经过验证的供应支付 50 AP。每天重复一次。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Supply test ETH liquidity",
-      "original_description": "Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily."
+      "original_description": "Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily.",
+      "id": "45c173daa95d001b0bbb5963ba033a26000e132ebe5f528f469e08d030bae33b"
     },
     {
       "step": 9,
       "title": "完成上线周任务领取奖励",
       "description": "在发布周期间完成所有五个任务一次，即加入、关注、转发、发布和供应。它是最大的单个可用点块，当窗口关闭时会消失。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": false,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Clear the Launch Week bonus",
-      "original_description": "Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes."
+      "original_description": "Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes.",
+      "id": "e0856a0eaa92a0a763aeaee302b5f2e63aac4093542938d3625c592c82080146"
     },
     {
       "step": 10,
       "title": "分享你的邀请链接",
       "description": "打开等候名单页面上的“推荐”标签卡，然后复制链接。每个注册积分为 200 AP，上限为 5，因此桌面上有 1,000 AP。",
       "official_url": "https://ammora.org",
-      "minutes": 3,
-      "cost_usd": 0,
-      "needs_wallet": false,
-      "needs_signature": true,
-      "risk": "low",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
       "done_when": "页面显示该步骤已完成 / 状态已更新。",
       "source_verified": false,
       "original_title": "Share your referral link",
-      "original_description": "Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table."
+      "original_description": "Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table.",
+      "id": "91059e4e88df554b8b9848574d44827edb5b3617b431c0490fcb23fadf9f7bc4"
     }
   ],
   "faq": [
     {
       "q": "这个空投确认了吗？",
-      "a": "当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。"
+      "a": "当前状态：潜在空投，尚未正式确认。请核对具体活动公告与资格条件。"
     },
     {
       "q": "什么时候结束？",
-      "a": "官方暂未公布。"
+      "a": "本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。"
     },
     {
       "q": "参与需要花钱吗？",
-      "a": "预计无需资金成本，仅需时间。"
+      "a": "需要本金，金额待核实；需要手续费，金额待核实。"
     },
     {
       "q": "需要连接钱包吗？",
-      "a": "需要。请务必使用独立的空投钱包。"
+      "a": "来源描述涉及钱包，请先核对实际活动要求。"
     },
     {
       "q": "需要主网资产吗？",
-      "a": "暂不需要主网资产。"
+      "a": "手续费与主网资产要求待核实。"
     },
     {
       "q": "积分一定会兑换 Token 吗？",
@@ -430,7 +471,7 @@
     },
     {
       "q": "领取时间确定了吗？",
-      "a": "官方暂未公布。"
+      "a": "相关活动信息待核实，请查看官方公告。"
     }
   ],
   "risks": [
@@ -442,7 +483,7 @@
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
   "last_checked_at": "2026-09-22T11:51:39.442Z",
-  "last_changed_at": "2026-09-16T06:44:34.954Z",
+  "last_changed_at": "2026-10-01T08:10:49.150Z",
   "sourcedSteps": [
     {
       "title": "Add GIWA Sepolia to your wallet",
@@ -481,8 +522,9 @@
       "body": "Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table."
     }
   ],
-  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Giwa\"],\"cost\":{\"capital_max_usd\":0,\"capital_min_usd\":0,\"gas_estimate_usd\":0,\"long_term\":false,\"summary\":\"低成本、纯时间投入型项目，适合新手练手。\",\"time_minutes\":30},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"官方网站可访问\",\"note\":\"官方域名已验证\",\"type\":\"official_website\",\"url\":\"https://ammora.org\",\"verified\":true},{\"label\":\"第三方来源：Airdrops.io\",\"note\":\"第三方来源仅作交叉参考，不代表官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/ammora/\",\"verified\":true}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。尚未发现官方明确确认，请谨慎参与。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"什么时候结束？\"},{\"a\":\"预计无需资金成本，仅需时间。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"需要。请务必使用独立的空投钱包。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"暂不需要主网资产。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"官方暂未公布。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"cost_usd\":0,\"description\":\"打开 MetaMask 或其他 EVM 钱包，并添加 GIWA Sepolia，链条 ID 为 91342。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://ammora.org\",\"original_description\":\"Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342.\",\"original_title\":\"Add GIWA Sepolia to your wallet\",\"risk\":\"low\",\"source_verified\":false,\"step\":2,\"title\":\"将 GIWA Sepolia 添加到你的钱包\"},{\"cost_usd\":0,\"description\":\"从 Ammora 的任务页面上链接的 Lambda256 水龙头请求测试 ETH。流动性任务的最低限额为 0.001 ETH， GIWA 上的 GAS 可以忽略不计，因此你只需要很少的资金。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little.\",\"original_title\":\"Claim GIWA Sepolia test ETH\",\"risk\":\"low\",\"source_verified\":false,\"step\":3,\"title\":\"领取 GIWA Sepolia 测试 ETH\"},{\"cost_usd\":0,\"description\":\"转到 Ammora 等候名单，连接你的钱包，在消息上签名并注册邮箱。在此之前，每个任务都将保持锁定状态，你使用的钱包将公开绑定到排行榜。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://ammora.org\",\"original_description\":\"Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard.\",\"original_title\":\"Join the Ammora waitlist\",\"risk\":\"low\",\"source_verified\":false,\"step\":4,\"title\":\"加入 Ammora 等候名单\"},{\"cost_usd\":0,\"description\":\"从你想要记入的 X 账号关注 Ammora 官方账号，然后返回仪表盘验证 100 AP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP.\",\"original_title\":\"Follow @AmmoraHQ on X\",\"risk\":\"low\",\"source_verified\":false,\"step\":5,\"title\":\"在 X 上关注 @AmmoraHQ\"},{\"cost_usd\":0,\"description\":\"从同一 X 账户重新发布固定的活动帖子，再获得 100 AP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"Repost the pinned campaign post from the same X account for another 100 AP.\",\"original_title\":\"Retweet the pinned post\",\"risk\":\"low\",\"source_verified\":false,\"step\":6,\"title\":\"转发固定帖子\"},{\"cost_usd\":0,\"description\":\"仪表盘会为你填写帖子文本，因此这需要几秒钟的时间。在 200 AP 时，它是薪酬最高的可重复任务。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission.\",\"original_title\":\"Publish the daily X post\",\"risk\":\"low\",\"source_verified\":false,\"step\":7,\"title\":\"发布每日 X 帖子\"},{\"cost_usd\":0,\"description\":\"按每日流动性任务的供应并将至少 0.001 GIWA Sepolia 测试 ETH 存入 Ammora 金库。每个经过验证的供应支付 50 AP。每天重复一次。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily.\",\"original_title\":\"Supply test ETH liquidity\",\"risk\":\"low\",\"source_verified\":false,\"step\":8,\"title\":\"供应测试 ETH 流动性\"},{\"cost_usd\":0,\"description\":\"在发布周期间完成所有五个任务一次，即加入、关注、转发、发布和供应。它是最大的单个可用点块，当窗口关闭时会消失。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes.\",\"original_title\":\"Clear the Launch Week bonus\",\"risk\":\"low\",\"source_verified\":false,\"step\":9,\"title\":\"完成上线周任务领取奖励\"},{\"cost_usd\":0,\"description\":\"打开等候名单页面上的“推荐”标签卡，然后复制链接。每个注册积分为 200 AP，上限为 5，因此桌面上有 1,000 AP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":3,\"needs_signature\":true,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"original_description\":\"Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table.\",\"original_title\":\"Share your referral link\",\"risk\":\"low\",\"source_verified\":false,\"step\":10,\"title\":\"分享你的邀请链接\"}],\"guide_source\":\"third_party\",\"id\":\"ammora\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Ammora\",\"official\":{\"website\":\"https://ammora.org\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"C\",\"summary\":\"优先级较低，可先收藏关注后续变化。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":23,\"authenticityItems\":[{\"evidenceUrl\":\"https://ammora.org\",\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"官方域名可直接访问\",\"value\":15},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"项目尚未正式确认空投，不存在官方活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"官网 ↔ X ↔ Docs 链接可互相印证\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":1,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":1,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到官方域名并通过校验\",\"status\":\"verified\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"项目尚未确认空投，官方本就没有公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"C\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":44,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 2 条已验证（验证率 100%）\",\"value\":14},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"预计投入约 30 分钟，共 10 个步骤\",\"value\":9},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 10 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"ammora\",\"sourcedSteps\":[{\"body\":\"Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342.\",\"title\":\"Add GIWA Sepolia to your wallet\"},{\"body\":\"Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little.\",\"title\":\"Claim GIWA Sepolia test ETH\"},{\"body\":\"Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard.\",\"title\":\"Join the Ammora waitlist\"},{\"body\":\"Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP.\",\"title\":\"Follow @AmmoraHQ on X\"},{\"body\":\"Repost the pinned campaign post from the same X account for another 100 AP.\",\"title\":\"Retweet the pinned post\"},{\"body\":\"The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission.\",\"title\":\"Publish the daily X post\"},{\"body\":\"Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily.\",\"title\":\"Supply test ETH liquidity\"},{\"body\":\"Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes.\",\"title\":\"Clear the Launch Week bonus\"},{\"body\":\"Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table.\",\"title\":\"Share your referral link\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/ammora/\"}],\"status\":\"potential\",\"tagline\":\"Ammora 没有代币，也没有宣布空投，所以这是对积分计划的投机游戏，可能会也可能不会转化为...\",\"tagline_en\":\"Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into ...\",\"tasks\":[]}",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Giwa\"],\"cost\":{\"basis\":{\"checked_at\":\"<time>\",\"method\":\"source_text\",\"note\":\"完整来源描述或教程提到资金 / 链上操作，未核实具体金额\",\"source_url\":\"https://airdrops.io/ammora/\"},\"capital_max_usd\":null,\"capital_min_usd\":null,\"capital_required\":true,\"gas_estimate_usd\":null,\"gas_required\":true,\"long_term\":false,\"summary\":\"需要准备本金，金额待核实。需要手续费，金额待核实。信息不完整，暂不判断为新手友好。\",\"time_minutes\":0},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"项目官网候选链接\",\"note\":\"来源提供的候选链接，归属与可访问性尚未核实\",\"type\":\"official_website\",\"url\":\"https://ammora.org\",\"verified\":false},{\"label\":\"第三方来源记录：Airdrops.io\",\"note\":\"记录抓取出处，不代表内容已核实或官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/ammora/\",\"verified\":false}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。请核对具体活动公告与资格条件。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。\",\"q\":\"什么时候结束？\"},{\"a\":\"需要本金，金额待核实；需要手续费，金额待核实。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"来源描述涉及钱包，请先核对实际活动要求。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"手续费与主网资产要求待核实。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"相关活动信息待核实，请查看官方公告。\",\"q\":\"领取时间确定了吗？\"}],\"first_seen_at\":\"2026-09-12T06:08:39.056Z\",\"guide\":[{\"content_status\":\"ready\",\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://ammora.org\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"打开 MetaMask 或其他 EVM 钱包，并添加 GIWA Sepolia，链条 ID 为 91342。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":true,\"official_url\":\"https://ammora.org\",\"original_description\":\"Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342.\",\"original_title\":\"Add GIWA Sepolia to your wallet\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":2,\"title\":\"将 GIWA Sepolia 添加到你的钱包\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"从 Ammora 的任务页面上链接的 Lambda256 水龙头请求测试 ETH。流动性任务的最低限额为 0.001 ETH， GIWA 上的 GAS 可以忽略不计，因此你只需要很少的资金。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little.\",\"original_title\":\"Claim GIWA Sepolia test ETH\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":3,\"title\":\"领取 GIWA Sepolia 测试 ETH\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"转到 Ammora 等候名单，连接你的钱包，在消息上签名并注册邮箱。在此之前，每个任务都将保持锁定状态，你使用的钱包将公开绑定到排行榜。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"https://ammora.org\",\"original_description\":\"Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard.\",\"original_title\":\"Join the Ammora waitlist\",\"risk\":\"medium\",\"source_verified\":false,\"step\":4,\"title\":\"加入 Ammora 等候名单\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"从你想要记入的 X 账号关注 Ammora 官方账号，然后返回仪表盘验证 100 AP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP.\",\"original_title\":\"Follow @AmmoraHQ on X\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":5,\"title\":\"在 X 上关注 @AmmoraHQ\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"从同一 X 账户重新发布固定的活动帖子，再获得 100 AP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"Repost the pinned campaign post from the same X account for another 100 AP.\",\"original_title\":\"Retweet the pinned post\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":6,\"title\":\"转发固定帖子\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"仪表盘会为你填写帖子文本，因此这需要几秒钟的时间。在 200 AP 时，它是薪酬最高的可重复任务。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission.\",\"original_title\":\"Publish the daily X post\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":7,\"title\":\"发布每日 X 帖子\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"按每日流动性任务的供应并将至少 0.001 GIWA Sepolia 测试 ETH 存入 Ammora 金库。每个经过验证的供应支付 50 AP。每天重复一次。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily.\",\"original_title\":\"Supply test ETH liquidity\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":8,\"title\":\"供应测试 ETH 流动性\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"在发布周期间完成所有五个任务一次，即加入、关注、转发、发布和供应。它是最大的单个可用点块，当窗口关闭时会消失。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes.\",\"original_title\":\"Clear the Launch Week bonus\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":9,\"title\":\"完成上线周任务领取奖励\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"打开等候名单页面上的“推荐”标签卡，然后复制链接。每个注册积分为 200 AP，上限为 5，因此桌面上有 1,000 AP。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://ammora.org\",\"original_description\":\"Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table.\",\"original_title\":\"Share your referral link\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":10,\"title\":\"分享你的邀请链接\"}],\"guide_source\":\"third_party\",\"id\":\"ammora\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Ammora\",\"official\":{\"website\":\"https://ammora.org\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"D\",\"summary\":\"活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":11,\"authenticityItems\":[{\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"未找到可验证的官方网站\",\"value\":0},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"尚未核实具体空投活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"项目文档已核验\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":2,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":0,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到候选域名，但未通过官方校验\",\"status\":\"partial\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"尚未核实具体活动公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"D\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.unknown\",\"label\":\"成本或步骤风险待核实\",\"max\":3,\"reason\":\"信息不完整，不能据此认定为免费或低风险\",\"value\":1},{\"key\":\"risk.capital_unknown\",\"label\":\"来源提到本金投入\",\"max\":3,\"reason\":\"需要资金准备，但具体金额尚未核实，不能视作免费\",\"value\":1},{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":23,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 0 条已验证（验证率 0%）\",\"value\":0},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"任务尚不明确，无法评估投入产出比\",\"value\":2},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 10 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"ammora\",\"sourcedSteps\":[{\"body\":\"Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342.\",\"title\":\"Add GIWA Sepolia to your wallet\"},{\"body\":\"Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little.\",\"title\":\"Claim GIWA Sepolia test ETH\"},{\"body\":\"Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard.\",\"title\":\"Join the Ammora waitlist\"},{\"body\":\"Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP.\",\"title\":\"Follow @AmmoraHQ on X\"},{\"body\":\"Repost the pinned campaign post from the same X account for another 100 AP.\",\"title\":\"Retweet the pinned post\"},{\"body\":\"The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission.\",\"title\":\"Publish the daily X post\"},{\"body\":\"Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily.\",\"title\":\"Supply test ETH liquidity\"},{\"body\":\"Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes.\",\"title\":\"Clear the Launch Week bonus\"},{\"body\":\"Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table.\",\"title\":\"Share your referral link\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/ammora/\"}],\"status\":\"potential\",\"tagline\":\"Ammora 没有代币，也没有宣布空投，所以这是对积分计划的投机游戏，可能会也可能不会转化为...\",\"tagline_en\":\"Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into ...\",\"tasks\":[]}",
   "guide_source": "third_party",
   "first_seen_at": "2026-09-12T06:08:39.056Z",
-  "tagline_en": "Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into ..."
+  "tagline_en": "Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into ...",
+  "guide_version": "f5bbe6790eb647d21678b2d5eef34378c45179ffa01cd50e83791c2dfa8440ba"
 }

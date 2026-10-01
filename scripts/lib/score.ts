@@ -1,3 +1,5 @@
+import { isEvidenceVerified } from '../../src/lib/evidence';
+import { hasKnownCost } from '../../src/lib/cost';
 /**
  * Score：真实性置信度 / 风险 / 参与价值 三套独立评分。
  *
@@ -69,7 +71,7 @@ export interface AuthenticityResult {
 
 export function scoreAuthenticity(p: AirdropProject, evidence: Evidence[]): AuthenticityResult {
   const items: ScoreItem[] = [];
-  const has = (t: Evidence['type']) => evidence.find((e) => e.type === t && e.verified);
+  const has = (t: Evidence['type']) => evidence.find((e) => e.type === t && isEvidenceVerified(e));
 
   const website = has('official_website');
   items.push({
@@ -77,7 +79,7 @@ export function scoreAuthenticity(p: AirdropProject, evidence: Evidence[]): Auth
     label: '官方网站可验证',
     value: website ? 15 : 0,
     max: 15,
-    reason: website ? '官方域名可直接访问' : '未找到可验证的官方网站',
+    reason: website ? '官网归属有具体人工核验记录' : '未找到可验证的官方网站',
     evidenceUrl: website?.url,
   });
 
@@ -85,7 +87,7 @@ export function scoreAuthenticity(p: AirdropProject, evidence: Evidence[]): Auth
   // 潜在项目本身就没有公告，不应拿分。
   const statusConfirms = p.status === 'confirmed' || p.status === 'claim_live';
   const announcementEv = has('official_announcement');
-  const announcementScore = statusConfirms && announcementEv ? 20 : statusConfirms ? 10 : 0;
+  const announcementScore = statusConfirms && announcementEv ? 20 : 0;
   items.push({
     key: 'authenticity.announcement',
     label: '官方公告明确提到活动',
@@ -93,19 +95,19 @@ export function scoreAuthenticity(p: AirdropProject, evidence: Evidence[]): Auth
     max: 20,
     reason: statusConfirms
       ? announcementEv
-        ? '项目状态已确认，且官网与官方渠道链接一致'
+        ? '活动阶段有可引用的人工核验公告'
         : '项目状态已确认，但未找到可直接引用的官方公告'
-      : '项目尚未正式确认空投，不存在官方活动公告',
+      : '尚未核实具体空投活动公告',
     evidenceUrl: announcementEv?.url,
   });
 
-  const cross = evidence.some((e) => e.verified && e.type === 'official_docs');
+  const cross = evidence.some((e) => isEvidenceVerified(e) && e.type === 'official_docs');
   items.push({
     key: 'authenticity.crosslink',
-    label: '官网 ↔ X ↔ Docs 链接可互相印证',
+    label: '项目文档已核验',
     value: cross ? 15 : 0,
     max: 15,
-    reason: cross ? 'Docs 与官网链接一致' : '缺少 Docs 或链接无法互相印证',
+    reason: cross ? '文档有具体人工核验记录' : '缺少 Docs 或链接无法互相印证',
   });
 
   const thirdPartyCount = evidence.filter((e) => e.type === 'third_party').length;
@@ -311,18 +313,8 @@ function dimensionSatisfaction(
   item: ScoreItem,
 ): number | null {
   switch (item.key) {
-    case 'authenticity.website': {
-      // 官方渠道完整度：官网 / X / Docs / GitHub / Discord / Galxe
-      const channels = [
-        p.official?.website,
-        p.official?.x,
-        p.official?.docs,
-        p.official?.github,
-        p.official?.discord,
-        p.official?.galxe,
-      ].filter(Boolean).length;
-      return Math.min(1, channels / 3);
-    }
+    case 'authenticity.website':
+      return evidence.some(e => e.type === 'official_website' && isEvidenceVerified(e)) ? 1 : p.official.website ? 0 : null;
     /**
      * 链上规模（P1-3 补充维度）。
      *
@@ -351,24 +343,9 @@ function dimensionSatisfaction(
     case 'authenticity.announcement':
       // 三态：已确认且有公告证据 → 1；已确认但无公告 → 0.5；未确认 → 不适用
       if (p.status !== 'confirmed' && p.status !== 'claim_live') return null;
-      return evidence.some((e) => e.type === 'official_announcement' && e.verified) ? 1 : 0.5;
-    case 'authenticity.crosslink': {
-      // 渠道间一致性：各渠道的注册域越集中越可信
-      const hosts = [p.official?.website, p.official?.docs, p.official?.github]
-        .filter(Boolean)
-        .map((u) => {
-          try {
-            return new URL(u as string).hostname.replace(/^www\./, '');
-          } catch {
-            return '';
-          }
-        })
-        .filter(Boolean);
-      if (hosts.length === 0) return null;
-      const roots = new Set(hosts.map((h) => h.split('.').slice(-2).join('.')));
-      if (hosts.length === 1) return 0.4;
-      return roots.size <= 2 ? 1 : 0.6;
-    }
+      return evidence.some((e) => e.type === 'official_announcement' && isEvidenceVerified(e)) ? 1 : 0;
+    case 'authenticity.crosslink':
+      return evidence.some(e => e.type === 'official_docs' && isEvidenceVerified(e)) ? 1 : p.official.docs ? 0 : null;
     case 'authenticity.thirdparty': {
       // 独立来源数量 + 独立域名数（同一域名转载 3 次不代表 3 个来源）
       const third = p.sources.filter((s) =>
@@ -391,20 +368,13 @@ function dimensionSatisfaction(
       return Math.min(1, hosts.size / 3);
     }
     case 'authenticity.quest':
-      return evidence.some((e) => e.type === 'quest_space' && e.verified) ? 1 : null;
+      return evidence.some((e) => e.type === 'quest_space' && isEvidenceVerified(e)) ? 1 : null;
     case 'authenticity.github':
-      if (p.official?.github) return 1;
-      if (p.official?.docs) return 0.6;
-      // 完全没有官方线索时，这一项无从判断（不适用），而不是「得 0 分」——
-      // 「我们查了但没查到」属于 missing，由清单呈现；
-      // 评分层面它不该再被同一笔固定扣分压一次，否则又会制造常数。
-      return p.official?.website ? 0 : null;
+      return evidence.some(e => e.type === 'official_github' && isEvidenceVerified(e)) ? 1 : p.official.github ? 0 : null;
     case 'authenticity.funding':
-      if (p.meta?.funding) return 1;
-      if (p.status === 'confirmed' || p.status === 'claim_live') return 0.4;
-      return null;
+      return evidence.some(e => e.type === 'funding' && isEvidenceVerified(e)) ? 1 : p.meta?.funding ? 0 : null;
     case 'authenticity.contract':
-      return evidence.some((e) => e.type === 'contract' && e.verified) ? 1 : null;
+      return evidence.some((e) => e.type === 'contract' && isEvidenceVerified(e)) ? 1 : null;
     default:
       return item.max > 0 ? item.value / item.max : null;
   }
@@ -441,7 +411,7 @@ export interface EvidenceChecklistItem {
 
 export function evidenceChecklist(p: AirdropProject): EvidenceChecklistItem[] {
   const out: EvidenceChecklistItem[] = [];
-  const has = (t: Evidence['type']) => p.evidence.some((e) => e.type === t && e.verified);
+  const has = (t: Evidence['type']) => p.evidence.some((e) => e.type === t && isEvidenceVerified(e));
   const thirdHosts = new Set(
     p.sources
       .filter((s) =>
@@ -467,16 +437,16 @@ export function evidenceChecklist(p: AirdropProject): EvidenceChecklistItem[] {
   });
   out.push({
     label: '官方文档',
-    status: p.official?.docs ? 'verified' : 'missing',
-    note: p.official?.docs ? '已找到官方 Docs' : '未找到官方文档',
+    status: has('official_docs') ? 'verified' : p.official?.docs ? 'partial' : 'missing',
+    note: has('official_docs') ? '文档已按具体来源核验' : p.official?.docs ? '文档候选链接，尚未核实归属' : '未找到官方文档',
   });
   out.push({
     label: '开源仓库',
-    status: p.official?.github ? 'verified' : p.official?.docs ? 'partial' : 'missing',
+    status: has('official_github') ? 'verified' : p.official?.github || p.official?.docs ? 'partial' : 'missing',
     note: p.official?.github
-      ? '已找到官方 GitHub'
+      ? has('official_github') ? '仓库有人工核验记录' : '仓库候选链接，尚未核实归属'
       : p.official?.docs
-        ? '未找到 GitHub，但存在官方文档'
+        ? '未找到 GitHub，仅有文档候选链接'
         : '未找到官方开源仓库',
   });
   out.push({
@@ -502,13 +472,13 @@ export function evidenceChecklist(p: AirdropProject): EvidenceChecklistItem[] {
         ? has('official_announcement')
           ? '已找到可引用的官方公告'
           : '项目已确认，但未找到可直接引用的官方公告'
-        : '项目尚未确认空投，官方本就没有公告',
+        : '尚未核实具体活动公告',
   });
   out.push({
     label: '融资信息',
-    status: p.meta?.funding ? 'verified' : p.status === 'confirmed' || p.status === 'claim_live' ? 'missing' : 'not_applicable',
+    status: has('funding') ? 'verified' : p.meta?.funding ? 'partial' : p.status === 'confirmed' || p.status === 'claim_live' ? 'missing' : 'not_applicable',
     note: p.meta?.funding
-      ? `已核实：${p.meta.funding}`
+      ? `${has('funding') ? '已核实' : '待核实线索'}：${p.meta.funding}`
       : p.status === 'confirmed' || p.status === 'claim_live'
         ? '项目已确认，但未核实到团队或融资信息'
         : '项目尚未确认，融资信息通常也未公开（不适用）',
@@ -715,16 +685,25 @@ export function scoreRisk(p: AirdropProject): {
 
   // 结构化字段下限：这是本轮修复的核心。
   // 文本关键词只能「猜」，而金额与签名是已知事实，必须优先采信事实。
+  if (!hasKnownCost(p.cost) || p.guide.some(g => g.risk === 'unknown' || g.needs_signature === null)) {
+    level = maxRisk(level, 'medium');
+    items.push({ key: 'risk.unknown', label: '成本或步骤风险待核实', value: 1, max: 3,
+      reason: '信息不完整，不能据此认定为免费或低风险' });
+  }
   const capitalMaxUsd = p.cost?.capital_max_usd ?? 0;
   const needsSignature = p.guide.some((g) => g.needs_signature);
   const floor = riskFloors({
     capitalMaxUsd,
     needsSignature,
-    needsCapital: capitalMaxUsd > 0,
-    gasUsd: p.cost?.gas_estimate_usd,
+    needsCapital: capitalMaxUsd > 0 || p.cost.capital_required === true,
+    gasUsd: p.cost?.gas_estimate_usd ?? undefined,
   });
   if (RISK_RANK[floor] > RISK_RANK[level]) {
     level = floor;
+  }
+  if (p.cost.capital_required && capitalMaxUsd === 0) {
+    items.push({ key: 'risk.capital_unknown', label: '来源提到本金投入', value: 1, max: 3,
+      reason: '需要资金准备，但具体金额尚未核实，不能视作免费' });
   }
   if (capitalMaxUsd > 0) {
     const capitalMinUsd = p.cost?.capital_min_usd ?? 0;
@@ -769,7 +748,7 @@ export function scoreRisk(p: AirdropProject): {
    *   把「核对合约地址」作为**操作建议**（在教程与防骗页已有），
    *   而不是伪造一个它并不具备的**风险等级**。
    */
-  const hasContractEvidence = p.evidence.some((e) => e.type === 'contract' && e.verified);
+  const hasContractEvidence = p.evidence.some((e) => e.type === 'contract' && isEvidenceVerified(e));
   const interactsContract = /approve|授权|swap|交易|bridge|跨链|lp\b|质押|stake|deposit|存入|转入/i.test(
     haystack,
   );
@@ -864,7 +843,7 @@ export function scoreValue(p: AirdropProject): {
 
   // 2) 验证充分度 20：证据越多、已验证比例越高，越值得投入研究
   const totalEvidence = p.evidence.length;
-  const verifiedEvidence = p.evidence.filter((e) => e.verified).length;
+  const verifiedEvidence = p.evidence.filter(isEvidenceVerified).length;
   const verifyRatio = totalEvidence ? verifiedEvidence / totalEvidence : 0;
   const verification = Math.min(
     20,
@@ -1154,7 +1133,8 @@ export function scoreAll(projects: AirdropProject[]): AirdropProject[] {
       scores: { ...p.scores, risk: risk.level },
     };
     const value = scoreValue(withRisk);
-    const grade = risk.level === 'critical' ? 'D' : value.grade;
+    const incomplete = p.status === 'pending' || !hasKnownCost(p.cost) || p.guide.some(g => g.needs_signature === null || g.risk === 'unknown');
+    const grade = risk.level === 'critical' ? 'D' : incomplete && (value.grade === 'S' || value.grade === 'A') ? 'B' : value.grade;
 
     return {
       ...p,
@@ -1171,7 +1151,8 @@ export function scoreAll(projects: AirdropProject[]): AirdropProject[] {
         authenticityPartialCount: auth.partialCount,
         authenticityTotalCount: auth.totalDimensions,
       },
-      recommendation: buildRecommendation(grade, risk.level),
+      recommendation: risk.level !== 'critical' && incomplete ? { grade, action: 'observe',
+        summary: '活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。' } : buildRecommendation(grade, risk.level),
     };
   });
 }

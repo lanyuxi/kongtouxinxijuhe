@@ -1,15 +1,17 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { Header, Footer, Page } from './components/Layout';
 import { Onboarding } from './components/Onboarding';
 import type { NavKey } from './components/Layout';
 import { ListView } from './pages/ListView';
 import { DetailView } from './pages/DetailView';
 import { SafetyView } from './pages/SafetyView';
-import { loadDataset, loadProjectDetail, loadSourceHealth } from './lib/data';
+import { SettingsView } from './pages/SettingsView';
+import { useXSettings } from './lib/use-x-settings';
+import { DataLoadError, loadDataset, loadProjectDetail, loadSourceHealth } from './lib/data';
 import { loadLiveIndex, runRefresh } from './lib/refresh';
 import type { LiveIndex } from './lib/types';
-import { useRoute } from './lib/router';
-import { resolveProgress, useLocalState } from './lib/store';
+import { detailReturnTarget, parseHash, returnToList, useRoute } from './lib/router';
+import { resolveGuideProgress, resolveProgress, useLocalState } from './lib/store';
 import { buildPercentiles } from './lib/percentile';
 import type { Percentiles } from './lib/percentile';
 import { CardSkeletonGrid, DetailSkeleton } from './components/Skeleton';
@@ -17,11 +19,16 @@ import type { AirdropProject, ListDataset, SourceHealthFile } from './lib/types'
 
 export function App() {
   const route = useRoute();
-  const { state, toggleFavorite, setProgress, toggleStep, clearAll } = useLocalState();
+  const { state, toggleFavorite, setProgress, toggleStep, clearAll, importBackup, reconcileGuides, reviewGuide } = useLocalState();
 
   const [dataset, setDataset] = useState<ListDataset | null>(null);
   const [health, setHealth] = useState<SourceHealthFile | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [retryDataset, setRetryDataset] = useState(0);
+  const personalX = useXSettings(async () => {
+    const fresh = await loadDataset(); setDataset(fresh);
+    setHealth(await loadSourceHealth()); setLiveIndex(await loadLiveIndex());
+  });
 
   // 「一键更新」状态：进度文案 + 来源索引（用于展示数据新鲜度）
   const [liveIndex, setLiveIndex] = useState<LiveIndex | null>(null);
@@ -32,6 +39,7 @@ export function App() {
 
   useEffect(() => {
     let alive = true;
+    setError(null);
     loadDataset()
       .then((d) => alive && setDataset(d))
       .catch((e) => alive && setError((e as Error).message));
@@ -40,7 +48,7 @@ export function App() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [retryDataset]);
 
   /**
    * 一键更新。
@@ -68,6 +76,8 @@ export function App() {
   };
 
   const projects = dataset?.projects ?? [];
+  useEffect(() => { if (dataset) reconcileGuides(dataset.projects); }, [dataset, state.favorites, reconcileGuides]);
+  useLayoutEffect(() => { if (route.kind !== 'list') window.scrollTo({ top: 0, behavior: 'auto' }); }, [route]);
 
   /**
    * 相对分位：一次性对整批项目算好，避免在卡片与详情页里反复排序。
@@ -93,7 +103,9 @@ export function App() {
    *   ready     → 正常渲染
    */
   const [detailProject, setDetailProject] = useState<AirdropProject | null>(null);
-  const [detailState, setDetailState] = useState<'idle' | 'loading' | 'ready' | 'notFound'>('idle');
+  const [detailState, setDetailState] = useState<'idle' | 'loading' | 'ready' | 'notFound' | 'error'>('idle');
+  const [detailError, setDetailError] = useState('');
+  const [retryDetail, setRetryDetail] = useState(0);
 
   useEffect(() => {
     if (route.kind !== 'detail') {
@@ -101,6 +113,8 @@ export function App() {
       setDetailState('idle');
       return;
     }
+    if (!dataset) return;
+    setDetailError('');
     // 列表里没有这个 slug，说明路由本身是错的，不必再发请求
     if (!projects.some((p) => p.slug === route.slug)) {
       setDetailProject(null);
@@ -111,21 +125,25 @@ export function App() {
     setDetailState('loading');
     loadProjectDetail(route.slug).then((full) => {
       if (!alive) return;
-      if (!full) {
-        setDetailProject(null);
-        setDetailState('notFound');
-        return;
-      }
       // 详情分片本身不带 logo（logo 由 logo-map 在列表加载时贴上），
       // 这里从列表项补一份，避免详情页头部图标丢失。
       const logo = projects.find((p) => p.slug === route.slug)?.logo;
       setDetailProject(logo ? { ...full, logo } : full);
       setDetailState('ready');
+    }).catch(e => {
+      if (!alive) return;
+      setDetailProject(null);
+      setDetailError(e instanceof DataLoadError ? e.message : '项目资料暂时无法加载，请重试。');
+      setDetailState(e instanceof DataLoadError && e.kind === 'not_found' ? 'notFound' : 'error');
     });
     return () => {
       alive = false;
     };
-  }, [route, projects]);
+  }, [route, projects, dataset, retryDetail]);
+
+  if (route.kind === 'settings') {
+    return <><Header current="settings" /><main><Page><SettingsView x={personalX} /></Page></main><Footer updatedAt={dataset?.updated_at} /></>;
+  }
 
   if (error) {
     return (
@@ -133,10 +151,9 @@ export function App() {
         <Header current="latest" />
         <Page>
           <div className="card border-danger/40 bg-danger-wash">
-            <p className="text-sm text-danger">数据加载失败：{error}</p>
-            <p className="mt-2 text-xs text-ink-soft">
-              请确认已执行数据流水线生成 <code>data/airdrops.json</code>。
-            </p>
+            <h1 className="text-lg font-semibold">项目列表暂时无法加载</h1>
+            <p className="mt-2 text-sm text-danger">{error}</p>
+            <button className="btn-primary mt-4" onClick={() => setRetryDataset(n => n + 1)}>重新加载列表</button>
           </div>
         </Page>
       </>
@@ -162,13 +179,13 @@ export function App() {
     <>
       {/* 首访引导：只在第一次访问（或引导版本更新后）出现，可跳过 */}
       <Onboarding />
-      <Header current={route.kind === 'list' ? route.view : route.kind === 'safety' ? 'safety' : 'latest'} />
+      <Header current={route.kind === 'list' ? route.view : route.kind === 'safety' ? 'safety' : (parseHash(detailReturnTarget()) as { view: NavKey }).view} />
       <main>
         <Page>
           {route.kind === 'safety' ? (
             <SafetyView projects={projects} />
           ) : route.kind === 'detail' ? (
-            detailState === 'loading' ? (
+            detailState === 'loading' || detailState === 'idle' ? (
               <DetailSkeleton />
             ) : detailProject ? (
               <DetailView
@@ -176,31 +193,34 @@ export function App() {
                 favorited={state.favorites.includes(detailProject.slug)}
                 // 用 resolveProgress 统一解析：未收藏必须是 undefined，
                 // 不能让 UI 用 `?? 'saved'` 把「没收藏」显示成「已收藏」。
-                progress={resolveProgress(detailProject.slug, state.favorites, state.progress)}
+                progress={resolveGuideProgress(detailProject, resolveProgress(detailProject.slug, state.favorites, state.progress))}
                 percentiles={{
                   authenticity: percentiles.authenticity.get(detailProject.slug),
                   value: percentiles.value.get(detailProject.slug),
                   total: percentiles.total,
                 }}
                 onToggleFavorite={toggleFavorite}
-                onSetProgress={setProgress}
-                onToggleStep={toggleStep}
-                onBack={() => {
-                  window.location.hash = '#/latest';
-                }}
+                onSetProgress={(slug, status) => setProgress(slug, status, detailProject)}
+                onToggleStep={(slug, step) => toggleStep(slug, step, detailProject)}
+                onReviewGuide={() => reviewGuide(detailProject.slug, detailProject)}
+                onBack={returnToList}
+                xResult={personalX.settings?.configured ? personalX.result : undefined}
               />
             ) : (
               <div className="card">
-                <p className="text-sm text-ink">未找到该项目。</p>
-                <a className="btn-ghost mt-3" href="#/latest">
-                  返回最新空投
-                </a>
+                <h1 className="text-lg font-semibold">{detailState === 'notFound' ? '未找到该项目资料' : '项目资料加载失败'}</h1>
+                <p className="mt-2 text-sm text-ink-soft">{detailError || '项目可能已移除，请返回列表查看。'}</p>
+                <div className="mt-4 flex gap-3">
+                  <button className="btn-primary" onClick={() => setRetryDetail(n => n + 1)}>重试加载</button>
+                  <button className="btn-ghost" onClick={returnToList}>返回原列表</button>
+                </div>
               </div>
             )
           ) : (
             <>
-              <SourceHealthBanner health={health} />
+              {personalX.settings?.configured && personalX.message && <p role="status" className={`mb-4 rounded-xl border p-3 text-sm ${personalX.failed ? 'border-warn/30 bg-warn-wash text-warn' : 'border-brand/20 bg-brand-50 text-brand'}`}>{personalX.message}</p>}
               <ListView
+                key={route.view}
                 view={route.view as NavKey}
                 projects={projects}
                 updatedAt={dataset.updated_at}
@@ -215,6 +235,10 @@ export function App() {
                 onRefresh={handleRefresh}
                 onToggleFavorite={toggleFavorite}
                 onClearAll={clearAll}
+                localState={state}
+                onImportBackup={importBackup}
+                xResult={personalX.settings?.configured ? personalX.result : undefined}
+                onXRefresh={() => { void personalX.refresh().catch(() => {}); }}
               />
             </>
           )}
@@ -222,52 +246,5 @@ export function App() {
       </main>
       <Footer updatedAt={dataset.updated_at} />
     </>
-  );
-}
-
-/**
- * 数据源健康提示。
- * 对应方案文档第 28 章：单个来源失败时向用户透明说明，但不影响其他数据。
- */
-function SourceHealthBanner({ health }: { health: SourceHealthFile | null }) {
-  if (!health) return null;
-  const failed = health.sources.filter((s) => !s.ok);
-  if (failed.length === 0) return null;
-
-  /**
-   * 长期不可用的来源与「本次偶发失败」必须分开说，否则会让新手误判数据可信度：
-   * Galxe 是纯客户端渲染、官方 API 需登录，属于**已确认无法接入**，
-   * 它每轮都会显示「抓取失败」，持续给用户一种「系统坏了」的错觉。
-   * 因此这里按「最近一次成功时间」区分：
-   *   · 从未 / 超过 24 小时没成功过 → 标记为「暂不支持该来源」（结构性限制）
-   *   · 其余 → 正常的「本次失败，已保留上次成功数据」（临时故障）
-   */
-  const dayAgo = Date.now() - 24 * 3600 * 1000;
-  const permanent = failed.filter(
-    (s) => !s.last_success_at || new Date(s.last_success_at).getTime() < dayAgo,
-  );
-  const temporary = failed.filter((s) => !permanent.includes(s));
-
-  return (
-    <div className="card mb-4 border-warn/40 bg-warn-wash">
-      {temporary.length > 0 && (
-        <>
-          <p className="text-sm text-warn">
-            ⚠ 以下数据源本次抓取失败，已保留其上次成功数据：
-            {temporary.map((s) => s.name).join('、')}
-          </p>
-          <p className="mt-1 text-xs text-ink-soft">
-            失败原因：{temporary.map((s) => `${s.name}（${s.error ?? '未知错误'}）`).join('；')}
-          </p>
-        </>
-      )}
-      {permanent.length > 0 && (
-        <p className={`text-sm text-ink-soft ${temporary.length > 0 ? 'mt-2' : ''}`}>
-          ℹ 暂不支持的数据源：{permanent.map((s) => s.name).join('、')}
-          （该来源需要登录态或官方 API，长期无法直接抓取，不计入本次失败）。
-          其余来源的数据不受影响。
-        </p>
-      )}
-    </div>
   );
 }

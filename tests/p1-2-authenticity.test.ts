@@ -1,3 +1,4 @@
+import { reviewedEvidence } from './helpers/evidence';
 /**
  * P1-3｜真实性置信度不能退化成一个常数（对应上轮审查 BUG-2）。
  *
@@ -43,7 +44,7 @@ function make(over: Partial<AirdropProject> = {}): AirdropProject {
 const ev = (over: Partial<Evidence> & { type: Evidence['type'] }): Evidence => ({
   label: over.type,
   url: `https://${over.type}.example.com`,
-  verified: true,
+  ...reviewedEvidence(over.type, `https://${over.type}.example.com`),
   ...over,
 });
 

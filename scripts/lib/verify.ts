@@ -1,189 +1,47 @@
-/**
- * Verify：证据收集与交叉验证。
- *
- * 对应方案文档：
- * - 第 9/10 章：真实性置信度（Evidence Confidence）
- * - 第 27 章不变量 1：没有证据的项目不能显示为「已验证」
- * - 第 27 章不变量 4：第三方页面提供的链接不能自动被认为是官方链接
- */
-
+/** 候选链接、抓取记录与人工核验分开。链接数量不能生成官方公告。 */
 import type { AirdropProject, Evidence } from '../../src/lib/types';
+import { isCandidateUrl, isEvidenceVerified } from '../../src/lib/evidence';
 
-const OFFICIAL_HOST_HINTS = [
-  'docs.',
-  'github.com',
-  'mirror.xyz',
-  'medium.com',
-];
+const CHANNELS = [
+  ['website', 'official_website', '项目官网候选链接'],
+  ['docs', 'official_docs', '项目文档候选链接'],
+  ['github', 'official_github', '项目仓库候选链接'],
+  ['galxe', 'quest_space', '任务空间候选链接'],
+  ['x', 'official_x', '项目 X 候选账号'],
+] as const;
 
-/**
- * 判断官方链接是否可信。
- * 规则：必须存在官方域名，且域名不能是聚合站/跳转站。
- */
-export function isOfficialHost(url: string): boolean {
-  if (!url) return false;
-  try {
-    const u = new URL(url);
-    const blocked = /(airdrops\.io|defillama\.com|galxe\.com|layer3\.xyz|google\.com|bit\.ly|t\.co)/;
-    if (blocked.test(u.hostname)) return false;
-    if (OFFICIAL_HOST_HINTS.some((h) => u.hostname.startsWith(h))) return true;
-    // 普通项目域名：至少两段
-    return u.hostname.split('.').length >= 2;
-  } catch {
-    return false;
-  }
-}
-
-/** 交叉验证：官网与官方 X / Docs 是否互相链接（此处用域名一致性近似） */
-export function crossLink(official: AirdropProject['official']): boolean {
-  const hosts = [official.website, official.docs, official.github]
-    .filter(Boolean)
-    .map((u) => {
-      try {
-        return new URL(u as string).hostname.replace(/^www\./, '');
-      } catch {
-        return '';
-      }
-    })
-    .filter(Boolean);
-  if (hosts.length < 2) return false;
-  const root = (h: string) => h.split('.').slice(-2).join('.');
-  const roots = new Set(hosts.map(root));
-  return roots.size <= 2; // 允许同主体多域名
-}
-
-/**
- * 构建证据清单。
- * 关键：只有通过校验的链接才置 verified = true。
- */
 export function buildEvidence(p: AirdropProject): Evidence[] {
-  // 从零重建，保证幂等：重复调用不会累积重复条目。
-  const ev: Evidence[] = [];
-  const o = p.official;
+  const ev = new Map<string, Evidence>();
+  const add = (e: Evidence) => ev.set(`${e.type}::${e.url}`, e);
+  for (const [key, type, label] of CHANNELS) {
+    const url = p.official[key];
+    if (!url || !isCandidateUrl(url) || /(^|\.)(airdrops\.io|defillama\.com)$/.test(new URL(url).hostname)) continue;
+    add({ type, label, url, verified: false, note: '来源提供的候选链接，归属与可访问性尚未核实' });
+  }
+  for (const s of p.sources) {
+    if (s.type === 'official') continue;
+    add({ type: 'third_party', label: `第三方来源记录：${s.name}`, url: s.url,
+      verified: false, note: '记录抓取出处，不代表内容已核实或官方背书' });
+  }
+  if (p.meta?.funding) add({ type: 'funding', label: '融资线索（待核实）',
+    url: p.official.website ?? '', verified: false, note: p.meta.funding });
 
-  if (o.website && isOfficialHost(o.website)) {
-    ev.push({
-      type: 'official_website',
-      label: '官方网站可访问',
-      url: o.website,
-      verified: true,
-      note: '官方域名已验证',
-    });
+  // 仅保留具体核验记录。重新生成不会清掉有效的人工核验，也不继承旧的假验证。
+  for (const e of p.evidence) {
+    if (!isEvidenceVerified(e)) continue;
+    const channel = CHANNELS.find(([, type]) => type === e.type);
+    if (channel && p.official[channel[0]] !== e.url) continue;
+    add(e);
   }
-  if (o.docs && isOfficialHost(o.docs)) {
-    ev.push({
-      type: 'official_docs',
-      label: '官方文档存在',
-      url: o.docs,
-      verified: true,
-    });
-  }
-  if (o.github && isOfficialHost(o.github)) {
-    ev.push({
-      type: 'official_github',
-      label: '官方 GitHub 仓库',
-      url: o.github,
-      verified: true,
-    });
-  }
-  if (o.galxe && isOfficialHost(o.galxe)) {
-    ev.push({
-      type: 'quest_space',
-      label: 'Galxe 官方 Space 可确认',
-      url: o.galxe,
-      verified: true,
-    });
-  }
-  if (o.x) {
-    // X 账号本身无法通过域名强校验，标记为待确认
-    ev.push({
-      type: 'official_x',
-      label: '官方 X 账号',
-      url: o.x,
-      verified: false,
-      note: '需人工确认账号认证状态',
-    });
-  }
-  // 官方公告：仅当官网与 Docs 存在且域名主体一致时才认定，
-  // 避免把「有官网」直接钻营成「有官方活动公告」。
-  if (crossLink(o)) {
-    ev.push({
-      type: 'official_announcement',
-      label: '官网与 Docs 链接可互相印证',
-      url: o.website ?? o.docs ?? '',
-      verified: true,
-      note: '仅证明官方渠道一致，不代表官方已公告空投',
-    });
-  }
-
-  // 第三方来源：独立计数
-  const thirdParties = p.sources.filter((s) =>
-    ['airdrop_aggregator', 'rewards_tracker', 'quest_platform', 'third_party'].includes(
-      s.type,
-    ),
-  );
-  for (const s of thirdParties) {
-    ev.push({
-      type: 'third_party',
-      label: `第三方来源：${s.name}`,
-      url: s.url,
-      verified: true,
-      note: '第三方来源仅作交叉参考，不代表官方背书',
-    });
-  }
-
-  if (p.meta?.funding) {
-    ev.push({
-      type: 'funding',
-      label: '融资信息可核实',
-      url: o.website ?? '',
-      verified: isOfficialHost(o.website ?? ''),
-      note: p.meta.funding,
-    });
-  }
-
-  return ev;
+  return [...ev.values()];
 }
 
-/**
- * 来源是否「已验证」。
- *
- * 门槛（对应第 35 章验收标准「每个『已验证』项目至少存在 2 个可查看来源」）：
- * - 至少 2 条官方证据
- * - 至少来自 2 个不同域名（保证来源独立）
- * 仅靠第三方聚合站收录 + 一个官网链接，不足以认定为「已验证」。
- */
 export function isProjectVerified(p: AirdropProject): boolean {
-  // 只统计「官方」类证据：第三方聚合站收录不能替代官方证据
-  // （对应第 27 章不变量 4：第三方页面提供的链接不能自动被认为是官方链接）
-  const officialEvidence = p.evidence.filter(
-    (e) => e.verified && OFFICIAL_EVIDENCE_TYPES.has(e.type),
-  );
-  const independent = new Set(
-    officialEvidence.map((e) => {
-      try {
-        return new URL(e.url).hostname;
-      } catch {
-        return e.url;
-      }
-    }),
-  );
-  return officialEvidence.length >= 2 && independent.size >= 2;
+  const official = p.evidence.filter(e => isEvidenceVerified(e) &&
+    ['official_website', 'official_announcement', 'official_docs', 'official_github', 'quest_space'].includes(e.type));
+  return new Set(official.map(e => e.url)).size >= 2;
 }
-
-
-/** 可视为「官方」的证据类型 */
-const OFFICIAL_EVIDENCE_TYPES = new Set<Evidence['type']>([
-  'official_website',
-  'official_announcement',
-  'official_docs',
-  'official_github',
-  'quest_space',
-]);
 
 export function verifyAll(projects: AirdropProject[]): AirdropProject[] {
-  return projects.map((p) => {
-    const evidence = buildEvidence(p);
-    return { ...p, evidence };
-  });
+  return projects.map(p => ({ ...p, evidence: buildEvidence(p) }));
 }

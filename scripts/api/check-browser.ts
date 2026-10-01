@@ -1,0 +1,94 @@
+import assert from 'node:assert/strict';
+import { randomBytes, createHash } from 'node:crypto';
+import { mkdtemp, readFile, rm, mkdir } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { chromium } from 'playwright';
+import { createApiServer } from './server';
+import { createStore } from './store';
+import { createXService } from './service';
+import { createXJobs } from './x-jobs';
+import { failure, type XClient } from './x-client';
+
+const root = process.cwd(); const directory = await mkdtemp(path.join(tmpdir(), 'x-browser-'));
+const artifacts = path.join(root, '.cache/x-api-check'); await mkdir(artifacts, { recursive: true });
+const before = createHash('sha256').update(await readFile('data/airdrops.json')).digest('hex');
+const dataset = JSON.parse(await readFile('data/airdrops.json', 'utf8')); const slug = dataset.projects[0].slug;
+let now = Date.now(); let detectionDelay = 0; let savedTokenRejected = false;
+const store = await createStore(directory, randomBytes(32), () => now);
+const client: XClient = {
+  async test(token) { await new Promise(r => setTimeout(r, detectionDelay)); if (token === 'wrong-token' || savedTokenRejected) throw failure('invalid_token', '访问凭据无效，请修改 Bearer Token。'); },
+  async readAccount(_token, handle, signal) {
+    await new Promise<void>((resolve, reject) => { const timer = setTimeout(resolve, 7000); signal?.addEventListener('abort', () => { clearTimeout(timer); reject(failure('interrupted', '任务取消')); }, { once: true }); });
+    return { handle, posts: [{ id: '123456789', text: 'Browser verified airdrop snapshot — 端到端模拟推文', url: `https://x.com/${handle}/status/123456789`, publishedAt: new Date(now).toISOString(), airdropSignal: true }] };
+  },
+};
+const targets = [{ handle: 'demoproject', slugs: [slug] }];
+const service = createXService(store, client, targets, () => now); const jobs = createXJobs(store, client, targets, () => now); service.setJobs(jobs);
+const options = { origin: 'http://127.0.0.1', production: false, distDirectory: path.join(root, 'dist') };
+const server = createApiServer(service, store, options);
+await new Promise<void>((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
+options.origin = `http://127.0.0.1:${(server.address() as { port: number }).port}`;
+const browser = await chromium.launch({ headless: true, executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH });
+try {
+  const a = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const b = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  for (const context of [a, b]) await context.addInitScript(() => localStorage.setItem('dropscope.onboarding.v1', '1'));
+  const page = await a.newPage(); const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
+  await page.goto(options.origin + '/#/latest');
+  if (await page.getByText('跳过引导', { exact: true }).isVisible()) await page.getByText('跳过引导', { exact: true }).click();
+  await page.getByRole('link', { name: '设置', exact: true }).click();
+  await page.getByRole('heading', { name: 'X API 配置' }).waitFor();
+  await page.locator('#x-token').fill('browser-test-token'); await page.getByRole('button', { name: '保存并检测', exact: true }).click();
+  await page.getByText('已配置', { exact: true }).waitFor();
+  now += 61_000; detectionDelay = 3500;
+  await page.getByRole('button', { name: '重新检测', exact: true }).click();
+  await page.getByText('账号查询与推文读取均通过检测。', { exact: true }).waitFor(); detectionDelay = 0;
+  await page.getByText(/本轮 X 抓取完成/).waitFor({ timeout: 15_000 });
+  assert.equal(await page.locator('#x-token').inputValue(), '');
+  await page.screenshot({ path: path.join(artifacts, 'settings-desktop.png'), fullPage: true });
+  const mobile = await b.newPage(); mobile.on('pageerror', e => errors.push(e.message));
+  await mobile.goto(options.origin + '/#/settings'); await mobile.getByText('未配置', { exact: true }).waitFor();
+  assert(await mobile.getByRole('link', { name: '设置', exact: true }).isVisible());
+  assert(await mobile.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  await mobile.screenshot({ path: path.join(artifacts, 'settings-mobile.png'), fullPage: true });
+  await page.reload(); await page.getByText('已配置', { exact: true }).waitFor();
+  now += 61_000;
+  await page.locator('#x-token').fill('wrong-token'); await page.getByRole('button', { name: '保存并检测', exact: true }).click();
+  await page.getByText('访问凭据无效，请修改 Bearer Token。', { exact: true }).waitFor();
+  assert(await page.getByText('已配置', { exact: true }).isVisible());
+  const storage = await page.evaluate(() => JSON.stringify({ local: { ...localStorage }, session: { ...sessionStorage } })); assert(!storage.includes('browser-test-token'));
+  await page.locator('#x-token').fill('');
+  savedTokenRejected = true; now += 61_000;
+  await page.getByRole('button', { name: '重新检测', exact: true }).click();
+  await page.getByText('访问凭据无效，请修改 Bearer Token。', { exact: true }).waitFor();
+  await page.reload(); await page.getByText('访问凭据无效，请修改 Bearer Token。', { exact: true }).waitFor({ timeout: 10_000 });
+  assert.equal(await page.getByText(/本轮 X 抓取完成/).count(), 0);
+  savedTokenRejected = false; now += 61_000;
+  await page.getByRole('button', { name: '重新检测', exact: true }).click();
+  await page.getByText('账号查询与推文读取均通过检测。', { exact: true }).waitFor();
+  await page.getByRole('link', { name: '返回空投列表' }).click();
+  await page.getByRole('heading', { name: '我的 X 最新动态' }).waitFor();
+  await page.getByText('Browser verified airdrop snapshot — 端到端模拟推文', { exact: true }).waitFor();
+  await page.screenshot({ path: path.join(artifacts, 'personal-updates.png'), fullPage: false });
+  await page.goto(options.origin + `/#/project/${slug}`);
+  await page.getByRole('heading', { name: '这个项目的 X 动态' }).waitFor();
+  await page.goto(options.origin + '/#/settings'); now += 61_000;
+  await page.getByRole('button', { name: '更新我的 X 情报', exact: true }).click();
+  await page.getByRole('button', { name: '删除配置', exact: true }).click();
+  await page.getByText('未配置', { exact: true }).waitFor();
+  await page.waitForTimeout(1800); await page.reload(); await page.getByText('未配置', { exact: true }).waitFor();
+  assert.equal((await (await page.request.get(options.origin + '/api/x/result')).json()).data.accounts.length, 0);
+  await mobile.route('**/data/airdrops.json', route => route.fulfill({ status: 404, body: '' }));
+  await mobile.goto(options.origin + '/#/latest'); await mobile.reload(); await mobile.getByRole('heading', { name: '项目列表暂时无法加载' }).waitFor();
+  await mobile.getByRole('link', { name: '设置', exact: true }).click(); await mobile.getByRole('heading', { name: 'X API 配置' }).waitFor();
+  await mobile.route('**/api/x/**', route => route.fulfill({ status: 200, contentType: 'text/html', body: '<html>static only</html>' }));
+  await mobile.reload(); await mobile.getByText(/当前部署未接入配置后台/).first().waitFor();
+  assert(await mobile.getByRole('button', { name: '保存并检测', exact: true }).isDisabled());
+  for (const pathname of ['/.private/x/master.key', '/@fs/private/master.key']) assert.equal((await page.request.get(options.origin + pathname)).status(), 403);
+  assert.equal(createHash('sha256').update(await readFile('data/airdrops.json')).digest('hex'), before);
+  assert.deepEqual(errors, []);
+  console.log('浏览器验收通过：桌面、窄屏、自动抓取、会话隔离、刷新保留、删除竞态、静态降级、列表失败恢复、私有路径和公共数据隔离。');
+} finally {
+  await browser.close(); server.closeAllConnections(); await new Promise<void>(r => server.close(() => r())); await rm(directory, { recursive: true, force: true });
+}

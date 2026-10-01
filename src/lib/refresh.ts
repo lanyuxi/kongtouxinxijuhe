@@ -1,3 +1,5 @@
+import { isListProject } from './project-shape';
+import { FRESHNESS_WARN_HOURS } from './labels';
 /**
  * 「一键更新」前端逻辑。
  *
@@ -11,12 +13,12 @@
  *   3. 抓取逻辑会分裂成两份（前端一份、流水线一份），长期必然不一致。
  */
 
-import type { LiveIndex, ListDataset, LogoMap, RefreshStatus } from './types';
+import type { LiveIndex, ListDataset, LogoMap, RefreshStatus, Publication } from './types';
 
 const BASE = import.meta.env.BASE_URL || './';
 
 /** 超过这个分钟数就认为数据已过期（与定时任务的 10 分钟对齐，留一点余量） */
-export const STALE_MINUTES = 15;
+export const STALE_MINUTES = FRESHNESS_WARN_HOURS * 60;
 
 /** 轮询参数：最多等 5 分钟，每 5 秒一次 */
 const POLL_INTERVAL_MS = 5_000;
@@ -32,6 +34,10 @@ async function fetchNoCache<T>(file: string): Promise<T | null> {
   }
 }
 
+export async function loadPublication(): Promise<Publication | null> {
+  return fetchNoCache<Publication>('publication.json');
+}
+
 export async function loadLiveIndex(): Promise<LiveIndex | null> {
   return fetchNoCache<LiveIndex>('live/live-index.json');
 }
@@ -41,7 +47,8 @@ export async function loadRefreshStatus(): Promise<RefreshStatus | null> {
 }
 
 export async function reloadDataset(): Promise<ListDataset | null> {
-  return fetchNoCache<ListDataset>('airdrops.json');
+  const dataset = await fetchNoCache<ListDataset>('airdrops.json');
+  return dataset && typeof dataset.updated_at === 'string' && Array.isArray(dataset.projects) && dataset.projects.every(isListProject) ? dataset : null;
 }
 
 /**
@@ -66,7 +73,7 @@ export async function reloadLogoMap(): Promise<LogoMap | null> {
  * 与 lib/data.ts 的 loadDataset 使用同一套规则，避免两处实现漂移。
  */
 export function attachLogos<T extends ListDataset>(dataset: T, logoMap: LogoMap | null): T {
-  if (!logoMap || typeof logoMap.logos !== 'object') return dataset;
+  if (!logoMap || !logoMap.logos || typeof logoMap.logos !== 'object' || Array.isArray(logoMap.logos) || !Object.values(logoMap.logos).every(file => typeof file === 'string')) return dataset;
   const logos = logoMap.logos;
   return {
     ...dataset,
@@ -150,7 +157,7 @@ export function describeRefreshOutcome(input: {
       ? '已重新加载最新已发布数据（未触发新的抓取）'
       : '已重新加载数据，内容未发生变化（未触发新的抓取）';
   }
-  if (!changed) return '抓取任务已提交，本轮数据无内容变化';
+  if (!changed) return '抓取任务已提交，尚未确认新的检查或发布结果；继续保留已发布数据';
   return dataChanged ? '已更新到最新数据' : '已重新加载最新数据（本轮无内容变化）';
 }
 
@@ -209,6 +216,7 @@ export async function runRefresh(
 
   const deadline = Date.now() + POLL_TIMEOUT_MS;
   let index = await loadLiveIndex();
+  let failure: string | undefined;
 
   // 只有「触发成功」才值得等待；否则直接走快路径拿最新产物
   if (trigger.triggered) {
@@ -222,7 +230,8 @@ export async function runRefresh(
       }
       const status = await loadRefreshStatus();
       if (status?.state === 'failed') {
-        onProgress?.(`抓取失败：${status.error ?? '未知原因'}`);
+        failure = `抓取失败：${status.error ?? '未知原因'}，保留已发布数据`;
+        onProgress?.(failure);
         break;
       }
       onProgress?.('抓取任务运行中…');
@@ -250,7 +259,10 @@ export async function runRefresh(
     changed,
     dataChanged: dataChanged !== false,
   });
-  if (summary && summary !== '无实质变化') message += `：${summary}`;
+  if (summary && changed && summary !== '无实质变化') message += `：${summary}`;
+  if (failure) message = failure;
+  else if (!dataset) message = '已发布数据加载失败，请稍后重试';
+  else if (!trigger.triggered && trigger.detail.startsWith('触发失败')) message = `${trigger.detail}；已重新加载原有发布数据`;
 
   return { dataset, index, changed, message, details };
 }

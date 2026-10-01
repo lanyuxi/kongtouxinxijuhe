@@ -3,7 +3,8 @@
  *
  * 对应方案文档第 27 章不变量 4：
  * 第三方页面提供的链接不能自动被认为是官方链接，必须经过交叉验证。
- * 因此官方链接唯一可信来源是 data/seed/official-profiles.json（人工核实）。
+ * data/seed/official-profiles.json 保存人工补充线索；具体证据仍须携带核验记录，
+ * 不能仅因链接被写进档案就视为已核实。
  */
 
 import { readFile } from 'node:fs/promises';
@@ -35,7 +36,7 @@ export function applyProfile(p: AirdropProject, profile?: Profile): AirdropProje
   if (!profile) return p;
   return {
     ...p,
-    official: { ...profile.official, ...p.official },
+    official: { ...p.official, ...profile.official },
     meta: { ...profile.meta, ...p.meta },
     tasks: profile.tasks?.length ? profile.tasks : p.tasks,
     requirements: profile.requirements?.length ? profile.requirements : p.requirements,

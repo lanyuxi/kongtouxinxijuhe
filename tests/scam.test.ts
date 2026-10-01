@@ -17,9 +17,9 @@ import {
 } from '../src/lib/scam';
 
 const OFFICIAL = buildOfficialDomains([
-  { slug: 'uniswap-v3', name: 'Uniswap V3', official: { website: 'https://app.uniswap.org' } },
-  { slug: 'aave-v3', name: 'Aave V3', official: { website: 'https://aave.com/' } },
-  { slug: 'layerzero', name: 'LayerZero', official: { website: 'https://layerzero.network' } },
+  { slug: 'uniswap-v3', name: 'Uniswap V3', official: { website: 'https://app.uniswap.org' }, verified_official_website: 'https://app.uniswap.org' },
+  { slug: 'aave-v3', name: 'Aave V3', official: { website: 'https://aave.com/' }, verified_official_website: 'https://aave.com/' },
+  { slug: 'layerzero', name: 'LayerZero', official: { website: 'https://layerzero.network' }, verified_official_website: 'https://layerzero.network' },
 ]);
 
 describe('域名工具', () => {
@@ -118,7 +118,7 @@ describe('域名自查结论', () => {
 
   it('官方域名映射从项目构建，忽略无官网项目', () => {
     const map = buildOfficialDomains([
-      { slug: 'a', name: 'A', official: { website: 'https://a.com' } },
+      { slug: 'a', name: 'A', official: { website: 'https://a.com' }, verified_official_website: 'https://a.com' },
       { slug: 'b', name: 'B' },
       { slug: 'c', name: 'C', official: {} },
     ]);

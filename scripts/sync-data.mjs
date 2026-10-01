@@ -28,6 +28,7 @@ const ENTRIES = [
   'airdrops.json',
   'source-health.json',
   'refresh-status.json',
+  'translation-pending.json',
   'logo-map.json',
   'details',
   'live',

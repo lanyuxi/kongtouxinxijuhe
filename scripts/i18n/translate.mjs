@@ -1,3 +1,4 @@
+import REVIEWED from './reviewed.zh.json' with { type: 'json' };
 /**
  * 教程中文化：把数据源抓到的英文教程标题 / 正文转成面向中文用户的文案。
  *
@@ -27,6 +28,19 @@ import {
 /** 中文判定：只要含有汉字就认为已是中文文案 */
 export function hasChinese(text) {
   return /[\u4e00-\u9fa5]/.test(String(text ?? ''));
+}
+
+/** 保守检测未译英文句段；保留短按钮名、代币、域名等必要对照。 */
+export function needsTranslation(text) {
+  const raw = String(text ?? '').trim();
+  if (!raw) return false;
+  if (!hasChinese(raw)) return true;
+  const withoutLinks = raw.replace(/https?:\/\/[^\s]+/g, '');
+  const withoutLabels = withoutLinks.replace(/[（(]([^）)]*)[）)]/g, (all, label) =>
+    !hasChinese(label) && label.trim().split(/\s+/).length <= 4 ? '' : all);
+  if (/\b(?:deposit|send|approve|stake|trade|withdraw|buy|sell|bridge)\b[^\u4e00-\u9fff。；\n]{0,70}\b\d+/i.test(withoutLabels)) return true;
+  const phrases = withoutLabels.match(/\b[A-Za-z][A-Za-z'-]*(?:[ \t]+(?:[A-Za-z][A-Za-z'-]*|\$?\d+(?:[.,]\d+)*)){3,}/g) ?? [];
+  return phrases.some(p => /\b(?:the|and|with|your|to|in|for|of|is|are|this|that)\b/i.test(p));
 }
 
 /**
@@ -104,7 +118,7 @@ export function restoreTerms(text, tokens) {
  *   术语保护改为在译文上做**修正映射**（见 applyGlossary），效果相同但更稳。
  */
 export function cacheKey(text) {
-  return String(text ?? '').replace(/\\s+/g, ' ').trim();
+  return String(text ?? '').replace(/\s+/g, ' ').trim();
 }
 
 /**
@@ -150,7 +164,7 @@ function finalize(text) {
 export function localizeText(text) {
   const raw = String(text ?? '').trim();
   if (!raw) return { zh: '', en: undefined };
-  if (hasChinese(raw)) return { zh: raw, en: undefined };
+  if (!needsTranslation(raw)) return { zh: raw, en: undefined };
   /**
    * 顺序固定，缺一不可：
    *   1. `translateWithCache(raw)` —— 查构建期落盘的机器译文；
@@ -164,7 +178,7 @@ export function localizeText(text) {
    *   单测「缓存未命中时回退英文原文」那条断言恰好也覆盖这种情况，
    *   所以它当时仍然是绿的 —— 这正是它危险的地方。
    */
-  const translated = translateWithCache(raw);
+  const translated = REVIEWED[cacheKey(raw)] ?? translateWithCache(raw);
   const zh = applyGlossary(translated, raw);
   if (!hasChinese(zh)) return { zh: raw, en: undefined };
   return { zh, en: raw };

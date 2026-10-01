@@ -16,6 +16,7 @@ import type {
 export const STATUS_LABEL: Record<AirdropStatus, string> = {
   new: '新发现',
   potential: '潜在空投',
+  pending: '状态待核实',
   confirmed: '已确认',
   claim_live: '开放领取',
   ended: '已结束',
@@ -24,6 +25,7 @@ export const STATUS_LABEL: Record<AirdropStatus, string> = {
 export const STATUS_STYLE: Record<AirdropStatus, string> = {
   new: 'border-brand/30 bg-brand-wash text-brand',
   potential: 'border-line bg-white text-ink-soft',
+  pending: 'border-warn/30 bg-warn-wash text-warn',
   confirmed: 'border-ok/30 bg-ok-wash text-ok',
   claim_live: 'border-warn/30 bg-warn-wash text-warn',
   ended: 'border-line bg-page text-ink-faint',

@@ -175,7 +175,7 @@ describe('阶段顺序：Guide/Cost → Score → FAQ/Risks', () => {
     expect(projectDigest(p2)).toBe(projectDigest(p3));
   });
 
-  it('成本模型在评分前已就绪，投入产出比依据真实步骤时长', () => {
+  it('资料核对不伪造操作时长，投入产出比明确无法评估', () => {
     const p1 = run(makeProject());
     // 教程存在 → 成本时长由步骤推导 → ROI 项能给出基于真实时长的理由
     expect(p1.guide.length).toBeGreaterThan(0);
@@ -183,7 +183,8 @@ describe('阶段顺序：Guide/Cost → Score → FAQ/Risks', () => {
       p1.guide.reduce((s, g) => s + g.minutes, 0),
     );
     const roi = p1.scores.valueItems.find((i) => i.key === 'value.roi');
-    expect(roi?.reason).toContain(String(p1.cost.time_minutes));
+    expect(p1.cost.time_minutes).toBe(0);
+    expect(roi?.reason).toContain('无法评估');
   });
 
   it('FAQ 与风险文案读取的是本轮评分，而不是上一轮', () => {

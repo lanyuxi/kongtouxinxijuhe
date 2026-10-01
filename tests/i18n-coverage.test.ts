@@ -564,7 +564,7 @@ describe('全量数据：用户可见文案必须含中文', () => {
       for (const g of p.guide ?? []) {
         // 步骤的可追溯性字段不能被本地化顺手改掉
         if (g.source_verified && !g.source_url) offenders.push(`${p.slug}: 步骤 ${g.step} 假核实`);
-        if (!['low', 'medium', 'high', 'critical'].includes(g.risk)) {
+        if (!['low', 'medium', 'high', 'critical', 'unknown'].includes(g.risk)) {
           offenders.push(`${p.slug}: 步骤 ${g.step} 风险等级异常`);
         }
       }

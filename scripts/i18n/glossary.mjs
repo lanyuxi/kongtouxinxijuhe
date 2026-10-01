@@ -139,6 +139,10 @@ export const TERM_MAP = [
  * 只登记「会影响用户操作判断」的错译，不做无意义润色。
  */
 export const HUMAN_FIX = {
+  "Your balance splits into Task XP, Referral XP and a running total. Check after each quest to confirm credited points, since social verification sometimes needs a refresh.":
+    "余额分为任务经验值（Task XP）、邀请经验值（Referral XP）和累计总额。每次完成任务后检查积分是否入账；社交验证有时需要刷新。",
+  "Your balance splits into Task XP, Referral XP and a running total. Check after each quest to confirm points registered, since social verifications sometimes need a refresh.":
+    "余额分为任务经验值（Task XP）、邀请经验值（Referral XP）和累计总额。每次完成任务后检查积分是否入账；社交验证有时需要刷新。",
   /**
    * ⚠️ 键必须是**缓存里的原始机器译文**。
    *
@@ -276,7 +280,7 @@ export const HUMAN_FIX = {
   "Open the Official Claim Portal":
     "打开官方领取 portal",
   "Open the Referrals tab and click “Activate”. Referrals pay dollar rewards on top of points, and your network’s trading counts toward your Gems.":
-    "打开推荐标签页并单击“激活”。推荐除了积分之外还会支付美元奖励，你网络的交易也计入你的 Gems。",
+    "原文称打开邀请（Referrals）页签并点击激活（Activate），邀请除积分外还提供美元奖励，被邀请网络的交易计入 Gems。奖励规则待官方核验。",
   "Open the XDP Genesis Airdrop Portal":
     "打开 $XDP 创世空投 portal",
   "Passive staking earns nothing. Open the active proposals in the governance portal and vote on each one. Jupiter rewards participation rather than accuracy, so voting on the losing side still counts toward your allocation.":

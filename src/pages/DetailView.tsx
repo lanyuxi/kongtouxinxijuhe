@@ -1,3 +1,7 @@
+import { feedbackLink } from '../lib/feedback';
+import { canExecuteGuide } from '../lib/guide';
+import { isEvidenceVerified, verifiedWebsite } from '../lib/evidence';
+import { capitalLabel, gasLabel, hasKnownCost, stepCostLabel } from '../lib/cost';
 import { useEffect, useMemo, useState } from 'react';
 import type { AirdropProject } from '../lib/types';
 import {
@@ -18,6 +22,8 @@ import { ScoreBreakdown } from '../components/ScoreCard';
 import { ProjectLogo } from '../components/ProjectLogo';
 import type { ProgressStatus } from '../lib/store';
 import { PROGRESS_LABEL } from '../lib/store';
+import { XUpdates } from '../components/XUpdates';
+import type { XResult } from '../lib/x-api-types';
 
 const ACTION_STYLE: Record<AirdropProject['recommendation']['action'], string> = {
   participate: 'border-ok/30 bg-ok-wash',
@@ -55,16 +61,27 @@ function safeHost(url?: string): string {
   }
 }
 
+function jumpTo(id: string) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  if (target instanceof HTMLDetailsElement) target.open = true;
+  const header = document.querySelector('header')?.getBoundingClientRect().height ?? 0;
+  const shortcuts = window.innerWidth < 1280 ? document.querySelector('[aria-label="详情快捷导航"]')?.getBoundingClientRect().height ?? 0 : 0;
+  window.scrollTo({ top: window.scrollY + target.getBoundingClientRect().top - header - shortcuts - 16, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });
+}
+
 const TOC = [
-  { id: 'decision', label: '系统结论' },
   { id: 'cost', label: '成本与难度' },
-  { id: 'evidence', label: '证据与来源' },
-  { id: 'meta', label: '项目详情' },
   { id: 'guide', label: '参与教程' },
   { id: 'exit', label: '做完收尾' },
   { id: 'risks', label: '注意事项' },
+  { id: 'decision', label: '评分说明' },
+  { id: 'evidence', label: '证据与来源' },
+  { id: 'meta', label: '项目详情' },
   { id: 'faq', label: '常见问题' },
-  { id: 'official', label: '官方资料' },
+  { id: 'official', label: '项目资料' },
 ];
 
 export function DetailView({
@@ -76,16 +93,20 @@ export function DetailView({
   onSetProgress,
   onToggleStep,
   onBack,
+  onReviewGuide,
+  xResult,
 }: {
   project: AirdropProject;
   favorited: boolean;
   /** 全站样本量：用于把「相对分位」说明成「本批 N 个项目中的位置」 */
   percentiles?: { authenticity?: number; value?: number; total: number };
-  progress?: { status: ProgressStatus; completed_steps: number[] };
+  progress?: { status: ProgressStatus; completed_steps: number[]; needs_review?: boolean };
   onToggleFavorite: (slug: string) => void;
   onSetProgress: (slug: string, s: ProgressStatus) => void;
   onToggleStep: (slug: string, step: number) => void;
   onBack: () => void;
+  onReviewGuide?: () => void;
+  xResult?: XResult;
 }) {
   const [showAuth, setShowAuth] = useState(false);
   const [showValue, setShowValue] = useState(false);
@@ -94,26 +115,31 @@ export function DetailView({
   /** 是否展开英文原文对照（issue #28）：默认收起，避免中文站里出现大段英文 */
   const [showOriginal, setShowOriginal] = useState(false);
 
+  const executable = canExecuteGuide(p);
   const done = progress?.completed_steps ?? [];
   const officialEntries = useMemo(
     () =>
       (
         [
-          ['官网', p.official.website],
+          ['项目页面', p.official.website],
           ['X', p.official.x],
           ['Discord', p.official.discord],
-          ['Docs', p.official.docs],
+          ['项目文档', p.official.docs],
           ['GitHub', p.official.github],
           ['Galxe', p.official.galxe],
         ] as const
-      ).filter(([, url]) => !!url),
-    [p.official],
+      ).filter(([, url]) => !!url).map(([label, url]) => [
+        `${label}（${p.evidence.some(e => e.url === url && isEvidenceVerified(e)) ? '已核验' : '候选，未核实'}）`, url,
+      ] as const),
+    [p.official, p.evidence],
   );
 
   const stale = isStale(p.last_checked_at);
   // 难度由可信的结构化字段推导，不再用模板编造的耗时（见 lib/difficulty.ts）
-  const difficulty = difficultyOf(p);
-  const verifiedCount = p.evidence.filter((e) => e.verified).length;
+  const difficulty = hasKnownCost(p.cost) && p.guide.length > 0 &&
+    p.guide.every(g => g.needs_signature !== null && g.risk !== 'unknown') ? difficultyOf(p) : null;
+  const verifiedCount = p.evidence.filter(isEvidenceVerified).length;
+  const trustedWebsite = verifiedWebsite(p);
   const sourceCount = new Set(
     p.evidence
       .filter((e) => e.url)
@@ -197,11 +223,12 @@ export function DetailView({
               <StatusBadge status={p.status} />
               <RiskBadge risk={p.scores.risk} withLabel />
             </div>
+              {p.status_note && <p className="mt-3 text-sm text-warn">{p.status_note}</p>}
             {/* 一句话简介：优先展示中文（issue #28）。
                 来源方给的是英文长句，这里已由构建期中文化；
                 原文以「原文对照」折叠保留，翻译失真时用户可自行核对。 */}
             <div className="mt-3 flex flex-wrap items-center gap-3">
-              <p className="max-w-3xl text-lg text-ink-soft">{p.tagline || '暂无项目简介'}</p>
+              <p className="max-w-3xl text-lg text-ink-soft">{p.status === 'pending' && '来源简介（待核实）：'}{p.tagline || '暂无项目简介'}</p>
               {p.tagline_en && (
                 <button
                   type="button"
@@ -250,15 +277,16 @@ export function DetailView({
               </p>
             )}
 
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <button type="button" className="btn-primary" onClick={() => jumpTo('guide')}>{executable ? '查看参与教程' : '查看研究清单'} ↓</button>
               {p.official.website && (
                 <a
-                  className="btn-primary btn-lg"
+                  className="btn-ghost"
                   href={p.official.website}
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  前往官方活动 ↗
+                  {trustedWebsite ? '查看已核验官网 ↗' : '查看候选项目页面（未核实）↗'}
                 </a>
               )}
               <button
@@ -300,13 +328,13 @@ export function DetailView({
               >
                 {!favorited && <option value="none">{PROGRESS_LABEL.none}</option>}
                 {(['saved', 'preparing', 'doing', 'done'] as const).map((s) => (
-                  <option key={s} value={s}>
+                  <option key={s} value={s} disabled={s === 'done' && progress?.needs_review}>
                     {PROGRESS_LABEL[s]}
                   </option>
                 ))}
               </select>
               <p className="mt-2.5 text-sm text-ink-faint">
-                {favorited ? '进度仅保存在你的浏览器本地。' : '点击「☆ 收藏」后可记录进度。'}
+                {favorited ? (progress?.needs_review ? '教程变化，请先复核再标记完成。' : '进度仅保存在你的浏览器本地。') : '点击「☆ 收藏」后可记录进度。'}
               </p>
             </div>
 
@@ -319,13 +347,18 @@ export function DetailView({
                 <span className="text-base text-ink-soft">等级 {p.scores.grade}</span>
               </p>
               <p className="mt-3 text-base leading-relaxed text-ink">{p.recommendation.summary}</p>
+              <p className="mt-3 text-sm text-ink-soft">{riskBasis(p)}</p>
+              <p className="mt-2 text-sm text-ink-soft">{verifiedCount ? `已有 ${verifiedCount} 条核验证据，具体日期与依据见证据记录。` : '尚无已核验官方证据，资格与奖励以官方确认为准。'}</p>
             </div>
           </div>
         </div>
       </header>
 
+      <nav aria-label="详情快捷导航" className="sticky top-[8.5rem] z-20 mt-4 grid grid-cols-4 gap-1 rounded-xl border border-line bg-white p-2 xl:hidden">
+        {[['guide','教程'],['cost','成本'],['evidence','证据'],['risks','注意事项']].map(([id,label]) => <button key={id} className="btn-quiet !px-1" onClick={() => jumpTo(id)}>{label}</button>)}
+      </nav>
       <div className="detail-grid mt-7">
-        {/* ---------- 左栏：本页目录 / 官方资料 / 再次确认结论（宽屏下位于左侧常驻） ---------- */}
+        {/* ---------- 左栏：本页目录（宽屏下位于左侧常驻） ---------- */}
         <aside className="detail-aside">
           <nav className="panel hidden !p-6 xl:block" aria-label="页面目录">
             <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
@@ -338,7 +371,7 @@ export function DetailView({
                     href={`#${t.id}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      document.getElementById(t.id)?.scrollIntoView({ behavior: 'smooth' });
+                      jumpTo(t.id);
                     }}
                     className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-base no-underline transition-all duration-200 ${
                       activeId === t.id
@@ -359,62 +392,316 @@ export function DetailView({
             </ul>
           </nav>
 
-          <div className="panel !p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
-              官方资料
-            </h2>
-            {officialEntries.length === 0 ? (
-              <p className="mt-3 text-sm text-ink-soft">尚未核实到官方链接。</p>
-            ) : (
-              <ul className="mt-4 flex flex-col gap-2.5">
-                {officialEntries.map(([label, url]) => (
-                  <li key={label}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="flex items-center justify-between gap-3 rounded-xl border border-line-soft bg-white px-4 py-3 text-base no-underline text-ink transition-all duration-200 hover:-translate-y-px hover:border-brand/30 hover:bg-brand-50 hover:text-brand-700"
-                    >
-                      {label}
-                      <span className="text-ink-faint">↗</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <p className="mt-4 text-sm text-ink-faint">请核对域名后再操作，谨防钓鱼站点。</p>
-          </div>
-
-          <div className="panel !p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-faint">
-              再次确认结论
-            </h2>
-            <p
-              className={`mt-4 rounded-xl border px-5 py-4 text-xl font-semibold tracking-tight ${ACTION_STYLE[p.recommendation.action]} ${ACTION_TONE[p.recommendation.action]}`}
-            >
-              {ACTION_LABEL[p.recommendation.action]}
-            </p>
-            <dl className="mt-4 flex flex-col gap-2 text-sm">
-              <div className="flex items-center justify-between">
-                <dt className="text-ink-soft">真实性</dt>
-                <dd className="metric">{p.scores.authenticity} / 100</dd>
-              </div>
-              <div className="flex items-center justify-between">
-                <dt className="text-ink-soft">参与价值</dt>
-                <dd className="metric">{p.scores.value} / 100</dd>
-              </div>
-              <div className="flex items-center justify-between">
-                <dt className="text-ink-soft">风险</dt>
-                <dd className="metric">{RISK_LABEL[p.scores.risk]}</dd>
-              </div>
-            </dl>
-            <p className="mt-4 text-sm text-ink-faint">三项评分相互独立，不存在「总分」。</p>
-          </div>
         </aside>
         {/* ---------- 右栏：正文内容（宽屏下位于右侧，空间更宽） ---------- */}
         <div className="detail-main flex min-w-0 flex-col gap-7">
+          {xResult && <XUpdates result={xResult} slug={p.slug} />}
+          {/* 3. 成本与难度 */}
+          <section id="cost" className="panel">
+            <h2 className="panel-title">预计成本与操作难度</h2>
+            {/* 成本四要素：横排 4 格，用细竖线分隔。
+                这里刻意不用卡片：成本是一个整体判断，拆成四张卡片会让人以为是四个独立结论。 */}
+            <dl className="mt-6 grid grid-cols-2 gap-y-5 sm:grid-cols-4 sm:divide-x sm:divide-line-soft">
+              <div className="kv sm:px-4 sm:first:pl-0">
+                <dt>预计资金</dt>
+                <dd className="metric !text-lg">
+                  {capitalLabel(p.cost)}
+                </dd>
+              </div>
+              <div className="kv sm:px-4">
+                <dt>预计 Gas</dt>
+                <dd className="metric !text-lg">{gasLabel(p.cost)}</dd>
+              </div>
+              <div className="kv sm:px-4">
+                <dt>预计时间</dt>
+                <dd className="metric !text-lg">{p.cost.time_minutes > 0 ? `${p.cost.time_minutes} 分钟` : '待核实'}</dd>
+              </div>
+              <div className="kv sm:px-4">
+                <dt>是否需要长期交互</dt>
+                <dd className="metric !text-lg">{p.cost.long_term ? '是，具体时长待核实' : '来源未说明'}</dd>
+              </div>
+            </dl>
+
+            <div className="inset mt-6 flex flex-col gap-3 px-6 py-5">
+              <p className="flex flex-wrap items-center gap-3 text-base text-ink">
+                {difficulty === null ? <span className="font-medium text-ink-soft">操作难度待核实</span> : <>
+                <span className="font-medium text-ink-soft">操作难度</span>
+                <span className="text-xl tracking-[0.15em] text-warn" aria-label={`操作难度 ${difficulty} / 5`}>
+                  {'★'.repeat(difficulty)}
+                  <span className="text-line">{'★'.repeat(5 - difficulty)}</span>
+                </span>
+                <span className="metric text-base">{difficulty} / 5</span>
+                <span className="chip border-line bg-page text-ink-soft">
+                  {DIFFICULTY_LABEL[difficulty]}
+                </span>
+                </>}
+              </p>
+              <p className="text-base text-ink-soft">{p.cost.summary}</p>
+              {p.cost.basis && <p className="text-sm text-ink-soft">成本依据：{p.cost.basis.note}（记录时间：{p.cost.basis.checked_at}） <a href={p.cost.basis.source_url} target="_blank" rel="noreferrer noopener" className="text-brand">查看来源 ↗</a></p>}
+              {p.requirements.length > 0 && (
+                <p className="text-base text-ink-soft">
+                  <span className="text-ink-faint">来源列出的准备条件（不是奖励资格）：</span>
+                  {p.requirements.join(' · ')}
+                </p>
+              )}
+            </div>
+          </section>
+
+          {/* 6. 新手参与教程（时间线布局） */}
+          <section id="guide" className="panel">
+            {!favorited && <p id="guide-record-hint" className="mb-4 text-sm text-ink-soft">先收藏后可记录步骤；收藏和进度仅保存在本机浏览器。</p>}
+            {progress?.needs_review && <div role="status" className="mb-4 rounded-xl border border-warn/30 bg-warn-wash p-4 text-sm text-warn">教程已变化或旧记录缺少版本，请重新核对步骤。可识别且未变化的步骤已保留，其他步骤需要重新检查。<button type="button" onClick={onReviewGuide} className="btn-ghost mt-3">确认已复核当前教程</button></div>}
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="panel-title">{executable ? '新手参与教程' : '研究资料与核对清单'}</h2>
+                {p.guide_source === 'sourced' ? (
+                  <span
+                    className="chip border-ok/30 bg-ok-wash text-ok"
+                    title="步骤来自数据源侧抓取到的官方 HowTo，可追溯到原始页面"
+                  >
+                    ✓ 官方来源步骤（活动另行核验）
+                  </span>
+                ) : p.guide_source === 'third_party' ? (
+                  <span
+                    className="chip border-warn/30 bg-warn-wash text-warn"
+                    title="步骤由第三方整理，内容与该项目的活动相关，但没有可追溯到官方页面的来源链接"
+                  >
+                    ⚠ 第三方整理（非官方）
+                  </span>
+                ) : (
+                  <span
+                    className="chip border-warn/30 bg-warn-wash text-warn"
+                    title="数据源未提供官方步骤，以下仅用于资料核对"
+                  >
+                    ⚠ 资料核对清单（无官方教程）
+                  </span>
+                )}
+              </div>
+              <span className="chip border-line bg-page text-ink-soft">
+                {executable ? '已完成' : p.guide_source === 'template' ? '已核对' : '研究记录'} <strong className="metric text-ink">{done.length}</strong> / {p.guide.length} 步
+              </span>
+            </div>
+
+            {/* 模板教程必须显式声明「这不是官方要求的具体步骤」，
+                否则用户会把通用流程误当成项目方规定的操作，产生错误预期。 */}
+            {p.guide_source === 'template' ? (
+              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
+                该项目尚无可核验的官方教程。以下是资料核对清单，
+                <strong className="font-semibold">协议用途不代表空投条件</strong>。
+                活动、资格与期限未核实前，暂停资金操作。
+
+              </p>
+            ) : p.guide_source === 'third_party' ? (
+              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
+                以下步骤由<strong className="font-semibold">第三方整理</strong>，内容与该项目的活动相关，
+                但没有可追溯到项目官方页面的来源链接。
+                此处仅供研究核对，暂停按这些步骤存款、交易或授权。步骤顺序与细节请以
+                <strong className="font-semibold">官方页面 / 官方公告</strong>为准。
+              </p>
+            ) : (
+              <p className="mt-4 rounded-xl border border-ok/30 bg-ok-wash px-5 py-4 text-sm text-ok">
+                以下步骤来自数据源抓取到的官方 HowTo，每一步都可追溯到原始页面。
+              </p>
+            )}
+
+            {!executable && p.guide_source === 'sourced' && <p className="mt-4 text-sm text-warn">活动状态或中文内容待核实，暂不能作为可执行教程。</p>}
+            <dl className="mt-4 grid gap-2 text-sm text-ink-soft sm:grid-cols-3">
+              <div><dt>奖励资格</dt><dd>未收录经核验的完整条件</dd></div>
+              <div><dt>截止时间</dt><dd>待核实，请核对活动公告</dd></div>
+              <div><dt>完成标准</dt><dd>{executable ? '逐步核对官方反馈；不保证奖励' : '仅记录研究结果，不代表取得资格'}</dd></div>
+            </dl>
+            <p className="mt-3 text-sm text-ink-faint">外部项目页面可能使用英文；中文内容保留必要的原按钮名供对照。</p>
+            {/* 进度条 */}
+            <div className="mt-5 flex items-center gap-4">
+              <div className="h-2 w-full overflow-hidden rounded-full bg-page">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-brand-500 to-accent transition-all duration-500 ease-out"
+                  style={{ width: `${progressPct}%` }}
+                />
+              </div>
+              <span className="metric shrink-0 text-sm text-ink-soft">{progressPct}%</span>
+            </div>
+            <p className="mt-3 text-base text-ink-soft">
+              未验证步骤会明确标注。勾选状态保存在你的浏览器本地，不上传任何服务器。
+            </p>
+
+            <ol className="mt-7 flex flex-col">
+              {p.guide.map((g, i) => {
+                const isDone = done.includes(g.step);
+                const last = i === p.guide.length - 1;
+                return (
+                  <li key={g.step} className="relative flex gap-5 pb-7 last:pb-0">
+                    {/* 时间线轴 */}
+                    <div className="flex w-12 shrink-0 flex-col items-center">
+                      <span
+                        className={`grid h-12 w-12 place-items-center rounded-full border-2 text-lg font-semibold transition-colors ${
+                          isDone
+                            ? 'border-ok bg-ok text-white'
+                            : 'border-brand/25 bg-brand-50 text-brand'
+                        }`}
+                      >
+                        {isDone ? '✓' : g.step}
+                      </span>
+                      {!last && <span className="mt-2 w-px flex-1 bg-line" aria-hidden />}
+                    </div>
+
+                    <div
+                      className={`min-w-0 flex-1 rounded-2xl border px-6 py-6 transition-colors ${
+                        isDone ? 'border-ok/30 bg-ok-wash/40' : 'border-line-soft bg-page/50'
+                      }`}
+                    >
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="text-xs font-semibold tracking-wide text-brand">{executable || p.guide_source === 'template' ? '第' : '来源条目'} {g.step}{executable || p.guide_source === 'template' ? ' 步' : ''}</p>
+                          <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
+                            {g.title}
+                          </h3>
+                        </div>
+                        <label className="flex shrink-0 cursor-pointer items-center gap-2.5 rounded-xl border border-line bg-white px-4 py-2.5 text-base text-ink-soft transition-colors hover:border-brand/30 hover:text-brand-700">
+                          <input
+                            type="checkbox"
+                            aria-describedby={!favorited ? "guide-record-hint" : undefined}
+                            disabled={!favorited || g.content_status === 'pending_translation' || (!executable && p.guide_source !== 'template')}
+                            checked={isDone}
+                            onChange={() => onToggleStep(p.slug, g.step)}
+                            className="h-5 w-5 accent-[#2563EB]"
+                          />
+                          {g.content_status === 'pending_translation' ? '等待中文复核' : executable ? '已完成' : p.guide_source === 'template' ? '已核对' : '仅供研究'}
+                        </label>
+                      </div>
+
+                      <p className="mt-3.5 text-base leading-relaxed text-ink-soft">
+                        {!executable && p.guide_source === 'third_party' && <span className="font-medium">第三方描述（仅供核对）：</span>}{g.description}
+                      </p>
+
+                      {/* 英文原文对照（issue #28）。
+                          步骤原文来自官方 HowTo，翻译可能与人家的按钮名对不上；
+                          保留原文让用户能对照页面实际文字，避免「照着做却找不到按钮」。 */}
+                      {(g.original_title || g.original_description) && (
+                        <details className="group mt-3 rounded-xl border border-line-soft bg-white px-4 py-3">
+                          <summary className="cursor-pointer select-none text-sm font-medium text-ink-faint transition-colors hover:text-brand">
+                            查看英文原文对照
+                          </summary>
+                          <div className="mt-3 border-t border-line-soft pt-3">
+                            {g.original_title && (
+                              <p className="text-sm font-semibold text-ink-soft">{g.original_title}</p>
+                            )}
+                            {g.original_description && (
+                              <p className="mt-2 text-sm leading-relaxed text-ink-faint">
+                                {g.original_description}
+                              </p>
+                            )}
+                            <p className="mt-3 text-xs text-ink-faint">
+                              提示：以上为数据源提供的英文原文，实际以官方页面文字为准。
+                            </p>
+                          </div>
+                        </details>
+                      )}
+
+                      <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line-soft pt-5 sm:grid-cols-4">
+                        <Mini label="预计耗时" value={g.minutes > 0 ? `${g.minutes} 分钟` : '待核实'} />
+                        <Mini label="费用" value={stepCostLabel(g.cost_usd)} />
+                        <Mini label="需要连接钱包" value={g.needs_wallet === null ? '待核实' : g.needs_wallet ? '是' : '否'} />
+                        <Mini label="风险" value={g.risk === 'unknown' ? '待核实' : RISK_LABEL[g.risk]} />
+                      </dl>
+
+                      {g.needs_signature === null && (
+                        <p className="mt-4 text-sm text-warn">签名或授权要求待核实，请先核对实际操作内容。</p>
+                      )}
+                      {g.needs_signature && (
+                        <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-4 py-2.5 text-sm text-warn">
+                          {executable ? '⚠ 来源步骤涉及签名，请先核对内容。' : '⚠ 原文提及签名；尚未核实，暂停操作。'}
+                        </p>
+                      )}
+                      {g.cost_usd !== null && g.cost_usd > 0 && (
+                        <p className="mt-2 rounded-xl border border-warn/30 bg-warn-wash px-4 py-2.5 text-sm text-warn">
+                          ⚠ 本步骤预计需要约 ${g.cost_usd} Gas。
+                        </p>
+                      )}
+
+                      <p className="mt-3.5 text-sm text-ink-soft">
+                        <span className="text-ink-faint">完成标志：</span>
+                        {executable || p.guide_source === 'template' ? g.done_when : '需先核验官方规则；第三方描述不构成已完成或已取得奖励的证明。'}
+                      </p>
+                      <div className="mt-3.5 flex flex-wrap items-center gap-5">
+                        {g.official_url && (executable || p.guide_source === 'template') && (
+                          <a
+                            className="text-sm font-medium text-brand underline-offset-2 hover:underline"
+                            href={g.official_url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                          {p.evidence.some(e => e.url === g.official_url && isEvidenceVerified(e)) ? '打开已核验页面 ↗' : '打开候选项目页面（未核实）↗'}
+                          </a>
+                        )}
+                        {g.source_verified ? (
+                          <a
+                            className="text-sm text-ok underline-offset-2 hover:underline"
+                            href={g.source_url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            title={`本步骤来源：${g.source_url}`}
+                          >
+                            ✓ 来源已核实（{safeHost(g.source_url)}）↗
+                          </a>
+                        ) : p.guide_source === 'template' ? (
+                          <span className="text-sm text-warn">⚠ 研究清单，非官方操作步骤</span>
+                        ) : p.guide_source === 'third_party' ? (
+                          <span className="text-sm text-warn">⚠ 第三方整理，非官方步骤</span>
+                        ) : (
+                          <span className="text-sm text-warn">⚠ 本步骤尚未通过完整来源验证</span>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+
+          {/* 6.5 收尾动作：授权撤回与钱包归零。
+              放在教程之后、注意事项之前 —— 用户刚读完步骤，正是需要收尾提醒的时刻。 */}
+          <section id="exit" className="scroll-mt-28">
+            <h2 className="panel-title mb-4">参与完成后：撤离与授权撤回</h2>
+            <ExitChecklist />
+          </section>
+
+          {/* 7. 注意事项：每条都翻译成「这意味着什么 / 你应该怎么做」，
+              新手看到「高风险」三个字并不知道高在哪、下一步做什么。 */}
+          <section id="risks" className="panel">
+            <h2 className="panel-title">注意事项与优化建议</h2>
+            <p className="mt-3 text-sm text-ink-soft">
+              每条都补充「这意味着什么」与「怎么办」，可以直接照着做。
+            </p>
+            <ul className="mt-5 flex flex-col gap-4">
+              {p.risks.map((r, i) => {
+                const ex = explainRiskItem(r, p.scores.risk);
+                return (
+                  <li
+                    key={i}
+                    className="rounded-2xl border border-line-soft bg-page/50 px-5 py-4"
+                  >
+                    <p className="flex gap-3 text-base font-medium text-ink">
+                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
+                      <span>{r}</span>
+                    </p>
+                    <p className="mt-2.5 pl-[1.1rem] text-sm text-ink-soft">
+                      <strong className="font-medium text-ink">这意味着：</strong>
+                      {ex.means}
+                    </p>
+                    <p className="mt-1.5 pl-[1.1rem] text-sm leading-relaxed text-ink-soft">
+                      <strong className="font-medium text-ink">怎么办：</strong>
+                      {ex.action}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          <details id="decision" className="panel scroll-mt-28"><summary className="panel-title">评分与相对位置（补充说明）</summary><div className="mt-5">
           {/* 2. 三项核心评分 */}
-          <section id="decision" className="scroll-mt-28">
+          <section className="scroll-mt-28">
             <h2 className="panel-title mb-4">三项独立评分</h2>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
               {/* 三张评分卡：刻意保持「同样的结构、不同的语义色」——
@@ -550,58 +837,10 @@ export function DetailView({
             </section>
           )}
 
-          {/* 3. 成本与难度 */}
-          <section id="cost" className="panel">
-            <h2 className="panel-title">预计成本与操作难度</h2>
-            {/* 成本四要素：横排 4 格，用细竖线分隔。
-                这里刻意不用卡片：成本是一个整体判断，拆成四张卡片会让人以为是四个独立结论。 */}
-            <dl className="mt-6 grid grid-cols-2 gap-y-5 sm:grid-cols-4 sm:divide-x sm:divide-line-soft">
-              <div className="kv sm:px-4 sm:first:pl-0">
-                <dt>预计资金</dt>
-                <dd className="metric !text-lg">
-                  {p.cost.capital_max_usd === 0
-                    ? '免费'
-                    : `$${p.cost.capital_min_usd}–${p.cost.capital_max_usd}`}
-                </dd>
-              </div>
-              <div className="kv sm:px-4">
-                <dt>预计 Gas</dt>
-                <dd className="metric !text-lg">${p.cost.gas_estimate_usd}</dd>
-              </div>
-              <div className="kv sm:px-4">
-                <dt>预计时间</dt>
-                <dd className="metric !text-lg">{p.cost.time_minutes} 分钟</dd>
-              </div>
-              <div className="kv sm:px-4">
-                <dt>是否需要长期交互</dt>
-                <dd className="metric !text-lg">{p.cost.long_term ? '是，约 4–8 周' : '否'}</dd>
-              </div>
-            </dl>
-
-            <div className="inset mt-6 flex flex-col gap-3 px-6 py-5">
-              <p className="flex flex-wrap items-center gap-3 text-base text-ink">
-                <span className="font-medium text-ink-soft">操作难度</span>
-                <span className="text-xl tracking-[0.15em] text-warn" aria-label={`操作难度 ${difficulty} / 5`}>
-                  {'★'.repeat(difficulty)}
-                  <span className="text-line">{'★'.repeat(5 - difficulty)}</span>
-                </span>
-                <span className="metric text-base">{difficulty} / 5</span>
-                <span className="chip border-line bg-page text-ink-soft">
-                  {DIFFICULTY_LABEL[difficulty]}
-                </span>
-              </p>
-              <p className="text-base text-ink-soft">{p.cost.summary}</p>
-              {p.requirements.length > 0 && (
-                <p className="text-base text-ink-soft">
-                  <span className="text-ink-faint">参与要求：</span>
-                  {p.requirements.join(' · ')}
-                </p>
-              )}
-            </div>
-          </section>
-
+          </div></details>
+          <details id="evidence" className="panel scroll-mt-28"><summary className="panel-title">证据与来源记录</summary><div className="mt-5">
           {/* 4. Evidence 来源验证 */}
-          <section id="evidence" className="panel">
+          <section className="panel">
             <h2 className="panel-title">证据与来源验证</h2>
             <dl className="mt-5 flex flex-wrap gap-3">
               <div className="inset flex items-baseline gap-2 px-5 py-3">
@@ -625,20 +864,21 @@ export function DetailView({
                 <li
                   key={`${e.type}-${idx}`}
                   className={`flex items-start gap-4 rounded-2xl border px-5 py-4 ${
-                    e.verified ? 'border-ok/25 bg-ok-wash/50' : 'border-line-soft bg-page/60'
+                    isEvidenceVerified(e) ? 'border-ok/25 bg-ok-wash/50' : 'border-line-soft bg-page/60'
                   }`}
                 >
                   <span
                     className={`mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full text-sm font-bold ${
-                      e.verified ? 'bg-ok text-white' : 'bg-warn text-white'
+                      isEvidenceVerified(e) ? 'bg-ok text-white' : 'bg-warn text-white'
                     }`}
                     aria-hidden
                   >
-                    {e.verified ? '✓' : '△'}
+                    {isEvidenceVerified(e) ? '✓' : '△'}
                   </span>
                   <span className="min-w-0 text-base">
                     <span className="font-medium text-ink">{e.label}</span>
                     {e.note && <span className="ml-1.5 text-sm text-ink-soft">（{e.note}）</span>}
+                    {isEvidenceVerified(e) && <span className="block text-sm text-ink-soft">核验时间：{e.verification!.checked_at}；依据：{e.verification!.note} <a href={e.verification!.source_url} target="_blank" rel="noreferrer noopener">查看核验引用 ↗</a></span>}
                     {e.url && (
                       <>
                         {' '}
@@ -657,262 +897,27 @@ export function DetailView({
               ))}
             </ul>
             <p className="mt-4 text-sm text-ink-faint">
-              △ 表示尚未通过交叉验证。第三方来源仅作参考，不构成官方背书。
+              △ 表示尚无有效核验记录。第三方来源仅作参考，不构成官方背书。
             </p>
           </section>
 
+          </div></details>
+          <details id="meta" className="panel scroll-mt-28"><summary className="panel-title">项目背景资料</summary><div className="mt-5">
           {/* 5. 项目与空投详情 */}
-          <section id="meta" className="panel">
+          <section className="panel">
             <h2 className="panel-title">项目与空投详情</h2>
             <dl className="mt-6 grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
               <Row label="项目类型" value={CATEGORY_LABEL[p.category]} />
               <Row label="公链" value={p.chains.map((c) => CHAIN_LABEL[c]).join(' / ')} />
               <Row label="融资情况" value={p.meta?.funding ?? '未公开披露'} />
               <Row label="投资机构" value={p.meta?.investors?.join('、') || '未公开披露'} />
-              <Row label="Token 状态" value={p.meta?.token_status ?? '官方暂未公布'} />
+              <Row label="代币状态" value={p.meta?.token_status ?? '官方暂未公布'} />
               <Row label="空投状态" value={p.meta?.airdrop_status ?? '官方暂未公布'} />
               <Row label="主要任务" value={p.tasks.join(' · ') || '暂未明确'} />
             </dl>
           </section>
 
-          {/* 6. 新手参与教程（时间线布局） */}
-          <section id="guide" className="panel">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex flex-wrap items-center gap-3">
-                <h2 className="panel-title">新手参与教程</h2>
-                {p.guide_source === 'sourced' ? (
-                  <span
-                    className="chip border-ok/30 bg-ok-wash text-ok"
-                    title="步骤来自数据源侧抓取到的官方 HowTo，可追溯到原始页面"
-                  >
-                    ✓ 真实教程（可追溯来源）
-                  </span>
-                ) : p.guide_source === 'third_party' ? (
-                  <span
-                    className="chip border-warn/30 bg-warn-wash text-warn"
-                    title="步骤由第三方整理，内容与该项目的活动相关，但没有可追溯到官方页面的来源链接"
-                  >
-                    ⚠ 第三方整理（非官方）
-                  </span>
-                ) : (
-                  <span
-                    className="chip border-warn/30 bg-warn-wash text-warn"
-                    title="数据源未提供该项目的官方步骤，以下为通用流程示意"
-                  >
-                    ⚠ 流程示意（非官方步骤）
-                  </span>
-                )}
-              </div>
-              <span className="chip border-line bg-page text-ink-soft">
-                已完成 <strong className="metric text-ink">{done.length}</strong> / {p.guide.length} 步
-              </span>
-            </div>
-
-            {/* 模板教程必须显式声明「这不是官方要求的具体步骤」，
-                否则用户会把通用流程误当成项目方规定的操作，产生错误预期。 */}
-            {p.guide_source === 'template' ? (
-              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
-                该项目的数据来源暂未提供官方分步教程，以下步骤是
-                <strong className="font-semibold">通用参与流程示意</strong>，用于帮助你理解大致顺序，
-                不代表项目方的具体要求。请务必以
-                <strong className="font-semibold">官方页面 / 官方公告</strong>的实际说明为准。
-              </p>
-            ) : p.guide_source === 'third_party' ? (
-              <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-5 py-4 text-sm text-warn">
-                以下步骤由<strong className="font-semibold">第三方整理</strong>，内容与该项目的活动相关，
-                但没有可追溯到项目官方页面的来源链接。
-                步骤顺序与细节请以
-                <strong className="font-semibold">官方页面 / 官方公告</strong>为准。
-              </p>
-            ) : (
-              <p className="mt-4 rounded-xl border border-ok/30 bg-ok-wash px-5 py-4 text-sm text-ok">
-                以下步骤来自数据源抓取到的官方 HowTo，每一步都可追溯到原始页面。
-              </p>
-            )}
-
-            {/* 进度条 */}
-            <div className="mt-5 flex items-center gap-4">
-              <div className="h-2 w-full overflow-hidden rounded-full bg-page">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-brand-500 to-accent transition-all duration-500 ease-out"
-                  style={{ width: `${progressPct}%` }}
-                />
-              </div>
-              <span className="metric shrink-0 text-sm text-ink-soft">{progressPct}%</span>
-            </div>
-            <p className="mt-3 text-base text-ink-soft">
-              未验证步骤会明确标注。勾选状态保存在你的浏览器本地，不上传任何服务器。
-            </p>
-
-            <ol className="mt-7 flex flex-col">
-              {p.guide.map((g, i) => {
-                const isDone = done.includes(g.step);
-                const last = i === p.guide.length - 1;
-                return (
-                  <li key={g.step} className="relative flex gap-5 pb-7 last:pb-0">
-                    {/* 时间线轴 */}
-                    <div className="flex w-12 shrink-0 flex-col items-center">
-                      <span
-                        className={`grid h-12 w-12 place-items-center rounded-full border-2 text-lg font-semibold transition-colors ${
-                          isDone
-                            ? 'border-ok bg-ok text-white'
-                            : 'border-brand/25 bg-brand-50 text-brand'
-                        }`}
-                      >
-                        {isDone ? '✓' : g.step}
-                      </span>
-                      {!last && <span className="mt-2 w-px flex-1 bg-line" aria-hidden />}
-                    </div>
-
-                    <div
-                      className={`min-w-0 flex-1 rounded-2xl border px-6 py-6 transition-colors ${
-                        isDone ? 'border-ok/30 bg-ok-wash/40' : 'border-line-soft bg-page/50'
-                      }`}
-                    >
-                      <div className="flex flex-wrap items-start justify-between gap-3">
-                        <div className="min-w-0">
-                          <p className="text-xs font-semibold tracking-wide text-brand">第 {g.step} 步</p>
-                          <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink">
-                            {g.title}
-                          </h3>
-                        </div>
-                        <label className="flex shrink-0 cursor-pointer items-center gap-2.5 rounded-xl border border-line bg-white px-4 py-2.5 text-base text-ink-soft transition-colors hover:border-brand/30 hover:text-brand-700">
-                          <input
-                            type="checkbox"
-                            checked={isDone}
-                            onChange={() => onToggleStep(p.slug, g.step)}
-                            className="h-5 w-5 accent-[#2563EB]"
-                          />
-                          已完成
-                        </label>
-                      </div>
-
-                      <p className="mt-3.5 text-base leading-relaxed text-ink-soft">
-                        {g.description}
-                      </p>
-
-                      {/* 英文原文对照（issue #28）。
-                          步骤原文来自官方 HowTo，翻译可能与人家的按钮名对不上；
-                          保留原文让用户能对照页面实际文字，避免「照着做却找不到按钮」。 */}
-                      {(g.original_title || g.original_description) && (
-                        <details className="group mt-3 rounded-xl border border-line-soft bg-white px-4 py-3">
-                          <summary className="cursor-pointer select-none text-sm font-medium text-ink-faint transition-colors hover:text-brand">
-                            查看英文原文对照
-                          </summary>
-                          <div className="mt-3 border-t border-line-soft pt-3">
-                            {g.original_title && (
-                              <p className="text-sm font-semibold text-ink-soft">{g.original_title}</p>
-                            )}
-                            {g.original_description && (
-                              <p className="mt-2 text-sm leading-relaxed text-ink-faint">
-                                {g.original_description}
-                              </p>
-                            )}
-                            <p className="mt-3 text-xs text-ink-faint">
-                              提示：以上为数据源提供的英文原文，实际以官方页面文字为准。
-                            </p>
-                          </div>
-                        </details>
-                      )}
-
-                      <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line-soft pt-5 sm:grid-cols-4">
-                        <Mini label="预计耗时" value={`${g.minutes} 分钟`} />
-                        <Mini label="费用" value={g.cost_usd > 0 ? `约 $${g.cost_usd}` : '免费'} />
-                        <Mini label="需要连接钱包" value={g.needs_wallet ? '是' : '否'} />
-                        <Mini label="风险" value={RISK_LABEL[g.risk]} />
-                      </dl>
-
-                      {g.needs_signature && (
-                        <p className="mt-4 rounded-xl border border-warn/30 bg-warn-wash px-4 py-2.5 text-sm text-warn">
-                          ⚠ 本步骤需要签名，请先确认签名内容。
-                        </p>
-                      )}
-                      {g.cost_usd > 0 && (
-                        <p className="mt-2 rounded-xl border border-warn/30 bg-warn-wash px-4 py-2.5 text-sm text-warn">
-                          ⚠ 本步骤预计需要约 ${g.cost_usd} Gas。
-                        </p>
-                      )}
-
-                      <p className="mt-3.5 text-sm text-ink-soft">
-                        <span className="text-ink-faint">完成标志：</span>
-                        {g.done_when}
-                      </p>
-                      <div className="mt-3.5 flex flex-wrap items-center gap-5">
-                        {g.official_url && (
-                          <a
-                            className="text-sm font-medium text-brand underline-offset-2 hover:underline"
-                            href={g.official_url}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            打开官方页面 ↗
-                          </a>
-                        )}
-                        {g.source_verified ? (
-                          <a
-                            className="text-sm text-ok underline-offset-2 hover:underline"
-                            href={g.source_url}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            title={`本步骤来源：${g.source_url}`}
-                          >
-                            ✓ 来源已核实（{safeHost(g.source_url)}）↗
-                          </a>
-                        ) : p.guide_source === 'template' ? (
-                          <span className="text-sm text-warn">⚠ 流程示意，非官方步骤</span>
-                        ) : p.guide_source === 'third_party' ? (
-                          <span className="text-sm text-warn">⚠ 第三方整理，非官方步骤</span>
-                        ) : (
-                          <span className="text-sm text-warn">⚠ 本步骤尚未通过完整来源验证</span>
-                        )}
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-          </section>
-
-          {/* 6.5 收尾动作：授权撤回与钱包归零。
-              放在教程之后、注意事项之前 —— 用户刚读完步骤，正是需要收尾提醒的时刻。 */}
-          <section id="exit" className="scroll-mt-28">
-            <h2 className="panel-title mb-4">参与完成后：撤离与授权撤回</h2>
-            <ExitChecklist />
-          </section>
-
-          {/* 7. 注意事项：每条都翻译成「这意味着什么 / 你应该怎么做」，
-              新手看到「高风险」三个字并不知道高在哪、下一步做什么。 */}
-          <section id="risks" className="panel">
-            <h2 className="panel-title">注意事项与优化建议</h2>
-            <p className="mt-3 text-sm text-ink-soft">
-              每条都补充「这意味着什么」与「怎么办」，可以直接照着做。
-            </p>
-            <ul className="mt-5 flex flex-col gap-4">
-              {p.risks.map((r, i) => {
-                const ex = explainRiskItem(r, p.scores.risk);
-                return (
-                  <li
-                    key={i}
-                    className="rounded-2xl border border-line-soft bg-page/50 px-5 py-4"
-                  >
-                    <p className="flex gap-3 text-base font-medium text-ink">
-                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                      <span>{r}</span>
-                    </p>
-                    <p className="mt-2.5 pl-[1.1rem] text-sm text-ink-soft">
-                      <strong className="font-medium text-ink">这意味着：</strong>
-                      {ex.means}
-                    </p>
-                    <p className="mt-1.5 pl-[1.1rem] text-sm leading-relaxed text-ink-soft">
-                      <strong className="font-medium text-ink">怎么办：</strong>
-                      {ex.action}
-                    </p>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-
+          </div></details>
           {/* 8. FAQ */}
           <section id="faq" className="panel">
             <h2 className="panel-title">常见问题</h2>
@@ -946,7 +951,8 @@ export function DetailView({
 
           {/* 9. 官方资料 */}
           <section id="official" className="panel">
-            <h2 className="panel-title">官方资料</h2>
+            <h2 className="panel-title">项目资料</h2>
+            <p className="mt-3 text-sm text-ink-soft">候选资料链接不代表已核实归属，核验结果与依据请查看证据记录。</p>
             {officialEntries.length === 0 ? (
               <p className="mt-3 text-base text-ink-soft">尚未核实到官方链接。</p>
             ) : (
@@ -968,6 +974,7 @@ export function DetailView({
             <p className="mt-3 text-base text-ink-soft">
               发现链接失效、活动已结束或信息疑似错误？请前往仓库提交 Issue，我们会尽快核实。
             </p>
+            <a className="btn-ghost mt-4" href={feedbackLink(p)} target="_blank" rel="noreferrer noopener">前往 GitHub 反馈（需登录） ↗</a>
             <p className="mt-2 text-sm text-ink-faint">
               本站不收集反馈数据，不使用数据库与后台系统，所有反馈通过仓库 Issue 处理。
             </p>
@@ -1042,18 +1049,15 @@ function coverageSummary(p: AirdropProject): string | null {
  *   否则用户看到一个更高的等级，却不知道是被什么抬上去的。
  */
 function riskBasis(p: AirdropProject): string {
-  const capital = p.cost?.capital_max_usd ?? 0;
+  const capital = p.cost.capital_max_usd;
   const signs = p.guide.some((g) => g.needs_signature);
   if (p.scores.risk === 'critical') return '检测到一票否决行为，系统不建议参与。';
   const parts: string[] = [];
-  if (capital > 0) {
-    // 必须标明「预估」：capital_max_usd 是流水线按关键词推断的统一上限，
-    // 不是说这个项目一定要求这么多钱。实测 96 个项目的区间全是 $20–200。
-    const min = p.cost?.capital_min_usd ?? 0;
-    parts.push(`来源推断需投入${min > 0 ? ` $${min}–${capital}` : `约 $${capital}`} 本金（预估区间）`);
-  }
+  if (capital !== null && capital > 0) parts.push(`本金投入 ${capitalLabel(p.cost)}（详见成本依据）`);
+  else if (p.cost.capital_required) parts.push('来源提到本金投入，金额待核实');
   if (signs) parts.push('含需签名的链上步骤');
-  if (parts.length === 0) return '未发现资金或签名要求。';
+  if (!hasKnownCost(p.cost) || p.guide.some(g => g.needs_signature === null || g.risk === 'unknown')) parts.push('成本、签名或步骤风险信息不完整，暂不判定低风险');
+  if (parts.length === 0) return '当前记录未显示资金或签名要求，请继续核对来源。';
   return `判定依据：${parts.join('、')}。`;
 }
 

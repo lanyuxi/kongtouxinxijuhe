@@ -31,51 +31,25 @@ interface ExitItem {
   how: React.ReactNode;
 }
 
-const REVOKE_URL = 'https://revoke.cash';
-const ZERION_URL = 'https://revoke.cash/explore';
+const REVOKE_URL = 'https://revoke.cash/zh';
+const HELP_URL = 'https://revoke.cash/zh/learn/security/what-to-do-when-scammed';
 
-/** 新手需要执行的三步收尾动作（顺序即建议执行顺序） */
+/** 先判断风险类型，再处理对应权限；本站不执行链上操作。 */
 export const EXIT_ITEMS: ExitItem[] = [
   {
-    order: '①',
-    title: '撤回不必要的代币授权',
-    why: '你为了参与活动签过的「授权」不会自动失效，额度可能一直留着。合约若被攻破或本就是恶意的，钱包里的资产会被转走。',
-    how: (
-      <>
-        打开{' '}
-        <a href={REVOKE_URL} target="_blank" rel="noreferrer noopener">
-          revoke.cash ↗
-        </a>
-        ，连接你参与活动用的那个钱包，把不再需要的授权逐个撤销（Revoke）。
-        撤销本身只花一笔 Gas，但它把「无限额度」收回到 0。
-      </>
-    ),
+    order: '①', title: '核对并撤销不再需要的授权',
+    why: 'ERC-20 授权允许指定地址在额度内转走代币；NFT 可按单枚或整个系列授权。断开网站连接不会撤销这些链上权限。被列入白名单本身不会赋予扣款权限。',
+    how: <>先核对链、代币或 NFT、被授权地址和额度。在 <a href={REVOKE_URL} target="_blank" rel="noreferrer noopener">中文授权检查工具 ↗</a> 查看自己的地址记录，确认不再需要后再撤销。撤销通常需要网络手续费，须确认交易成功；它不会撤销所有其他签名。</>,
   },
   {
-    order: '②',
-    title: '检查是否被加入可疑合约',
-    why: '有些恶意合约会把你加入「白名单 / 黑名单」快照，后续用来误导签名或批量扣款。',
-    how: (
-      <>
-        在{' '}
-        <a href={ZERION_URL} target="_blank" rel="noreferrer noopener">
-          revoke.cash 的授权浏览 ↗
-        </a>
-        {' '}输入你的钱包地址，看一眼参与过的合约清单。
-        出现你完全不认识、又不打算再用的项目，一并撤销授权。
-      </>
-    ),
+    order: '②', title: '区分已完成转账与未使用的签名',
+    why: '资产已经转走时，撤销授权不能追回资产。离线签名、市场订单、Permit 等还可能需要对应的取消操作，不能只凭授权列表判断钱包已安全。',
+    how: <>查看钱包和区块浏览器的交易记录，辨认转账、授权及签名。不要继续点击可疑页面或为“追回资产”付款。可参考 <a href={HELP_URL} target="_blank" rel="noreferrer noopener">风险类型与处理说明 ↗</a>；该资料部分正文仍为英文。</>,
   },
   {
-    order: '③',
-    title: '把不用的空投钱包归零',
-    why: '空投小号一旦长期放着资产，就会从「消耗品」变成「需要保护的钱包」，风险反而更大。',
-    how: (
-      <>
-        把参与活动的小号钱包里剩余资产转回你的常用钱包，
-        之后这个地址只保留几美元 Gas 即可。若不再使用，就不要往里添加任何资产。
-      </>
-    ),
+    order: '③', title: '凭据泄露时停用受影响的钱包',
+    why: '助记词或私钥泄露意味着对方可控制钱包；撤销授权或断开连接不能恢复独占控制。仅仅收到陌生代币不代表凭据已经泄露。',
+    how: <>疑似泄露时停止向该钱包充值，先确认设备安全，再评估已知资产向全新钱包迁移的方案；不要继续使用泄露的助记词。陌生代币或 NFT 不要为了“归零”去转移、出售、授权或打开它们附带的链接。存在自动盗转时，不要盲目补充手续费。</>,
   },
 ];
 
@@ -86,7 +60,7 @@ export function ExitChecklist() {
     <div className="rounded-2xl border border-warn/30 bg-warn-wash/50 px-6 py-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-base font-semibold text-ink">
-          🧹 做完别忘了收尾 —— 撤回授权、检查合约、钱包归零
+          🧹 安全收尾：核对授权、交易与钱包凭据
         </p>
         <button
           type="button"
@@ -98,7 +72,7 @@ export function ExitChecklist() {
         </button>
       </div>
       <p className="mt-2 text-sm text-ink-soft">
-        空投最大的损失往往发生在「做完之后」：授权不撤销，钱包就一直对别人敞着门。
+        断开页面连接不等于撤销链上授权。先判断发生了什么，再处理对应权限；没有一个收尾按钮能保证所有风险消失。
       </p>
 
       {open && (

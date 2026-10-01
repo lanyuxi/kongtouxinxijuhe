@@ -1,3 +1,4 @@
+import { ExitChecklist } from '../components/ExitChecklist';
 /**
  * 防骗自查页（骗局图鉴 + 域名 / 地址自查）。
  *
@@ -89,16 +90,16 @@ export function SafetyView({ projects }: { projects: ListProject[] }) {
             {result.detail && <p className="mt-2 text-sm leading-relaxed opacity-90">{result.detail}</p>}
             {result.verdict !== 'official' && result.verdict !== 'invalid' && (
               <p className="mt-3 text-sm opacity-90">
-                在链接里签过名？请到{' '}
+                若曾授权可疑合约，请核对链和授权记录，再到{' '}
                 <a
-                  href="https://revoke.cash"
+                  href="https://revoke.cash/zh"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="underline underline-offset-2"
                 >
                   revoke.cash ↗
                 </a>{' '}
-                撤销授权。
+                撤销不再需要的授权。已完成转账无法靠撤销追回；凭据泄露需停用受影响的钱包。
               </p>
             )}
           </div>
@@ -163,31 +164,7 @@ export function SafetyView({ projects }: { projects: ListProject[] }) {
       {/* 收尾提醒 */}
       <section className="panel">
         <h2 className="panel-title">③ 做完之后的例行动作</h2>
-        <ol className="mt-4 flex flex-col gap-3 text-base text-ink-soft">
-          <li>
-            <strong className="text-ink">1. 撤销不必要的授权</strong> —— 到{' '}
-            <a
-              href="https://revoke.cash"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-brand underline-offset-2 hover:underline"
-            >
-              revoke.cash ↗
-            </a>{' '}
-            连接参与活动用的钱包，把不用的授权全部撤销。
-          </li>
-          <li>
-            <strong className="text-ink">2. 检查是否被加入可疑合约</strong> ——
-            留意你完全不认识的合约授权，一并撤销。
-          </li>
-          <li>
-            <strong className="text-ink">3. 把不用的空投钱包归零</strong> ——
-            小号只留几美元 Gas，不要长期存放资产。
-          </li>
-        </ol>
-        <p className="mt-4 text-sm text-ink-faint">
-          每个项目详情页底部也有同样的「做完收尾」三步清单，做项目时可以直接对照执行。
-        </p>
+        <div className="mt-4"><ExitChecklist /></div>
       </section>
     </div>
   );

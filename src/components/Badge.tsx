@@ -10,6 +10,7 @@ function Dot({ tone }: { tone: string }) {
 const STATUS_DOT: Record<AirdropStatus, string> = {
   new: 'bg-brand',
   potential: 'bg-ink-faint',
+  pending: 'bg-warn',
   confirmed: 'bg-ok',
   claim_live: 'bg-warn',
   ended: 'bg-ink-faint',

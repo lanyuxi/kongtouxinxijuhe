@@ -58,6 +58,6 @@ describe('P2-3 一键更新的能力与文案诚实性', () => {
   it('触发了抓取但数据没变化时，不得说「已更新到最新数据」', () => {
     const msg = describeRefreshOutcome({ triggered: true, changed: false, dataChanged: false });
     expect(msg).not.toBe('已更新到最新数据');
-    expect(msg).toContain('无内容变化');
+    expect(msg).toContain('尚未确认');
   });
 });

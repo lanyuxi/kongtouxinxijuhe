@@ -1,3 +1,4 @@
+import { reviewedEvidence } from './helpers/evidence';
 /**
  * P1-1｜到期项目与状态口径（对应上轮审查 BUG-3）。
  *
@@ -61,20 +62,20 @@ describe('P1-1 状态与 tagline 对账', () => {
     expect(inferStatusFromTagline('The claim window is closed.')).toBe('ended');
   });
 
-  it('只升级不降级：已确认项目不会因 tagline 缺失被打回潜在', () => {
-    const p = make({ status: 'confirmed', tagline: '随便一句没有信号的话' });
+  it('有核验公告时，简介没有确认措辞也保留已确认', () => {
+    const p = make({ status: 'confirmed', tagline: '随便一句没有信号的话', evidence: [reviewedEvidence('official_announcement', 'https://demo.xyz/announcement', 'confirmed')] });
     expect(reconcileStatus(p).status).toBe('confirmed');
   });
 
-  it('潜在 + tagline 明确已确认 → 升为 confirmed，且记录来源可追溯', () => {
+  it('第三方简介称已确认仅生成待核实状态，并记录原因', () => {
     const p = make({ status: 'potential', tagline: 'The Jupiter airdrop is confirmed and live.' });
     const r = reconcileStatus(p);
-    expect(r.status).toBe('confirmed');
-    expect(r.reason).toContain('tagline');
+    expect(r.status).toBe('pending');
+    expect(r.reason).toContain('核验记录');
   });
 
   it('claim_live 不会被 tagline 的 confirmed 降级', () => {
-    const p = make({ status: 'claim_live', tagline: 'The airdrop is confirmed.' });
+    const p = make({ status: 'claim_live', tagline: 'The airdrop is confirmed.', evidence: [reviewedEvidence('official_announcement', 'https://demo.xyz/claim', 'claim_live')] });
     expect(reconcileStatus(p).status).toBe('claim_live');
   });
 

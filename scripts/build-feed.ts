@@ -14,7 +14,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import type { Dataset } from '../src/lib/types';
+import type { ListDataset } from '../src/lib/types';
 import { buildAtomFeed, DEFAULT_SITE_URL } from './lib/feed';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -31,7 +31,7 @@ export function resolveSiteUrl(env: NodeJS.ProcessEnv = process.env): string {
 async function main() {
   const dataset = JSON.parse(
     await readFile(path.join(ROOT, 'data/airdrops.json'), 'utf8'),
-  ) as Dataset;
+  ) as ListDataset;
 
   const siteUrl = resolveSiteUrl();
   const xml = buildAtomFeed(dataset.projects, {

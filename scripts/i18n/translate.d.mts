@@ -16,6 +16,7 @@ export interface LocalizedText {
 
 /** 是否含有汉字 */
 export function hasChinese(text: unknown): boolean;
+export function needsTranslation(text: unknown): boolean;
 
 /** 把专有名词替换为占位符，返回替换后的文本与词表 */
 export function protectTerms(text: string): { text: string; tokens: string[] };

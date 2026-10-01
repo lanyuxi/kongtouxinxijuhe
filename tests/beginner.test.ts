@@ -1,3 +1,4 @@
+import { reviewedEvidence } from './helpers/evidence';
 /**
  * 新手友好筛选 + 教程来源标注 + 首访引导的单元测试。
  *
@@ -236,6 +237,7 @@ describe('教程来源标注', () => {
 
   it('有 ≥3 条真实步骤 → 标记为 sourced，且保留来源链接', () => {
     const p = makeProject({
+      evidence: ['a', 'b', 'c', 'd'].map(path => reviewedEvidence('official_guide', `https://demo.xyz/${path}`)),
       sourcedSteps: [
         { title: 'Visit site', body: 'go to site', url: 'https://demo.xyz/a' },
         { title: 'Connect wallet', body: 'connect', url: 'https://demo.xyz/b' },
@@ -255,6 +257,7 @@ describe('教程来源标注', () => {
 
     const s = buildGuideAndCost(
       makeProject({
+        evidence: ['a', 'b', 'c', 'd'].map(path => reviewedEvidence('official_guide', `https://demo.xyz/${path}`)),
         sourcedSteps: [
           { title: 'A', body: 'a', url: 'https://demo.xyz/a' },
           { title: 'B', body: 'b', url: 'https://demo.xyz/b' },
@@ -308,6 +311,7 @@ describe('教程来源标注', () => {
     const g = buildGuide(
       makeProject({
         official: { website: 'https://demo.xyz' },
+        evidence: ['a', 'b', 'c', 'd'].map(path => reviewedEvidence('official_guide', `https://demo.xyz/${path}`)),
         sourcedSteps: [
           { title: 'A', body: 'a', url: 'https://demo.xyz/a' },
           { title: 'B', body: 'b', url: 'https://demo.xyz/b' },
@@ -321,10 +325,11 @@ describe('教程来源标注', () => {
     //    因此如实判为 `third_party`，等级上限同样封在 B。
     expect(g.source).toBe('third_party');
     // C 本身无来源链接，即便在 sourced 形态下也不得自称已核实：
-    // 这里改用 4 条（3 条带官方链接）来验证「逐条如实标注」这条不变量。
+    // 即使有 3 条已核验步骤，混入无来源步骤也应保留在研究层。
     const g2 = buildGuide(
       makeProject({
         official: { website: 'https://demo.xyz' },
+        evidence: ['a', 'b', 'c', 'd'].map(path => reviewedEvidence('official_guide', `https://demo.xyz/${path}`)),
         sourcedSteps: [
           { title: 'A', body: 'a', url: 'https://demo.xyz/a' },
           { title: 'B', body: 'b', url: 'https://demo.xyz/b' },
@@ -333,11 +338,11 @@ describe('教程来源标注', () => {
         ],
       }),
     );
-    expect(g2.source).toBe('sourced');
+    expect(g2.source).toBe('third_party');
     expect(g2.steps[0].source_verified).toBe(false);
-    expect(g2.steps.find((s) => s.title === 'C')?.source_verified).toBe(false);
-    expect(g2.steps.find((s) => s.title === 'A')?.source_url).toBe('https://demo.xyz/a');
-    expect(g2.steps.find((s) => s.title === 'A')?.source_verified).toBe(true);
+    expect(g2.steps.find((s) => s.original_title === 'C')?.source_verified).toBe(false);
+    expect(g2.steps.find((s) => s.original_title === 'A')?.source_url).toBe('https://demo.xyz/a');
+    expect(g2.steps.find((s) => s.original_title === 'A')?.source_verified).toBe(false);
   });
 });
 

@@ -45,12 +45,7 @@ export function ProjectLogo({
   const box = `${SIZES[size]} shrink-0 overflow-hidden border border-line-soft bg-white ${className}`;
 
   if (!project.logo || failed) {
-    /*
-     * 不该发生：图标缺失时只保留一个空的占位方块（无字母、无默认图标）。
-     * 视觉上明确「这里少了一张图」，同时不破坏卡片布局的宽高比。
-     * aria-hidden + 空内容：屏幕阅读器读到的仍是项目名的链接文本，不会被干扰。
-     */
-    return <span aria-hidden className={`${box} block`} data-logo-missing={project.slug} />;
+    return <span className={`${box} grid place-items-center text-[10px] text-ink-faint`} data-logo-missing={project.slug} aria-label={`${project.name} 暂无图标`}>暂无图标</span>;
   }
 
   return (

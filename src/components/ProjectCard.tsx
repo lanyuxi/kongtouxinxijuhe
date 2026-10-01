@@ -3,10 +3,11 @@ import { CHAIN_LABEL, RISK_LABEL, STATUS_LABEL, relativeTime } from '../lib/labe
 import { operationSummary } from '../lib/tasks';
 import { beginnerVerdict } from '../lib/beginner';
 import { chineseBlurb } from '../lib/describe';
-import { percentilePhrase } from '../lib/percentile';
 import type { Percentiles } from '../lib/percentile';
 import { ProjectLogo } from './ProjectLogo';
 import { SpotlightHost } from './Glow';
+import type { XResult } from '../lib/x-api-types';
+import { selectProjectUpdates } from '../lib/x-api';
 
 /**
  * 项目卡片（紧凑竖排版）。
@@ -45,6 +46,7 @@ import { SpotlightHost } from './Glow';
 const STATUS_TONE: Record<ListProject['status'], string> = {
   new: 'text-brand',
   potential: 'text-warn',
+  pending: 'text-warn',
   confirmed: 'text-ok',
   claim_live: 'text-warn',
   ended: 'text-ink-faint',
@@ -54,6 +56,7 @@ const STATUS_TONE: Record<ListProject['status'], string> = {
 const STATUS_DOT: Record<ListProject['status'], string> = {
   new: 'bg-brand',
   potential: 'bg-warn',
+  pending: 'bg-warn',
   confirmed: 'bg-ok',
   claim_live: 'bg-warn',
   ended: 'bg-ink-faint',
@@ -73,7 +76,7 @@ export function ProjectCard({
   onToggleFavorite,
   variants = [],
   variantOf,
-  percentiles,
+  xResult,
 }: {
   project: ListProject;
   favorited: boolean;
@@ -89,11 +92,12 @@ export function ProjectCard({
   variants?: ListProject[];
   /** 本条目归属的主条目（产品线时由父级传入） */
   variantOf?: string;
+  xResult?: XResult;
   onToggleFavorite: (slug: string) => void;
 }) {
   const p = project;
   /** 一句话中文简介：回答小白「这项目是干什么的」 */
-  const blurb = chineseBlurb(p);
+  const blurb = `${p.status === 'pending' ? '来源简介（待核实）：' : ''}${chineseBlurb(p)}`;
   const chain = p.chains[0] ? CHAIN_LABEL[p.chains[0]] : '';
   const href = `#/project/${p.slug}`;
   const actions = operationSummary(p).join('、');
@@ -109,7 +113,6 @@ export function ProjectCard({
    */
   const actionText = actions ? `操作：${actions}` : '操作：任务信息待补全，请以官方页面为准';
   const beginner = beginnerVerdict(p);
-  const valuePct = percentiles?.value.get(p.slug);
 
   return (
     <SpotlightHost className="h-full">
@@ -132,8 +135,8 @@ export function ProjectCard({
             href={p.official.website}
             target="_blank"
             rel="noopener noreferrer"
-            title="前往官方页面"
-            aria-label={`前往 ${p.name} 官方页面`}
+            title={p.verified_official_website ? '查看已核验官网' : '查看候选项目链接（未核实）'}
+            aria-label={`查看 ${p.name} ${p.verified_official_website ? '已核验官网' : '候选项目页面（未核实）'}`}
             className="icon-btn h-7 w-7 no-underline"
           >
             ↗
@@ -187,6 +190,7 @@ export function ProjectCard({
         <p title={actionText} className="mt-1 truncate text-xs leading-relaxed text-ink-faint">
           {actionText}
         </p>
+        {xResult && selectProjectUpdates(xResult, p.slug).length > 0 && <p className="mt-2 text-xs text-brand">X 动态 {selectProjectUpdates(xResult, p.slug).reduce((n, a) => n + a.posts.length, 0)} 条 · {selectProjectUpdates(xResult, p.slug).some(a => a.stale) ? '本轮未更新' : '个人读取'}</p>}
 
         {/* 同协议产品线：折叠成一行文字，避免「Aave V3 / V4 / Horizon」被当成 3 个空投 */}
         {variants.length > 0 && (
@@ -221,28 +225,8 @@ export function ProjectCard({
               价值：<span className="font-medium text-ink">{p.scores.grade}</span>
             </span>
           </div>
-          {/* 相对分位：让「价值 C」有一个参照系。
-              这一版把它画成一条刻度轨而不是一句形容词 ——
-              「前 18%」比「相对靠前」可比较、可跨卡片扫读。 */}
-          {valuePct !== undefined && (
-            <div
-              className="mt-2"
-              title={`参与价值在本批 ${percentiles?.total ?? 0} 个项目中的相对位置：${percentilePhrase(valuePct)}`}
-            >
-              <div className="flex items-center justify-between gap-2 text-[10px] text-ink-faint">
-                <span>本批相对位置</span>
-                <span className="tabular-nums text-ink-soft">{percentilePhrase(valuePct)}</span>
-              </div>
-              <span className="percentile-track mt-1 block h-1">
-                <span
-                  className="percentile-track__fill block"
-                  style={{ width: `${Math.max(6, Math.round(valuePct * 100))}%` }}
-                />
-              </span>
-            </div>
-          )}
           <div className="mt-2 flex items-center justify-between gap-2 text-ink-faint">
-            <span className="truncate">{relativeTime(p.last_checked_at)}验证</span>
+            <span className="truncate">{relativeTime(p.last_checked_at)}抓取</span>
             <span aria-hidden className="shrink-0 text-line transition-colors group-hover:text-brand-600">
               ›
             </span>

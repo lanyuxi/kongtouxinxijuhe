@@ -142,14 +142,14 @@ describe('清理策略', () => {
 });
 
 describe('操作摘要', () => {
-  it('按协议类型推断出具体任务，不落入「研究项目」兜底', () => {
-    expect(tasksFromSource('Lending')).toContain('存入资产');
-    expect(tasksFromSource('Dexs')).toContain('执行交易');
-    expect(tasksFromSource('Liquid Staking')).toContain('质押资产');
+  it('协议分类不推断奖励任务', () => {
+    expect(tasksFromSource('Lending')).toEqual([]);
+    expect(tasksFromSource('Dexs')).toEqual([]);
+    expect(tasksFromSource('Liquid Staking')).toEqual([]);
     expect(tasksFromSource('未知类型')).toEqual([]);
   });
 
-  it('真实步骤会被转成中文动作短语', () => {
+  it('第三方或未翻译步骤在卡片显示研究清单', () => {
     const p = makeProject({
       sourcedSteps: [
         { title: 'Step 1: Join the waitlist', body: 'Sign up' },
@@ -161,20 +161,20 @@ describe('操作摘要', () => {
     expect(steps).toHaveLength(3);
     // 真实步骤进入 guide 后，卡片摘要应来自这些真实动作，而不是兜底文案
     const summary = operationSummary({ ...p, guide: steps });
-    expect(summary).toContain('注册账号');
-    expect(summary).toContain('关注 X');
+    expect(summary).toContain('核对活动公告');
+    expect(summary).toContain('核对资格与期限');
     expect(summary).not.toContain('研究项目，择机参与');
   });
 
   it('没有任何线索时给出可读兜底，保证卡片不出现空行', () => {
     const p = makeProject({ tasks: [], guide: [], status: 'claim_live' });
     expect(operationSummary(p).length).toBeGreaterThan(0);
-    expect(operationLine(p)).toContain('操作：');
+    expect(operationLine(p)).toContain('研究：');
   });
 
-  it('中文任务标签可直接复用', () => {
+  it('未确认的资金任务标签不应诱导操作', () => {
     const p = makeProject({ tasks: ['存入资产', '持有份额'] });
-    expect(operationSummary(p)).toEqual(['存入资产', '持有份额']);
+    expect(operationSummary(p)).toEqual(['核对活动公告', '核对资格与期限']);
   });
 });
 

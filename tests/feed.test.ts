@@ -6,7 +6,7 @@
  * 而浏览器打开文件时**看起来是正常的**。因此转义与日期格式必须锁死。
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import type { AirdropProject } from '../src/lib/types';
 import { toSkeleton } from '../scripts/lib/merge';
 import {
@@ -46,6 +46,8 @@ function project(over: Partial<AirdropProject> & { slug: string } = { slug: 'dem
 }
 
 describe('XML 转义', () => {
+  beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(new Date(now)); });
+  afterEach(() => vi.useRealTimers());
   it('转义全部 5 个 XML 特殊字符', () => {
     expect(escapeXml('A & B < C > D "E" \'F\'')).toBe(
       'A &amp; B &lt; C &gt; D &quot;E&quot; &apos;F&apos;',

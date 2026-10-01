@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ListProject, LiveIndex } from '../lib/types';
 import {
   applyCostBucket,
@@ -20,9 +20,13 @@ import type { SourceHealthFile } from '../lib/types';
 import { SafetyBar } from '../components/Onboarding';
 import { TodayTodos } from '../components/TodayTodos';
 import { CardSkeletonGrid } from '../components/Skeleton';
+import { LocalBackup } from '../components/LocalBackup';
+import { XUpdates } from '../components/XUpdates';
+import type { XResult } from '../lib/x-api-types';
+import { readListContext, saveListContext } from '../lib/router';
 import { MetricTile } from '../components/galaxy';
 import type { Percentiles } from '../lib/percentile';
-import type { ProjectProgress } from '../lib/store';
+import type { LocalState, ProjectProgress } from '../lib/store';
 import { loadFilters, persistFilters, resolveProgress } from '../lib/store';
 
 export function ListView({
@@ -40,6 +44,10 @@ export function ListView({
   onRefresh,
   onToggleFavorite,
   onClearAll,
+  localState,
+  onImportBackup,
+  xResult,
+  onXRefresh,
 }: {
   view: NavKey;
   projects: ListProject[];
@@ -57,6 +65,10 @@ export function ListView({
   onRefresh: () => void;
   onToggleFavorite: (slug: string) => void;
   onClearAll: () => void;
+  localState?: LocalState;
+  onImportBackup?: (text: string) => number;
+  xResult?: XResult;
+  onXRefresh?: () => void;
 }) {
   /**
    * 筛选条件持久化到 LocalStorage（见 lib/store.ts 的 loadFilters）。
@@ -65,7 +77,7 @@ export function ListView({
    *   用 useEffect 会导致首帧先渲染默认筛选、再渲染恢复后的筛选 ——
    *   用户会看到列表「闪一下」再变。惰性初始化让首帧就是正确结果。
    */
-  const [filters, setFiltersState] = useState<Filters>(() => loadFilters(DEFAULT_FILTERS));
+  const [filters, setFiltersState] = useState<Filters>(() => readListContext(view)?.filters ?? loadFilters(DEFAULT_FILTERS));
   const setFilters = (next: Filters) => {
     setFiltersState(next);
     persistFilters(next);
@@ -76,6 +88,7 @@ export function ListView({
    * 否则用户「重置」后一刷新又回到旧的筛选条件（比不持久化更困惑）。
    */
   const resetFilters = () => {
+    setOverview(null);
     setFiltersState(DEFAULT_FILTERS);
     persistFilters(DEFAULT_FILTERS);
   };
@@ -89,7 +102,22 @@ export function ListView({
    *   又会污染用户在筛选区里的选择（重置筛选时该不该清掉？）。
    *   因此独立成一层，只影响列表展示范围，不写入筛选器。
    */
-  const [overview, setOverview] = useState<OverviewKey | null>(null);
+  const [overview, setOverview] = useState<OverviewKey | null>(() => readListContext(view)?.overview ?? null);
+
+  const [expanded, setExpanded] = useState(() => readListContext(view)?.expanded ?? false);
+  const [sourceExpanded, setSourceExpanded] = useState(() => readListContext(view)?.sourceExpanded ?? false);
+  const [statsExpanded, setStatsExpanded] = useState(() => readListContext(view)?.statsExpanded ?? false);
+  const contextRef = useRef({ filters, overview, expanded, sourceExpanded, statsExpanded, scrollY: readListContext(view)?.scrollY ?? 0 });
+  contextRef.current = { ...contextRef.current, filters, overview, expanded, sourceExpanded, statsExpanded };
+  useLayoutEffect(() => {
+    window.scrollTo({ top: contextRef.current.scrollY, behavior: 'instant' });
+    const remember = () => { contextRef.current.scrollY = window.scrollY; };
+    window.addEventListener('scroll', remember, { passive: true });
+    return () => {
+      saveListContext(view, contextRef.current);
+      window.removeEventListener('scroll', remember);
+    };
+  }, [view]);
 
   /**
    * 点击磁贴后把列表滚进视野。
@@ -97,7 +125,10 @@ export function ListView({
    * 用户会以为「点了没反应」。滚动用 smooth + 只滚一次，不劫持用户位置。
    */
   const listRef = useRef<HTMLDivElement>(null);
+  const previousOverview = useRef(overview);
   useEffect(() => {
+    if (previousOverview.current === overview) return;
+    previousOverview.current = overview;
     if (!overview) return;
     listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [overview]);
@@ -152,6 +183,7 @@ export function ListView({
    *   刻意不做的事：不在「筛选结果为空」时显示骨架屏 ——
    *   那是真实的空结果，用空态文案说明「放宽筛选条件」才有指导意义。
    */
+
   const computing = projects.length === 0;
 
   /**
@@ -189,7 +221,10 @@ export function ListView({
   if (view === 'watchlist') {
     const saved = projects.filter((p) => favorites.includes(p.slug));
     return (
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-5">
+        {xResult && <XUpdates result={xResult} onRefresh={onXRefresh} />}
+        {localState && onImportBackup && <LocalBackup state={localState} onImport={onImportBackup} onClear={onClearAll} unavailable={favorites.length - saved.length} />}
+        {Object.values(progress).some(p => p?.needs_review) && <p role="status" className="rounded-xl border border-warn/30 bg-warn-wash p-4 text-sm text-warn">部分教程已变化，相关完成记录需要复核。请打开项目详情核对新步骤。</p>}
         {saved.length === 0 ? (
           <EmptyState text="你还没有收藏任何项目。在列表页或详情页点击「收藏」即可加入我的关注。" />
         ) : (
@@ -226,11 +261,6 @@ export function ListView({
                 );
               })}
             </dl>
-            <div className="flex flex-wrap gap-4">
-              <button type="button" onClick={onClearAll} className="btn-ghost">
-                清空本地数据
-              </button>
-            </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {saved.map((p) => (
                 <ProjectCard
@@ -238,6 +268,7 @@ export function ListView({
                   project={p}
                   favorited
                   onToggleFavorite={onToggleFavorite}
+                  xResult={xResult}
                 />
               ))}
             </div>
@@ -248,27 +279,13 @@ export function ListView({
   }
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
       {computing && projects.length > 0 && <CardSkeletonGrid rows={1} />}
-      <StatBar
-        projects={projects}
-        updatedAt={updatedAt}
-        lastDiscovery={lastDiscovery}
-        active={overview}
-        onSelect={setOverview}
-      />
-      {/* 防骗提示常驻：即使看过引导也要长期可见，这是新手最大的损失来源 */}
-      <SafetyBar />
-      <RefreshBar
-        index={liveIndex}
-        onRefresh={onRefresh}
-        refreshing={refreshing}
-        message={refreshMessage}
-        changeDetails={changeDetails}
-        health={health}
-        totalProjects={projects.length}
-      />
+      {xResult && <XUpdates result={xResult} onRefresh={onXRefresh} />}
+      <h1 className="text-xl font-bold">{view === 'hot' ? '热门精选' : view === 'claim' ? '可领取项目' : view === 'potential' ? '潜在机会' : '发现空投项目'}</h1>
       <FilterBar
+        expanded={expanded}
+        onExpandedChange={setExpanded}
         filters={filters}
         onChange={setFilters}
         chainOptions={chainOpts}
@@ -278,10 +295,22 @@ export function ListView({
         activeOverview={overviewLabel}
         onClearOverview={() => setOverview(null)}
       />
+      <details open={sourceExpanded} onToggle={e => setSourceExpanded(e.currentTarget.open)} className="rounded-xl border border-line bg-white px-4 py-3">
+        <summary className="text-sm text-ink-soft">公共来源检查与更新{health && ` · ${health.sources.filter(s => !s.ok && s.status !== 'not_configured').length} 个来源抓取异常`}</summary>
+        {health && health.sources.some(s => !s.ok) && <div className="mt-3 text-sm text-ink-soft">
+          {health.sources.filter(s => !s.ok).map(s => <p key={s.name}>{s.status === 'not_configured' ? '尚未配置' : '抓取失败，保留上次数据'}：{s.name}{s.error && `（${s.error}）`}</p>)}
+          <p className="mt-2 text-xs text-ink-faint">以上为公共来源的检查记录，不代表你的个人 X API 检测结果。<a href="#/settings" className="text-brand underline">配置或检测我的 X API</a></p>
+        </div>}
+        <div className="mt-4"><RefreshBar index={liveIndex} onRefresh={onRefresh} refreshing={refreshing} message={refreshMessage} changeDetails={changeDetails} health={health} totalProjects={projects.length} /></div>
+      </details>
       {visible.length === 0 ? (
         <EmptyState
           text={
-            overviewLabel
+            view === 'hot' && viewProjects.length === 0
+              ? '尚无达到热门精选标准的项目。请查看最新项目并核对来源；不会降低证据标准来填充此页。'
+              : view === 'claim' && viewProjects.length === 0
+                ? '目前没有已核验且正在领取的活动。可先查看最新项目。'
+              : overviewLabel
               ? `「${overviewLabel}」在当前筛选条件下没有项目，试试放宽筛选条件，或取消总览口径。`
               : '没有符合当前筛选条件的项目，试试放宽筛选条件。'
           }
@@ -300,10 +329,18 @@ export function ListView({
               favorited={favorites.includes(e.project.slug)}
               percentiles={percentiles}
               onToggleFavorite={onToggleFavorite}
+              xResult={xResult}
             />
           ))}
         </div>
       )}
+      <details open={statsExpanded} onToggle={e => setStatsExpanded(e.currentTarget.open)} className="rounded-xl border border-line bg-white p-4">
+        <summary className="font-medium text-ink-soft">数据总览与安全提示</summary>
+        <div className="mt-4 flex flex-col gap-4">
+          <StatBar projects={projects} updatedAt={updatedAt} lastDiscovery={lastDiscovery} active={overview} onSelect={setOverview} />
+          <SafetyBar />
+        </div>
+      </details>
       <CostHint />
     </div>
   );

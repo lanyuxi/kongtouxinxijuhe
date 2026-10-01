@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import type { LiveIndex, SourceHealthFile } from '../lib/types';
-import { STALE_MINUTES, isStale } from '../lib/refresh';
+import type { LiveIndex, SourceHealthFile, Publication } from '../lib/types';
+import { STALE_MINUTES, isStale, loadPublication } from '../lib/refresh';
 import { relativeTime } from '../lib/labels';
 import { computeCoverageGap } from '../lib/coverage';
 import { refreshCapability, refreshEndpoint } from '../lib/refresh';
@@ -40,6 +40,13 @@ export function RefreshBar({
     return () => clearInterval(timer);
   }, []);
 
+  const [publication, setPublication] = useState<Publication | null>(null);
+  useEffect(() => {
+    let active = true;
+    loadPublication().then(p => { if (active) setPublication(p); });
+    return () => { active = false; };
+  }, [index?.updated_at]);
+
   const stale = isStale(index);
   const healthy = index?.sources ?? [];
 
@@ -70,7 +77,7 @@ export function RefreshBar({
    *   用户知道「加一个 Token 就能开」，而不是「这站坏了」。
    */
   const xSource = health?.sources.find((s) => /^X\s*\(Twitter\)/.test(s.name));
-  const xUnavailable = xSource && !xSource.ok;
+  const xUnavailable = xSource?.status === 'not_configured';
 
   const coverage =
     totalProjects === undefined
@@ -78,7 +85,7 @@ export function RefreshBar({
       : computeCoverageGap({
           totalProjects,
           currentRoundItems: healthy.reduce((s, x) => s + x.count, 0),
-          sources: health?.sources.length ?? healthy.length,
+          sources: health?.sources.filter(s => s.status !== 'not_configured').length ?? healthy.length,
           okSources: health
             ? health.sources.filter((x) => x.ok).length
             : healthy.length,
@@ -88,7 +95,7 @@ export function RefreshBar({
     <section className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-card lg:flex-row lg:items-center lg:justify-between">
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-3">
-          <h2 className="panel-title !text-base">空投数据源</h2>
+          <h2 className="panel-title !text-base">公共空投数据源</h2>
 
           <span
             className={`chip ${
@@ -99,11 +106,11 @@ export function RefreshBar({
               className={`h-1.5 w-1.5 rounded-full ${stale ? 'bg-warn' : 'bg-ok'}`}
               aria-hidden
             />
-            {index?.updated_at ? `${relativeTime(index.updated_at)}更新` : '暂无数据'}
+            {index?.updated_at ? `${relativeTime(index.updated_at)}检查` : '暂无数据'}
           </span>
           {stale && (
             <span className="text-xs text-warn">
-              已超过 {STALE_MINUTES} 分钟未更新，建议手动刷新
+              已超过 {STALE_MINUTES / 60} 小时未成功检查，请查看运行记录
             </span>
           )}
         </div>
@@ -141,13 +148,14 @@ export function RefreshBar({
           </p>
         )}
 
-        {/* X 来源状态（issue #28）：中性措辞 + 明确解法，不伪装成「故障」 */}
+        {publication && <div className="mt-3 space-y-1 text-xs text-ink-soft">
+          <p>最近成功检查：{publication.last_successful_check_at ? relativeTime(publication.last_successful_check_at) : '未记录'}（成功来源已检查，不代表全部来源正常）</p>
+          <p>内容最近变化：{publication.content_updated_at ? relativeTime(publication.content_updated_at) : '未记录'}；内容不变也会刷新检查时间。</p>
+          <p>发布版本构建时间：{new Date(publication.prepared_at).toLocaleString('zh-CN')}（不是实际发布时间）</p>
+          <p>实际发布时间：{publication.run_url ? <a href={publication.run_url} target="_blank" rel="noreferrer noopener" className="text-brand">查看此版本的部署记录 ↗</a> : '本地构建，尚无线上部署记录'}</p>
+        </div>}
         {xUnavailable && (
-          <p className="mt-2 text-xs text-ink-faint">
-            ℹ X（Twitter）推文暂未接入：抓取推文需要平台凭据（环境变量{' '}
-            <code className="rounded bg-canvas px-1">X_BEARER_TOKEN</code>），
-            未配置时无法稳定读取推文。官方 X 账号索引仍可用 —— 可在项目详情页直接跳转核对一手消息。
-          </p>
+          <p className="mt-2 text-xs text-ink-faint">ℹ 公共 X 来源尚未接入访问凭据。你的个人 X 配置和结果独立显示，<a href="#/settings" className="text-brand underline">前往设置</a>。</p>
         )}
 
         {/* 库内 vs 本轮覆盖率（P2-2）：把差异显式摊开，而不是只说「来源正常」。

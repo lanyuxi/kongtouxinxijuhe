@@ -1,42 +1,6 @@
-/**
- * 状态对账（P1-1，对应上轮审查 BUG-3）。
- *
- * 背景（实测）：
- *   `status` 由数据源的文字推断而来（`normalizeStatus`），而聚合站的清单页
- *   与详情页文案经常不同步。实测 15 个项目的 tagline 明确写着
- *   `is confirmed` / `is live` / `is open`，`status` 却仍是 `potential`：
- *
- *     infinex      "The Infinex airdrop is confirmed and live."
- *     jupiter      "The Jupiter airdrop is confirmed and has run in phases since January 2024."
- *     push-chain   "The $PC airdrop is confirmed."
- *     …
- *
- *   前端 `src/lib/describe.ts` 里早就写了 `taglineSaysConfirmed()`，
- *   但**它只在文案层对账**（避免简介自相矛盾），status 本身没修 ——
- *   于是出现最糟的组合：
- *     简介说「官方已确认」→ 状态标「潜在空投」→ 筛选器按「潜在」算
- *   三方不一致，用户完全不知道该信哪个。
- *
- * 治理原则（保守，绝不激进改数据）：
- *   1. **只升级不降级**：只在 tagline 给出「更靠后生命周期」的信号时升级。
- *      绝不因为 tagline 没有信号而降级 —— 那会把已确认项目打回潜在，
- *      属于比原问题更严重的破坏。
- *   2. **否定句式优先排除**：`is not confirmed` / `no token` / `unconfirmed`
- *      必须先判否定，否则会把「官方说还没确认」翻成「已确认」，
- *      这是最危险的一类误判（原文说别信，译文说可信）。
- *   3. **可追溯**：返回值带上原因，便于人工复核，不静默改数据。
- */
-
+/** 活动状态按具体公告核验；来源推断只能作为待核实线索。 */
 import type { AirdropProject, AirdropStatus } from '../../src/lib/types';
-
-/** 生命周期排序：只在「更靠后」时升级 */
-const STATUS_RANK: Record<AirdropStatus, number> = {
-  ended: 5, // ended 单独处理，见 reconcileStatus
-  new: 1,
-  potential: 2,
-  confirmed: 3,
-  claim_live: 4,
-};
+import { isEvidenceVerified } from '../../src/lib/evidence';
 
 /**
  * 否定句式（必须先于肯定句式判断）。
@@ -45,7 +9,7 @@ const STATUS_RANK: Record<AirdropStatus, number> = {
  * 但那边的输出只影响文案，这里影响**数据本身**，因此判定必须更严格：
  * 宁可漏升级，也不可错升级。
  */
-const NEGATIVE = /not\s+(yet\s+)?confirm|no\s+token|hasn'?t\s+confirm|haven'?t\s+confirm|unconfirmed|尚未确认|未有确认|not\s+live|not\s+open/i;
+const NEGATIVE = /has\s+not\s+confirm|claim\s+is\s+not\s+open|未确认|尚未宣布|not\s+(yet\s+)?confirm|no\s+token|hasn'?t\s+confirm|haven'?t\s+confirm|unconfirmed|尚未确认|未有确认|not\s+live|not\s+open/i;
 
 /**
  * 「已结束」信号。
@@ -155,41 +119,35 @@ export interface StatusReconcileResult {
   reason?: string;
 }
 
-/**
- * 用 tagline 的明确信号对账 status。
- *
- * 规则：
- *   - tagline 无信号 → 保持原状
- *   - `ended` 视为最靠后的终态：任何信号都不能把它拉回来
- *   - 其余情况只在「信号更靠后」时升级
- */
-export function reconcileStatus(p: Pick<AirdropProject, 'status' | 'tagline'>): StatusReconcileResult {
-  const inferred = inferStatusFromTagline(p.tagline);
-  if (!inferred) return { status: p.status, changed: false };
-
-  // ended 是终态：一旦结束就不再回到活跃态，即使简介还写着 confirmed
-  if (p.status === 'ended') return { status: 'ended', changed: false };
-  // 反向：简介说已结束 → 降为 ended。
-  // 这是**唯一允许的「降级」**：因为「还在开放领取」与「已结束」
-  // 同时展示会造成实质性误导（用户会去点一个已经关闭的入口）。
-  if (inferred === 'ended') {
-    return {
-      status: 'ended',
-      changed: true,
-      reason: `tagline 明确表示活动已结束（原状态：${p.status}）`,
-    };
+/** 对账发生在来源描述及人工证据写入之后；较新公告才可解决来源冲突。 */
+export function reconcileStatus(p: Pick<AirdropProject, 'status' | 'tagline'> &
+  Partial<Pick<AirdropProject, 'tagline_en' | 'sourcedDescription' | 'evidence' | 'sources'>>): StatusReconcileResult {
+  const text = `${p.tagline} ${p.tagline_en ?? ''} ${p.sourcedDescription ?? ''}`;
+  const inferred = inferStatusFromTagline(text);
+  const negative = NEGATIVE.test(text) || CONFIRMED_BAD_NEWS.test(text);
+  const announcements = (p.evidence ?? []).filter(e => e.type === 'official_announcement' &&
+    isEvidenceVerified(e) && e.activity_status).sort((a, b) =>
+      Date.parse(b.verification!.checked_at) - Date.parse(a.verification!.checked_at));
+  const latest = announcements[0];
+  const checked = Math.max(0, ...(p.sources ?? []).map(s => Date.parse(s.fetched_at) || 0));
+  const conflicts = latest && announcements.some(e => Date.parse(e.verification!.checked_at) === Date.parse(latest.verification!.checked_at) &&
+    e.activity_status !== latest.activity_status);
+  const sourceConflict = latest && (negative || (inferred !== null && inferred !== latest.activity_status));
+  let status = p.status;
+  let reason: string | undefined;
+  if (p.status === 'ended' || inferred === 'ended') {
+    status = 'ended';
+    reason = inferred === 'ended' ? '来源明确表示活动已结束' : undefined;
+  } else if (latest && !conflicts && (!sourceConflict || Date.parse(latest.verification!.checked_at) > checked)) {
+    status = latest.activity_status!;
+    reason = '活动阶段已按具体官方公告人工核验';
+  } else if (p.status === 'confirmed' || p.status === 'claim_live' || p.status === 'pending' ||
+    inferred === 'confirmed' || inferred === 'claim_live') {
+    status = 'pending';
+    reason = sourceConflict || negative || conflicts ? '活动信息相互冲突，尚无较新的明确公告解决冲突' :
+      '来源提供了活动线索，但缺少具体官方公告的核验记录';
   }
-
-  if (STATUS_RANK[inferred] > STATUS_RANK[p.status]) {
-    return {
-      status: inferred,
-      changed: true,
-      reason: `tagline 明确表示「${
-        inferred === 'claim_live' ? '已开放领取' : inferred === 'confirmed' ? '已确认' : inferred
-      }」，原状态为 ${p.status}`,
-    };
-  }
-  return { status: p.status, changed: false };
+  return { status, changed: status !== p.status, reason };
 }
 
 /** 批量对账，并返回变更清单（便于流水线打印与人工复核） */
@@ -199,9 +157,8 @@ export function reconcileAll(
   const changes: string[] = [];
   const out = projects.map((p) => {
     const r = reconcileStatus(p);
-    if (!r.changed) return p;
-    changes.push(`${p.name}：${p.status} → ${r.status}（${r.reason}）`);
-    return { ...p, status: r.status };
+    if (r.changed) changes.push(`${p.name}：${p.status} → ${r.status}（${r.reason}）`);
+    return { ...p, status: r.status, status_note: r.reason };
   });
   return { projects: out, changes };
 }

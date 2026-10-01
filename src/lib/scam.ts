@@ -53,11 +53,12 @@ export function hostOf(url: string): string {
  * 同一域名可能对应多个项目（如 aave.com 的 V3 / V4），保留第一个名字即可。
  */
 export function buildOfficialDomains(
-  projects: { slug: string; name: string; official?: { website?: string } }[],
+  projects: { slug: string; name: string; official?: { website?: string }; verified_official_website?: string }[],
 ): OfficialDomainMap {
   const map: OfficialDomainMap = {};
   for (const p of projects) {
-    const w = p.official?.website;
+    const w = p.verified_official_website;
+    if (w !== p.official?.website) continue;
     if (!w) continue;
     const host = hostOf(w);
     if (!host) continue;
@@ -315,7 +316,7 @@ export const SCAM_TYPES: ScamType[] = [
       '页面做得和真站一样，但网址栏不是你熟悉的官方域名。',
     ],
     aftermath:
-      '立刻在 revoke.cash 撤销该网站相关的全部授权，并把钱包剩余资产转移到新钱包；若已泄露助记词，必须放弃该钱包。',
+      '核对并撤销可疑代币或 NFT 授权；已转出的资产不能靠撤销追回。助记词或私钥泄露时停用钱包，先确认设备安全，再评估已知资产迁移，不操作陌生代币。',
   },
   {
     id: 'fake-support',
@@ -328,21 +329,21 @@ export const SCAM_TYPES: ScamType[] = [
       '账号名常带多余下划线、数字，或关注数极低。',
       '催你「限时领取」「名额即将失效」制造紧迫感。',
     ],
-    aftermath: '不要回复、不要点链接，直接拉黑并向平台举报；已在链接里签过名的按上面第①条撤销授权。',
+    aftermath: '不要回复或点击链接，拉黑并向平台举报；已经签名时先判断权限类型，再核对授权、订单或转账记录，按下方安全收尾说明处理。',
   },
   {
     id: 'fake-claim-sign',
     title: '假「领取」签名弹窗',
     appearance:
-      '页面提示「点击确认即可领取空投」，但钱包弹出的签名内容是授权（Approve）或 Permint 无限额度，而不是领取。',
+      '页面提示「点击确认即可领取空投」，实际钱包请求却是授权（Approve）、Permit 签名或整个 NFT 系列的转移权限。',
     intent: '拿到你的代币授权，之后随时转走你钱包里对应的资产。',
     clues: [
-      '钱包弹窗里写的是 Approve / Set Approval For All，而不是 Claim。',
+      '钱包请求的实际权限是 Approve / Set Approval For All 等；按钮写着 Claim 也不能证明安全。',
       '金额一栏是「无限（Unlimited / Max）」而不是具体数量。',
       '领取本该只花一笔 Gas，却要求你先转账、先授权一大笔额度。',
     ],
     aftermath:
-      '立即拒绝签名；若已签名，马上到 revoke.cash 撤销该合约授权，并清空该钱包的高价值资产。',
+      '拒绝可疑签名。若已签名，先判断是授权、订单还是转账；核对并撤销相关链上授权，必要时取消未使用的订单或签名。撤销不保证恢复钱包安全。',
   },
   {
     id: 'fake-airdrop-contract',
@@ -355,7 +356,7 @@ export const SCAM_TYPES: ScamType[] = [
       '签名内容是「授权全部」而不是一次具体转账。',
       '项目方从未公布过该合约，只在第三方私信或群里流传。',
     ],
-    aftermath: '不要交互；已交互的话立刻撤销 setApprovalForAll 授权，并转移相关资产。',
+    aftermath: '不要操作陌生 NFT 或其附带链接。若已授予系列授权，核对链和合约后撤销 setApprovalForAll；收到陌生 NFT 本身不等于已授权。',
   },
   {
     id: 'advance-fee',
@@ -381,6 +382,6 @@ export const SCAM_TYPES: ScamType[] = [
       '这类页面常伴随「安全检测」「异常登录」等话术制造恐慌。',
     ],
     aftermath:
-      '一旦输入过，该钱包立即作废：马上创建新钱包，把还没被转走的资产转到新地址，并停止使用旧钱包。',
+      '凭据泄露后停用受影响的钱包，停止充值；先排查设备，再评估已知资产向全新钱包迁移的方案。不为陌生代币归零，也不要盲目补充手续费。',
   },
 ];

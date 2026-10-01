@@ -18,7 +18,7 @@
  *   老用户也能看到新说明，而不是被永久静默。
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const KEY = 'dropscope.onboarding.v1';
 
@@ -111,6 +111,7 @@ function safeStorage(): Storage | undefined {
 }
 
 export function Onboarding() {
+  const dialog = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
 
@@ -121,8 +122,18 @@ export function Onboarding() {
   // Esc 关闭 + 阻止背景滚动
   useEffect(() => {
     if (!open) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const controls = () => Array.from(dialog.current?.querySelectorAll<HTMLElement>('button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), [tabindex="0"]') ?? []);
+    controls()[0]?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
+      if (e.key === 'Escape') { e.preventDefault(); close(); }
+      if (e.key === 'Tab') {
+        const items = controls();
+        const first = items[0], last = items.at(-1);
+        if (!dialog.current?.contains(document.activeElement) || (e.shiftKey && document.activeElement === first) || (!e.shiftKey && document.activeElement === last)) {
+          e.preventDefault(); (e.shiftKey ? last : first)?.focus();
+        }
+      }
     };
     document.addEventListener('keydown', onKey);
     const prev = document.body.style.overflow;
@@ -130,6 +141,7 @@ export function Onboarding() {
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prev;
+      previousFocus?.focus();
     };
   }, [open]);
 
@@ -145,12 +157,13 @@ export function Onboarding() {
 
   return (
     <div
+      ref={dialog}
       role="dialog"
       aria-modal="true"
       aria-labelledby="onboarding-title"
       className="fixed inset-0 z-50 grid place-items-center bg-ink/40 px-4 py-8 backdrop-blur-sm"
     >
-      <div className="card w-full max-w-2xl shadow-card">
+      <div className="card max-h-[calc(100dvh-4rem)] w-full max-w-2xl overflow-y-auto shadow-card">
         {/* 进度点 */}
         <div className="flex items-center gap-2">
           {STEPS.map((_, i) => (

@@ -29,6 +29,7 @@
  */
 
 import type { AirdropProject, Dataset } from '../../src/lib/types';
+import { capitalLabel } from '../../src/lib/cost';
 
 /**
  * 只反映「什么时候跑的」、不反映「内容是什么」的字段。
@@ -94,7 +95,7 @@ export function stableStringify(value: unknown): string {
  *   再算的 fingerprint(A + digest) 不相等，导致每轮都被误判为「已变化」。
  *   last_changed_at 同理 —— 它由变化判定结果决定，不能反过来影响判定。
  */
-const DIGEST_META_KEYS = new Set(['digest', 'last_changed_at']);
+const DIGEST_META_KEYS = new Set(['digest', 'last_changed_at', 'guide_version']);
 
 /**
  * 计算单个项目的「实质内容」指纹。
@@ -107,7 +108,7 @@ export function projectDigest(p: AirdropProject): string {
   const clone: Record<string, unknown> = {};
   for (const [k, v] of Object.entries(p)) {
     if (DIGEST_META_KEYS.has(k)) continue;
-    clone[k] = v;
+    clone[k] = k === 'guide' ? p.guide.map(({ id: _id, ...step }) => step) : v;
   }
   return stableStringify(clone);
 }
@@ -232,7 +233,7 @@ export function describeProjectChanges(
     out.push(LABEL[after.guide_source] ?? '教程来源有变化');
   }
   if (out.length < 3 && before.cost.capital_max_usd !== after.cost.capital_max_usd) {
-    out.push(`资金门槛：$${before.cost.capital_max_usd} → $${after.cost.capital_max_usd}`);
+    out.push(`资金门槛：${capitalLabel(before.cost)} → ${capitalLabel(after.cost)}`);
   }
   if (out.length < 3 && before.evidence.length !== after.evidence.length) {
     out.push(`证据：${before.evidence.length} → ${after.evidence.length} 条`);
@@ -248,6 +249,7 @@ const STATUS_TEXT: Record<string, string> = {
   new: '新发现',
   potential: '潜在空投',
   confirmed: '已确认',
+  pending: '状态待核实',
   claim_live: '开放领取',
   ended: '已结束',
 };

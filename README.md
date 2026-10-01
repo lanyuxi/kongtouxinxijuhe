@@ -1143,3 +1143,13 @@ git push origin HEAD
 ## License
 
 [MIT](./LICENSE)
+# 访客独立 X API 配置
+
+本地使用 Node.js 22+，运行 `npm ci` 后执行 `npm run dev`，访问 `http://127.0.0.1:5173/#/settings`。
+开发启动器会同步公共数据，并一起启动页面及 X 配置后台。每位访客的密钥与动态按浏览器会话隔离，不写入公共 `data/`。
+
+生产环境安装依赖时保留开发依赖（`npm ci --include=dev`），执行 `npm run build`，配置 `PUBLIC_ORIGIN`（HTTPS 网站来源，不带路径）、`X_CONFIG_MASTER_KEY`（32 字节随机值的 base64）、`HOST` 与 `PORT`，再运行 `npm start`。
+HTTPS 反向代理须将整个网站转发到此后台；前后台使用同一来源。保持 `.private/x/` 私有存储目录和生产主密钥，重启后配置仍可使用；主密钥丢失需要访客重新配置。
+可复制 `.env.example` 为 `.env` 修改；不要提交真实密钥。GitHub Pages 单独托管时只能浏览公共项目库，不能使用个人 API 配置和抓取。
+
+本机验收范围、操作方法和未验收项见 [访客 X 配置验收记录](docs/访客X配置验收.md)。

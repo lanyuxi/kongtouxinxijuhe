@@ -18,3 +18,9 @@ public/data/
 # TS 增量构建信息
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+
+# 访客私有配置与环境密钥
+.private/
+.env
+.env.*
+!.env.example

@@ -179,8 +179,8 @@ describe('P0-1 前端官方域名库不得收录非空投条目', () => {
   it('buildOfficialDomains 只收「真项目」的官网', async () => {
     const { buildOfficialDomains } = await import('../src/lib/scam');
     const projects = [
-      { slug: 'binance-cex', name: 'Binance CEX', official: { website: 'https://www.binance.com' } },
-      { slug: 'fraxtal', name: 'Fraxtal', official: { website: 'https://frax.com/' } },
+      { slug: 'binance-cex', name: 'Binance CEX', official: { website: 'https://www.binance.com' }, verified_official_website: 'https://www.binance.com' },
+      { slug: 'fraxtal', name: 'Fraxtal', official: { website: 'https://frax.com/' }, verified_official_website: 'https://frax.com/' },
     ];
     const map = buildOfficialDomains(projects);
     expect(map['binance.com']).toBeUndefined();

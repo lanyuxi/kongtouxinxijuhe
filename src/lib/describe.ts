@@ -70,6 +70,7 @@ const CATEGORY_DESC: Record<Category, string> = {
 const STATUS_DESC: Record<AirdropStatus, string> = {
   new: '刚被发现，信息还很有限，建议先观察。',
   potential: '尚未确认发币，属于需要提前参与、但结果不确定的类型。',
+  pending: '活动状态尚未核实，请先核对具体官方公告，暂不据此投入资金。',
   confirmed: '官方已确认会有空投，可重点关注资格条件。',
   claim_live: '领取入口已开放，请尽快核对资格并在期限内领取。',
   ended: '活动已结束，仅作为资料保留，不建议再投入时间。',
@@ -157,9 +158,7 @@ export function chineseBlurb(p: Pick<ListProject, 'tagline' | 'category' | 'stat
 
   // 阶段说明：status 与 tagline 对账，避免出现互相矛盾的文案
   let stage = STATUS_DESC[p.status] ?? '';
-  if (taglineSaysConfirmed(tagline) && p.status === 'potential') {
-    stage = '官方已确认该项目会有空投，可重点关注资格条件。';
-  }
+
 
   const tvlText = tvl ? `当前锁仓规模约 ${tvl}。` : '';
 

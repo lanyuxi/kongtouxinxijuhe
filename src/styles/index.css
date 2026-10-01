@@ -522,3 +522,11 @@
     transform: none;
   }
 }
+
+/* 键盘和窄屏阅读：所有可操作元素保留清晰焦点。 */
+:focus-visible { outline: 2px solid #2563EB !important; outline-offset: 3px; }
+summary { cursor: pointer; }
+p, dd { overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
