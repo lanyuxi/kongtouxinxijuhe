@@ -120,13 +120,13 @@ export function refreshCapability(endpoint: string | undefined | null): RefreshC
   if (configured) {
     return {
       canTriggerFetch: true,
-      buttonLabel: '一键更新',
+      buttonLabel: '刷新项目',
       note: '点击后将触发一次完整抓取，抓取完成后自动加载最新数据',
     };
   }
   return {
     canTriggerFetch: false,
-    buttonLabel: '重新加载数据',
+    buttonLabel: '刷新项目',
     // 关键措辞：明确说「不会触发新的抓取」。
     // 也不说「已更新到最新数据」—— 那是原实现里最误导的一句。
     note: '当前部署未接入抓取触发器：点击只会重新加载已发布的数据，不会触发新的抓取',

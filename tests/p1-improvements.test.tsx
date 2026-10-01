@@ -128,7 +128,7 @@ describe('P1 安全说明边界', () => {
 
 it('未配置的来源不计入抓取失败覆盖提示', () => {
   const time = '2026-10-01T00:00:00Z';
-  const html = renderToStaticMarkup(<RefreshBar index={{ updated_at: time, total: 1, sources: [{ source: '正常', source_url: 'https://example.org', fetched_at: time, count: 1, file: 'live/test.json' }] }} refreshing={false} message={null} onRefresh={() => {}} totalProjects={2} health={{ updated_at: time, sources: [
+  const html = renderToStaticMarkup(<RefreshBar index={{ updated_at: time, total: 1, sources: [{ source: '正常', source_url: 'https://example.org', fetched_at: time, count: 1, file: 'live/test.json' }] }} totalProjects={2} health={{ updated_at: time, sources: [
     { name: '正常', url: 'https://example.org', status: 'success', ok: true, fetched: 1, checked_at: time },
     { name: 'X (Twitter)', url: 'https://x.com', status: 'not_configured', ok: false, fetched: 0, checked_at: time },
   ] }} />);

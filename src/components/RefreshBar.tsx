@@ -6,26 +6,20 @@ import { computeCoverageGap } from '../lib/coverage';
 import { refreshCapability, refreshEndpoint } from '../lib/refresh';
 
 /**
- * 「一键更新」工具条。
+ * 公共数据源检查信息。
  *
  * 需要向用户说清三件事（缺一就会让人以为按钮坏了）：
  *   1. 数据现在有多新（相对时间 + 是否过期）
  *   2. 数据从哪些来源来的、各多少条
- *   3. 点击后正在发生什么（实时进度文案）
+ *   3. 当前部署能否触发新的抓取
  */
 export function RefreshBar({
   index,
-  onRefresh,
-  refreshing,
-  message,
   changeDetails,
   health,
   totalProjects,
 }: {
   index: LiveIndex | null;
-  onRefresh: () => void;
-  refreshing: boolean;
-  message: string | null;
   /** 最近一次抓取的项目级变更明细，例如「Monad 状态：潜在空投 → 开放领取」 */
   changeDetails?: string[];
   /** 数据源健康状态；用于把「库内 vs 本轮」的差异摊开（P2-2） */
@@ -61,7 +55,7 @@ export function RefreshBar({
    */
   /**
    * 「一键更新」在当前部署下的真实能力（P2-3）。
-   * 未接入触发器时按钮改叫「重新加载数据」，并明确写出「不会触发新的抓取」——
+   * 未接入触发器时明确写出「不会触发新的抓取」——
    * 原来按钮写着「一键更新」、点完说「已更新到最新数据」，
    * 用户会以为平台刚刚抓取了最新情报，而实际只是重新拉了一次静态 JSON。
    */
@@ -92,7 +86,7 @@ export function RefreshBar({
         });
 
   return (
-    <section className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-card lg:flex-row lg:items-center lg:justify-between">
+    <section className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 shadow-card">
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="panel-title !text-base">公共空投数据源</h2>
@@ -134,20 +128,6 @@ export function RefreshBar({
           )}
         </p>
 
-        {/* aria-live 让「更新中 → 已更新」的异步结果被读屏播报，
-            否则读屏用户点完按钮没有任何反馈，只能怀疑自己点错了 */}
-        {message && (
-          <p
-            id="refresh-status-text"
-            className="mt-2 text-sm font-medium text-brand"
-            role="status"
-            aria-live="polite"
-          >
-            {refreshing ? '⏳ ' : '✓ '}
-            {message}
-          </p>
-        )}
-
         {publication && <div className="mt-3 space-y-1 text-xs text-ink-soft">
           <p>最近成功检查：{publication.last_successful_check_at ? relativeTime(publication.last_successful_check_at) : '未记录'}（成功来源已检查，不代表全部来源正常）</p>
           <p>内容最近变化：{publication.content_updated_at ? relativeTime(publication.content_updated_at) : '未记录'}；内容不变也会刷新检查时间。</p>
@@ -187,30 +167,6 @@ export function RefreshBar({
         )}
       </div>
 
-      <button
-        type="button"
-        onClick={onRefresh}
-        disabled={refreshing}
-        aria-busy={refreshing}
-        aria-describedby="refresh-status-text"
-        className={`btn-primary shrink-0 !px-6 !py-3 disabled:cursor-not-allowed disabled:opacity-60 ${
-          stale ? 'animate-pulse-soft' : ''
-        }`}
-      >
-        {refreshing ? (
-          <>
-            <span
-              aria-hidden
-              className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
-            />
-            更新中…
-          </>
-        ) : (
-          <>
-            ⟳ {capability.buttonLabel}
-          </>
-        )}
-      </button>
     </section>
   );
 }

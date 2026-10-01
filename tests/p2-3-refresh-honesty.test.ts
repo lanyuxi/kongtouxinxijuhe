@@ -11,10 +11,9 @@
  *   用户点完看到「已更新」，会以为平台实时抓取了。
  *
  * 修复原则（诚实的措辞，而不是隐藏按钮）：
- *   1. 未配置触发器时，按钮改文案为「重新加载最新已发布数据」，
- *      不再用「一键更新」这种承诺性的措辞；
+ *   1. 按钮统一叫「刷新项目」，能力说明明确是否会触发新抓取；
  *   2. 点击后的结果说明必须包含「未触发新抓取」这一事实；
- *   3. 配置了触发器时保持原行为与文案（能力真的存在时不必自我贬低）。
+ *   3. 配置了触发器时保持原有抓取能力。
  */
 import { describe, it, expect } from 'vitest';
 import { refreshCapability, describeRefreshOutcome } from '../src/lib/refresh';
@@ -23,7 +22,7 @@ describe('P2-3 一键更新的能力与文案诚实性', () => {
   it('未配置触发器时：能力如实报告为「仅重新加载」', () => {
     const cap = refreshCapability(undefined);
     expect(cap.canTriggerFetch).toBe(false);
-    expect(cap.buttonLabel).toBe('重新加载数据');
+    expect(cap.buttonLabel).toBe('刷新项目');
     expect(cap.note).toContain('不会触发新的抓取');
   });
 
@@ -36,7 +35,7 @@ describe('P2-3 一键更新的能力与文案诚实性', () => {
   it('配置了触发器时：保留原有能力表述', () => {
     const cap = refreshCapability('https://example.com/hook');
     expect(cap.canTriggerFetch).toBe(true);
-    expect(cap.buttonLabel).toBe('一键更新');
+    expect(cap.buttonLabel).toBe('刷新项目');
   });
 
   it('空字符串 / 空白字符串等同于未配置', () => {

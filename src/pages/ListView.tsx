@@ -28,6 +28,7 @@ import { MetricTile } from '../components/galaxy';
 import type { Percentiles } from '../lib/percentile';
 import type { LocalState, ProjectProgress } from '../lib/store';
 import { loadFilters, persistFilters, resolveProgress } from '../lib/store';
+import { isStale, refreshCapability, refreshEndpoint } from '../lib/refresh';
 
 export function ListView({
   view,
@@ -278,11 +279,27 @@ export function ListView({
     );
   }
 
+  const refreshCap = refreshCapability(refreshEndpoint());
+
   return (
     <div className="flex flex-col gap-4">
       {computing && projects.length > 0 && <CardSkeletonGrid rows={1} />}
       {xResult && <XUpdates result={xResult} onRefresh={onXRefresh} />}
-      <h1 className="text-xl font-bold">{view === 'hot' ? '热门精选' : view === 'claim' ? '可领取项目' : view === 'potential' ? '潜在机会' : '发现空投项目'}</h1>
+      <div className="flex items-center justify-between gap-4">
+        <h1 className="text-xl font-bold">{view === 'hot' ? '热门精选' : view === 'claim' ? '可领取项目' : view === 'potential' ? '潜在机会' : '发现空投项目'}</h1>
+        <button
+          type="button"
+          onClick={onRefresh}
+          disabled={refreshing}
+          aria-busy={refreshing}
+          aria-describedby={refreshMessage ? 'refresh-status-text' : undefined}
+          title={refreshCap.note}
+          className={`btn-primary shrink-0 !px-6 !py-3 disabled:cursor-not-allowed disabled:opacity-60 ${isStale(liveIndex) ? 'animate-pulse-soft' : ''}`}
+        >
+          {refreshing ? <><span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />刷新中…</> : <>⟳ {refreshCap.buttonLabel}</>}
+        </button>
+      </div>
+      {refreshMessage && <p id="refresh-status-text" className="text-sm font-medium text-brand" role="status" aria-live="polite">{refreshing ? '⏳ ' : '✓ '}{refreshMessage}</p>}
       <FilterBar
         expanded={expanded}
         onExpandedChange={setExpanded}
@@ -301,7 +318,7 @@ export function ListView({
           {health.sources.filter(s => !s.ok).map(s => <p key={s.name}>{s.status === 'not_configured' ? '尚未配置' : '抓取失败，保留上次数据'}：{s.name}{s.error && `（${s.error}）`}</p>)}
           <p className="mt-2 text-xs text-ink-faint">以上为公共来源的检查记录，不代表你的个人 X API 检测结果。<a href="#/settings" className="text-brand underline">配置或检测我的 X API</a></p>
         </div>}
-        <div className="mt-4"><RefreshBar index={liveIndex} onRefresh={onRefresh} refreshing={refreshing} message={refreshMessage} changeDetails={changeDetails} health={health} totalProjects={projects.length} /></div>
+        <div className="mt-4"><RefreshBar index={liveIndex} changeDetails={changeDetails} health={health} totalProjects={projects.length} /></div>
       </details>
       {visible.length === 0 ? (
         <EmptyState
