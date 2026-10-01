@@ -95,11 +95,11 @@ describe('P2 页面路径与信息层次', () => {
     vi.stubGlobal('window', {history:{state:{airdropReturn:'#/watchlist'}}});
     expect(router.detailReturnTarget()).toBe('#/watchlist');
   });
-  it('搜索与项目先于统计面板，热门真实空态不要求放宽筛选', () => {
+  it('筛选与统计面板先于项目，热门真实空态不要求放宽筛选', () => {
     const props = { projects: JSON.parse(readFileSync('data/airdrops.json','utf8')).projects, updatedAt: '2026-10-01', favorites: [], progress: {}, liveIndex: null, refreshing: false, refreshMessage: null, onRefresh: () => {}, onToggleFavorite: () => {}, onClearAll: () => {}, filters: DEFAULT_FILTERS };
     const latest = renderToStaticMarkup(<ListView {...props} view="latest" />);
     expect(latest.indexOf('搜索项目')).toBeLessThan(latest.indexOf('数据总览'));
-    expect(latest.indexOf('查看 Aave V3 详情')).toBeLessThan(latest.indexOf('数据总览'));
+    expect(latest.indexOf('数据总览')).toBeLessThan(latest.indexOf('查看 Aave V3 详情'));
     const hot = renderToStaticMarkup(<ListView {...props} view="hot" />);
     expect(hot).toContain('尚无达到');
     expect(hot).not.toContain('试试放宽筛选条件');
