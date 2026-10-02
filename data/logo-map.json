@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-02T05:53:43.245Z",
-  "total": 186,
+  "updated_at": "2026-10-02T12:22:11.180Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -123,6 +123,7 @@
     "omega": "logos/omega.png",
     "onre": "logos/onre.png",
     "opentrade": "logos/opentrade.png",
+    "orbinum": "logos/orbinum.png",
     "orca-dex": "logos/orca-dex.png",
     "pancakeswap-amm": "logos/pancakeswap-amm.png",
     "pancakeswap-amm-v3": "logos/pancakeswap-amm-v3.png",
@@ -158,6 +159,7 @@
     "stader": "logos/stader.png",
     "stakewise-v3": "logos/stakewise-v3.png",
     "steakhouse-financial": "logos/steakhouse-financial.png",
+    "sthype": "logos/sthype.webp",
     "sunswap-v2": "logos/sunswap-v2.png",
     "sunswap-v3": "logos/sunswap-v3.png",
     "sweep-finance": "logos/sweep-finance.png",
@@ -166,6 +168,7 @@
     "tastyco": "logos/tastyco.png",
     "tbook": "logos/tbook.svg",
     "tbtc": "logos/tbtc.png",
+    "titan-exchange": "logos/titan-exchange.webp",
     "tonstakers-lsd": "logos/tonstakers-lsd.png",
     "tornado-cash": "logos/tornado-cash.webp",
     "tread-fi": "logos/tread-fi.png",
@@ -479,6 +482,8 @@
     "tastyco": "https://www.faviconextractor.com/favicon/app.tastyco.io?larger=true",
     "tornado-cash": "https://icons.llamao.fi/icons/protocols/tornado-cash",
     "drift-protocol": "https://www.faviconextractor.com/favicon/drift.trade?larger=true",
-    "kinetiq": "https://icons.llamao.fi/icons/protocols/kinetiq"
+    "kinetiq": "https://icons.llamao.fi/icons/protocols/kinetiq",
+    "orbinum": "https://www.faviconextractor.com/favicon/app.orbinum.network?larger=true",
+    "titan-exchange": "https://icons.llamao.fi/icons/protocols/titan-exchange"
   }
 }

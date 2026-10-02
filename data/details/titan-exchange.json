@@ -1,0 +1,461 @@
+{
+  "id": "titan-exchange",
+  "name": "Titan Exchange",
+  "slug": "titan-exchange",
+  "tagline": "中文简介待核实，请查看来源与原文对照。",
+  "category": "DeFi",
+  "chains": [
+    "Canton"
+  ],
+  "status": "potential",
+  "official": {
+    "website": "https://testnet.titanx.cc"
+  },
+  "meta": {},
+  "tasks": [],
+  "requirements": [
+    "钱包"
+  ],
+  "sources": [
+    {
+      "type": "airdrop_aggregator",
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io/titan-exchange/",
+      "fetched_at": "2026-10-02T12:22:05.749Z"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "official_website",
+      "label": "项目官网候选链接",
+      "url": "https://testnet.titanx.cc",
+      "verified": false,
+      "note": "来源提供的候选链接，归属与可访问性尚未核实"
+    },
+    {
+      "type": "third_party",
+      "label": "第三方来源记录：Airdrops.io",
+      "url": "https://airdrops.io/titan-exchange/",
+      "verified": false,
+      "note": "记录抓取出处，不代表内容已核实或官方背书"
+    }
+  ],
+  "scores": {
+    "authenticity": 11,
+    "value": 26,
+    "risk": "medium",
+    "grade": "D",
+    "authenticityItems": [
+      {
+        "key": "authenticity.website",
+        "label": "官方网站可验证",
+        "value": 0,
+        "max": 15,
+        "reason": "未找到可验证的官方网站"
+      },
+      {
+        "key": "authenticity.announcement",
+        "label": "官方公告明确提到活动",
+        "value": 0,
+        "max": 20,
+        "reason": "尚未核实具体空投活动公告"
+      },
+      {
+        "key": "authenticity.crosslink",
+        "label": "项目文档已核验",
+        "value": 0,
+        "max": 15,
+        "reason": "缺少 Docs 或链接无法互相印证"
+      },
+      {
+        "key": "authenticity.thirdparty",
+        "label": "至少两个独立第三方来源",
+        "value": 7,
+        "max": 15,
+        "reason": "仅有 1 个第三方来源，交叉验证不足"
+      },
+      {
+        "key": "authenticity.quest",
+        "label": "Galxe / Layer3 等官方 Space 可确认",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方 Quest Space"
+      },
+      {
+        "key": "authenticity.github",
+        "label": "官方 GitHub / Docs 有持续活动",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方开源仓库"
+      },
+      {
+        "key": "authenticity.funding",
+        "label": "团队 / 投资信息可核实",
+        "value": 0,
+        "max": 10,
+        "reason": "未核实团队或融资信息"
+      },
+      {
+        "key": "authenticity.scale",
+        "label": "链上规模可佐证（TVL）",
+        "value": 0,
+        "max": 12,
+        "reason": "数据源未提供该项目的锁仓规模，无法据此判断"
+      },
+      {
+        "key": "authenticity.contract",
+        "label": "合约地址在区块浏览器可验证",
+        "value": 0,
+        "max": 5,
+        "reason": "暂无公开可验证合约地址"
+      }
+    ],
+    "valueItems": [
+      {
+        "key": "value.scale",
+        "label": "链上规模 / 产品成熟度",
+        "value": 0,
+        "max": 20,
+        "reason": "未获取到资金规模数据（数据源未提供）"
+      },
+      {
+        "key": "value.verification",
+        "label": "信息验证充分度",
+        "value": 0,
+        "max": 20,
+        "reason": "共 2 条证据，其中 0 条已验证（验证率 0%）"
+      },
+      {
+        "key": "value.breadth",
+        "label": "来源广度",
+        "value": 4,
+        "max": 10,
+        "reason": "来自 1 个独立数据源，建议再找官方渠道确认"
+      },
+      {
+        "key": "value.funding",
+        "label": "融资 / 投资机构",
+        "value": 0,
+        "max": 10,
+        "reason": "未核实融资信息，机构背书不足"
+      },
+      {
+        "key": "value.signal",
+        "label": "Token / Airdrop 信号强度",
+        "value": 9,
+        "max": 20,
+        "reason": "存在积分/测试网等潜在线索，但尚未确认"
+      },
+      {
+        "key": "value.roi",
+        "label": "任务投入产出比",
+        "value": 5,
+        "max": 15,
+        "reason": "任务尚不明确，无法评估投入产出比"
+      },
+      {
+        "key": "value.timing",
+        "label": "当前参与时机",
+        "value": 4,
+        "max": 5,
+        "reason": "仍处于早期阶段，参与时机较好"
+      },
+      {
+        "key": "value.dilution",
+        "label": "用户稀释风险",
+        "value": 4,
+        "max": 5,
+        "reason": "暂未发现明显的用户过度稀释迹象"
+      },
+      {
+        "key": "value.guide_trust",
+        "label": "教程可信度",
+        "value": 0,
+        "max": 12,
+        "reason": "教程由第三方整理，共 7 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性"
+      }
+    ],
+    "riskItems": [
+      {
+        "key": "risk.unknown",
+        "label": "成本或步骤风险待核实",
+        "value": 1,
+        "max": 3,
+        "reason": "信息不完整，不能据此认定为免费或低风险"
+      },
+      {
+        "key": "risk.signature_step",
+        "label": "包含需要签名的链上步骤",
+        "value": 1,
+        "max": 3,
+        "reason": "教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等"
+      }
+    ],
+    "evidenceChecklist": [
+      {
+        "label": "官方网站",
+        "status": "partial",
+        "note": "已找到候选域名，但未通过官方校验"
+      },
+      {
+        "label": "官方文档",
+        "status": "missing",
+        "note": "未找到官方文档"
+      },
+      {
+        "label": "开源仓库",
+        "status": "missing",
+        "note": "未找到官方开源仓库"
+      },
+      {
+        "label": "第三方来源",
+        "status": "partial",
+        "note": "仅 1 个第三方来源，尚不足以交叉验证"
+      },
+      {
+        "label": "官方公告",
+        "status": "not_applicable",
+        "note": "尚未核实具体活动公告"
+      },
+      {
+        "label": "融资信息",
+        "status": "not_applicable",
+        "note": "项目尚未确认，融资信息通常也未公开（不适用）"
+      },
+      {
+        "label": "官方 Quest",
+        "status": "not_applicable",
+        "note": "该项目未使用 Quest 平台（不适用）"
+      },
+      {
+        "label": "链上规模",
+        "status": "not_applicable",
+        "note": "数据源未提供锁仓规模（该维度不适用）"
+      },
+      {
+        "label": "合约地址",
+        "status": "not_applicable",
+        "note": "暂无公开可验证合约地址"
+      }
+    ],
+    "authenticityVerifiedCount": 0,
+    "authenticityPartialCount": 2,
+    "authenticityTotalCount": 9
+  },
+  "cost": {
+    "capital_min_usd": null,
+    "capital_max_usd": null,
+    "gas_estimate_usd": null,
+    "time_minutes": 0,
+    "long_term": false,
+    "summary": "本金要求待核实。手续费待核实。信息不完整，暂不判断为新手友好。",
+    "capital_required": false,
+    "gas_required": false,
+    "basis": {
+      "method": "source_text",
+      "source_url": "https://airdrops.io/titan-exchange/",
+      "checked_at": "2026-10-02T12:22:05.749Z",
+      "note": "来源未给出可核实的成本金额"
+    }
+  },
+  "recommendation": {
+    "grade": "D",
+    "action": "observe",
+    "summary": "活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。"
+  },
+  "guide": [
+    {
+      "step": 1,
+      "title": "参与前安全检查",
+      "description": "核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。",
+      "official_url": "https://testnet.titanx.cc",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
+      "source_verified": false,
+      "content_status": "ready",
+      "id": "749856f40a47d077c2d7e902d70593a827835ba8190313b5c53ebf9dece6d07d"
+    },
+    {
+      "step": 2,
+      "title": "中文教程待核实",
+      "description": "尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。",
+      "official_url": "",
+      "content_status": "pending_translation",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": true,
+      "needs_signature": true,
+      "risk": "medium",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Join the Titan Exchange Waitlist",
+      "original_description": "Visit the Titan Exchange waitlist , connect your wallet, and sign the message.",
+      "id": "54717f2d81703c9343f4632a33d619f2219c719063a9ff3f88fe65a8c721621b"
+    },
+    {
+      "step": 3,
+      "title": "中文教程待核实",
+      "description": "尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。",
+      "official_url": "",
+      "content_status": "pending_translation",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Share Your Referral Link",
+      "original_description": "Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond.",
+      "id": "7685d98fb9d17492465023c9228a0532b0c44ccc9c1d1e6865788d6623d2cc33"
+    },
+    {
+      "step": 4,
+      "title": "中文教程待核实",
+      "description": "尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。",
+      "official_url": "",
+      "content_status": "pending_translation",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": true,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Open the Titan Testnet",
+      "original_description": "Go to the Titan testnet and connect the wallet you used for the waitlist.",
+      "id": "b92b195e350ee018e52b519d2f1264ab464d18dc4cc6b3b5fdb7639fc2597511"
+    },
+    {
+      "step": 5,
+      "title": "中文教程待核实",
+      "description": "尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。",
+      "official_url": "",
+      "content_status": "pending_translation",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Claim Testnet USDC",
+      "original_description": "Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet.",
+      "id": "0d93988d8712bc6debcf3132f672c8da2d0d6af170435479ed3997ee08770787"
+    },
+    {
+      "step": 6,
+      "title": "中文教程待核实",
+      "description": "尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。",
+      "official_url": "",
+      "content_status": "pending_translation",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": true,
+      "needs_signature": true,
+      "risk": "medium",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Enable Trading",
+      "original_description": "Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account.",
+      "id": "3ec444920415ff2d1249c7633aec13df9c24306b83c13f18f6c33cb3840bca85"
+    },
+    {
+      "step": 7,
+      "title": "中文教程待核实",
+      "description": "尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。",
+      "official_url": "",
+      "content_status": "pending_translation",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Place a Perp Order",
+      "original_description": "Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order",
+      "id": "043b78808edbd1110e2b594cb9a6f2ef8d64245b2bc37e6302cba0dd7f1251fc"
+    }
+  ],
+  "guide_source": "third_party",
+  "faq": [
+    {
+      "q": "这个空投确认了吗？",
+      "a": "当前状态：潜在空投，尚未正式确认。请核对具体活动公告与资格条件。"
+    },
+    {
+      "q": "什么时候结束？",
+      "a": "本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。"
+    },
+    {
+      "q": "参与需要花钱吗？",
+      "a": "本金要求待核实；手续费待核实。"
+    },
+    {
+      "q": "需要连接钱包吗？",
+      "a": "来源描述涉及钱包，请先核对实际活动要求。"
+    },
+    {
+      "q": "需要主网资产吗？",
+      "a": "手续费与主网资产要求待核实。"
+    },
+    {
+      "q": "积分一定会兑换 Token 吗？",
+      "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+    },
+    {
+      "q": "适合新手参与吗？",
+      "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+    },
+    {
+      "q": "领取时间确定了吗？",
+      "a": "相关活动信息待核实，请查看官方公告。"
+    }
+  ],
+  "risks": [
+    "项目尚未确认空投，存在投入后无回报的可能。",
+    "真实性置信度偏低，证据不足，建议先观察。",
+    "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+    "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+  ],
+  "created_at": "2026-10-02T12:22:05.749Z",
+  "discovered_at": "2026-10-02T12:22:05.749Z",
+  "last_checked_at": "2026-10-02T12:22:05.749Z",
+  "last_changed_at": "2026-10-02T12:22:05.749Z",
+  "sourcedDescription": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.",
+  "tagline_en": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.",
+  "sourcedSteps": [
+    {
+      "title": "Join the Titan Exchange Waitlist",
+      "body": "Visit the Titan Exchange waitlist , connect your wallet, and sign the message."
+    },
+    {
+      "title": "Share Your Referral Link",
+      "body": "Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond."
+    },
+    {
+      "title": "Open the Titan Testnet",
+      "body": "Go to the Titan testnet and connect the wallet you used for the waitlist."
+    },
+    {
+      "title": "Claim Testnet USDC",
+      "body": "Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet."
+    },
+    {
+      "title": "Enable Trading",
+      "body": "Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account."
+    },
+    {
+      "title": "Place a Perp Order",
+      "body": "Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order"
+    }
+  ],
+  "guide_version": "52262bdabd7944e77af79104f1cef9dbdb1576925ed717e5cbc5a8c016f78a16",
+  "digest": "{\"category\":\"DeFi\",\"chains\":[\"Canton\"],\"cost\":{\"basis\":{\"checked_at\":\"<time>\",\"method\":\"source_text\",\"note\":\"来源未给出可核实的成本金额\",\"source_url\":\"https://airdrops.io/titan-exchange/\"},\"capital_max_usd\":null,\"capital_min_usd\":null,\"capital_required\":false,\"gas_estimate_usd\":null,\"gas_required\":false,\"long_term\":false,\"summary\":\"本金要求待核实。手续费待核实。信息不完整，暂不判断为新手友好。\",\"time_minutes\":0},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"项目官网候选链接\",\"note\":\"来源提供的候选链接，归属与可访问性尚未核实\",\"type\":\"official_website\",\"url\":\"https://testnet.titanx.cc\",\"verified\":false},{\"label\":\"第三方来源记录：Airdrops.io\",\"note\":\"记录抓取出处，不代表内容已核实或官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/titan-exchange/\",\"verified\":false}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。请核对具体活动公告与资格条件。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。\",\"q\":\"什么时候结束？\"},{\"a\":\"本金要求待核实；手续费待核实。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"来源描述涉及钱包，请先核对实际活动要求。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"手续费与主网资产要求待核实。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"相关活动信息待核实，请查看官方公告。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"content_status\":\"ready\",\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://testnet.titanx.cc\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"content_status\":\"pending_translation\",\"cost_usd\":null,\"description\":\"尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"\",\"original_description\":\"Visit the Titan Exchange waitlist , connect your wallet, and sign the message.\",\"original_title\":\"Join the Titan Exchange Waitlist\",\"risk\":\"medium\",\"source_verified\":false,\"step\":2,\"title\":\"中文教程待核实\"},{\"content_status\":\"pending_translation\",\"cost_usd\":null,\"description\":\"尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"\",\"original_description\":\"Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond.\",\"original_title\":\"Share Your Referral Link\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":3,\"title\":\"中文教程待核实\"},{\"content_status\":\"pending_translation\",\"cost_usd\":null,\"description\":\"尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":true,\"official_url\":\"\",\"original_description\":\"Go to the Titan testnet and connect the wallet you used for the waitlist.\",\"original_title\":\"Open the Titan Testnet\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":4,\"title\":\"中文教程待核实\"},{\"content_status\":\"pending_translation\",\"cost_usd\":null,\"description\":\"尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"\",\"original_description\":\"Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet.\",\"original_title\":\"Claim Testnet USDC\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":5,\"title\":\"中文教程待核实\"},{\"content_status\":\"pending_translation\",\"cost_usd\":null,\"description\":\"尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":true,\"needs_wallet\":true,\"official_url\":\"\",\"original_description\":\"Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account.\",\"original_title\":\"Enable Trading\",\"risk\":\"medium\",\"source_verified\":false,\"step\":6,\"title\":\"中文教程待核实\"},{\"content_status\":\"pending_translation\",\"cost_usd\":null,\"description\":\"尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"\",\"original_description\":\"Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order\",\"original_title\":\"Place a Perp Order\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":7,\"title\":\"中文教程待核实\"}],\"guide_source\":\"third_party\",\"id\":\"titan-exchange\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Titan Exchange\",\"official\":{\"website\":\"https://testnet.titanx.cc\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"D\",\"summary\":\"活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":11,\"authenticityItems\":[{\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"未找到可验证的官方网站\",\"value\":0},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"尚未核实具体空投活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"项目文档已核验\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":2,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":0,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到候选域名，但未通过官方校验\",\"status\":\"partial\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"尚未核实具体活动公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"D\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.unknown\",\"label\":\"成本或步骤风险待核实\",\"max\":3,\"reason\":\"信息不完整，不能据此认定为免费或低风险\",\"value\":1},{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":26,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 0 条已验证（验证率 0%）\",\"value\":0},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"任务尚不明确，无法评估投入产出比\",\"value\":5},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 7 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"titan-exchange\",\"sourcedDescription\":\"The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.\",\"sourcedSteps\":[{\"body\":\"Visit the Titan Exchange waitlist , connect your wallet, and sign the message.\",\"title\":\"Join the Titan Exchange Waitlist\"},{\"body\":\"Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond.\",\"title\":\"Share Your Referral Link\"},{\"body\":\"Go to the Titan testnet and connect the wallet you used for the waitlist.\",\"title\":\"Open the Titan Testnet\"},{\"body\":\"Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet.\",\"title\":\"Claim Testnet USDC\"},{\"body\":\"Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account.\",\"title\":\"Enable Trading\"},{\"body\":\"Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order\",\"title\":\"Place a Perp Order\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/titan-exchange/\"}],\"status\":\"potential\",\"tagline\":\"中文简介待核实，请查看来源与原文对照。\",\"tagline_en\":\"The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.\",\"tasks\":[]}",
+  "first_seen_at": "2026-10-02T12:22:05.749Z"
+}

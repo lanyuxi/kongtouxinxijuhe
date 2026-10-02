@@ -1,5 +1,5 @@
 {
-  "total": 57,
+  "total": 87,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -8,6 +8,26 @@
           "slug": "aci",
           "field": "简介",
           "source_url": "https://airdrops.io/aci/"
+        }
+      ]
+    },
+    {
+      "original": "Add the Orbinum Testnet manually using Chain ID: 2700 and RPC: https://rpc-1.testnet.orbinum.io, or use the network-add prompt if the dashboard provides one.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 3 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Add the Orbinum Testnet to Your Wallet",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 3 标题",
+          "source_url": "https://airdrops.io/orbinum/"
         }
       ]
     },
@@ -72,6 +92,96 @@
       ]
     },
     {
+      "original": "Check the Community dashboard regularly to monitor your credits, quest completion, streak status, and referral count ahead of the snapshot.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 9 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet.",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 4 正文",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Claim Testnet Tokens from the Faucet",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 4 标题",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Claim Testnet USDC",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 4 标题",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account.",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 5 正文",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Complete Off-Chain Quests",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 8 标题",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Complete the Daily Testnet Quests",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 5 标题",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Connect Your Wallet and Join the Community",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 1 标题",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond.",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 2 正文",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
       "original": "DeepBook’s main live campaign is the waitlist for its new trading app. Access opens in waves, and referring other traders moves you up the queue for earlier entry. Joining early and building referrals may position you for future rewards, though DeepBook has not confirmed a waitlist allocation.",
       "locations": [
         {
@@ -88,6 +198,16 @@
           "slug": "arcus",
           "field": "简介",
           "source_url": "https://airdrops.io/arcus/"
+        }
+      ]
+    },
+    {
+      "original": "Enable Trading",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 5 标题",
+          "source_url": "https://airdrops.io/titan-exchange/"
         }
       ]
     },
@@ -122,6 +242,36 @@
       ]
     },
     {
+      "original": "Four repeatable on-chain quests are live each day: Shield: move testnet assets into a shielded pool Private Transfer: send a shielded transfer using a disclosure key Unshield: move assets back out of the shielded pool Selective Disclosure: reveal specific transaction details using a disclosure key Repeating these daily earns credits and counts toward your weekly streak.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 5 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Go to the Titan testnet and connect the wallet you used for the waitlist.",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 3 正文",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Head to the Orbinum Community dashboard and connect your wallet. This is where all your quests, credits, and referral stats live.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 1 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
       "original": "HertzFlow has confirmed both a token generation event and an airdrop. Official documentation describes Merits, the protocol’s reward points, as your weight in that airdrop: at TGE they convert into an allocation and reset to zero. Season 1 runs entirely through the Genesis Vault, a capped pre-deposit event where every Merit comes from supplying liquidity. Neither the allocation size nor a TGE date has been published.",
       "locations": [
         {
@@ -152,6 +302,16 @@
       ]
     },
     {
+      "original": "Join the Titan Exchange Waitlist",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 1 标题",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
       "original": "Kash’s documentation reserves 25% of the total KASH supply for community incentives, paid out for trading accuracy, market creation, liquidity provision, and referrals. A TGE date and the exact token distribution method have not been announced, so XP and leaderboard activity are the best available signals for a future allocation.",
       "locations": [
         {
@@ -168,6 +328,26 @@
           "slug": "limitless-prediction-markets",
           "field": "简介",
           "source_url": "https://airdrops.io/limitless-prediction-markets/"
+        }
+      ]
+    },
+    {
+      "original": "Link Your Discord, Telegram, and X Accounts",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 2 标题",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Maintain a Weekly Streak",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 6 标题",
+          "source_url": "https://airdrops.io/orbinum/"
         }
       ]
     },
@@ -232,6 +412,46 @@
       ]
     },
     {
+      "original": "Open the Titan Testnet",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 3 标题",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 6 正文",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Orbinum has confirmed its airdrop. Season 1, called the Genesis Community, started on March 13, 2026, and rewards users with ORB Credits for quests, weekly streaks, referrals, and testnet activity like shielding, private transfers, unshielding, and selective disclosure.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "简介",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Place a Perp Order",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 6 标题",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
       "original": "PowerX OneWallet is running a community airdrop that pays 500 PX1 to every participant who completes the social tasks in the PowerX Airdrop Bot and verifies in the app. No purchase or deposit is needed. The product already exists, and finishing the tasks is also what unlocks the app download link.",
       "locations": [
         {
@@ -278,6 +498,26 @@
           "slug": "satsuma",
           "field": "简介",
           "source_url": "https://airdrops.io/satsuma/"
+        }
+      ]
+    },
+    {
+      "original": "Share your personal referral link from the dashboard. Each fully verified referral (wallet plus Discord, Telegram, and X all linked) earns 10 credits, with extra credits at referral milestones.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 7 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Stay active every ISO week to build a streak multiplier, worth up to 1.5x on testnet quest rewards. Missing a week resets the multiplier.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 6 正文",
+          "source_url": "https://airdrops.io/orbinum/"
         }
       ]
     },
@@ -392,6 +632,16 @@
       ]
     },
     {
+      "original": "The dashboard also lists off-chain tasks like follows, shares, quizzes, and submissions. These stack on top of your on-chain and referral credits.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 8 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
       "original": "The Day 1 airdrop is confirmed and its snapshots have closed, claim will run 30 days from TGE, after which anything unclaimed is burned. A second round exists with no published rules.",
       "locations": [
         {
@@ -502,6 +752,16 @@
       ]
     },
     {
+      "original": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "简介",
+          "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
       "original": "The TREAD token is confirmed. The Tread Foundation has announced TREAD, a token used within the tread.fi ecosystem, and has tied the points seasons to it: Season 2 begins only once more token utility is built around TREAD.",
       "locations": [
         {
@@ -522,6 +782,16 @@
       ]
     },
     {
+      "original": "Track Your Progress",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 9 标题",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
       "original": "Vangrid has not confirmed an airdrop. A token is planned for later in 2026, but no allocation, snapshot, or eligibility rule has been published, which makes this a potential future airdrop rather than a scheduled one.",
       "locations": [
         {
@@ -532,12 +802,42 @@
       ]
     },
     {
+      "original": "Verify all three social accounts on the dashboard. Linking everything unlocks a one-time signup bonus of 20 credits.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 2 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
       "original": "Vibe Vibe says 5% of its token supply is set aside for testnet participants. Traders with strong PnL, token creators, and active users are the groups named as eligible. The allocation is discretionary: the team can exclude sybil and wash-trading wallets, and testnet points or leaderboard positions do not guarantee a reward.",
       "locations": [
         {
           "slug": "vibe-vibe",
           "field": "简介",
           "source_url": "https://airdrops.io/vibe-vibe/"
+        }
+      ]
+    },
+    {
+      "original": "Visit the Orbinum faucet and claim testnet tokens to cover gas for the on-chain quests below.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "步骤 4 正文",
+          "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Visit the Titan Exchange waitlist , connect your wallet, and sign the message.",
+      "locations": [
+        {
+          "slug": "titan-exchange",
+          "field": "步骤 1 正文",
+          "source_url": "https://airdrops.io/titan-exchange/"
         }
       ]
     },
