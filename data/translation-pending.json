@@ -1,5 +1,5 @@
 {
-  "total": 244,
+  "total": 242,
   "items": [
     {
       "original": "Accept the Claim Terms and Check Your Allocation",
@@ -1797,16 +1797,6 @@
       ]
     },
     {
-      "original": "StarkNet airdropped 700 million STRK to various early StarkNet and Ethereum users in the form of provisions. Starknet users, developers and community contributors, StarkEx users, Ethereum protocol contributors and stakers and developers of select non-crypto open-source projects received the airdrop.",
-      "locations": [
-        {
-          "slug": "starknet",
-          "field": "简介",
-          "source_url": "https://airdrops.io/starknet/"
-        }
-      ]
-    },
-    {
       "original": "Stay active in Discord to earn the Creator, OG or Ambassador roles, which carry extra rewards. Join AMAs and contests as they come up, and apply to the Ambassador program if you post regularly.",
       "locations": [
         {
@@ -2063,16 +2053,6 @@
           "slug": "drift-protocol",
           "field": "简介",
           "source_url": "https://airdrops.io/drift-protocol/"
-        }
-      ]
-    },
-    {
-      "original": "The Pharos $PROS airdrop claim is now live! Eligible participants have 180 days, from April 28 to October 25, 2026, to claim their allocations before unclaimed amounts are returned to the Pharos Foundation and the claim portal closes. Eligibility includes Testnet Participants, “Stake Before the Stake” Contributors, Pharos Discord Role Holders, and OKX Wallet Campaign Users. If participants qualify under multiple categories, their claims will be automatically consolidated into a single submission.",
-      "locations": [
-        {
-          "slug": "pharos",
-          "field": "简介",
-          "source_url": "https://airdrops.io/pharos/"
         }
       ]
     },
