@@ -48,7 +48,7 @@ export function buildGuide(p: AirdropProject): {
    * 第三版（现在）：三档
    *   · 可追溯步骤 >= 3          → `sourced`（官方 HowTo）
    *   · 有实质步骤但无官方链接   → `third_party`（聚合站编辑整理，非官方）
-   *   · 步骤不足 / 只有通用流程 → `template`
+   *   · 没有来源步骤 → `template`
    *   其中 `third_party` 与 `template` 的**等级上限一致**（最高 B），
    *   保证 P1-2 的修复不被新档位绕开（见 score.ts 的 gradeOfWithGuideTrust）。
    */
@@ -57,7 +57,7 @@ export function buildGuide(p: AirdropProject): {
   if (traceable.length >= 3 && traceable.length === sourced.length) {
     return { steps: withSafetyFirst(p, sourced), source: 'sourced' };
   }
-  if (sourced.length >= 3) {
+  if (sourced.length > 0) {
     // 有实质内容（聚合站编辑手写），但没有一条能追溯到官方页面。
     // 步骤照常展示，但如实告知「第三方整理、非官方」。
     return { steps: withSafetyFirst(p, sourced.map(g => ({ ...g, source_verified: false }))), source: 'third_party' };
@@ -87,7 +87,7 @@ function generateTemplateGuide(p: AirdropProject): GuideStep[] {
   const research = [
     ['核对项目与活动公告', '查看项目资料与来源，寻找具体活动的官方公告。协议存在或提供借贷、交易产品，不代表有空投。', '记录公告链接；没有公告就保留为研究线索。'],
     ['核对资格、期限与成本', '核对参与对象、快照或截止时间、资金与手续费要求。本站尚未收录经核验的条件，不应推定已经满足资格。', '记录可核验的资格和期限；未知项明确标为待核实。'],
-    ['等待可核验的中文教程', '在活动和步骤核实前暂停存款、交易、授权等操作。后续核对官方完成标准；研究完成不等于取得空投资格。', '有官方中文步骤及完成标准后再评估是否参与。'],
+    ['查找并核对活动教程', '查找当前活动的具体步骤与完成标准。英文教程可结合简体中文译文及原文对照阅读；本站尚未收录具体教程时，先核实来源，不推定参与操作。', '核对活动步骤与官方完成标准后，再评估是否参与。'],
   ];
   return research.map(([title, description, done_when], i) => ({
     step: i + 1, title, description, done_when,
