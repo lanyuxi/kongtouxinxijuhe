@@ -8,11 +8,16 @@
  *   因此用测试把「统计口径 == 筛选口径」固化成契约。
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { StatBar } from '../src/components/StatBar';
 import type { AirdropProject } from '../src/lib/types';
 import { toSkeleton } from '../scripts/lib/merge';
 import {
   filterByOverview,
+  filterProjects,
+  DEFAULT_FILTERS,
   isHighRisk,
   isHighValue,
   isNewToday,
@@ -96,6 +101,18 @@ describe('总览口径与筛选口径一致', () => {
     );
     expect(Object.values(OVERVIEW_LABEL).every((v) => v.length > 0)).toBe(true);
   });
+
+  it('项目总数入口包含已结束条目，普通列表仍默认隐藏它们', () => {
+    const ended = makeProject({ slug: 'ended', status: 'ended' });
+    const all = [...projects, ended];
+    expect(filterProjects(filterByOverview(all, 'total'), DEFAULT_FILTERS, { includeEnded: true })).toHaveLength(all.length);
+    expect(filterProjects(all, DEFAULT_FILTERS)).toHaveLength(projects.length);
+  });
+
+  it('总数入口也允许继续按用户指定的状态筛选', () => {
+    const ended = makeProject({ slug: 'ended', status: 'ended' });
+    expect(filterProjects([...projects, ended], { ...DEFAULT_FILTERS, status: 'ended' }, { includeEnded: true })).toEqual([ended]);
+  });
 });
 
 describe('今日新增口径', () => {
@@ -112,5 +129,18 @@ describe('今日新增口径', () => {
     expect(isNewToday(yesterday, now)).toBe(false);
     const got = filterByOverview([today, yesterday], 'newToday', now);
     expect(got.map((p) => p.slug)).toEqual(['today']);
+  });
+
+  it('今日新收录磁贴与点击结果都不计入今日收录的已结束项目', () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(now);
+    try {
+      const today = makeProject({ slug: 'today', first_seen_at: now.toISOString() });
+      const ended = makeProject({ slug: 'ended', status: 'ended', first_seen_at: now.toISOString() });
+      const items = [today, ended];
+      const html = renderToStaticMarkup(createElement(StatBar, { projects: items, updatedAt: now.toISOString(), lastDiscovery: now.toISOString() }));
+      expect(html).toMatch(/今日新收录<\/p><p class="stat-tile__value">1<\/p>/);
+      expect(filterProjects(filterByOverview(items, 'newToday', now), DEFAULT_FILTERS)).toEqual([today]);
+    } finally { vi.useRealTimers(); }
   });
 });

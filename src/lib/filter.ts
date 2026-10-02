@@ -76,13 +76,15 @@ export function applyCostBucket(p: ListProject, bucket: Filters['cost']): boolea
 export function filterProjects(
   projects: ListProject[],
   f: Filters,
+  // 只有全站「项目总数」入口包含历史条目，不改变普通列表的默认行为。
+  { includeEnded = false }: { includeEnded?: boolean } = {},
 ): ListProject[] {
   const kw = f.keyword.trim().toLowerCase();
   return projects.filter((p) => {
     // status === 'all' 表示「全部仍可参与的状态」：默认排除已结束项目，
     // 想看到它们需要显式选择「已结束」。数据不删除，只是不再默认占据列表。
     if (f.status === 'all') {
-      if (p.status === 'ended') return false;
+      if (!includeEnded && p.status === 'ended') return false;
     } else if (p.status !== f.status) {
       return false;
     }

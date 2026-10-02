@@ -1,7 +1,7 @@
 import type { ListProject } from '../lib/types';
 import { relativeTime, isStale } from '../lib/labels';
 import { MetricTile } from './galaxy';
-import { isHighRisk, isHighValue, utcTodayStart, type OverviewKey } from '../lib/filter';
+import { isHighRisk, isHighValue, isNewToday, type OverviewKey } from '../lib/filter';
 
 /**
  * 首页数据摘要。
@@ -32,7 +32,7 @@ export function StatBar({
    * 统计口径必须与 lib/filter.ts 的筛选口径共用同一份实现。
    * 否则极易出现「磁贴数字 21、点进去 19 条」，这是最伤信任的一类不一致。
    */
-  const todayStart = utcTodayStart();
+  const now = new Date();
   const stats: {
     key: OverviewKey;
     label: string;
@@ -54,9 +54,7 @@ export function StatBar({
       // 它们不是「今天出现的空投」。改用 first_seen_at（本系统首次收录时间）后，
       // 文案与口径严格一致，并明确写出「本平台首次收录」以免被读成「世界上今天出现」。
       label: '今日新收录',
-      value: projects.filter(
-        (p) => new Date(p.first_seen_at ?? p.discovered_at).getTime() >= todayStart,
-      ).length,
+      value: projects.filter((p) => isNewToday(p, now)).length,
       note: `本平台首次收录 · 数据更新 ${relativeTime(updatedAt)}`,
       tone: 'ink',
     },
@@ -87,8 +85,8 @@ export function StatBar({
         </h2>
         <p className="text-xs text-ink-faint">
           {/* 说明「可点」：不加这句，磁贴上的手型光标在触屏上根本传递不出来 */}
-          {interactive ? '点击任一指标，下方列表即按该口径筛选 · ' : ''}
-          四项指标口径独立 · 数据 {relativeTime(updatedAt)}更新
+          {interactive ? '全站统计 · 点击查看项目并重置筛选 · ' : '全站统计 · '}
+          数据 {relativeTime(updatedAt)}更新
         </p>
       </div>
       {/* 每个数字左侧一道极短色条表明口径。 */}

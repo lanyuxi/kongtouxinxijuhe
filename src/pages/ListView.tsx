@@ -100,10 +100,26 @@ export function ListView({
    *   总览磁贴是「平台的四个既定口径」，不是用户自由拼条件；
    *   若把它翻译成 status / risk 等字段写进 filters，
    *   既表达不了「今日新增」「S/A 价值」这类组合口径，
-   *   又会污染用户在筛选区里的选择（重置筛选时该不该清掉？）。
-   *   因此独立成一层，只影响列表展示范围，不写入筛选器。
+   *   因此独立成一层。点击时进入全站列表并重置限制条件，
+   *   之后仍可在这一批项目内继续筛选。
    */
   const [overview, setOverview] = useState<OverviewKey | null>(() => readListContext(view)?.overview ?? null);
+
+  const selectOverview = (key: OverviewKey | null) => {
+    if (!key) { setOverview(null); return; }
+    const nextFilters = { ...DEFAULT_FILTERS, sort: filters.sort };
+    if (view !== 'latest') {
+      saveListContext('latest', {
+        ...(readListContext('latest') ?? contextRef.current),
+        filters: nextFilters, overview: key, scrollY: 0,
+      });
+      persistFilters(nextFilters);
+      window.location.hash = '#/latest';
+      return;
+    }
+    setFilters(nextFilters);
+    setOverview(key);
+  };
 
   const [expanded, setExpanded] = useState(() => readListContext(view)?.expanded ?? false);
   const [sourceExpanded, setSourceExpanded] = useState(() => readListContext(view)?.sourceExpanded ?? false);
@@ -151,8 +167,7 @@ export function ListView({
 
   /**
    * 先按总览口径收敛，再交给筛选区与排序。
-   * 顺序很关键：总览是「看哪一批」，筛选区是「在这一批里再挑」，
-   * 反过来做会让用户以为筛选条件被磁贴重置了。
+   * 总览是「看哪一批」，筛选区是「在这一批里再挑」。
    */
   const overviewProjects = useMemo(
     () => filterByOverview(viewProjects, overview),
@@ -161,8 +176,9 @@ export function ListView({
 
   const visible = useMemo(() => {
     const f = view === 'hot' ? { ...filters, sort: 'value' as const } : filters;
-    return sortProjects(filterProjects(overviewProjects, f), f.sort);
-  }, [overviewProjects, filters, view]);
+    // 全站「项目总数」包括已结束的历史条目；其他入口仍默认排除。
+    return sortProjects(filterProjects(overviewProjects, f, { includeEnded: overview === 'total' }), f.sort);
+  }, [overviewProjects, filters, view, overview]);
 
   /** 当前生效的总览口径，用于在筛选区里给出一条可移除的条件说明 */
   const overviewLabel = overview ? OVERVIEW_LABEL[overview] : null;
@@ -322,7 +338,7 @@ export function ListView({
         <details open={statsExpanded} onToggle={e => setStatsExpanded(e.currentTarget.open)} className={`overview-panel rounded-xl border border-line bg-white p-4 ${statsExpanded ? 'xl:self-stretch' : ''}`}>
           <summary className="font-medium text-ink-soft">数据总览与安全提示</summary>
           <div className="mt-2 flex flex-col gap-2">
-            <StatBar projects={projects} updatedAt={updatedAt} lastDiscovery={lastDiscovery} active={overview} onSelect={setOverview} />
+            <StatBar projects={projects} updatedAt={updatedAt} lastDiscovery={lastDiscovery} active={overview} onSelect={selectOverview} />
             <SafetyBar />
           </div>
         </details>
