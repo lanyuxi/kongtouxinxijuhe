@@ -1,5 +1,5 @@
 {
-  "total": 87,
+  "total": 97,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -72,6 +72,16 @@
       ]
     },
     {
+      "original": "Browse the Open Markets",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 2 标题",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
       "original": "Cambria has extended the deadline for historical users to accept the Genesis Event Opt-In Agreement to October 8, 2026. Eligible users who don’t opt in by then may lose access to their allocation.",
       "locations": [
         {
@@ -98,6 +108,16 @@
           "slug": "orbinum",
           "field": "步骤 9 正文",
           "source_url": "https://airdrops.io/orbinum/"
+        }
+      ]
+    },
+    {
+      "original": "Check Your Access Status",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 3 标题",
+          "source_url": "https://airdrops.io/wager-predict/"
         }
       ]
     },
@@ -252,6 +272,16 @@
       ]
     },
     {
+      "original": "Go to the Markets page while you wait. Markets stay visible to everyone, so you can study the categories, odds, and expiry dates before you are able to trade.",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 2 正文",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
       "original": "Go to the Titan testnet and connect the wallet you used for the waitlist.",
       "locations": [
         {
@@ -278,16 +308,6 @@
           "slug": "hertzflow",
           "field": "简介",
           "source_url": "https://airdrops.io/hertzflow/"
-        }
-      ]
-    },
-    {
-      "original": "Hotstuff is closing perpetual markets on September 25, 2026 at 14:30 UTC and ending spot trading and app withdrawals on October 1, 2026 at 03:59 UTC (September 30, 11:59 PM ET). The team is shutting down current trading as it works toward an acquisition of Hotstuff Labs, with plans to relaunch its products under the acquiring company’s brand.",
-      "locations": [
-        {
-          "slug": "hotstuff",
-          "field": "简介",
-          "source_url": "https://airdrops.io/hotstuff/"
         }
       ]
     },
@@ -412,6 +432,26 @@
       ]
     },
     {
+      "original": "Once admitted, pick a market, choose YES or NO, and enter an amount. Trades now use real funds on BNB Chain. The whitepaper sets a 2% fee on every buy and sell, and trading on a market closes one hour before it expires.",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 4 正文",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
+      "original": "Open the Achievements page to follow your badges. The 23 badges cover bet count, volume, win rate, profit, win streaks, markets created, and leaderboard rank, and the site says each one adds points toward your $WP allocation.",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 5 正文",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
       "original": "Open the Titan Testnet",
       "locations": [
         {
@@ -452,6 +492,16 @@
       ]
     },
     {
+      "original": "Place Your First Mainnet Prediction",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 4 标题",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
       "original": "PowerX OneWallet is running a community airdrop that pays 500 PX1 to every participant who completes the social tasks in the PowerX Airdrop Bot and verifies in the app. No purchase or deposit is needed. The product already exists, and finishing the tasks is also what unlocks the app download link.",
       "locations": [
         {
@@ -488,6 +538,26 @@
           "slug": "rep",
           "field": "简介",
           "source_url": "https://airdrops.io/rep/"
+        }
+      ]
+    },
+    {
+      "original": "Request Mainnet Beta Access",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 1 标题",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
+      "original": "Return to the beta page with the same wallet to see whether your cohort has been admitted. The team has not published a schedule for cohorts.",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 3 正文",
+          "source_url": "https://airdrops.io/wager-predict/"
         }
       ]
     },
@@ -568,6 +638,16 @@
           "slug": "tbook",
           "field": "简介",
           "source_url": "https://airdrops.io/tbook/"
+        }
+      ]
+    },
+    {
+      "original": "The airdrop is confirmed in the official tokenomics: 10% of the 30 billion $WP supply goes to retroactive airdrops and community campaigns. The team has not said how testnet points convert or whether mainnet beta activity counts toward the snapshot, and it states that final distribution terms will be confirmed closer to TGE.",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "简介",
+          "source_url": "https://airdrops.io/wager-predict/"
         }
       ]
     },
@@ -782,6 +862,16 @@
       ]
     },
     {
+      "original": "Track Badges and Leaderboard Rank",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 5 标题",
+          "source_url": "https://airdrops.io/wager-predict/"
+        }
+      ]
+    },
+    {
       "original": "Track Your Progress",
       "locations": [
         {
@@ -838,6 +928,16 @@
           "slug": "titan-exchange",
           "field": "步骤 1 正文",
           "source_url": "https://airdrops.io/titan-exchange/"
+        }
+      ]
+    },
+    {
+      "original": "Visit the Wager Predict beta page and connect your wallet to request a spot. The request is tied to the wallet you connect, so use the one you plan to trade with. If you farmed the testnet, connect that same wallet.",
+      "locations": [
+        {
+          "slug": "wager-predict",
+          "field": "步骤 1 正文",
+          "source_url": "https://airdrops.io/wager-predict/"
         }
       ]
     },
