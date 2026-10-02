@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/arcus/",
-      "fetched_at": "2026-10-02T00:14:06.333Z"
+      "fetched_at": "2026-10-02T05:53:41.529Z"
     }
   ],
   "evidence": [
@@ -261,7 +261,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/arcus/",
-      "checked_at": "2026-10-02T00:14:06.333Z",
+      "checked_at": "2026-10-02T05:53:41.529Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -449,7 +449,7 @@
   ],
   "created_at": "2026-10-01T15:44:31.101Z",
   "discovered_at": "2026-10-01T15:44:31.101Z",
-  "last_checked_at": "2026-10-02T00:14:06.333Z",
+  "last_checked_at": "2026-10-02T05:53:41.529Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "dYdX Labs has confirmed that Arcus will launch its own token, separate from DYDX, with an allocation reserved for people who traded, staked, or validated on dYdX. Arcus Points are the main way to farm it now, although the team has not said how points will convert to tokens.",
   "tagline_en": "dYdX Labs has confirmed that Arcus will launch its own token, separate from DYDX, with an allocation reserved for people who traded, staked, or validated on dYdX. Arcus Points are the main way to farm it now, although the team has not said how points will convert to tokens.",
