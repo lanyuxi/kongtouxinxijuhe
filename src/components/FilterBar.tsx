@@ -167,12 +167,20 @@ export function FilterBar({
 
         {/* 搜索框：独立一行并加大，作为主操作 */}
         <div className="relative">
-          <span
-            aria-hidden
-            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-faint"
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            className="pointer-events-none absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-ink-faint"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            ⌕
-          </span>
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <path d="m16 16 4 4" />
+          </svg>
           <input
             type="search"
             value={filters.keyword}
