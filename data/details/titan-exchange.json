@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/titan-exchange/",
-      "fetched_at": "2026-10-03T12:02:23.324Z"
+      "fetched_at": "2026-10-03T16:10:47.621Z"
     }
   ],
   "evidence": [
@@ -254,7 +254,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/titan-exchange/",
-      "checked_at": "2026-10-03T12:02:23.324Z",
+      "checked_at": "2026-10-03T16:10:47.621Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -425,7 +425,7 @@
   ],
   "created_at": "2026-10-02T12:22:05.749Z",
   "discovered_at": "2026-10-02T12:22:05.749Z",
-  "last_checked_at": "2026-10-03T12:02:23.324Z",
+  "last_checked_at": "2026-10-03T16:10:47.621Z",
   "last_changed_at": "2026-10-02T12:22:05.749Z",
   "sourcedDescription": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.",
   "tagline_en": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet.",
