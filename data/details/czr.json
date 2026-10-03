@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/czr/",
-      "fetched_at": "2026-10-03T16:10:47.621Z"
+      "fetched_at": "2026-10-03T19:14:17.301Z"
     }
   ],
   "evidence": [
@@ -268,7 +268,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/czr/",
-      "checked_at": "2026-10-03T16:10:47.621Z",
+      "checked_at": "2026-10-03T19:14:17.301Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -456,7 +456,7 @@
   ],
   "created_at": "2026-10-01T15:44:31.101Z",
   "discovered_at": "2026-10-01T15:44:31.101Z",
-  "last_checked_at": "2026-10-03T16:10:47.621Z",
+  "last_checked_at": "2026-10-03T19:14:17.301Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "The CZR Genesis Airdrop ran from September 21 to 30, 2026, and rewarded users who completed account, wallet and social tasks with campaign coins. Midway through, the team doubled the Genesis pool from 5 million to 10 million CZR and doubled coins on qualifying tasks. Users who earned points in the earlier CZR Quest program also receive CZR, tracked separately from the Genesis pool.",
   "tagline_en": "The CZR Genesis Airdrop ran from September 21 to 30, 2026, and rewarded users who completed account, wallet and social tasks with campaign coins. Midway through, the team doubled the Genesis pool from 5 million to 10 million CZR and doubled coins on qualifying tasks. Users who earned points in the earlier CZR Quest program also receive CZR, tracked separately from the Genesis pool.",

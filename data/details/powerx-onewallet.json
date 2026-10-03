@@ -19,7 +19,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/powerx-onewallet/",
-      "fetched_at": "2026-10-03T16:10:47.621Z"
+      "fetched_at": "2026-10-03T19:14:17.301Z"
     }
   ],
   "evidence": [
@@ -245,7 +245,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/powerx-onewallet/",
-      "checked_at": "2026-10-03T16:10:47.621Z",
+      "checked_at": "2026-10-03T19:14:17.301Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -450,7 +450,7 @@
   ],
   "created_at": "2026-10-01T15:44:31.101Z",
   "discovered_at": "2026-10-01T15:44:31.101Z",
-  "last_checked_at": "2026-10-03T16:10:47.621Z",
+  "last_checked_at": "2026-10-03T19:14:17.301Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "PowerX OneWallet is running a community airdrop that pays 500 PX1 to every participant who completes the social tasks in the PowerX Airdrop Bot and verifies in the app. No purchase or deposit is needed. The product already exists, and finishing the tasks is also what unlocks the app download link.",
   "tagline_en": "PowerX OneWallet is running a community airdrop that pays 500 PX1 to every participant who completes the social tasks in the PowerX Airdrop Bot and verifies in the app. No purchase or deposit is needed. The product already exists, and finishing the tasks is also what unlocks the app download link.",
