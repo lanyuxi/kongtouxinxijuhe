@@ -44,7 +44,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/grass/",
-      "fetched_at": "2026-10-03T06:35:11.945Z"
+      "fetched_at": "2026-10-03T12:02:23.324Z"
     }
   ],
   "evidence": [
@@ -496,7 +496,7 @@
   ],
   "created_at": "2026-09-11T14:29:52.345Z",
   "discovered_at": "2026-09-11T14:29:52.345Z",
-  "last_checked_at": "2026-10-03T06:35:11.945Z",
+  "last_checked_at": "2026-10-03T12:02:23.324Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedSteps": [
     {
