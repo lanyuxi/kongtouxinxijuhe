@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/hertzflow/",
-      "fetched_at": "2026-10-03T19:14:17.301Z"
+      "fetched_at": "2026-10-03T22:13:10.291Z"
     }
   ],
   "evidence": [
@@ -286,7 +286,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/hertzflow/",
-      "checked_at": "2026-10-03T19:14:17.301Z",
+      "checked_at": "2026-10-03T22:13:10.291Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -472,7 +472,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-10-03T19:14:17.301Z",
+  "last_checked_at": "2026-10-03T22:13:10.291Z",
   "last_changed_at": "2026-10-01T15:44:34.057Z",
   "sourcedSteps": [
     {
