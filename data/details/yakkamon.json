@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/yakkamon/",
-      "fetched_at": "2026-10-04T00:42:26.473Z"
+      "fetched_at": "2026-10-04T06:24:03.020Z"
     }
   ],
   "evidence": [
@@ -257,7 +257,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/yakkamon/",
-      "checked_at": "2026-10-04T00:42:26.473Z",
+      "checked_at": "2026-10-04T06:24:03.020Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -426,7 +426,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-10-04T00:42:26.473Z",
+  "last_checked_at": "2026-10-04T06:24:03.020Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedSteps": [
     {

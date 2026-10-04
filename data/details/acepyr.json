@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/acepyr/",
-      "fetched_at": "2026-10-04T00:42:26.473Z"
+      "fetched_at": "2026-10-04T06:24:03.020Z"
     }
   ],
   "evidence": [
@@ -264,7 +264,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/acepyr/",
-      "checked_at": "2026-10-04T00:42:26.473Z",
+      "checked_at": "2026-10-04T06:24:03.020Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -469,7 +469,7 @@
   ],
   "created_at": "2026-09-19T05:02:09.703Z",
   "discovered_at": "2026-09-19T05:02:09.703Z",
-  "last_checked_at": "2026-10-04T00:42:26.473Z",
+  "last_checked_at": "2026-10-04T06:24:03.020Z",
   "last_changed_at": "2026-10-01T15:44:34.044Z",
   "sourcedSteps": [
     {
