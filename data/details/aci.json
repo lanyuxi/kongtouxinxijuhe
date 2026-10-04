@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/aci/",
-      "fetched_at": "2026-10-04T06:24:03.020Z"
+      "fetched_at": "2026-10-04T12:48:14.912Z"
     }
   ],
   "evidence": [
@@ -268,7 +268,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/aci/",
-      "checked_at": "2026-10-04T06:24:03.020Z",
+      "checked_at": "2026-10-04T12:48:14.912Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -439,7 +439,7 @@
   ],
   "created_at": "2026-10-01T15:44:31.101Z",
   "discovered_at": "2026-10-01T15:44:31.101Z",
-  "last_checked_at": "2026-10-04T06:24:03.020Z",
+  "last_checked_at": "2026-10-04T12:48:14.912Z",
   "last_changed_at": "2026-10-02T02:37:44.822Z",
   "sourcedDescription": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
   "tagline_en": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
