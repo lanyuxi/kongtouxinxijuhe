@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/raycash/",
-      "fetched_at": "2026-10-03T22:13:10.291Z"
+      "fetched_at": "2026-10-04T00:42:26.473Z"
     }
   ],
   "evidence": [
@@ -254,7 +254,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/raycash/",
-      "checked_at": "2026-10-03T22:13:10.291Z",
+      "checked_at": "2026-10-04T00:42:26.473Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -442,7 +442,7 @@
   ],
   "created_at": "2026-10-01T15:44:31.101Z",
   "discovered_at": "2026-10-01T15:44:31.101Z",
-  "last_checked_at": "2026-10-03T22:13:10.291Z",
+  "last_checked_at": "2026-10-04T00:42:26.473Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "Raycash has not announced a token, a ticker, or an airdrop. Raycash Points are the only reward system so far, and the team has not said whether RP will convert into anything. That makes this a speculative airdrop built on early activity.",
   "tagline_en": "Raycash has not announced a token, a ticker, or an airdrop. Raycash Points are the only reward system so far, and the team has not said whether RP will convert into anything. That makes this a speculative airdrop built on early activity.",
