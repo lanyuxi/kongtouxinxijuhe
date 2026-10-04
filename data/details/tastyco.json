@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/tastyco/",
-      "fetched_at": "2026-10-04T12:48:14.912Z"
+      "fetched_at": "2026-10-04T17:06:38.123Z"
     }
   ],
   "evidence": [
@@ -247,7 +247,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/tastyco/",
-      "checked_at": "2026-10-04T12:48:14.912Z",
+      "checked_at": "2026-10-04T17:06:38.123Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -452,7 +452,7 @@
   ],
   "created_at": "2026-10-01T15:44:31.101Z",
   "discovered_at": "2026-10-01T15:44:31.101Z",
-  "last_checked_at": "2026-10-04T12:48:14.912Z",
+  "last_checked_at": "2026-10-04T17:06:38.123Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "TastyCo has confirmed a $100,000 $TASTY airdrop campaign, run through a pre-TGE points system. The tokenomics reserve 5% of supply for airdrops and another 15% for community quests and rewards paid out over 36 months.",
   "tagline_en": "TastyCo has confirmed a $100,000 $TASTY airdrop campaign, run through a pre-TGE points system. The tokenomics reserve 5% of supply for airdrops and another 15% for community quests and rewards paid out over 36 months.",
