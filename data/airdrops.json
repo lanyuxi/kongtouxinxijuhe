@@ -18696,73 +18696,73 @@
           "content_status": "ready"
         },
         {
-          "id": "54717f2d81703c9343f4632a33d619f2219c719063a9ff3f88fe65a8c721621b",
+          "id": "f4f1c92fcd42b024574494b63254d4c1818056710559e4cdeb52d55a14864452",
           "step": 2,
-          "title": "中文教程待核实",
+          "title": "加入 Titan Exchange 等候名单",
           "minutes": 0,
           "needs_wallet": true,
           "needs_signature": true,
           "risk": "medium",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "7685d98fb9d17492465023c9228a0532b0c44ccc9c1d1e6865788d6623d2cc33",
+          "id": "6ecd54dea567a9852395bc7469bd4221a96b965530a6bafebbd49ad9c585b13a",
           "step": 3,
-          "title": "中文教程待核实",
+          "title": "分享你的邀请链接",
           "minutes": 0,
           "needs_wallet": null,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "b92b195e350ee018e52b519d2f1264ab464d18dc4cc6b3b5fdb7639fc2597511",
+          "id": "ddc1c60e705b49a699cd005641e4d025d2f3e6865bb88cea755eae51a28af923",
           "step": 4,
-          "title": "中文教程待核实",
+          "title": "打开 Titan 测试网",
           "minutes": 0,
           "needs_wallet": true,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "0d93988d8712bc6debcf3132f672c8da2d0d6af170435479ed3997ee08770787",
+          "id": "f7237d9efa018968806b7f3a9550472d90fbc63279b2606a6949a005df556aaf",
           "step": 5,
-          "title": "中文教程待核实",
+          "title": "领取测试网 USDC",
           "minutes": 0,
           "needs_wallet": null,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "3ec444920415ff2d1249c7633aec13df9c24306b83c13f18f6c33cb3840bca85",
+          "id": "fce221ae0ff3f3a6160b390dd232348bfb2c03c87f71ca08dcdc9027e9e45e08",
           "step": 6,
-          "title": "中文教程待核实",
+          "title": "启用交易",
           "minutes": 0,
           "needs_wallet": true,
           "needs_signature": true,
           "risk": "medium",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "043b78808edbd1110e2b594cb9a6f2ef8d64245b2bc37e6302cba0dd7f1251fc",
+          "id": "09a3e7b52a9c966205193e03916c6776ffe93977e80a83e793bfc4c94d71297c",
           "step": 7,
-          "title": "中文教程待核实",
+          "title": "下达永续合约订单",
           "minutes": 0,
           "needs_wallet": null,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         }
       ],
       "guide_source": "third_party",
-      "guide_version": "52262bdabd7944e77af79104f1cef9dbdb1576925ed717e5cbc5a8c016f78a16",
+      "guide_version": "0d75128f2d7151c71cf93488ee71d2b36a1678629cba35bff762c547d3e7e8e8",
       "created_at": "2026-10-02T12:22:05.749Z",
       "first_seen_at": "2026-10-02T12:22:05.749Z",
       "discovered_at": "2026-10-02T12:22:05.749Z",
       "last_checked_at": "2026-10-04T12:48:14.912Z",
-      "last_changed_at": "2026-10-02T12:22:05.749Z"
+      "last_changed_at": "2026-10-04T13:37:14.601Z"
     },
     {
       "id": "tread-fi",
@@ -19445,63 +19445,63 @@
           "content_status": "ready"
         },
         {
-          "id": "8c7012872552cc0e19ab6afe1c36edb0e059820934a55dc442ef7b3defd2e263",
+          "id": "7608f89ca4b2b85da1fb309c0dfdc5dddade01c4c70e0a82e3a92e3dbf46a81a",
           "step": 2,
-          "title": "中文教程待核实",
+          "title": "申请主网测试资格",
           "minutes": 0,
           "needs_wallet": true,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "ca18caf74b17806fe536bc76c7160df669fc1327f19480d0f9856d44e68fd877",
+          "id": "23b4b231593ba877782f6247d8d3337de9bf30f950658e3adbee2d9e966fa02a",
           "step": 3,
-          "title": "中文教程待核实",
+          "title": "浏览开放的预测市场",
           "minutes": 0,
           "needs_wallet": null,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "e3c5fedb3f4de95f7609552e12223db2663f9b91bcc0633f28b7ee2988fca3ec",
+          "id": "981bc8f7cd1bce28205276ad8a4aa951688839c81881d4fa93c113dc7dce05e0",
           "step": 4,
-          "title": "中文教程待核实",
+          "title": "查看访问资格状态",
           "minutes": 0,
           "needs_wallet": true,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "17a9718e2d835d2444927872a64d738965f0fa7062316eae0f0f91992a021d6a",
+          "id": "ba5da99db09b28cf275175bc4564202b995805ccdac2e7fec3beefff006f0d99",
           "step": 5,
-          "title": "中文教程待核实",
+          "title": "进行首次主网预测交易",
           "minutes": 0,
           "needs_wallet": null,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         },
         {
-          "id": "2d51d7dd0be38e88bc6c3ac4674dd375d59b4e763d48328400b08e0ce0df9b49",
+          "id": "028f7a875a28dcc582b1d9623917a602032c7fa2ab791bfe320090a3dc844915",
           "step": 6,
-          "title": "中文教程待核实",
+          "title": "查看徽章与排行榜名次",
           "minutes": 0,
           "needs_wallet": null,
           "needs_signature": null,
           "risk": "unknown",
-          "content_status": "pending_translation"
+          "content_status": "ready"
         }
       ],
       "guide_source": "third_party",
-      "guide_version": "4f7eb692ef885702dbcf51f899f42a39762e81bb4d21fdea5053fa706b16cda6",
+      "guide_version": "f41b2c6a917c2d3121d1981c0917ce13790ce651cc9270af52a931131b5d76ee",
       "created_at": "2026-10-02T17:57:02.709Z",
       "first_seen_at": "2026-10-02T17:57:02.709Z",
       "discovered_at": "2026-10-02T17:57:02.709Z",
       "last_checked_at": "2026-10-04T12:48:14.912Z",
-      "last_changed_at": "2026-10-02T17:57:02.709Z"
+      "last_changed_at": "2026-10-04T13:37:14.601Z"
     },
     {
       "id": "wick",
@@ -21146,5 +21146,5 @@
     }
   ],
   "last_successful_check_at": "2026-10-04T12:48:14.859Z",
-  "content_updated_at": "2026-10-04T12:48:14.859Z"
+  "content_updated_at": "2026-10-04T13:37:14.601Z"
 }

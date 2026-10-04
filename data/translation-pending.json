@@ -1,5 +1,5 @@
 {
-  "total": 78,
+  "total": 57,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -52,72 +52,12 @@
       ]
     },
     {
-      "original": "Browse the Open Markets",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 2 标题",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
       "original": "Canopy Network has confirmed a $CNPY token airdrop through a points-based rewards program. Points earned through platform activity — including retroactive rewards for early participation, testnet interactions, and quests — will convert to $CNPY allocations at a future date.",
       "locations": [
         {
           "slug": "canopy",
           "field": "简介",
           "source_url": "https://airdrops.io/canopy/"
-        }
-      ]
-    },
-    {
-      "original": "Check Your Access Status",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 3 标题",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
-      "original": "Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet.",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 4 正文",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Claim Testnet USDC",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 4 标题",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account.",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 5 正文",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond.",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 2 正文",
-          "source_url": "https://airdrops.io/titan-exchange/"
         }
       ]
     },
@@ -138,16 +78,6 @@
           "slug": "arcus",
           "field": "简介",
           "source_url": "https://airdrops.io/arcus/"
-        }
-      ]
-    },
-    {
-      "original": "Enable Trading",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 5 标题",
-          "source_url": "https://airdrops.io/titan-exchange/"
         }
       ]
     },
@@ -182,26 +112,6 @@
       ]
     },
     {
-      "original": "Go to the Markets page while you wait. Markets stay visible to everyone, so you can study the categories, odds, and expiry dates before you are able to trade.",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 2 正文",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
-      "original": "Go to the Titan testnet and connect the wallet you used for the waitlist.",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 3 正文",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
       "original": "HertzFlow has confirmed both a token generation event and an airdrop. Official documentation describes Merits, the protocol’s reward points, as your weight in that airdrop: at TGE they convert into an allocation and reset to zero. Season 1 runs entirely through the Genesis Vault, a capped pre-deposit event where every Merit comes from supplying liquidity. Neither the allocation size nor a TGE date has been published.",
       "locations": [
         {
@@ -218,16 +128,6 @@
           "slug": "huma-finance",
           "field": "简介",
           "source_url": "https://airdrops.io/huma-finance/"
-        }
-      ]
-    },
-    {
-      "original": "Join the Titan Exchange Waitlist",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 1 标题",
-          "source_url": "https://airdrops.io/titan-exchange/"
         }
       ]
     },
@@ -312,66 +212,6 @@
       ]
     },
     {
-      "original": "Once admitted, pick a market, choose YES or NO, and enter an amount. Trades now use real funds on BNB Chain. The whitepaper sets a 2% fee on every buy and sell, and trading on a market closes one hour before it expires.",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 4 正文",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
-      "original": "Open the Achievements page to follow your badges. The 23 badges cover bet count, volume, win rate, profit, win streaks, markets created, and leaderboard rank, and the site says each one adds points toward your $WP allocation.",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 5 正文",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
-      "original": "Open the Titan Testnet",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 3 标题",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 6 正文",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Place a Perp Order",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 6 标题",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Place Your First Mainnet Prediction",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 4 标题",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
       "original": "PowerX OneWallet is running a community airdrop that pays 500 PX1 to every participant who completes the social tasks in the PowerX Airdrop Bot and verifies in the app. No purchase or deposit is needed. The product already exists, and finishing the tasks is also what unlocks the app download link.",
       "locations": [
         {
@@ -408,26 +248,6 @@
           "slug": "rep",
           "field": "简介",
           "source_url": "https://airdrops.io/rep/"
-        }
-      ]
-    },
-    {
-      "original": "Request Mainnet Beta Access",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 1 标题",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
-      "original": "Return to the beta page with the same wallet to see whether your cohort has been admitted. The team has not published a schedule for cohorts.",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 3 正文",
-          "source_url": "https://airdrops.io/wager-predict/"
         }
       ]
     },
@@ -702,16 +522,6 @@
       ]
     },
     {
-      "original": "Track Badges and Leaderboard Rank",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 5 标题",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
       "original": "Vangrid has not confirmed an airdrop. A token is planned for later in 2026, but no allocation, snapshot, or eligibility rule has been published, which makes this a potential future airdrop rather than a scheduled one.",
       "locations": [
         {
@@ -728,26 +538,6 @@
           "slug": "vibe-vibe",
           "field": "简介",
           "source_url": "https://airdrops.io/vibe-vibe/"
-        }
-      ]
-    },
-    {
-      "original": "Visit the Titan Exchange waitlist , connect your wallet, and sign the message.",
-      "locations": [
-        {
-          "slug": "titan-exchange",
-          "field": "步骤 1 正文",
-          "source_url": "https://airdrops.io/titan-exchange/"
-        }
-      ]
-    },
-    {
-      "original": "Visit the Wager Predict beta page and connect your wallet to request a spot. The request is tied to the wallet you connect, so use the one you plan to trade with. If you farmed the testnet, connect that same wallet.",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "步骤 1 正文",
-          "source_url": "https://airdrops.io/wager-predict/"
         }
       ]
     },

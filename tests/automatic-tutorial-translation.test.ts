@@ -1,12 +1,15 @@
-import { readFileSync } from 'node:fs';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AirdropProject } from '../src/lib/types';
 import { buildGuide } from '../scripts/lib/guide';
+import { toSkeleton } from '../scripts/lib/merge';
 import { getCache, loadCache } from '../scripts/i18n/translate.mjs';
 import * as automatic from '../scripts/lib/translate-tutorials';
 
 const source = { title: 'Request New Beta Access', body: 'Connect your wallet to request a place in the next beta.' };
-const project = (steps = [source]) => ({ ...JSON.parse(readFileSync('data/details/wager-predict.json', 'utf8')), sourcedSteps: steps }) as AirdropProject;
+const project = (steps = [source]): AirdropProject => ({
+  ...toSkeleton({ slug: 'translation-fixture', name: '翻译测试', sourceType: 'airdrop_aggregator', sourceName: '测试来源', sourceUrl: 'https://example.com/tutorial', fetchedAt: '2026-10-04T00:00:00Z' }),
+  sourcedSteps: steps,
+});
 const reply = (text: string) => new Response(JSON.stringify([[[text, '', null, null]], null, 'en']), { status: 200 });
 
 beforeEach(() => { loadCache({}); vi.spyOn(console, 'warn').mockImplementation(() => {}); });
