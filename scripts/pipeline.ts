@@ -20,7 +20,8 @@ import type {
   SourceHealthFile,
 } from '../src/lib/types';
 import { adapters } from './fetch/index';
-import { loadCache as loadI18nCache } from './i18n/translate.mjs';
+import { getCache, loadCache as loadI18nCache } from './i18n/translate.mjs';
+import { translateTutorials } from './lib/translate-tutorials';
 import { readFileSync } from 'node:fs';
 import { mergeAll } from './lib/merge';
 import { applyAllSourced } from './lib/sourced';
@@ -74,9 +75,8 @@ async function readDetailProjects(dir: string): Promise<AirdropProject[]> {
 /**
  * 加载教程中文化的机器翻译缓存（issue #28）。
  *
- * 缓存文件随仓库提交，运行期只查表、不发起任何翻译请求：
- * 这样每 10 分钟的定时抓取不依赖第三方服务，文案也不会时好时坏。
- * 缺缓存时教程会进入中文待核实状态（前端仍会给出中文安全提示），不会报错中断。
+ * 浏览器只读取已发布译文；抓取阶段自动补译新英文教程，成功结果缓存进仓库。
+ * 未成功翻译的原文保留在待处理清单中，下轮重试，不中断其他项目发布。
  */
 function loadLocalizationCache() {
   try {
@@ -141,6 +141,14 @@ async function main() {
   //      （人工档案在 Enrich 阶段覆盖，优先级更高）
   projects = applyAllSourced(projects, rawItems);
   projects = await enrichAll(projects);
+
+  const translation = await translateTutorials(projects);
+  console.log(`[pipeline] 教程自动翻译：新增 ${translation.translated} 条，失败 ${translation.failed} 条，待重试 ${translation.remaining} 条`);
+  if (translation.translated) {
+    const entries = getCache();
+    const cache = Object.fromEntries(Object.keys(entries).sort().map(key => [key, entries[key]]));
+    await writeFile(path.join(ROOT, 'scripts/i18n/cache.zh.json'), JSON.stringify(cache, null, 1) + '\n');
+  }
 
   // 3.25) X 账号索引回填（issue #28）
   //

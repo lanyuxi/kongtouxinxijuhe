@@ -565,7 +565,7 @@ export function DetailView({
                             onChange={() => onToggleStep(p.slug, g.step)}
                             className="h-5 w-5 accent-[#2563EB]"
                           />
-                          {g.content_status === 'pending_translation' ? '等待中文复核' : executable ? '已完成' : p.guide_source === 'template' ? '已核对' : '仅供研究'}
+                          {g.content_status === 'pending_translation' ? '翻译待重试' : executable ? '已完成' : p.guide_source === 'template' ? '已核对' : '仅供研究'}
                         </label>
                       </div>
 

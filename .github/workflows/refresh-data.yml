@@ -87,7 +87,7 @@ jobs:
           SUMMARY=$(node -e "try{const s=require('./data/refresh-status.json');process.stdout.write(s.change_summary||'-')}catch(e){process.stdout.write('-')}")
           echo "变化摘要：$SUMMARY"
 
-          if [ "$CHANGED" != "true" ]; then
+          if [ "$CHANGED" != "true" ] && git diff --quiet -- scripts/i18n/cache.zh.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "本轮无实质内容变化，跳过提交"
             exit 0
@@ -96,7 +96,7 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
           # 图标要跟数据一起提交：新增项目的 logo 必须进仓库，
           # 否则线上列表会出现只有数据、没有图标的破图。
-          git add data/ public/logos
+          git add data/ public/logos scripts/i18n/cache.zh.json
           git commit -m "chore(data): 定时更新空投数据 $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
           echo "已提交并推送数据更新：$SUMMARY"

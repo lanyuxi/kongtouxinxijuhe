@@ -107,7 +107,7 @@ export function stepsFromSource(p: AirdropProject): GuideStep[] {
     return {
       step: i + 1,
       title: pending ? '中文教程待核实' : title.zh,
-      description: pending ? '尚未完成中文翻译和复核，暂停本步骤操作。可展开完整英文原文核对，等待中文教程更新。' : body.zh,
+      description: pending ? '本轮自动翻译未成功，暂停本步骤操作；下次数据同步将重试。下方保留完整英文原文供核对。' : body.zh,
       official_url: pending ? '' : officialUrl,
       content_status: pending ? 'pending_translation' : 'ready',
       minutes: 0,
