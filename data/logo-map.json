@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-05T08:53:23.373Z",
-  "total": 186,
+  "updated_at": "2026-10-05T18:18:27.841Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -24,6 +24,8 @@
     "bittensor-dtao": "logos/bittensor-dtao.webp",
     "blackboard": "logos/blackboard.png",
     "buzz-farming": "logos/buzz-farming.png",
+    "cambria": "logos/cambria.png",
+    "canborsa": "logos/canborsa.ico",
     "canopy": "logos/canopy.png",
     "cap": "logos/cap.png",
     "ccip": "logos/ccip.png",
@@ -136,6 +138,7 @@
     "rep": "logos/rep.png",
     "rockawayx": "logos/rockawayx.png",
     "rocket-pool": "logos/rocket-pool.png",
+    "rwaperp": "logos/rwaperp.png",
     "sanctum": "logos/sanctum.png",
     "sanctum-infinity": "logos/sanctum-infinity.png",
     "sanctum-validator-lsts": "logos/sanctum-validator-lsts.png",
@@ -481,6 +484,8 @@
     "drift-protocol": "https://www.faviconextractor.com/favicon/drift.trade?larger=true",
     "kinetiq": "https://icons.llamao.fi/icons/protocols/kinetiq",
     "orbinum": "https://www.faviconextractor.com/favicon/app.orbinum.network?larger=true",
-    "titan-exchange": "https://icons.llamao.fi/icons/protocols/titan-exchange"
+    "titan-exchange": "https://icons.llamao.fi/icons/protocols/titan-exchange",
+    "canborsa": "https://www.faviconextractor.com/favicon/canborsa.com?larger=true",
+    "rwaperp": "https://www.faviconextractor.com/favicon/rwaperp.xyz?larger=true"
   }
 }

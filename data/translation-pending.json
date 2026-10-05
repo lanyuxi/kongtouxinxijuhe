@@ -1,5 +1,5 @@
 {
-  "total": 57,
+  "total": 60,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -48,6 +48,26 @@
           "slug": "blackboard",
           "field": "简介",
           "source_url": "https://airdrops.io/blackboard/"
+        }
+      ]
+    },
+    {
+      "original": "Cambria has extended the deadline for historical users to accept the Genesis Event Opt-In Agreement to October 8, 2026. Eligible users who don’t opt in by then may lose access to their allocation.",
+      "locations": [
+        {
+          "slug": "cambria",
+          "field": "简介",
+          "source_url": "https://airdrops.io/cambria/"
+        }
+      ]
+    },
+    {
+      "original": "Canborsa has confirmed that future rewards will be tied to the points program currently live on the platform. Early users who accumulate points through social quests, trading activity, partner tasks, and referrals will qualify when rewards are distributed.",
+      "locations": [
+        {
+          "slug": "canborsa",
+          "field": "简介",
+          "source_url": "https://airdrops.io/canborsa/"
         }
       ]
     },
@@ -248,6 +268,16 @@
           "slug": "rep",
           "field": "简介",
           "source_url": "https://airdrops.io/rep/"
+        }
+      ]
+    },
+    {
+      "original": "RWAPerp has not announced a token, TGE or airdrop, so any distribution is speculative for now. What it has published is a points system: each week, a fixed pool of 1,000,000 base points is split among eligible users by contribution.",
+      "locations": [
+        {
+          "slug": "rwaperp",
+          "field": "简介",
+          "source_url": "https://airdrops.io/rwaperp/"
         }
       ]
     },
