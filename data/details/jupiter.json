@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/jupiter/",
-      "fetched_at": "2026-10-05T02:02:20.977Z"
+      "fetched_at": "2026-10-05T08:53:21.697Z"
     }
   ],
   "evidence": [
@@ -286,7 +286,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/jupiter/",
-      "checked_at": "2026-10-05T02:02:20.977Z",
+      "checked_at": "2026-10-05T08:53:21.697Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -455,7 +455,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-10-05T02:02:20.977Z",
+  "last_checked_at": "2026-10-05T08:53:21.697Z",
   "last_changed_at": "2026-10-01T15:44:34.059Z",
   "sourcedSteps": [
     {
