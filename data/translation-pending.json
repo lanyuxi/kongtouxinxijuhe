@@ -1,5 +1,5 @@
 {
-  "total": 57,
+  "total": 59,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -312,16 +312,6 @@
       ]
     },
     {
-      "original": "The airdrop is confirmed in the official tokenomics: 10% of the 30 billion $WP supply goes to retroactive airdrops and community campaigns. The team has not said how testnet points convert or whether mainnet beta activity counts toward the snapshot, and it states that final distribution terms will be confirmed closer to TGE.",
-      "locations": [
-        {
-          "slug": "wager-predict",
-          "field": "简介",
-          "source_url": "https://airdrops.io/wager-predict/"
-        }
-      ]
-    },
-    {
       "original": "The airdrop is confirmed, retroactive, and live. A fixed pool of 280 million $GRVT goes to traders who earned points during Genesis Season 1 (100 million tokens) and Season 2 (180 million tokens). Both seasons have closed and point totals are final. Registration closed on July 27, 2026 (00:00 UTC): users who registered and accepted the terms in time can now check and claim their allocation, while unregistered allocations are forfeited with no exceptions. What remains is checking your amount and claiming your tranches on schedule.",
       "locations": [
         {
@@ -442,12 +432,32 @@
       ]
     },
     {
+      "original": "The Meteora airdrop is confirmed and has been paid in two seasons under the LP Stimulus Plan. Season 1 distributed 15% of the MET supply at TGE, and its claim closed on April 23, 2026. Season 2 covered July 1, 2025 to June 30, 2026 and is claimable now.",
+      "locations": [
+        {
+          "slug": "meteora",
+          "field": "简介",
+          "source_url": "https://airdrops.io/meteora/"
+        }
+      ]
+    },
+    {
       "original": "The original DRIFT airdrop has ended. The live distribution is the DFX recovery token, claimable by wallets that lost funds in the April 1 exploit. Allocations are already fixed in the loss snapshot, so there is nothing left to farm.",
       "locations": [
         {
           "slug": "drift-protocol",
           "field": "简介",
           "source_url": "https://airdrops.io/drift-protocol/"
+        }
+      ]
+    },
+    {
+      "original": "The Pharos $PROS airdrop claim is now live! Eligible participants have 180 days, from April 28 to October 25, 2026, to claim their allocations before unclaimed amounts are returned to the Pharos Foundation and the claim portal closes. Eligibility includes Testnet Participants, “Stake Before the Stake” Contributors, Pharos Discord Role Holders, and OKX Wallet Campaign Users. If participants qualify under multiple categories, their claims will be automatically consolidated into a single submission.",
+      "locations": [
+        {
+          "slug": "pharos",
+          "field": "简介",
+          "source_url": "https://airdrops.io/pharos/"
         }
       ]
     },
@@ -512,12 +522,22 @@
       ]
     },
     {
-      "original": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Monster NFTs when early access launches: ranks 1 to 1,000 get Legendary Monster NFTs and ranks 1,001 to 5,000 get Rare Monster NFTs. Rank depends on points only, never on sign-up order.",
+      "original": "The Yakkamon airdrop is confirmed and NFT focused. The top 5,000 trainers on the Season 0 points leaderboard receive Monster NFTs when early access launches: ranks 1 to 2,000 get a Genesis Legendary Monster NFT and ranks 2,001 to 5,000 get a Rare Egg NFT. Rank depends on points only, never on sign-up order.",
       "locations": [
         {
           "slug": "yakkamon",
           "field": "简介",
           "source_url": "https://airdrops.io/yakkamon/"
+        }
+      ]
+    },
+    {
+      "original": "TrueNorth has not confirmed a token or airdrop. There is no published tokenomics, distribution date, or eligibility list. What does exist is TruthSayer Rewards, a Discord-based program that pays USDC for trading volume, referrals, and community activity, with payouts that are not scheduled in advance.",
+      "locations": [
+        {
+          "slug": "truenorth",
+          "field": "简介",
+          "source_url": "https://airdrops.io/truenorth/"
         }
       ]
     },

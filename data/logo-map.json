@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-06T13:29:21.267Z",
-  "total": 186,
+  "updated_at": "2026-10-06T19:01:16.268Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -104,6 +104,7 @@
     "mellow-core": "logos/mellow-core.png",
     "memebook": "logos/memebook.ico",
     "merlins-seal": "logos/merlins-seal.png",
+    "meteora": "logos/meteora.webp",
     "meth-protocol": "logos/meth-protocol.png",
     "mindgames": "logos/mindgames.svg",
     "mint-io": "logos/mint-io.png",
@@ -125,6 +126,7 @@
     "pancakeswap-amm-v3": "logos/pancakeswap-amm-v3.png",
     "pendle": "logos/pendle.png",
     "pendle-v2": "logos/pendle-v2.png",
+    "pharos": "logos/pharos.ico",
     "plume-vaults": "logos/plume-vaults.png",
     "polymarket-international": "logos/polymarket-international.png",
     "portal": "logos/portal.png",
@@ -169,6 +171,7 @@
     "tonstakers-lsd": "logos/tonstakers-lsd.png",
     "tornado-cash": "logos/tornado-cash.webp",
     "tread-fi": "logos/tread-fi.png",
+    "truenorth": "logos/truenorth.ico",
     "uniswap-v2": "logos/uniswap-v2.png",
     "uniswap-v3": "logos/uniswap-v3.png",
     "uniswap-v4": "logos/uniswap-v4.png",
@@ -182,12 +185,12 @@
     "venus-core-pool": "logos/venus-core-pool.png",
     "vibe-vibe": "logos/vibe-vibe.png",
     "voice": "logos/voice.png",
-    "wager-predict": "logos/wager-predict.ico",
     "wbtc": "logos/wbtc.png",
     "wick": "logos/wick.ico",
     "world-chain": "logos/world-chain.png",
     "worldie": "logos/worldie.png",
     "yakkamon": "logos/yakkamon.png",
+    "yearn-finance": "logos/yearn-finance.webp",
     "zora-network": "logos/zora-network.png"
   },
   "sources": {
@@ -483,6 +486,8 @@
     "orbinum": "https://www.faviconextractor.com/favicon/app.orbinum.network?larger=true",
     "titan-exchange": "https://icons.llamao.fi/icons/protocols/titan-exchange",
     "canborsa": "https://www.faviconextractor.com/favicon/canborsa.com?larger=true",
-    "rwaperp": "https://www.faviconextractor.com/favicon/rwaperp.xyz?larger=true"
+    "rwaperp": "https://www.faviconextractor.com/favicon/rwaperp.xyz?larger=true",
+    "meteora": "https://icons.llamao.fi/icons/protocols/meteora",
+    "truenorth": "https://www.faviconextractor.com/favicon/truenorth.xyz?larger=true"
   }
 }
