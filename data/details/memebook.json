@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/memebook/",
-      "fetched_at": "2026-10-06T00:10:19.066Z"
+      "fetched_at": "2026-10-06T06:22:17.542Z"
     }
   ],
   "evidence": [
@@ -265,7 +265,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/memebook/",
-      "checked_at": "2026-10-06T00:10:19.066Z",
+      "checked_at": "2026-10-06T06:22:17.542Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -452,7 +452,7 @@
   ],
   "created_at": "2026-09-19T05:02:09.703Z",
   "discovered_at": "2026-09-19T05:02:09.703Z",
-  "last_checked_at": "2026-10-06T00:10:19.066Z",
+  "last_checked_at": "2026-10-06T06:22:17.542Z",
   "last_changed_at": "2026-10-01T15:44:34.062Z",
   "sourcedSteps": [
     {
