@@ -1,5 +1,5 @@
 {
-  "total": 60,
+  "total": 57,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -102,16 +102,6 @@
       ]
     },
     {
-      "original": "Entropy has no token and no announced airdrop. Its site, docs, and X account make no mention of a token, points program, season, or quest system. Any retroactive reward for early traders is speculation, based on how other Hyperliquid ecosystem projects have treated pre-token activity.",
-      "locations": [
-        {
-          "slug": "entropy",
-          "field": "简介",
-          "source_url": "https://airdrops.io/entropy/"
-        }
-      ]
-    },
-    {
       "original": "Ethena runs a seasonal rewards program where users earn points called “Sats” for holding and deploying USDe, staking ENA, and using partner protocols. Each season ends with a proportional ENA distribution based on the Sats you accumulated. Five seasons have already paid out, and Season 6 is currently live.",
       "locations": [
         {
@@ -148,16 +138,6 @@
           "slug": "huma-finance",
           "field": "简介",
           "source_url": "https://airdrops.io/huma-finance/"
-        }
-      ]
-    },
-    {
-      "original": "Kash’s documentation reserves 25% of the total KASH supply for community incentives, paid out for trading accuracy, market creation, liquidity provision, and referrals. A TGE date and the exact token distribution method have not been announced, so XP and leaderboard activity are the best available signals for a future allocation.",
-      "locations": [
-        {
-          "slug": "kash",
-          "field": "简介",
-          "source_url": "https://airdrops.io/kash/"
         }
       ]
     },
@@ -248,16 +228,6 @@
           "slug": "raycash",
           "field": "简介",
           "source_url": "https://airdrops.io/raycash/"
-        }
-      ]
-    },
-    {
-      "original": "Reels runs a welcome offer for new players: a 275% match up to 2,000 USDT plus 50 free spins. The bonus is credited automatically once a qualifying deposit is made with the promo code applied before checkout. A separate welcome package of up to $5,000 is listed for VIP players, though Reels does not publish the criteria for VIP status.",
-      "locations": [
-        {
-          "slug": "reels",
-          "field": "简介",
-          "source_url": "https://airdrops.io/reels/"
         }
       ]
     },
