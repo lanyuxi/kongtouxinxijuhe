@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/drift-protocol/",
-      "fetched_at": "2026-10-06T19:00:59.845Z"
+      "fetched_at": "2026-10-06T22:58:17.032Z"
     }
   ],
   "evidence": [
@@ -261,7 +261,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/drift-protocol/",
-      "checked_at": "2026-10-06T19:00:59.845Z",
+      "checked_at": "2026-10-06T22:58:17.032Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -431,7 +431,7 @@
   ],
   "created_at": "2026-10-01T20:35:30.449Z",
   "discovered_at": "2026-10-01T20:35:30.449Z",
-  "last_checked_at": "2026-10-06T19:00:59.845Z",
+  "last_checked_at": "2026-10-06T22:58:17.032Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "The original DRIFT airdrop has ended. The live distribution is the DFX recovery token, claimable by wallets that lost funds in the April 1 exploit. Allocations are already fixed in the loss snapshot, so there is nothing left to farm.",
   "tagline_en": "The original DRIFT airdrop has ended. The live distribution is the DFX recovery token, claimable by wallets that lost funds in the April 1 exploit. Allocations are already fixed in the loss snapshot, so there is nothing left to farm.",
