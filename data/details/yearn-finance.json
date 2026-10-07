@@ -28,7 +28,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Yearn%20Finance",
-      "fetched_at": "2026-10-06T22:58:19.944Z"
+      "fetched_at": "2026-10-07T02:14:06.141Z"
     }
   ],
   "evidence": [
@@ -261,7 +261,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Yearn%20Finance",
-      "checked_at": "2026-10-06T22:58:19.944Z",
+      "checked_at": "2026-10-07T02:14:06.141Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -360,7 +360,7 @@
   ],
   "created_at": "2026-10-06T19:01:05.275Z",
   "discovered_at": "2026-10-06T19:01:05.275Z",
-  "last_checked_at": "2026-10-06T22:58:19.944Z",
+  "last_checked_at": "2026-10-07T02:14:06.141Z",
   "last_changed_at": "2026-10-06T19:01:05.275Z",
   "sourcedDescription": "Yield Aggregator 协议，TVL 约 $204M。",
   "guide_version": "d0030aba965e531acdbe5ff30ad88bac42c2274ccd42804b3e611862211dd37c",

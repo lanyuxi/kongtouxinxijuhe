@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-06T22:58:16.916Z",
-  "new_today": 5,
+  "updated_at": "2026-10-07T02:14:04.356Z",
+  "new_today": 0,
   "projects": [
     {
       "id": "aave-horizon-rwa",
@@ -30,7 +30,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20Horizon%20RWA",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -51,7 +51,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Aave%20Horizon%20RWA",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -97,14 +97,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "aave-v3",
       "name": "Aave V3",
       "slug": "aave-v3",
-      "tagline": "Lending 协议，TVL 约 $18419M。",
+      "tagline": "Lending 协议，TVL 约 $18429M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -131,7 +131,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20V3",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -152,7 +152,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Aave%20V3",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -198,8 +198,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.115Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.314Z"
     },
     {
       "id": "aave-v4",
@@ -231,7 +231,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aave%20V4",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -252,7 +252,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Aave%20V4",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -298,7 +298,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -330,7 +330,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Aerodrome%20Slipstream",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -351,7 +351,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Aerodrome%20Slipstream",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -397,7 +397,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -430,7 +430,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Anemoy%20Capital",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -451,7 +451,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Anemoy%20Capital",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -497,7 +497,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -530,7 +530,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/b14g",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -551,7 +551,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/b14g",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -597,14 +597,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T19:01:10.494Z"
     },
     {
       "id": "b2-buzz",
       "name": "B2 Buzz",
       "slug": "b2-buzz",
-      "tagline": "Canonical Bridge 协议，TVL 约 $231M。",
+      "tagline": "Canonical Bridge 协议，TVL 约 $230M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin"
@@ -628,7 +628,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/B2%20Buzz",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -649,7 +649,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/B2%20Buzz",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -695,14 +695,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T19:01:10.494Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.315Z"
     },
     {
       "id": "babylon-protocol",
       "name": "Babylon Protocol",
       "slug": "babylon-protocol",
-      "tagline": "Restaking 协议，TVL 约 $3466M。",
+      "tagline": "Restaking 协议，TVL 约 $3463M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin"
@@ -726,7 +726,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Babylon%20Protocol",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -747,7 +747,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Babylon%20Protocol",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -793,14 +793,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.116Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.315Z"
     },
     {
       "id": "bedrock-unibtc",
       "name": "Bedrock uniBTC",
       "slug": "bedrock-unibtc",
-      "tagline": "Anchor BTC 协议，TVL 约 $372M。",
+      "tagline": "Anchor BTC 协议，TVL 约 $374M。",
       "category": "DeFi",
       "chains": [
         "Bitcoin",
@@ -827,7 +827,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Bedrock%20uniBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -848,7 +848,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Bedrock%20uniBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -894,8 +894,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.117Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.316Z"
     },
     {
       "id": "bitfi-basis",
@@ -927,7 +927,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/BitFi%20Basis",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -948,7 +948,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/BitFi%20Basis",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -994,7 +994,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.117Z"
     },
     {
@@ -1025,7 +1025,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Bittensor%20dTAO",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1046,7 +1046,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Bittensor%20dTAO",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1092,7 +1092,7 @@
       "created_at": "2026-09-19T04:02:15.467Z",
       "first_seen_at": "2026-09-19T04:02:15.467Z",
       "discovered_at": "2026-09-19T04:02:15.467Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1123,7 +1123,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Buzz%20Farming",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1144,7 +1144,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Buzz%20Farming",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1190,7 +1190,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1221,7 +1221,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/cap",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1242,7 +1242,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/cap",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1288,7 +1288,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1321,7 +1321,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/CCIP",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1342,7 +1342,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/CCIP",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1388,7 +1388,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1421,7 +1421,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/CIAN%20Yield%20Layer",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1442,7 +1442,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/CIAN%20Yield%20Layer",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1488,7 +1488,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T19:01:10.497Z"
     },
     {
@@ -1521,7 +1521,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Clearstar",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1542,7 +1542,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Clearstar",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1588,7 +1588,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.118Z"
     },
     {
@@ -1621,7 +1621,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Compound%20V3",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1642,7 +1642,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Compound%20V3",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1688,7 +1688,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1723,13 +1723,13 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Concrete",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         },
         {
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/concrete/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -1750,7 +1750,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Concrete",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -1846,7 +1846,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1879,7 +1879,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Convex%20Finance",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1900,7 +1900,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Convex%20Finance",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -1946,7 +1946,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -1977,7 +1977,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Cooler%20Loans",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -1998,7 +1998,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Cooler%20Loans",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2044,7 +2044,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -2079,7 +2079,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Curve%20DEX",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2100,7 +2100,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Curve%20DEX",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2146,14 +2146,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "defi-saver-asset-management",
       "name": "Defi Saver Asset Management",
       "slug": "defi-saver-asset-management",
-      "tagline": "CDP Manager 协议，TVL 约 $366M。",
+      "tagline": "CDP Manager 协议，TVL 约 $367M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -2179,7 +2179,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Defi%20Saver%20Asset%20Management",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2200,7 +2200,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Defi%20Saver%20Asset%20Management",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2246,8 +2246,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.120Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.319Z"
     },
     {
       "id": "dolomite",
@@ -2279,7 +2279,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Dolomite",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2300,7 +2300,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Dolomite",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2346,7 +2346,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -2377,7 +2377,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EigenCloud",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2398,7 +2398,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/EigenCloud",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2444,14 +2444,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.120Z"
     },
     {
       "id": "ethena-usde",
       "name": "Ethena USDe",
       "slug": "ethena-usde",
-      "tagline": "Basis Trading 协议，TVL 约 $4985M。",
+      "tagline": "Basis Trading 协议，TVL 约 $4978M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -2475,7 +2475,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ethena%20USDe",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2496,7 +2496,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Ethena%20USDe",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2542,8 +2542,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.120Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.319Z"
     },
     {
       "id": "ethena-usdtb",
@@ -2573,7 +2573,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Ethena%20USDtb",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2594,7 +2594,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Ethena%20USDtb",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2640,7 +2640,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -2672,7 +2672,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EtherFi%20Borrowing%20Market",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2693,7 +2693,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/EtherFi%20Borrowing%20Market",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2739,7 +2739,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -2771,7 +2771,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/EtherFi%20Cash%20Liquid",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2792,7 +2792,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/EtherFi%20Cash%20Liquid",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2838,7 +2838,7 @@
       "created_at": "2026-09-16T01:37:46.776Z",
       "first_seen_at": "2026-09-16T01:37:46.776Z",
       "discovered_at": "2026-09-16T01:37:46.776Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T00:10:21.040Z"
     },
     {
@@ -2871,7 +2871,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Euler%20V2",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2892,7 +2892,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Euler%20V2",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -2938,7 +2938,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -2969,7 +2969,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Falcon%20Finance",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -2990,7 +2990,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Falcon%20Finance",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3036,7 +3036,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T19:01:10.500Z"
     },
     {
@@ -3068,7 +3068,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/FAssets",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3089,7 +3089,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/FAssets",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3135,7 +3135,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -3168,7 +3168,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20DEX",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3189,7 +3189,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Fluid%20DEX",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3235,7 +3235,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -3268,7 +3268,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20Lending",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3289,7 +3289,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Fluid%20Lending",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3335,7 +3335,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -3366,7 +3366,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Fluid%20Lite",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3387,7 +3387,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Fluid%20Lite",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3433,7 +3433,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.122Z"
     },
     {
@@ -3464,7 +3464,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Forward%20Industries%20SOL",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3485,7 +3485,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Forward%20Industries%20SOL",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3531,7 +3531,7 @@
       "created_at": "2026-10-01T15:44:33.862Z",
       "first_seen_at": "2026-10-01T15:44:33.862Z",
       "discovered_at": "2026-10-01T15:44:33.862Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.122Z"
     },
     {
@@ -3562,7 +3562,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Function%20FBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3583,7 +3583,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Function%20FBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3629,14 +3629,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "gauntlet",
       "name": "Gauntlet",
       "slug": "gauntlet",
-      "tagline": "Risk Curators 协议，TVL 约 $1645M。",
+      "tagline": "Risk Curators 协议，TVL 约 $1644M。",
       "category": "Infra",
       "chains": [
         "Base",
@@ -3662,7 +3662,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Gauntlet",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3683,7 +3683,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Gauntlet",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3729,14 +3729,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.122Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.321Z"
     },
     {
       "id": "gmx-v2-perps",
       "name": "GMX V2 Perps",
       "slug": "gmx-v2-perps",
-      "tagline": "Derivatives 协议，TVL 约 $216M。",
+      "tagline": "Derivatives 协议，TVL 约 $217M。",
       "category": "DeFi",
       "chains": [
         "Arbitrum",
@@ -3762,7 +3762,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/GMX%20V2%20Perps",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3783,7 +3783,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/GMX%20V2%20Perps",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -3829,8 +3829,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.122Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.321Z"
     },
     {
       "id": "grove-finance",
@@ -3863,7 +3863,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Grove%20Finance",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3884,7 +3884,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Grove%20Finance",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -3930,7 +3930,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T19:01:10.502Z"
     },
     {
@@ -3962,7 +3962,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/GTBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -3983,7 +3983,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/GTBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -4029,7 +4029,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.123Z"
     },
     {
@@ -4062,7 +4062,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Huma",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4083,7 +4083,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Huma",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4129,7 +4129,7 @@
       "created_at": "2026-10-01T15:44:33.862Z",
       "first_seen_at": "2026-10-01T15:44:33.862Z",
       "discovered_at": "2026-10-01T15:44:33.862Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -4162,7 +4162,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Hyperithm",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4183,7 +4183,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Hyperithm",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4229,7 +4229,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.124Z"
     },
     {
@@ -4262,7 +4262,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Invesco%20USTB",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4283,7 +4283,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Invesco%20USTB",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4329,7 +4329,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -4360,7 +4360,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Jupiter%20Lend",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4381,7 +4381,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Jupiter%20Lend",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4427,14 +4427,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "jupiter-perpetual-exchange",
       "name": "Jupiter Perpetual Exchange",
       "slug": "jupiter-perpetual-exchange",
-      "tagline": "Derivatives 协议，TVL 约 $816M。",
+      "tagline": "Derivatives 协议，TVL 约 $815M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -4458,7 +4458,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Jupiter%20Perpetual%20Exchange",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4479,7 +4479,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Jupiter%20Perpetual%20Exchange",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4525,8 +4525,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T19:01:10.503Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.323Z"
     },
     {
       "id": "justcryptos",
@@ -4556,7 +4556,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustCryptos",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4577,7 +4577,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/JustCryptos",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4623,7 +4623,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -4654,7 +4654,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustLend%20sTRX",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4675,7 +4675,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/JustLend%20sTRX",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4721,7 +4721,7 @@
       "created_at": "2026-10-01T15:44:33.862Z",
       "first_seen_at": "2026-10-01T15:44:33.862Z",
       "discovered_at": "2026-10-01T15:44:33.862Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.125Z"
     },
     {
@@ -4752,7 +4752,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/JustLend%20V1",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4773,7 +4773,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/JustLend%20V1",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4819,7 +4819,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -4853,7 +4853,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/K3%20Capital",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4874,7 +4874,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/K3%20Capital",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -4920,7 +4920,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.125Z"
     },
     {
@@ -4951,7 +4951,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kamino%20Lend",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -4972,7 +4972,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Kamino%20Lend",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5018,7 +5018,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -5049,7 +5049,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kelp",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5070,7 +5070,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Kelp",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5116,14 +5116,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.125Z"
     },
     {
       "id": "kinetiq-khype",
       "name": "Kinetiq kHYPE",
       "slug": "kinetiq-khype",
-      "tagline": "Liquid Staking 协议，TVL 约 $1025M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1028M。",
       "category": "DeFi",
       "chains": [
         "Hyperliquid L1"
@@ -5147,7 +5147,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Kinetiq%20kHYPE",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5168,7 +5168,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Kinetiq%20kHYPE",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5214,14 +5214,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.125Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.324Z"
     },
     {
       "id": "kpk",
       "name": "KPK",
       "slug": "kpk",
-      "tagline": "Risk Curators 协议，TVL 约 $232M。",
+      "tagline": "Risk Curators 协议，TVL 约 $231M。",
       "category": "Infra",
       "chains": [
         "Ethereum",
@@ -5248,7 +5248,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/KPK",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5269,7 +5269,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/KPK",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5315,8 +5315,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T13:29:20.993Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.324Z"
     },
     {
       "id": "layerzero-v2",
@@ -5351,7 +5351,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/LayerZero%20V2",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5372,7 +5372,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/LayerZero%20V2",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5418,7 +5418,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T17:57:08.073Z"
     },
     {
@@ -5451,7 +5451,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lido",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5472,7 +5472,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Lido",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5518,7 +5518,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.126Z"
     },
     {
@@ -5547,7 +5547,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lightning%20Network",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5568,7 +5568,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Lightning%20Network",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5614,7 +5614,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -5645,7 +5645,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Liquid%20Collective",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5666,7 +5666,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Liquid%20Collective",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5712,7 +5712,7 @@
       "created_at": "2026-09-16T01:37:46.776Z",
       "first_seen_at": "2026-09-16T01:37:46.776Z",
       "discovered_at": "2026-09-16T01:37:46.776Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.127Z"
     },
     {
@@ -5744,7 +5744,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lista%20Lending",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5765,7 +5765,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Lista%20Lending",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -5811,7 +5811,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -5844,7 +5844,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lombard%20LBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5865,7 +5865,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Lombard%20LBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -5911,7 +5911,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.127Z"
     },
     {
@@ -5942,7 +5942,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Lorenzo%20enzoBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -5963,7 +5963,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Lorenzo%20enzoBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6009,7 +6009,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -6041,7 +6041,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Maple",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6062,7 +6062,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Maple",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6108,14 +6108,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "marinade-native",
       "name": "Marinade Native",
       "slug": "marinade-native",
-      "tagline": "Staking Pool 协议，TVL 约 $450M。",
+      "tagline": "Staking Pool 协议，TVL 约 $449M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -6139,7 +6139,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Marinade%20Native",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6160,7 +6160,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Marinade%20Native",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6206,8 +6206,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T19:01:10.506Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.327Z"
     },
     {
       "id": "marinade-select",
@@ -6237,7 +6237,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Marinade%20Select",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6258,7 +6258,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Marinade%20Select",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6304,7 +6304,7 @@
       "created_at": "2026-10-06T22:58:19.944Z",
       "first_seen_at": "2026-10-06T22:58:19.944Z",
       "discovered_at": "2026-10-06T22:58:19.944Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:19.944Z"
     },
     {
@@ -6339,7 +6339,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Mellow%20Core",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6360,7 +6360,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Mellow%20Core",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -6406,7 +6406,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.127Z"
     },
     {
@@ -6440,7 +6440,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Merlins%20Seal",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6461,7 +6461,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Merlins%20Seal",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6507,7 +6507,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -6538,7 +6538,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/mETH%20Protocol",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6559,7 +6559,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/mETH%20Protocol",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6605,7 +6605,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.128Z"
     },
     {
@@ -6638,7 +6638,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Morpho%20Blue",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6659,7 +6659,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Morpho%20Blue",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6705,7 +6705,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.128Z"
     },
     {
@@ -6739,7 +6739,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/NEAR%20Intents",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6760,7 +6760,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/NEAR%20Intents",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6806,7 +6806,7 @@
       "created_at": "2026-09-22T11:51:43.153Z",
       "first_seen_at": "2026-09-22T11:51:43.153Z",
       "discovered_at": "2026-09-22T11:51:43.153Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -6837,7 +6837,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Nexus%20BTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6858,7 +6858,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Nexus%20BTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -6904,7 +6904,7 @@
       "created_at": "2026-09-16T06:46:09.855Z",
       "first_seen_at": "2026-09-16T06:46:09.855Z",
       "discovered_at": "2026-09-16T06:46:09.855Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -6936,7 +6936,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Nonce%20Capital",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -6957,7 +6957,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Nonce%20Capital",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7003,7 +7003,7 @@
       "created_at": "2026-10-01T15:44:33.862Z",
       "first_seen_at": "2026-10-01T15:44:33.862Z",
       "discovered_at": "2026-10-01T15:44:33.862Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.129Z"
     },
     {
@@ -7034,7 +7034,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Obol",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7055,7 +7055,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Obol",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7101,7 +7101,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.129Z"
     },
     {
@@ -7132,7 +7132,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/OnRe",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7153,7 +7153,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/OnRe",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7199,7 +7199,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -7232,7 +7232,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/OpenTrade",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7253,7 +7253,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/OpenTrade",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7299,7 +7299,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -7331,7 +7331,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Orca%20DEX",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7352,7 +7352,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Orca%20DEX",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7398,7 +7398,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -7431,7 +7431,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PancakeSwap%20AMM",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7452,7 +7452,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/PancakeSwap%20AMM",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7498,7 +7498,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -7531,7 +7531,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PancakeSwap%20AMM%20V3",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7552,7 +7552,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/PancakeSwap%20AMM%20V3",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7598,7 +7598,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -7631,7 +7631,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Pendle%20V2",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7652,7 +7652,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Pendle%20V2",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7698,7 +7698,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -7732,7 +7732,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Plume%20Vaults",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7753,7 +7753,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Plume%20Vaults",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7799,14 +7799,14 @@
       "created_at": "2026-09-16T06:14:36.946Z",
       "first_seen_at": "2026-09-16T06:14:36.946Z",
       "discovered_at": "2026-09-16T06:14:36.946Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "polymarket-international",
       "name": "Polymarket International",
       "slug": "polymarket-international",
-      "tagline": "Prediction Market 协议，TVL 约 $344M。",
+      "tagline": "Prediction Market 协议，TVL 约 $332M。",
       "category": "DeFi",
       "chains": [
         "Polygon"
@@ -7830,7 +7830,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Polymarket%20International",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7851,7 +7851,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Polymarket%20International",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7897,8 +7897,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.130Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.330Z"
     },
     {
       "id": "portal",
@@ -7931,7 +7931,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Portal",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -7952,7 +7952,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Portal",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -7998,7 +7998,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-04T20:10:30.121Z"
     },
     {
@@ -8029,7 +8029,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/PumpSwap",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8050,7 +8050,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/PumpSwap",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8096,7 +8096,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -8127,7 +8127,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Raydium%20AMM",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8148,7 +8148,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Raydium%20AMM",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8194,7 +8194,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -8227,7 +8227,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Re",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8248,7 +8248,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Re",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8294,14 +8294,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "rockawayx",
       "name": "RockawayX",
       "slug": "rockawayx",
-      "tagline": "Risk Curators 协议，TVL 约 $299M。",
+      "tagline": "Risk Curators 协议，TVL 约 $298M。",
       "category": "Infra",
       "chains": [
         "Solana",
@@ -8327,7 +8327,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/RockawayX",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8348,7 +8348,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/RockawayX",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8394,8 +8394,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T13:29:20.998Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.331Z"
     },
     {
       "id": "rocket-pool",
@@ -8425,7 +8425,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Rocket%20Pool",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8446,7 +8446,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Rocket%20Pool",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8492,7 +8492,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.131Z"
     },
     {
@@ -8523,7 +8523,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sanctum%20Infinity",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8544,7 +8544,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Sanctum%20Infinity",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8590,14 +8590,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "sanctum-validator-lsts",
       "name": "Sanctum Validator LSTs",
       "slug": "sanctum-validator-lsts",
-      "tagline": "Liquid Staking 协议，TVL 约 $1989M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1982M。",
       "category": "DeFi",
       "chains": [
         "Solana"
@@ -8621,7 +8621,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sanctum%20Validator%20LSTs",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8642,7 +8642,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Sanctum%20Validator%20LSTs",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8688,14 +8688,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.132Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.331Z"
     },
     {
       "id": "sentora-curator",
       "name": "Sentora Curator",
       "slug": "sentora-curator",
-      "tagline": "Risk Curators 协议，TVL 约 $2553M。",
+      "tagline": "Risk Curators 协议，TVL 约 $2554M。",
       "category": "Infra",
       "chains": [
         "Ethereum",
@@ -8721,7 +8721,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sentora%20Curator",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8742,7 +8742,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Sentora%20Curator",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8788,8 +8788,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.132Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.332Z"
     },
     {
       "id": "sky-lending",
@@ -8819,7 +8819,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Sky%20Lending",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8840,7 +8840,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Sky%20Lending",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8886,7 +8886,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -8918,13 +8918,13 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/solstice/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         },
         {
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Solstice",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -8945,7 +8945,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/solstice/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -8991,7 +8991,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-03T12:02:25.033Z"
     },
     {
@@ -9024,7 +9024,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Solv%20Basis%20Trading",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9045,7 +9045,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Solv%20Basis%20Trading",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9091,7 +9091,7 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T19:01:10.512Z"
     },
     {
@@ -9124,7 +9124,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SolvBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9145,7 +9145,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/SolvBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9191,14 +9191,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "spark-liquidity-layer",
       "name": "Spark Liquidity Layer",
       "slug": "spark-liquidity-layer",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $2721M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $2729M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -9225,7 +9225,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Spark%20Liquidity%20Layer",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9246,7 +9246,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Spark%20Liquidity%20Layer",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -9292,8 +9292,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.133Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.332Z"
     },
     {
       "id": "spark-savings",
@@ -9325,7 +9325,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Spark%20Savings",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9346,7 +9346,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Spark%20Savings",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9392,7 +9392,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -9424,7 +9424,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SparkLend",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9445,7 +9445,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/SparkLend",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9491,7 +9491,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -9522,7 +9522,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SSV%20Network",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9543,7 +9543,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/SSV%20Network",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9589,7 +9589,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.133Z"
     },
     {
@@ -9620,7 +9620,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Stacks%20sBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9641,7 +9641,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Stacks%20sBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9687,14 +9687,14 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "stader",
       "name": "Stader",
       "slug": "stader",
-      "tagline": "Liquid Staking 协议，TVL 约 $272M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $271M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -9722,7 +9722,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Stader",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9743,7 +9743,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Stader",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9789,14 +9789,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T19:01:10.513Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.333Z"
     },
     {
       "id": "stakewise-v3",
       "name": "StakeWise V3",
       "slug": "stakewise-v3",
-      "tagline": "Liquid Staking 协议，TVL 约 $1019M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $1020M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -9821,7 +9821,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/StakeWise%20V3",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9842,7 +9842,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/StakeWise%20V3",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9888,8 +9888,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.133Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.333Z"
     },
     {
       "id": "steakhouse-financial",
@@ -9921,7 +9921,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Steakhouse%20Financial",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -9942,7 +9942,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Steakhouse%20Financial",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -9988,14 +9988,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.133Z"
     },
     {
       "id": "sthype",
       "name": "stHYPE",
       "slug": "sthype",
-      "tagline": "Liquid Staking 协议，TVL 约 $210M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $211M。",
       "category": "DeFi",
       "chains": [
         "Hyperliquid L1"
@@ -10019,7 +10019,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/stHYPE",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10040,7 +10040,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/stHYPE",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10086,8 +10086,8 @@
       "created_at": "2026-10-02T12:22:07.959Z",
       "first_seen_at": "2026-10-02T12:22:07.959Z",
       "discovered_at": "2026-10-02T12:22:07.959Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.134Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.333Z"
     },
     {
       "id": "sunswap-v2",
@@ -10117,7 +10117,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SUNSwap%20V2",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10138,7 +10138,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/SUNSwap%20V2",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10184,7 +10184,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -10215,7 +10215,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/SUNSwap%20V3",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10236,7 +10236,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/SUNSwap%20V3",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10282,7 +10282,7 @@
       "created_at": "2026-09-12T07:12:26.570Z",
       "first_seen_at": "2026-09-12T07:12:26.570Z",
       "discovered_at": "2026-09-12T07:12:26.570Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -10313,7 +10313,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Symbiotic",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10334,7 +10334,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Symbiotic",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10380,7 +10380,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.134Z"
     },
     {
@@ -10412,7 +10412,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/tBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10433,7 +10433,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/tBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10479,14 +10479,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T22:58:20.136Z"
     },
     {
       "id": "tonstakers-lsd",
       "name": "Tonstakers LSD",
       "slug": "tonstakers-lsd",
-      "tagline": "Liquid Staking 协议，TVL 约 $208M。",
+      "tagline": "Liquid Staking 协议，TVL 约 $207M。",
       "category": "DeFi",
       "chains": [
         "TON"
@@ -10510,7 +10510,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Tonstakers%20LSD",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10531,7 +10531,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Tonstakers%20LSD",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10577,8 +10577,8 @@
       "created_at": "2026-09-16T01:15:52.637Z",
       "first_seen_at": "2026-09-16T01:15:52.637Z",
       "discovered_at": "2026-09-16T01:15:52.637Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.136Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.334Z"
     },
     {
       "id": "tornado-cash",
@@ -10610,7 +10610,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Tornado%20Cash",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10631,7 +10631,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Tornado%20Cash",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10677,7 +10677,7 @@
       "created_at": "2026-10-01T15:44:33.862Z",
       "first_seen_at": "2026-10-01T15:44:33.862Z",
       "discovered_at": "2026-10-01T15:44:33.862Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -10710,7 +10710,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V2",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10731,7 +10731,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Uniswap%20V2",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10777,7 +10777,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -10810,7 +10810,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V3",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10831,7 +10831,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Uniswap%20V3",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10877,7 +10877,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -10910,7 +10910,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Uniswap%20V4",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -10931,7 +10931,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Uniswap%20V4",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -10977,7 +10977,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -11011,7 +11011,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Unit",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11032,7 +11032,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Unit",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11078,14 +11078,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "upshift",
       "name": "Upshift",
       "slug": "upshift",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $422M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $421M。",
       "category": "DeFi",
       "chains": [
         "Ethereum",
@@ -11113,7 +11113,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Upshift",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11134,7 +11134,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Upshift",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -11180,8 +11180,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.137Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.335Z"
     },
     {
       "id": "usd-ai",
@@ -11211,7 +11211,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USD%20AI",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11232,7 +11232,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/USD%20AI",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11278,7 +11278,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -11311,7 +11311,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USDD",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11332,7 +11332,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/USDD",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11378,7 +11378,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -11409,7 +11409,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/USDT0",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11430,7 +11430,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/USDT0",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11476,14 +11476,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "veda",
       "name": "Veda",
       "slug": "veda",
-      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1914M。",
+      "tagline": "Onchain Capital Allocator 协议，TVL 约 $1918M。",
       "category": "DeFi",
       "chains": [
         "Ink",
@@ -11510,7 +11510,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Veda",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11531,7 +11531,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Veda",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -11577,8 +11577,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.137Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.336Z"
     },
     {
       "id": "venus-core-pool",
@@ -11610,7 +11610,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Venus%20Core%20Pool",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11631,7 +11631,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Venus%20Core%20Pool",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11677,7 +11677,7 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -11708,7 +11708,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/WBTC",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11729,7 +11729,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/WBTC",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11775,14 +11775,14 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
       "id": "world-chain",
       "name": "World Chain",
       "slug": "world-chain",
-      "tagline": "Canonical Bridge 协议，TVL 约 $497M。",
+      "tagline": "Canonical Bridge 协议，TVL 约 $498M。",
       "category": "DeFi",
       "chains": [
         "Ethereum"
@@ -11806,7 +11806,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/World%20Chain",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11827,7 +11827,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/World%20Chain",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11873,8 +11873,8 @@
       "created_at": "2026-09-12T06:08:55.635Z",
       "first_seen_at": "2026-09-12T06:08:55.635Z",
       "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
-      "last_changed_at": "2026-10-06T22:58:20.138Z"
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
+      "last_changed_at": "2026-10-07T02:14:06.338Z"
     },
     {
       "id": "yearn-finance",
@@ -11906,7 +11906,7 @@
           "type": "third_party",
           "name": "DefiLlama",
           "url": "https://defillama.com/protocol/Yearn%20Finance",
-          "fetched_at": "2026-10-06T22:58:19.944Z"
+          "fetched_at": "2026-10-07T02:14:06.141Z"
         }
       ],
       "scores": {
@@ -11927,7 +11927,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://defillama.com/protocol/Yearn%20Finance",
-          "checked_at": "2026-10-06T22:58:19.944Z",
+          "checked_at": "2026-10-07T02:14:06.141Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -11973,7 +11973,7 @@
       "created_at": "2026-10-06T19:01:05.275Z",
       "first_seen_at": "2026-10-06T19:01:05.275Z",
       "discovered_at": "2026-10-06T19:01:05.275Z",
-      "last_checked_at": "2026-10-06T22:58:19.944Z",
+      "last_checked_at": "2026-10-07T02:14:06.141Z",
       "last_changed_at": "2026-10-06T19:01:05.275Z"
     },
     {
@@ -12002,7 +12002,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/acepyr/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12023,7 +12023,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/acepyr/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -12129,7 +12129,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.044Z"
     },
     {
@@ -12155,7 +12155,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/aci/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12176,7 +12176,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/aci/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -12262,7 +12262,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:37:44.822Z"
     },
     {
@@ -12288,7 +12288,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ammora/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12309,7 +12309,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/ammora/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -12425,7 +12425,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.045Z"
     },
     {
@@ -12455,7 +12455,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/arcium/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12476,7 +12476,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/arcium/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -12562,7 +12562,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.046Z"
     },
     {
@@ -12588,7 +12588,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/arcus/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12609,7 +12609,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/arcus/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -12705,7 +12705,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -12733,7 +12733,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/baibai/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12754,7 +12754,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/baibai/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -12850,7 +12850,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.047Z"
     },
     {
@@ -12880,7 +12880,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/beldex/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -12901,7 +12901,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/beldex/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -12997,7 +12997,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.047Z"
     },
     {
@@ -13024,7 +13024,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/blackboard/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -13045,7 +13045,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/blackboard/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13141,7 +13141,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.048Z"
     },
     {
@@ -13168,7 +13168,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/cambria/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -13189,7 +13189,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/cambria/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13295,7 +13295,7 @@
       "created_at": "2026-10-05T18:18:15.141Z",
       "first_seen_at": "2026-10-05T18:18:15.141Z",
       "discovered_at": "2026-10-05T18:18:15.141Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-05T18:18:15.141Z"
     },
     {
@@ -13325,7 +13325,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/canopy/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -13346,7 +13346,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/canopy/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13382,7 +13382,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -13412,7 +13412,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/collector-crypt/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -13433,7 +13433,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/collector-crypt/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13529,7 +13529,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.050Z"
     },
     {
@@ -13555,7 +13555,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/czr/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -13576,7 +13576,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/czr/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13672,7 +13672,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -13703,7 +13703,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/deepbook/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -13724,7 +13724,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/deepbook/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13820,7 +13820,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.051Z"
     },
     {
@@ -13854,7 +13854,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/doppler-finance/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         },
         {
           "type": "third_party",
@@ -13881,7 +13881,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/doppler-finance/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -13967,7 +13967,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -13994,7 +13994,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/drift-protocol/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14015,7 +14015,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/drift-protocol/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -14101,7 +14101,7 @@
       "created_at": "2026-10-01T20:35:30.449Z",
       "first_seen_at": "2026-10-01T20:35:30.449Z",
       "discovered_at": "2026-10-01T20:35:30.449Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -14153,7 +14153,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/ethena/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14280,7 +14280,7 @@
       "created_at": "2026-09-11T14:29:52.346Z",
       "first_seen_at": "2026-09-11T14:29:52.346Z",
       "discovered_at": "2026-09-11T14:29:52.346Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.053Z"
     },
     {
@@ -14309,7 +14309,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/fables/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14330,7 +14330,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/fables/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -14426,7 +14426,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.054Z"
     },
     {
@@ -14456,7 +14456,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/flop-labs/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14477,7 +14477,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/flop-labs/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -14553,7 +14553,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.055Z"
     },
     {
@@ -14603,7 +14603,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/grass/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14710,7 +14710,7 @@
       "created_at": "2026-09-11T14:29:52.345Z",
       "first_seen_at": "2026-09-11T14:29:52.345Z",
       "discovered_at": "2026-09-11T14:29:52.345Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -14741,7 +14741,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/grvt/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14762,7 +14762,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/grvt/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -14838,7 +14838,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -14869,7 +14869,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/hertzflow/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -14890,7 +14890,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/hertzflow/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -14986,7 +14986,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.057Z"
     },
     {
@@ -15017,7 +15017,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/huma-finance/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15038,7 +15038,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/huma-finance/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15134,7 +15134,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.058Z"
     },
     {
@@ -15164,7 +15164,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/infinex/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15185,7 +15185,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/infinex/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15271,7 +15271,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.058Z"
     },
     {
@@ -15302,7 +15302,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/jupiter/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15323,7 +15323,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/jupiter/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15409,7 +15409,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.059Z"
     },
     {
@@ -15435,7 +15435,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/kinetiq/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15456,7 +15456,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/kinetiq/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15532,7 +15532,7 @@
       "created_at": "2026-10-01T20:35:30.449Z",
       "first_seen_at": "2026-10-01T20:35:30.449Z",
       "discovered_at": "2026-10-01T20:35:30.449Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -15560,7 +15560,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/kryvora-network/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15581,7 +15581,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/kryvora-network/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15687,7 +15687,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.060Z"
     },
     {
@@ -15717,7 +15717,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/laptop/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15738,7 +15738,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/laptop/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15834,7 +15834,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.060Z"
     },
     {
@@ -15865,7 +15865,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/limitless-prediction-markets/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -15886,7 +15886,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/limitless-prediction-markets/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -15992,7 +15992,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.061Z"
     },
     {
@@ -16023,7 +16023,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/memebook/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16044,7 +16044,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/memebook/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -16140,7 +16140,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.062Z"
     },
     {
@@ -16170,7 +16170,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/meteora/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16191,7 +16191,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/meteora/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -16237,7 +16237,7 @@
       "created_at": "2026-10-06T19:00:59.845Z",
       "first_seen_at": "2026-10-06T19:00:59.845Z",
       "discovered_at": "2026-10-06T19:00:59.845Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-06T19:00:59.845Z"
     },
     {
@@ -16263,7 +16263,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/mindgames/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16284,7 +16284,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/mindgames/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -16380,7 +16380,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -16411,7 +16411,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/mint-io/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16432,7 +16432,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/mint-io/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -16518,7 +16518,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.063Z"
     },
     {
@@ -16549,7 +16549,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/nado/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16570,7 +16570,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/nado/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -16676,7 +16676,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.064Z"
     },
     {
@@ -16703,7 +16703,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/nowa/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16724,7 +16724,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/nowa/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -16830,7 +16830,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.065Z"
     },
     {
@@ -16861,7 +16861,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/o1-exchange/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -16882,7 +16882,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/o1-exchange/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -16978,7 +16978,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.065Z"
     },
     {
@@ -17008,7 +17008,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/omega/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17029,7 +17029,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/omega/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -17115,7 +17115,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.065Z"
     },
     {
@@ -17144,7 +17144,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/pharos/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17165,7 +17165,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/pharos/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -17211,7 +17211,7 @@
       "created_at": "2026-10-06T19:00:59.845Z",
       "first_seen_at": "2026-10-06T19:00:59.845Z",
       "discovered_at": "2026-10-06T19:00:59.845Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-06T19:00:59.845Z"
     },
     {
@@ -17235,7 +17235,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/powerx-onewallet/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17256,7 +17256,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/powerx-onewallet/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -17362,7 +17362,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -17388,7 +17388,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/raycash/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17409,7 +17409,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/raycash/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -17505,7 +17505,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -17534,7 +17534,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/rep/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17555,7 +17555,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/rep/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -17651,7 +17651,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.070Z"
     },
     {
@@ -17677,7 +17677,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/rwaperp/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17698,7 +17698,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/rwaperp/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -17804,7 +17804,7 @@
       "created_at": "2026-10-05T18:18:15.141Z",
       "first_seen_at": "2026-10-05T18:18:15.141Z",
       "discovered_at": "2026-10-05T18:18:15.141Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-05T18:18:15.141Z"
     },
     {
@@ -17835,7 +17835,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/satsuma/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17856,7 +17856,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/satsuma/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -17902,7 +17902,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -17929,7 +17929,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/sosovalue/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -17950,7 +17950,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/sosovalue/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -18066,7 +18066,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.072Z"
     },
     {
@@ -18092,7 +18092,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/sweep-finance/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18113,7 +18113,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/sweep-finance/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -18209,7 +18209,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.073Z"
     },
     {
@@ -18235,7 +18235,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/synthra/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18256,7 +18256,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/synthra/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -18342,7 +18342,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -18368,7 +18368,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/tastyco/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18389,7 +18389,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/tastyco/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -18495,7 +18495,7 @@
       "created_at": "2026-10-01T15:44:31.101Z",
       "first_seen_at": "2026-10-01T15:44:31.101Z",
       "discovered_at": "2026-10-01T15:44:31.101Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -18525,7 +18525,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/tbook/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18546,7 +18546,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/tbook/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -18632,7 +18632,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.073Z"
     },
     {
@@ -18658,7 +18658,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/titan-exchange/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18679,7 +18679,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/titan-exchange/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -18765,7 +18765,7 @@
       "created_at": "2026-10-02T12:22:05.749Z",
       "first_seen_at": "2026-10-02T12:22:05.749Z",
       "discovered_at": "2026-10-02T12:22:05.749Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-04T13:37:14.601Z"
     },
     {
@@ -18795,7 +18795,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/tread-fi/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18816,7 +18816,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/tread-fi/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -18922,7 +18922,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.074Z"
     },
     {
@@ -18948,7 +18948,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/truenorth/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -18969,7 +18969,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/truenorth/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -19055,7 +19055,7 @@
       "created_at": "2026-10-06T19:00:59.845Z",
       "first_seen_at": "2026-10-06T19:00:59.845Z",
       "discovered_at": "2026-10-06T19:00:59.845Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-06T19:00:59.845Z"
     },
     {
@@ -19084,7 +19084,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/vangrid/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -19105,7 +19105,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/vangrid/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -19211,7 +19211,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.075Z"
     },
     {
@@ -19239,7 +19239,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/vibe-vibe/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -19260,7 +19260,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/vibe-vibe/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -19356,7 +19356,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-05T18:18:23.878Z"
     },
     {
@@ -19387,7 +19387,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/voice/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -19408,7 +19408,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/voice/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -19524,7 +19524,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     },
     {
@@ -19550,7 +19550,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/wick/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -19571,7 +19571,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/wick/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -19647,7 +19647,7 @@
       "created_at": "2026-09-19T05:02:09.703Z",
       "first_seen_at": "2026-09-19T05:02:09.703Z",
       "discovered_at": "2026-09-19T05:02:09.703Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.076Z"
     },
     {
@@ -19673,7 +19673,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/worldie/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -19694,7 +19694,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/worldie/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
         }
       },
@@ -19780,7 +19780,7 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-01T15:44:34.077Z"
     },
     {
@@ -19810,7 +19810,7 @@
           "type": "airdrop_aggregator",
           "name": "Airdrops.io",
           "url": "https://airdrops.io/yakkamon/",
-          "fetched_at": "2026-10-06T22:58:17.032Z"
+          "fetched_at": "2026-10-07T02:14:04.454Z"
         }
       ],
       "scores": {
@@ -19831,7 +19831,7 @@
         "basis": {
           "method": "source_text",
           "source_url": "https://airdrops.io/yakkamon/",
-          "checked_at": "2026-10-06T22:58:17.032Z",
+          "checked_at": "2026-10-07T02:14:04.454Z",
           "note": "来源未给出可核实的成本金额"
         }
       },
@@ -19917,106 +19917,8 @@
       "created_at": "2026-09-12T06:08:39.056Z",
       "first_seen_at": "2026-09-12T06:08:39.056Z",
       "discovered_at": "2026-09-12T06:08:39.056Z",
-      "last_checked_at": "2026-10-06T22:58:17.032Z",
+      "last_checked_at": "2026-10-07T02:14:04.454Z",
       "last_changed_at": "2026-10-06T19:01:10.517Z"
-    },
-    {
-      "id": "figure-markets-democratized-prime",
-      "name": "Figure Markets Democratized Prime",
-      "slug": "figure-markets-democratized-prime",
-      "tagline": "Lending 协议，TVL 约 $227M。",
-      "category": "DeFi",
-      "chains": [
-        "Provenance"
-      ],
-      "status": "potential",
-      "official": {
-        "website": "https://www.figure.com/crypto-backed-loan/",
-        "x": "https://x.com/figuremarkets"
-      },
-      "meta": {},
-      "tasks": [
-        "核对活动公告",
-        "核对资格与期限"
-      ],
-      "requirements": [
-        "钱包",
-        "X 账号"
-      ],
-      "sources": [
-        {
-          "type": "third_party",
-          "name": "DefiLlama",
-          "url": "https://defillama.com/protocol/Figure%20Markets%20Democratized%20Prime",
-          "fetched_at": "2026-10-06T19:01:05.275Z"
-        }
-      ],
-      "scores": {
-        "authenticity": 18,
-        "value": 37,
-        "risk": "medium",
-        "grade": "D"
-      },
-      "cost": {
-        "capital_min_usd": null,
-        "capital_max_usd": null,
-        "gas_estimate_usd": null,
-        "time_minutes": 0,
-        "long_term": false,
-        "summary": "本金要求待核实。手续费待核实。信息不完整，暂不判断为新手友好。",
-        "capital_required": false,
-        "gas_required": false,
-        "basis": {
-          "method": "source_text",
-          "source_url": "https://defillama.com/protocol/Figure%20Markets%20Democratized%20Prime",
-          "checked_at": "2026-10-06T19:01:05.275Z",
-          "note": "来源未给出可核实的成本金额"
-        }
-      },
-      "recommendation": {
-        "grade": "D",
-        "action": "observe",
-        "summary": "活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。"
-      },
-      "guide": [
-        {
-          "id": "dbe78e7b4197e3a9f0ff84efbcfafcd86255c046ea76f27bdaeec15fad940e96",
-          "step": 1,
-          "title": "核对项目与活动公告",
-          "minutes": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "unknown",
-          "content_status": "ready"
-        },
-        {
-          "id": "cc7781c7da9e8f4c988685c6ccb99d709c290b66146a8bf7714766bb26305dd8",
-          "step": 2,
-          "title": "核对资格、期限与成本",
-          "minutes": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "unknown",
-          "content_status": "ready"
-        },
-        {
-          "id": "a4740cbe2dd4634fb3722e1c902a3f4c7c50f99e78f5abd4959484b6a182cc3e",
-          "step": 3,
-          "title": "查找并核对活动教程",
-          "minutes": 0,
-          "needs_wallet": false,
-          "needs_signature": false,
-          "risk": "unknown",
-          "content_status": "ready"
-        }
-      ],
-      "guide_source": "template",
-      "guide_version": "6c49ce19cbce2f668d902e4f8dabaaa71f5ad6d47e21375ad078834cd92a7c08",
-      "created_at": "2026-09-12T06:08:55.635Z",
-      "first_seen_at": "2026-09-12T06:08:55.635Z",
-      "discovered_at": "2026-09-12T06:08:55.635Z",
-      "last_checked_at": "2026-10-06T19:01:05.275Z",
-      "last_changed_at": "2026-10-06T22:58:20.121Z"
     },
     {
       "id": "berachain",
@@ -21267,6 +21169,6 @@
       "last_changed_at": "2026-10-02T02:32:50.846Z"
     }
   ],
-  "last_successful_check_at": "2026-10-06T22:58:16.916Z",
-  "content_updated_at": "2026-10-06T22:58:16.916Z"
+  "last_successful_check_at": "2026-10-07T02:14:04.356Z",
+  "content_updated_at": "2026-10-07T02:14:04.356Z"
 }

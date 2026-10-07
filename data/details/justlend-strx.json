@@ -26,7 +26,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/JustLend%20sTRX",
-      "fetched_at": "2026-10-06T22:58:19.944Z"
+      "fetched_at": "2026-10-07T02:14:06.141Z"
     }
   ],
   "evidence": [
@@ -259,7 +259,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/JustLend%20sTRX",
-      "checked_at": "2026-10-06T22:58:19.944Z",
+      "checked_at": "2026-10-07T02:14:06.141Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -358,7 +358,7 @@
   ],
   "created_at": "2026-10-01T15:44:33.862Z",
   "discovered_at": "2026-10-01T15:44:33.862Z",
-  "last_checked_at": "2026-10-06T22:58:19.944Z",
+  "last_checked_at": "2026-10-07T02:14:06.141Z",
   "last_changed_at": "2026-10-06T22:58:20.125Z",
   "sourcedDescription": "Liquid Staking 协议，TVL 约 $3303M。",
   "guide_version": "ba2e458ea91dd585a4b4b8747fe6f2f1d29428ab92627fad388ef7a6971f53d5",
