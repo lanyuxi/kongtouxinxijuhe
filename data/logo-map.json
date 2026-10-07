@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-07T16:19:49.856Z",
-  "total": 190,
+  "updated_at": "2026-10-07T21:23:26.771Z",
+  "total": 187,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -12,7 +12,6 @@
     "ammora": "logos/ammora.png",
     "anemoy-capital": "logos/anemoy-capital.png",
     "arcium": "logos/arcium.png",
-    "arcus": "logos/arcus.webp",
     "b14g": "logos/b14g.png",
     "b2-buzz": "logos/b2-buzz.png",
     "babylon-protocol": "logos/babylon-protocol.png",
@@ -169,7 +168,6 @@
     "tbook": "logos/tbook.svg",
     "tbtc": "logos/tbtc.png",
     "titan-exchange": "logos/titan-exchange.webp",
-    "tonstakers-lsd": "logos/tonstakers-lsd.png",
     "tornado-cash": "logos/tornado-cash.webp",
     "tread-fi": "logos/tread-fi.png",
     "truenorth": "logos/truenorth.ico",
@@ -191,7 +189,6 @@
     "world-chain": "logos/world-chain.png",
     "worldie": "logos/worldie.png",
     "yakkamon": "logos/yakkamon.png",
-    "yearn-finance": "logos/yearn-finance.webp",
     "zora-network": "logos/zora-network.png"
   },
   "sources": {
