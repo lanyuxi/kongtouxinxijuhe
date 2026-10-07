@@ -1,5 +1,5 @@
 {
-  "total": 57,
+  "total": 60,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -68,6 +68,16 @@
           "slug": "canopy",
           "field": "简介",
           "source_url": "https://airdrops.io/canopy/"
+        }
+      ]
+    },
+    {
+      "original": "Clans are invite-only groups that compete each week based on cumulative PnL. The top three clans each week earn bonus multipliers applied to every member for the following week: 1st place: +0.50x 2nd place: +0.30x 3rd place: +0.20x Enter an invite code on the Points dashboard to join a clan.",
+      "locations": [
+        {
+          "slug": "imperial",
+          "field": "步骤 6 正文",
+          "source_url": "https://airdrops.io/imperial/"
         }
       ]
     },
@@ -172,6 +182,16 @@
       ]
     },
     {
+      "original": "No token has been announced, and Imperial has not confirmed a TGE. Season 1 of the Imperial Points program launched on May 20, and the team has signaled that points carry forward into future seasons, making early activity worth tracking.",
+      "locations": [
+        {
+          "slug": "imperial",
+          "field": "简介",
+          "source_url": "https://airdrops.io/imperial/"
+        }
+      ]
+    },
+    {
       "original": "Nowa Farming is the opening phase of Nowa’s Community Development Program, which runs across Devnet (live now), Testnet, and Mainnet. Participants earn NOWA tokens directly rather than points, and farmed NOWA converts to TGE allocation on a straight 1:1 basis.",
       "locations": [
         {
@@ -218,6 +238,16 @@
           "slug": "rep",
           "field": "简介",
           "source_url": "https://airdrops.io/rep/"
+        }
+      ]
+    },
+    {
+      "original": "Retium has not confirmed an airdrop, and its published tokenomics leave little room for a classic one. The team states that no RTM is allocated to any group. RTM enters circulation only through the Safehouse, an on-chain reserve that swaps Retium’s stablecoin for RTM one to one on the same terms for every user. No TGE date or tester reward has been announced, though the team has said members who test actively and file useful reports may receive a Beta Tester role in Discord.",
+      "locations": [
+        {
+          "slug": "retium",
+          "field": "简介",
+          "source_url": "https://airdrops.io/retium/"
         }
       ]
     },
