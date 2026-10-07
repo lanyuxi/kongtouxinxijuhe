@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/truenorth/",
-      "fetched_at": "2026-10-07T02:14:04.454Z"
+      "fetched_at": "2026-10-07T08:53:47.849Z"
     }
   ],
   "evidence": [
@@ -268,7 +268,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/truenorth/",
-      "checked_at": "2026-10-07T02:14:04.454Z",
+      "checked_at": "2026-10-07T08:53:47.849Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -439,7 +439,7 @@
   ],
   "created_at": "2026-10-06T19:00:59.845Z",
   "discovered_at": "2026-10-06T19:00:59.845Z",
-  "last_checked_at": "2026-10-07T02:14:04.454Z",
+  "last_checked_at": "2026-10-07T08:53:47.849Z",
   "last_changed_at": "2026-10-06T19:00:59.845Z",
   "sourcedDescription": "TrueNorth has not confirmed a token or airdrop. There is no published tokenomics, distribution date, or eligibility list. What does exist is TruthSayer Rewards, a Discord-based program that pays USDC for trading volume, referrals, and community activity, with payouts that are not scheduled in advance.",
   "tagline_en": "TrueNorth has not confirmed a token or airdrop. There is no published tokenomics, distribution date, or eligibility list. What does exist is TruthSayer Rewards, a Discord-based program that pays USDC for trading volume, referrals, and community activity, with payouts that are not scheduled in advance.",

@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/pharos/",
-      "fetched_at": "2026-10-07T02:14:04.454Z"
+      "fetched_at": "2026-10-07T08:53:47.849Z"
     }
   ],
   "evidence": [
@@ -257,7 +257,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/pharos/",
-      "checked_at": "2026-10-07T02:14:04.454Z",
+      "checked_at": "2026-10-07T08:53:47.849Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -356,7 +356,7 @@
   ],
   "created_at": "2026-10-06T19:00:59.845Z",
   "discovered_at": "2026-10-06T19:00:59.845Z",
-  "last_checked_at": "2026-10-07T02:14:04.454Z",
+  "last_checked_at": "2026-10-07T08:53:47.849Z",
   "last_changed_at": "2026-10-06T19:00:59.845Z",
   "sourcedDescription": "The Pharos $PROS airdrop claim is now live! Eligible participants have 180 days, from April 28 to October 25, 2026, to claim their allocations before unclaimed amounts are returned to the Pharos Foundation and the claim portal closes. Eligibility includes Testnet Participants, “Stake Before the Stake” Contributors, Pharos Discord Role Holders, and OKX Wallet Campaign Users. If participants qualify under multiple categories, their claims will be automatically consolidated into a single submission.",
   "tagline_en": "The Pharos $PROS airdrop claim is now live! Eligible participants have 180 days, from April 28 to October 25, 2026, to claim their allocations before unclaimed amounts are returned to the Pharos Foundation and the claim portal closes. Eligibility includes Testnet Participants, “Stake Before the Stake” Contributors, Pharos Discord Role Holders, and OKX Wallet Campaign Users. If participants qualify under multiple categories, their claims will be automatically consolidated into a single submission.",
