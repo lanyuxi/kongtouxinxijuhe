@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T21:23:23.057Z",
+  "updated_at": "2026-10-08T01:14:09.705Z",
   "sources": [
     {
       "name": "Airdrops.io",
@@ -7,8 +7,8 @@
       "status": "success",
       "ok": true,
       "fetched": 59,
-      "checked_at": "2026-10-07T21:23:23.057Z",
-      "last_success_at": "2026-10-07T21:23:23.057Z"
+      "checked_at": "2026-10-08T01:14:09.705Z",
+      "last_success_at": "2026-10-08T01:14:09.705Z"
     },
     {
       "name": "DefiLlama",
@@ -16,8 +16,8 @@
       "status": "success",
       "ok": true,
       "fetched": 120,
-      "checked_at": "2026-10-07T21:23:23.057Z",
-      "last_success_at": "2026-10-07T21:23:23.057Z"
+      "checked_at": "2026-10-08T01:14:09.705Z",
+      "last_success_at": "2026-10-08T01:14:09.705Z"
     },
     {
       "name": "X (Twitter)",
@@ -25,7 +25,7 @@
       "status": "not_configured",
       "ok": false,
       "fetched": 0,
-      "checked_at": "2026-10-07T21:23:23.057Z",
+      "checked_at": "2026-10-08T01:14:09.705Z",
       "error": "尚未配置来源访问凭据"
     }
   ]

@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/retium/",
-      "fetched_at": "2026-10-07T21:23:23.119Z"
+      "fetched_at": "2026-10-08T01:14:09.820Z"
     }
   ],
   "evidence": [
@@ -247,7 +247,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/retium/",
-      "checked_at": "2026-10-07T21:23:23.119Z",
+      "checked_at": "2026-10-08T01:14:09.820Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -486,7 +486,7 @@
   ],
   "created_at": "2026-10-07T16:19:32.883Z",
   "discovered_at": "2026-10-07T16:19:32.883Z",
-  "last_checked_at": "2026-10-07T21:23:23.119Z",
+  "last_checked_at": "2026-10-08T01:14:09.820Z",
   "last_changed_at": "2026-10-07T16:19:32.883Z",
   "sourcedDescription": "Retium has not confirmed an airdrop, and its published tokenomics leave little room for a classic one. The team states that no RTM is allocated to any group. RTM enters circulation only through the Safehouse, an on-chain reserve that swaps Retium’s stablecoin for RTM one to one on the same terms for every user. No TGE date or tester reward has been announced, though the team has said members who test actively and file useful reports may receive a Beta Tester role in Discord.",
   "tagline_en": "Retium has not confirmed an airdrop, and its published tokenomics leave little room for a classic one. The team states that no RTM is allocated to any group. RTM enters circulation only through the Safehouse, an on-chain reserve that swaps Retium’s stablecoin for RTM one to one on the same terms for every user. No TGE date or tester reward has been announced, though the team has said members who test actively and file useful reports may receive a Beta Tester role in Discord.",

@@ -26,7 +26,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/stHYPE",
-      "fetched_at": "2026-10-07T21:23:25.741Z"
+      "fetched_at": "2026-10-08T01:14:13.882Z"
     }
   ],
   "evidence": [
@@ -259,7 +259,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/stHYPE",
-      "checked_at": "2026-10-07T21:23:25.741Z",
+      "checked_at": "2026-10-08T01:14:13.882Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -358,7 +358,7 @@
   ],
   "created_at": "2026-10-02T12:22:07.959Z",
   "discovered_at": "2026-10-02T12:22:07.959Z",
-  "last_checked_at": "2026-10-07T21:23:25.741Z",
+  "last_checked_at": "2026-10-08T01:14:13.882Z",
   "last_changed_at": "2026-10-07T21:23:26.590Z",
   "sourcedDescription": "Liquid Staking 协议，TVL 约 $202M。",
   "guide_version": "19e02d57cabeca028f6cb59f76bf11e9a5be3f80f1965776c126c1efba7236e1",

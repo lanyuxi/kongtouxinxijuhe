@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/kinetiq/",
-      "fetched_at": "2026-10-07T21:23:23.119Z"
+      "fetched_at": "2026-10-08T01:14:09.820Z"
     }
   ],
   "evidence": [
@@ -268,7 +268,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/kinetiq/",
-      "checked_at": "2026-10-07T21:23:23.119Z",
+      "checked_at": "2026-10-08T01:14:09.820Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -422,7 +422,7 @@
   ],
   "created_at": "2026-10-01T20:35:30.449Z",
   "discovered_at": "2026-10-01T20:35:30.449Z",
-  "last_checked_at": "2026-10-07T21:23:23.119Z",
+  "last_checked_at": "2026-10-08T01:14:09.820Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedDescription": "The second kPoints program ran from November 13, 2025 to September 29, 2026, distributing 800,000 kPoints every week. The final distribution landed on October 1, 2026, bringing the total to 36,800,000 kPoints. Those points now give holders the right to buy KNTQ at a fixed price rather than receive it for free.",
   "tagline_en": "The second kPoints program ran from November 13, 2025 to September 29, 2026, distributing 800,000 kPoints every week. The final distribution landed on October 1, 2026, bringing the total to 36,800,000 kPoints. Those points now give holders the right to buy KNTQ at a fixed price rather than receive it for free.",
