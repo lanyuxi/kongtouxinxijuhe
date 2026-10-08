@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/imperial/",
-      "fetched_at": "2026-10-08T07:33:11.284Z"
+      "fetched_at": "2026-10-08T14:53:53.183Z"
     }
   ],
   "evidence": [
@@ -261,7 +261,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/imperial/",
-      "checked_at": "2026-10-08T07:33:11.284Z",
+      "checked_at": "2026-10-08T14:53:53.183Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -449,7 +449,7 @@
   ],
   "created_at": "2026-10-07T16:19:32.883Z",
   "discovered_at": "2026-10-07T16:19:32.883Z",
-  "last_checked_at": "2026-10-08T07:33:11.284Z",
+  "last_checked_at": "2026-10-08T14:53:53.183Z",
   "last_changed_at": "2026-10-07T16:19:32.883Z",
   "sourcedDescription": "No token has been announced, and Imperial has not confirmed a TGE. Season 1 of the Imperial Points program launched on May 20, and the team has signaled that points carry forward into future seasons, making early activity worth tracking.",
   "tagline_en": "No token has been announced, and Imperial has not confirmed a TGE. Season 1 of the Imperial Points program launched on May 20, and the team has signaled that points carry forward into future seasons, making early activity worth tracking.",

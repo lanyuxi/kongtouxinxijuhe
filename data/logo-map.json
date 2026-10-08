@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-08T07:33:13.733Z",
-  "total": 188,
+  "updated_at": "2026-10-08T14:54:02.126Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -12,6 +12,7 @@
     "ammora": "logos/ammora.png",
     "anemoy-capital": "logos/anemoy-capital.png",
     "arcium": "logos/arcium.png",
+    "arcus": "logos/arcus.webp",
     "b14g": "logos/b14g.png",
     "b2-buzz": "logos/b2-buzz.png",
     "babylon-protocol": "logos/babylon-protocol.png",
@@ -125,6 +126,7 @@
     "pancakeswap-amm-v3": "logos/pancakeswap-amm-v3.png",
     "pendle": "logos/pendle.png",
     "pendle-v2": "logos/pendle-v2.png",
+    "perptools": "logos/perptools.webp",
     "pharos": "logos/pharos.ico",
     "plume-vaults": "logos/plume-vaults.png",
     "polymarket-international": "logos/polymarket-international.png",
@@ -158,7 +160,6 @@
     "stader": "logos/stader.png",
     "stakewise-v3": "logos/stakewise-v3.png",
     "steakhouse-financial": "logos/steakhouse-financial.png",
-    "sthype": "logos/sthype.webp",
     "sunswap-v2": "logos/sunswap-v2.png",
     "sunswap-v3": "logos/sunswap-v3.png",
     "sweep-finance": "logos/sweep-finance.png",
@@ -489,6 +490,7 @@
     "meteora": "https://icons.llamao.fi/icons/protocols/meteora",
     "truenorth": "https://www.faviconextractor.com/favicon/truenorth.xyz?larger=true",
     "imperial": "https://www.faviconextractor.com/favicon/imperial.space?larger=true",
-    "retium": "https://www.faviconextractor.com/favicon/discord.com?larger=true"
+    "retium": "https://www.faviconextractor.com/favicon/discord.com?larger=true",
+    "perptools": "https://icons.llamao.fi/icons/protocols/perptools"
   }
 }
