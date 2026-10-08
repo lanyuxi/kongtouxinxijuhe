@@ -22,7 +22,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/cambria/",
-      "fetched_at": "2026-10-08T01:14:09.820Z"
+      "fetched_at": "2026-10-08T07:33:11.284Z"
     }
   ],
   "evidence": [
@@ -255,7 +255,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/cambria/",
-      "checked_at": "2026-10-08T01:14:09.820Z",
+      "checked_at": "2026-10-08T07:33:11.284Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -460,7 +460,7 @@
   ],
   "created_at": "2026-10-05T18:18:15.141Z",
   "discovered_at": "2026-10-05T18:18:15.141Z",
-  "last_checked_at": "2026-10-08T01:14:09.820Z",
+  "last_checked_at": "2026-10-08T07:33:11.284Z",
   "last_changed_at": "2026-10-05T18:18:15.141Z",
   "sourcedDescription": "Cambria has extended the deadline for historical users to accept the Genesis Event Opt-In Agreement to October 8, 2026. Eligible users who don’t opt in by then may lose access to their allocation.",
   "tagline_en": "Cambria has extended the deadline for historical users to accept the Genesis Event Opt-In Agreement to October 8, 2026. Eligible users who don’t opt in by then may lose access to their allocation.",
