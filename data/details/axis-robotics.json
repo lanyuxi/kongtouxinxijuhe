@@ -1,0 +1,503 @@
+{
+  "id": "axis-robotics",
+  "name": "Axis Robotics",
+  "slug": "axis-robotics",
+  "tagline": "中文简介待核实，请查看来源与原文对照。",
+  "category": "AI",
+  "chains": [
+    "Base"
+  ],
+  "status": "potential",
+  "official": {
+    "website": "https://hub.axisrobotics.ai"
+  },
+  "meta": {},
+  "tasks": [],
+  "requirements": [
+    "钱包"
+  ],
+  "sources": [
+    {
+      "type": "airdrop_aggregator",
+      "name": "Airdrops.io",
+      "url": "https://airdrops.io/axis-robotics/",
+      "fetched_at": "2026-10-08T20:39:03.701Z"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "official_website",
+      "label": "项目官网候选链接",
+      "url": "https://hub.axisrobotics.ai",
+      "verified": false,
+      "note": "来源提供的候选链接，归属与可访问性尚未核实"
+    },
+    {
+      "type": "third_party",
+      "label": "第三方来源记录：Airdrops.io",
+      "url": "https://airdrops.io/axis-robotics/",
+      "verified": false,
+      "note": "记录抓取出处，不代表内容已核实或官方背书"
+    }
+  ],
+  "scores": {
+    "authenticity": 11,
+    "value": 23,
+    "risk": "medium",
+    "grade": "D",
+    "authenticityItems": [
+      {
+        "key": "authenticity.website",
+        "label": "官方网站可验证",
+        "value": 0,
+        "max": 15,
+        "reason": "未找到可验证的官方网站"
+      },
+      {
+        "key": "authenticity.announcement",
+        "label": "官方公告明确提到活动",
+        "value": 0,
+        "max": 20,
+        "reason": "尚未核实具体空投活动公告"
+      },
+      {
+        "key": "authenticity.crosslink",
+        "label": "项目文档已核验",
+        "value": 0,
+        "max": 15,
+        "reason": "缺少 Docs 或链接无法互相印证"
+      },
+      {
+        "key": "authenticity.thirdparty",
+        "label": "至少两个独立第三方来源",
+        "value": 7,
+        "max": 15,
+        "reason": "仅有 1 个第三方来源，交叉验证不足"
+      },
+      {
+        "key": "authenticity.quest",
+        "label": "Galxe / Layer3 等官方 Space 可确认",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方 Quest Space"
+      },
+      {
+        "key": "authenticity.github",
+        "label": "官方 GitHub / Docs 有持续活动",
+        "value": 0,
+        "max": 10,
+        "reason": "未发现官方开源仓库"
+      },
+      {
+        "key": "authenticity.funding",
+        "label": "团队 / 投资信息可核实",
+        "value": 0,
+        "max": 10,
+        "reason": "未核实团队或融资信息"
+      },
+      {
+        "key": "authenticity.scale",
+        "label": "链上规模可佐证（TVL）",
+        "value": 0,
+        "max": 12,
+        "reason": "数据源未提供该项目的锁仓规模，无法据此判断"
+      },
+      {
+        "key": "authenticity.contract",
+        "label": "合约地址在区块浏览器可验证",
+        "value": 0,
+        "max": 5,
+        "reason": "暂无公开可验证合约地址"
+      }
+    ],
+    "valueItems": [
+      {
+        "key": "value.scale",
+        "label": "链上规模 / 产品成熟度",
+        "value": 0,
+        "max": 20,
+        "reason": "未获取到资金规模数据（数据源未提供）"
+      },
+      {
+        "key": "value.verification",
+        "label": "信息验证充分度",
+        "value": 0,
+        "max": 20,
+        "reason": "共 2 条证据，其中 0 条已验证（验证率 0%）"
+      },
+      {
+        "key": "value.breadth",
+        "label": "来源广度",
+        "value": 4,
+        "max": 10,
+        "reason": "来自 1 个独立数据源，建议再找官方渠道确认"
+      },
+      {
+        "key": "value.funding",
+        "label": "融资 / 投资机构",
+        "value": 0,
+        "max": 10,
+        "reason": "未核实融资信息，机构背书不足"
+      },
+      {
+        "key": "value.signal",
+        "label": "Token / Airdrop 信号强度",
+        "value": 9,
+        "max": 20,
+        "reason": "存在积分/测试网等潜在线索，但尚未确认"
+      },
+      {
+        "key": "value.roi",
+        "label": "任务投入产出比",
+        "value": 2,
+        "max": 15,
+        "reason": "任务尚不明确，无法评估投入产出比"
+      },
+      {
+        "key": "value.timing",
+        "label": "当前参与时机",
+        "value": 4,
+        "max": 5,
+        "reason": "仍处于早期阶段，参与时机较好"
+      },
+      {
+        "key": "value.dilution",
+        "label": "用户稀释风险",
+        "value": 4,
+        "max": 5,
+        "reason": "暂未发现明显的用户过度稀释迹象"
+      },
+      {
+        "key": "value.guide_trust",
+        "label": "教程可信度",
+        "value": 0,
+        "max": 12,
+        "reason": "教程由第三方整理，共 9 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性"
+      }
+    ],
+    "riskItems": [
+      {
+        "key": "risk.unknown",
+        "label": "成本或步骤风险待核实",
+        "value": 1,
+        "max": 3,
+        "reason": "信息不完整，不能据此认定为免费或低风险"
+      },
+      {
+        "key": "risk.signature_step",
+        "label": "包含需要签名的链上步骤",
+        "value": 1,
+        "max": 3,
+        "reason": "教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等"
+      }
+    ],
+    "evidenceChecklist": [
+      {
+        "label": "官方网站",
+        "status": "partial",
+        "note": "已找到候选域名，但未通过官方校验"
+      },
+      {
+        "label": "官方文档",
+        "status": "missing",
+        "note": "未找到官方文档"
+      },
+      {
+        "label": "开源仓库",
+        "status": "missing",
+        "note": "未找到官方开源仓库"
+      },
+      {
+        "label": "第三方来源",
+        "status": "partial",
+        "note": "仅 1 个第三方来源，尚不足以交叉验证"
+      },
+      {
+        "label": "官方公告",
+        "status": "not_applicable",
+        "note": "尚未核实具体活动公告"
+      },
+      {
+        "label": "融资信息",
+        "status": "not_applicable",
+        "note": "项目尚未确认，融资信息通常也未公开（不适用）"
+      },
+      {
+        "label": "官方 Quest",
+        "status": "not_applicable",
+        "note": "该项目未使用 Quest 平台（不适用）"
+      },
+      {
+        "label": "链上规模",
+        "status": "not_applicable",
+        "note": "数据源未提供锁仓规模（该维度不适用）"
+      },
+      {
+        "label": "合约地址",
+        "status": "not_applicable",
+        "note": "暂无公开可验证合约地址"
+      }
+    ],
+    "authenticityVerifiedCount": 0,
+    "authenticityPartialCount": 2,
+    "authenticityTotalCount": 9
+  },
+  "cost": {
+    "capital_min_usd": null,
+    "capital_max_usd": null,
+    "gas_estimate_usd": null,
+    "time_minutes": 0,
+    "long_term": false,
+    "summary": "本金要求待核实。需要手续费，金额待核实。信息不完整，暂不判断为新手友好。",
+    "capital_required": false,
+    "gas_required": true,
+    "basis": {
+      "method": "source_text",
+      "source_url": "https://airdrops.io/axis-robotics/",
+      "checked_at": "2026-10-08T20:39:03.701Z",
+      "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
+    }
+  },
+  "recommendation": {
+    "grade": "D",
+    "action": "observe",
+    "summary": "活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。"
+  },
+  "guide": [
+    {
+      "step": 1,
+      "title": "参与前安全检查",
+      "description": "核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "minutes": 3,
+      "cost_usd": 0,
+      "needs_wallet": false,
+      "needs_signature": false,
+      "risk": "low",
+      "done_when": "已确认官方域名，并准备好专用的独立空投钱包。",
+      "source_verified": false,
+      "content_status": "ready",
+      "id": "cdfbef0c8f8933f44e12f36fa304af9fa2c238acaacf4c91e855d184ca8e8da6"
+    },
+    {
+      "step": 2,
+      "title": "在 Axis Hub 创建账号",
+      "description": "进入 Axis Hub，使用邮箱、Google、X 或钱包注册。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": true,
+      "needs_signature": false,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Create an Account on Axis Hub",
+      "original_description": "Go to the Axis Hub and sign up with email, Google, X, or a wallet.",
+      "id": "88c16f04f2aaf6d84ec1f2b993944baa1502902dee05c1afa3261ce04171d2e6"
+    },
+    {
+      "step": 3,
+      "title": "了解预训练任务",
+      "description": "从 Hub 选择厨房或家庭场景中的抓取、放置、堆叠等任务，操控模拟机械臂。演示按成功率、效率和动作流畅程度评分。原文称失败尝试不会上传，也无惩罚，可重新尝试。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Complete Pre-Training Tasks",
+      "original_description": "Pick a task from the Hub, such as picking, placing, or stacking objects in a kitchen or home scene, and steer the simulated arm through it. Your demonstration is judged on success, efficiency, and motion smoothness. Failed attempts are never uploaded and carry no penalty, so retry until the run feels clean.",
+      "id": "d30609b316e2c9f28bf1ace3d2309630042fde7e19754b81d06a037e6eadf59f"
+    },
+    {
+      "step": 4,
+      "title": "了解后训练任务",
+      "description": "由已训练策略尝试任务，你在失败时接管。每次会话的接管预算为 30 秒；未完成任务得零分，策略全程无需接管并完成的任务得分最高。在失败点进行简短、精确的修正得分更好。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Take On Post-Training Tasks",
+      "original_description": "Here a trained policy attempts the task while you watch, and you grab control only when it fails. Sessions have a 30-second takeover budget: incomplete attempts score zero, while runs the policy finishes untouched score highest. Short, precise corrections at the failure point score best.",
+      "id": "2c89bffda2eff4128556d6ed75c8f32ada42b4031619d557191c869718044b0c"
+    },
+    {
+      "step": 5,
+      "title": "在链上签署任务提交",
+      "description": "原文要求在作品集（Portfolio）中，对每个已完成任务在 Base 上签名；签名后才计入 Axis Points。签名内容、手续费及资格仍需核对官方说明。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": true,
+      "risk": "medium",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Sign Your Submissions On-Chain",
+      "original_description": "Open your Portfolio and sign each completed task on Base. Signing is what makes a submission count toward Axis Points.",
+      "id": "78345b1ab006f0ef9a76be410aacac2cc8e88e88798321bc044fcd8a07372303"
+    },
+    {
+      "step": 6,
+      "title": "覆盖不同任务场景与技能",
+      "description": "多样性按场景和技能两个维度衡量，因此需要兼顾两者，避免重复单一组合。原文称每个账号对每项任务最多计入 5 次完成，超出次数不计分。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Spread Your Tasks Across Scenarios and Skills",
+      "original_description": "Diversity is measured on two axes, the scenes your tasks cover and the skills they exercise, so vary both rather than repeating one combo. The Hub also caps each task at 5 completions per account, and anything past the cap is excluded from scoring.",
+      "id": "79baaa0ecab4b676306c6d07b95d7356f6a3a5974cd39ee78fe4facb80a33b94"
+    },
+    {
+      "step": 7,
+      "title": "查看联盟任务与合作方奖励",
+      "description": "在联盟（Alliance）区域查看 BitRobot 等生态合作方的任务。原文称这些任务提供 Axis Points，以及按活动规则发放的合作方奖励；是否开放、具体奖励以活动条款为准。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Join Alliance Tasks for Partner Rewards",
+      "original_description": "Check the Alliance section for tasks built with ecosystem partners such as BitRobot. These pay Axis Points plus a partner reward under campaign terms, the best value per session when one is live.",
+      "id": "59afcb8157be7e7b91a6d37751366457f09a0253dfdac696fd57f38c17c29ded"
+    },
+    {
+      "step": 8,
+      "title": "邀请持续贡献的用户",
+      "description": "从 Hub 分享邀请链接。原文称只计算直接邀请用户及其实际产出：无贡献的注册不带来奖励，持续贡献的用户才可能持续计入邀请奖励。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": null,
+      "risk": "unknown",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Invite Contributors Who Will Stay Active",
+      "original_description": "Share your referral link from the Hub. Only direct invitees count, and only through what they produce, so ten inactive signups earn you nothing while one steady contributor keeps paying.",
+      "id": "ef5d7163662e98b5962d72df3444a72b7d4d3b59d569cdfd28753593cd0f624b"
+    },
+    {
+      "step": 9,
+      "title": "核对 Axis Hub 挑战者任务",
+      "description": "在 Axis Hub 的作品集（Portfolio）中查看“Seek the Unseen”徽章，点亮表示在当前白名单。进入挑战者计划（Challenger Program）查看当周任务，完成后按要求签署提交。区域对所有人可见，但只有白名单用户可进入任务界面。",
+      "official_url": "https://hub.axisrobotics.ai",
+      "content_status": "ready",
+      "minutes": 0,
+      "cost_usd": null,
+      "needs_wallet": null,
+      "needs_signature": true,
+      "risk": "medium",
+      "done_when": "页面显示该步骤已完成 / 状态已更新。",
+      "source_verified": false,
+      "original_title": "Complete Challenger Tasks in Axis Hub",
+      "original_description": "Open your Portfolio page in Axis Hub and check the “Seek the Unseen” badge. A lit badge means you are on the current whitelist. Open the Challenger Program zone and review the week’s task list. Complete and sign a task as usual. The zone is visible to everyone, but only whitelisted users can open the task interface.",
+      "id": "65afaefdfdaed3a4ad1b3c37866efd727cafc9fcfd4a798ba6070fa781b8e00b"
+    }
+  ],
+  "guide_source": "third_party",
+  "faq": [
+    {
+      "q": "这个空投确认了吗？",
+      "a": "当前状态：潜在空投，尚未正式确认。请核对具体活动公告与资格条件。"
+    },
+    {
+      "q": "什么时候结束？",
+      "a": "本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。"
+    },
+    {
+      "q": "参与需要花钱吗？",
+      "a": "本金要求待核实；需要手续费，金额待核实。"
+    },
+    {
+      "q": "需要连接钱包吗？",
+      "a": "来源描述涉及钱包，请先核对实际活动要求。"
+    },
+    {
+      "q": "需要主网资产吗？",
+      "a": "手续费与主网资产要求待核实。"
+    },
+    {
+      "q": "积分一定会兑换 Token 吗？",
+      "a": "不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。"
+    },
+    {
+      "q": "适合新手参与吗？",
+      "a": "存在一定风险，新手请务必先阅读风险提示再决定。"
+    },
+    {
+      "q": "领取时间确定了吗？",
+      "a": "相关活动信息待核实，请查看官方公告。"
+    }
+  ],
+  "risks": [
+    "项目尚未确认空投，存在投入后无回报的可能。",
+    "真实性置信度偏低，证据不足，建议先观察。",
+    "任何要求输入助记词、私钥或恢复短语的页面都不可信。",
+    "请勿使用主钱包参与实验性项目，避免资产集中风险。"
+  ],
+  "created_at": "2026-10-08T20:39:03.701Z",
+  "discovered_at": "2026-10-08T20:39:03.701Z",
+  "last_checked_at": "2026-10-08T20:39:03.701Z",
+  "last_changed_at": "2026-10-08T20:39:03.701Z",
+  "sourcedDescription": "Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.",
+  "tagline_en": "Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.",
+  "sourcedSteps": [
+    {
+      "title": "Create an Account on Axis Hub",
+      "body": "Go to the Axis Hub and sign up with email, Google, X, or a wallet."
+    },
+    {
+      "title": "Complete Pre-Training Tasks",
+      "body": "Pick a task from the Hub, such as picking, placing, or stacking objects in a kitchen or home scene, and steer the simulated arm through it. Your demonstration is judged on success, efficiency, and motion smoothness. Failed attempts are never uploaded and carry no penalty, so retry until the run feels clean."
+    },
+    {
+      "title": "Take On Post-Training Tasks",
+      "body": "Here a trained policy attempts the task while you watch, and you grab control only when it fails. Sessions have a 30-second takeover budget: incomplete attempts score zero, while runs the policy finishes untouched score highest. Short, precise corrections at the failure point score best."
+    },
+    {
+      "title": "Sign Your Submissions On-Chain",
+      "body": "Open your Portfolio and sign each completed task on Base. Signing is what makes a submission count toward Axis Points."
+    },
+    {
+      "title": "Spread Your Tasks Across Scenarios and Skills",
+      "body": "Diversity is measured on two axes, the scenes your tasks cover and the skills they exercise, so vary both rather than repeating one combo. The Hub also caps each task at 5 completions per account, and anything past the cap is excluded from scoring."
+    },
+    {
+      "title": "Join Alliance Tasks for Partner Rewards",
+      "body": "Check the Alliance section for tasks built with ecosystem partners such as BitRobot. These pay Axis Points plus a partner reward under campaign terms, the best value per session when one is live."
+    },
+    {
+      "title": "Invite Contributors Who Will Stay Active",
+      "body": "Share your referral link from the Hub. Only direct invitees count, and only through what they produce, so ten inactive signups earn you nothing while one steady contributor keeps paying."
+    },
+    {
+      "title": "Complete Challenger Tasks in Axis Hub",
+      "body": "Open your Portfolio page in Axis Hub and check the “Seek the Unseen” badge. A lit badge means you are on the current whitelist. Open the Challenger Program zone and review the week’s task list. Complete and sign a task as usual. The zone is visible to everyone, but only whitelisted users can open the task interface."
+    }
+  ],
+  "guide_version": "056760639e39950b41b31bf4de78d8954d7b84923588dac5b52f3b651615ea45",
+  "digest": "{\"category\":\"AI\",\"chains\":[\"Base\"],\"cost\":{\"basis\":{\"checked_at\":\"<time>\",\"method\":\"source_text\",\"note\":\"完整来源描述或教程提到资金 / 链上操作，未核实具体金额\",\"source_url\":\"https://airdrops.io/axis-robotics/\"},\"capital_max_usd\":null,\"capital_min_usd\":null,\"capital_required\":false,\"gas_estimate_usd\":null,\"gas_required\":true,\"long_term\":false,\"summary\":\"本金要求待核实。需要手续费，金额待核实。信息不完整，暂不判断为新手友好。\",\"time_minutes\":0},\"created_at\":\"<time>\",\"discovered_at\":\"<time>\",\"evidence\":[{\"label\":\"项目官网候选链接\",\"note\":\"来源提供的候选链接，归属与可访问性尚未核实\",\"type\":\"official_website\",\"url\":\"https://hub.axisrobotics.ai\",\"verified\":false},{\"label\":\"第三方来源记录：Airdrops.io\",\"note\":\"记录抓取出处，不代表内容已核实或官方背书\",\"type\":\"third_party\",\"url\":\"https://airdrops.io/axis-robotics/\",\"verified\":false}],\"faq\":[{\"a\":\"当前状态：潜在空投，尚未正式确认。请核对具体活动公告与资格条件。\",\"q\":\"这个空投确认了吗？\"},{\"a\":\"本站尚未收录经核验的截止时间，请核对具体活动公告；没有截止时间记录不代表活动永久有效。\",\"q\":\"什么时候结束？\"},{\"a\":\"本金要求待核实；需要手续费，金额待核实。\",\"q\":\"参与需要花钱吗？\"},{\"a\":\"来源描述涉及钱包，请先核对实际活动要求。\",\"q\":\"需要连接钱包吗？\"},{\"a\":\"手续费与主网资产要求待核实。\",\"q\":\"需要主网资产吗？\"},{\"a\":\"不一定。积分与 Token 之间没有必然兑换关系，请勿将全部精力投入单一项目。\",\"q\":\"积分一定会兑换 Token 吗？\"},{\"a\":\"存在一定风险，新手请务必先阅读风险提示再决定。\",\"q\":\"适合新手参与吗？\"},{\"a\":\"相关活动信息待核实，请查看官方公告。\",\"q\":\"领取时间确定了吗？\"}],\"guide\":[{\"content_status\":\"ready\",\"cost_usd\":0,\"description\":\"核对官方域名后再操作。请使用专用的独立空投钱包，任何时候都不要输入助记词或私钥。任何要求你输入助记词、私钥或向个人地址转账的页面都是骗局。\",\"done_when\":\"已确认官方域名，并准备好专用的独立空投钱包。\",\"minutes\":3,\"needs_signature\":false,\"needs_wallet\":false,\"official_url\":\"https://hub.axisrobotics.ai\",\"risk\":\"low\",\"source_verified\":false,\"step\":1,\"title\":\"参与前安全检查\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"进入 Axis Hub，使用邮箱、Google、X 或钱包注册。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":false,\"needs_wallet\":true,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Go to the Axis Hub and sign up with email, Google, X, or a wallet.\",\"original_title\":\"Create an Account on Axis Hub\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":2,\"title\":\"在 Axis Hub 创建账号\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"从 Hub 选择厨房或家庭场景中的抓取、放置、堆叠等任务，操控模拟机械臂。演示按成功率、效率和动作流畅程度评分。原文称失败尝试不会上传，也无惩罚，可重新尝试。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Pick a task from the Hub, such as picking, placing, or stacking objects in a kitchen or home scene, and steer the simulated arm through it. Your demonstration is judged on success, efficiency, and motion smoothness. Failed attempts are never uploaded and carry no penalty, so retry until the run feels clean.\",\"original_title\":\"Complete Pre-Training Tasks\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":3,\"title\":\"了解预训练任务\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"由已训练策略尝试任务，你在失败时接管。每次会话的接管预算为 30 秒；未完成任务得零分，策略全程无需接管并完成的任务得分最高。在失败点进行简短、精确的修正得分更好。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Here a trained policy attempts the task while you watch, and you grab control only when it fails. Sessions have a 30-second takeover budget: incomplete attempts score zero, while runs the policy finishes untouched score highest. Short, precise corrections at the failure point score best.\",\"original_title\":\"Take On Post-Training Tasks\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":4,\"title\":\"了解后训练任务\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"原文要求在作品集（Portfolio）中，对每个已完成任务在 Base 上签名；签名后才计入 Axis Points。签名内容、手续费及资格仍需核对官方说明。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":true,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Open your Portfolio and sign each completed task on Base. Signing is what makes a submission count toward Axis Points.\",\"original_title\":\"Sign Your Submissions On-Chain\",\"risk\":\"medium\",\"source_verified\":false,\"step\":5,\"title\":\"在链上签署任务提交\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"多样性按场景和技能两个维度衡量，因此需要兼顾两者，避免重复单一组合。原文称每个账号对每项任务最多计入 5 次完成，超出次数不计分。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Diversity is measured on two axes, the scenes your tasks cover and the skills they exercise, so vary both rather than repeating one combo. The Hub also caps each task at 5 completions per account, and anything past the cap is excluded from scoring.\",\"original_title\":\"Spread Your Tasks Across Scenarios and Skills\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":6,\"title\":\"覆盖不同任务场景与技能\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"在联盟（Alliance）区域查看 BitRobot 等生态合作方的任务。原文称这些任务提供 Axis Points，以及按活动规则发放的合作方奖励；是否开放、具体奖励以活动条款为准。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Check the Alliance section for tasks built with ecosystem partners such as BitRobot. These pay Axis Points plus a partner reward under campaign terms, the best value per session when one is live.\",\"original_title\":\"Join Alliance Tasks for Partner Rewards\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":7,\"title\":\"查看联盟任务与合作方奖励\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"从 Hub 分享邀请链接。原文称只计算直接邀请用户及其实际产出：无贡献的注册不带来奖励，持续贡献的用户才可能持续计入邀请奖励。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":null,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Share your referral link from the Hub. Only direct invitees count, and only through what they produce, so ten inactive signups earn you nothing while one steady contributor keeps paying.\",\"original_title\":\"Invite Contributors Who Will Stay Active\",\"risk\":\"unknown\",\"source_verified\":false,\"step\":8,\"title\":\"邀请持续贡献的用户\"},{\"content_status\":\"ready\",\"cost_usd\":null,\"description\":\"在 Axis Hub 的作品集（Portfolio）中查看“Seek the Unseen”徽章，点亮表示在当前白名单。进入挑战者计划（Challenger Program）查看当周任务，完成后按要求签署提交。区域对所有人可见，但只有白名单用户可进入任务界面。\",\"done_when\":\"页面显示该步骤已完成 / 状态已更新。\",\"minutes\":0,\"needs_signature\":true,\"needs_wallet\":null,\"official_url\":\"https://hub.axisrobotics.ai\",\"original_description\":\"Open your Portfolio page in Axis Hub and check the “Seek the Unseen” badge. A lit badge means you are on the current whitelist. Open the Challenger Program zone and review the week’s task list. Complete and sign a task as usual. The zone is visible to everyone, but only whitelisted users can open the task interface.\",\"original_title\":\"Complete Challenger Tasks in Axis Hub\",\"risk\":\"medium\",\"source_verified\":false,\"step\":9,\"title\":\"核对 Axis Hub 挑战者任务\"}],\"guide_source\":\"third_party\",\"id\":\"axis-robotics\",\"last_checked_at\":\"<time>\",\"meta\":{},\"name\":\"Axis Robotics\",\"official\":{\"website\":\"https://hub.axisrobotics.ai\"},\"recommendation\":{\"action\":\"observe\",\"grade\":\"D\",\"summary\":\"活动、成本或步骤要求尚未核实，暂不建议投入资金，请先核对来源。\"},\"requirements\":[\"钱包\"],\"risks\":[\"项目尚未确认空投，存在投入后无回报的可能。\",\"真实性置信度偏低，证据不足，建议先观察。\",\"任何要求输入助记词、私钥或恢复短语的页面都不可信。\",\"请勿使用主钱包参与实验性项目，避免资产集中风险。\"],\"scores\":{\"authenticity\":11,\"authenticityItems\":[{\"key\":\"authenticity.website\",\"label\":\"官方网站可验证\",\"max\":15,\"reason\":\"未找到可验证的官方网站\",\"value\":0},{\"key\":\"authenticity.announcement\",\"label\":\"官方公告明确提到活动\",\"max\":20,\"reason\":\"尚未核实具体空投活动公告\",\"value\":0},{\"key\":\"authenticity.crosslink\",\"label\":\"项目文档已核验\",\"max\":15,\"reason\":\"缺少 Docs 或链接无法互相印证\",\"value\":0},{\"key\":\"authenticity.thirdparty\",\"label\":\"至少两个独立第三方来源\",\"max\":15,\"reason\":\"仅有 1 个第三方来源，交叉验证不足\",\"value\":7},{\"key\":\"authenticity.quest\",\"label\":\"Galxe / Layer3 等官方 Space 可确认\",\"max\":10,\"reason\":\"未发现官方 Quest Space\",\"value\":0},{\"key\":\"authenticity.github\",\"label\":\"官方 GitHub / Docs 有持续活动\",\"max\":10,\"reason\":\"未发现官方开源仓库\",\"value\":0},{\"key\":\"authenticity.funding\",\"label\":\"团队 / 投资信息可核实\",\"max\":10,\"reason\":\"未核实团队或融资信息\",\"value\":0},{\"key\":\"authenticity.scale\",\"label\":\"链上规模可佐证（TVL）\",\"max\":12,\"reason\":\"数据源未提供该项目的锁仓规模，无法据此判断\",\"value\":0},{\"key\":\"authenticity.contract\",\"label\":\"合约地址在区块浏览器可验证\",\"max\":5,\"reason\":\"暂无公开可验证合约地址\",\"value\":0}],\"authenticityPartialCount\":2,\"authenticityTotalCount\":9,\"authenticityVerifiedCount\":0,\"evidenceChecklist\":[{\"label\":\"官方网站\",\"note\":\"已找到候选域名，但未通过官方校验\",\"status\":\"partial\"},{\"label\":\"官方文档\",\"note\":\"未找到官方文档\",\"status\":\"missing\"},{\"label\":\"开源仓库\",\"note\":\"未找到官方开源仓库\",\"status\":\"missing\"},{\"label\":\"第三方来源\",\"note\":\"仅 1 个第三方来源，尚不足以交叉验证\",\"status\":\"partial\"},{\"label\":\"官方公告\",\"note\":\"尚未核实具体活动公告\",\"status\":\"not_applicable\"},{\"label\":\"融资信息\",\"note\":\"项目尚未确认，融资信息通常也未公开（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"官方 Quest\",\"note\":\"该项目未使用 Quest 平台（不适用）\",\"status\":\"not_applicable\"},{\"label\":\"链上规模\",\"note\":\"数据源未提供锁仓规模（该维度不适用）\",\"status\":\"not_applicable\"},{\"label\":\"合约地址\",\"note\":\"暂无公开可验证合约地址\",\"status\":\"not_applicable\"}],\"grade\":\"D\",\"risk\":\"medium\",\"riskItems\":[{\"key\":\"risk.unknown\",\"label\":\"成本或步骤风险待核实\",\"max\":3,\"reason\":\"信息不完整，不能据此认定为免费或低风险\",\"value\":1},{\"key\":\"risk.signature_step\",\"label\":\"包含需要签名的链上步骤\",\"max\":3,\"reason\":\"教程中存在需要签名的步骤，签名一旦发出无法撤销，风险等级至少中等\",\"value\":1}],\"value\":23,\"valueItems\":[{\"key\":\"value.scale\",\"label\":\"链上规模 / 产品成熟度\",\"max\":20,\"reason\":\"未获取到资金规模数据（数据源未提供）\",\"value\":0},{\"key\":\"value.verification\",\"label\":\"信息验证充分度\",\"max\":20,\"reason\":\"共 2 条证据，其中 0 条已验证（验证率 0%）\",\"value\":0},{\"key\":\"value.breadth\",\"label\":\"来源广度\",\"max\":10,\"reason\":\"来自 1 个独立数据源，建议再找官方渠道确认\",\"value\":4},{\"key\":\"value.funding\",\"label\":\"融资 / 投资机构\",\"max\":10,\"reason\":\"未核实融资信息，机构背书不足\",\"value\":0},{\"key\":\"value.signal\",\"label\":\"Token / Airdrop 信号强度\",\"max\":20,\"reason\":\"存在积分/测试网等潜在线索，但尚未确认\",\"value\":9},{\"key\":\"value.roi\",\"label\":\"任务投入产出比\",\"max\":15,\"reason\":\"任务尚不明确，无法评估投入产出比\",\"value\":2},{\"key\":\"value.timing\",\"label\":\"当前参与时机\",\"max\":5,\"reason\":\"仍处于早期阶段，参与时机较好\",\"value\":4},{\"key\":\"value.dilution\",\"label\":\"用户稀释风险\",\"max\":5,\"reason\":\"暂未发现明显的用户过度稀释迹象\",\"value\":4},{\"key\":\"value.guide_trust\",\"label\":\"教程可信度\",\"max\":12,\"reason\":\"教程由第三方整理，共 9 步、内容与该项目相关，但没有可追溯到官方页面的来源链接，投入时间存在不确定性\",\"value\":0}]},\"slug\":\"axis-robotics\",\"sourcedDescription\":\"Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.\",\"sourcedSteps\":[{\"body\":\"Go to the Axis Hub and sign up with email, Google, X, or a wallet.\",\"title\":\"Create an Account on Axis Hub\"},{\"body\":\"Pick a task from the Hub, such as picking, placing, or stacking objects in a kitchen or home scene, and steer the simulated arm through it. Your demonstration is judged on success, efficiency, and motion smoothness. Failed attempts are never uploaded and carry no penalty, so retry until the run feels clean.\",\"title\":\"Complete Pre-Training Tasks\"},{\"body\":\"Here a trained policy attempts the task while you watch, and you grab control only when it fails. Sessions have a 30-second takeover budget: incomplete attempts score zero, while runs the policy finishes untouched score highest. Short, precise corrections at the failure point score best.\",\"title\":\"Take On Post-Training Tasks\"},{\"body\":\"Open your Portfolio and sign each completed task on Base. Signing is what makes a submission count toward Axis Points.\",\"title\":\"Sign Your Submissions On-Chain\"},{\"body\":\"Diversity is measured on two axes, the scenes your tasks cover and the skills they exercise, so vary both rather than repeating one combo. The Hub also caps each task at 5 completions per account, and anything past the cap is excluded from scoring.\",\"title\":\"Spread Your Tasks Across Scenarios and Skills\"},{\"body\":\"Check the Alliance section for tasks built with ecosystem partners such as BitRobot. These pay Axis Points plus a partner reward under campaign terms, the best value per session when one is live.\",\"title\":\"Join Alliance Tasks for Partner Rewards\"},{\"body\":\"Share your referral link from the Hub. Only direct invitees count, and only through what they produce, so ten inactive signups earn you nothing while one steady contributor keeps paying.\",\"title\":\"Invite Contributors Who Will Stay Active\"},{\"body\":\"Open your Portfolio page in Axis Hub and check the “Seek the Unseen” badge. A lit badge means you are on the current whitelist. Open the Challenger Program zone and review the week’s task list. Complete and sign a task as usual. The zone is visible to everyone, but only whitelisted users can open the task interface.\",\"title\":\"Complete Challenger Tasks in Axis Hub\"}],\"sources\":[{\"fetched_at\":\"<time>\",\"name\":\"Airdrops.io\",\"type\":\"airdrop_aggregator\",\"url\":\"https://airdrops.io/axis-robotics/\"}],\"status\":\"potential\",\"tagline\":\"中文简介待核实，请查看来源与原文对照。\",\"tagline_en\":\"Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.\",\"tasks\":[]}",
+  "first_seen_at": "2026-10-08T20:39:03.701Z"
+}

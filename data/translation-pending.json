@@ -22,6 +22,16 @@
       ]
     },
     {
+      "original": "Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.",
+      "locations": [
+        {
+          "slug": "axis-robotics",
+          "field": "简介",
+          "source_url": "https://airdrops.io/axis-robotics/"
+        }
+      ]
+    },
+    {
       "original": "BaiBai has not announced a token or airdrop, so this is a speculative opportunity. The team launched a points program alongside the public release, rewarding traders based on volume and activity. Early users get the biggest boost, and there is no official word yet on how points might convert to tokens.",
       "locations": [
         {
@@ -208,6 +218,16 @@
           "slug": "omega",
           "field": "简介",
           "source_url": "https://airdrops.io/omega/"
+        }
+      ]
+    },
+    {
+      "original": "Orbinum has confirmed its airdrop. Season 1, called the Genesis Community, started on March 13, 2026, and rewards users with ORB Credits for quests, weekly streaks, referrals, and testnet activity like shielding, private transfers, unshielding, and selective disclosure.",
+      "locations": [
+        {
+          "slug": "orbinum",
+          "field": "简介",
+          "source_url": "https://airdrops.io/orbinum/"
         }
       ]
     },
@@ -548,26 +568,6 @@
           "slug": "yakkamon",
           "field": "简介",
           "source_url": "https://airdrops.io/yakkamon/"
-        }
-      ]
-    },
-    {
-      "original": "TrueNorth has not confirmed a token or airdrop. There is no published tokenomics, distribution date, or eligibility list. What does exist is TruthSayer Rewards, a Discord-based program that pays USDC for trading volume, referrals, and community activity, with payouts that are not scheduled in advance.",
-      "locations": [
-        {
-          "slug": "truenorth",
-          "field": "简介",
-          "source_url": "https://airdrops.io/truenorth/"
-        }
-      ]
-    },
-    {
-      "original": "Vangrid has not confirmed an airdrop. A token is planned for later in 2026, but no allocation, snapshot, or eligibility rule has been published, which makes this a potential future airdrop rather than a scheduled one.",
-      "locations": [
-        {
-          "slug": "vangrid",
-          "field": "简介",
-          "source_url": "https://airdrops.io/vangrid/"
         }
       ]
     },
