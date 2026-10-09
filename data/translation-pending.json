@@ -1,5 +1,5 @@
 {
-  "total": 58,
+  "total": 59,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -168,6 +168,16 @@
           "slug": "nado",
           "field": "简介",
           "source_url": "https://airdrops.io/nado/"
+        }
+      ]
+    },
+    {
+      "original": "Nexus has not made an official airdrop announcement yet, but allocations can already be checked through the project’s explorer. Visit the Nexus explorer , enter your wallet address in the search bar, and view any allocation tied to it.",
+      "locations": [
+        {
+          "slug": "nexus",
+          "field": "简介",
+          "source_url": "https://airdrops.io/nexus/"
         }
       ]
     },

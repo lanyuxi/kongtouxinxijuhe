@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/axis-robotics/",
-      "fetched_at": "2026-10-09T06:46:11.925Z"
+      "fetched_at": "2026-10-09T13:52:09.597Z"
     }
   ],
   "evidence": [
@@ -254,7 +254,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/axis-robotics/",
-      "checked_at": "2026-10-09T06:46:11.925Z",
+      "checked_at": "2026-10-09T13:52:09.597Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -459,7 +459,7 @@
   ],
   "created_at": "2026-10-08T20:39:03.701Z",
   "discovered_at": "2026-10-08T20:39:03.701Z",
-  "last_checked_at": "2026-10-09T06:46:11.925Z",
+  "last_checked_at": "2026-10-09T13:52:09.597Z",
   "last_changed_at": "2026-10-08T20:39:03.701Z",
   "sourcedDescription": "Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.",
   "tagline_en": "Axis has not confirmed a token or an airdrop. The official docs say Points will be one input in a planned Community Contributor Airdrop, with eligibility, allocation, and timing to be published before any claim event. Points themselves carry no claim right. Treat this like other potential retroactive airdrops : a live points program worth farming, with the token part still open.",

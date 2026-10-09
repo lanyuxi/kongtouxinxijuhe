@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/rwaperp/",
-      "fetched_at": "2026-10-09T06:46:11.925Z"
+      "fetched_at": "2026-10-09T13:52:09.597Z"
     }
   ],
   "evidence": [
@@ -268,7 +268,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/rwaperp/",
-      "checked_at": "2026-10-09T06:46:11.925Z",
+      "checked_at": "2026-10-09T13:52:09.597Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -473,7 +473,7 @@
   ],
   "created_at": "2026-10-05T18:18:15.141Z",
   "discovered_at": "2026-10-05T18:18:15.141Z",
-  "last_checked_at": "2026-10-09T06:46:11.925Z",
+  "last_checked_at": "2026-10-09T13:52:09.597Z",
   "last_changed_at": "2026-10-05T18:18:15.141Z",
   "sourcedDescription": "RWAPerp has not announced a token, TGE or airdrop, so any distribution is speculative for now. What it has published is a points system: each week, a fixed pool of 1,000,000 base points is split among eligible users by contribution.",
   "tagline_en": "RWAPerp has not announced a token, TGE or airdrop, so any distribution is speculative for now. What it has published is a points system: each week, a fixed pool of 1,000,000 base points is split among eligible users by contribution.",
