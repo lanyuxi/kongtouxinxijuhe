@@ -1,5 +1,5 @@
 {
-  "total": 59,
+  "total": 58,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -408,16 +408,6 @@
           "slug": "infinex",
           "field": "简介",
           "source_url": "https://airdrops.io/infinex/"
-        }
-      ]
-    },
-    {
-      "original": "The Jupiter airdrop is confirmed and has run in phases since January 2024. Jupuary 2026 was the third and final annual distribution, and its claim window has now closed. Unclaimed allocations went back to the DAO treasury. What continues is Active Staking Rewards (ASR), a quarterly pool paid to JUP stakers who vote on DAO proposals, and the Q2 2026 round is open for claims now.",
-      "locations": [
-        {
-          "slug": "jupiter",
-          "field": "简介",
-          "source_url": "https://airdrops.io/jupiter/"
         }
       ]
     },

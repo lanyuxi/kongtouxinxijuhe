@@ -26,7 +26,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Forward%20Industries%20SOL",
-      "fetched_at": "2026-10-09T13:52:19.227Z"
+      "fetched_at": "2026-10-09T19:11:07.990Z"
     }
   ],
   "evidence": [
@@ -259,7 +259,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Forward%20Industries%20SOL",
-      "checked_at": "2026-10-09T13:52:19.227Z",
+      "checked_at": "2026-10-09T19:11:07.990Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -358,7 +358,7 @@
   ],
   "created_at": "2026-10-01T15:44:33.862Z",
   "discovered_at": "2026-10-01T15:44:33.862Z",
-  "last_checked_at": "2026-10-09T13:52:19.227Z",
+  "last_checked_at": "2026-10-09T19:11:07.990Z",
   "last_changed_at": "2026-10-09T13:52:19.337Z",
   "sourcedDescription": "Liquid Staking 协议，TVL 约 $238M。",
   "guide_version": "556bb2879c9efd382d3c83224e8e196452e4e691d6fbfe65cfab5ab9212e6c87",
