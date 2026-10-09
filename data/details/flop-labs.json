@@ -24,7 +24,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/flop-labs/",
-      "fetched_at": "2026-10-09T19:11:03.866Z"
+      "fetched_at": "2026-10-09T23:17:00.141Z"
     }
   ],
   "evidence": [
@@ -250,7 +250,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/flop-labs/",
-      "checked_at": "2026-10-09T19:11:03.866Z",
+      "checked_at": "2026-10-09T23:17:00.141Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -402,7 +402,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-10-09T19:11:03.866Z",
+  "last_checked_at": "2026-10-09T23:17:00.141Z",
   "last_changed_at": "2026-10-01T15:44:34.055Z",
   "sourcedSteps": [
     {
