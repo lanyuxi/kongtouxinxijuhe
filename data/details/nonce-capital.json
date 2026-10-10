@@ -27,7 +27,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Nonce%20Capital",
-      "fetched_at": "2026-10-09T23:17:04.249Z"
+      "fetched_at": "2026-10-10T02:26:33.565Z"
     }
   ],
   "evidence": [
@@ -260,7 +260,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Nonce%20Capital",
-      "checked_at": "2026-10-09T23:17:04.249Z",
+      "checked_at": "2026-10-10T02:26:33.565Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -359,7 +359,7 @@
   ],
   "created_at": "2026-10-01T15:44:33.862Z",
   "discovered_at": "2026-10-01T15:44:33.862Z",
-  "last_checked_at": "2026-10-09T23:17:04.249Z",
+  "last_checked_at": "2026-10-10T02:26:33.565Z",
   "last_changed_at": "2026-10-09T23:17:04.355Z",
   "sourcedDescription": "Risk Curators 协议，TVL 约 $600M。",
   "guide_version": "b3ccf599ba20fb9ba00bb02aa5ad6649eec4ad2fad4b823b992253d3d5d359df",

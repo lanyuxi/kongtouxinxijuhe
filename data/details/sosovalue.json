@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/sosovalue/",
-      "fetched_at": "2026-10-09T23:17:00.141Z"
+      "fetched_at": "2026-10-10T02:26:29.568Z"
     }
   ],
   "evidence": [
@@ -275,7 +275,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/sosovalue/",
-      "checked_at": "2026-10-09T23:17:00.141Z",
+      "checked_at": "2026-10-10T02:26:29.568Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -495,7 +495,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-10-09T23:17:00.141Z",
+  "last_checked_at": "2026-10-10T02:26:29.568Z",
   "last_changed_at": "2026-10-01T15:44:34.072Z",
   "sourcedSteps": [
     {
