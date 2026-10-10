@@ -25,7 +25,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/voice/",
-      "fetched_at": "2026-10-10T02:26:29.568Z"
+      "fetched_at": "2026-10-10T08:53:13.899Z"
     }
   ],
   "evidence": [
@@ -251,7 +251,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/voice/",
-      "checked_at": "2026-10-10T02:26:29.568Z",
+      "checked_at": "2026-10-10T08:53:13.899Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -471,7 +471,7 @@
   ],
   "created_at": "2026-09-12T06:08:39.056Z",
   "discovered_at": "2026-09-12T06:08:39.056Z",
-  "last_checked_at": "2026-10-10T02:26:29.568Z",
+  "last_checked_at": "2026-10-10T08:53:13.899Z",
   "last_changed_at": "2026-10-02T02:32:50.846Z",
   "sourcedSteps": [
     {
