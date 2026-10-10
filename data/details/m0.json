@@ -26,7 +26,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/M0",
-      "fetched_at": "2026-10-10T08:53:14.961Z"
+      "fetched_at": "2026-10-10T15:13:35.284Z"
     }
   ],
   "evidence": [
@@ -259,7 +259,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/M0",
-      "checked_at": "2026-10-10T08:53:14.961Z",
+      "checked_at": "2026-10-10T15:13:35.284Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -358,7 +358,7 @@
   ],
   "created_at": "2026-10-07T16:19:36.787Z",
   "discovered_at": "2026-10-07T16:19:36.787Z",
-  "last_checked_at": "2026-10-10T08:53:14.961Z",
+  "last_checked_at": "2026-10-10T15:13:35.284Z",
   "last_changed_at": "2026-10-10T08:53:15.155Z",
   "sourcedDescription": "Stablecoin Issuer 协议，TVL 约 $202M。",
   "guide_version": "d3cd3d11ec6b247d4bc67be60b6586341e4fe9d99d1d4a3ae064708d8f4354ad",

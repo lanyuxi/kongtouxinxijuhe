@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-10T08:53:16.345Z",
-  "total": 188,
+  "updated_at": "2026-10-10T15:13:36.689Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -101,6 +101,7 @@
     "m0": "logos/m0.webp",
     "maple": "logos/maple.png",
     "marinade-native": "logos/marinade-native.png",
+    "marinade-select": "logos/marinade-select.webp",
     "mellow-core": "logos/mellow-core.png",
     "memebook": "logos/memebook.ico",
     "merlins-seal": "logos/merlins-seal.png",
@@ -159,6 +160,7 @@
     "stacks-sbtc": "logos/stacks-sbtc.png",
     "stader": "logos/stader.png",
     "stakewise-v3": "logos/stakewise-v3.png",
+    "starknet": "logos/starknet.webp",
     "steakhouse-financial": "logos/steakhouse-financial.png",
     "sunswap-v2": "logos/sunswap-v2.png",
     "sunswap-v3": "logos/sunswap-v3.png",
@@ -189,7 +191,6 @@
     "world-chain": "logos/world-chain.png",
     "worldie": "logos/worldie.png",
     "yakkamon": "logos/yakkamon.png",
-    "yearn-finance": "logos/yearn-finance.webp",
     "zora-network": "logos/zora-network.png"
   },
   "sources": {

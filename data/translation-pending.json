@@ -1,5 +1,5 @@
 {
-  "total": 58,
+  "total": 59,
   "items": [
     {
       "original": "ACI has confirmed a token airdrop, with 30,000,000 $ACI set aside for the current testnet phase. Participation is free. The only thing you need is Sepolia test ETH, which you claim from a faucet at no cost, and rewards come from completing on-chain activity and quests rather than buying anything.",
@@ -268,6 +268,16 @@
           "slug": "satsuma",
           "field": "简介",
           "source_url": "https://airdrops.io/satsuma/"
+        }
+      ]
+    },
+    {
+      "original": "StarkNet airdropped 700 million STRK to various early StarkNet and Ethereum users in the form of provisions. Starknet users, developers and community contributors, StarkEx users, Ethereum protocol contributors and stakers and developers of select non-crypto open-source projects received the airdrop.",
+      "locations": [
+        {
+          "slug": "starknet",
+          "field": "简介",
+          "source_url": "https://airdrops.io/starknet/"
         }
       ]
     },
