@@ -26,7 +26,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Marinade%20Select",
-      "fetched_at": "2026-10-11T07:26:25.247Z"
+      "fetched_at": "2026-10-11T14:19:23.385Z"
     }
   ],
   "evidence": [
@@ -259,7 +259,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Marinade%20Select",
-      "checked_at": "2026-10-11T07:26:25.247Z",
+      "checked_at": "2026-10-11T14:19:23.385Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -358,7 +358,7 @@
   ],
   "created_at": "2026-10-10T15:13:35.284Z",
   "discovered_at": "2026-10-10T15:13:35.284Z",
-  "last_checked_at": "2026-10-11T07:26:25.247Z",
+  "last_checked_at": "2026-10-11T14:19:23.385Z",
   "last_changed_at": "2026-10-11T07:26:25.462Z",
   "sourcedDescription": "Staking Pool 协议，TVL 约 $201M。",
   "guide_version": "9275623fd01af4674465ba88c2d5fe49598fbc310d5f4d8e5c81183acf6ab563",
