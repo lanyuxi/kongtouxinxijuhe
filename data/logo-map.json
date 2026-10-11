@@ -1,13 +1,12 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-11T14:19:23.771Z",
-  "total": 188,
+  "updated_at": "2026-10-11T19:01:26.967Z",
+  "total": 187,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
     "aave-v4": "logos/aave-v4.png",
     "acepyr": "logos/acepyr.ico",
-    "aci": "logos/aci.ico",
     "aerodrome-slipstream": "logos/aerodrome-slipstream.png",
     "ammora": "logos/ammora.png",
     "anemoy-capital": "logos/anemoy-capital.png",
