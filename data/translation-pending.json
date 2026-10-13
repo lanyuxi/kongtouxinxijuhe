@@ -1,5 +1,5 @@
 {
-  "total": 58,
+  "total": 57,
   "items": [
     {
       "original": "Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into a distribution. What the team has committed to is beta access: the leaderboard guarantees seats to the top 1,000 point holders, plus 100 more drawn at random from everyone else.",
@@ -358,16 +358,6 @@
           "slug": "collector-crypt",
           "field": "简介",
           "source_url": "https://airdrops.io/collector-crypt/"
-        }
-      ]
-    },
-    {
-      "original": "The Concrete (CT) airdrop is confirmed and claimable. CT reached its TGE on September 30, 2026, and eligible wallets can now claim through the official Concrete Foundation site. Only addresses on the CT Eligibility List can claim, and each allocation is locked to the wallet it was assigned to.",
-      "locations": [
-        {
-          "slug": "concrete",
-          "field": "简介",
-          "source_url": "https://defillama.com/protocol/Concrete"
         }
       ]
     },
