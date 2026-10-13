@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/axis-robotics/",
-      "fetched_at": "2026-10-13T00:38:10.170Z"
+      "fetched_at": "2026-10-13T07:06:53.069Z"
     }
   ],
   "evidence": [
@@ -254,7 +254,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/axis-robotics/",
-      "checked_at": "2026-10-13T00:38:10.170Z",
+      "checked_at": "2026-10-13T07:06:53.069Z",
       "note": "完整来源描述或教程提到资金 / 链上操作，未核实具体金额"
     }
   },
@@ -476,7 +476,7 @@
   ],
   "created_at": "2026-10-08T20:39:03.701Z",
   "discovered_at": "2026-10-08T20:39:03.701Z",
-  "last_checked_at": "2026-10-13T00:38:10.170Z",
+  "last_checked_at": "2026-10-13T07:06:53.069Z",
   "last_changed_at": "2026-10-12T18:03:53.653Z",
   "sourcedDescription": "Axis Robotics has confirmed a Community Contributor Airdrop in its published tokenomics, which moves it onto the list of confirmed airdrops . The Contributor Rewards pool holds 10% of the $AXIS supply and is paid out over two seasons: Season 1 covers simulation work done before TGE, while Season 2 opens after TGE and focuses on sim-to-real tasks. Axis Points are one input for eligibility and allocation. Exact conversion terms will be published before the claim.",
   "tagline_en": "Axis Robotics has confirmed a Community Contributor Airdrop in its published tokenomics, which moves it onto the list of confirmed airdrops . The Contributor Rewards pool holds 10% of the $AXIS supply and is paid out over two seasons: Season 1 covers simulation work done before TGE, while Season 2 opens after TGE and focuses on sim-to-real tasks. Axis Points are one input for eligibility and allocation. Exact conversion terms will be published before the claim.",
