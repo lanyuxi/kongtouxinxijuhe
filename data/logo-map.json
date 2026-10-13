@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-13T07:07:00.192Z",
-  "total": 186,
+  "updated_at": "2026-10-13T15:02:27.948Z",
+  "total": 187,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -27,6 +27,7 @@
     "cambria": "logos/cambria.png",
     "canopy": "logos/canopy.png",
     "cap": "logos/cap.png",
+    "catalyst-2": "logos/catalyst-2.ico",
     "ccip": "logos/ccip.png",
     "cian-yield-layer": "logos/cian-yield-layer.png",
     "clearstar": "logos/clearstar.png",
@@ -489,6 +490,7 @@
     "imperial": "https://www.faviconextractor.com/favicon/imperial.space?larger=true",
     "retium": "https://www.faviconextractor.com/favicon/discord.com?larger=true",
     "perptools": "https://icons.llamao.fi/icons/protocols/perptools",
-    "nous-research": "https://www.faviconextractor.com/favicon/hermes-agent.nousresearch.com?larger=true"
+    "nous-research": "https://www.faviconextractor.com/favicon/hermes-agent.nousresearch.com?larger=true",
+    "catalyst-2": "https://www.faviconextractor.com/favicon/catalyst.app?larger=true"
   }
 }

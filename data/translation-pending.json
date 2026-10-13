@@ -1,5 +1,5 @@
 {
-  "total": 57,
+  "total": 58,
   "items": [
     {
       "original": "Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into a distribution. What the team has committed to is beta access: the leaderboard guarantees seats to the top 1,000 point holders, plus 100 more drawn at random from everyone else.",
@@ -72,6 +72,16 @@
       ]
     },
     {
+      "original": "Catalyst has not announced a token, points program or airdrop. There is no ticker, and the “tokens” on its site refer to assets you can trade. The case for a potential Catalyst airdrop rests on the profile: a $30M raise from crypto-native investors, a product that trades onchain assets and a private beta that rewards early users with access first.",
+      "locations": [
+        {
+          "slug": "catalyst-2",
+          "field": "简介",
+          "source_url": "https://airdrops.io/catalyst-2/"
+        }
+      ]
+    },
+    {
       "original": "DeepBook’s main live campaign is the waitlist for its new trading app. Access opens in waves, and referring other traders moves you up the queue for earlier entry. Joining early and building referrals may position you for future rewards, though DeepBook has not confirmed a waitlist allocation.",
       "locations": [
         {
@@ -102,7 +112,7 @@
       ]
     },
     {
-      "original": "Fables has not confirmed an airdrop. Its documentation says points are intended to count toward a possible future token distribution, subject to separate final terms.",
+      "original": "Fables has extended its points program to October 19, 2026, and moved the FABLES TGE to October 20, when its ve(3,3) system also goes live. Between October 12 and October 19, points holders must choose how their points convert to FABLES. Wallets that make no selection by October 19 lose their claim.",
       "locations": [
         {
           "slug": "fables",

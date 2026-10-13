@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-13T07:06:52.962Z",
+  "fetched_at": "2026-10-13T15:02:14.845Z",
   "source": "Airdrops.io",
   "source_url": "https://airdrops.io/latest/",
   "items": [
@@ -16,7 +16,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/collector-crypt/",
       "officialUrl": "https://gacha.collectorcrypt.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Collector Crypt",
       "officialHost": "gacha.collectorcrypt.com",
       "steps": [
@@ -52,96 +52,72 @@
       "description": "The Collector Crypt airdrop is confirmed and recurring. The team runs a quarterly rewards program that distributes $CARDS to active users, and $CARDS holders receive separate monthly airdrops on top of that. The most recent quarterly distribution went live on June 14, 2026, releasing 15 million $CARDS."
     },
     {
-      "slug": "arcus",
-      "name": "Arcus",
-      "tagline": "dYdX Labs has confirmed that Arcus will launch its own token, separate from DYDX, with an allocation reserved for people",
+      "slug": "fables",
+      "name": "Fables",
+      "tagline": "Fables has extended its points program to October 19, 2026, and moved the FABLES TGE to October 20, when its ve(3,3) sys",
       "status": "potential",
-      "categoryText": "perpetual",
+      "categoryText": "dex",
       "chains": [
-        "Robinhood"
+        "Robinhood Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/arcus/",
-      "officialUrl": "https://app.arcus.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Arcus",
-      "officialHost": "app.arcus.xyz",
+      "sourceUrl": "https://airdrops.io/fables/",
+      "officialUrl": "https://fables.fi",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Fables",
+      "officialHost": "fables.fi",
       "steps": [
         {
-          "title": "Sign Up on Arcus",
-          "body": "Go to Arcus and connect your wallet or sign up with Google. Signing up through our link gives you 5% off trading fees. Arcus is not available in the US, Canada, the UK, and other restricted jurisdictions."
+          "title": "Add Robinhood Chain to Your Wallet",
+          "body": "Robinhood Wallet supports the chain by default (see our Robinhood Chain guide for setup basics). For MetaMask, Rabby, or another EVM wallet, add Robinhood Chain manually (chain ID 4663, ETH for gas)."
         },
         {
-          "title": "Deposit Funds",
-          "body": "Deposit USDC, USDT, BTC, or another supported asset into your Arcus account. You can buy these on Bybit , then move them to Robinhood Chain with the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
+          "title": "Fund Your Wallet With ETH or USDG",
+          "body": "You need ETH for gas and either ETH or USDG to provide liquidity. Buy ETH on Bybit and withdraw it to your wallet, then move it onto Robinhood Chain or swap into USDG with the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
-          "title": "Trade Stock Tokens on Spot",
-          "body": "Open the spot market and trade any of the 95+ stock tokens. Spot trades carry no fees, and stock tokens currently earn boosted points. Trading outside regular US market hours adds a further boost. If you use Robinhood Wallet, swaps routed through Arcus also qualify for boosted spot points."
+          "title": "Connect Your Wallet to Fables",
+          "body": "Open Fables and connect your wallet. Using this link applies a referral, which does not reduce your own points."
         },
         {
-          "title": "Unlock Perps With an Invite Code",
-          "body": "Perps now require an invite code from an existing Arcus trader. Connect your wallet on Arcus and enter the code when prompted. Traders who already had access don’t need one."
+          "title": "Deposit Liquidity Into a Fables Market",
+          "body": "Go to the deposit section and choose an eligible market: ETH/USDG: crypto pair with round-the-clock trading SPY/USDG: tokenized S&P 500 ETF GLD/USDG: tokenized gold ETF TSLA/USDG: tokenized Tesla stock Pick a price range, enter your ETH or USDG amount, and confirm the transaction. Other supported tokens work too."
         },
         {
-          "title": "Keep Collateral on the Exchange",
-          "body": "Retained deposits count toward Season 1 points. Leaving collateral on Arcus between trades scores better than depositing and withdrawing each session."
+          "title": "Keep Your Position in Range",
+          "body": "Positions earn swap fees, and therefore points, only while the price sits inside your range. Check your position regularly and adjust the range when the price moves out."
         },
         {
-          "title": "Track Your Points",
-          "body": "Open the Points Dashboard to see your weekly Season 1 points and your Season 0 leaderboard rank. New points land every Wednesday at 3PM EST."
+          "title": "Claim Weekly USDG Rewards",
+          "body": "Open the rewards panel on Fables each week and claim your USDG. Rewards are based on the swap fees your positions earned that week."
         },
         {
-          "title": "Share Your Invite Codes",
-          "body": "Every $1M in perps volume earns you an invite code, and volume from traders you referred counts toward that total. Find your codes under Rewards > Referrals. Anyone who signs up with your code becomes your referral, and their trading adds to your referral points bonus."
+          "title": "Create Your Referral Link",
+          "body": "Once your position is worth at least $100, connect your X account on the Points Board to generate a referral link. You earn 10% of the LP points each invited user earns."
+        },
+        {
+          "title": "Prepare Your PROLOGUE for the Snapshot",
+          "body": "Move your PROLOGUE out of pools, vaults, and custodial platforms such as GMGN and into a wallet you control before October 17 at 00:00 UTC. The snapshot falls on one unannounced block between October 17 and 18. Every 40 eligible PROLOGUE redeem for at least 1 liquid FABLES. If any PROLOGUE leaves the wallet after the snapshot, the wallet loses its entire claim. Points claims and PROLOGUE redemption open at TGE and stay open until November 20 on fables.fi ."
         }
       ],
-      "description": "dYdX Labs has confirmed that Arcus will launch its own token, separate from DYDX, with an allocation reserved for people who traded, staked, or validated on dYdX. Arcus Points are the main way to farm it now, although the team has not said how points will convert to tokens."
+      "description": "Fables has extended its points program to October 19, 2026, and moved the FABLES TGE to October 20, when its ve(3,3) system also goes live. Between October 12 and October 19, points holders must choose how their points convert to FABLES. Wallets that make no selection by October 19 lose their claim."
     },
     {
-      "slug": "nous-research",
-      "name": "Nous Research",
-      "tagline": "The Nous Research airdrop is speculative. The team has not announced a token, a ticker, a points program or eligibility ",
-      "status": "potential",
-      "categoryText": "ai",
+      "slug": "xstable",
+      "name": "Xstable",
+      "tagline": "",
+      "status": "new",
       "chains": [
-        "Solana"
+        "Other"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/nous-research/",
-      "officialUrl": "https://hermes-agent.nousresearch.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Nous Research",
-      "officialHost": "hermes-agent.nousresearch.com",
-      "steps": [
-        {
-          "title": "Create a Nous Portal Account",
-          "body": "Go to the Nous Portal and sign up. The Portal gives you chat and API access to Hermes and other models. Paid usage runs on prepaid credits, with top-ups starting around $10, which you spend through API keys."
-        },
-        {
-          "title": "Install Hermes Agent",
-          "body": "Download Hermes Agent for Mac, Windows or Linux, or install it from the terminal. Sign in with your Portal account to run it on Portal models, then give it actual work so it builds skills and memory over time."
-        },
-        {
-          "title": "Join the Nous Research Discord",
-          "body": "Join the Nous Research Discord . Helping other members, sharing what you build with Hermes and taking part in discussions is how contributors get noticed there."
-        },
-        {
-          "title": "Contribute to the Psyche Codebase",
-          "body": "Open the Psyche GitHub repository and look through the open issues. Bug fixes, documentation and small improvements all count. If you don’t write code, test new builds and file clear bug reports."
-        },
-        {
-          "title": "Check the Psyche Mining Pool",
-          "body": "Visit the Psyche mining pool page for the current training run. The team presents the pool as the way to back a run without operating hardware, but it is full right now. When it reopens or a new pool launches, you can join."
-        },
-        {
-          "title": "Prepare for Psyche Compute Access",
-          "body": "Psyche’s testnet is closed to new nodes, and running a client currently takes data-center-grade GPUs. Read the Psyche docs , set up a Solana keypair and watch for the team to admit more nodes and lower the hardware requirements."
-        }
-      ],
-      "description": "The Nous Research airdrop is speculative. The team has not announced a token, a ticker, a points program or eligibility criteria, and there is no task dashboard to track."
+      "sourceUrl": "https://airdrops.io/xstable/",
+      "officialUrl": "https://airdrops.io/xstable/",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Xstable",
+      "steps": []
     },
     {
       "slug": "deepbook",
@@ -156,7 +132,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/deepbook/",
       "officialUrl": "https://waitlist.deepbook.tech",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Deepbook",
       "officialHost": "waitlist.deepbook.tech",
       "steps": [
@@ -192,6 +168,142 @@
       "description": "DeepBook’s main live campaign is the waitlist for its new trading app. Access opens in waves, and referring other traders moves you up the queue for earlier entry. Joining early and building referrals may position you for future rewards, though DeepBook has not confirmed a waitlist allocation."
     },
     {
+      "slug": "arcus",
+      "name": "Arcus",
+      "tagline": "dYdX Labs has confirmed that Arcus will launch its own token, separate from DYDX, with an allocation reserved for people",
+      "status": "potential",
+      "categoryText": "perpetual",
+      "chains": [
+        "Robinhood"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/arcus/",
+      "officialUrl": "https://app.arcus.xyz",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Arcus",
+      "officialHost": "app.arcus.xyz",
+      "steps": [
+        {
+          "title": "Sign Up on Arcus",
+          "body": "Go to Arcus and connect your wallet or sign up with Google. Signing up through our link gives you 5% off trading fees. Arcus is not available in the US, Canada, the UK, and other restricted jurisdictions."
+        },
+        {
+          "title": "Deposit Funds",
+          "body": "Deposit USDC, USDT, BTC, or another supported asset into your Arcus account. You can buy these on Bybit , then move them to Robinhood Chain with the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
+        },
+        {
+          "title": "Trade Stock Tokens on Spot",
+          "body": "Open the spot market and trade any of the 95+ stock tokens. Spot trades carry no fees, and stock tokens currently earn boosted points. Trading outside regular US market hours adds a further boost. If you use Robinhood Wallet, swaps routed through Arcus also qualify for boosted spot points."
+        },
+        {
+          "title": "Unlock Perps With an Invite Code",
+          "body": "Perps now require an invite code from an existing Arcus trader. Connect your wallet on Arcus and enter the code when prompted. Traders who already had access don’t need one."
+        },
+        {
+          "title": "Keep Collateral on the Exchange",
+          "body": "Retained deposits count toward Season 1 points. Leaving collateral on Arcus between trades scores better than depositing and withdrawing each session."
+        },
+        {
+          "title": "Track Your Points",
+          "body": "Open the Points Dashboard to see your weekly Season 1 points and your Season 0 leaderboard rank. New points land every Wednesday at 3PM EST."
+        },
+        {
+          "title": "Share Your Invite Codes",
+          "body": "Every $1M in perps volume earns you an invite code, and volume from traders you referred counts toward that total. Find your codes under Rewards > Referrals. Anyone who signs up with your code becomes your referral, and their trading adds to your referral points bonus."
+        }
+      ],
+      "description": "dYdX Labs has confirmed that Arcus will launch its own token, separate from DYDX, with an allocation reserved for people who traded, staked, or validated on dYdX. Arcus Points are the main way to farm it now, although the team has not said how points will convert to tokens."
+    },
+    {
+      "slug": "catalyst-2",
+      "name": "Catalyst 2",
+      "tagline": "Catalyst has not announced a token, points program or airdrop. There is no ticker, and the “tokens” on its site refer to",
+      "status": "potential",
+      "categoryText": "ai",
+      "chains": [
+        "Other"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/catalyst-2/",
+      "officialUrl": "https://catalyst.app",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Catalyst 2",
+      "officialHost": "catalyst.app",
+      "steps": [
+        {
+          "title": "Join the Catalyst Waitlist",
+          "body": "Go to the Catalyst website and sign up with your email. Add your X handle in the optional field so the team can link your account to social activity."
+        },
+        {
+          "title": "Share Your Waitlist Link",
+          "body": "If the waitlist gives you a share link after sign-up, post it on X or send it to friends who trade. Invites may move you up the queue. Referral rewards have not been announced."
+        },
+        {
+          "title": "Join the Catalyst Discord",
+          "body": "Join the Catalyst Discord and introduce yourself. Share trade ideas or market theses in the community channels, since that is the kind of input the product is built around."
+        },
+        {
+          "title": "Watch for Discord Roles",
+          "body": "There are no roles yet. Check the announcements channel for role launches, early tester calls or contributor programs, and claim any role as soon as it opens."
+        },
+        {
+          "title": "Accept Your Beta Invite",
+          "body": "Access opens in batches. When your invite arrives, sign in and set up your wallet."
+        }
+      ],
+      "description": "Catalyst has not announced a token, points program or airdrop. There is no ticker, and the “tokens” on its site refer to assets you can trade. The case for a potential Catalyst airdrop rests on the profile: a $30M raise from crypto-native investors, a product that trades onchain assets and a private beta that rewards early users with access first."
+    },
+    {
+      "slug": "concrete",
+      "name": "Concrete",
+      "tagline": "The Concrete (CT) airdrop is confirmed and claimable. CT reached its TGE on September 30, 2026, and eligible wallets can",
+      "status": "potential",
+      "categoryText": "asset management",
+      "chains": [
+        "Ethereum"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/concrete/",
+      "officialUrl": "https://concretefoundation.xyz",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Concrete",
+      "officialHost": "concretefoundation.xyz",
+      "steps": [
+        {
+          "title": "Visit the Official CT Claim Page",
+          "body": "Go to the Concrete Foundation claim page . Concrete has warned about fake claim sites, so only use concretefoundation.xyz or links from Concrete’s official X and Discord. Our airdrop safety guide covers what to check first."
+        },
+        {
+          "title": "Connect Your Eligible Wallet",
+          "body": "Connect the wallet you used for Concrete vaults or the Points dashboard. MetaMask and other self-custody EVM wallets work. The wallet must be one you own and control, and eligibility can’t be moved to a different address."
+        },
+        {
+          "title": "Accept the Claim Terms and Check Your Allocation",
+          "body": "Accept the CT Claim Terms to see your allocation and the claim deadline. The interface blocks restricted jurisdictions by IP, and using a VPN to get around this breaks the terms and can get your claim blocked."
+        },
+        {
+          "title": "Add ETH for Gas",
+          "body": "The claim is an on-chain transaction, so keep a small amount of ETH in the wallet. You can buy ETH on Bybit , or move ETH over from another chain with the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
+        },
+        {
+          "title": "Claim Your CT Tokens",
+          "body": "Click “Claim” and confirm the transaction. The claim only counts once it confirms on-chain, so check the explorer if the page doesn’t update."
+        },
+        {
+          "title": "Add CT to Your Wallet",
+          "body": "Import the official CT contract so the balance shows up: 0x0A092E544DA31150b439a1aAA1A3a2214a867F46 . The same address is used on Ethereum and BNB Chain. Ignore any other “CT” token that appears in your wallet."
+        },
+        {
+          "title": "Stake or Lock CT in the Concrete App",
+          "body": "Open the Concrete app if you plan to hold. Staking CT can reduce protocol fees on your own vault activity, and locking CT gives voting power over strategy approvals, collateral rules, and fee frameworks. Governance is rolling out in stages."
+        }
+      ],
+      "description": "The Concrete (CT) airdrop is confirmed and claimable. CT reached its TGE on September 30, 2026, and eligible wallets can now claim through the official Concrete Foundation site. Only addresses on the CT Eligibility List can claim, and each allocation is locked to the wallet it was assigned to."
+    },
+    {
       "slug": "axis-robotics",
       "name": "Axis Robotics",
       "tagline": "Axis Robotics has confirmed a Community Contributor Airdrop in its published tokenomics, which moves it onto the list of",
@@ -204,7 +316,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/axis-robotics/",
       "officialUrl": "https://hub.axisrobotics.ai",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Axis Robotics",
       "officialHost": "hub.axisrobotics.ai",
       "steps": [
@@ -248,6 +360,118 @@
       "description": "Axis Robotics has confirmed a Community Contributor Airdrop in its published tokenomics, which moves it onto the list of confirmed airdrops . The Contributor Rewards pool holds 10% of the $AXIS supply and is paid out over two seasons: Season 1 covers simulation work done before TGE, while Season 2 opens after TGE and focuses on sim-to-real tasks. Axis Points are one input for eligibility and allocation. Exact conversion terms will be published before the claim."
     },
     {
+      "slug": "nous-research",
+      "name": "Nous Research",
+      "tagline": "The Nous Research airdrop is speculative. The team has not announced a token, a ticker, a points program or eligibility ",
+      "status": "potential",
+      "categoryText": "ai",
+      "chains": [
+        "Solana"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/nous-research/",
+      "officialUrl": "https://hermes-agent.nousresearch.com",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Nous Research",
+      "officialHost": "hermes-agent.nousresearch.com",
+      "steps": [
+        {
+          "title": "Create a Nous Portal Account",
+          "body": "Go to the Nous Portal and sign up. The Portal gives you chat and API access to Hermes and other models. Paid usage runs on prepaid credits, with top-ups starting around $10, which you spend through API keys."
+        },
+        {
+          "title": "Install Hermes Agent",
+          "body": "Download Hermes Agent for Mac, Windows or Linux, or install it from the terminal. Sign in with your Portal account to run it on Portal models, then give it actual work so it builds skills and memory over time."
+        },
+        {
+          "title": "Join the Nous Research Discord",
+          "body": "Join the Nous Research Discord . Helping other members, sharing what you build with Hermes and taking part in discussions is how contributors get noticed there."
+        },
+        {
+          "title": "Contribute to the Psyche Codebase",
+          "body": "Open the Psyche GitHub repository and look through the open issues. Bug fixes, documentation and small improvements all count. If you don’t write code, test new builds and file clear bug reports."
+        },
+        {
+          "title": "Check the Psyche Mining Pool",
+          "body": "Visit the Psyche mining pool page for the current training run. The team presents the pool as the way to back a run without operating hardware, but it is full right now. When it reopens or a new pool launches, you can join."
+        },
+        {
+          "title": "Prepare for Psyche Compute Access",
+          "body": "Psyche’s testnet is closed to new nodes, and running a client currently takes data-center-grade GPUs. Read the Psyche docs , set up a Solana keypair and watch for the team to admit more nodes and lower the hardware requirements."
+        }
+      ],
+      "description": "The Nous Research airdrop is speculative. The team has not announced a token, a ticker, a points program or eligibility criteria, and there is no task dashboard to track."
+    },
+    {
+      "slug": "canopy",
+      "name": "Canopy",
+      "tagline": "Canopy Network has confirmed a $CNPY token airdrop through a points-based rewards program. Points earned through platfor",
+      "status": "potential",
+      "categoryText": "blockchain infrastructure",
+      "chains": [
+        "Own Chain"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/canopy/",
+      "officialUrl": "https://app.canopynetwork.org",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Canopy",
+      "officialHost": "app.canopynetwork.org",
+      "steps": [
+        {
+          "title": "Submit Your Testnet Points",
+          "body": "Visit the submission portal and sign in with the EVM wallet you registered Create or select a Canopy wallet to receive tokens The locked portion is already credited to your wallet and releases on its own schedule, so there is nothing further to claim, sign, or pay gas for."
+        }
+      ],
+      "description": "Canopy Network has confirmed a $CNPY token airdrop through a points-based rewards program. Points earned through platform activity — including retroactive rewards for early participation, testnet interactions, and quests — will convert to $CNPY allocations at a future date."
+    },
+    {
+      "slug": "mint-io",
+      "name": "Mint Io",
+      "tagline": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform",
+      "status": "potential",
+      "categoryText": "prediction market",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/mint-io/",
+      "officialUrl": "https://mint.io",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Mint Io",
+      "officialHost": "mint.io",
+      "steps": [
+        {
+          "title": "Create your MINT account",
+          "body": "Register on the MINT website . An account is required before any play counts toward Season 1 XP."
+        },
+        {
+          "title": "Fund your MINT wallet",
+          "body": "Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp."
+        },
+        {
+          "title": "Play casino games and sportsbook markets",
+          "body": "Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet."
+        },
+        {
+          "title": "Climb the XP leaderboard",
+          "body": "Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play."
+        },
+        {
+          "title": "Keep earning XP until the snapshot",
+          "body": "The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation."
+        },
+        {
+          "title": "Claim and stake your $MNTD",
+          "body": "At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels."
+        }
+      ],
+      "description": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity. Casino and sportsbook play earns XP, and your final leaderboard position at the snapshot decides your share."
+    },
+    {
       "slug": "perptools",
       "name": "Perptools",
       "tagline": "The PERPTools airdrop is confirmed. The project docs state that points earned before TGE convert proportionally into $PE",
@@ -260,7 +484,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/perptools/",
       "officialUrl": "https://app.perptools.ai",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Perptools",
       "officialHost": "app.perptools.ai",
       "steps": [
@@ -296,164 +520,23 @@
       "description": "The PERPTools airdrop is confirmed. The project docs state that points earned before TGE convert proportionally into $PERP at launch. The size of the airdrop allocation has not been announced, and the team says final rules will come in a tokenomics paper closer to TGE."
     },
     {
-      "slug": "concrete",
-      "name": "Concrete",
-      "tagline": "The Concrete (CT) airdrop is confirmed and claimable. CT reached its TGE on September 30, 2026, and eligible wallets can",
+      "slug": "satsuma",
+      "name": "Satsuma",
+      "tagline": "Satsuma’s airdrop checker is now live ahead of the SUMA TGE on June 4, 2026, with 3,000,000 SUMA allocated to early supp",
       "status": "potential",
-      "categoryText": "asset management",
+      "categoryText": "liquidity",
       "chains": [
-        "Ethereum"
+        "Citrea"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/concrete/",
-      "officialUrl": "https://concretefoundation.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Concrete",
-      "officialHost": "concretefoundation.xyz",
-      "steps": [
-        {
-          "title": "Visit the Official CT Claim Page",
-          "body": "Go to the Concrete Foundation claim page . Concrete has warned about fake claim sites, so only use concretefoundation.xyz or links from Concrete’s official X and Discord. Our airdrop safety guide covers what to check first."
-        },
-        {
-          "title": "Connect Your Eligible Wallet",
-          "body": "Connect the wallet you used for Concrete vaults or the Points dashboard. MetaMask and other self-custody EVM wallets work. The wallet must be one you own and control, and eligibility can’t be moved to a different address."
-        },
-        {
-          "title": "Accept the Claim Terms and Check Your Allocation",
-          "body": "Accept the CT Claim Terms to see your allocation and the claim deadline. The interface blocks restricted jurisdictions by IP, and using a VPN to get around this breaks the terms and can get your claim blocked."
-        },
-        {
-          "title": "Add ETH for Gas",
-          "body": "The claim is an on-chain transaction, so keep a small amount of ETH in the wallet. You can buy ETH on Bybit , or move ETH over from another chain with the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
-        },
-        {
-          "title": "Claim Your CT Tokens",
-          "body": "Click “Claim” and confirm the transaction. The claim only counts once it confirms on-chain, so check the explorer if the page doesn’t update."
-        },
-        {
-          "title": "Add CT to Your Wallet",
-          "body": "Import the official CT contract so the balance shows up: 0x0A092E544DA31150b439a1aAA1A3a2214a867F46 . The same address is used on Ethereum and BNB Chain. Ignore any other “CT” token that appears in your wallet."
-        },
-        {
-          "title": "Stake or Lock CT in the Concrete App",
-          "body": "Open the Concrete app if you plan to hold. Staking CT can reduce protocol fees on your own vault activity, and locking CT gives voting power over strategy approvals, collateral rules, and fee frameworks. Governance is rolling out in stages."
-        }
-      ],
-      "description": "The Concrete (CT) airdrop is confirmed and claimable. CT reached its TGE on September 30, 2026, and eligible wallets can now claim through the official Concrete Foundation site. Only addresses on the CT Eligibility List can claim, and each allocation is locked to the wallet it was assigned to."
-    },
-    {
-      "slug": "mint-io",
-      "name": "Mint Io",
-      "tagline": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform",
-      "status": "potential",
-      "categoryText": "prediction market",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/mint-io/",
-      "officialUrl": "https://mint.io",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Mint Io",
-      "officialHost": "mint.io",
-      "steps": [
-        {
-          "title": "Create your MINT account",
-          "body": "Register on the MINT website . An account is required before any play counts toward Season 1 XP."
-        },
-        {
-          "title": "Fund your MINT wallet",
-          "body": "Deposit USDT, USDC or ETH into your MINT wallet on one of the supported networks. Make sure the network selected on MINT matches the one used by your sending wallet or exchange, since deposits sent over the wrong network can be lost. Alternatively, you can pick up any of these assets directly through the Mint cashier tab cash on-ramp."
-        },
-        {
-          "title": "Play casino games and sportsbook markets",
-          "body": "Every eligible play earns Season 1 XP. You need at least $50 wagered cumulatively to qualify for the airdrop, so smaller regular sessions count just as much as one large bet."
-        },
-        {
-          "title": "Climb the XP leaderboard",
-          "body": "Your XP sets your position on the live leaderboard. A higher rank at the snapshot means a larger potential share of the $125,000 pool. Qualifying referrals, available boosts and selected quests add XP on top of your own play."
-        },
-        {
-          "title": "Keep earning XP until the snapshot",
-          "body": "The Season 1 snapshot happens shortly before the TGE in Q4 2026, with the exact date announced through MINT’s official channels. Your verified XP at that moment locks in your allocation."
-        },
-        {
-          "title": "Claim and stake your $MNTD",
-          "body": "At TGE, claim your allocation through the rewards section on mint.io. You can then stake your $MNTD to activate MINT Status, earn compounded staking rewards and start moving up the levels."
-        }
-      ],
-      "description": "The Season 1 airdrop is confirmed and distributes $125,000 worth of $MNTD to eligible players based on verified platform activity. Casino and sportsbook play earns XP, and your final leaderboard position at the snapshot decides your share."
-    },
-    {
-      "slug": "titan-exchange",
-      "name": "Titan Exchange",
-      "tagline": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testne",
-      "status": "potential",
-      "categoryText": "trading tool",
-      "chains": [
-        "Canton"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/titan-exchange/",
-      "officialUrl": "https://testnet.titanx.cc",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Titan Exchange",
-      "officialHost": "testnet.titanx.cc",
-      "steps": [
-        {
-          "title": "Join the Titan Exchange Waitlist",
-          "body": "Visit the Titan Exchange waitlist , connect your wallet, and sign the message."
-        },
-        {
-          "title": "Share Your Referral Link",
-          "body": "Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond."
-        },
-        {
-          "title": "Open the Titan Testnet",
-          "body": "Go to the Titan testnet and connect the wallet you used for the waitlist."
-        },
-        {
-          "title": "Claim Testnet USDC",
-          "body": "Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet."
-        },
-        {
-          "title": "Enable Trading",
-          "body": "Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account."
-        },
-        {
-          "title": "Place a Perp Order",
-          "body": "Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order"
-        }
-      ],
-      "description": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet."
-    },
-    {
-      "slug": "canopy",
-      "name": "Canopy",
-      "tagline": "Canopy Network has confirmed a $CNPY token airdrop through a points-based rewards program. Points earned through platfor",
-      "status": "potential",
-      "categoryText": "blockchain infrastructure",
-      "chains": [
-        "Own Chain"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/canopy/",
-      "officialUrl": "https://app.canopynetwork.org",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Canopy",
-      "officialHost": "app.canopynetwork.org",
-      "steps": [
-        {
-          "title": "Submit Your Testnet Points",
-          "body": "Visit the submission portal and sign in with the EVM wallet you registered Create or select a Canopy wallet to receive tokens The locked portion is already credited to your wallet and releases on its own schedule, so there is nothing further to claim, sign, or pay gas for."
-        }
-      ],
-      "description": "Canopy Network has confirmed a $CNPY token airdrop through a points-based rewards program. Points earned through platform activity — including retroactive rewards for early participation, testnet interactions, and quests — will convert to $CNPY allocations at a future date."
+      "sourceUrl": "https://airdrops.io/satsuma/",
+      "officialUrl": "https://satsuma.exchange",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Satsuma",
+      "officialHost": "satsuma.exchange",
+      "steps": [],
+      "description": "Satsuma’s airdrop checker is now live ahead of the SUMA TGE on June 4, 2026, with 3,000,000 SUMA allocated to early supporters, liquidity providers, and community members."
     },
     {
       "slug": "orbinum",
@@ -468,7 +551,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/orbinum/",
       "officialUrl": "https://app.orbinum.network",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Orbinum",
       "officialHost": "app.orbinum.network",
       "steps": [
@@ -512,6 +595,50 @@
       "description": "Orbinum has confirmed its airdrop. Season 1, called the Genesis Community, started on March 13, 2026, and rewards users with ORB Credits for quests, weekly streaks, referrals, and testnet activity like shielding, private transfers, unshielding, and selective disclosure."
     },
     {
+      "slug": "titan-exchange",
+      "name": "Titan Exchange",
+      "tagline": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testne",
+      "status": "potential",
+      "categoryText": "trading tool",
+      "chains": [
+        "Canton"
+      ],
+      "sourceType": "airdrop_aggregator",
+      "sourceName": "Airdrops.io",
+      "sourceUrl": "https://airdrops.io/titan-exchange/",
+      "officialUrl": "https://testnet.titanx.cc",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Titan Exchange",
+      "officialHost": "testnet.titanx.cc",
+      "steps": [
+        {
+          "title": "Join the Titan Exchange Waitlist",
+          "body": "Visit the Titan Exchange waitlist , connect your wallet, and sign the message."
+        },
+        {
+          "title": "Share Your Referral Link",
+          "body": "Copy the referral link from your status card and share it. Each person who joins through it counts toward your next tier, from Bronze up to Diamond."
+        },
+        {
+          "title": "Open the Titan Testnet",
+          "body": "Go to the Titan testnet and connect the wallet you used for the waitlist."
+        },
+        {
+          "title": "Claim Testnet USDC",
+          "body": "Claim test USDC inside the app. These funds have no real value and exist only for trading on the testnet."
+        },
+        {
+          "title": "Enable Trading",
+          "body": "Click “Enable Trading” and approve the request in your wallet. You only need to do this once per account."
+        },
+        {
+          "title": "Place a Perp Order",
+          "body": "Open your first position on a market such as BTC-USDCx: Choose a market from the list Enter the order amount Set your price Confirm the order"
+        }
+      ],
+      "description": "The Titan Exchange airdrop is speculative. The team has not announced a token, a points system, or any reward for testnet users. What exists today is a waitlist with tiered status cards and a public testnet, and Titan says testnet users get early priority at mainnet."
+    },
+    {
       "slug": "tastyco",
       "name": "Tastyco",
       "tagline": "TastyCo has confirmed a $100,000 $TASTY airdrop campaign, run through a pre-TGE points system. The tokenomics reserve 5%",
@@ -524,7 +651,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tastyco/",
       "officialUrl": "https://app.tastyco.io",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Tastyco",
       "officialHost": "app.tastyco.io",
       "steps": [
@@ -564,78 +691,6 @@
       "description": "TastyCo has confirmed a $100,000 $TASTY airdrop campaign, run through a pre-TGE points system. The tokenomics reserve 5% of supply for airdrops and another 15% for community quests and rewards paid out over 36 months."
     },
     {
-      "slug": "satsuma",
-      "name": "Satsuma",
-      "tagline": "Satsuma’s airdrop checker is now live ahead of the SUMA TGE on June 4, 2026, with 3,000,000 SUMA allocated to early supp",
-      "status": "potential",
-      "categoryText": "liquidity",
-      "chains": [
-        "Citrea"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/satsuma/",
-      "officialUrl": "https://satsuma.exchange",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Satsuma",
-      "officialHost": "satsuma.exchange",
-      "steps": [],
-      "description": "Satsuma’s airdrop checker is now live ahead of the SUMA TGE on June 4, 2026, with 3,000,000 SUMA allocated to early supporters, liquidity providers, and community members."
-    },
-    {
-      "slug": "cambria",
-      "name": "Cambria",
-      "tagline": "Cambria has extended the deadline for historical users to accept the Genesis Event Opt-In Agreement to October 8, 2026. ",
-      "status": "potential",
-      "categoryText": "gaming",
-      "chains": [
-        "Ethereum",
-        "Abstract"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/cambria/",
-      "officialUrl": "https://lobby.cambria.gg",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Cambria",
-      "officialHost": "lobby.cambria.gg",
-      "steps": [
-        {
-          "title": "Create Your Cambria Account",
-          "body": "Visit the Cambria lobby and set up an account. Use invite code 9df14149 at sign-up, which gives both you and the referrer a points boost on future activity."
-        },
-        {
-          "title": "Link Your Wallets",
-          "body": "Connect an EVM wallet, a Solana wallet, and an Abstract wallet from your account settings. Cambria checks activity across all three when it calculates your Degen and Chad Scores, so linking all of them matters even if you only plan to play on one chain."
-        },
-        {
-          "title": "Check Your Loot Chests Eligibility",
-          "body": "Once your wallets are linked, head to the claims dashboard to see your Degen Score and Chad Score, along with any Loot Chests you’ve already qualified for. Your Care Package size scales based on your degen score across: Solana trading activity (memecoins, DeFi, prediction markets) Polymarket trading activity Multi-chain risk-taking (perps, options, NFT trading) Time-weighted holdings across degen-adjacent assets Notable community participation"
-        },
-        {
-          "title": "Claim Your Loot Chests",
-          "body": "Claim available chests from the lobby within the 14-day claim window. Chests convert into $RSGP allocations, and anything tied to an eligible wallet is also sent automatically at TGE."
-        },
-        {
-          "title": "Fund Your Wallet for Gameplay",
-          "body": "Playing Dungeons and Gold Rush takes USDC or ETH for Risk Keys and in-game costs. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
-        },
-        {
-          "title": "Play Dungeons for Loot and Points",
-          "body": "Buy a Risk Key for about 0.1 USDC and run a dungeon. Extract successfully and you keep the loot; die inside and you lose the key’s stake. Loot you cash out at the Royal Treasury converts into Genesis Airdrop points on top of any in-game currency."
-        },
-        {
-          "title": "Earn Points Through Duel Arena and Side Activities",
-          "body": "Duel Arena lets you wager directly against other players in 1v1 fights, and side activities like Pit Fights, island fishing, and bar games generate smaller, steady point drips between bigger runs."
-        },
-        {
-          "title": "Mint a Royal Charter for Full Seasonal Earning",
-          "body": "During Gold Rush seasons, minting a Royal Charter unlocks full earning features and daily energy regeneration. Without one, you can still play, but your point accumulation is capped."
-        }
-      ],
-      "description": "Cambria has extended the deadline for historical users to accept the Genesis Event Opt-In Agreement to October 8, 2026. Eligible users who don’t opt in by then may lose access to their allocation."
-    },
-    {
       "slug": "raycash",
       "name": "Raycash",
       "tagline": "Raycash has not announced a token, a ticker, or an airdrop. Raycash Points are the only reward system so far, and the te",
@@ -648,7 +703,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/raycash/",
       "officialUrl": "https://raycash.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Raycash",
       "officialHost": "raycash.xyz",
       "steps": [
@@ -696,7 +751,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/rwaperp/",
       "officialUrl": "https://rwaperp.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Rwaperp",
       "officialHost": "rwaperp.xyz",
       "steps": [
@@ -748,7 +803,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/synthra/",
       "officialUrl": "https://synthra.org",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Synthra",
       "officialHost": "synthra.org",
       "steps": [
@@ -792,7 +847,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/mindgames/",
       "officialUrl": "https://minds.games",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Mindgames",
       "officialHost": "minds.games",
       "steps": [
@@ -831,7 +886,7 @@
       "slug": "czr",
       "name": "Czr",
       "tagline": "The CZR Genesis Airdrop ran from September 21 to 30, 2026, and rewarded users who completed account, wallet and social t",
-      "status": "potential",
+      "status": "ended",
       "categoryText": "wallet",
       "chains": [
         "Ethereum"
@@ -840,39 +895,10 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/czr/",
       "officialUrl": "https://airdrop.czrex.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Czr",
       "officialHost": "airdrop.czrex.com",
-      "steps": [
-        {
-          "title": "Open the Official CZR Claim Page",
-          "body": "Go to the CZR claim page on the airdrop.czrex.com domain. Genesis and Quest participants both claim here. Ignore claim links sent through DMs, comments or search ads, and read our airdrop safety guide if you are unsure about a site."
-        },
-        {
-          "title": "Check Your Eligibility",
-          "body": "Paste your wallet address into the eligibility checker and click “Check.” Use the Ethereum wallet you connected during the Genesis campaign or the Quest program."
-        },
-        {
-          "title": "Get ETH for the Claim Fee",
-          "body": "The claim is an Ethereum transaction, so you need a small amount of ETH on Ethereum mainnet for gas. You can buy ETH on Bybit , or bridge and swap funds from another chain to Ethereum with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
-        },
-        {
-          "title": "Connect Your Eligible Wallet",
-          "body": "Click “Connect Wallet” and approve the connection in MetaMask, Rabby or another Ethereum wallet. The page shows your CZR allocation once the wallet is connected."
-        },
-        {
-          "title": "Claim Your CZR",
-          "body": "Click the claim button and confirm the transaction in your wallet before the window closes on October 5, 2026."
-        },
-        {
-          "title": "Wait for the October 11 Unlock",
-          "body": "Airdropped CZR stays locked for 10 days after the October 1 launch. Until October 11, you cannot sell, trade, transfer or withdraw it."
-        },
-        {
-          "title": "Trade CZR on CZR Exchange",
-          "body": "CZR/USDT spot trading opens on CZR Exchange on October 1. CZR deposits and withdrawals on the exchange stay paused until October 11 at 1:00 PM Singapore time, while trading itself remains open."
-        }
-      ],
+      "steps": [],
       "description": "The CZR Genesis Airdrop ran from September 21 to 30, 2026, and rewarded users who completed account, wallet and social tasks with campaign coins. Midway through, the team doubled the Genesis pool from 5 million to 10 million CZR and doubled coins on qualifying tasks. Users who earned points in the earlier CZR Quest program also receive CZR, tracked separately from the Genesis pool."
     },
     {
@@ -888,7 +914,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/powerx-onewallet/",
       "officialUrl": "https://airdrops.io/powerx-onewallet/",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Powerx Onewallet",
       "steps": [
         {
@@ -939,7 +965,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/memebook/",
       "officialUrl": "https://mint.memebook.app",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Memebook",
       "officialHost": "mint.memebook.app",
       "steps": [
@@ -987,7 +1013,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/kryvora-network/",
       "officialUrl": "https://tasks.kryvora.network",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Kryvora Network",
       "officialHost": "tasks.kryvora.network",
       "steps": [
@@ -1039,7 +1065,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/vibe-vibe/",
       "officialUrl": "https://testnet.vibevibe.fun",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Vibe Vibe",
       "officialHost": "testnet.vibevibe.fun",
       "steps": [
@@ -1087,7 +1113,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/baibai/",
       "officialUrl": "https://app.baibai.cx",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Baibai",
       "officialHost": "app.baibai.cx",
       "steps": [
@@ -1123,54 +1149,6 @@
       "description": "BaiBai has not announced a token or airdrop, so this is a speculative opportunity. The team launched a points program alongside the public release, rewarding traders based on volume and activity. Early users get the biggest boost, and there is no official word yet on how points might convert to tokens."
     },
     {
-      "slug": "fables",
-      "name": "Fables",
-      "tagline": "Fables has not confirmed an airdrop. Its documentation says points are intended to count toward a possible future token ",
-      "status": "potential",
-      "categoryText": "dex",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/fables/",
-      "officialUrl": "https://fables.fi",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Fables",
-      "officialHost": "fables.fi",
-      "steps": [
-        {
-          "title": "Add Robinhood Chain to Your Wallet",
-          "body": "Robinhood Wallet supports the chain by default (see our Robinhood Chain guide for setup basics). For MetaMask, Rabby, or another EVM wallet, add Robinhood Chain manually (chain ID 4663, ETH for gas)."
-        },
-        {
-          "title": "Fund Your Wallet With ETH or USDG",
-          "body": "You need ETH for gas and either ETH or USDG to provide liquidity. Buy ETH on Bybit and withdraw it to your wallet, then move it onto Robinhood Chain or swap into USDG with the bridge widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
-        },
-        {
-          "title": "Connect Your Wallet to Fables",
-          "body": "Open Fables and connect your wallet. Using this link applies a referral, which does not reduce your own points."
-        },
-        {
-          "title": "Deposit Liquidity Into a Fables Market",
-          "body": "Go to the deposit section and choose an eligible market: ETH/USDG: crypto pair with round-the-clock trading SPY/USDG: tokenized S&P 500 ETF GLD/USDG: tokenized gold ETF TSLA/USDG: tokenized Tesla stock Pick a price range, enter your ETH or USDG amount, and confirm the transaction. Other supported tokens work too."
-        },
-        {
-          "title": "Keep Your Position in Range",
-          "body": "Positions earn swap fees, and therefore points, only while the price sits inside your range. Check your position regularly and adjust the range when the price moves out."
-        },
-        {
-          "title": "Claim Weekly USDG Rewards",
-          "body": "Open the rewards panel on Fables each week and claim your USDG. Rewards are based on the swap fees your positions earned that week."
-        },
-        {
-          "title": "Create Your Referral Link",
-          "body": "Once your position is worth at least $100, connect your X account on the Points Board to generate a referral link. You earn 10% of the LP points each invited user earns."
-        }
-      ],
-      "description": "Fables has not confirmed an airdrop. Its documentation says points are intended to count toward a possible future token distribution, subject to separate final terms."
-    },
-    {
       "slug": "wick",
       "name": "Wick",
       "tagline": "Wick has not confirmed an airdrop, and no allocation, points system, or TGE date has been announced. The only official s",
@@ -1183,7 +1161,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/wick/",
       "officialUrl": "https://wick.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Wick",
       "officialHost": "wick.xyz",
       "steps": [
@@ -1211,97 +1189,6 @@
       "description": "Wick has not confirmed an airdrop, and no allocation, points system, or TGE date has been announced. The only official signal is the September 7, 2026 waitlist launch post, which says early users will be recognized."
     },
     {
-      "slug": "worldie",
-      "name": "Worldie",
-      "tagline": "Worldie has not confirmed an airdrop, and the $WORLDIE token has not launched. The early access page invites users to “b",
-      "status": "ended",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/worldie/",
-      "officialUrl": "https://worldie.world",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Worldie",
-      "officialHost": "worldie.world",
-      "steps": [
-        {
-          "title": "Visit the Worldie Early Access Page",
-          "body": "Go to the Worldie early access page and click “Join early.” Sign in with your X account or Google."
-        },
-        {
-          "title": "Join the Worldie Discord",
-          "body": "Use the Discord icon on the early access page to join the official Worldie Discord. The +400 World Points bonus is added once you’re in the server."
-        },
-        {
-          "title": "Connect Your X Account and Wallet",
-          "body": "Open the “Get your invite” panel and connect X (if you signed in with Google) along with a wallet. Connecting both locks your referral link. There is no deposit step."
-        },
-        {
-          "title": "Claim Your Invite Link",
-          "body": "Claim your personal invite link from the same panel. Worldie ties the link to your name."
-        },
-        {
-          "title": "Share Your Link",
-          "body": "Send the link to friends and communities that would use a social trading app. A referral only counts after the invited user signs up and connects both X and a wallet, so mention both requirements when you share it."
-        },
-        {
-          "title": "Track Your Rank on the Leaderboard",
-          "body": "Click “See the board” to check your World Points and position. Global, Friends, This Week, and All Time tabs let you compare yourself against everyone or just your own network."
-        }
-      ],
-      "description": "Worldie has not confirmed an airdrop, and the $WORLDIE token has not launched. The early access page invites users to “be early for $WORLDIE,” and the team says the token will launch on Worldie through Pons, with the announcement coming first on its official channels."
-    },
-    {
-      "slug": "blackboard",
-      "name": "Blackboard",
-      "tagline": "Blackboard has not confirmed a token or an airdrop. What exists is Board Point, a rewards balance tied to trading activi",
-      "status": "potential",
-      "categoryText": "trading tool",
-      "chains": [
-        "Own Chain"
-      ],
-      "sourceType": "airdrop_aggregator",
-      "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/blackboard/",
-      "officialUrl": "https://blackboard.fi",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Blackboard",
-      "officialHost": "blackboard.fi",
-      "steps": [
-        {
-          "title": "Join the Blackboard Waitlist",
-          "body": "Go to the Blackboard waitlist page and sign up with a Google or X account. Your rank updates live, and higher ranked users reach Alpha sooner."
-        },
-        {
-          "title": "Follow Blackboard and Post the Referral Tweet",
-          "body": "Link your X account in the waitlist task list, follow Blackboard , and then post the referral tweet the page generates. Blackboard verifies both before crediting the task, which is worth 60 points."
-        },
-        {
-          "title": "Share Your Invite Link",
-          "body": "Copy the invite link from your waitlist dashboard. Every friend who joins through it adds 30 points to your score. Invite codes also circulate through partners and selected communities."
-        },
-        {
-          "title": "Create Your Blackboard Account",
-          "body": "When access opens, sign in at the Blackboard terminal with Google, Apple or email, or connect a wallet you already use. Social login creates an embedded self-custodial wallet, so you hold the keys either way."
-        },
-        {
-          "title": "Deposit USDC to Your Blackboard Wallet",
-          "body": "Open Deposit from the Portfolio screen, choose the asset and network, then send funds to the address shown. Picking the wrong network can lose the deposit permanently. Instant and free: USDC on Arbitrum, Polygon, HyperEVM or Solana Routed for a fee shown before you confirm: USDC on Ethereum, Base or BNB Chain Also accepted: USDT credited as USDC, $10 minimum You can buy USDC on Bybit and withdraw straight to Arbitrum , or shift what you already hold onto a supported network with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
-        },
-        {
-          "title": "Trade Perpetual Futures",
-          "body": "Open the Trade tab and pick a market. Volume lands on two protocols that each run their own reward programs, so one position builds history in more than one place."
-        },
-        {
-          "title": "Invite Traders From Inside the Terminal",
-          "body": "Grab your referral code from My Page once you are trading. You earn 10% of the Blackboard fee on every trade your invitees make. Self-referral is banned and rebates can be clawed back."
-        }
-      ],
-      "description": "Blackboard has not confirmed a token or an airdrop. What exists is Board Point, a rewards balance tied to trading activity, plus a live leaderboard and a referral program paying 10% of the Blackboard fee on invited users’ trades. Earning rates are still being finalized."
-    },
-    {
       "slug": "laptop",
       "name": "Laptop",
       "tagline": "The Day 1 airdrop is confirmed and its snapshots have closed, claim will run 30 days from TGE, after which anything uncl",
@@ -1314,7 +1201,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/laptop/",
       "officialUrl": "https://claim.laptoptoken.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Laptop",
       "officialHost": "claim.laptoptoken.com",
       "steps": [
@@ -1362,7 +1249,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/beldex/",
       "officialUrl": "https://quest.beldex.io",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Beldex",
       "officialHost": "quest.beldex.io",
       "steps": [
@@ -1410,7 +1297,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/flop-labs/",
       "officialUrl": "https://flop.finance",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Flop Labs",
       "officialHost": "flop.finance",
       "steps": [
@@ -1450,7 +1337,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tbook/",
       "officialUrl": "https://engage.tbook.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Tbook",
       "officialHost": "engage.tbook.com",
       "steps": [
@@ -1494,7 +1381,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/omega/",
       "officialUrl": "https://olympus.omeganetwork.co",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Omega",
       "officialHost": "olympus.omeganetwork.co",
       "steps": [
@@ -1538,7 +1425,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/hertzflow/",
       "officialUrl": "https://hertzflow.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Hertzflow",
       "officialHost": "hertzflow.xyz",
       "steps": [
@@ -1586,7 +1473,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nowa/",
       "officialUrl": "https://app.nowa.finance",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Nowa",
       "officialHost": "app.nowa.finance",
       "steps": [
@@ -1638,7 +1525,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/yakkamon/",
       "officialUrl": "https://yakkamon.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Yakkamon",
       "officialHost": "yakkamon.com",
       "steps": [
@@ -1681,7 +1568,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sweep-finance/",
       "officialUrl": "https://sweep.finance",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Sweep Finance",
       "officialHost": "sweep.finance",
       "steps": [
@@ -1729,7 +1616,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/voice/",
       "officialUrl": "https://voice.fun",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Voice",
       "officialHost": "voice.fun",
       "steps": [
@@ -1773,112 +1660,95 @@
       "description": "The $VOICE token and its token generation event are confirmed, with the TGE targeted for Q4 2026. VOICE ties $VOICE distribution to activity: CLOUT earned in Social Camp hard-syncs to your profile, and the tiers list a base $VOICE airdrop allocation, whitelist access, NFT drops, and early access at the higher levels."
     },
     {
-      "slug": "ammora",
-      "name": "Ammora",
-      "tagline": "Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may ",
-      "status": "potential",
-      "categoryText": "liquidity",
+      "slug": "worldie",
+      "name": "Worldie",
+      "tagline": "Worldie has not confirmed an airdrop, and the $WORLDIE token has not launched. The early access page invites users to “b",
+      "status": "ended",
       "chains": [
-        "Giwa"
+        "Robinhood Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/ammora/",
-      "officialUrl": "https://ammora.org",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Ammora",
-      "officialHost": "ammora.org",
+      "sourceUrl": "https://airdrops.io/worldie/",
+      "officialUrl": "https://worldie.world",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Worldie",
+      "officialHost": "worldie.world",
       "steps": [
         {
-          "title": "Add GIWA Sepolia to your wallet",
-          "body": "Open MetaMask or another EVM wallet and add GIWA Sepolia, chain ID 91342."
+          "title": "Visit the Worldie Early Access Page",
+          "body": "Go to the Worldie early access page and click “Join early.” Sign in with your X account or Google."
         },
         {
-          "title": "Claim GIWA Sepolia test ETH",
-          "body": "Request test ETH from the Lambda256 faucet linked on Ammora’s mission page. The liquidity mission has a 0.001 ETH minimum and gas on GIWA is negligible, so you need very little."
+          "title": "Join the Worldie Discord",
+          "body": "Use the Discord icon on the early access page to join the official Worldie Discord. The +400 World Points bonus is added once you’re in the server."
         },
         {
-          "title": "Join the Ammora waitlist",
-          "body": "Go to the Ammora waitlist , connect your wallet, sign the message and register an email. Every mission stays locked until this is done, and the wallet you use will be publicly tied to the leaderboard."
+          "title": "Connect Your X Account and Wallet",
+          "body": "Open the “Get your invite” panel and connect X (if you signed in with Google) along with a wallet. Connecting both locks your referral link. There is no deposit step."
         },
         {
-          "title": "Follow @AmmoraHQ on X",
-          "body": "Follow the official Ammora account from the X account you want credited, then return to the dashboard to verify for 100 AP."
+          "title": "Claim Your Invite Link",
+          "body": "Claim your personal invite link from the same panel. Worldie ties the link to your name."
         },
         {
-          "title": "Retweet the pinned post",
-          "body": "Repost the pinned campaign post from the same X account for another 100 AP."
+          "title": "Share Your Link",
+          "body": "Send the link to friends and communities that would use a social trading app. A referral only counts after the invited user signs up and connects both X and a wallet, so mention both requirements when you share it."
         },
         {
-          "title": "Publish the daily X post",
-          "body": "The dashboard fills in the post text for you, so this takes seconds. At 200 AP it is the highest paying repeatable mission."
-        },
-        {
-          "title": "Supply test ETH liquidity",
-          "body": "Press Supply on the daily liquidity mission and deposit at least 0.001 GIWA Sepolia test ETH into the Ammora vault. Each verified supply pays 50 AP. Repeat it daily."
-        },
-        {
-          "title": "Clear the Launch Week bonus",
-          "body": "Complete all five missions once during Launch Week, meaning joining, following, retweeting, posting and supplying. It is the largest single chunk of points available and it disappears when the window closes."
-        },
-        {
-          "title": "Share your referral link",
-          "body": "Open the referral tab on the waitlist page and copy your link. Each signup credits 200 AP up to a cap of five, so 1,000 AP is on the table."
+          "title": "Track Your Rank on the Leaderboard",
+          "body": "Click “See the board” to check your World Points and position. Global, Friends, This Week, and All Time tabs let you compare yourself against everyone or just your own network."
         }
       ],
-      "description": "Ammora has no token and has not announced an airdrop, so this is a speculative play on a points program that may or may not convert into a distribution. What the team has committed to is beta access: the leaderboard guarantees seats to the top 1,000 point holders, plus 100 more drawn at random from everyone else."
+      "description": "Worldie has not confirmed an airdrop, and the $WORLDIE token has not launched. The early access page invites users to “be early for $WORLDIE,” and the team says the token will launch on Worldie through Pons, with the announcement coming first on its official channels."
     },
     {
-      "slug": "acepyr",
-      "name": "Acepyr",
-      "tagline": "No Acepyr airdrop has been announced. The company’s terms are blunt: testnet $ACEPYR is a symbolic point system with no ",
+      "slug": "blackboard",
+      "name": "Blackboard",
+      "tagline": "Blackboard has not confirmed a token or an airdrop. What exists is Board Point, a rewards balance tied to trading activi",
       "status": "potential",
-      "categoryText": "prediction market",
+      "categoryText": "trading tool",
       "chains": [
-        "Base"
+        "Own Chain"
       ],
       "sourceType": "airdrop_aggregator",
       "sourceName": "Airdrops.io",
-      "sourceUrl": "https://airdrops.io/acepyr/",
-      "officialUrl": "https://acepyr.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
-      "rawTitle": "Acepyr",
-      "officialHost": "acepyr.com",
+      "sourceUrl": "https://airdrops.io/blackboard/",
+      "officialUrl": "https://blackboard.fi",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
+      "rawTitle": "Blackboard",
+      "officialHost": "blackboard.fi",
       "steps": [
         {
-          "title": "Create Your Acepyr Account",
-          "body": "Sign up at Acepyr with an email and password, entering referral code PW34SD3C2J during registration. Codes only count when applied at signup. Verify your email to activate the account."
+          "title": "Join the Blackboard Waitlist",
+          "body": "Go to the Blackboard waitlist page and sign up with a Google or X account. Your rank updates live, and higher ranked users reach Alpha sooner."
         },
         {
-          "title": "Accept the Legal Documents and Complete Onboarding",
-          "body": "First login walks you through the Terms of Service, Privacy Policy and Testnet Points Notice, then the onboarding survey. Those steps plus your first sign-in pay 300 testnet $ACEPYR."
+          "title": "Follow Blackboard and Post the Referral Tweet",
+          "body": "Link your X account in the waitlist task list, follow Blackboard , and then post the referral tweet the page generates. Blackboard verifies both before crediting the task, which is worth 60 points."
         },
         {
-          "title": "Link a Wallet You Control",
-          "body": "In Settings, link a wallet by signing a message; a pasted address does not qualify. One address links to one account permanently, and linking pays 500 testnet $ACEPYR."
+          "title": "Share Your Invite Link",
+          "body": "Copy the invite link from your waitlist dashboard. Every friend who joins through it adds 30 points to your score. Invite codes also circulate through partners and selected communities."
         },
         {
-          "title": "Join the Mainnet Waitlist",
-          "body": "The most productive click on the platform. Joining needs a proven wallet holding at least the current minimum, now $10, read live across Base, Ethereum, Arbitrum, Optimism, Polygon and BSC. Native coins and major stablecoins count, and nothing is sent to Acepyr, so balances you already hold for Base , Arbitrum or Optimism farming clear the check. Joining pays 1,000 testnet $ACEPYR, puts the first 10,000 qualifying accounts in line for $5 at launch, and activates whoever referred you. Short of the minimum? Pick up ETH or USDC on Bybit , then use the widget below to move it onto Base or another supported chain. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
+          "title": "Create Your Blackboard Account",
+          "body": "When access opens, sign in at the Blackboard terminal with Google, Apple or email, or connect a wallet you already use. Social login creates an embedded self-custodial wallet, so you hold the keys either way."
         },
         {
-          "title": "Trade the Live Up or Down Markets",
-          "body": "Take Up or Down on a five-minute window and let the price feed settle it. Three first-time achievements sit here: Open your first position: 250 testnet $ACEPYR Place your first limit order: 250 testnet $ACEPYR Close your first profitable position: 300 testnet $ACEPYR"
+          "title": "Deposit USDC to Your Blackboard Wallet",
+          "body": "Open Deposit from the Portfolio screen, choose the asset and network, then send funds to the address shown. Picking the wrong network can lose the deposit permanently. Instant and free: USDC on Arbitrum, Polygon, HyperEVM or Solana Routed for a fee shown before you confirm: USDC on Ethereum, Base or BNB Chain Also accepted: USDT credited as USDC, $10 minimum You can buy USDC on Bybit and withdraw straight to Arbitrum , or shift what you already hold onto a supported network with the widget below. Bridge funds Swap and bridge across 30+ chains without leaving this page. Fast routes, low fees. Bridge now Opens an interactive bridge widget Open the bridge in a new tab"
         },
         {
-          "title": "Enter the Weekly Tournament",
-          "body": "Entry is free and individual, with no ticket and no minimum balance. One settled trade that week makes you valid and earns a share of the 10,000 testnet $ACEPYR pool."
+          "title": "Trade Perpetual Futures",
+          "body": "Open the Trade tab and pick a market. Volume lands on two protocols that each run their own reward programs, so one position builds history in more than one place."
         },
         {
-          "title": "Build a Sign-In Streak",
-          "body": "The streak pays at five rungs: 50 at two days, 100 at three, 300 at seven, 500 at fourteen and 1,000 at thirty. Each rung banks permanently."
-        },
-        {
-          "title": "Generate Your Referral Code",
-          "body": "Open Profile, then Referrals. Codes reset every month and points do not carry over."
+          "title": "Invite Traders From Inside the Terminal",
+          "body": "Grab your referral code from My Page once you are trading. You earn 10% of the Blackboard fee on every trade your invitees make. Self-referral is banned and rebates can be clawed back."
         }
       ],
-      "description": "No Acepyr airdrop has been announced. The company’s terms are blunt: testnet $ACEPYR is a symbolic point system with no economic value, it cannot be bought, and it may never be worth anything."
+      "description": "Blackboard has not confirmed a token or an airdrop. What exists is Board Point, a rewards balance tied to trading activity, plus a live leaderboard and a referral program paying 10% of the Blackboard fee on invited users’ trades. Earning rates are still being finalized."
     },
     {
       "slug": "ethena",
@@ -1894,7 +1764,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/ethena/",
       "officialUrl": "https://app.ethena.fi",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Ethena",
       "officialHost": "app.ethena.fi",
       "steps": [
@@ -1946,7 +1816,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grass/",
       "officialUrl": "https://app.getgrass.io",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Grass",
       "officialHost": "app.getgrass.io",
       "steps": [
@@ -1990,7 +1860,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/pharos/",
       "officialUrl": "https://claim.pharos.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Pharos",
       "officialHost": "claim.pharos.xyz",
       "steps": [
@@ -2026,7 +1896,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/meteora/",
       "officialUrl": "https://met.meteora.ag",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Meteora",
       "officialHost": "met.meteora.ag",
       "steps": [],
@@ -2044,7 +1914,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/drift-protocol/",
       "officialUrl": "https://drift.trade",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Drift Protocol",
       "officialHost": "drift.trade",
       "steps": [
@@ -2088,7 +1958,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/doppler-finance/",
       "officialUrl": "https://app.doppler.finance",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Doppler Finance",
       "officialHost": "app.doppler.finance",
       "steps": [
@@ -2132,7 +2002,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/tread-fi/",
       "officialUrl": "https://app.tread.fi",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Tread Fi",
       "officialHost": "app.tread.fi",
       "steps": [
@@ -2184,7 +2054,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nado/",
       "officialUrl": "https://app.nado.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Nado",
       "officialHost": "app.nado.xyz",
       "steps": [
@@ -2236,7 +2106,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/limitless-prediction-markets/",
       "officialUrl": "https://limitless.exchange",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Limitless Prediction Markets",
       "officialHost": "limitless.exchange",
       "steps": [
@@ -2288,7 +2158,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/grvt/",
       "officialUrl": "https://grvt.io",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Grvt",
       "officialHost": "grvt.io",
       "steps": [
@@ -2328,7 +2198,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/sosovalue/",
       "officialUrl": "https://sosovalue.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Sosovalue",
       "officialHost": "sosovalue.com",
       "steps": [
@@ -2384,7 +2254,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/arcium/",
       "officialUrl": "https://rtg.arcium.com",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Arcium",
       "officialHost": "rtg.arcium.com",
       "steps": [
@@ -2428,7 +2298,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/solstice/",
       "officialUrl": "https://claim.solstice.finance",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Solstice",
       "officialHost": "claim.solstice.finance",
       "steps": [],
@@ -2447,7 +2317,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/o1-exchange/",
       "officialUrl": "https://o1.exchange",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "O1 Exchange",
       "officialHost": "o1.exchange",
       "steps": [
@@ -2495,7 +2365,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/infinex/",
       "officialUrl": "https://app.infinex.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Infinex",
       "officialHost": "app.infinex.xyz",
       "steps": [
@@ -2540,7 +2410,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/huma-finance/",
       "officialUrl": "https://claim.huma.finance",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Huma Finance",
       "officialHost": "claim.huma.finance",
       "steps": [
@@ -2588,7 +2458,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/nexus/",
       "officialUrl": "https://explorer.nexus.xyz",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Nexus",
       "officialHost": "explorer.nexus.xyz",
       "steps": [],
@@ -2607,7 +2477,7 @@
       "sourceName": "Airdrops.io",
       "sourceUrl": "https://airdrops.io/starknet/",
       "officialUrl": "https://strkbtc.starknet.io",
-      "fetchedAt": "2026-10-13T07:06:53.069Z",
+      "fetchedAt": "2026-10-13T15:02:14.918Z",
       "rawTitle": "Starknet",
       "officialHost": "strkbtc.starknet.io",
       "steps": [],

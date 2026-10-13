@@ -21,7 +21,7 @@
       "type": "airdrop_aggregator",
       "name": "Airdrops.io",
       "url": "https://airdrops.io/nous-research/",
-      "fetched_at": "2026-10-13T07:06:53.069Z"
+      "fetched_at": "2026-10-13T15:02:14.918Z"
     }
   ],
   "evidence": [
@@ -247,7 +247,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://airdrops.io/nous-research/",
-      "checked_at": "2026-10-13T07:06:53.069Z",
+      "checked_at": "2026-10-13T15:02:14.918Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -418,7 +418,7 @@
   ],
   "created_at": "2026-10-12T18:03:42.262Z",
   "discovered_at": "2026-10-12T18:03:42.262Z",
-  "last_checked_at": "2026-10-13T07:06:53.069Z",
+  "last_checked_at": "2026-10-13T15:02:14.918Z",
   "last_changed_at": "2026-10-12T18:03:42.262Z",
   "sourcedDescription": "The Nous Research airdrop is speculative. The team has not announced a token, a ticker, a points program or eligibility criteria, and there is no task dashboard to track.",
   "tagline_en": "The Nous Research airdrop is speculative. The team has not announced a token, a ticker, a points program or eligibility criteria, and there is no task dashboard to track.",
