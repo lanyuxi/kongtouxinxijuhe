@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-13T20:37:15.274Z",
-  "total": 188,
+  "updated_at": "2026-10-13T23:54:12.802Z",
+  "total": 189,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -52,6 +52,7 @@
     "etherfi-borrowing-market": "logos/etherfi-borrowing-market.png",
     "etherfi-cash-liquid": "logos/etherfi-cash-liquid.png",
     "euler-v2": "logos/euler-v2.png",
+    "exsat-staking-btc": "logos/exsat-staking-btc.webp",
     "fables": "logos/fables.webp",
     "falcon-finance": "logos/falcon-finance.png",
     "fassets": "logos/fassets.png",
