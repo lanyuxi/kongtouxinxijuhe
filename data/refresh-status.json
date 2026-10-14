@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-10-14T18:57:45.858Z",
-  "finished_at": "2026-10-14T18:57:49.570Z",
+  "started_at": "2026-10-14T22:11:27.220Z",
+  "finished_at": "2026-10-14T22:11:29.581Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-10-14T18:57:45.858Z",
+  "updated_at": "2026-10-14T22:11:27.220Z",
   "data_changed": true,
-  "change_summary": "变更 53 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
+  "change_summary": "变更 42 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
-    "b14g 内容有更新",
-    "B2 Buzz 内容有更新",
     "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新"
+    "Bedrock uniBTC 内容有更新",
+    "CIAN Yield Layer 内容有更新",
+    "Clearstar 内容有更新"
   ],
   "added": 0,
-  "modified": 53,
+  "modified": 42,
   "removed": 0
 }
