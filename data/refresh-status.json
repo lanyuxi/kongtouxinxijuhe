@@ -1,12 +1,12 @@
 {
   "state": "success",
-  "started_at": "2026-10-15T05:07:27.053Z",
-  "finished_at": "2026-10-15T05:07:29.283Z",
+  "started_at": "2026-10-15T09:53:11.200Z",
+  "finished_at": "2026-10-15T09:53:13.349Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-10-15T05:07:27.053Z",
+  "updated_at": "2026-10-15T09:53:11.200Z",
   "data_changed": true,
-  "change_summary": "变更 53 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
+  "change_summary": "变更 44 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
     "b14g 内容有更新",
@@ -15,6 +15,6 @@
     "Bedrock uniBTC 内容有更新"
   ],
   "added": 0,
-  "modified": 53,
+  "modified": 44,
   "removed": 0
 }
