@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-16T09:07:40.267Z",
-  "total": 190,
+  "updated_at": "2026-10-16T13:57:11.607Z",
+  "total": 191,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -65,6 +65,7 @@
     "forward-industries-sol": "logos/forward-industries-sol.webp",
     "function-fbtc": "logos/function-fbtc.png",
     "gauntlet": "logos/gauntlet.png",
+    "gmx-evm": "logos/gmx-evm.webp",
     "gmx-v2-perps": "logos/gmx-v2-perps.png",
     "grass": "logos/grass.png",
     "grove-finance": "logos/grove-finance.png",
@@ -495,6 +496,7 @@
     "perptools": "https://icons.llamao.fi/icons/protocols/perptools",
     "nous-research": "https://www.faviconextractor.com/favicon/hermes-agent.nousresearch.com?larger=true",
     "catalyst-2": "https://www.faviconextractor.com/favicon/catalyst.app?larger=true",
-    "derive-v3-options": "https://icons.llamao.fi/icons/protocols/derive-v3-options"
+    "derive-v3-options": "https://icons.llamao.fi/icons/protocols/derive-v3-options",
+    "gmx-evm": "https://icons.llamao.fi/icons/protocols/gmx-evm"
   }
 }
