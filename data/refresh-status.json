@@ -1,10 +1,10 @@
 {
   "state": "success",
-  "started_at": "2026-10-19T03:01:29.647Z",
-  "finished_at": "2026-10-19T03:01:32.109Z",
+  "started_at": "2026-10-19T08:44:40.894Z",
+  "finished_at": "2026-10-19T08:44:42.987Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-10-19T03:01:29.647Z",
+  "updated_at": "2026-10-19T08:44:40.894Z",
   "data_changed": true,
   "change_summary": "变更 48 个：Aave V3 内容有更新；b14g 内容有更新；B2 Buzz 内容有更新",
   "change_details": [
