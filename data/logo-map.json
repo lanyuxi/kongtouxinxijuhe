@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-21T10:23:18.083Z",
-  "total": 191,
+  "updated_at": "2026-10-21T15:31:51.568Z",
+  "total": 193,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -72,10 +72,12 @@
     "grvt": "logos/grvt.png",
     "gtbtc": "logos/gtbtc.png",
     "hertzflow": "logos/hertzflow.png",
+    "hive-protocol": "logos/hive-protocol.webp",
     "huma": "logos/huma.webp",
     "huma-finance": "logos/huma-finance.png",
     "hyperithm": "logos/hyperithm.png",
     "hyperliquid": "logos/hyperliquid.png",
+    "hyperliquid-earn": "logos/hyperliquid-earn.png",
     "infinex": "logos/infinex.png",
     "invesco-ustb": "logos/invesco-ustb.png",
     "jupiter-lend": "logos/jupiter-lend.png",
@@ -497,6 +499,8 @@
     "nous-research": "https://www.faviconextractor.com/favicon/hermes-agent.nousresearch.com?larger=true",
     "catalyst-2": "https://www.faviconextractor.com/favicon/catalyst.app?larger=true",
     "derive-v3-options": "https://icons.llamao.fi/icons/protocols/derive-v3-options",
-    "gmx-evm": "https://icons.llamao.fi/icons/protocols/gmx-evm"
+    "gmx-evm": "https://icons.llamao.fi/icons/protocols/gmx-evm",
+    "hive-protocol": "https://icons.llamao.fi/icons/protocols/hive-protocol",
+    "hyperliquid-earn": "https://www.faviconextractor.com/favicon/app.hyperliquid.xyz?larger=true"
   }
 }
