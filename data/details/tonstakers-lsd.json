@@ -26,7 +26,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Tonstakers%20LSD",
-      "fetched_at": "2026-10-20T22:17:03.900Z"
+      "fetched_at": "2026-10-21T00:41:24.378Z"
     }
   ],
   "evidence": [
@@ -259,7 +259,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Tonstakers%20LSD",
-      "checked_at": "2026-10-20T22:17:03.900Z",
+      "checked_at": "2026-10-21T00:41:24.378Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -358,7 +358,7 @@
   ],
   "created_at": "2026-10-13T20:37:13.753Z",
   "discovered_at": "2026-10-13T20:37:13.753Z",
-  "last_checked_at": "2026-10-20T22:17:03.900Z",
+  "last_checked_at": "2026-10-21T00:41:24.378Z",
   "last_changed_at": "2026-10-20T19:08:04.491Z",
   "sourcedDescription": "Liquid Staking 协议，TVL 约 $191M。",
   "guide_version": "27161c460aa8bced3d48a4ce3c084be3306efc070811fb4fadd3487a63cd9f2e",
