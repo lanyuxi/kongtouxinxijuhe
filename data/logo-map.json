@@ -1,12 +1,13 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-10-22T16:01:52.479Z",
-  "total": 194,
+  "updated_at": "2026-10-22T19:59:53.460Z",
+  "total": 195,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
     "aave-v4": "logos/aave-v4.png",
     "acepyr": "logos/acepyr.ico",
+    "aera-v3": "logos/aera-v3.webp",
     "aerodrome-slipstream": "logos/aerodrome-slipstream.png",
     "ammora": "logos/ammora.png",
     "anemoy-capital": "logos/anemoy-capital.png",
@@ -502,6 +503,7 @@
     "derive-v3-options": "https://icons.llamao.fi/icons/protocols/derive-v3-options",
     "gmx-evm": "https://icons.llamao.fi/icons/protocols/gmx-evm",
     "hive-protocol": "https://icons.llamao.fi/icons/protocols/hive-protocol",
-    "hyperliquid-earn": "https://www.faviconextractor.com/favicon/app.hyperliquid.xyz?larger=true"
+    "hyperliquid-earn": "https://www.faviconextractor.com/favicon/app.hyperliquid.xyz?larger=true",
+    "aera-v3": "https://icons.llamao.fi/icons/protocols/aera-v3"
   }
 }
