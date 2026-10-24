@@ -1,10 +1,10 @@
 {
   "state": "success",
-  "started_at": "2026-10-24T06:30:52.594Z",
-  "finished_at": "2026-10-24T06:30:55.358Z",
+  "started_at": "2026-10-24T11:31:31.029Z",
+  "finished_at": "2026-10-24T11:31:33.240Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-10-24T06:30:52.594Z",
+  "updated_at": "2026-10-24T11:31:31.029Z",
   "data_changed": true,
   "change_summary": "变更 45 个：Aave V3 内容有更新；Aera V3 内容有更新；b14g 内容有更新",
   "change_details": [
