@@ -28,7 +28,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Aera%20V3",
-      "fetched_at": "2026-10-23T23:14:41.207Z"
+      "fetched_at": "2026-10-24T01:42:51.614Z"
     }
   ],
   "evidence": [
@@ -261,7 +261,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Aera%20V3",
-      "checked_at": "2026-10-23T23:14:41.207Z",
+      "checked_at": "2026-10-24T01:42:51.614Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -360,7 +360,7 @@
   ],
   "created_at": "2026-10-22T19:59:52.672Z",
   "discovered_at": "2026-10-22T19:59:52.672Z",
-  "last_checked_at": "2026-10-23T23:14:41.207Z",
+  "last_checked_at": "2026-10-24T01:42:51.614Z",
   "last_changed_at": "2026-10-23T23:14:41.340Z",
   "sourcedDescription": "Onchain Capital Allocator 协议，TVL 约 $192M。",
   "guide_version": "0b6b40adbe167d41eee3b8e5f3a8ed63fa35a27dce867f01977bd3ad39396c84",
