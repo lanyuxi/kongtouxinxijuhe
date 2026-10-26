@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:27:57.894Z",
+  "updated_at": "2026-10-26T21:48:09.919Z",
   "sources": [
     {
       "name": "Airdrops.io",
@@ -7,7 +7,7 @@
       "status": "failed",
       "ok": false,
       "fetched": 0,
-      "checked_at": "2026-10-26T17:27:57.894Z",
+      "checked_at": "2026-10-26T21:48:09.919Z",
       "last_success_at": "2026-10-13T15:02:14.845Z",
       "error": "Airdrops.io 全部分类页抓取失败或未解析到项目"
     },
@@ -17,8 +17,8 @@
       "status": "success",
       "ok": true,
       "fetched": 120,
-      "checked_at": "2026-10-26T17:27:57.894Z",
-      "last_success_at": "2026-10-26T17:27:57.894Z"
+      "checked_at": "2026-10-26T21:48:09.919Z",
+      "last_success_at": "2026-10-26T21:48:09.919Z"
     },
     {
       "name": "X (Twitter)",
@@ -26,7 +26,7 @@
       "status": "not_configured",
       "ok": false,
       "fetched": 0,
-      "checked_at": "2026-10-26T17:27:57.894Z",
+      "checked_at": "2026-10-26T21:48:09.919Z",
       "error": "尚未配置来源访问凭据"
     }
   ]
