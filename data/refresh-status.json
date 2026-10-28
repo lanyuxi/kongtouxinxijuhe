@@ -1,12 +1,12 @@
 {
   "state": "success",
-  "started_at": "2026-10-27T22:07:05.744Z",
-  "finished_at": "2026-10-27T22:07:08.257Z",
+  "started_at": "2026-10-28T01:19:20.830Z",
+  "finished_at": "2026-10-28T01:19:22.991Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-10-27T22:07:05.744Z",
+  "updated_at": "2026-10-28T01:19:20.830Z",
   "data_changed": true,
-  "change_summary": "变更 37 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 36 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
     "b14g 内容有更新",
@@ -15,6 +15,6 @@
     "BitFi Basis 内容有更新"
   ],
   "added": 0,
-  "modified": 37,
+  "modified": 36,
   "removed": 0
 }
