@@ -1,16 +1,16 @@
 {
   "state": "success",
-  "started_at": "2026-10-31T18:25:52.368Z",
-  "finished_at": "2026-10-31T18:25:54.820Z",
+  "started_at": "2026-10-31T21:49:01.446Z",
+  "finished_at": "2026-10-31T21:49:03.610Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-10-31T18:25:52.368Z",
+  "updated_at": "2026-10-31T21:49:01.446Z",
   "data_changed": true,
-  "change_summary": "变更 35 个：Aave V3 内容有更新；Bedrock uniBTC 内容有更新；CIAN Yield Layer 真实性：21 → 18",
+  "change_summary": "变更 35 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；Bedrock uniBTC 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
+    "Babylon Protocol 内容有更新",
     "Bedrock uniBTC 内容有更新",
-    "CIAN Yield Layer 真实性：21 → 18",
     "Concrete 内容有更新",
     "EigenCloud 内容有更新"
   ],
