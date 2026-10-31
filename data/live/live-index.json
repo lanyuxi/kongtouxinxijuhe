@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-31T13:55:19.184Z",
+  "updated_at": "2026-10-31T18:25:54.818Z",
   "sources": [
     {
       "source": "DefiLlama",
       "source_url": "https://api.llama.fi/protocols",
-      "fetched_at": "2026-10-31T13:55:17.085Z",
+      "fetched_at": "2026-10-31T18:25:52.368Z",
       "count": 120,
       "file": "data/live/defillama.json"
     }
