@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-02T08:25:46.469Z",
-  "total": 197,
+  "updated_at": "2026-11-02T18:45:48.302Z",
+  "total": 198,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -64,6 +64,7 @@
     "fluid-lending": "logos/fluid-lending.png",
     "fluid-lite": "logos/fluid-lite.png",
     "forward-industries-sol": "logos/forward-industries-sol.webp",
+    "fraxtal": "logos/fraxtal.webp",
     "function-fbtc": "logos/function-fbtc.png",
     "gauntlet": "logos/gauntlet.png",
     "gmx-evm": "logos/gmx-evm.webp",

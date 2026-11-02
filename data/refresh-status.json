@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-11-02T08:25:43.768Z",
-  "finished_at": "2026-11-02T08:25:46.272Z",
+  "started_at": "2026-11-02T18:45:45.103Z",
+  "finished_at": "2026-11-02T18:45:47.201Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-11-02T08:25:43.768Z",
+  "updated_at": "2026-11-02T18:45:45.103Z",
   "data_changed": true,
-  "change_summary": "变更 45 个：Aave V3 内容有更新；b14g 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "新增 1 个、变更 50 个：Aave V3 内容有更新；Aera V3 内容有更新；b14g 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
+    "Aera V3 内容有更新",
     "b14g 内容有更新",
     "Babylon Protocol 内容有更新",
-    "Bedrock uniBTC 内容有更新",
-    "BitFi Basis 内容有更新"
+    "Bedrock uniBTC 内容有更新"
   ],
-  "added": 0,
-  "modified": 45,
+  "added": 1,
+  "modified": 50,
   "removed": 0
 }
