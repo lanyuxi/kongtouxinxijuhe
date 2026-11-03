@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-02T18:45:48.302Z",
-  "total": 198,
+  "updated_at": "2026-11-03T01:21:08.310Z",
+  "total": 199,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -59,6 +59,7 @@
     "falcon-finance": "logos/falcon-finance.png",
     "fassets": "logos/fassets.png",
     "figure-markets-democratized-prime": "logos/figure-markets-democratized-prime.webp",
+    "figure-markets-prime": "logos/figure-markets-prime.webp",
     "flop-labs": "logos/flop-labs.svg",
     "fluid-dex": "logos/fluid-dex.png",
     "fluid-lending": "logos/fluid-lending.png",
@@ -507,6 +508,7 @@
     "gmx-evm": "https://icons.llamao.fi/icons/protocols/gmx-evm",
     "hive-protocol": "https://icons.llamao.fi/icons/protocols/hive-protocol",
     "hyperliquid-earn": "https://www.faviconextractor.com/favicon/app.hyperliquid.xyz?larger=true",
-    "aera-v3": "https://icons.llamao.fi/icons/protocols/aera-v3"
+    "aera-v3": "https://icons.llamao.fi/icons/protocols/aera-v3",
+    "figure-markets-prime": "https://icons.llamao.fi/icons/protocols/figure-markets-prime"
   }
 }
