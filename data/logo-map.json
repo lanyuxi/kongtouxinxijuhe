@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-04T16:20:05.833Z",
-  "total": 200,
+  "updated_at": "2026-11-04T21:59:45.814Z",
+  "total": 201,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -105,6 +105,7 @@
     "liquid-collective": "logos/liquid-collective.png",
     "liquity-v1": "logos/liquity-v1.webp",
     "lista-lending": "logos/lista-lending.png",
+    "lombard-btc-b": "logos/lombard-btc-b.webp",
     "lombard-lbtc": "logos/lombard-lbtc.png",
     "lorenzo-enzobtc": "logos/lorenzo-enzobtc.png",
     "m0": "logos/m0.webp",
@@ -510,6 +511,7 @@
     "hive-protocol": "https://icons.llamao.fi/icons/protocols/hive-protocol",
     "hyperliquid-earn": "https://www.faviconextractor.com/favicon/app.hyperliquid.xyz?larger=true",
     "aera-v3": "https://icons.llamao.fi/icons/protocols/aera-v3",
-    "figure-markets-prime": "https://icons.llamao.fi/icons/protocols/figure-markets-prime"
+    "figure-markets-prime": "https://icons.llamao.fi/icons/protocols/figure-markets-prime",
+    "lombard-btc-b": "https://icons.llamao.fi/icons/protocols/lombard-btc-b"
   }
 }
