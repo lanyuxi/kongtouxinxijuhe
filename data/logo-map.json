@@ -1,6 +1,6 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-05T02:15:23.050Z",
+  "updated_at": "2026-11-05T09:39:00.360Z",
   "total": 201,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
