@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-05T17:39:51.942Z",
-  "total": 201,
+  "updated_at": "2026-11-05T22:53:09.523Z",
+  "total": 202,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -120,6 +120,7 @@
     "mint-io": "logos/mint-io.png",
     "monad": "logos/monad.png",
     "morpho-blue": "logos/morpho-blue.png",
+    "morpho-midnight": "logos/morpho-midnight.webp",
     "nado": "logos/nado.png",
     "near-intents": "logos/near-intents.webp",
     "nexus": "logos/nexus.svg",
@@ -512,6 +513,7 @@
     "hyperliquid-earn": "https://www.faviconextractor.com/favicon/app.hyperliquid.xyz?larger=true",
     "aera-v3": "https://icons.llamao.fi/icons/protocols/aera-v3",
     "figure-markets-prime": "https://icons.llamao.fi/icons/protocols/figure-markets-prime",
-    "lombard-btc-b": "https://icons.llamao.fi/icons/protocols/lombard-btc-b"
+    "lombard-btc-b": "https://icons.llamao.fi/icons/protocols/lombard-btc-b",
+    "morpho-midnight": "https://icons.llamao.fi/icons/protocols/morpho-midnight"
   }
 }
