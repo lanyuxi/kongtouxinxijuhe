@@ -1,12 +1,12 @@
 {
   "state": "success",
-  "started_at": "2026-11-07T08:57:06.384Z",
-  "finished_at": "2026-11-07T08:57:08.623Z",
+  "started_at": "2026-11-07T15:36:12.486Z",
+  "finished_at": "2026-11-07T15:36:14.684Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-11-07T08:57:06.384Z",
+  "updated_at": "2026-11-07T15:36:12.486Z",
   "data_changed": true,
-  "change_summary": "变更 37 个：Aave V3 内容有更新；Aera V3 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 33 个：Aave V3 内容有更新；Aera V3 内容有更新；Babylon Protocol 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
     "Aera V3 内容有更新",
@@ -15,6 +15,6 @@
     "CIAN Yield Layer 内容有更新"
   ],
   "added": 0,
-  "modified": 37,
+  "modified": 33,
   "removed": 0
 }
