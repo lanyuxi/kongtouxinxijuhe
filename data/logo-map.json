@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-12T19:13:18.157Z",
-  "total": 203,
+  "updated_at": "2026-11-13T00:34:18.143Z",
+  "total": 204,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -158,6 +158,7 @@
     "sanctum-infinity": "logos/sanctum-infinity.png",
     "sanctum-validator-lsts": "logos/sanctum-validator-lsts.png",
     "satsuma": "logos/satsuma.png",
+    "saturn": "logos/saturn.webp",
     "scroll": "logos/scroll.png",
     "sentora-curator": "logos/sentora-curator.png",
     "sky-lending": "logos/sky-lending.png",
