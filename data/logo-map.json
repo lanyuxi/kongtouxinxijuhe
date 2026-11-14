@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-14T19:55:30.329Z",
-  "total": 205,
+  "updated_at": "2026-11-14T23:49:02.539Z",
+  "total": 206,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -13,6 +13,7 @@
     "anemoy-capital": "logos/anemoy-capital.png",
     "arcium": "logos/arcium.png",
     "arcus": "logos/arcus.webp",
+    "avalon-superearn": "logos/avalon-superearn.webp",
     "axis-robotics": "logos/axis-robotics.ico",
     "b14g": "logos/b14g.png",
     "b2-buzz": "logos/b2-buzz.png",
