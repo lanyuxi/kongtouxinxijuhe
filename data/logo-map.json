@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-14T15:04:01.557Z",
-  "total": 204,
+  "updated_at": "2026-11-14T19:55:30.329Z",
+  "total": 205,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -97,6 +97,7 @@
     "kinetiq-khype": "logos/kinetiq-khype.png",
     "kpk": "logos/kpk.png",
     "kryvora-network": "logos/kryvora-network.png",
+    "lagoon": "logos/lagoon.webp",
     "laptop": "logos/laptop.png",
     "layerzero": "logos/layerzero.png",
     "layerzero-v2": "logos/layerzero-v2.png",
@@ -516,6 +517,7 @@
     "aera-v3": "https://icons.llamao.fi/icons/protocols/aera-v3",
     "figure-markets-prime": "https://icons.llamao.fi/icons/protocols/figure-markets-prime",
     "lombard-btc-b": "https://icons.llamao.fi/icons/protocols/lombard-btc-b",
-    "morpho-midnight": "https://icons.llamao.fi/icons/protocols/morpho-midnight"
+    "morpho-midnight": "https://icons.llamao.fi/icons/protocols/morpho-midnight",
+    "lagoon": "https://icons.llamao.fi/icons/protocols/lagoon"
   }
 }
