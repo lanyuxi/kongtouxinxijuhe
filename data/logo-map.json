@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-20T16:01:23.555Z",
-  "total": 208,
+  "updated_at": "2026-11-20T22:37:37.944Z",
+  "total": 209,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -187,6 +187,7 @@
     "tastyco": "logos/tastyco.png",
     "tbook": "logos/tbook.svg",
     "tbtc": "logos/tbtc.png",
+    "theo-network-thusd": "logos/theo-network-thusd.webp",
     "titan-exchange": "logos/titan-exchange.webp",
     "tonstakers-lsd": "logos/tonstakers-lsd.webp",
     "tornado-cash": "logos/tornado-cash.webp",
