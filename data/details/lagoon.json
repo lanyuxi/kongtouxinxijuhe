@@ -28,7 +28,7 @@
       "type": "third_party",
       "name": "DefiLlama",
       "url": "https://defillama.com/protocol/Lagoon",
-      "fetched_at": "2026-11-23T20:11:52.614Z"
+      "fetched_at": "2026-11-24T04:48:59.685Z"
     }
   ],
   "evidence": [
@@ -261,7 +261,7 @@
     "basis": {
       "method": "source_text",
       "source_url": "https://defillama.com/protocol/Lagoon",
-      "checked_at": "2026-11-23T20:11:52.614Z",
+      "checked_at": "2026-11-24T04:48:59.685Z",
       "note": "来源未给出可核实的成本金额"
     }
   },
@@ -360,7 +360,7 @@
   ],
   "created_at": "2026-11-14T19:55:29.785Z",
   "discovered_at": "2026-11-14T19:55:29.785Z",
-  "last_checked_at": "2026-11-23T20:11:52.614Z",
+  "last_checked_at": "2026-11-24T04:48:59.685Z",
   "last_changed_at": "2026-11-22T11:53:48.962Z",
   "sourcedDescription": "Onchain Capital Allocator 协议，TVL 约 $148M。",
   "guide_version": "a2bdebffb534fc26786e37d8d32f1108c6bd65043e73c98a946440ed68a6c1ba",
