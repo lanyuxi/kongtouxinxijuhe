@@ -1,7 +1,7 @@
 {
   "_comment": "项目官方 logo 映射（由 scripts/logo/fetch-logos.mjs 生成）。图标文件位于 public/logos/，随仓库发布，前端不依赖任何外部图床。",
-  "updated_at": "2026-11-28T10:57:03.472Z",
-  "total": 211,
+  "updated_at": "2026-11-28T18:48:35.396Z",
+  "total": 212,
   "logos": {
     "aave-horizon-rwa": "logos/aave-horizon-rwa.png",
     "aave-v3": "logos/aave-v3.png",
@@ -176,6 +176,7 @@
     "sparklend": "logos/sparklend.png",
     "ssv-network": "logos/ssv-network.png",
     "stacks-sbtc": "logos/stacks-sbtc.png",
+    "stacks-staking": "logos/stacks-staking.png",
     "stader": "logos/stader.png",
     "stakewise-v3": "logos/stakewise-v3.png",
     "starknet": "logos/starknet.webp",
@@ -525,6 +526,7 @@
     "lombard-btc-b": "https://icons.llamao.fi/icons/protocols/lombard-btc-b",
     "morpho-midnight": "https://icons.llamao.fi/icons/protocols/morpho-midnight",
     "lagoon": "https://icons.llamao.fi/icons/protocols/lagoon",
-    "galaxy-curation": "https://icons.llamao.fi/icons/protocols/galaxy-curation"
+    "galaxy-curation": "https://icons.llamao.fi/icons/protocols/galaxy-curation",
+    "stacks-staking": "https://www.faviconextractor.com/favicon/stacks.co?larger=true"
   }
 }
