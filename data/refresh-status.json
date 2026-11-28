@@ -1,20 +1,20 @@
 {
   "state": "success",
-  "started_at": "2026-11-27T20:13:22.267Z",
-  "finished_at": "2026-11-27T20:13:24.372Z",
+  "started_at": "2026-11-28T02:49:02.987Z",
+  "finished_at": "2026-11-28T02:49:05.786Z",
   "sources": 3,
   "ok_sources": 1,
-  "updated_at": "2026-11-27T20:13:22.267Z",
+  "updated_at": "2026-11-28T02:49:02.987Z",
   "data_changed": true,
-  "change_summary": "变更 50 个：Aave V3 内容有更新；Aera V3 内容有更新；Babylon Protocol 内容有更新",
+  "change_summary": "变更 38 个：Aave V3 内容有更新；Babylon Protocol 内容有更新；BitFi Basis 内容有更新",
   "change_details": [
     "Aave V3 内容有更新",
-    "Aera V3 内容有更新",
     "Babylon Protocol 内容有更新",
     "BitFi Basis 内容有更新",
-    "CIAN Yield Layer 内容有更新"
+    "CIAN Yield Layer 内容有更新",
+    "Clearstar 内容有更新"
   ],
   "added": 0,
-  "modified": 50,
+  "modified": 38,
   "removed": 0
 }
